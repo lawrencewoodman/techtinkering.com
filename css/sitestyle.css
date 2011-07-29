@@ -1,0 +1,83 @@
+body {  
+  color: black; 
+  font-family: corbel, 'lucida grande', helvetica, sans-serif;
+  font-weight: normal;
+  width: 100%;
+  font-size: 14pt;
+  margin: 0;
+}
+
+/* ----- Top Banner ----- */
+div#topBanner {
+  vertical-align: bottom;
+  height: 80px;
+  background:black;
+  margin: 0;
+  padding: 0;
+}
+
+div#topBannerInner {
+  position: relative;
+  height: 80px;
+  vertical-align: bottom;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0;
+}
+
+img#logo {
+  position: absolute;
+  top: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* ----- Icons ----- */
+img#feedIcon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+}
+
+img#octocatIcon {
+  position: absolute;
+  top: 5px;
+  right: 40px;
+  border: none;
+}
+
+/* ----- Main content ----- */
+div#content {
+  margin: 0 auto;
+  padding: 0.5em 1em;
+  max-width: 1024px;
+  background: white;
+  border: none;
+  min-height: 500px;
+  line-height: 1.5;
+}
+
+div#content a { text-decoration: none; }
+div#content a:hover { text-decoration: underline; }
+
+h1,h2,h3,h4 { margin-bottom: 0; }
+
+/* ---- Posts ---- */
+h2 a { color: black; }
+
+a.author { color: blue; }
+a.author:visited { color: blue; }
+
+ul#posts { margin: 0; padding: 0; list-style: none;}
+article ul { list-style: disc outside none; }
+
+table.neatTable th { text-align: left; padding-right: 1em; }
+table.neatTable td { text-align: left; padding-right: 1em; }
+
+/* ---- Book Reviews ---- */
+table.bookDetails { float: left; }
+table.bookDetails th { text-align: left; padding-right: 1em; }
+
+table.amazonDetails { margin-left: 2em; }

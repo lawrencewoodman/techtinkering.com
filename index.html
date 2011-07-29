@@ -1,0 +1,17 @@
+---
+layout: base
+title: TechTinkering
+---
+<ul id="posts">
+  {% for post in site.posts %}
+  <li>
+    <header>
+      <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+      by <a class="author" href="{{ post.author.url }}">{{ post.author.name }}</a>
+      <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
+    </header>
+    <div>{{ post.content|strip_html|truncate: 300 }}</div>
+  </li>
+  {% endfor %}
+</ul>
+

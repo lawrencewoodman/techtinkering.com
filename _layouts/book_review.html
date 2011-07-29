@@ -1,0 +1,52 @@
+---
+layout: base
+---
+<article itemscope itemtype="http://schema.org/Review">
+  <header>
+    <h2 itemprop="name"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+    <meta itemprop="reviewRating" content="{{ page.rating }}" />
+    {{ page.rating|star_rating }}
+    by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+         <a itemprop="url" class="author" href="{{ page.author.url }}">
+           <span itemprop="name">{{ page.author.name }}</span>
+         </a>
+       </span>
+    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
+      {{ page.date | date_to_long_string }}
+    </time>
+  </header>
+  <div itemprop="reviewBody">
+    {{ content }}
+  </div>
+
+  <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Book">
+    <table class="bookDetails">
+      <tr><th></th><th itemprop="name">{{ page.book.title }}</th></tr>
+      <tr><th>Author</th>
+          <td itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ page.book.author }}</span>
+          </td>
+      </tr>
+      <tr><th>Pages</th><td itemprop="numberOfPages">{{ page.book.pages }}</td></tr>
+      <tr><th>Edition</th><td itemprop="bookEdition">{{ page.book.edition }}</td></tr>
+      <tr><th>Publisher</th>
+          <td itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <span itemprop="name">{{ page.book.publisher }}</span>
+          </td>
+      </tr>
+      <tr><th>ISBN</th><td itemprop="isbn">{{ page.book.isbn }}</td></tr>
+    </table>
+
+    <table class="amazonDetails" style="float:left;">
+      <tr><th>
+        <a href="{{ page.book.amazon }}" title="Buy from Amazon">Buy from Amazon</a>
+      </th></tr>
+      <tr><td>
+        <a href="{{ page.book.amazon }}" title="Buy from Amazon">
+          <img itemprop="image" src="/images/posts/{{ page.summaryPic }}">
+        </a>
+      </td></tr>
+    </table>
+  </div>
+
+</article>

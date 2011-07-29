@@ -1,0 +1,19 @@
+---
+layout: base
+---
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h2 itemprop="name"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+    by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+         <a itemprop="url" class="author" href="{{ page.author.url }}">
+           <span itemprop="name">{{ page.author.name }}</span>
+         </a>
+       </span>
+    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
+      {{ page.date | date_to_long_string }}
+    </time>
+  </header>
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+</article>
