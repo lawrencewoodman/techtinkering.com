@@ -76,6 +76,8 @@ article ul { list-style: disc outside none; }
 table.neatTable th { text-align: left; padding-right: 1em; }
 table.neatTable td { text-align: left; padding-right: 1em; }
 
+img.leftFlow { float: left; margin-right: 1em; margin-bottom: 1em; }
+
 /* ---- Book Reviews ---- */
 table.bookDetails { float: left; }
 table.bookDetails th { text-align: left; padding-right: 1em; }
