@@ -48,6 +48,20 @@ img#octocatIcon {
   border: none;
 }
 
+/* ----- Adverts  ----- */
+div#topAd {
+  margin-top: 1em;
+}
+
+div#bottomAd {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  padding: 0.5em 1em;
+  max-width: 1024px;
+}
+
 /* ----- Main content ----- */
 div#content {
   margin: 0 auto;
