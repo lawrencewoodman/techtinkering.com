@@ -32,7 +32,6 @@ img#logo {
   margin: 0;
 }
 
-
 /* ----- Icons ----- */
 img#feedIcon {
   position: absolute;
@@ -46,6 +45,19 @@ img#octocatIcon {
   top: 5px;
   right: 40px;
   border: none;
+}
+
+/* ----- Footer ----- */
+div#footer {
+  vertical-align: center;
+  text-align: center;
+  background:black;
+  margin: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+div#footer a { color: green; text-decoration: none; }
 }
 
 /* ----- Adverts  ----- */
@@ -71,11 +83,12 @@ div#content {
 div#content a { text-decoration: none; }
 div#content a:hover { text-decoration: underline; }
 
-h1,h2,h3,h4 { margin-bottom: 0; }
+h1,h2,h3,h4 { margin-bottom: 0; padding-bottom: 0; }
 
 /* ---- Posts ---- */
 h2 a { color: black; }
 
+dt {font-style: italic;}
 a.author { color: blue; }
 a.author:visited { color: blue; }
 
