@@ -49,16 +49,15 @@ img#octocatIcon {
 
 /* ----- Footer ----- */
 div#footer {
-  vertical-align: center;
+  vertical-align: middle;
   text-align: center;
-  background:black;
+  background: black;
   margin: 0;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 
 div#footer a { color: green; text-decoration: none; }
-}
 
 /* ----- Adverts  ----- */
 div#topAd {
@@ -76,7 +75,7 @@ div#content {
   max-width: 1024px;
   background: white;
   border: none;
-  min-height: 500px;
+  min-height: 1024px;
   line-height: 1.5;
 }
 
