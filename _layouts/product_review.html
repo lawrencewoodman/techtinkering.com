@@ -1,0 +1,82 @@
+---
+layout: base
+---
+<article itemscope itemtype="http://schema.org/Review">
+  <header>
+    <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+    <meta itemprop="reviewRating" content="{{ page.rating }}" />
+    {{ page.rating|star_rating }}
+    by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+         <a itemprop="url" class="author" href="{{ page.author.url }}">
+           <span itemprop="name">{{ page.author.name }}</span>
+         </a>
+       </span>
+    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
+      {{ page.date | date_to_long_string }}
+    </time>
+  </header>
+  <div itemprop="reviewBody">
+    {{ content }}
+  </div>
+
+  <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product">
+    <h3>
+      {% if page.product.manufacturer %}
+        <span itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">{{ page.product.manufacturer }}</span>
+        </span>
+      {% endif %}
+      {% if page.product.brand %}
+        <span itemprop="brand" itemscope itemtype="http://scheam.org/Organization">
+          <span itemprop="name">{{ page.product.brand }}</span>
+        </span>
+      {% endif %}
+      <span itemprop="model">{{ page.product.model }}</span>
+    </h3>
+    <table>
+      <tr><td>
+        <a href="{{ page.product.amazon }}" title="Buy from Amazon">
+          <img itemprop="image" src="/images/posts/{{ page.summaryPic }}">
+        </a>
+      </td></tr>
+      <tr><th>
+        <a href="{{ page.product.amazon }}" title="Buy from Amazon">Buy from Amazon</a>
+      </th></tr>
+    </table>
+  </div>
+
+</article>
+
+<div id="bottomAd">
+  <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* Techtinkering -728x90 */
+    google_ad_slot = "5567619045";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+</div>
+
+{% if page.licence == "cc_attrib" %}
+  <hr />
+  <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+  </a>
+  <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+    {{ page.title }}
+  </span><br />
+
+  by
+  <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com{{ page.url }}" property="cc:attributionName" rel="cc:attributionURL">
+  TechTinkering
+  </a>
+   is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+  Creative Commons Attribution 2.0 UK: England & Wales License
+  </a>
+  <hr />
+{% endif %}
