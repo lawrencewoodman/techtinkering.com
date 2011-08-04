@@ -95,6 +95,18 @@ div#bottomAd {
   margin-top: 1em;
 }
 
+/* ----- Profile ----- */
+table#profileTable th {
+  font-weight: normal;
+  text-align: left;
+  color: gray;
+  padding-right: 2em;
+}
+
+table#profileTable td a {color: blue;}
+
+div#profileText { margin-top: 2em; }
+
 /* ----- Main content ----- */
 div#content {
   margin: 0 auto;
