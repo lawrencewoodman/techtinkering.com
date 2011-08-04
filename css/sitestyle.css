@@ -33,6 +33,38 @@ img#logo {
 }
 
 /* ----- Icons ----- */
+img#octocatIcon {
+  position: absolute;
+  top: 5px;
+  right: 147px;
+  border: none;
+}
+
+img#emailIcon {
+  position: absolute;
+  top: 5px;
+  right: 102px;
+  border: none;
+}
+
+img#twitterIcon {
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  top: 5px;
+  right: 70px;
+  border: none;
+}
+
+img#youtubeIcon {
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  top: 5px;
+  right: 37px;
+  border: none;
+}
+
 img#feedIcon {
   position: absolute;
   top: 5px;
@@ -40,12 +72,7 @@ img#feedIcon {
   border: none;
 }
 
-img#octocatIcon {
-  position: absolute;
-  top: 5px;
-  right: 40px;
-  border: none;
-}
+
 
 /* ----- Footer ----- */
 div#footer {
