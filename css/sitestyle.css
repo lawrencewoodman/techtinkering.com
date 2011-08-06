@@ -121,6 +121,9 @@ div#content {
 div#content a { text-decoration: none; }
 div#content a:hover { text-decoration: underline; }
 
+a.readMore { color: blue; }
+a.readMore:visited { color: blue; }
+
 h1,h2,h3,h4 { margin-bottom: 0; padding-bottom: 0; }
 
 /* ---- Posts ---- */
