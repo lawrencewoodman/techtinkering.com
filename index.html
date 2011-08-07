@@ -8,8 +8,10 @@ title: TechTinkering
     <header>
       <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
       {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
-      by <a class="author" href="{{ post.author.url }}">{{ post.author.name }}</a>
-      <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
+      <span class="byLine">
+        by <a class="author" href="{{ post.author.url }}">{{ post.author.name }}</a>
+        <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
+      </span>
     </header>
     <div>{{ post.content|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
   </li>

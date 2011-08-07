@@ -121,6 +121,7 @@ div#content {
 div#content a { text-decoration: none; }
 div#content a:hover { text-decoration: underline; }
 
+span.byLine { color: #606060; }
 a.readMore { color: blue; }
 a.readMore:visited { color: blue; }
 
@@ -130,8 +131,8 @@ h1,h2,h3,h4 { margin-bottom: 0; padding-bottom: 0; }
 h2 a { color: black; }
 
 dt {font-style: italic;}
-a.author { color: blue; }
-a.author:visited { color: blue; }
+a.author { color: #3030D0; }
+a.author:visited { color: #3030D0; }
 
 ul#posts { margin: 0; padding: 0; list-style: none;}
 article ul { list-style: disc outside none; }
