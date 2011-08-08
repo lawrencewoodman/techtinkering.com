@@ -11,7 +11,7 @@ body {
 div#topBanner {
   vertical-align: bottom;
   height: 80px;
-  background:black;
+  background: url(/images/topbanner-gradient.png) 0% 0% repeat-x;
   margin: 0;
   padding: 0;
 }
