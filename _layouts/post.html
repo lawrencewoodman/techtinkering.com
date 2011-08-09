@@ -15,6 +15,7 @@ layout: base
       </time>
     </span>
 
+
     <!-- AddThis Button BEGIN -->
     <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
     <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
@@ -26,6 +27,14 @@ layout: base
     </div>
     <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
     <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      {% for category in page.categories %}
+        <a href="/tag/{{ category|tag_dir }}">{{ category }}</a> &nbsp; &nbsp;
+      {% endfor %}
+    </span>
 
   </header>
   <div id="topAd">

@@ -6,14 +6,24 @@ layout: base
     <h2 itemprop="name"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
     <meta itemprop="reviewRating" content="{{ page.rating }}" />
     {{ page.rating|star_rating }}
-    by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-         <a itemprop="url" class="author" href="{{ page.author.url }}">
-           <span itemprop="name">{{ page.author.name }}</span>
-         </a>
-       </span>
-    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
-      {{ page.date | date_to_long_string }}
-    </time>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a itemprop="url" class="author" href="{{ page.author.url }}">
+             <span itemprop="name">{{ page.author.name }}</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
+        {{ page.date | date_to_long_string }}
+      </time>
+    </span>
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      {% for category in page.categories %}
+        <a href="/tag/{{ category|tag_dir }}">{{ category }}</a> &nbsp; &nbsp;
+      {% endfor %}
+    </span>
 
     <!-- AddThis Button BEGIN -->
     <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">

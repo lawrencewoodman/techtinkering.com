@@ -122,6 +122,9 @@ div#content a { text-decoration: none; }
 div#content a:hover { text-decoration: underline; }
 
 span.byLine { color: #606060; }
+span.tagLine { color: #606060; }
+span.tagLine a { color: #3030D0 }
+span.tagLine a:visited { color: #3030D0 }
 a.readMore { color: blue; }
 a.readMore:visited { color: blue; }
 
