@@ -6,13 +6,13 @@ categories:
   - Microdata
   - Gem
   - Library
-  - Retro
+  - Ruby
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
 licence: cc_attrib
 ---
-I have recently released [Mida](http://lawrencewoodman.github.com/mida/ "Mida Project Page") as a Gem for parsing/extracting [Microdata](http://en.wikipedia.org/wiki/Microdata_(HTML5)) from web pages.  Not many sites at the moment are using Microdata, in fact, apart from this site, I only know of one other: [Trust a Friend](http://trustafriend.com), which is another site that I work on.  However, as HTML5 is more widely adopted I am sure that this will change and Mida will become more useful.
+I have recently released [Mida](http://lawrencewoodman.github.com/mida/ "Mida Project Page") as a Gem for parsing/extracting [Microdata](http://en.wikipedia.org/wiki/Microdata_%28HTML5%29) from web pages.  Not many sites at the moment are using Microdata, in fact, apart from this site, I only know of one other: [Trust a Friend](http://trustafriend.com), which is another site that I work on.  However, as HTML5 is more widely adopted I am sure that this will change and Mida will become more useful.
 
 ## Microdata
 Microdata is part of the upcoming HTML5 standard and is a way to label the

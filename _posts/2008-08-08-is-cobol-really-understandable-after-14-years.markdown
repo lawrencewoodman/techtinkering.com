@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Is COBOL really understandable after 14 years?
+categories:
+  - Programming
+  - Cobol
+  - Retro
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/

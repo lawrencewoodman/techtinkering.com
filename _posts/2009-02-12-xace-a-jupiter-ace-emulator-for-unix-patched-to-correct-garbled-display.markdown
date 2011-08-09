@@ -8,6 +8,7 @@ categories:
   - Jupiter Ace
   - Emulation
   - Retro
+  - xAce
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
