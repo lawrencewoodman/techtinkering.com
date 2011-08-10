@@ -35,42 +35,42 @@ There are a number of implementation options for a SUBLEQ processor:
 * The branch destination could refer to a memory location that contains the actual branch destination, i.e. `goto mem[c]` instead of `goto c`.
 
 ## Programming Using Macros
-To program the SUBLEQ OISC machine we can create a set of Macros to ease development.  Below are some simple examples of useful macros that could be implemented.  The contents of each Macro consists of previously defined macros or 3 memory location references to be executed by the SUBLEQ instruction.  Where the third operand is missing, it is assumed to be the location of the next instruction, i.e. it doesn't conditionally branch.  Mem[Z] is assumed by most of the macros to contain zero.
+To program the SUBLEQ OISC machine we can create a set of Macros to ease development.  Below are some simple examples of useful macros that could be implemented.  The contents of each Macro consists of previously defined macros or 3 memory location references to be executed by the SUBLEQ instruction.  Where the third operand is missing, it is assumed to be the location of the next instruction, i.e. it doesn't conditionally branch.  Mem\[Z\] is assumed by most of the macros to contain zero.
 
-{% highlight text %}
-Macro Jmp c	; Jump directly to c (Resets mem[Z] to zero)
-  Z, Z, c	; mem[Z] := zero and jumps as result is 0
+{% highlight nasm %}
+Macro Jmp c     ; Jump directly to c (Resets mem[Z] to zero)
+  Z, Z, c       ; mem[Z] := zero and jumps as result is 0
 EndMacro
 
-Macro Sub a, b	; Subtract mem[a] from mem[b]
-  a, b		; Trivial Macro, but can make things clearer
+Macro Sub a, b  ; Subtract mem[a] from mem[b]
+  a, b          ; Trivial Macro, but can make things clearer
 EndMacro
 
-Macro Add a, b	; Add mem[a] to mem[b] (Assumes mem[Z] = 0)
-  Sub a, Z	; As mem[Z] contains zero, stores negative of mem[a] at mem[Z]
-  Sub Z, b	; Equivalent of: mem[b] := mem[b] - -mem[a] i.e. mem[b] := mem[b] + mem[a]
-  Sub Z, Z	; Set mem[Z] to zero
+Macro Add a, b  ; Add mem[a] to mem[b] (Assumes mem[Z] = 0)
+  Sub a, Z      ; As mem[Z] contains zero, stores negative of mem[a] at mem[Z]
+  Sub Z, b      ; Equivalent of: mem[b] := mem[b] - -mem[a] i.e. mem[b] := mem[b] + mem[a]
+  Sub Z, Z      ; Set mem[Z] to zero
 EndMacro
 
-Macro Mov a, b	; Copy mem[a] to mem[b] (Assumes mem[Z] = 0)
-  Sub b, b	; Set mem[b] to zero
-  Add a,b	; Add mem[a] to mem[b]
+Macro Mov a, b  ; Copy mem[a] to mem[b] (Assumes mem[Z] = 0)
+  Sub b, b      ; Set mem[b] to zero
+  Add a,b       ; Add mem[a] to mem[b]
 EndMacro
 
-Macro Jge b, c	; Jump to c if mem[b] ≥ 0 (Assumes mem[Z] = 0, leaves mem[Z] := -mem[b])
-  b, Z, c
+Macro Jge b, c  ; Jump to c if mem[b] ≥ 0
+  b, Z, c       ; (Assumes mem[Z] = 0, leaves mem[Z] := -mem[b])
 EndMacro
 
-Macro Jle b, c	; Jump to c if mem[b] ≤ 0 (Assumes mem[Z] = 0)
+Macro Jle b, c  ; Jump to c if mem[b] ≤ 0 (Assumes mem[Z] = 0)
   Z, b, c
 EndMacro
 
-Macro Jz b, c 	; Jump to c if mem[b] = 0 (Assumes mem[Z] = 0)
-  Jge b, GE0	; If b ≥ 0 Jump to GE0 
-  Jmp NotZero	; Jump to NotZero and mem[Z] := 0
+Macro Jz b, c   ; Jump to c if mem[b] = 0 (Assumes mem[Z] = 0)
+  Jge b, GE0    ; If b ≥ 0 Jump to GE0
+  Jmp NotZero   ; Jump to NotZero and mem[Z] := 0
 GE0:
-  Sub Z, Z	; mem[Z] := 0
-  Jle b, c	; If b ≤ 0 Jump to c.  As b is ≥ 0, therefore: If b = 0 jump to c 
+  Sub Z, Z      ; mem[Z] := 0
+  Jle b, c      ; If b ≤ 0 Jump to c.  As b is ≥ 0, therefore: If b = 0 jump to c
 NotZero:
 EndMacro
 {% endhighlight %}
@@ -87,6 +87,6 @@ There isn't much about SUBLEQ OISC computers on the internet.  However I have fo
 * [Oleg Mazonka's page discussing a self interpreter for a SUBLEQ virtual machine](http://mazonka.com/subleq/index.html).  It also includes an assembler and interpreter.
 * [The Wikipedia article on One Instruction Set Computers](http://en.wikipedia.org/wiki/One_instruction_set_computer)
 
-I have also written a follow up article: <a href="/2009/03/29/hello-world-in-subleq-assembly/">Hello‚ World! in SUBLEQ Assembly</a>.
+I have also written a follow up article: [Hello, World! in SUBLEQ Assembly](/2009/03/29/hello-world-in-subleq-assembly/).
 
 I hope that you find this interesting and would love to hear of any uses that you find for it.
