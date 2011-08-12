@@ -12,8 +12,8 @@
     {% for post in site.posts %}
       <item>
         <title>{{post.title}}</title>
-        <link>http://lawrencewoodman.github.com/mida{{post.url}}</link>
-        <guid isPermaLink="true">http://lawrencewoodman.github.com/mida{{post.url}}</guid>
+        <link>http://techtinkering.com{{post.url}}</link>
+        <guid isPermaLink="true">http://techtinkering.com{{post.url}}</guid>
         <pubDate>{{post.date | date: "%d %b %Y 00:00:01 %Z"}}</pubDate>
         <description><![CDATA[{{post.content|strip_html|truncate: 300}}]]></description>
       </item>
