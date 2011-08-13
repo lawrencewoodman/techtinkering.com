@@ -4,7 +4,11 @@ layout: base
 <article itemscope itemtype="http://schema.org/Review">
   <header>
     <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
-    <meta itemprop="reviewRating" content="{{ page.rating }}" />
+    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+      <meta itemprop="worstRating" content="1" />
+      <meta itemprop="ratingValue" content="{{ page.rating }}" />
+      <meta itemprop="bestRating"  content="5" />
+    </span>
     {{ page.rating|star_rating }}
     <span class="byLine">
       by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
