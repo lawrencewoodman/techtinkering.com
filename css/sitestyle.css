@@ -75,16 +75,29 @@ img#feedIcon {
 
 
 /* ----- Footer ----- */
+
 div#footer {
-  vertical-align: middle;
-  text-align: center;
-  background: black;
+  vertical-align: bottom;
+  height: 160px;
+  background: url(/images/footer-gradient.png) 0% 0% repeat-x;
   margin: 0;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  margin-top: 2em;
+  padding: 0;
 }
 
-div#footer a { color: green; text-decoration: none; }
+div#footerInner {
+  position: relative;
+  height: 160px;
+  vertical-align: bottom;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0;
+  color: green;
+}
+
+div#footerInner a { font-size: 10pt; color: green; text-decoration: none; }
+div#footerInner table { padding-top: 0.5em; }
+div#footerInner table td { vertical-align: top; padding-right: 2em; }
 
 /* ----- Adverts  ----- */
 div#topAd {
