@@ -12,7 +12,7 @@ layout: base
     {{ page.rating|star_rating }}
     <span class="byLine">
       by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-           <a itemprop="url" class="author" href="{{ page.author.url }}">
+           <a rel="author" itemprop="url" class="author" href="{{ page.author.url }}">
              <span itemprop="name">{{ page.author.name }}</span>
            </a>
          </span>
