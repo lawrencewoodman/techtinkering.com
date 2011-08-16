@@ -9,14 +9,9 @@ layout: base
         <header>
           <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
           {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
-          <span class="byLine">
-            by <a class="author" href="{{ post.author.url }}">{{ post.author.name }}</a>
-            <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
-          </span>
-          
           <span class="tagLine">
-            <br />
-            Tags:
+            <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
+            &nbsp; Tags:
             {% for category in post.categories %}
               <a href="/tag/{{ category|tag_dir }}">{{ category }}</a> &nbsp; &nbsp;
             {% endfor %}
