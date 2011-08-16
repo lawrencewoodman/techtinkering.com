@@ -32,6 +32,33 @@ img#logo {
   margin: 0;
 }
 
+nav {
+  position: absolute;
+  top: 40px;
+  left: 450px;
+}
+
+img#prevButton {
+  position: relative;
+  left: 0px;
+  padding: 0;
+  margin: 0;
+}
+
+img#homeButton {
+  position: relative;
+  left: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+img#nextButton {
+  position: relative;
+  left: 20px;
+  padding: 0;
+  margin: 0;
+}
+
 /* ----- Icons ----- */
 img#octocatIcon {
   position: absolute;
