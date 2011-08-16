@@ -106,7 +106,17 @@ layout: base
   Creative Commons Attribution 2.0 UK: England & Wales License
   </a>
   <hr />
+{% else %}
+<hr />
 {% endif %}
+
+<div id="related">
+  <h2>Related</h2>
+  {% for post in site.related_posts limit: 5 %}
+    <a href="{{ post.url }}">{{ post.title }}</a><br />
+  {% endfor %}
+</div>
+<hr />
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

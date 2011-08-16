@@ -164,3 +164,7 @@ table.bookDetails { float: left; }
 table.bookDetails th { text-align: left; padding-right: 1em; }
 
 table.amazonDetails { margin-left: 2em; }
+
+/* ---- Related Posts ---- */
+div#related a { color: #3030D0; }
+div#related a:visited { color: #3030D0; }
