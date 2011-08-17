@@ -249,6 +249,6 @@ This made the program much too slow, and at first I didn't think the program was
 Since writing this article I have been contacted by Mike Loewen, who has a real IMSAI and has kindly allowed me to upload this footage of my program running on his machine.  Mike has 
 an interesting site about his [Old Technology Collection](http://sturgeon.css.psu.edu/~mloewen/Oldtech/) which features his [Restoration of an IMSAI 8080](http://sturgeon.css.psu.edu/~mloewen/Oldtech/IMSAI/).  I must say it was really good to see my program running on a real machine.  If only I could lay my hands on one.
 
-<div style="clear: left;"></div>
+<br style="clear: left;"/>
 ## Where Now?
 Now is the time to get really creative.  To do this though, you need to really understand the machine, so the links at the start of the article should help you understand more about the machine and the Intel 8080 chip that powers it.  If you remember the importance of designing and testing the program properly before you enter it, you should be fine.  Good luck and have fun.

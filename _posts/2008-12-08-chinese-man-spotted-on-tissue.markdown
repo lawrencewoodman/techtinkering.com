@@ -15,7 +15,7 @@ It really is funny the things that we spot sometimes.  Most of us must have look
 <img class="leftFlow" width="400" height="300" src="/images/posts/chinese_man_toilet_paper.jpg" title="Image of a Chinese Man Found on a Tissue" alt="Image of a Chinese Man Found on a Tissue"/>
 Here is the original image.  You can clearly see his hat, eyes, eyebrow ridges, nose, mouth and a rough outline of his face.  I know that this is a stereotypical picture, but stereotypes sometimes provide our strongest ideas no matter how much we try to ignore them. 
 
-<div style="clear: left;"></div>
+<br style="clear: left;"/>
 <img class="leftFlow" width="400" height="300" src="/images/posts/chinese_man_toilet_paper_annotated.jpg" title="Annotated Image of a Chinese Man Found on a Tissue" alt="Annotated Image of a Chinese Man Found on a Tissue"/>
 
 I have marked the rough outline of the man on the image in case you can't spot it at first.  I was really quite surprised when I noticed him, unfortunately however, I never had a camera with me so had to rely on my phone's camera.  The quality isn't great, but I think it is clear enough for you to see what I saw.
