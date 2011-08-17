@@ -32,31 +32,44 @@ img#logo {
   margin: 0;
 }
 
+/* Navigation Menu */
 nav {
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 450px;
 }
 
-img#prevButton {
-  position: relative;
-  left: 0px;
+nav ul {
+  vertical-align: bottom;
+  list-style: none;
   padding: 0;
   margin: 0;
+  height: 30px;
 }
 
-img#homeButton {
-  position: relative;
-  left: 10px;
-  padding: 0;
-  margin: 0;
+nav li {
+  float: left;
+  height: 30px;
 }
 
-img#nextButton {
-  position: relative;
-  left: 20px;
-  padding: 0;
-  margin: 0;
+nav a {
+  font-weight: bold;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  margin-left: 1px;
+  padding:0 10px;
+  color: white;
+  background: gray;
+  border-radius: 10px 10px 0px 0px;
+  -moz-border-radius: 10px 10px 0px 0px;
+  -webkit-border-radius: 10px 10px 0px 0px;
+}
+
+nav a#current {
+  background: white;
+  color: black;
 }
 
 /* ----- Icons ----- */

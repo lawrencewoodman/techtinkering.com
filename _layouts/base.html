@@ -22,23 +22,34 @@
        
       <a href="/"><img id="logo" src="/images/logo.png" alt="TechTinkering"/></a>
 
-      {% if page.previous || page.next %}
         <nav>
-          {% if page.previous %}
-            <a rel="prev" href="{{ page.previous.url }}">
-              <img id="prevButton" src="/images/prev.png" alt="Previous" title="Previous Article"\>
-            </a>
-          {% endif %}
+          <ul>
+            <li><a {%if page.menuOption == "home"%}id="current"{%endif%}
+                   href="/">Home</a></li>
+            {% if page.menuOption == "article" %}
+              <li><a id="current" href="{{ page.url }}">Article</a></li>
+            {% endif %}
 
-          <a href="/"><img id="homeButton" src="/images/home.png" alt="Home" title="Home"\></a>
+            {% if page.menuOption == "profile" %}
+              <li><a id="current" href="{{ page.url }}">Profile</a></li>
+            {% endif %}
 
-          {% if page.next %}
-            <a rel="next" href="{{ page.next.url }}">
-              <img id="nextButton" src="/images/next.png" alt="Next" title="Next Article"\>
-            </a>
-          {% endif %}
+            {% if page.menuOption == "statinfo" %}
+              <li><a id="current" href="{{ page.url }}">Statutory Information</a></li>
+            {% endif %}
+
+            {% if page.menuOption == "tagged" %}
+              <li><a id="current" href="{{ page.url }}">Tagged Articles</a></li>
+            {% endif %}
+
+            {% if page.menuOption == "terms" %}
+              <li><a id="current" href="{{ page.url }}">Terms and Conditions</a></li>
+            {% endif %}
+
+            <li><a {%if page.menuOption == "about"%}id="current"{%endif%}
+                   href="/about">About</a></li>
+          </ul>
         </nav>
-      {% endif %}
 
       <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
         <img src="/images/octocat_fluid.png" id="octocatIcon" alt="Techtinkering Repo on  Github"/>
