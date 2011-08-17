@@ -197,8 +197,19 @@ article ul { list-style: disc outside none; }
 table.neatTable th { text-align: left; padding-right: 1em; }
 table.neatTable td { text-align: left; padding-right: 1em; }
 
-img.leftFlow { float: left; margin-right: 1em; margin-bottom: 1em; }
-img.rightFlow { float: right; margin-left: 1em; margin-bottom: 1em; }
+img.leftFlow {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  border: none;
+}
+
+img.rightFlow {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  border: none;
+}
 
 /* ---- Book Reviews ---- */
 table.bookDetails { float: left; }
