@@ -13,6 +13,15 @@
 
   <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
 
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
 
 </head>
 
