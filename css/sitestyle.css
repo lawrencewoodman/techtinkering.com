@@ -196,6 +196,7 @@ article ul { list-style: disc outside none; }
 
 table.neatTable th { text-align: left; padding-right: 1em; }
 table.neatTable td { text-align: left; padding-right: 1em; }
+table.neatTable td.note { font-style: italic; }
 
 img.leftFlow {
   float: left;
