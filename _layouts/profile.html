@@ -4,51 +4,56 @@ menuOption: profile
 ---
 
 <div itemscope itemtype="http://schema.org/Person">
-  <h2 itemprop="name">{{ page.profile.name }}</h2>
 
-  <table id="profileTable">
-    {% if page.profile.company %}
-      <tr>
-        <th>Company</th>
-        <td itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-          <a itemprop="url" href="{{ page.profile.company.url }}">
-            <span itemprop="name">{{ page.profile.company.name }}</span>
-          </a>
-        </td>
-      </tr>
-    {% endif %}
+  <table id="profileColumns"><tr>
+    <td id="picColumn">
+      <img id="profile" itemprop="image" src="/images/profile/lawrencewoodman.jpg" />
 
-    {% if page.profile.email %}
-      <tr><th>Email</th><td><a itemprop="email" href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a></td></tr>
-    {% endif %}
+      {% if page.profile.online-presence %}
+        <h4>Online Presence</h4>
+        {% if page.profile.online-presence.github %}
+          <a href="{{ page.profile.online-presence.github }}">Github</a><br />
+        {% endif %}
 
-    {% if page.profile.online-presence %}
-      <tr>
-        <th>Online Presence</th>
-        <td>
-          {% if page.profile.online-presence.github %}
-            <a href="{{ page.profile.online-presence.github }}">Github</a> &nbsp; &nbsp;
-          {% endif %}
+        {% if page.profile.online-presence.linkedin %}
+          <a href="{{ page.profile.online-presence.linkedin }}">LinkedIn</a><br />
+        {% endif %}
 
-          {% if page.profile.online-presence.linkedin %}
-            <a href="{{ page.profile.online-presence.linkedin }}">LinkedIn</a> &nbsp; &nbsp;
-          {% endif %}
+        {% if page.profile.online-presence.stackoverflow %}
+          <a href="{{ page.profile.online-presence.stackoverflow }}">StackOverflow</a><br />
+        {% endif %}
 
-          {% if page.profile.online-presence.stackoverflow %}
-            <a href="{{ page.profile.online-presence.stackoverflow }}">StackOverflow</a> &nbsp; &nbsp;
-          {% endif %}
+        {% if page.profile.online-presence.google %}
+          <a rel="me" href="{{ page.profile.online-presence.google }}">Google</a><br />
+        {% endif %}
+      {% endif %}
+    </td>
 
-          {% if page.profile.online-presence.google %}
-            <a rel="me" href="{{ page.profile.online-presence.google }}">Google</a> &nbsp; &nbsp;
-          {% endif %}
-        </td>
-      </tr>
-    {% endif %}
+    <td>
+      <h2 id="name" itemprop="name">{{ page.profile.name }}</h2>
 
-  </table>
+      <table id="profileTable">
+        {% if page.profile.company %}
+          <tr>
+            <th>Company</th>
+            <td itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
+              <a itemprop="url" href="{{ page.profile.company.url }}">
+                <span itemprop="name">{{ page.profile.company.name }}</span>
+              </a>
+            </td>
+          </tr>
+        {% endif %}
 
-</div>
+        {% if page.profile.email %}
+          <tr><th>Email</th><td><a itemprop="email" href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a></td></tr>
+        {% endif %}
 
-<div id="profileText">
-  {{ content }}
+      </table>
+
+      <div id="profileText">
+        {{ content }}
+      </div>
+    </td>
+  </tr></table>
+
 </div>

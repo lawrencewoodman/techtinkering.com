@@ -150,6 +150,22 @@ div#bottomAd {
 }
 
 /* ----- Profile ----- */
+table#profileColumns { margin-top: 1em; }
+table#profileColumns td { vertical-align: top; }
+table#profileColumns td#picColumn { padding-right: 1em; }
+
+table#profileColumns td#picColumn h4 {
+  font-weight: normal;
+  color: gray;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+
+table#profileColumns h2#name { margin-top: 0; }
+
+img#profile { height: 200px; width: 200px; }
+
 table#profileTable th {
   font-weight: normal;
   text-align: left;
@@ -159,7 +175,7 @@ table#profileTable th {
 
 table#profileTable td a {color: blue;}
 
-div#profileText { margin-top: 2em; }
+div#profileText { margin-top: 1em; }
 
 /* ----- Main content ----- */
 div#content {
