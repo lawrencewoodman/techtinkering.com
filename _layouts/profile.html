@@ -37,6 +37,10 @@ menuOption: profile
           {% if page.profile.online-presence.stackoverflow %}
             <a href="{{ page.profile.online-presence.stackoverflow }}">StackOverflow</a> &nbsp; &nbsp;
           {% endif %}
+
+          {% if page.profile.online-presence.google %}
+            <a rel="me" href="{{ page.profile.online-presence.google }}">Google</a> &nbsp; &nbsp;
+          {% endif %}
         </td>
       </tr>
     {% endif %}
