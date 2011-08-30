@@ -198,7 +198,11 @@ span.tagLine a:visited { color: #3030D0 }
 a.readMore { color: blue; }
 a.readMore:visited { color: blue; }
 
-h1,h2,h3,h4 { margin-bottom: 0; padding-bottom: 0; }
+h1,h2,h3,h4 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 /* ---- Posts ---- */
 h2 a { color: black; }
