@@ -80,12 +80,11 @@ The difference in the distribution of star signs among Nobel laureates seems to 
 
 
 ## Conclusion
-There does seem to be some variance between the birth periods and interestingly this seems to be more pronounced for star signs than for months of birth.  In particular, Geminis and Libras or people born in June do stand out as being more likely to receive a Nobel prize, whereas Capricorns and Aquariuses or people born in January or February are less likely to receive a Nobel Prize.  That said, the effect isn't that strong and there are plenty of Nobel laureates spread throughout the whole year.
+There does seem to be some variance between the birth periods and interestingly this seems to be more pronounced for star signs than for months of birth.  In particular, Geminis and Libras or people born in June do stand out as being more likely to receive a Nobel prize, whereas Capricorns and Aquariuses or people born in January or February are less likely to receive a Nobel Prize.
 
-This shouldn't be taken too seriously, due to the problems with the study.  What this does do though, is highlight the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.
 
 ## Commissions
-If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
+This study highlights the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.  If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
 
 ---
 
