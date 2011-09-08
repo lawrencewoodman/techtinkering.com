@@ -12,7 +12,7 @@ licence: cc_attrib
 
 There has been a lot of talk in the UK recently about whether when you were born affects your schooling.  Lots of teachers have noticed how pupils born at the end of the Summer often struggle compared with those born in the Autumn, which makes sense because the latter group are almost a year older when they start school than the former.  However, teachers are not the only ones who think that when you were born affects your future.  Astrologers base much of what they do on when a person was born.
 
-To see if when you were born does affect your future, I decided to look at Nobel laureates, as they come from many different countries, represent excellence in their field and they are reasonably well documented on [wikipedia](http://wikipedia.org).  The data for the study was collected by using [ScraperWiki](http://scraperwiki.com) to build a series of scrapers and views to go through the [List of Nobel laureates](http://en.wikipedia.org/wiki/List_of_nobel_prize_winners) and find the _Date of Birth_ for each person.
+To see if when you were born does affect your future, I have decided to look at various groups over a series of articles.  For this, the first article, I am beginning with Nobel laureates, as they come from many different countries, represent excellence in their field and they are reasonably well documented on [wikipedia](http://wikipedia.org).  The data for the study was collected by using [ScraperWiki](http://scraperwiki.com) to build a series of scrapers and views to go through the [List of Nobel laureates](http://en.wikipedia.org/wiki/List_of_nobel_prize_winners) and find the _Date of Birth_ for each person.
 
 ## The Findings
 
@@ -86,6 +86,9 @@ There does seem to be some variance between the birth periods and interestingly 
 ## Commissions
 This study highlights the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.  If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
 
+## Other Articles in the Series
+
+* [Pisceans and October Babies More Likely to Become Poets. Scraping Wikipedia Reveals All](http://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/)
 ---
 
 ## Scrapers and Views

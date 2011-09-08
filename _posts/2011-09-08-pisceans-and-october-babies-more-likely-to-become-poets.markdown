@@ -81,8 +81,8 @@ Unlike Nobel laureates the distribution of birth periods among poets seems to be
 ## Commissions
 This series highlights the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.  If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
 
-## Other articles in the series
-[Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out](http://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate)
+## Other Articles in the Series
+* [Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out](http://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate)
 
 ---
 
