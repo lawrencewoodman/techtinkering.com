@@ -10,6 +10,6 @@ maruku:
   use_divs:   false
   png_dir:    images/latex
   png_url:    /images/latex
-exclude: ./design,./scripts
+exclude: ./design,./scripts,./README.md
 
 tag_title_prefix: "TechTinkering Articles Tagged With: "
