@@ -20,9 +20,9 @@ div#topBannerInner {
   position: relative;
   height: 80px;
   vertical-align: bottom;
-  margin: 0 auto;
+  margin-left: 160px;
   max-width: 1024px;
-  padding: 0;
+  padding-left: 1.5em;
 }
 
 img#logo {
@@ -124,30 +124,23 @@ div#footer {
   margin: 0;
   margin-top: 2em;
   padding: 0;
+  clear: left;
 }
 
 div#footerInner {
   position: relative;
   height: 160px;
   vertical-align: bottom;
-  margin: 0 auto;
   max-width: 1024px;
-  padding: 0;
+  margin-left: 160px;
+  max-width: 1024px;
+  padding-left: 1.5em;
   color: green;
 }
 
 div#footerInner a { font-size: 10pt; color: green; text-decoration: none; }
 div#footerInner table { padding-top: 0.5em; }
 div#footerInner table td { vertical-align: top; padding-right: 2em; }
-
-/* ----- Adverts  ----- */
-div#topAd {
-  margin-top: 1em;
-}
-
-div#bottomAd {
-  margin-top: 1em;
-}
 
 /* ----- Profile ----- */
 table#profileColumns { margin-top: 1em; }
@@ -179,13 +172,14 @@ div#profileText { margin-top: 1em; }
 
 /* ----- Main content ----- */
 div#content {
-  margin: 0 auto;
-  padding: 0.5em 1em;
+  margin-left: 160px;
+  padding: 0.5em 1.5em;
   max-width: 1024px;
   background: white;
   border: none;
   min-height: 1024px;
   line-height: 1.5;
+  overflow: auto;
 }
 
 div#content a { text-decoration: none; }
@@ -202,6 +196,13 @@ h1,h2,h3,h4 {
   margin-top: 1em;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+/* ---- Columns  ---- */
+div#leftColumn {
+  width: 160px;
+  float: left;
+  margin: 0;
 }
 
 /* ---- Posts ---- */
