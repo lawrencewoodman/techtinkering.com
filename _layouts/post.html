@@ -38,12 +38,26 @@ menuOption: article
 
   </header>
 
+  <div id="articleTopLeftAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
   <div itemprop="articleBody">
     {{ content }}
   </div>
 </article>
 
-<br style="clear: left;" />
+<div style="clear: left;"></div>
 
 {% if page.licence == "cc_attrib" %}
   <hr />
@@ -85,13 +99,32 @@ menuOption: article
   <hr />
 {% endif %}
 
-<div id="related">
-  <h2>Related</h2>
-  {% for post in site.related_posts limit: 5 %}
-    <a href="{{ post.url }}">{{ post.title }}</a><br />
-  {% endfor %}
+<div id="rightAd">
+  <script type="text/javascript"><!--
+  google_ad_client = "ca-pub-1613732348909658";
+  /* 336x280 - TechTinkeing */
+  google_ad_slot = "1826225277";
+  google_ad_width = 336;
+  google_ad_height = 280;
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
 </div>
-<hr />
+
+{% if site.related_posts.size >= 1 %}
+  <h2>Related</h2>
+  <ul>
+
+  {% for post in site.related_posts limit: 5 %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+
+  </ul>
+{% endif %}
+
+<hr style="clear:both;" />
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">

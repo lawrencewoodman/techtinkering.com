@@ -20,7 +20,7 @@ div#topBannerInner {
   position: relative;
   height: 80px;
   vertical-align: bottom;
-  margin-left: 160px;
+  margin: 0 auto;
   max-width: 1024px;
   padding-left: 1.5em;
 }
@@ -132,7 +132,7 @@ div#footerInner {
   height: 160px;
   vertical-align: bottom;
   max-width: 1024px;
-  margin-left: 160px;
+  margin: 0 auto;
   max-width: 1024px;
   padding-left: 1.5em;
   color: green;
@@ -179,6 +179,7 @@ div#content {
   min-height: 1024px;
   line-height: 1.5;
   overflow: auto;
+  margin: 0 auto;
 }
 
 div#content a { text-decoration: none; }
@@ -231,6 +232,19 @@ img.rightFlow {
   margin-left: 1em;
   margin-bottom: 1em;
   border: none;
+}
+
+div#articleTopLeftAd {
+  float: left;
+  margin-top: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+div#rightAd {
+  float: right;
+  margin-left: 1em;
+  margin-top: 1em;
 }
 
 /* ---- Book Reviews ---- */
