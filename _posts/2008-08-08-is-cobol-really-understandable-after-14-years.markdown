@@ -23,28 +23,31 @@ After taking a quick look at the code I remember that COBOL is split into DIVISI
 
 ### The IDENTIFICATION DIVISION
 This is fairly unremarkable and is just used to identify what the code is and who wrote it.
-<div class="highlight"><pre><code>IDENTIFICATION DIVISION.
+{% highlight text %}
+IDENTIFICATION DIVISION.
 PROGRAM-ID. ASSIGN1.
 AUTHOR. xxxxxxxxxx
 * Assignment 1 for COBOL.
-</code></pre></div>
+{% endhighlight %}
 
 ### The ENVIRONMENT DIVISION
 This DIVISION is used to specify the environment in which the code will run.  The power of this DIVISION is that you can easily change the environment in which the program is running just by making alterations here.
 
-<div class="highlight"><pre><code>ENVIRONMENT DIVISION.
+{% highlight text %}
+ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
 FILE-CONTROL.
 SELECT TAG2-FILE ASSIGN TO "TAG2.DAT".
 SELECT REP-FILE ASSIGN TO "PRN".
-</code></pre></div>
+{% endhighlight %}
 
 Within the above DIVISION we can see the INPUT-OUTPUT SECTION and within that we can see the FILE-CONTROL paragraph.  This is telling the program what names to use to refer to the files and what those files are called.  I can see from this that we have a file called TAG2.DAT and another called PRN.  Under MS-DOS, PRN referred to the printer.  However when this is run under Linux it will just create a file called PRN. 
 
 ### The DATA DIVISION
 This DIVISION specifies how data is stored and structured.
 
-<div class="highlight"><pre><code>DATA DIVISION.
+{% highlight text %}
+DATA DIVISION.
 FILE SECTION.
 FD TAG2-FILE.
 01 TAG2-RCD.
@@ -66,13 +69,14 @@ FD REP-FILE.
   03 FILLER        PIC X(6)       VALUE SPACES.
   03 REP-QTY       PIC Z9.
   03 FILLER        PIC X(6)       VALUE SPACES.
-</code></pre></div>
+{% endhighlight %}
 
 The first SECTION here is the FILE SECTION, which is specifying how the files assigned in the ENVIRONMENT DIVISION to TAG2-FILE and REP-FILE are structured.
 
 If we take TAG2-FILE we can see that it's biggest structure is TAG2-RCD which is representing a record.  This record is split into 7 fields.  The PIC statements after the names of the field specify the format of the field.  For TAG2-ORD-NBR this is 9(4) representing 4 numeric characters.  For TAG2-ACC-NBR this is A9(7)A representing an alphabetical character then 7 numeric characters then an alphabetical character.  Finally TAG2-DAT has X(6) representing 6 characters of any type.
 
-<div class="highlight"><pre><code>WORKING-STORAGE SECTION.
+{% highlight text %}
+WORKING-STORAGE SECTION.
    01 WS1-AREA.
       03 WS1-LCNT  PIC 99 VALUE 70.
 
@@ -154,7 +158,7 @@ If we take TAG2-FILE we can see that it's biggest structure is TAG2-RCD which is
         05 FILLER        PIC X(19) VALUE SPACES.
         05 FILLER        PIC X(9)  VALUE 'CONTROLS'.
         05 FILLER        PIC X(4)  VALUE SPACES.
-</code></pre></div>
+{% endhighlight %}
 
 The next section is the WORKING-STORAGE SECTION.  This is where the variables are specified.  The variables are set out in the same way as the files.  If we look at RESULT-CALC we can see that it is made up of 6 fields each with an initial value of 0.  The V used in the last 3 PIC statements represents a decimal point.
 
@@ -164,7 +168,8 @@ The variables can be referred to by any of the names specified above and will in
 ### The PROCEDURE DIVISION
 This is the DIVISION where all the processing gets done.  It can be split into SECTIONs so that you can have subroutines.  However, this piece of code doesn't have any SECTIONs within the PROCEDURE DIVISION.
 
-<div class="highlight"><pre><code>PROCEDURE DIVISION.
+{% highlight text %}
+PROCEDURE DIVISION.
      OPEN INPUT TAG2-FILE.
      OPEN OUTPUT REP-FILE.
 
@@ -173,14 +178,16 @@ This is the DIVISION where all the processing gets done.  It can be split into S
      MOVE WS1-YR TO WS1-YER.
      MOVE WS1-MT TO WS1-MTH.
      MOVE WS1-DY TO WS1-DAY.
-</code></pre></div>
+{% endhighlight %}
 This is opening the files mentioned earlier for INPUT and OUTPUT.  Then today's date is put into WS1-DATE.  After that, the fields in WS1-DATE are specified directly, e.g. WS1-YR.  These fields are moved into fields from WS1-HDR-AREA, e.g. WS1-YER.  Note the Y2K problem here as it is only using a 6 byte date.
 
-<div class="highlight"><pre><code>A01-OP-LINE.
+{% highlight text %}
+A01-OP-LINE.
    READ TAG2-FILE AT END GO TO A90-END.
-</code></pre></div>
+{% endhighlight %}
 A01-OP-LINE is a paragraph label that is used to form a loop.  The next line reads a record from TAG2-FILE and if the end of file is reached it jumps to the paragraph A90-END.
-<div class="highlight"><pre><code>* Put Correct Colour Name in Sub Heading
+{% highlight text %}
+* Put Correct Colour Name in Sub Heading
      IF TAG2-COLOUR = 'BLU'
      THEN MOVE SPACES TO SUB-COLOUR
           MOVE 'BLUE' TO SUB-COLOUR
@@ -189,9 +196,10 @@ A01-OP-LINE is a paragraph label that is used to form a loop.  The next line rea
                MOVE 'RED' TO SUB-COLOUR
           ELSE MOVE SPACES TO SUB-COLOUR
                MOVE 'BLACK' TO SUB-COLOUR.
-</code></pre></div>
+{% endhighlight %}
 This puts the colour of the tag record read in from the TAG2-FILE into SUB-COLOUR which is a field of WS1-SUB-HDR.
-<div class="highlight"><pre><code>* If the number of lines printed > 57 then put up the page heading
+{% highlight text %}
+* If the number of lines printed > 57 then put up the page heading
      IF WS1-LCNT > 57
      THEN ADD 1 TO WS1-PAGE-EDIT
           MOVE "  " TO WS1-PAGE-NBR
@@ -205,9 +213,10 @@ This puts the colour of the tag record read in from the TAG2-FILE into SUB-COLOU
           WRITE REP-RCD FROM WS1-SUB-HDR2 AFTER ADVANCING 1 LINE
           ADD 4 TO WS1-LCNT
           MOVE SPACES TO REP-RCD.
-</code></pre></div>
+{% endhighlight %}
 This prints a header for the page if more than 57 lines have been printed and also prints a heading for the current colour table.  WS1-LCNT is initialised with the value of 70 in the WORKING-STORAGE SECTION, so a header is printed on the first page.  The code if fairly self explanatory.  The MOVE statements copy the literal or variable being referred to into the variable specified.  SPACES represent a full field of space characters.  ZERO is the numerical literal 0.  WRITE REP-RCD... writes the record specified by FROM to the file REP-FILE which is associated with REP-RCD.  The THEN statement will execute everything up to the period, this is called a sentence.
-<div class="highlight"><pre><code>IF WS1-COLOR-CHECK = TAG2-COLOUR
+{% highlight text %}
+IF WS1-COLOR-CHECK = TAG2-COLOUR
 THEN NEXT SENTENCE
 ELSE MOVE SPACES TO WS1-COLOR-CHECK
     MOVE TAG2-COLOUR TO WS1-COLOR-CHECK
@@ -215,15 +224,16 @@ ELSE MOVE SPACES TO WS1-COLOR-CHECK
     WRITE REP-RCD FROM WS1-SUB-HDR2 AFTER ADVANCING 1 LINE
     ADD 4 TO WS1-LCNT
     MOVE SPACES TO REP-RCD.
-</code></pre></div>
+{% endhighlight %}
 
 This checks if the record just read from TAG2-FILE is a different colour from the current table colour.  If the colour is the same then it skips to the NEXT SENTENCE, i.e. after the period.  Otherwise it prints a heading for the table.  The AFTER ADVANCING 3 LINES outputs 3 newlines to the file before writing the record.
-<div class="highlight"><pre><code>MOVE TAG2-ACC-NBR TO REP-ACC-NBR.
+{% highlight text %}
+MOVE TAG2-ACC-NBR TO REP-ACC-NBR.
 MOVE TAG2-TAG TO REP-TAG.
 MOVE TAG2-PRN TO REP-PRN.
 MOVE TAG2-QTY TO REP-QTY.
 WRITE REP-RCD AFTER ADVANCING 1 LINE.
-</code></pre></div>
+{% endhighlight %}
 This copies some of the fields of the record TAG2-RCD read in from TAG2-FILE to some of the fields of the record REP-RCD.  The REP-RCD record is then written to the associated REP-FILE.  If you look at REP-RCD in the FILE SECTION you will see that each field is seperated by FILLER spaces.  This is so that a neat table can be built for output.
 
 {% highlight text %}
