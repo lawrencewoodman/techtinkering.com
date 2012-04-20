@@ -4,6 +4,7 @@ title: "Dealing Sympathetically with Legacy Code"
 categories:
   - Programming
   - Legacy Code
+  - Retro
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
