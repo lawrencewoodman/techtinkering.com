@@ -31,7 +31,7 @@ Elements of coding styles that you may want to consider seriously before changin
 Comments can be useful to explain complex code or dependencies.  However, they are often out of step with the code and therefore can confuse.  Think seriously before putting comments in code.  I often use them as I am exploring code to understand it.  Once I have gained the understanding that I was looking for, I will refactor the code and remove virtually all the comments.  Less is more as far as comments go.
 
 ## Refactoring
-Rather than using comments to explain code.  I would much rather refactor the code so that the variables and functions make clear what is happening.  Clear functions can be tested and maintained more easily.  In addition, if your understanding of the code changes, you are more likely to change the functions to suit, this may not be the case with comments.
+Rather than using comments to explain code, I would much rather refactor the code so that the variables and functions make it clear what is happening.  Functions can be tested and maintained more easily and if your understanding of the code changes, you are more likely to change the functions to suit, this may not be the case with comments.  For more on this take a look at: [Refactoring: Arm Yourself in the War Against Useless Comments](/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments).
 
 ## Testing
 Adding tests to code can be the most useful change that you make.  It will often feel difficult if the code wasn't designed to be tested, but will reap rewards in terms of understanding and confidence in the code.  Think of good tests as a gift to yourself and those that maintain the code after you.
