@@ -139,4 +139,4 @@ void createCommands(Tcl_Interp *interp)
 {% endhighlight %}
 
 ## A Small Demonstration
-I have created the [sdl_and_tk_demo](https://github.com/LawrenceWoodman/sdl_and_tk_demo) on github to demonstrate how to put this altogether.  The README contains information on how to compile and run the demo.
+I have created the [sdl_and_tk_demo](https://github.com/LawrenceWoodman/sdl_and_tk_demo) on github to demonstrate how to put this altogether.  The README contains information on how to compile and run the demo.  This demo was inspired by [Kent Mein](http://www-users.cs.umn.edu/~mein/)'s [SDL and Tk MDI demo](http://www.libsdl.org/projects/tcl-demo/).
