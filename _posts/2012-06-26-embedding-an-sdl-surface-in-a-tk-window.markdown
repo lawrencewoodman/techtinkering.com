@@ -4,7 +4,7 @@ title: "Embedding an SDL Surface in a Tk Window"
 categories:
   - Programming
   - SDL
-  - Tk
+  - Tcl/Tk
   - Tutorial
 author:
   name: Lawrence Woodman
