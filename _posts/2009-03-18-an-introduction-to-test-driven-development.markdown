@@ -2,7 +2,7 @@
 layout: post
 title: "An Introduction to Test-Driven Development"
 summaryPic: small_tdd.jpg
-categories:
+tags:
   - Test Driven Development
   - Debugging
   - Programming

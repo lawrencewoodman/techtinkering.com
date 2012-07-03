@@ -3,7 +3,7 @@ layout: post
 title: "Writing my First Program to Toggle in to the IMSAI 8080"
 summaryPic: small_imsai_frontpanel_z80pack_ones_zeros.jpg
 summaryPicTitle: "I have been staring at Binary for too long"
-categories:
+tags:
   - 8080
   - IMSAI
   - Programming

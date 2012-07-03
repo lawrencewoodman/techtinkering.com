@@ -3,7 +3,7 @@ layout: book_review
 title: "Book Review: The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr."
 summaryPic: book_mythical_man_month.jpg
 rating: 4.0
-categories:
+tags:
   - Book
   - Programming
   - Retro

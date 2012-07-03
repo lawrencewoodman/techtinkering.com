@@ -2,7 +2,7 @@
 layout: post
 title: "Hello, World! in SUBLEQ Assembly"
 summaryPic: small_hello_subleq.jpg
-categories:
+tags:
   - Programming
   - OISC
   - SUBLEQ

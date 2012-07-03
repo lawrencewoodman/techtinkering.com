@@ -3,7 +3,7 @@ layout: post
 title: "Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data"
 summaryPic: small_textpix_eye.jpg
 summaryTitle: "An example image reduced by TextPix"
-categories:
+tags:
   - Conversion
   - Graphics
   - Images

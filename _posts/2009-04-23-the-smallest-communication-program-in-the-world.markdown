@@ -2,7 +2,7 @@
 layout: post
 title: "The Smallest Communication Program in the World?"
 summaryPic: small_small_comm_program.jpg
-categories:
+tags:
   - 80x86
   - DOS
   - Programming

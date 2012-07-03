@@ -3,7 +3,7 @@ layout: post
 title: "Using DOSBox to Run DOS Games and Applications"
 summaryPic: small_cnc_ingame.png
 summaryPicTitle: "Command and Conquer In-Game Screenshot"
-categories:
+tags:
   - DOS
   - Emulation
   - Retro

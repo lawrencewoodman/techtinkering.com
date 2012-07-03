@@ -1,7 +1,7 @@
 module Jekyll
 
   class TagIndex < Page
-    def initialize(site, base, dir, category)
+    def initialize(site, base, dir, tag)
       @site = site
       @base = base
       @dir = dir
@@ -9,11 +9,11 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), 'tag_index.html')
-      self.data['category'] = category
+      self.data['tag'] = tag
       self.data['tagdir'] = dir
 
       tag_title_prefix = site.config['tag_title_prefix'] || 'Tag: '
-      self.data['title'] = "#{tag_title_prefix}#{category}"
+      self.data['title'] = "#{tag_title_prefix}#{tag}"
     end
   end
 
@@ -23,8 +23,8 @@ module Jekyll
     def generate(site)
       if site.layouts.key? 'tag_index'
         dir = site.config['tag_dir'] || 'tag'
-        site.categories.keys.each do |category|
-          tag = category.to_s
+        site.tags.keys.each do |tag|
+          tag = tag.to_s
           write_tag_index(site, File.join(dir, tag_to_dirname(tag)), tag)
         end
       end
@@ -38,7 +38,7 @@ module Jekyll
     end
 
     def tag_to_dirname(tag)
-      tag.gsub(/[^[:alnum:]_-]/, '').downcase
+      tag.to_s.gsub(/[^[:alnum:]_-]/, '').downcase
     end
   end
 

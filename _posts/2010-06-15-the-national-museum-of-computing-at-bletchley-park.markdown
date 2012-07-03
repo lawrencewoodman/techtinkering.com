@@ -3,7 +3,7 @@ layout: post
 title: "The National Museum of Computing at Bletchley Park"
 summaryPic: small_pdp11.jpg
 summaryTitle: "A DEC PDP-11"
-categories:
+tags:
   - Museum
   - Retro
 author:

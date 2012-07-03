@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is COBOL really understandable after 14 years?
-categories:
+tags:
   - Programming
   - Cobol
   - Retro

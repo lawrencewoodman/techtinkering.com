@@ -2,7 +2,7 @@
 layout: post
 title: "An Introduction to Corewar"
 summaryPic: small_corewar.jpg
-categories:
+tags:
   - Programming
   - Corewar
   - Programming Games

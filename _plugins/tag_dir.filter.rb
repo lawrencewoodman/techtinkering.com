@@ -4,7 +4,7 @@ module TagDirFilter
 
   # Return Tag directory for a tag
   def tag_dir(tag)
-    tag.gsub(/[^[:alnum:]_-]/, '').downcase
+    tag.to_s.gsub(/[^[:alnum:]_-]/, '').downcase
   end
 
 end

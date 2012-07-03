@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Refactoring: Arm Yourself in the War Against Useless Comments"
-categories:
+tags:
   - Programming
 author:
   name: Lawrence Woodman

@@ -2,7 +2,7 @@
 layout: post
 title: "A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8"
 summaryPic: small_paper_tape.jpg
-categories:
+tags:
   - DEC
   - Retro
   - PDP-8

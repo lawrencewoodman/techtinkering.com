@@ -2,7 +2,7 @@
 layout: post
 title: "Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture"
 summaryPic: small_subleq_plus.jpg
-categories:
+tags:
   - Computer Architecure
   - SUBLEQ
   - OISC

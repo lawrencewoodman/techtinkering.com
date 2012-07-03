@@ -3,7 +3,7 @@ layout: book_review
 title: "Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally"
 summaryPic: book_electronic_brains.jpg
 rating: 5.0
-categories:
+tags:
   - Book
   - Review
   - History

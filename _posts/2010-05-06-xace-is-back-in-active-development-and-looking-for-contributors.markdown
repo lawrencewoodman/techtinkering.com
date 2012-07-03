@@ -3,7 +3,7 @@ layout: post
 title: "xAce is Back in Active Development and Looking For Contributors"
 summaryPic: small_xace_v0.4.jpg
 summaryTitle: "Screen shot of xAce"
-categories:
+tags:
   - Emulation
   - Jupiter Ace
   - Retro

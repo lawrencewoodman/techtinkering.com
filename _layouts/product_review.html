@@ -25,8 +25,8 @@ menuOption: article
     <span class="tagLine">
       <br />
       Tags:
-      {% for category in page.categories %}
-        <a rel="tag" href="/tag/{{ category|tag_dir }}">{{ category }}</a> &nbsp; &nbsp;
+      {% for tag in page.tags %}
+        <a rel="tag" href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
       {% endfor %}
     </span>
 

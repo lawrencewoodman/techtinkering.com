@@ -2,7 +2,7 @@
 layout: post
 title: "Running 4K FORTRAN on a DEC PDP-8"
 summaryPic: small_fortran_source.jpg
-categories:
+tags:
   - DEC
   - Retro
   - PDP-8

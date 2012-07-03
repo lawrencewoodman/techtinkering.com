@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Dealing Sympathetically with Legacy Code"
-categories:
+tags:
   - Programming
   - Legacy Code
   - Retro

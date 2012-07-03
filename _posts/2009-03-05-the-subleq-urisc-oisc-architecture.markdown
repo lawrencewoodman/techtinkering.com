@@ -2,7 +2,7 @@
 layout: post
 title: "The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture"
 summaryPic: small_urisc_oisc.jpg
-categories:
+tags:
   - Computer Architecure
   - OISC
   - SUBLEQ

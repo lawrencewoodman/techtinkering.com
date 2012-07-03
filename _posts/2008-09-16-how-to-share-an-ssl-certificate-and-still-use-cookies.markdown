@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to share an SSL certificate and still use cookies
-categories:
+tags:
   - PHP
   - Programming
   - Security

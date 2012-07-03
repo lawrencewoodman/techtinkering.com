@@ -12,8 +12,8 @@ menuOption: home
       <span class="tagLine">
         <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
         &nbsp; Tags:
-        {% for category in post.categories %}
-          <a href="/tag/{{ category|tag_dir }}">{{ category }}</a> &nbsp; &nbsp;
+        {% for tag in post.tags %}
+          <a href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
         {% endfor %}
       </span>
 

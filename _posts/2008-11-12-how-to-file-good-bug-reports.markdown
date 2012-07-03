@@ -2,7 +2,7 @@
 layout: post
 title: "How to File Good Bug Reports"
 summaryPic: small_bug.jpg
-categories:
+tags:
   - Debugging
   - Open Source
 author:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out"
-categories:
+tags:
   - Web Scraping
   - Ruby
 author:

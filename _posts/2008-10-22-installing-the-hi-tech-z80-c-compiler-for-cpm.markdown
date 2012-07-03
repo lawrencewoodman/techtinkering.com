@@ -2,7 +2,7 @@
 layout: post
 title: "Installing the HI-TECH Z80 C Compiler for CP/M"
 summaryPic: small_war_c.png
-categories:
+tags:
   - C
   - CP/M
   - Programming

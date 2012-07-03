@@ -3,7 +3,7 @@ layout: product_review
 title: "Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin"
 summaryPic: cable_usb_to_parallel.jpg
 rating: 5.0
-categories:
+tags:
   - Retro
   - Review
   - Linux

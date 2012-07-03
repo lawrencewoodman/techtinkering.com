@@ -3,7 +3,7 @@ layout: post
 title: "Chinese Man Spotted On Tissue"
 summaryPic: small_chinese_man_toilet_paper_annotated.jpg
 summaryPicTitle: "Chinese Man Found on Tissue (Annotated)"
-categories:
+tags:
   - Off Topic
 author:
   name: Lawrence Woodman

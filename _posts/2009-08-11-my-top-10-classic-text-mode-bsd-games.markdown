@@ -2,7 +2,7 @@
 layout: post
 title: "My Top 10 Classic Text Mode BSD Games"
 summaryPic: small_bsd_games_trek_splash.jpg
-categories:
+tags:
   - BSD
   - Games
   - Retro

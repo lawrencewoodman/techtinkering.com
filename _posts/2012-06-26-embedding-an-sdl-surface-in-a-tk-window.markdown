@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Embedding an SDL Surface in a Tk Window"
-categories:
+tags:
   - Programming
   - SDL
   - Tcl/Tk

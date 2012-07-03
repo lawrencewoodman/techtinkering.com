@@ -2,7 +2,7 @@
 layout: post
 title: "Setting up a Beowulf Cluster Using Open MPI on Linux"
 summaryPic: small_master_slave_mpi.jpg
-categories:
+tags:
   - MPI
   - Linux
   - Beowulf Clusters

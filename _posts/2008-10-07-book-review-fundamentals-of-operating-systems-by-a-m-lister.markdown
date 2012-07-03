@@ -3,7 +3,7 @@ layout: book_review
 title: "Book Review: Fundamentals of Operating Systems by A.M. Lister - Second Edition"
 summaryPic: book_fundamentals_operating_systems.png
 rating: 4.0
-categories:
+tags:
   - Book
   - Operating Systems
   - Retro

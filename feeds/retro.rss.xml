@@ -10,7 +10,7 @@
     <language>en-gb</language>
 
     {% for post in site.posts %}
-      {% if post.categories contains 'Retro' %}
+      {% if post.tags contains 'Retro' %}
         <item>
           <title>{{post.title}}</title>
           <link>http://techtinkering.com{{post.url}}</link>

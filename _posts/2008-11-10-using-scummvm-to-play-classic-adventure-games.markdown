@@ -3,7 +3,7 @@ layout: post
 title: "Using ScummVM to Play Classic Adventure Games"
 summaryPic: small_scummvm_menu.jpg
 summaryPicTitle: "ScummVM game selection screen"
-categories:
+tags:
   - Adventure Games
   - Games
   - Emulation

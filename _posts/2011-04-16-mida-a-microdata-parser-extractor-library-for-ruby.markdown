@@ -2,7 +2,7 @@
 layout: post
 title: "Mida - A Microdata parser/extractor library for Ruby"
 summaryPic: small_microdata.png
-categories:
+tags:
   - Microdata
   - Gem
   - Library
