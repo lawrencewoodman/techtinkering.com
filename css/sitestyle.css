@@ -200,11 +200,29 @@ h1,h2,h3,h4 {
 
 /* ---- Columns  ---- */
 div#leftColumn {
-  width: 160px;
-  height: 1200px;
+  width:58%;
   float: left;
-  margin: 0;
 }
+
+div#rightColumn {
+  width:38%;
+  float: right;
+}
+
+/* ---- Home ---- */
+div.tagCloud {
+  margin-top: 2em;
+  padding: 1em;
+  border: 1px solid;
+  border-color: #CCC;
+  background: #F1F1ED;
+}
+div.tagCloud a {color: blue}
+div.tagCloud a:visited {color: blue }
+
+
+ul#popularPosts a {color: blue}
+ul#popularPosts a:visited {color: blue}
 
 /* ---- Posts ---- */
 h2 a { color: black; }

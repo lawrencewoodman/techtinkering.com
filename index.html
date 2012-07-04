@@ -3,23 +3,42 @@ layout: base
 title: TechTinkering
 menuOption: home
 ---
-<ul id="posts">
-  {% for post in site.posts %}
-  <li>
-    <header>
-      <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-      {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
-      <span class="tagLine">
-        <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
-        &nbsp; Tags:
-        {% for tag in post.tags %}
-          <a href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
-        {% endfor %}
-      </span>
 
-    </header>
-    <div>{{ post.content|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
-  </li>
-  {% endfor %}
-</ul>
+<div id="leftColumn">
 
+  <ul id="posts">
+    {% for post in site.posts limit: 5%}
+    <li>
+      <header>
+        <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
+        <span class="tagLine">
+          <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
+          &nbsp; Tags:
+          {% for tag in post.tags %}
+            <a href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
+          {% endfor %}
+        </span>
+
+      </header>
+      <div>{{ post.content|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="rightColumn">
+  <div class="tagCloud">
+    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+  </div>
+
+  <h3>Popular Articles</h3>
+
+  <ul id="popularPosts">
+    <li><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games">My Top 10 Classic Text Mode BSD Games</a>
+    <li><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux">Setting up a Beowulf Cluster Using Open MPI on Linux</a>
+    <li><a href="/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally">Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally</a>
+    <li><a href="/2009/04/30/an-introduction-to-corewar">An Introduction to Corewar</a>
+    <li><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications">Using DOSBox to Run DOS Games and Applications</a>
+  </ul>
+</div>
