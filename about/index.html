@@ -3,15 +3,42 @@ layout: base
 title: About TechTinkering
 menuOption: about
 ---
-<h2>About TechTinkering</h2>
-TechTinkering is a blog devoted to articles about Retro Computers,
-Open Source, Programming and General Technical Tinkering.  It's main author
-is <a href="/profile/lawrencewoodman">Lawrence Woodman</a>.
+<div id="leftColumn">
+  <h2>About TechTinkering</h2>
+  TechTinkering is a blog devoted to articles about Retro Computers,
+  Open Source, Programming and General Technical Tinkering.  It's main author
+  is <a href="/profile/lawrencewoodman">Lawrence Woodman</a>.
 
-<p>TechTinkering uses <a href="http://jekyllrb.com">jekyll</a> to create a
-statically generated site and the source for the site is hosted on
-<a href="http://github.com/lawrencewoodman/techtinkering.com">GitHub</a>.</p>
+  <p>TechTinkering uses <a href="http://jekyllrb.com">jekyll</a> to create a
+  statically generated site and the source for the site is hosted on
+  <a href="http://github.com/lawrencewoodman/techtinkering.com">GitHub</a>.</p>
 
-<h2>Guest Authors</h2>
-If you would like to write an article for the site, then please drop me an email
-or send a pull request.  I would love to hear from you.
+  <h2>Guest Authors</h2>
+  If you would like to write an article for the site, then please drop me an
+  email or send a pull request.  I would love to hear from you.
+
+  <h2>Latest Articles</h2>
+  <ul class="headlinePosts">
+    {% for post in site.posts limit: 5%}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="rightColumn">
+  <div class="tagCloud">
+    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+  </div>
+
+  <h2>Popular Articles</h2>
+
+  <ul class="headlinePosts">
+    <li><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games">My Top 10 Classic Text Mode BSD Games</a>
+    <li><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux">Setting up a Beowulf Cluster Using Open MPI on Linux</a>
+    <li><a href="/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally">Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally</a>
+    <li><a href="/2009/04/30/an-introduction-to-corewar">An Introduction to Corewar</a>
+    <li><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications">Using DOSBox to Run DOS Games and Applications</a>
+  </ul>
+</div>

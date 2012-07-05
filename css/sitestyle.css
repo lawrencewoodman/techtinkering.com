@@ -221,8 +221,8 @@ div.tagCloud a {color: blue}
 div.tagCloud a:visited {color: blue }
 
 
-ul#popularPosts a {color: blue}
-ul#popularPosts a:visited {color: blue}
+ul.headlinePosts a {color: blue}
+ul#headlinePosts a:visited {color: blue}
 
 /* ---- Posts ---- */
 h2 a { color: black; }
