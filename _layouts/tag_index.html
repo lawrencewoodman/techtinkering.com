@@ -2,24 +2,37 @@
 layout: base
 menuOption: tagged
 ---
-<h1>Articles tagged: <em>{{ page.tag }}</em></h1>
-<ul id="posts">
-  {% for post in site.posts %}
-    {% if post.tags contains page.tag %}
-      <li>
-        <header>
-          <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
-          {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
-          <span class="tagLine">
-            <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
-            &nbsp; Tags:
-            {% for tag in post.tags %}
-              <a href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
-            {% endfor %}
-          </span>
-        </header>
-      </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+<div id="leftColumn">
+  <h2>Articles tagged: <em>{{ page.tag }}</em></h2>
+  <ul id="headlinePosts">
+    {% for post in site.posts %}
+      {% if post.tags contains page.tag %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 
+</div>
+
+<div id="rightColumn">
+  <div class="tagCloud">
+    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+  </div>
+
+  <div style="margin-top: 1em;">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 336x280 - TechTinkeing */
+    google_ad_slot = "1826225277";
+    google_ad_width = 336;
+    google_ad_height = 280;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+</div>
