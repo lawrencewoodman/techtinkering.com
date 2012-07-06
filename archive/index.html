@@ -1,0 +1,56 @@
+---
+layout: base
+title: Archive of TechTinkering Articles
+menuOption: archive
+---
+<div id="leftColumn">
+  <h2>All Articles</h2>
+  <ul class="headlinePosts">
+    {% comment %} Source: http://mikerowecode.com/2010/08/jekyll_archives_grouped_by_year.html {% endcomment %}
+    {% for post in site.posts %}
+
+      {% unless post.next %}
+        <h3>{{ post.date | date: '%Y' }}</h3>
+      {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h3>{{ post.date | date: '%Y' }}</h3>
+        {% endif %}
+      {% endunless %}
+
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+
+  </ul>
+</div>
+
+<div id="rightColumn">
+  <div class="tagCloud">
+    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+  </div>
+
+  <div style="margin-top: 1em;">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 336x280 - TechTinkeing */
+    google_ad_slot = "1826225277";
+    google_ad_width = 336;
+    google_ad_height = 280;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Popular Articles</h2>
+
+  <ul class="headlinePosts">
+    <li><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games">My Top 10 Classic Text Mode BSD Games</a>
+    <li><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux">Setting up a Beowulf Cluster Using Open MPI on Linux</a>
+    <li><a href="/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally">Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally</a>
+    <li><a href="/2009/04/30/an-introduction-to-corewar">An Introduction to Corewar</a>
+    <li><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications">Using DOSBox to Run DOS Games and Applications</a>
+  </ul>
+</div>

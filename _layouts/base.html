@@ -54,7 +54,8 @@
             {% if page.menuOption == "terms" %}
               <li><a id="current" href="{{ page.url }}">Terms and Conditions</a></li>
             {% endif %}
-
+            <li><a {%if page.menuOption == "archive"%}id="current"{%endif%}
+                   href="/archive">Archive</a></li>
             <li><a {%if page.menuOption == "about"%}id="current"{%endif%}
                    href="/about">About</a></li>
           </ul>
