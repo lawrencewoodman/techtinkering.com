@@ -11,6 +11,11 @@ menuOption: profile
 
       {% if page.profile.online-presence %}
         <h4>Online Presence</h4>
+
+        {% if page.profile.online-presence.twitter %}
+          <a href="{{ page.profile.online-presence.twitter }}">Twitter</a><br />
+        {% endif %}
+
         {% if page.profile.online-presence.github %}
           <a href="{{ page.profile.online-presence.github }}">Github</a><br />
         {% endif %}
