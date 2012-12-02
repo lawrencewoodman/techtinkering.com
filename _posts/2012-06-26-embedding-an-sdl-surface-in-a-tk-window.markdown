@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Embedding an SDL Surface in a Tk Window"
+edited: 2012-12-02
 tags:
   - Programming
   - SDL
@@ -20,6 +21,11 @@ To embed an SDL surface in another window you have to alter the `SDL_WINDOWID` e
 To ensure that the Tk window is displayed you need to call something like:
 {% highlight c %}
 Tcl_Eval(interp, "update");
+{% endhighlight %}
+
+From Tcl you must provide a window for the SDL surface to be embedded in.  This should have the `background` set to `""` otherwise you will get problems when other windows cover it:
+{% highlight tcl %}
+frame .screen -width 400 -height 400 -background ""
 {% endhighlight %}
 
 Then to get the window ID and set `SDL_WINDOWID`:
@@ -101,10 +107,10 @@ proc handleKey {key} {
 bind all <KeyRelease> {handleKey %K}
 {% endhighlight %}
 
-### Handling Focus Events
-SDL also needs to know when the screen is put into focus. From Tcl:
+### Handling Expose Events
+SDL also needs to know when the screen should be redrawn. From Tcl:
 {% highlight tcl %}
-bind . <FocusIn> {screen_refresh}
+bind . <Expose> {screen_refresh}
 {% endhighlight %}
 
 And to provide the `screen_refresh` command:
