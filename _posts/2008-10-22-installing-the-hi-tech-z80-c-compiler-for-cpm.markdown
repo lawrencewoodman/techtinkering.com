@@ -18,7 +18,7 @@ licence: cc_attrib
 My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a number of options available in the archives, but I have found that [HI-TECH](http://www.hitech.com.au/) are allowing their CP/M C Compiler to be downloaded for free.  This is a very good product, has good documentation, is almost ANSI C compliant and can be used for commercial and non-commercial use.  This, therefore, is the one I have chosen.
 
 ## Downloading the HI-TECH Z80 CP/M C Compiler
-At one time this could be downloaded from the HI-TECH site, however the best place to get it from now is from [z80.eu](http://www.z80.eu/c-compiler.html).
+At one time this could be downloaded from the HI-TECH site, however the best place to get it from now is [z80.eu](http://www.z80.eu/c-compiler.html).
 
 The files are self-extracting lharc'ed archives so I installed [lha](http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/), which is part of my Debian distro.  To extract the contents of the main compiler archive, I created a subdirectory called `z80v309`.  I entered it and ran:
 {% highlight bash %}$ lha e ../z80v309.exe{% endhighlight %}
