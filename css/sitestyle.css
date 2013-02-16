@@ -1,28 +1,20 @@
-body {  
-  color: black; 
-  font-family: corbel, 'lucida grande', helvetica, sans-serif;
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal;
-  width: 100%;
-  font-size: 14pt;
-  margin: 0;
+  font-size: 100%;
+  line-height: 1.5;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* ----- Top Banner ----- */
-div#topBanner {
-  vertical-align: bottom;
-  height: 80px;
-  background: black;
-  margin: 0;
-  padding: 0;
-}
-
-div#topBannerInner {
-  position: relative;
-  height: 80px;
-  vertical-align: bottom;
-  margin: 0 auto;
+div.bannerInner {
   max-width: 1024px;
-  padding-left: 1.5em;
+  line-height: 1;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 img#logo {
@@ -33,47 +25,16 @@ img#logo {
   border: none;
 }
 
-/* Navigation Menu */
-nav {
-  position: absolute;
-  top: 50px;
-  left: 450px;
-}
-
-nav ul {
-  vertical-align: bottom;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  height: 30px;
-}
-
-nav li {
-  float: left;
-  height: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  display: block;
-  height: 30px;
-  line-height: 30px;
-  text-decoration: none;
-  margin-left: 1px;
-  padding:0 10px;
-  color: white;
-  background: gray;
-  border-radius: 10px 10px 0px 0px;
-  -moz-border-radius: 10px 10px 0px 0px;
-  -webkit-border-radius: 10px 10px 0px 0px;
-}
-
-nav a#current {
-  background: white;
-  color: black;
-}
-
 /* ----- Icons ----- */
+img.bannerIcon {
+  float: right;
+  border: none;
+  margin-right: 5px;
+  margin-top: 5px;
+  height: 28px;
+  width: 28px;
+}
+
 img#octocatIcon {
   position: absolute;
   top: 5px;
@@ -138,9 +99,10 @@ div#footerInner {
   color: #00A600;
 }
 
-div#footerInner a { font-size: 10pt; color: #00A600; text-decoration: none; }
-div#footerInner table { padding-top: 0.5em; }
-div#footerInner table td { vertical-align: top; padding-right: 2em; }
+footer div.container { padding-top: 0.5em; }
+footer a { font-size: 10pt; color: #00A600; text-decoration: none; }
+footer table { padding-top: 0.5em; }
+footer table td { vertical-align: top; padding-right: 2em; }
 
 /* ----- Profile ----- */
 table#profileColumns { margin-top: 1em; }
@@ -171,14 +133,16 @@ table#profileTable td a {color: blue;}
 div#profileText { margin-top: 1em; }
 
 /* ----- Main content ----- */
-div#content {
-  padding: 0.5em 1.5em;
+div.content {
+ /* padding: 0.5em 1.5em;*/
   max-width: 1024px;
+  min-height: 1024px;
+/*
   background: white;
   border: none;
-  min-height: 1024px;
   line-height: 1.5;
   overflow: auto;
+  */
   margin: 0 auto;
 }
 
@@ -196,17 +160,6 @@ h1,h2,h3,h4 {
   margin-top: 1em;
   margin-bottom: 0;
   padding-bottom: 0;
-}
-
-/* ---- Columns  ---- */
-div#leftColumn {
-  width:58%;
-  float: left;
-}
-
-div#rightColumn {
-  width:38%;
-  float: right;
 }
 
 /* ---- Home ---- */
@@ -252,18 +205,17 @@ img.rightFlow {
   border: none;
 }
 
-div#articleTopLeftAd {
-  float: left;
-  margin-top: 1em;
-  margin-right: 1em;
-  margin-bottom: 1em;
-}
-
 div#rightAd {
   float: right;
   margin-left: 1em;
   margin-top: 1em;
 }
+
+div.columnAd {
+  margin-top: 3em;
+}
+
+article { padding-right: 1em; }
 
 /* ---- Book Reviews ---- */
 table.bookDetails { float: left; }

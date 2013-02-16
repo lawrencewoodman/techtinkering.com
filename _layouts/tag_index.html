@@ -2,7 +2,7 @@
 layout: base
 menuOption: tagged
 ---
-<div id="leftColumn">
+<div class="span8">
   <h2>Articles tagged: <em>{{ page.tag }}</em></h2>
   <ul id="headlinePosts">
     {% for post in site.posts %}
@@ -16,23 +16,24 @@ menuOption: tagged
 
 </div>
 
-<div id="rightColumn">
-  <div class="tagCloud">
-    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
-  </div>
+<div class="span4">
 
-  <div style="margin-top: 1em;">
+  <div class="columnAd">
     <script type="text/javascript"><!--
     google_ad_client = "ca-pub-1613732348909658";
-    /* 336x280 - TechTinkeing */
-    google_ad_slot = "1826225277";
-    google_ad_width = 336;
-    google_ad_height = 280;
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
     //-->
     </script>
     <script type="text/javascript"
     src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
     </script>
+  </div>
+
+  <div class="tagCloud">
+    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
   </div>
 
 </div>

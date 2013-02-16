@@ -8,6 +8,9 @@
   <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
   <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
 
@@ -23,92 +26,105 @@
     <script src="/js/html5.js"></script>
   <![endif]-->
 
+  <script src="/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
-  <div id="topBanner">
-    <div id="topBannerInner">
-       
-      <a href="/"><img id="logo" src="/images/logo.png" alt="TechTinkering"/></a>
+  <div class="navbar navbar-fixed-top navbar-inverse">
+    <nav class="navbar-inner">
+      <div class="bannerInner">
+        <a class="brand" href="/">TechTinkering</a>
 
-        <nav>
-          <ul>
-            <li><a {%if page.menuOption == "home"%}id="current"{%endif%}
-                   href="/">Home</a></li>
-            {% if page.menuOption == "article" %}
-              <li><a id="current" href="{{ page.url }}">Article</a></li>
-            {% endif %}
+        <ul class="nav">
+          <li
+          {% if page.menuOption == "home" %}
+            class="active"
+          {% endif %}
+          ><a href="/">Home</a></li>
 
-            {% if page.menuOption == "profile" %}
-              <li><a id="current" href="{{ page.url }}">Profile</a></li>
-            {% endif %}
+          <li
+          {% if page.menuOption == "archive" %}
+            class="active"
+          {% endif %}
+          ><a href="/archive">Archive</a></li>
 
-            {% if page.menuOption == "statinfo" %}
-              <li><a id="current" href="{{ page.url }}">Statutory Information</a></li>
-            {% endif %}
+          {% if page.menuOption == "article" %}
+          <li class="active"><a href="{{ page.url }}">Article</a></li>
+          {% endif %}
 
-            {% if page.menuOption == "tagged" %}
-              <li><a id="current" href="{{ page.url }}">Tagged Articles</a></li>
-            {% endif %}
+          {% if page.menuOption == "profile" %}
+          <li class="active"><a href="{{ page.url }}">Profile</a></li>
+          {% endif %}
 
-            {% if page.menuOption == "terms" %}
-              <li><a id="current" href="{{ page.url }}">Terms and Conditions</a></li>
-            {% endif %}
-            <li><a {%if page.menuOption == "archive"%}id="current"{%endif%}
-                   href="/archive">Archive</a></li>
-            <li><a {%if page.menuOption == "about"%}id="current"{%endif%}
-                   href="/about">About</a></li>
-          </ul>
-        </nav>
+          {% if page.menuOption == "statinfo" %}
+            <li class="active"><a href="{{ page.url }}">Statutory Information</a></li>
+          {% endif %}
 
-      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-        <img src="/images/octocat_fluid.png" id="octocatIcon" alt="Techtinkering Repo on  Github"/>
-      </a>
+          {% if page.menuOption == "tagged" %}
+            <li class="active"><a href="{{ page.url }}">Tagged Articles</a></li>
+          {% endif %}
 
-      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
-        <img src="/images/email.png" id="emailIcon" alt="Email"/>
-      </a>
+          {% if page.menuOption == "terms" %}
+            <li class="active"><a href="{{ page.url }}">Terms and Conditions</a></li>
+          {% endif %}
 
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-      <a href="http://twitter.com/LorryWoodman" title="@LorryWoodman on Twitter">
-        <img src="/images/twitter-button-36.png" id="twitterIcon" alt="@techtinkering on Twitter"/>
-      </a>
+          <li
+          {% if page.menuOption == "about" %}
+            class="active"
+          {% endif %}
+          ><a href="/about">About</a></li>
 
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-      <a href="http://youtube.com/lawrencewoodman" title="Lawrence Woodman's YouTube Channel">
-        <img src="/images/youtube-small-square-32.png" id="youtubeIcon" alt="YouTube Channel"/>
-      </a>
+        </ul>
+
+        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+          <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+        </a>
+
+        <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+        <a href="http://youtube.com/lawrencewoodman" title="Lawrence Woodman's YouTube Channel">
+          <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+        </a>
+
+        <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+        <a href="http://twitter.com/LorryWoodman" title="@LorryWoodman on Twitter">
+          <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+        </a>
 
 
-      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-        <img src="/images/feed-icon-28x28.png" id="feedIcon" alt="RSS Feed"/>
-      </a>
+        <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+        <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+          <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+        </a>
 
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+          <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+        </a>
+
+      </div>
+    </nav>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row-fluid content">
+      {{ content }}
     </div>
   </div>
 
-  <div id="content">
-    {{ content }}
-  </div>
+  <footer class="navbar navbar-fixed-bottom navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <strong>Legal:</strong> &nbsp;
+        <a href="/tandc/">Terms</a>,
+        <a href="/statinfo/">Statutory Information</a>
 
-  <div id="footer">
-    <div id="footerInner">
-      <table><tr>
-        <td>
-          <strong>Legal</strong><br />
-          <a href="/tandc/">Terms and Conditions</a><br />
-          <a href="/statinfo/">Statutory Information</a>
-        </td>
-
-        <td>
-          <strong>RSS Feeds</strong><br />
-          <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full RSS Feed</a><br />
-          <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro RSS Feed</a>
-        </td>
-      </tr></table>
+        &nbsp; &nbsp;
+        <strong>RSS Feeds:</strong> &nbsp;
+        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full RSS Feed</a>,
+        <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro RSS Feed</a>
+      </div>
     </div>
-  </div>
+  </footer>
 
   {% comment %}Amazon Product Preview Code{% endcomment%}
   <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">

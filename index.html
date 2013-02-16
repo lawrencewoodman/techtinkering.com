@@ -4,7 +4,7 @@ title: TechTinkering
 menuOption: home
 ---
 
-<div id="leftColumn">
+<div class="span8">
 
   <ul id="posts">
     {% for post in site.posts limit: 5%}
@@ -27,7 +27,7 @@ menuOption: home
   </ul>
 </div>
 
-<div id="rightColumn">
+<div class="span4">
   <div class="tagCloud">
     {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
   </div>
