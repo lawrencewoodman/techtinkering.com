@@ -10,7 +10,7 @@ menuOption: home
     {% for post in site.posts limit: 5%}
     <li>
       <header>
-        <h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+        <h1><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
         {% if post.rating %}{{ post.rating|star_rating }}{% endif %}
         <span class="tagLine">
           <time datetime="{{ post.date | date: '%Y-%m-%d'}}">{{ post.date | date_to_long_string }}</time>
