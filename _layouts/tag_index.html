@@ -4,7 +4,7 @@ menuOption: tagged
 ---
 <div class="span8">
   <h2>Articles tagged: <em>{{ page.tag }}</em></h2>
-  <ul id="headlinePosts">
+  <ul class="headlinePosts">
     {% for post in site.posts %}
       {% if post.tags contains page.tag %}
         <li>
