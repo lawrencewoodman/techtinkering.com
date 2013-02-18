@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "PDP 8 in 'Three Days of the Condor'"
 summaryPic: small_third_day_of_the_condor_pdp_8_1.jpg
 summaryPicTitle: "PDP 8/E from Three Days of the Condor"

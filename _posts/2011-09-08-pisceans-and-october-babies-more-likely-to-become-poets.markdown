@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Pisceans and October Babies More Likely to Become Poets.  Scraping Wikipedia Reveals All"
 tags:
   - Web Scraping

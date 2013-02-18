@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "An Introduction to Test-Driven Development"
 summaryPic: small_tdd.jpg
 tags:

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "My Top 10 Commodore 64 Demos"
 summaryPic: small_crest_deus_ex_machina_face.jpg
 summaryPicTitle: "High Resolution Artwork"

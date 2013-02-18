@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Setting up z80pack to create an emulated CP/M sytem"
 summaryPic: small_z80pack_cpm3.png
 summaryPicTitle: "Loading Screen for CP/M 3.0 on z80pack"

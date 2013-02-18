@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "A Jekyll Plugin to Display Ratings as Star Images"
 summaryPic: small_star_ratings.jpg
 summaryPicTitle: "star_rating filter in actin on http://trustafriend.com"

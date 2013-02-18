@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture"
 summaryPic: small_urisc_oisc.jpg
 tags:

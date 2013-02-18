@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: Is COBOL really understandable after 14 years?
 tags:
   - Programming

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "How to File Good Bug Reports"
 summaryPic: small_bug.jpg
 tags:

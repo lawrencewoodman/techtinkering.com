@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Emulating a DEC PDP-8 with SimH"
 summaryPic: small_dec_pdp8-fpanel.jpg
 tags:

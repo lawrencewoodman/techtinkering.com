@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: How to share an SSL certificate and still use cookies
 tags:
   - PHP

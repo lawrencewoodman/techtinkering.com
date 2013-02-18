@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Mida - A Microdata parser/extractor library for Ruby"
 summaryPic: small_microdata.png
 tags:

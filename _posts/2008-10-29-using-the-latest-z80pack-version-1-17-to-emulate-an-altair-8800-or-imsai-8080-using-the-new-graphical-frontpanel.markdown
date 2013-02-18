@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel"
 summaryPic: small_imsai_frontpanel_z80pack.jpg
 summaryPicTitle: "Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080"

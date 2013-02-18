@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux"
 summaryPic: small_bbs_splashscreen.jpg
 summaryTitle: "A BBS Splash Screen"

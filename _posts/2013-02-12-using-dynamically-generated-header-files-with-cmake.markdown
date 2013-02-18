@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Using Dynamically Generated Header Files with CMake"
 tags:
   - Programming

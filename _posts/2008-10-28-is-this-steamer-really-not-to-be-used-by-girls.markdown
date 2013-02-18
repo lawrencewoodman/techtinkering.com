@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Is this steamer really not to be used by girls?"
 summaryPic: small_closeup_steamer_nogirls.jpg
 summaryPicTitle: "Close-up of the label from a steamer"

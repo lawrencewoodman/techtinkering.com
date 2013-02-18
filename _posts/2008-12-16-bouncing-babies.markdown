@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Bouncing Babies"
 summaryPic: small_bouncing_babies_splash.jpg"
 summaryPicTitle: "Screenshot of Bouncing Babies' Splash Screen"

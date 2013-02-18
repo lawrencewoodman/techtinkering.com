@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Hello, World! in SUBLEQ Assembly"
 summaryPic: small_hello_subleq.jpg
 tags:

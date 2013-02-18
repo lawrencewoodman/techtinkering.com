@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Using DOSBox to Run DOS Games and Applications"
 summaryPic: small_cnc_ingame.png
 summaryPicTitle: "Command and Conquer In-Game Screenshot"

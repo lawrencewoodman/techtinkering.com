@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture"
 summaryPic: small_subleq_plus.jpg
 tags:

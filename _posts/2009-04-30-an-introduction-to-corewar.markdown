@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "An Introduction to Corewar"
 summaryPic: small_corewar.jpg
 tags:

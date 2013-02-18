@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Improving the related_posts feature of jekyll"
 tags:
   - Jekyll

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Installing the HI-TECH Z80 C Compiler for CP/M"
 summaryPic: small_war_c.png
 tags:

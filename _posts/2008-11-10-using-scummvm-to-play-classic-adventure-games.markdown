@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Using ScummVM to Play Classic Adventure Games"
 summaryPic: small_scummvm_menu.jpg
 summaryPicTitle: "ScummVM game selection screen"

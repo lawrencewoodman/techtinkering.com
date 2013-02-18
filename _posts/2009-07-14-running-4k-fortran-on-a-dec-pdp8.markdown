@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Running 4K FORTRAN on a DEC PDP-8"
 summaryPic: small_fortran_source.jpg
 tags:

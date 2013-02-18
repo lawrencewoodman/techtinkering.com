@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Dealing Sympathetically with Legacy Code"
 tags:
   - Programming

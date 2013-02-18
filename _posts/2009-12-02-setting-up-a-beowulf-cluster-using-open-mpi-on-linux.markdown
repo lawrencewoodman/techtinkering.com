@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Setting up a Beowulf Cluster Using Open MPI on Linux"
 summaryPic: small_master_slave_mpi.jpg
 tags:

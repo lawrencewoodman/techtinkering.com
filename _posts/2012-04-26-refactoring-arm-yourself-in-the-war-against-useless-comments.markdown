@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Refactoring: Arm Yourself in the War Against Useless Comments"
 tags:
   - Programming

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "My Top 10 Classic Text Mode BSD Games"
 summaryPic: small_bsd_games_trek_splash.jpg
 tags:

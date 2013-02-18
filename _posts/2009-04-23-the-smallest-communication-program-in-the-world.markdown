@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "The Smallest Communication Program in the World?"
 summaryPic: small_small_comm_program.jpg
 tags:

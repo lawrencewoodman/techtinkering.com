@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "xAce is Back in Active Development and Looking For Contributors"
 summaryPic: small_xace_v0.4.jpg
 summaryTitle: "Screen shot of xAce"

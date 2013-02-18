@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out"
 tags:
   - Web Scraping

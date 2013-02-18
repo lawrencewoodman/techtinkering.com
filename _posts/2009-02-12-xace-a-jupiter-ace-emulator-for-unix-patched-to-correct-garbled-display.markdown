@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)"
 summaryPic: small_jupiter_ace.jpg
 summaryPicTitle: "A Jupiter Ace"

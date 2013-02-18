@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Beneath a Steel Sky, My Favourite Graphical Adventure Game"
 summaryPic: small_beneath_steel_sky_trash_elevator.jpg
 summaryPicTitle: "Screenshot of Beneath a Steel Sky"

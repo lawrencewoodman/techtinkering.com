@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Installing ZDE 1.6, a programmers editor for CP/M"
 summaryPic: small_zde16_screenshort.png
 summaryPicTitle: "ZDE 1.6 viewing ZDE10.DOC and showing help menu"

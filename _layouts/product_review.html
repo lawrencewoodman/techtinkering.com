@@ -1,173 +1,75 @@
 ---
-layout: base
-menuOption: article
+layout: post
 ---
-<div class="span8">
-  <article itemscope itemtype="http://schema.org/Review">
-    <header>
-      <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
-      <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-        <meta itemprop="worstRating" content="1" />
-        <meta itemprop="ratingValue" content="{{ page.rating }}" />
-        <meta itemprop="bestRating"  content="5" />
-      </span>
-      {{ page.rating|star_rating }}
-      <span class="byLine">
-        by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-             <a rel="author" itemprop="url" class="author" href="{{ page.author.url }}">
-               <span itemprop="name">{{ page.author.name }}</span>
-             </a>
-           </span>
-        <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
-          {{ page.date | date_to_long_string }}
-        </time>
-      </span>
+<article itemscope itemtype="http://schema.org/Review">
+  <header>
+    <h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+      <meta itemprop="worstRating" content="1" />
+      <meta itemprop="ratingValue" content="{{ page.rating }}" />
+      <meta itemprop="bestRating"  content="5" />
+    </span>
+    {{ page.rating|star_rating }}
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="{{ page.author.url }}">
+             <span itemprop="name">{{ page.author.name }}</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d'}}">
+        {{ page.date | date_to_long_string }}
+      </time>
+    </span>
 
-      <span class="tagLine">
-        <br />
-        Tags:
-        {% for tag in page.tags %}
-          <a rel="tag" href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
-        {% endfor %}
-      </span>
+    <span class="tagLine">
+      <br />
+      Tags:
+      {% for tag in page.tags %}
+        <a rel="tag" href="/tag/{{ tag|tag_dir }}">{{ tag }}</a> &nbsp; &nbsp;
+      {% endfor %}
+    </span>
 
-      <!-- AddThis Button BEGIN -->
-      <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-      <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
-      <a class="addthis_button_facebook"></a>
-      <a class="addthis_button_twitter"></a>
-      <a class="addthis_button_reddit"></a>
-      <a class="addthis_button_compact"></a>
-      </div>
-      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
-      <!-- AddThis Button END -->
-
-    </header>
-
-    <div itemprop="reviewBody">
-      {{ content }}
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
     </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
 
-    <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product">
-      <h3>
-        {% if page.product.manufacturer %}
-          <span itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
-            <span itemprop="name">{{ page.product.manufacturer }}</span>
-          </span>
-        {% endif %}
-        {% if page.product.brand %}
-          <span itemprop="brand" itemscope itemtype="http://scheam.org/Organization">
-            <span itemprop="name">{{ page.product.brand }}</span>
-          </span>
-        {% endif %}
-        <span itemprop="model">{{ page.product.model }}</span>
-      </h3>
-      <table>
-        <tr><td>
-          <a href="{{ page.product.amazon }}" title="Buy from Amazon">
-            <img itemprop="image" src="/images/posts/{{ page.summaryPic }}">
-          </a>
-        </td></tr>
-        <tr><th>
-          <a href="{{ page.product.amazon }}" title="Buy from Amazon">Buy from Amazon</a>
-        </th></tr>
-      </table>
-    </div>
+  </header>
 
-  </article>
-
-  <div style="clear: left;"></div>
-  {% if page.licence == "cc_attrib" %}
-    <hr />
-    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
-    </a>
-    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
-      {{ page.title }}
-    </span><br />
-
-    by
-    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com{{ page.url }}" property="cc:attributionName" rel="cc:attributionURL">
-    TechTinkering
-    </a>
-     is licensed under a
-    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-    Creative Commons Attribution 2.0 UK: England & Wales License
-    </a>
-  {% endif %}
-
-  <hr style="clear:both;" />
-
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-    var disqus_shortname = 'techtinkering';
-    var disqus_identifier = '{{ page.url }}';
-    var disqus_url = 'http://techtinkering.com{{ page.url }}';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
-
-<div class="span4">
-
-  <div class="columnAd">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-1613732348909658";
-    /* 300x250 - TechTinkering */
-    google_ad_slot = "8883223823";
-    google_ad_width = 300;
-    google_ad_height = 250;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
+  <div itemprop="reviewBody">
+    {{ content }}
   </div>
 
-  {% if site.related_posts.size >= 1 %}
-    <h3>Related</h3>
-    <ul>
-
-    {% for post in site.related_posts limit: 5 %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-
-    </ul>
-  {% endif %}
-
-  <div class="tagCloud">
-    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+  <div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product">
+    <h3>
+      {% if page.product.manufacturer %}
+        <span itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+          <span itemprop="name">{{ page.product.manufacturer }}</span>
+        </span>
+      {% endif %}
+      {% if page.product.brand %}
+        <span itemprop="brand" itemscope itemtype="http://scheam.org/Organization">
+          <span itemprop="name">{{ page.product.brand }}</span>
+        </span>
+      {% endif %}
+      <span itemprop="model">{{ page.product.model }}</span>
+    </h3>
+    <table>
+      <tr><td>
+        <a href="{{ page.product.amazon }}" title="Buy from Amazon">
+          <img itemprop="image" src="/images/posts/{{ page.summaryPic }}">
+        </a>
+      </td></tr>
+      <tr><th>
+        <a href="{{ page.product.amazon }}" title="Buy from Amazon">Buy from Amazon</a>
+      </th></tr>
+    </table>
   </div>
 
-  <h3>Popular Articles</h3>
-
-  <ul class="headlinePosts">
-    <li><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games">My Top 10 Classic Text Mode BSD Games</a>
-    <li><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux">Setting up a Beowulf Cluster Using Open MPI on Linux</a>
-    <li><a href="/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally">Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally</a>
-    <li><a href="/2009/04/30/an-introduction-to-corewar">An Introduction to Corewar</a>
-    <li><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications">Using DOSBox to Run DOS Games and Applications</a>
-  </ul>
-
-  <div class="columnAd">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-1613732348909658";
-    /* 300x250 - TechTinkering */
-    google_ad_slot = "8883223823";
-    google_ad_width = 300;
-    google_ad_height = 250;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
-  </div>
-
-</div>
+</article>
