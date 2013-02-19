@@ -109,6 +109,42 @@ footer a:visited { font-size: 10pt; color: #00A600; text-decoration: none; }
 footer table { padding-top: 0.5em; }
 footer table td { vertical-align: top; padding-right: 2em; }
 
+div.panelTab {
+  float: left;
+  background: #DCDCDC;
+  border-top: #CCCCCC solid 1px;
+  border-left: #CCCCCC solid 1px;
+  border-right: #CCCCCC solid 1px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.2em;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+div.panel {
+  clear: left;
+  border: #CCCCCC solid 1px;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0.5em;
+}
+
+
 /* ----- Profile ----- */
 table#profileColumns { margin-top: 1em; }
 table#profileColumns td { vertical-align: top; }
@@ -137,7 +173,7 @@ table#profileTable td a {color: blue;}
 
 div#profileText { margin-top: 1em; }
 
-div.rightColumn { margin-top: 3em; }
+div.rightColumn { margin-top: 2.2em; }
 
 /* ----- Main content ----- */
 div.content {
@@ -174,6 +210,7 @@ div.tagCloud {
   border-color: #CCC;
   background: #F1F1ED;
 }
+
 div.tagCloud a {color: blue}
 div.tagCloud a:visited {color: blue }
 
@@ -217,14 +254,21 @@ img.rightFlow {
 div#rightAd {
   float: right;
   margin-left: 1em;
-  margin-top: 1em;
+  margin-top: 3em;
 }
 
 div.columnAd {
-  margin-top: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 article { padding-right: 1em; }
+
+div.bookmarkPanel {
+  padding-top: 1em;
+  margin-top: 2em;
+  width: 300px;
+}
 
 /* ---- Book Reviews ---- */
 table.bookDetails { float: left; }
