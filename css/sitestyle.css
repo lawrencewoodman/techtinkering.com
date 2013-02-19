@@ -277,3 +277,10 @@ table.bookDetails { float: left; }
 table.bookDetails th { text-align: left; padding-right: 1em; }
 
 table.amazonDetails { margin-left: 2em; }
+
+/* ---- Front Page ---- */
+div.moreInArchive {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}

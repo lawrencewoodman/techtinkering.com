@@ -7,7 +7,7 @@ menuOption: home
 <div class="span8">
 
   <ul id="posts">
-    {% for post in site.posts limit: 5%}
+    {% for post in site.posts limit: 10%}
     <li>
       <header>
         <h1><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h1>
@@ -25,6 +25,10 @@ menuOption: home
     </li>
     {% endfor %}
   </ul>
+
+  <div class="moreInArchive">
+    <a href="/archive/">More posts in the Archive</a>
+  </div>
 </div>
 
 <div class="span4 rightColumn">
