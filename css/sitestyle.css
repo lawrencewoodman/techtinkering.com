@@ -96,7 +96,12 @@ div.footerInner {
   padding-top: 0.5em;
 }
 
-footer a { font-size: 10pt; color: #00A600; text-decoration: none; }
+footer a {
+  font-family: monospace;
+  font-size: 10pt;
+  color: #00A600;
+  text-decoration: none;
+}
 footer a:visited { font-size: 10pt; color: #00A600; text-decoration: none; }
 footer table { padding-top: 0.5em; }
 footer table td { vertical-align: top; padding-right: 2em; }
