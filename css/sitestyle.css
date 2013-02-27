@@ -236,7 +236,11 @@ a.author:visited { color: blue; }
 ul#posts { margin: 0; padding: 0; list-style: none;}
 article ul { list-style: disc outside none; }
 
-table.neatTable th { text-align: left; padding-right: 1em; }
+table.neatTable th {
+  text-align: left;
+  padding-right: 1em;
+  vertical-align: top;
+}
 table.neatTable td { text-align: left; padding-right: 1em; }
 table.neatTable td.note { font-style: italic; }
 
