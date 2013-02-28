@@ -4,25 +4,45 @@ title: Archive of TechTinkering Articles
 menuOption: archive
 ---
 <div class="span8">
-  <h2>All Articles</h2>
-  <ul class="headlinePosts">
-    {% comment %} Source: http://mikerowecode.com/2010/08/jekyll_archives_grouped_by_year.html {% endcomment %}
-    {% for post in site.posts %}
+  <br />
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="tagTab">All Articles</li>
+      <li class="pull-right"><a href="#headlines-tab" data-toggle="tab">Headlines</a></li>
+      <li class="active pull-right"><a href="#overview-tab" data-toggle="tab">Overview</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="overview-tab">
+        <ul id="posts">
+          {% for post in site.posts %}
+            <li>
+              {% include post_summary.html %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="tab-pane" id="headlines-tab">
+        <ul class="headlinePosts">
+          {% comment %} Source: http://mikerowecode.com/2010/08/jekyll_archives_grouped_by_year.html {% endcomment %}
+          {% for post in site.posts %}
 
-      {% unless post.next %}
-        <h3>{{ post.date | date: '%Y' }}</h3>
-      {% else %}
-        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-        {% if year != nyear %}
-          <h3>{{ post.date | date: '%Y' }}</h3>
-        {% endif %}
-      {% endunless %}
+            {% unless post.next %}
+              <h3>{{ post.date | date: '%Y' }}</h3>
+            {% else %}
+              {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+              {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+              {% if year != nyear %}
+                <br />
+                <h3>{{ post.date | date: '%Y' }}</h3>
+              {% endif %}
+            {% endunless %}
 
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-
-  </ul>
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="span4 rightColumn">

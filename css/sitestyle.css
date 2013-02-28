@@ -229,6 +229,7 @@ div.tagCloud a:visited {color: blue }
 
 ul.headlinePosts a {color: blue}
 ul.headlinePosts a:visited {color: blue}
+ul.headlinePosts h3 { margin-top: 0; }
 
 /* ---- Posts ---- */
 h1 { font-size: 160%; line-height: 1.4; }
