@@ -16,6 +16,9 @@ menuOption: archive
         <ul id="posts">
           {% for post in site.posts %}
             <li>
+              {% if forloop.index == 10 %}
+                <a id="item10"></a>
+              {% endif %}
               {% include post_summary.html %}
             </li>
           {% endfor %}
