@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Setting up z80pack to create an emulated CP/M sytem"
+title: "Setting up z80pack to Create an Emulated CP/M System"
 summaryPic: small_z80pack_cpm3.png
 summaryPicTitle: "Loading Screen for CP/M 3.0 on z80pack"
 tags:
@@ -12,7 +12,7 @@ tags:
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
-edited: 2012-12-10
+edited: 2013-03-05
 licence: cc_attrib
 ---
 I have decided to try out some old CP/M software, but need something to run it on.&nbsp; I could either do this on my Commodore 128 or through emulation.&nbsp; Unfortunately the 1571 disk drive for my Commodore is currently out of action, so that leaves me with emulation.&nbsp; I was going to use [vice](http://www.viceteam.org/) to emulate a C128, but have always found it a pain to get CP/M files onto .D64/71 disk images.&nbsp; After looking around for the best emulator to run CP/M on, I came up with either [YAZE-AG](http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/) or [z80pack](http://www.autometer.de/unix4fun/z80pack/).  z80pack seems to be better supported, has more documentation and is being actively developed, so that&#039;s the one I have chosen for this article.
