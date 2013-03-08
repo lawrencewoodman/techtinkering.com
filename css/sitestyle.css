@@ -90,27 +90,17 @@ img#feedIcon {
 }
 
 
-
-/* ----- Footer ----- */
-
-div.footerInner {
-  max-width: 1024px;
-  line-height: 1;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1em;
-  padding-top: 0.5em;
+footer {
+  margin-top: 6em;
+  text-align: center;
+  border-top: 1px solid #CCCCCC;
 }
 
 footer a {
   font-family: monospace;
   font-size: 10pt;
-  color: #00A600;
   text-decoration: none;
 }
-footer a:visited { font-size: 10pt; color: #00A600; text-decoration: none; }
-footer table { padding-top: 0.5em; }
-footer table td { vertical-align: top; padding-right: 2em; }
 
 div.panelTab {
   float: left;
@@ -182,7 +172,6 @@ div.rightColumn { margin-top: 2.2em; }
 div.content {
  /* padding: 0.5em 1.5em;*/
   max-width: 1024px;
-  min-height: 1024px;
 /*
   background: white;
   border: none;
