@@ -8,9 +8,6 @@
   <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
-
   <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
   <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
 
@@ -26,90 +23,83 @@
     <script src="/js/html5.js"></script>
   <![endif]-->
 
-  <script src="/js/jquery-1.8.2.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
-  <div class="navbar navbar-fixed-top navbar-inverse">
-    <nav class="navbar-inner">
-      <div class="bannerInner">
-        <a class="brand" href="/">TechTinkering</a>
+  <div class="bannerOuter">
+    <nav class="container bannerInner">
+      <a class="brand" href="/">TechTinkering</a>
 
-        <ul class="nav">
-          <li
-          {% if page.menuOption == "home" %}
-            class="active"
-          {% endif %}
-          ><a href="/">Home</a></li>
+      <ul>
+        <li
+        {% if page.menuOption == "home" %}
+          class="active"
+        {% endif %}
+        ><a href="/">Home</a></li>
 
-          <li
-          {% if page.menuOption == "archive" %}
-            class="active"
-          {% endif %}
-          ><a href="/archive">Archive</a></li>
+        <li
+        {% if page.menuOption == "archive" %}
+          class="active"
+        {% endif %}
+        ><a href="/archive">Archive</a></li>
 
-          {% if page.menuOption == "article" %}
-          <li class="active"><a href="{{ page.url }}">Article</a></li>
-          {% endif %}
+        {% if page.menuOption == "article" %}
+        <li class="active"><a href="">Article</a></li>
+        {% endif %}
 
-          {% if page.menuOption == "profile" %}
-          <li class="active"><a href="{{ page.url }}">Profile</a></li>
-          {% endif %}
+        {% if page.menuOption == "profile" %}
+        <li class="active"><a href="">Profile</a></li>
+        {% endif %}
 
-          {% if page.menuOption == "statinfo" %}
-            <li class="active"><a href="{{ page.url }}">Statutory Information</a></li>
-          {% endif %}
+        {% if page.menuOption == "statinfo" %}
+          <li class="active"><a href="">Statutory Information</a></li>
+        {% endif %}
 
-          {% if page.menuOption == "tagged" %}
-            <li class="active"><a href="{{ page.url }}">Tagged Articles</a></li>
-          {% endif %}
+        {% if page.menuOption == "tagged" %}
+          <li class="active"><a href="">Tagged Articles</a></li>
+        {% endif %}
 
-          {% if page.menuOption == "terms" %}
-            <li class="active"><a href="{{ page.url }}">Terms and Conditions</a></li>
-          {% endif %}
+        {% if page.menuOption == "terms" %}
+          <li class="active"><a href="">Terms and Conditions</a></li>
+        {% endif %}
 
-          <li
-          {% if page.menuOption == "about" %}
-            class="active"
-          {% endif %}
-          ><a href="/about">About</a></li>
+        <li
+        {% if page.menuOption == "about" %}
+          class="active"
+        {% endif %}
+        ><a href="/about">About</a></li>
 
-        </ul>
+      </ul>
 
-        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-          <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-        </a>
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
 
-        <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-        <a href="http://youtube.com/lawrencewoodman" title="Lawrence Woodman's YouTube Channel">
-          <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-        </a>
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/lawrencewoodman" title="Lawrence Woodman's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
 
-        <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-        <a href="http://twitter.com/LorryWoodman" title="@LorryWoodman on Twitter">
-          <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-        </a>
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/LorryWoodman" title="@LorryWoodman on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
 
 
-        <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-        <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
-          <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-        </a>
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
 
-        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-          <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
-        </a>
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
 
-      </div>
     </nav>
   </div>
 
-  <div class="container-fluid">
-    <div class="row-fluid content">
-      {{ content }}
-    </div>
+  <div class="container content">
+    {{ content }}
   </div>
 
   <footer class="container">

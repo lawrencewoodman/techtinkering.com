@@ -4,22 +4,7 @@ title: TechTinkering
 menuOption: home
 ---
 
-<div class="span8">
-  <br />
-  <ul id="posts">
-    {% for post in site.posts limit: 10%}
-    <li>
-      {% include post_summary.html %}
-    </li>
-    {% endfor %}
-  </ul>
-
-  <div class="moreInArchive">
-    <a href="/archive/#item10">More posts in the Archive</a>
-  </div>
-</div>
-
-<div class="span4 rightColumn">
+<div class="gap rightColumn">
   <div class="panelTab">Article Tags</div>
   <div style="margin-bottom: 2em;" class="tagCloud panel">
     {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
@@ -34,5 +19,20 @@ menuOption: home
       <li><a href="/2009/04/30/an-introduction-to-corewar">An Introduction to Corewar</a>
       <li><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications">Using DOSBox to Run DOS Games and Applications</a>
     </ul>
+  </div>
+</div>
+
+<div class="leftColumn">
+  <br />
+  <ul id="posts">
+    {% for post in site.posts limit: 10%}
+    <li>
+      {% include post_summary.html %}
+    </li>
+    {% endfor %}
+  </ul>
+
+  <div class="moreInArchive">
+    <a href="/archive/#item10">More posts in the Archive</a>
   </div>
 </div>

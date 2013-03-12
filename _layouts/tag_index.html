@@ -2,46 +2,8 @@
 layout: base
 menuOption: tagged
 ---
-<div class="span8">
-  <br />
-  <div class="tabbable">
-    <ul class="nav nav-tabs">
-      <li class="tagTab">
-        <span title="Articles tagged with: {{ page.tag }}">{{ page.tag }}</span>
-      </li>
-      <li class="pull-right"><a href="#headlines-tab" data-toggle="tab">Headlines</a></li>
-      <li class="active pull-right"><a href="#overview-tab" data-toggle="tab">Overview</a></li>
-    </ul>
-    <div class="tab-content">
-      <div class="tab-pane active" id="overview-tab">
-        <ul id="posts">
-          {% for post in site.posts %}
-            {% if post.tags contains page.tag %}
-              <li>
-                {% include post_summary.html %}
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="tab-pane" id="headlines-tab">
-        <ul class="headlinePosts">
-          {% for post in site.posts %}
-            {% if post.tags contains page.tag %}
-              <li>
-                <a href="{{ post.url }}">{{ post.title }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
 
-
-</div>
-
-<div class="span4 rightColumn">
+<div class="rightColumn">
 
   <div class="panelTab">Article Tags</div>
   <div class="tagCloud panel">
@@ -65,4 +27,18 @@ menuOption: tagged
     </ul>
   </div>
 
+</div>
+
+<div class="leftColumn">
+  <h1 class="indexHeader" title="Articles tagged with: {{ page.tag }}">{{ page.tag }}</h1>
+  <hr />
+  <ul id="posts">
+    {% for post in site.posts %}
+      {% if post.tags contains page.tag %}
+        <li>
+          {% include post_summary.html %}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
 </div>
