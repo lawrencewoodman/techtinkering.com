@@ -10,5 +10,9 @@
   </span>
 
 </header>
-<div>{{ post.content|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
+{% if page.menuOption == "tagged" %}
+  <div>{{ post.content|markdownify|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
+{% else %}
+  <div>{{ post.content|strip_html|truncate: 300 }} &nbsp; <a class="readMore" href="{{ post.url }}">Read More</a></div>
+{% endif %}
 <br />
