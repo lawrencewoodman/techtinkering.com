@@ -87,6 +87,35 @@ end.
 
 Compile and run it by pressing `R` from the main menu.  You should see it compile and then say hello to the world.
 
+### Creating a FizzBuzz Program
+
+<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="700" height="394">
+  <param name="movie" value="http://www.youtube.com/v/acYu0sL9Ol0&amp;hl=en&amp;fs=1"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed src="http://www.youtube.com/v/acYu0sL9Ol0&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="700" height="394"></embed>
+</object>
+
+The video above allows you to watch TP in action and see just how quick it is.  The source code for `fizzbuzz.pas` is as follows:
+{% highlight pascal %}
+program fizzbuzz(output);
+var
+  i: integer;
+begin
+  for i := 1 to 100 do
+  begin
+    if i mod 15 = 0 then
+      write('FizzBuzz ')
+    else if i mod 3 = 0 then
+      write('Fizz ')
+    else if i mod 5 = 0 then
+      write('Buzz ')
+    else
+      write(i, ' ');
+  end
+end.
+{% endhighlight %}
+
 
 # What Now?
 Get the [Turbo Pascal 3.0 Manual](http://bitsavers.trailing-edge.com/pdf/borland/turbo_pascal/Turbo_Pascal_Version_3.0_Reference_Manual_1986.pdf) for CP/M-80, CP/M-86 and PC-DOS/MS-DOS from [bitsavers.org](http://bitsavers.org).  It is a wonderfully well-laid out manual and you should have no problems using this to learn and get the most out of Turbo Pascal.  You may also want to take a look at a copy of the old Borland musuem page: [Antique Software: Turbo Pascal v3.02](http://edn.embarcadero.com/article/20792).
