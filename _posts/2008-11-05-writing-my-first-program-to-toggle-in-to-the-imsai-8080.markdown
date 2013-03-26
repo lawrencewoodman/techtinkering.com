@@ -239,11 +239,11 @@ This made the program much too slow, and at first I didn't think the program was
 
 ## The Program Running on a Real IMSAI 8080
 
-<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="425" height="344">
+<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="700" height="394">
   <param name="movie" value="http://www.youtube.com/v/7op5spoIcW4&amp;hl=en&amp;fs=1"></param>
   <param name="allowFullScreen" value="true"></param>
   <param name="allowscriptaccess" value="always"></param>
-  <embed src="http://www.youtube.com/v/7op5spoIcW4&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed>
+  <embed src="http://www.youtube.com/v/7op5spoIcW4&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="700" height="394"></embed>
 </object>
 
 Since writing this article I have been contacted by Mike Loewen, who has a real IMSAI and has kindly allowed me to upload this footage of my program running on his machine.  Mike has 
