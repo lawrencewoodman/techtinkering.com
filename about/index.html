@@ -30,25 +30,27 @@ menuOption: about
 
 <div class="leftColumn">
   <h2>About TechTinkering</h2>
-  TechTinkering is a blog devoted to articles about Retro Computers,
-  Open Source, Programming and General Technical Tinkering.  It's main author
-  is <a href="/profile/lawrencewoodman">Lawrence Woodman</a>.<br />
-  <br />
+  <p>TechTinkering is devoted to Retro Computers, Programming and General
+  Technical Tinkering.  Its aim is to produce clear, easy to follow articles
+  so that you can learn from, extend and recreate yourself.
+  The main author is <a href="/profile/lawrencewoodman">Lawrence Woodman</a>.<br /></p>
 
   <p>TechTinkering uses <a href="http://jekyllrb.com">jekyll</a> to create a
   statically generated site and the source for the site is hosted on
   <a href="http://github.com/lawrencewoodman/techtinkering.com">GitHub</a>.</p>
 
   <h2>Guest Authors</h2>
-  If you would like to write an article for the site, then please drop me an
-  email or send a pull request.  I would love to hear from you.
+  <p>If you would like to write an article for the site, then please drop me an
+  email or send a pull request.  I would love to hear from you.</p>
 
-  <h2>Latest Articles</h2>
-  <ul class="headlinePosts">
-    {% for post in site.posts limit: 5%}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+  <div class="panelTab gap">Latest Articles</div>
+  <div class="panel">
+    <ul class="headlinePosts">
+      {% for post in site.posts limit: 5%}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
