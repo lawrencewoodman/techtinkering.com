@@ -5,7 +5,6 @@ summaryPic: small_bbs_splashscreen.jpg
 summaryTitle: "A BBS Splash Screen"
 tags:
   - Linux
-  - Telnet
   - Retro
   - ANSI
   - Text Mode
