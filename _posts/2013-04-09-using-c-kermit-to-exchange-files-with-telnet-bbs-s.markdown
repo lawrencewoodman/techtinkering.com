@@ -20,10 +20,10 @@ You need to ensure that you have `ckermit` and `lrzsz` installed.  The first is 
 If you are only using C-Kermit to Connect to Telnet BBS's, you'll probably want to put the following lines in your `~/.mykermrc` file, otherwise you will need to enter them from the kermit prompt.
 
     set file type binary
-    set telnet wait off
+    set telopt kermit refuse refuse
     set protocol zmodem
 
-You may find that you don't need to turn `wait` `off`, but for many of the systems I have tried, I couldn't connect without doing this.  The `protocol` above is set to `zmodem`, in theory the _kermit_ protocol should have been a better choice, but for some reason I often end up with files missing parts when I use it with telnet BBS's.
+The `set telopt...` line is there because Synchronet, which many BBS's use, doesn't handle RFC2840 properly.  The `protocol` above is set to `zmodem`, in theory the _kermit_ protocol should have been a better choice, but for some reason I often end up with files missing parts when I use it with telnet BBS's.
 
 ## Connecting to a Telnet BBS
 _C-Kermit_ can create a telnet connection by using the `-J` switch:
