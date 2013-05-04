@@ -5,6 +5,7 @@ tags:
   - Programming
   - Retro
   - Tutorial
+  - Vic-20
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
@@ -217,5 +218,6 @@ I hope this has given you enough information to get you started.  Below are some
 * The [VIC-20 Programmers Reference Guide 1st Edition 6th Printing](http://archive.org/details/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti).
 * The [Vicmon Manual](http://funet.cbm8bit.com/cbm/vic20/manuals/VICMON-DOCS.zip)
 * The [VICE](http://viceteam.org/) Commodore emulator, which not only emulates the Vic-20, but also all the main 8-bit Commodore machines.
+* To see Vicmon in action watch our video: [Creating a TTY Simulator in Assembly Language on the Vic-20](http://www.youtube.com/watch?v=kmvF85euefs) and read its associated [article](/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/).
 
 I have lots more to say about assembly language programming on the Vic-20, so subscribe to the [TechTinkering RSS](http://feedproxy.google.com/TechTinkering) feed or keep an eye on the site to see further articles.
