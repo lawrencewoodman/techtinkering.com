@@ -98,7 +98,7 @@ Here is the full program as entered in the video, so that you can play with it y
     037A  TAX           ; |
     037B  PLA           ; \
 
-    037C  JMP $F2LA     ; Jump to the normal output vector stored in $0326
+    037C  JMP $F27A     ; Jump to the normal output vector stored in $0326
 
 ## Memory Dump
 Below is a memory dump of the program.  Some find it quicker to enter the hex codes directly and this is also useful to create a BASIC program that will load the machine language.
