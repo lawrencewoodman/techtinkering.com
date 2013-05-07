@@ -137,4 +137,4 @@ The following is the program converted to BASIC so that anyone with a Vic can en
 All you have to do is `RUN` the program and from that point on your Vic will feel a bit like a TTY.
 
 ## Where now?
-For more information on Vicmon or for those just starting to program the Vic-20 in assembly language, take a look at: [Beginning Assembly Programming on the Vic-20](/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/).
+For more information on Vicmon or for those just starting to program the Vic-20 in assembly language, take a look at: [Beginning Assembly Programming on the Vic-20](/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/).  I have also created an extended version of the TTY simulator and hosted it on GitHub: [vic20_simtty](https://github.com/LawrenceWoodman/vic20_simtty).
