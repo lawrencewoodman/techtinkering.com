@@ -6,6 +6,7 @@ tags:
   - Retro
   - Tutorial
   - Vic-20
+  - Assembly
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/

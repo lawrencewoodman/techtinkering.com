@@ -7,6 +7,7 @@ tags:
   - DOS
   - Programming
   - Retro
+  - Assembly
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/

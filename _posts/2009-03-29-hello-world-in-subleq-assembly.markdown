@@ -6,6 +6,7 @@ tags:
   - Programming
   - OISC
   - SUBLEQ
+  - Assembly
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/

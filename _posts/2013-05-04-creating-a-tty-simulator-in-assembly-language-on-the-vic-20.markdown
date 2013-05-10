@@ -4,8 +4,8 @@ title: "Creating a TTY Simulator in Assembly Language on the Vic-20"
 tags:
   - Programming
   - Retro
-  - Tutorial
   - Vic-20
+  - Assembly
 author:
   name: Lawrence Woodman
   url: /profile/lawrencewoodman/
