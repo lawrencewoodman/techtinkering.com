@@ -5,6 +5,7 @@ tags:
   - Programming
   - Retro
   - Tutorial
+  - Commodore
   - Vic-20
   - Assembly
 author:
