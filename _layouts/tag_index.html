@@ -33,9 +33,14 @@ menuOption: tagged
   <h1 class="indexHeader" title="Articles tagged with: {{ page.tag }}">{{ page.tag }}</h1>
   <hr />
   <ul id="posts">
+    {% assign numFound = 0 %}
     {% for post in site.posts %}
       {% if post.tags contains page.tag %}
         <li>
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound == 5 %}
+            <a id="item5"></a>
+          {% endif %}
           {% include post_summary.html %}
         </li>
       {% endif %}
