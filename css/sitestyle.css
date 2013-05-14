@@ -124,13 +124,11 @@ footer {
   border-top: 1px solid #444;
   background: #232323;
   height: 40px;
-  padding-top: auto;
-  padding-bottom: auto;
+  padding-top: 10px;
 }
 
 footer a {
   font-family: monospace;
-  font-size: 10pt;
   text-decoration: none;
 }
 
