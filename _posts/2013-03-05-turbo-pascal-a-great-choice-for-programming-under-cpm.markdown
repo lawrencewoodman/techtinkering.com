@@ -89,11 +89,11 @@ Compile and run it by pressing `R` from the main menu.  You should see it compil
 
 ### Creating a FizzBuzz Program
 
-<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="700" height="394">
+<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="650" height="394">
   <param name="movie" value="http://www.youtube.com/v/acYu0sL9Ol0&amp;hl=en&amp;fs=1"></param>
   <param name="allowFullScreen" value="true"></param>
   <param name="allowscriptaccess" value="always"></param>
-  <embed src="http://www.youtube.com/v/acYu0sL9Ol0&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="700" height="394"></embed>
+  <embed src="http://www.youtube.com/v/acYu0sL9Ol0&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="650" height="394"></embed>
 </object>
 
 The video above allows you to watch TP in action and see just how quick it is.  The source code for `fizzbuzz.pas` is as follows:

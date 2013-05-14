@@ -1,14 +1,13 @@
 body {
+  color: white;
   font-family: Arial, Tahoma, Verdana, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  position: relative;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  background: #232323;
 }
 
-a { color: blue; text-decoration: none; }
-a:visited { color: blue; }
+a { color: #00C100; text-decoration: none; }
+a:visited { color: #00C100; }
 a:hover { text-decoration: underline; }
 
 li { line-height: 1.5; }
@@ -18,7 +17,9 @@ hr {
   border-bottom: 1px solid #eee;
 }
 
+
 pre {
+  color: black;
   display: block;
   padding: 9.5px;
   margin: 0 0 10px;
@@ -34,77 +35,76 @@ pre {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  margin-right: 1em;
 }
 
 .container {
+  background: #111;
   min-width: 800px;
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
+  border-left: #444 solid 3px;
+  border-right: #444 solid 3px;
+  border-bottom: #444 solid 3px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* ----- Top Banner ----- */
-div.bannerOuter {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  margin-bottom: 0;
-  background-color: black;
-  color: white;
-  height: 40px
-}
-
-.bannerInner {
+.banner {
   line-height: 1;
-  margin-left: auto;
-  margin-right: auto;
+  background: #232323;
+  height: 40px;
+  border-bottom: 1px solid #444;
   padding-left: 1em;
+  padding-right: 1em;
 }
 
-.bannerInner a.brand {
+.banner a.brand {
   float: left;
   font-family: monospace;
   font-weight: 200;
   font-size: 20px;
-  color: #00A600;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.bannerInner a.brand:hover {
+.banner a.brand:hover {
   color: white;
   text-decoration: none;
 }
 
-.bannerInner ul {
-  position: relative;
-  left: 0;
+.banner ul {
   display: block;
   float: left;
   margin: 0 10px 0 0;
   padding-top: 10px;
 }
 
-.bannerInner li {
+.banner li {
   display: inline;
   list-style: none;
   line-height: 20px;
 }
 
-.bannerInner li>a {
+.banner li>a {
   color: #999;
   text-decoration: none;
   padding: 10px 15px 10px;
 }
 
-.bannerInner li>a:hover {
+.banner li>a:hover {
   background-color: #222;
   color: white;
 }
 
-.bannerInner li.active>a {
+.banner li.active>a {
   color: white;
 }
 
@@ -118,50 +118,14 @@ img.bannerIcon {
   width: 28px;
 }
 
-img#octocatIcon {
-  position: absolute;
-  top: 5px;
-  right: 147px;
-  border: none;
-}
-
-img#emailIcon {
-  position: absolute;
-  top: 5px;
-  right: 102px;
-  border: none;
-}
-
-img#twitterIcon {
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  top: 5px;
-  right: 70px;
-  border: none;
-}
-
-img#youtubeIcon {
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  top: 5px;
-  right: 37px;
-  border: none;
-}
-
-img#feedIcon {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  border: none;
-}
-
-
 footer {
   clear: both;
   text-align: center;
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #444;
+  background: #232323;
+  height: 40px;
+  padding-top: auto;
+  padding-bottom: auto;
 }
 
 footer a {
@@ -169,42 +133,6 @@ footer a {
   font-size: 10pt;
   text-decoration: none;
 }
-
-div.panelTab {
-  float: left;
-  background: #DCDCDC;
-  border-top: #CCCCCC solid 1px;
-  border-left: #CCCCCC solid 1px;
-  border-right: #CCCCCC solid 1px;
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -moz-border-radius-topright: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 0.2em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-bottom: 0.2em;
-  font-size: 120%;
-  font-weight: bold;
-}
-
-div.panel {
-  clear: left;
-  border: #CCCCCC solid 1px;
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-bottom-right-radius: 10px;
-  -webkit-border-bottom-left-radius: 10px;
-  -moz-border-radius-topright: 10px;
-  -moz-border-radius-bottomright: 10px;
-  -moz-border-radius-bottomleft: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 0.5em;
-}
-
 
 /* ----- Profile ----- */
 table#profileColumns { margin-top: 1em; }
@@ -230,18 +158,16 @@ table#profileTable th {
   padding-right: 2em;
 }
 
-table#profileTable td a {color: blue;}
-
 div#profileText { margin-top: 1em; }
 
 div.leftColumn {
-  max-width: 700px;
+  margin-right: 300px;
+  padding-right: 1em;
 }
 
 div.rightColumn {
   float: right;
   width: 300px;
-  margin-left: 1.5em;
   margin-bottom: 4em;
 }
 
@@ -258,14 +184,16 @@ div.third {
 
 /* ----- Main content ----- */
 div.content {
+  padding-left: 1em;
+  padding-right: 1em;
   margin-bottom: 4em;
+  clear: both;
 }
 
-span.byLine { color: #606060; }
-span.tagLine { color: #606060; }
-span.tagLine a:visited { color: blue; }
-a.readMore { color: blue; }
-a.readMore:visited { color: blue; }
+div.content img { max-width: 100%; }
+
+span.byLine { color: #909090; }
+span.tagLine { color: #909090; }
 
 h1,h2,h3,h4 {
   margin-top: 1em;
@@ -280,19 +208,6 @@ h1,h2,h3,h4 {
 
 
 /* ---- Home ---- */
-div.tagCloud {
-  padding: 1em;
-  border: 1px solid;
-  border-color: #CCC;
-  background: #F1F1ED;
-}
-
-div.tagCloud a {color: blue}
-div.tagCloud a:visited {color: blue }
-
-
-ul.headlinePosts a {color: blue}
-ul.headlinePosts a:visited {color: blue}
 ul.headlinePosts h3 { margin-top: 0; }
 
 /* ---- Posts ---- */
@@ -301,19 +216,16 @@ h2 { font-size: 150%; line-height: 1.4; }
 h3 { font-size: 140%; line-height: 1.4; }
 h4 { font-size: 130%; line-height: 1.4; }
 
-h1 a { color: black; }
-h1 a:visited { color: black; }
-
 dt {font-style: italic;}
-a.author:visited { color: blue; }
 
 ul#posts { margin: 0; padding: 0; list-style: none;}
 ul#posts h1 { margin-top: 0; }
 
-ul#briefPosts { margin: 0; padding: 0; list-style: none;}
-ul#briefPosts li {
+ul.briefPosts { margin: 0; padding: 0; list-style: none;}
+ul.briefPosts li {
   padding-bottom: 1em;
   font-weight: bold;
+  line-height: 1.3;
 }
 
 div.moreArticles {
@@ -356,26 +268,15 @@ div.columnAd {
   margin-bottom: 2em;
 }
 
-article { padding-right: 1em; }
-
 div.articleBody { margin-top: 1em; }
 
-div.bookmarkPanel {
-  padding-top: 1em;
-  margin-top: 2em;
-  width: 230px;
-}
-
-div.bookmarkPanel hr {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-div.bookmarkPanel .bookmarkIcon {
+img.bookmarkIcon {
   width: 32px;
   height: 32px;
   margin-right: 5px;
   margin-top: 5px;
+  margin-bottom: 15px;
+  vertical-align: middle;
   border: none;
 }
 

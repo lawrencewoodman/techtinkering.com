@@ -41,11 +41,11 @@ The program is essentially in two parts.  The first part changes the output vect
 
 The video below shows how to use the Vicmon machine language cartridge to enter the program and demonstrates the TTY effect.
 
-<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="700" height="394">
+<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="650" height="394">
   <param name="movie" value="http://www.youtube.com/v/kmvF85euefs&amp;hl=en&amp;fs=1"></param>
   <param name="allowFullScreen" value="true"></param>
   <param name="allowscriptaccess" value="always"></param>
-  <embed src="http://www.youtube.com/v/kmvF85euefs&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="700" height="394"></embed>
+  <embed src="http://www.youtube.com/v/kmvF85euefs&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="650" height="394"></embed>
 </object>
 
 ## Disassembly of Program

@@ -23,11 +23,15 @@
     <script src="/js/html5.js"></script>
   <![endif]-->
 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
 </head>
 
 <body>
-  <div class="bannerOuter">
-    <nav class="container bannerInner">
+
+  <div class="container">
+
+    <nav class="banner">
       <a class="brand" href="/">TechTinkering</a>
 
       <ul>
@@ -94,24 +98,24 @@
       <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
         <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
       </a>
-
     </nav>
+
+    <div class="content">
+      {{ content }}
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
   </div>
 
-  <div class="container content">
-    {{ content }}
-  </div>
-
-  <footer class="container">
-    <strong>Legal:</strong> &nbsp;
-    <a href="/tandc/">Terms</a>,
-    <a href="/statinfo/">Statutory Information</a>
-
-    &nbsp; &nbsp;
-    <strong>RSS Feeds:</strong> &nbsp;
-    <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
-    <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
-  </footer>
 
   {% comment %}Amazon Product Preview Code{% endcomment%}
   <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">

@@ -178,7 +178,7 @@ PAGE_TEMPLATE = "
 
       // Set chart options
       var options = {'title':'Months of Birth for Poets',
-                     'width':700,
+                     'width':650,
                      'height':500};
 
 
