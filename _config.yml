@@ -1,7 +1,6 @@
 destination: ./_site
-auto:        true
 lsi:         false
-server_port: 4000
+port: 4000
 pygments:    true
 markdown:    maruku
 permalink:   /:year/:month/:day/:title
@@ -10,6 +9,6 @@ maruku:
   use_divs:   false
   png_dir:    images/latex
   png_url:    /images/latex
-exclude: ./design,./scripts,./README.md
+exclude: [design, scripts, README.md]
 
 tag_title_prefix: "TechTinkering Articles Tagged With: "
