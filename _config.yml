@@ -11,4 +11,4 @@ maruku:
   png_url:    /images/latex
 exclude: [design, scripts, README.md]
 
-tag_title_prefix: "TechTinkering Articles Tagged With: "
+tag_title_prefix: "Articles Tagged With: "
