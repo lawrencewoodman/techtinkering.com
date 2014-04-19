@@ -1,34 +1,34 @@
 require 'jekyll/post'
 
-module RelatedPosts
+module Jekyll
+  module RelatedPostsByTags
 
-  # Used to remove #related_posts so that it can be overridden
-  def self.included(klass)
-    klass.class_eval do
-      remove_method :related_posts
-    end
-  end
-
-  # Calculate related posts.
-  #
-  # Returns [<Post>]
-  def related_posts(posts)
-    return [] unless posts.size > 1
-    highest_freq = Jekyll::Post.tag_freq(posts).values.max
-    related_scores = Hash.new(0)
-    posts.each do |post|
-      post.tags.each do |tag|
-        if self.tags.include?(tag) && post != self
-          cat_freq = Jekyll::Post.tag_freq(posts)[tag]
-          related_scores[post] += (1+highest_freq-cat_freq)
-        end
+    # Used to remove #related_posts so that it can be overridden
+    def self.included(klass)
+      klass.class_eval do
+        remove_method :related_posts
       end
     end
 
-    Jekyll::Post.sort_related_posts(related_scores)
-  end
+    # Calculate related posts.
+    #
+    # Returns [<Post>]
+    def related_posts(posts)
+      return [] unless posts.size > 1
+      highest_freq = tag_freq(posts).values.max
+      related_scores = Hash.new(0)
+      posts.each do |post|
+        post.tags.each do |tag|
+          if self.tags.include?(tag) && post != self
+            cat_freq = tag_freq(posts)[tag]
+            related_scores[post] += (1+highest_freq-cat_freq)
+          end
+        end
+      end
 
-  module ClassMethods
+      sort_related_posts(related_scores)
+    end
+
     # Calculate the frequency of each tag.
     #
     # Returns {tag => freq, tag => freq, ...}
@@ -56,11 +56,7 @@ module RelatedPosts
     end
   end
 
-end
-
-module Jekyll
   class Post
-    include RelatedPosts
-    extend RelatedPosts::ClassMethods
+    include RelatedPostsByTags
   end
 end
