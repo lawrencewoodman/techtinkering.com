@@ -2,7 +2,7 @@ destination: ./_site
 lsi:         false
 port: 4000
 pygments:    true
-markdown:    maruku
+markdown:    rdiscount
 permalink:   /:year/:month/:day/:title
 maruku:
   use_tex:    false
