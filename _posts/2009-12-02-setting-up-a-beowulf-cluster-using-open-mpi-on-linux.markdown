@@ -106,9 +106,9 @@ slave3
 {% endhighlight %}
 
 <h2>Compiling Programs</h2>
-OpenMPI can be used with a variety of languages, two of the most popular are FORTRAN and 'C'. 
-If your programs are written in 'C', then you can either use `mpicc` instead of your normal 'C' compiler 
-or you can pass the additional arguments directly to your 'C' compiler.  With `mpicc` the arguments 
+OpenMPI can be used with a variety of languages, two of the most popular are FORTRAN and 'C'.
+If your programs are written in 'C', then you can either use `mpicc` instead of your normal 'C' compiler
+or you can pass the additional arguments directly to your 'C' compiler.  With `mpicc` the arguments
 you pass are passed to your normal 'C' compiler.
 
 If you want to use `mpicc` to compile a 'C' source file called `testprogram.c`:
@@ -123,7 +123,7 @@ If you want to see what will be passed to your 'C' compiler when compiling and l
 <h3>Ensure That SSH Doesn't Ask For a Password</h3>
 Because Open MPI will use SSH to connect to each of the machines and run your program, you need to ensure that the password doesn't have to be entered for each connection.
 
-Use `ssh-agent` to remember the password while logged in as `mpiuser`: 
+Use `ssh-agent` to remember the password while logged in as `mpiuser`:
 {% highlight bash %}$ eval `ssh-agent`{% endhighlight %}
 
 Tell `ssh-agent` the password for the SSH key:<br/>
@@ -143,7 +143,7 @@ To run `myprogram` over five processes on the cluster using the `.mpi_hostfile` 
 {% highlight bash %}$ mpirun -np 2 --hostfile .mpi_hostfile ./myprogram{% endhighlight %}
 
 <h2>An Example Test Program</h2>
-The following program will send a random number from the master node to all the slave nodes. 
+The following program will send a random number from the master node to all the slave nodes.
 
 {% highlight c %}
 #include <stdio.h>
@@ -151,11 +151,11 @@ The following program will send a random number from the master node to all the 
 
 #include <mpi.h>
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
   const int MASTER = 0;
   const int TAG_GENERAL = 1;
-	
+
   int numTasks;
   int rank;
   int source;
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 
   char inMsg;
   char outMsg;
-	
+
   MPI_Status Stat;
 
   // Initialize the MPI stack and pass 'argc' and 'argv' to each slave node
@@ -175,27 +175,27 @@ int main(int argc, char *argv[])
   // Gets number of tasks/processes that this program is running on
   MPI_Comm_size(MPI_COMM_WORLD, &numTasks);
 
-  // Gets the rank (process/task number) that this program is running on 
+  // Gets the rank (process/task number) that this program is running on
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 
   // If the master node
   if (rank == MASTER) {
-	
+
     // Send out messages to all the sub-processes
     for (dest = 1; dest < numTasks; dest++) {
       outMsg = rand() % 256;	// Generate random message to send to slave nodes
 
-      // Send a message to the destination	
-      rc = MPI_Send(&outMsg, 1, MPI_CHAR, dest, TAG_GENERAL, MPI_COMM_WORLD);			
+      // Send a message to the destination
+      rc = MPI_Send(&outMsg, 1, MPI_CHAR, dest, TAG_GENERAL, MPI_COMM_WORLD);
       printf("Task %d: Sent message %d to task %d with tag %d\n",
              rank, outMsg, dest, TAG_GENERAL);
     }
-		
-  } 
+
+  }
 
   // Else a slave node
   else  {
-    // Wait until a message is there to be received	
+    // Wait until a message is there to be received
     do {
       MPI_Iprobe(MASTER, 1, MPI_COMM_WORLD, &dataWaitingFlag, MPI_STATUS_IGNORE);
       printf("Waiting\n");
@@ -205,10 +205,9 @@ int main(int argc, char *argv[])
     rc = MPI_Recv(&inMsg, 1, MPI_CHAR, MASTER, TAG_GENERAL, MPI_COMM_WORLD, &Stat);
 
     // Get how big the message is and put it in 'count'
-    rc = MPI_Get_count(&Stat, MPI_CHAR, &amp;count);
+    rc = MPI_Get_count(&Stat, MPI_CHAR, &count);
     printf("Task %d: Received %d char(s) (%d) from task %d with tag %d \n",
             rank, count, inMsg, Stat.MPI_SOURCE, Stat.MPI_TAG);
-		
   }
 
   MPI_Finalize();
