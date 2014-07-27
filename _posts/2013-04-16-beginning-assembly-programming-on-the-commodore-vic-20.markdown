@@ -14,7 +14,7 @@ author:
 licence: cc_attrib
 ---
 
-The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to is popularity today.  The machine is well documented, well supported through forums and much of the hardware is plentiful and quite cheap.  The [6502](http://en.wikipedia.org/wiki/6502) has a smaller instruction set than the [Z80](http://en.wikipedia.org/wiki/Z80) for example and the Vic-20, because of it's limited power, doesn't take long to learn most things about it.  This is ideal for busy people who can only afford to spend so much time exploring.
+The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The machine is well documented, well supported through forums and much of the hardware is plentiful and quite cheap.  The [6502](http://en.wikipedia.org/wiki/6502) has a smaller instruction set than the [Z80](http://en.wikipedia.org/wiki/Z80) for example and the Vic-20, because of it's limited power, doesn't take long to learn most things about it.  This is ideal for busy people who can only afford to spend so much time exploring.
 
 Here I will show you how to get started programming the Vic-20 in assembly language.  I will not be teaching 6502 assembly language itself as there are better resources available and I will link to these.  I will, however, be showing you what you need to get started, where some of the best resources are and I will be giving a few examples to whet your appetite.
 
