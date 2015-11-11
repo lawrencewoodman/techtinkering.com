@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Beginning Assembly Programming on the Commodore Vic-20</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+        <li class="active"><a href="">Article</a></li>
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+      <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 101%' href='/tag/dec'>DEC</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 70%' href='/tag/history'>History</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 101%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 172%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 101%' href='/tag/games'>Games</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 101%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 101%' href='/tag/review'>Review</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 119%' href='/tag/linux'>Linux</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 119%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+<a style='font-size: 88%' href='/tag/book'>Book</a>
+<a style='font-size: 178%' href='/tag/programming'>Programming</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20" title="Beginning Assembly Programming on the Commodore Vic-20">Beginning Assembly Programming on the Commodore Vic-20</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2013-04-16">
+        16 April 2013
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/programming">Programming</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/commodore">Commodore</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/vic-20">Vic-20</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/assembly">Assembly</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The machine is well documented, well supported through forums and much of the hardware is plentiful and quite cheap.  The <a href="http://en.wikipedia.org/wiki/6502">6502</a> has a smaller instruction set than the <a href="http://en.wikipedia.org/wiki/Z80">Z80</a> for example and the Vic-20, because of it's limited power, doesn't take long to learn most things about it.  This is ideal for busy people who can only afford to spend so much time exploring.</p>
+
+<p>Here I will show you how to get started programming the Vic-20 in assembly language.  I will not be teaching 6502 assembly language itself as there are better resources available and I will link to these.  I will, however, be showing you what you need to get started, where some of the best resources are and I will be giving a few examples to whet your appetite.</p>
+
+<h2>Assembly Language</h2>
+
+<p>Assembly language is a mnemonic representation of the computers underlying machine language.  It allows you to represent the following machine language in <a href="http://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> octets:</p>
+
+<pre><code>A9 93 20 D2 FF 00
+</code></pre>
+
+<p>as assembly language (with comments to explain what is happening)</p>
+
+<pre><code>LDA #$93   ; Load the Accumulator register (A storage location in the CPU)
+           ; with the value $93, which is the Clear Screen code
+JSR $FFD2  ; Jump to a subroutine at location $FFD2 (Print a character routine).
+BRK        ; Break out of the program.
+</code></pre>
+
+<p>One you get used to 6502 assembly language you will be able to read it much easier than machine language.  That said, you will naturally become familiar with the machine language as well when you are debugging and inspecting memory.  So you will easily spot BRK ($00) or JSR ($20) instructions.  This familiarity gives you a much closer connection to the machine and ultimately allows you to fine tune your programs to get the most out it.</p>
+
+<p>It is useful to know that a <code>$</code> indicates a hexadecimal number, a <code>%</code> a binary number, and if neither then a decimal number.  If a number is prefixed with a <code>#</code> this says that it is a literal number as opposed to being a reference to an address in memory.</p>
+
+<h2>Vicmon: A Machine Language Monitor</h2>
+
+<p>A machine language monitor is a good way to start learning assembly language.  Vicmon was released by Commodore in 1982 and hence is quite common.  A ML monitor allows you to inspect and alter memory as well as run code from memory.  In addition many, including Vicmon, allow you to assemble (turn mnemonic representations of machine code into actual machine code) and disassemble (turn machine code into a mnemonic representation).  The interactive nature makes it an ideal learning tool as you can try things out and straightaway see what happens.  Later on a ML monitor can help you to debug your programs and understand other people's better.</p>
+
+<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/Vicmon-6000.prg" title="Vicmon 4k Cartridge image">Vicmon </a> can be downloaded from the <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/">zimmers.net 4k tool ROMS archive</a> and a <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/VICMON-DOCS.zip">manual</a> is available from the <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/">funet.cbm8bit.com vic-20 manuals archive</a>.</p>
+
+<h2>Using Vicmon</h2>
+
+<p>Attach your Vicmon cartridge while your Vic-20 is off and then turn it on. Or if using an emulator, attach the cartridge image at $6000.</p>
+
+<p>To enter the monitor from BASIC:</p>
+
+<pre><code>SYS 24576
+</code></pre>
+
+<p>This brings up a status showing the registers and Program Counter (PC), followed by the <code>.</code> prompt.</p>
+
+<h3>Vicmon Commands</h3>
+
+<p>Below is a list of commands used in this article.  To see more commands and a more in-depth explanation of them look at the manual linked above.  Other monitors use similar commands, but you will have to check their manual for the specifics.</p>
+
+<table class="neatTable">
+  <tr><th>Command</th><th style="width: 14em;">Parameters</th><th>Explanation</th></tr>
+  <tr><td>A</td><td>address opcode operand</td><td>Input assembly code and have it stored as machine code.</td></tr>
+  <tr><td>D</td><td>startAddress [EndAddress]</td><td>Convert machine code at <em>startAddress</em> or between the two addresses to assembly language.</td></tr>
+  <tr><td>G</td><td>[address]</td><td>Execute a program at the current <em>PC</em> (Program Counter) or <em>address</em> if specified.</td></tr>
+  <tr><td>L</td><td>"filename" device</td><td>Load a program file from <em>device</em> into memory at the location it was originally saved from.</td></tr>
+  <tr><td>M</td><td>startAddress [EndAddress]</td><td>Display memory at <em>startAddress</em> or between the two addresses and allow you to alter it.</td></tr>
+  <tr><td>S</td><td>"filename" device startAddress endAddress</td><td>Save memory between the two addresses to <em>device</em>.</td></tr>
+</table>
+
+
+<h2>Peeking and Poking Around in Memory</h2>
+
+<p>The <code>M</code> command allows you to peek (look) into memory and to poke (alter) memory.
+If you look at these <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n279/mode/2up">screen &amp; border colour combinations</a>, you'll see how you can change the screen and border colour by altering location <code>36879</code>.  We'll change the display to a Pink screen and Blue border which is <code>174</code> in the chart.  So remembering that Vicmon works in hex, we convert <code>36879</code> to <code>900F</code> and <code>174</code> to <code>AE</code>.  We can now change the screen and border colour using the <code>M</code> command from the <code>.</code> prompt:</p>
+
+<pre><code>.M 900F
+</code></pre>
+
+<p>Now alter the first octet to <code>AE</code> and press &lt;Return&gt;.  You'll see the screen and border change colour.</p>
+
+<p><img src="/images/posts/vic20-vicmon-blue-border-pink-screen.png" /></p>
+
+<p>Within Vicmon you can use the cursor keys to navigate back over the number, change it and press &lt;Return&gt; to see the colours change again.</p>
+
+<p>If you look at the <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n185/mode/2up">memory map</a> you'll see plenty of other interesting places to inspect and alter.</p>
+
+<h2>Assembling / Disassembling</h2>
+
+<p>To turn assembly language into machine code you use an assembler; to turn it back again your use a disassembler.  Vicmon includes both, which makes entering code much easier and also allows you to look at other people's code or the Basic KERNAL to work out how something has been done.</p>
+
+<h3>Clear Screen Program</h3>
+
+<p>To enter the piece of code above to clear the screen we use the <code>A</code> command from the <code>.</code> prompt (&lt;Return&gt; indicates pressing the return key):</p>
+
+<pre><code>.A 1400 LDA #$93
+        JSR $FFD2
+        BRK
+        &lt;Return&gt;
+</code></pre>
+
+<p>The <code>1400</code> above tells the assembler the hex location where we want to start entering the code.  <code>$1400</code> was chosen as it is an area of free memory as can be seen in the memory map referenced previously.</p>
+
+<p>The program Loads into the Accumulator the value <code>$93</code>.  The Accumulator is an area of fast memory located within the 6502 CPU.  <code>$93</code> (decimal 147) is a literal value representing the <code>CLR</code> (Clear Screen) character as seen in the list of <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n287/mode/2up">ASCII and CHR$ codes</a>.  Then it Jumps to a subroutine in memory at address <code>$FFD2</code>.  A subroutine is a piece of code in memory that does something and knows how to return to where it was called.  In this case <code>$FFD2</code> is the <code>CHROUT</code> (Output character to channel) subroutine which can be found in the list of <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n199/mode/2up">user callable KERNAL routines</a>.  <code>CHROUT</code> expects the character to be output to be in the Accumulator, hence the reason that it was put there previously.  Once the subroutine has finished it returns to the instruction after the one that called it.  Here this is the <code>BRK</code> instruction, which says that processing has finished and control will be returned to the ML monitor.</p>
+
+<p>To run it:</p>
+
+<pre><code>. G 1400
+</code></pre>
+
+<p>To look again at our code by disassembling it:</p>
+
+<pre><code>.D 1400, 1405
+</code></pre>
+
+<p>Which shows:</p>
+
+<pre><code>., 1400 LDA #$93
+., 1402 JSR $FFD2
+., 1405 BRK
+</code></pre>
+
+<h3>Hello, World!</h3>
+
+<p>In introductory programming tutorials it is customary to do a "Hello, World!" program.  We'll do this by extending the program above past the clear screen routine:</p>
+
+<pre><code>.A 1405 LDX #$00
+        LDA $1413, X
+        BEQ $1412
+        JSR $FFD2
+        INX
+        BNE $1407
+        BRK
+        &lt;Return&gt;
+</code></pre>
+
+<p>This code starts by Loading the <code>X</code> index register with the value <code>$00</code> and then Loading the <em>Accumulator</em> with the value at memory location <code>$1413 + X</code>.  This location is where the "Hello, World!" string is held.  So it allows each character of the string to be put into the <em>Accumulator</em>.  Once the character is loaded, it is checked to see if it Equals zero; if it is then the code Branches to <code>$1412</code>, which is the location of the <code>BRK</code> instruction as can be seen in the disassembly below.  Therefore <code>0</code> is used to mark the end of the string.  With the character in the <em>Accumulator</em>, the program can now Jump to the Subroutine at <code>$FFD2</code> (CHROUT) to output this character.  The <code>X</code> index register is now incremented by one and the code Branches back to the instruction that loads the next character from the string.</p>
+
+<p>If you look at the following two lines from the code above you will see that they refer to the addresses <code>$1412</code> and <code>$1413</code> whose location wasn't known at the time of entering them.</p>
+
+<pre><code>LDA $1413, X
+BEQ $1412
+</code></pre>
+
+<p>  To get around this, when the program was first written I put in dummy values and made a note of which places I needed to go back to, to correct the forward references.  Once the program was entered I could disassemble it and find the locations of the <code>BRK</code> instruction and the one past it for the string.  Armed with this I went back and using the <code>A</code> command altered those lines to point to the correct locations.</p>
+
+<p>It maybe instructive to know why a <code>BNE</code> (Branch if Not Equal) instruction was chosen instead of a <code>JMP</code> instruction.  If we look at the table below we can see that the <code>BNE</code> instruction takes less bytes in memory (2 instead of 3).  The reason for this is that the <code>BNE</code> instruction uses <em>relative</em> addressing, so instead of specifying an <em>absolute</em> address to Branch to, the assembler converts <code>BNE $1407</code> to the opcode for <code>BNE</code> (<code>$D0</code>) followed by a <strong>single</strong> byte representing the number of bytes forwards or backwards to get to <code>$1407</code>.  This allows a maximum distance of 128 bytes backwards and 127 bytes forward because a single byte can have 256 possible values.  Whereas the <code>JMP</code> instruction gets assembled to the opcode for <code>JMP</code> (<code>$4C</code>) followed by the <strong>two</strong> bytes of <code>$1407</code>.</p>
+
+<table class="neatTable">
+  <tr><th>Instruction</th><th>Addressing Mode</th><th>Number of Bytes</th></tr>
+  <tr><td>BNE</td><td>Relative</td><td>2</td></tr>
+  <tr><td>JMP</td><td>Absolute</td><td>3</td></tr>
+</table>
+
+
+<p>The <code>BNE</code> instruction also has the added bonus that it protects the program from running for ever in case the <code>0</code> is forgotten at the end of the string.  Once <code>X</code> gets to <code>255</code> if it is incremented it will become <code>0</code> and the <code>BNE</code> instruction will pass control to the <code>BRK</code> instruction to end the program.</p>
+
+<p>More information is available in this <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n157/mode/2up">6502 instruction reference</a>.</p>
+
+<p>If we were to disassemble the full program with:</p>
+
+<pre><code>.D 1400, 1412
+</code></pre>
+
+<p>We would get:</p>
+
+<pre><code>., 1400 LDA #$93
+., 1402 JSR $FFD2
+., 1405 LDX #$00
+., 1407 LDA $1413, X
+., 140A BEQ $1412
+., 140C JSR $FFD2
+., 140F INX
+., 1410 BNE $1407
+., 1412 BRK
+</code></pre>
+
+<p>Press &lt;Return&gt; to get back to the <code>.</code> prompt.</p>
+
+<p>The program will print a string, located at <code>$1413</code> just past the <code>BRK</code> instruction.  This is a "Hello, World!" program, so to find the correct bytes to represent that string we'll look at this list of <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n287/mode/2up">ASCII and CHR$ Codes</a>, to come up with the following decimal numbers representing the string:</p>
+
+<pre><code>72 69 76 76 79 44 32 87 79 82 76 68 33 13 00
+H  E  L  L  O  ,     W  O  R  L  D  !
+</code></pre>
+
+<p><em>13 is Carriage return, 32 is space and 00 marks the end of the string</em>.</p>
+
+<p>This is then translated into hex to produce:</p>
+
+<pre><code>48 45 4C 4C 4F
+2C 20 57 4F 52
+4C 44 21 0D 00
+</code></pre>
+
+<p>Enter these bytes starting from <code>$1413</code> with the <code>M</code> command:</p>
+
+<pre><code>.M 1413
+</code></pre>
+
+<p>You will see the address <code>$1413</code> followed by five octets.  Use your cursors to move over to the first octet and alter each in turn to match the list of hexadecimal numbers above.  After five have been entered press &lt;Return&gt; to enter the next five. Repeat until all the octets have been entered and then press &lt;Return&gt; again to stop entering and return to the <code>.</code> prompt.  Note that the last memory location mentioned by the <code>M</code> command is <code>$1422</code>; we will need this value later.</p>
+
+<p>If we run the program:</p>
+
+<pre><code>.G 1400
+</code></pre>
+
+<p>You will see the screen below greeting the world.</p>
+
+<p><img src="/images/posts/vic20-vicmon-hello-world.jpg" /></p>
+
+<p>You may have noticed that there is no real need for the first two instructions to call <code>$FFD2</code> as it would have been easier to prepend the string with <code>$93</code> to clear the screen.  However, I wanted to show how to use the <code>A</code> command to change the instruction at a location and carry on entering assembly.</p>
+
+<h2>Loading/Saving</h2>
+
+<p>If we wanted to Save our program above we would use the <code>S</code> command.  To save it to disk use:</p>
+
+<pre><code>.S "HELLO",08,1400,1422
+</code></pre>
+
+<p><em>For cassette replace the <code>08</code> with <code>01</code></em>.</p>
+
+<p>Note that, unlike the other Vicmon commands, we must use commas to separate the arguments.  Using the memory location <code>$1422</code> noted above, this saves the region of memory from <code>$1400</code> to <code>$1421</code> inclusive.  The end memory address must be given as one past the real end address.</p>
+
+<p>If you turn your machine off, or do a hard reset from an emulator and go back into Vicmon.  You can now load the program back off cassette or disk:</p>
+
+<pre><code>.L "HELLO",08
+</code></pre>
+
+<p><em>Again replace the <code>08</code> with <code>01</code> for cassette</em>.</p>
+
+<p>If we wanted to access our saved program from basic without a Vicmon cartridge, then you would just change the <code>BRK</code> instruction to an <code>RTS</code> instruction before saving.  To load the program from BASIC:</p>
+
+<pre><code>LOAD "HELLO",8,1
+</code></pre>
+
+<p>To run the program from BASIC we use the SYS command.  In the following <code>5120</code> is the decimal equivalent for <code>$1400</code>:</p>
+
+<pre><code>SYS 5120
+</code></pre>
+
+<h2>Where now?</h2>
+
+<p>I hope this has given you enough information to get you started.  Below are some useful resources that will help you to increase your knowledge and progress further.</p>
+
+<ul>
+<li>Jim Butterfield's often recommended book <a href="http://www.bombjack.org/commodore/books/pdf/ML_for_the_C64_and_Other_Commodore_Computers.zip">Machine Language</a> available from the <a href="http://www.bombjack.org/commodore/books.htm">Commodore Books Collection</a> at <a href="http://www.bombjack.org/commodore/">DHL's Commdore Archive</a>.</li>
+<li>An online version of Richard Mansfield's book <a href="http://www.6502dude.com/6502/mlb/mlb.htm">Machine Language for Beginners</a> book.</li>
+<li>The <a href="http://www.sleepingelephant.com/denial/">Vic-20 Denial</a> website has a great forum.</li>
+<li>The <a href="http://archive.org/details/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti">VIC-20 Programmers Reference Guide 1st Edition 6th Printing</a>.</li>
+<li>The <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/VICMON-DOCS.zip">Vicmon Manual</a></li>
+<li>The <a href="http://viceteam.org/">VICE</a> Commodore emulator, which not only emulates the Vic-20, but also all the main 8-bit Commodore machines.</li>
+<li>To see Vicmon in action watch our video: <a href="http://www.youtube.com/watch?v=kmvF85euefs">Creating a TTY Simulator in Assembly Language on the Vic-20</a> and read its associated <a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">article</a>.</li>
+</ul>
+
+
+<p>I have lots more to say about assembly language programming on the Vic-20, so subscribe to the <a href="http://feedproxy.google.com/TechTinkering">TechTinkering RSS</a> feed or keep an eye on the site to see further articles.</p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      Beginning Assembly Programming on the Commodore Vic-20
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+      
+        <li><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20">Creating a TTY Simulator in Assembly Language on the Vic-20</a></li>
+      
+        <li><a href="/2009/04/23/the-smallest-communication-program-in-the-world">The Smallest Communication Program in the World?</a></li>
+      
+        <li><a href="/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080">Writing my First Program to Toggle in to the IMSAI 8080</a></li>
+      
+        <li><a href="/2009/03/29/hello-world-in-subleq-assembly">Hello, World! in SUBLEQ Assembly</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20';
+    var disqus_url = 'http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>

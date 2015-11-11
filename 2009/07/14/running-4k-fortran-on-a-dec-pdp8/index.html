@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Running 4K FORTRAN on a DEC PDP-8</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+        <li class="active"><a href="">Article</a></li>
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+      <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 70%' href='/tag/history'>History</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 119%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 172%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 101%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 101%' href='/tag/dec'>DEC</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 119%' href='/tag/linux'>Linux</a>
+<a style='font-size: 101%' href='/tag/games'>Games</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 88%' href='/tag/book'>Book</a>
+<a style='font-size: 101%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 178%' href='/tag/programming'>Programming</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 101%' href='/tag/review'>Review</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2009/07/14/running-4k-fortran-on-a-dec-pdp8" title="Running 4K FORTRAN on a DEC PDP-8">Running 4K FORTRAN on a DEC PDP-8</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2009-07-14">
+        14 July 2009
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/dec">DEC</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/pdp-8">PDP-8</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/fortran">FORTRAN</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/programming">Programming</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>4K FORTRAN was a subset of FORTRAN II and was the first high-level language available for the DEC PDP-8.  It consisted of two parts: the 4K FORTRAN Compiler (nicknamed "Fivetran") and the 4K FORTRAN Operating System.  The compiler was written by Larry Portner and the operating system was written by Henry Burkhardt.  The introduction of this compiler made the PDP-8 much easier to program and was particularly useful to those using the machine for scientific calculations.  Below is a guide to using 4K FORTRAN.</p>
+
+<h2>Obtaining 4K FORTRAN and Its Manual</h2>
+
+
+<p>The following files are all from <a href="http://bitsavers.org">Bitsavers</a>.  The 4K FORTRAN compiler is available as a paper-tape image called: <a href="http://bitsavers.org/bits/DEC/pdp8/papertapeImages/set2/tray3/dec-08-afc1-pb_9-13-67.bin">dec-08-afc1-pb_9-13-67.bin</a>, and the 4K FORTRAN operating system is also available as a paper-tape image called: <a href="http://bitsavers.org/bits/DEC/pdp8/papertapeImages/set2/tray3/dec-08-afc3-pb_8-67.bin">dec-08-afc3-pb_8-67.bin</a>.  In addition, the <a href="http://www.bitsavers.org/pdf/dec/pdp8/software/DEC-08-AFCO-D_4K_FORTRAN.pdf">4K FORTRAN Programmers Reference Manual (May 1969)</a> is available in PDF format.</p>
+
+<h2>Compiling Source Code</h2>
+
+
+<p>Once you have written some Fortran source code and committed it to paper-tape, you are ready to compile it.  For more information on how to create and edit source code on paper-tape, have a look at my article: <a href="/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/">A Quickstart Guide to Editing Paper Tape with the Symbolic Tape Editor on the DEC PDP-8</a>.</p>
+
+<h3>Example Source Code</h3>
+
+
+<p>Below is a simple piece of source code that calculates factorials.  It can be entered using the Symbolic Tape Editor mentioned above.  For those familiar with Fortran, note the non-standard use of semi-colons after labels, this is because the source is written on free-form paper tape not punched cards.</p>
+
+<div class="highlight"><pre><code class="language-fortran" data-lang="fortran"><span class="nv">C</span><span class="p">;</span>      <span class="nv">THIS</span> <span class="k">PROGRAM </span><span class="nv">CALCULATES</span> <span class="nv">FACTORIALS</span>
+<span class="mi">5</span><span class="p">;</span>      <span class="k">TYPE </span><span class="mi">200</span>
+<span class="mi">10</span><span class="p">;</span>     <span class="k">ACCEPT </span><span class="mi">300</span><span class="p">,</span><span class="nv">X</span>
+        <span class="nv">FACT</span><span class="o">=</span><span class="nv">Y</span><span class="o">=</span><span class="mf">1.</span>
+        <span class="k">IF</span> <span class="p">(</span><span class="nv">X</span><span class="p">)</span> <span class="mi">5</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">30</span>
+<span class="mi">30</span><span class="p">;</span>     <span class="k">IF</span> <span class="p">(</span><span class="nv">X</span><span class="o">-</span><span class="nv">Y</span><span class="p">)</span> <span class="mi">41</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">33</span>
+<span class="mi">32</span><span class="p">;</span>     <span class="k">TYPE </span><span class="mi">400</span><span class="p">,</span><span class="nv">X</span><span class="p">,</span><span class="nv">FACT</span>
+        <span class="nv">GO</span> <span class="nv">TO</span> <span class="mi">10</span>
+<span class="mi">33</span><span class="p">;</span>     <span class="nv">FACT</span><span class="o">=</span><span class="nv">FACT</span><span class="o">*</span><span class="p">(</span><span class="nv">Y</span><span class="o">=</span><span class="nv">Y</span><span class="o">+</span><span class="mf">1.</span><span class="p">)</span>
+        <span class="nv">GO</span> <span class="nv">TO</span> <span class="mi">30</span>
+<span class="mi">41</span><span class="p">;</span>     <span class="k">PAUSE</span>
+<span class="k">        </span><span class="nv">GO</span> <span class="nv">TO</span> <span class="mi">5</span>
+<span class="mi">200</span><span class="p">;</span>    <span class="k">FORMAT</span> <span class="p">(</span><span class="o">/</span><span class="p">,</span> <span class="s2">&quot;PLEASE TYPE A POSITIVE NUMBER&quot;</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span>
+<span class="mi">300</span><span class="p">;</span>    <span class="k">FORMAT</span> <span class="p">(</span><span class="nv">E</span><span class="p">)</span>
+<span class="mi">400</span><span class="p">;</span>    <span class="k">FORMAT</span> <span class="p">(</span><span class="o">/</span><span class="p">,</span><span class="nv">E</span><span class="p">,</span> <span class="s2">&quot;FACTORIAL IS&quot;</span><span class="p">,</span><span class="nv">E</span><span class="p">)</span>
+        <span class="k">END</span></code></pre></div>
+
+
+
+
+<h3>Instructions for Owners of a Real PDP-8</h3>
+
+
+<p>To load the compiler from paper-tape on a real PDP-8 just load the Binary Loader first and then the compiler from paper-tape in the normal way.  Now attach the source code paper-tape to the paper-tape reader and some blank tape for the object code to the paper-tape punch.  The compiler can then be started at Octal address 200.  If you have a high-speed punch or reader then you will want to set Switch Register bit 1 to high for a high-speed reader and bit 2 to high for a high-speed punch (See appendix C of the Fortran Manual).</p>
+
+<h3>Instructions for Those Using SimH to Emulate a PDP-8</h3>
+
+
+<p>To load the compiler's paper-tape image from the current directory:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; load dec-08-afc1-pb_9-13-67.bin</code></pre></div>
+
+
+<p>SimH emulates a high-speed punch and reader, so you will want to set Switch Register bits 1 &amp; 2 to high to tell the compiler that this is what you will be using.</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; de sr 3000</code></pre></div>
+
+
+<p>Attach the Fortran source code to the paper tape reader.  In this case we could attach the paper-tape image of the factorials source code from the example above:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; attach ptr factorials.ft</code></pre></div>
+
+
+<p>Attach a blank file to the paper tape punch, to store the object code produced by the compiler:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; attach ptp factorials.f.bin</code></pre></div>
+
+
+<p>To run the compiler on the source (200 here is in Octal):</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; run 200</code></pre></div>
+
+
+
+
+<h2>Running the Compiled Code in the 4K FORTRAN Operating System (Object Time System)</h2>
+
+
+<p>The code that is produced from the compiler can't be run on its own, it has to be run through the 4K FORTRAN Operating System.  This seems like a pain to start with, but once you get used to it, you will find that it gives you more flexible control over the devices attached to the PDP-8, without having to re-write your Fortran programs.</p>
+
+<h3>Instructions for Owners of a Real PDP-8</h3>
+
+
+<p>Load the operating system from paper-tape via the Binary Loader in the normal way.  If you have a high-speed punch or reader then you will want to set Switch Register bit 1 to high for a high-speed reader and bit 2 to high for a high-speed punch (See appendix C of the Fortran Manual).  Now attach the object code paper-tape to the paper-tape reader.  When the operating system is started at Octal address 200, it will load in the object code tape and halt.  To set the operating system to use the teletype for <code>ACCEPT</code> and <code>TYPE</code> statements (user I/O) set bits 1 &amp; 2 to low.  All you have to do now to execute the object code is press <code>CONTINUE</code>, and if you want to run it a second time just start execution again at Octal address 201.</p>
+
+<h3>Instructions for Those Using SimH to Emulate a PDP-8</h3>
+
+
+<p>If you have not already done so disconnect the paper-tape images from the reader and punch:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; detach ptr</code></pre></div>
+
+
+
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; detach ptp</code></pre></div>
+
+
+<p>To load the Operating System's paper-tape image from the current directory:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; load dec-08-afc3-pb_8-67.bin</code></pre></div>
+
+
+<p>Set the operating system to use the high-speed punch and high-speed reader:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; de sr 3000</code></pre></div>
+
+
+<p>Attach the object code produced by the compiler to the paper tape reader.  In this case we could attach the paper-tape image of object code produced from the factorials source code above:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; attach ptr factorials.f.bin</code></pre></div>
+
+
+<p>Start the fortran operating system, which will load in the object code tape and halt:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; run 200</code></pre></div>
+
+
+<p>To set the operating system to use the teletype for ACCEPT and TYPE statements (user I/O):</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; de sr 0000</code></pre></div>
+
+
+<p>To execute the object code:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; cont</code></pre></div>
+
+
+<p>To run the object code again:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; run 201</code></pre></div>
+
+
+
+
+<h2>Where Now?</h2>
+
+
+<p>As you have seen, basic operation of the Fortran compiler is quite simple.  Beyond this there is quite a bit more that can be done, such as using DECtape for processing data.  The 4K FORTRAN manual does a good job of explaining how to use the compiler and operating system, as well as teaching this variant of Fortran.  If you haven't used SimH before, take a look at my article: <a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a>.  As always, I would be interested to hear what you do with this.</p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      Running 4K FORTRAN on a DEC PDP-8
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8">A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</a></li>
+      
+        <li><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh">Emulating a DEC PDP-8 with SimH</a></li>
+      
+        <li><a href="/2008/10/14/pdp-8-in-three-days-of-the-condor">PDP 8 in 'Three Days of the Condor'</a></li>
+      
+        <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+      
+        <li><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20">Beginning Assembly Programming on the Commodore Vic-20</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2009/07/14/running-4k-fortran-on-a-dec-pdp8';
+    var disqus_url = 'http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>
