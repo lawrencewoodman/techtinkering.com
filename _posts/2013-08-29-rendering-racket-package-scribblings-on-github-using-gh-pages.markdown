@@ -22,7 +22,7 @@ $ mv * master/
 
 # You may need to move additional hidden files to the
 # ones in the line below
-$ mv *.g* master/
+$ mv .g* master/
 {% endhighlight %}
 
 
