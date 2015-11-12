@@ -1,4 +1,4 @@
-destination: ./_site
+destination: ../gh-pages
 lsi:         false
 port: 4000
 pygments:    true
