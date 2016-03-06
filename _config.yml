@@ -1,7 +1,7 @@
 destination: ../gh-pages
 lsi:         false
 port: 4000
-pygments:    true
+highligher:    pygments
 markdown:    rdiscount
 permalink:   /:year/:month/:day/:title
 maruku:
