@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Setting up z80pack to Create an Emulated CP/M System</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 177%' href='/tag/programming'>Programming</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 100%' href='/tag/book'>Book</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 100%' href='/tag/games'>Games</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 118%' href='/tag/linux'>Linux</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 88%' href='/tag/history'>History</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 110%' href='/tag/review'>Review</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 100%' href='/tag/dec'>DEC</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/" title="Setting up z80pack to Create an Emulated CP/M System">Setting up z80pack to Create an Emulated CP/M System</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2008-10-17">
+        17 October 2008
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/cpm">CP/M</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/emulation">Emulation</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/z80">Z80</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>I have decided to try out some old CP/M software, but need something to run it on.&nbsp; I could either do this on my Commodore 128 or through emulation.&nbsp; Unfortunately the 1571 disk drive for my Commodore is currently out of action, so that leaves me with emulation.&nbsp; I was going to use <a href="http://www.viceteam.org/">vice</a> to emulate a C128, but have always found it a pain to get CP/M files onto .D64/71 disk images.&nbsp; After looking around for the best emulator to run CP/M on, I came up with either <a href="http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/">YAZE-AG</a> or <a href="http://www.autometer.de/unix4fun/z80pack/">z80pack</a>.  z80pack seems to be better supported, has more documentation and is being actively developed, so that&#039;s the one I have chosen for this article.</p>
+
+<h2>Installing z80pack</h2>
+
+<ul>
+<li>First download the source (z80pack-x.y.tgz, currently z80pack-1.17.tgz) for <a href="http://www.autometer.de/unix4fun/z80pack/" title="A mirror of Udo Munk's old site">z80 pack</a> from <a href="http://www.autometer.de/unix4fun/z80pack/ftp/">here</a>.  The following <a href="http://www.autometer.de/unix4fun/z80pack/#dri_quick" title="Installation instructions for z80pack">installation instructions</a> are taken from the z80pack site.  More information can be found there, in particular, information on installing z80pack on non Linux/Unix systems.</li>
+<li>Unpack the source archive in your home directory:</li>
+</ul>
+
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>tar xzvf z80pack-x.y.tgz</code></pre></figure></p>
+
+<ul>
+<li>Change the directory it is extracted to, to make this article easier to explain.  There is no need for you to do this.</li>
+</ul>
+
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mv z80pack-1.16 z80pack</code></pre></figure></p>
+
+<ul>
+<li>Compile the emulator:</li>
+</ul>
+
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">   <span class="nv">$ </span><span class="nb">cd</span> ~/z80pack/cpmsim/srcsim
+   <span class="nv">$ </span>make
+   <span class="nv">$ </span>make clean</code></pre></figure></p>
+
+<ul>
+<li>Compile the support programs:</li>
+</ul>
+
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash">   <span class="nv">$ </span><span class="nb">cd</span> ~/z80pack/cpmsim/srctools
+   <span class="nv">$ </span>make
+   <span class="nv">$ </span>make clean</code></pre></figure></p>
+
+<p>This is leaves, on Linux, a few bash scripts in the <code>~/z80pack/cpmsim/</code> directory, <code>cpm2</code>, <code>cpm3</code>, <code>mpm</code>, which automatically start the emulator by booting into CP/M 2.2, CP/M 3.0, MP/M, etc.</p>
+
+<h2>Creating disk images</h2>
+
+<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/~michael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/~michael/cpmtools/cpmtools-2.7.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
+
+<h3>Create a 4Mb Hard Disk Image</h3>
+
+<p>It would be useful to create a 4Mb Hard Disk Image, as this may be needed if we want to use any bigger applications such as a C compiler.&nbsp; To create this we can use Cpmtools, but first we need to make sure that it has the correct disk definition by editing <code>/etc/cpmtools/diskdefs</code> and adding the following lines:</p>
+
+<p><figure class="highlight"><pre><code class="language-text" data-lang="text"># 4mb HDD for z80pack
+diskdef hd
+  seclen 128
+  tracks 255
+  sectrk 128
+  blocksize 2048
+  maxdir 1024
+  skew 0
+  boottrk 0
+  os 3.0
+end</code></pre></figure></p>
+
+<p>CP/M has 16 'user areas' which can be used to organize data on a disk.  They are effectively like a crude directory system. User area 0 is the default and the only one we will work with in this article.</p>
+
+<p>To create a blank 4Mb Hard Disk image called <code>main.hd4.cpm</code>, run:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mkfs.cpm -fhd main.hd4.cpm</code></pre></figure></p>
+
+<p>Then to copy all the <code>.COM</code> files from the current directory into the image in user area 0, run:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>cpmcp -fhd hd4.cpm <span class="k">*</span>.COM 0:</code></pre></figure></p>
+
+<h3>Create a Floppy Diskette Image</h3>
+
+<p>To create a floppy diskette image called, <code>work.dsk.cpm</code>, run:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mkfs.cpm work.dsk.cpm</code></pre></figure></p>
+
+<p>Then to copy all the <code>.DOC</code> files from the current directory into the image in user area 0: run:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>cpmcp work.dsk.cpm <span class="k">*</span>.DOC 0:</code></pre></figure></p>
+
+<h2>Configuring z80pack</h2>
+
+<p>We now have a 4mb disk image and a floppy disk image.  We can connect them to the emulator by creating a script in the <code>~/z80pack/cpmsim/</code> directory called <code>work</code>.  First copy <code>main.hd4.cpm</code> and <code>work.dsk.cpm</code> to the <code>~z80pack/cpmsim/disks/library/</code> directory.  It is also worth copying them to the backups directory as well: <code>~/z80pack/cpmsim/disks/backups/</code></p>
+
+<p>Now create a script in <code>~/z80pack/cpmsim/</code> called <code>work</code> to start z80pack with our disk image files attached:</p>
+
+<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#!/bin/sh</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="n">disks</span><span class="o">/</span><span class="n">drive</span><span class="p">[</span><span class="n">abci</span><span class="p">].</span><span class="nf">cpm</span>
+<span class="n">ln</span> <span class="n">disks</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">cpm3</span><span class="o">-</span><span class="mi">1</span><span class="p">.</span><span class="nf">dsk</span> <span class="n">disks</span><span class="o">/</span><span class="n">drivea</span><span class="p">.</span><span class="nf">cpm</span>
+<span class="n">ln</span> <span class="n">disks</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">cpm3</span><span class="o">-</span><span class="mi">2</span><span class="p">.</span><span class="nf">dsk</span> <span class="n">disks</span><span class="o">/</span><span class="n">driveb</span><span class="p">.</span><span class="nf">cpm</span>
+<span class="n">ln</span> <span class="n">disks</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">work</span><span class="p">.</span><span class="nf">dsk</span><span class="p">.</span><span class="nf">cpm</span> <span class="n">disks</span><span class="o">/</span><span class="n">drivec</span><span class="p">.</span><span class="nf">cpm</span>
+<span class="n">ln</span> <span class="n">disks</span><span class="o">/</span><span class="n">library</span><span class="o">/</span><span class="n">main</span><span class="p">.</span><span class="nf">hd4</span><span class="p">.</span><span class="nf">cpm</span> <span class="n">disks</span><span class="o">/</span><span class="n">drivei</span><span class="p">.</span><span class="nf">cpm</span>
+<span class="p">.</span><span class="nf">/</span><span class="n">cpmsim</span> <span class="o">-</span><span class="n">f4</span></code></pre></figure></p>
+
+<p>This attaches the two CP/M disks on drive A and B, our <code>work.dsk.cpm</code> image on drive C, and our <code>main.hd4.cpm</code> image on I:
+The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which makes it a bit more realistic.</p>
+
+<h2>Starting the emulator</h2>
+
+<p>From the <code>~/z80pack/cpmsim/</code> directory, run the script we created:</p>
+
+<p><figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./work</code></pre></figure></p>
+
+<p>The CP/M operating system will now boot up and leave you at the <code>A&gt;</code> prompt.</p>
+
+<p>To leave the emulator type:</p>
+
+<p><figure class="highlight"><pre><code class="language-text" data-lang="text">A&gt; a:bye</code></pre></figure></p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      Setting up z80pack to Create an Emulated CP/M System
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></li>
+      
+        <li><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></li>
+      
+        <li><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></li>
+      
+        <li><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></li>
+      
+        <li><a href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/';
+    var disqus_url = 'http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>

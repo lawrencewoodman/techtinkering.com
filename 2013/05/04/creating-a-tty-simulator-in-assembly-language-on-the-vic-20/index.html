@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Creating a TTY Simulator in Assembly Language on the Vic-20</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 177%' href='/tag/programming'>Programming</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 118%' href='/tag/linux'>Linux</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 100%' href='/tag/dec'>DEC</a>
+<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 100%' href='/tag/games'>Games</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 110%' href='/tag/review'>Review</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 88%' href='/tag/history'>History</a>
+<a style='font-size: 100%' href='/tag/book'>Book</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/" title="Creating a TTY Simulator in Assembly Language on the Vic-20">Creating a TTY Simulator in Assembly Language on the Vic-20</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2013-05-04">
+         4 May 2013
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/programming">Programming</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/commodore">Commodore</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/vic-20">Vic-20</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/assembly">Assembly</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>The Vicmon machine language cartridge is an excellent tool for exploring the Vic-20.  This article and its associated video will show you how to use it to create a simple program that will change the normal output of a Vic so that it feels a bit like a teletype terminal.  This will be done by taking over some of the functionality of the KERNEL's <em>CHROUT</em> subroutine at <code>$FFD2</code>.  For those without an easy way of entering an assembly language program, there is a BASIC listing at the end.</p>
+
+<p>Assuming you have the Vicmon cartridge attached to your machine or emulator, you can now enter the monitor.  If you are not too familiar with the Vicmon cartridge, have a look at: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Vic-20</a>.</p>
+
+<pre><code>SYS 24576
+</code></pre>
+
+<p>Each KERNAL subroutine is actually just a jump table to somewhere else.  To see where the <em>CHROUT</em> subroutine jumps to, we'll disassemble the code at <code>$FFD2</code>:</p>
+
+<pre><code>.D FFD2
+</code></pre>
+
+<p>Which shows that it contains:</p>
+
+<pre><code>FFD2 JMP ($0326)
+</code></pre>
+
+<p>This is an indirect jump to the address stored at <code>$0326</code>.</p>
+
+<p>If we now look at <code>$0326</code>:</p>
+
+<pre><code>.M 0326
+</code></pre>
+
+<p>We see that the first two bytes are <code>7A F2</code>.  The 6502 is little-endian, so it stores the least significant byte first and hence this is address <code>$F27A</code>.  Because <code>$0326</code> is in RAM, we can change the address there to point to our code.  Once our routine has been run, we'll jump to <code>$F27A</code> to output the character to screen.</p>
+
+<p>It would be better if our program doesn't interfere with BASIC, so as it is quite small, we can store it in the cassette buffer.  This is located at <code>$033C</code> and is 191 bytes long.  If you load or save with the cassette, the program will naturally be lost.</p>
+
+<p>The program is essentially in two parts.  The first part changes the output vector to point to the second part and sets the volume to maximum.  The second part is the routine which will be called when the <em>CHROUT</em> (<code>$FFD2</code>) subroutine jumps to the output vector stored at <code>$0326</code>.  This part will output a noise, pause and then jump to the original output vector at <code>$F27A</code>.</p>
+
+<p>The video below shows how to use the Vicmon machine language cartridge to enter the program and demonstrates the TTY effect.</p>
+
+<object style="margin-top: 1em; margin-right:1em; margin-bottom:1em;" align="left" width="650" height="394">
+  <param name="movie" value="http://www.youtube.com/v/kmvF85euefs&amp;hl=en&amp;fs=1"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed src="http://www.youtube.com/v/kmvF85euefs&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="650" height="394"></embed>
+</object>
+
+
+<h2>Disassembly of Program</h2>
+
+<p>Here is the full program as entered in the video, so that you can play with it yourself.</p>
+
+<pre><code>      ; Initialize the routine
+033C  LDA #$03      ; Point output vector used by $FFD2 to our routine
+033E  STA $0327     ; |
+0341  LDA #$4C      ; |
+0343  STA $0326     ; \
+0346  LDA #$0F      ; Set the volume to maximum
+0348  STA $900E     ; \
+034B  RTS
+
+      ; The main routine pointed to by the output vector
+034C  PHA           ; Save the character to be printed
+
+034D  CMP #$20      ; Skip making a noise if a space character
+034F  BEQ $035A     ; \
+0351  CMP #$0D      ; Skip making a noise if a return character
+0353  BEQ $035A     ; \
+
+0355  LDA #$80      ; Make the lowest note possible with speaker 2
+0357  STA $900B     ; \
+
+035A  TXA           ; Save the registers because $FFD2 doesn't alter them
+035B  PHA           ; |
+035C  TYA           ; |
+035D  PHA           ; \
+
+035E  LDY #$00      ; Delay to hold note if making a noise or give equal gap
+0360  LDX #$15      ; |
+0362  DEY           ; |
+0363  BNE $0362     ; |
+0365  DEX           ; |
+0366  BNE $0362     ; \
+
+0368  LDA #$00      ; Turn off speaker 2
+036A  STA $900B     ; \
+
+036D  LDY #$00      ; Delay between letters
+036F  LDX #$10      ; |
+0371  DEY           ; |
+0372  BNE $0371     ; |
+0374  DEX           ; |
+0375  BNE $0371     ; \
+
+0377  PLA           ; Restore the registers
+0378  TAY           ; |
+0379  PLA           ; |
+037A  TAX           ; |
+037B  PLA           ; \
+
+037C  JMP $F27A     ; Jump to the normal output vector stored in $0326
+</code></pre>
+
+<h2>Memory Dump</h2>
+
+<p>Below is a memory dump of the program.  Some find it quicker to enter the hex codes directly and this is also useful to create a BASIC program that will load the machine language.</p>
+
+<pre><code>033C  A9 03 8D 27 03
+0341  A9 4C 8D 26 03
+0346  A9 0F 8D 0E 90
+034B  60 48 C9 20 F0
+0350  09 C9 0D F0 05
+0355  A9 80 8D 0B 90
+035A  8A 48 98 48 A0
+035F  00 A2 15 88 D0
+0364  FD CA D0 FA A9
+0369  00 8D 0B 90 A0
+036E  00 A2 10 88 D0
+0373  FD CA D0 FA 68
+0378  A8 68 AA 68 4C
+037D  7A F2
+</code></pre>
+
+<p>I find it quite nice to work with the hex as well as assembly language, particularly when you are debugging as it can be quicker to navigate and find what you are looking for.  Here you can see the repeated <code>LDA</code> commands used at the start of the program as <code>A9</code>.  You can also see the <code>20</code> used to detect a space at <code>$034E</code>.  If you wanted to change this character, you could just alter that memory location, instead of reassembling the line.</p>
+
+<h2>BASIC Alternative</h2>
+
+<p>The following is the program converted to BASIC so that anyone with a Vic can enter it.</p>
+
+<pre><code>10 FOR ADR=828 TO 894:READ OCT:POKE ADR,OCT:NEXT ADR
+20 DATA 169,3,141,39,3,169,76,141,38,3
+30 DATA 169,15,141,14,144,96,72,201,32,240
+40 DATA 9,201,13,240,5,169,128,141,11,144
+50 DATA 138,72,152,72,160,0,162,21,136,208
+60 DATA 253,202,208,250,169,0,141,11,144,160
+70 DATA 0,162,16,136,208,253,202,208,250,104
+80 DATA 168,104,170,104,76,122,242
+90 SYS 828
+</code></pre>
+
+<p>All you have to do is <code>RUN</code> the program and from that point on your Vic will feel a bit like a TTY.</p>
+
+<h2>Where now?</h2>
+
+<p>For more information on Vicmon or for those just starting to program the Vic-20 in assembly language, take a look at: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Vic-20</a>.  I have also created an extended version of the TTY simulator and hosted it on GitHub: <a href="https://github.com/LawrenceWoodman/vic20_simtty">vic20_simtty</a>.</p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      Creating a TTY Simulator in Assembly Language on the Vic-20
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+      
+        <li><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore Vic-20</a></li>
+      
+        <li><a href="/2009/04/23/the-smallest-communication-program-in-the-world/">The Smallest Communication Program in the World?</a></li>
+      
+        <li><a href="/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/">Writing my First Program to Toggle in to the IMSAI 8080</a></li>
+      
+        <li><a href="/2009/03/29/hello-world-in-subleq-assembly/">Hello, World! in SUBLEQ Assembly</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/';
+    var disqus_url = 'http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>

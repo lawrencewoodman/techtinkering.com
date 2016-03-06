@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>An Introduction to Corewar</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 110%' href='/tag/review'>Review</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 100%' href='/tag/dec'>DEC</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 118%' href='/tag/linux'>Linux</a>
+<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 100%' href='/tag/book'>Book</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 88%' href='/tag/history'>History</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 177%' href='/tag/programming'>Programming</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 100%' href='/tag/games'>Games</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2009/04/30/an-introduction-to-corewar/" title="An Introduction to Corewar">An Introduction to Corewar</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2009-04-30">
+        30 April 2009
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/programming">Programming</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/corewar">Corewar</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/programminggames">Programming Games</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>I remember reading about Corewar roughly 20 years ago and thinking that I will have to have a go at that when I get the time.  As often happens in life, things got in the way and I only recently managed to give it a go.  I love the challenge of programming and the competitive aspect of this programming game really appeals to me.  The object of the game is to write a battle program that will take over a virtual computer and kill the other battle programs running upon it.  Since the game recently celebrated it's 25th birthday, I thought that I would write the following brief introduction to the game to whet peoples' appetite and encourage new interest.
+<a name="more"></a></p>
+
+<h2>History</h2>
+
+
+<p>The game was first described in <a href="http://corewar.co.uk/cwg.txt">Core War Guidelines</a> by D. G. Jones and A. K. Dewdney in March 1984 and was introduced to the public
+in May 1984 via Dewdney's <a href="http://www.corewar.co.uk/vogtmann/first.htm">Computer Recreation</a> column in <em>Scientific American</em>.</p>
+
+<p>There have been several revisions to REDCODE (the form of assembly language in which the programs are written).  The most used is currently The International Core Wars Society (ICWS) 1994 standard with the extensions introduced by pMARS 0.8.  There is also some interest in the older ICWS '88 standard.</p>
+
+<h2>The MARS Environment</h2>
+
+
+<p>The programs are run in the MARS (Memory Array Redcode Simulator) environment.  The object of the game is for the programs to take over the environment's memory (Core), and kill the other programs.  The core is circular and memory addresses are relative to the current position.  This is so that it does't matter where a program starts in the core.  The biggest difference from a real processor is that each memory location consists of an instruction and its two operands.</p>
+
+<p>As mentioned above, the programs are written in a form of assembly language called REDCODE.  The most common version of this gives the following instructions:</p>
+
+<table class="neatTable">
+<tr><td>DAT</td><td>Data</td><td>Kills the current process</td></tr>
+<tr><td>MOV</td><td>Move</td><td>Copies data from one address to another</td></tr>
+<tr><td>ADD</td><td>Add</td><td>Adds one number to another</td></tr>
+<tr><td>SUB</td><td>Subtract</td><td>Subtracts one number from another</td></tr>
+<tr><td>MUL</td><td>Multiply</td><td>Multiplies one number by another</td></tr>
+<tr><td>DIV</td><td>Divide</td><td>Divides one number by another</td></tr>
+<tr><td>MOD</td><td>Modulus</td><td>Divides one number by another and gives the remainder</td></tr>
+<tr><td>JMP</td><td>Jump</td><td>Continues execution from another address</td></tr>
+<tr><td>JMZ</td><td>Jump if zero</td><td>Tests a number and jumps to an address if it's 0</td></tr>
+<tr><td>JMN</td><td>Jump if not zero</td><td>Tests a number and jumps if it isn't 0</td></tr>
+<tr><td>DJN</td><td>Decrement and jump if not zero</td><td>Decrements a number by one, and jumps unless the result is 0</td></tr>
+<tr><td>SPL</td><td>Split</td><td>Starts a second process at another address</td></tr>
+<tr><td>CMP</td><td>Compare</td><td>Same as SEQ</td></tr>
+<tr><td>SEQ</td><td>Skip if equal</td><td>Compares two locations, and skips the next instruction if they are equal</td></tr>
+<tr><td>SNE</td><td>Skip if not equal</td><td>Compares two locations, and skips the next instruction if they aren't equal</td></tr>
+<tr><td>SLT</td><td>Skip if less than</td><td>Compares two locations, and skips the next instruction if the first is less than the second</td></tr>
+<tr><td>LDP</td><td>Load from p-space</td><td>Loads a number from private storage space</td></tr>
+<tr><td>STP</td><td>Store to p-space</td><td>Stores a number to private storage space</td></tr>
+<tr><td>NOP</td><td>No operation</td><td>Does nothing</td></tr>
+</table>
+
+
+<p>In addition, there are a number of different addressing modes and instruction modifiers which change the way that they act.  These combine to make REDCODE able to express a lot in very little code.</p>
+
+<h2>Example Programs</h2>
+
+
+<p>I have provided slightly altered versions of the standard example programs written by A. K. Dewdney to give you an idea of how the programs work.</p>
+
+<h3>IMP</h3>
+
+
+<p>This is one of the simplest program that can be written in REDCODE.  It just replicates itself throughout the core and consists of only one instruction:</p>
+
+<p><figure class="highlight"><pre><code class="language-redcode" data-lang="redcode">mov.i 0, 1</code></pre></figure></p>
+
+<p>This copies memory location 0 to memory location 1.  The <code>.i</code> suffix is an instruction modifier which means that <code>mov</code> is to copy the whole of the memory location.  Therefore, in this case the instruction copies the current instruction at location 0 (remember that the addressing is relative and a memory location contains an instruction and it's operands) to location 1 (the next location).  Execution then continues at the next memory location, which now contains the same instruction as the last, so this program rapidly replicates itself throughout the core.</p>
+
+<p>However, the program does not kill the other programs, so where it writes over another program, the other program will just execute this code instead.  This is useful to make another program ineffective, but it still needs to be killed by getting it to execute a DAT instruction, otherwise the outcome is likely to be a tie.</p>
+
+<h3>DWARF</h3>
+
+
+<p>As mentioned above the IMP won't kill another process.  To do this you need to get a process to execute a <code>DAT</code> instruction.  This is therefore what the following program does:</p>
+
+<p><figure class="highlight"><pre><code class="language-redcode" data-lang="redcode">add.ab  #4, 3      <br/>
+mov.i   2, @2
+jmp    -2
+dat    #0, #0</code></pre></figure></p>
+
+<p>The program starts by adding the literal number 4 to memory location 3, which contains the <code>DAT</code> instruction.  This <code>DAT</code> instruction is known as the bomb as it is what will stop another process.  The <code>.ab</code> suffix indicates that the A field (containing #4) of the source should be added to the B field (containing #0) of the destination.  The bomb at memory location 2, is then copied to the memory location pointed to by the B field of the bomb.  In-direct addressing via the B field is indicated by the <code>@</code> symbol.  Finally the program starts back again at the beginning.  You can therefore see that this copies a bomb to every fourth memory location, and if the core is divisible by four, it will never bomb itself.</p>
+
+<h2>Strategies</h2>
+
+
+<p>Strategies range from the examples given above of code that replicates itself or bombs other programs, to code that scans for other programs before disabling them or killing them.  Decoys can be used to fool the scanners and you can combine strategies to increase effectiveness.  The latest developments are self-repairing code and battle programs that have been evolved.  The possibilities really are endless.</p>
+
+<h2>Competing and Other Activities</h2>
+
+
+<p>There are a number of ways that you can compete and add interest to REDCODE programming:</p>
+
+<ul>
+<li>You can run other peoples' programs against your own via a simulator on your computer.</li>
+<li>Once you have created an effective battle program you could submit it to a hill such as <a href="http://www.koth.org/index.html">King of the Hill</a>, where it will compete against other battle programs.</li>
+<li>Engage in <a href="http://labarga.atspace.com/mc.html">The Mini Challenge</a>, where specific programming challenges are set.</li>
+<li>You can use the constraints placed upon the programmer by REDCODE as an interesting platform to experiment with.  This is the focus of a lot of the posts on <a href="http://impomatic.blogspot.com/">Thoughts on Corewar...</a>.</li>
+</ul>
+
+
+
+
+<h2>Where Now?</h2>
+
+
+<p>To begin you will need to download a simulator such as <a href="http://sourceforge.net/projects/corewar">pMARS</a> and a tutorial such as <a href="http://vyznev.net/corewar/guide.html">The beginners' guide to Redcode</a>.  Further information can be found at the excellent site: <a href="http://www.corewar.co.uk/">Corewar - the war of the programmers</a>.</p>
+
+<p>I must warn you before you try it yourselves; it is incredibly addictive as you will nearly always want to make just one more tweak to improve a battle program.  Have fun, but remember it is only a game.</p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      An Introduction to Corewar
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/04/30/an-introduction-to-corewar/" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+      
+        <li><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the Vic-20</a></li>
+      
+        <li><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore Vic-20</a></li>
+      
+        <li><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></li>
+      
+        <li><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2009/04/30/an-introduction-to-corewar/';
+    var disqus_url = 'http://techtinkering.com/2009/04/30/an-introduction-to-corewar/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>

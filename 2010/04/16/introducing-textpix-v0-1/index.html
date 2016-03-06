@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</title>
+  <meta charset="utf-8" />
+
+  <meta name="description" content="Retro Computers, Programming, General Technical Tinkering"/>
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <link rel="stylesheet" href="/css/sitestyle.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="/css/html_pygments.css" media="screen" type="text/css" />
+
+  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+
+  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
+  <!--[if lte IE 6]>
+    <script defer type="text/javascript" src="/js/pngfix.js"></script>
+  <![endif]-->
+
+  <!-- Allow html5 elements to be style properly for IE v8 and before -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
+
+  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+  <script type="text/javascript">
+      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  </script>
+
+  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
+  <!-- End Cookie Consent plugin -->
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="banner">
+      <a class="brand" href="/">TechTinkering</a>
+
+      <ul>
+        <li
+        
+        ><a href="/">Home</a></li>
+
+        <li
+        
+        ><a href="/archive">Archive</a></li>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        <li
+        
+        ><a href="/about">About</a></li>
+
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:feedback@techtinkering.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+    </nav>
+
+    <div class="content">
+      <div class="rightColumn">
+
+  <div class="columnAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Latest Articles</h2>
+  <ul class="briefPosts">
+    
+      <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
+    
+      <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
+    
+      <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
+    
+      <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
+    
+      <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+    
+  </ul>
+
+  <h2>Popular Tags</h2>
+  <div>
+    <a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
+<a style='font-size: 118%' href='/tag/linux'>Linux</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 177%' href='/tag/programming'>Programming</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 100%' href='/tag/games'>Games</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 110%' href='/tag/review'>Review</a>
+<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
+<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 100%' href='/tag/dec'>DEC</a>
+<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
+<a style='font-size: 100%' href='/tag/book'>Book</a>
+<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
+<a style='font-size: 88%' href='/tag/history'>History</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
+<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+
+  </div>
+
+</div>
+
+<div class="leftColumn">
+  <article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="name"><a href="/2010/04/16/introducing-textpix-v0-1/" title="Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data">Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</a></h1>
+    <span class="byLine">
+      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
+             <span itemprop="name">Lawrence Woodman</span>
+           </a>
+         </span>
+      <time itemprop="datePublished" datetime="2010-04-16">
+        16 April 2010
+      </time>
+    </span>
+
+
+    <!-- AddThis Button BEGIN -->
+    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
+    <a class="addthis_button_facebook"></a>
+    <a class="addthis_button_twitter"></a>
+    <a class="addthis_button_reddit"></a>
+    <a class="addthis_button_compact"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
+    <!-- AddThis Button END -->
+
+    <span class="tagLine">
+      <br />
+      Tags:
+      
+        <a rel="tag" href="/tag/conversion">Conversion</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/graphics">Graphics</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/images">Images</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/textpix">TextPix</a> &nbsp; &nbsp;
+      
+        <a rel="tag" href="/tag/textmode">Text mode</a> &nbsp; &nbsp;
+      
+    </span>
+
+  </header>
+
+  <div class="articleBody" itemprop="articleBody">
+    <p>I have today released <a href="https://github.com/LawrenceWoodman/TextPix/blob/master/README.md" title="The TextPix README">TextPix</a> v0.1  This is a program to take an image and convert it into a redefined character set and the associated text mode screen data referencing that character set.</p>
+
+<p>The program came about because I wanted to be able to load images on the Jupiter Ace, but the Ace has no way of allowing you to control individual pixels on the screen.  The best that you can do is redefine the character set and then use those redefined characters to display your image.  This does however present a problem as the Ace only allows you 128 characters plus their inverse in the character set.  Since the screen contains 32x24=768 characters, there would have to be massive repetition in the image to be able to use only 128 characters plus their inverse to display the image.  TextPix therefore tries to find similar sections of the images to replace other similar sections so that the number of characters needed in the character set can be brought down to 128.</p>
+
+<p><img class="rightFlow" width="200" height="150" src="/images/posts/eye-open.jpg" title="The source image" alt=""/>
+The program is only in development at the moment and not ready for general use.  However it does achieve its basic aim of creating a redefined character
+set and a text mode screen that will approximate a source image.  To the right can be seen a full colour image that was used in the screenshot below.</p>
+
+<p><img class="leftFlow" width="640" height="266" src="/images/posts/textpix-v0.1-screenshot.jpg" title="Screenshot of TextPix v0.1" alt=""/>
+The screenshot shows two black and white images: The one on the left is the source image dithered to two colours and altered to the correct size and the image on the right is the result of TextPix's image reduction.  The results aren't always brilliant, but it certainly shows that a lot can be done with the concept.  This give me confidence that it is worth pursuing and that futher advances can be made.</p>
+
+<p>Since first writing the program, I have decided to make it more generic so that it will work on other machines.  Ultimately I envisage that this method could be used to create small movies in text mode.</p>
+
+<h2>Further Information</h2>
+
+
+<p>As mentioned above, the program is not ready for general use, however more details can be found in the TextPix <a href="https://github.com/LawrenceWoodman/TextPix/blob/master/README.md">README</a>.  If you would like to contribute to the project then I would particularly love to hear from you.</p>
+
+  </div>
+</article>
+
+
+  <div style="clear: left;"></div>
+
+  
+    <hr />
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+      <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
+    </a>
+    <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
+      Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data
+    </span><br />
+
+    by
+    <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2010/04/16/introducing-textpix-v0-1/" property="cc:attributionName" rel="cc:attributionURL">
+    TechTinkering
+    </a>
+     is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
+    Creative Commons Attribution 2.0 UK: England & Wales License
+    </a>
+  
+
+  <hr style="clear:both;" />
+
+  
+    <h2>Related</h2>
+    <ul class="briefPosts">
+      
+        <li><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">My Top 10 Classic Text Mode BSD Games</a></li>
+      
+        <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
+      
+        <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
+      
+        <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
+      
+        <li><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the Vic-20</a></li>
+      
+    </ul>
+  
+
+  <hr />
+
+  <div id="rightAd">
+    <script type="text/javascript"><!--
+    google_ad_client = "ca-pub-1613732348909658";
+    /* 300x250 - TechTinkering */
+    google_ad_slot = "8883223823";
+    google_ad_width = 300;
+    google_ad_height = 250;
+    //-->
+    </script>
+    <script type="text/javascript"
+    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+  </div>
+
+  <h2>Bookmark and Share</h2>
+  <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+  </a> Subscribe to RSS feed<br />
+
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
+    <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
+    <br />
+    <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
+    <br />
+    <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
+    <br />
+    <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
+    <br />
+    <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
+  </div>
+  <!-- AddThis Button END -->
+
+  <hr style="clear:both;" />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname = 'techtinkering';
+    var disqus_identifier = '/2010/04/16/introducing-textpix-v0-1/';
+    var disqus_url = 'http://techtinkering.com/2010/04/16/introducing-textpix-v0-1/';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+    </div>
+
+    <footer>
+      <strong>Legal:</strong> &nbsp;
+      <a href="/tandc/">Terms</a>,
+      <a href="/statinfo/">Statutory Information</a>
+
+      &nbsp; &nbsp;
+      <strong>RSS Feeds:</strong> &nbsp;
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
+      <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+    </footer>
+  </div>
+
+
+  
+  <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
+  </script>
+  <noscript>
+      <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
+  </noscript>
+
+  
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-4388762-2");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+
+  </body>
+</html>
