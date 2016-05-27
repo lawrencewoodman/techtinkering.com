@@ -126,43 +126,43 @@
 
   <h2>Popular Tags</h2>
   <div>
-    <a style='font-size: 100%' href='/tag/dec'>DEC</a>
+    <a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
+<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
+<a style='font-size: 70%' href='/tag/8080'>8080</a>
+<a style='font-size: 70%' href='/tag/z80'>Z80</a>
+<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
+<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
 <a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
 <a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
-<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
-<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
-<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
-<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
-<a style='font-size: 100%' href='/tag/games'>Games</a>
-<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
-<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
+<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
+<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
+<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
 <a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
-<a style='font-size: 100%' href='/tag/book'>Book</a>
-<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
-<a style='font-size: 70%' href='/tag/z80'>Z80</a>
-<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
-<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
+<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
+<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
 <a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
-<a style='font-size: 70%' href='/tag/editors'>Editors</a>
+<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
+<a style='font-size: 100%' href='/tag/dec'>DEC</a>
+<a style='font-size: 110%' href='/tag/review'>Review</a>
+<a style='font-size: 70%' href='/tag/xace'>xAce</a>
+<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
+<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
+<a style='font-size: 100%' href='/tag/book'>Book</a>
 <a style='font-size: 118%' href='/tag/linux'>Linux</a>
 <a style='font-size: 88%' href='/tag/history'>History</a>
-<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
-<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
-<a style='font-size: 88%' href='/tag/dos'>DOS</a>
-<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
-<a style='font-size: 70%' href='/tag/xace'>xAce</a>
-<a style='font-size: 110%' href='/tag/review'>Review</a>
-<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
+<a style='font-size: 100%' href='/tag/games'>Games</a>
+<a style='font-size: 70%' href='/tag/editors'>Editors</a>
 <a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
-<a style='font-size: 70%' href='/tag/c'>C</a>
-<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
-<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
-<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 88%' href='/tag/dos'>DOS</a>
 <a style='font-size: 88%' href='/tag/bbs'>BBS</a>
-<a style='font-size: 177%' href='/tag/programming'>Programming</a>
-<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
-<a style='font-size: 70%' href='/tag/8080'>8080</a>
 <a style='font-size: 200%' href='/tag/retro'>Retro</a>
+<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
+<a style='font-size: 177%' href='/tag/programming'>Programming</a>
+<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
+<a style='font-size: 70%' href='/tag/c'>C</a>
+<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
+<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
 
   </div>
 
@@ -215,13 +215,11 @@
     <p>I have been using <a href="http://jekyllrb.com/">Jekyll</a> a lot recently on the <a href="http://trustafriend.com">Trust a Friend</a> website and found the need to display a rating as a series of stars.  Initially I implemented this in JavaScript, which worked fine, but I like to limit the amount of JavaScript on my sites.  I could have done this with some straight <em>Liquid</em> but it would have been quite messy, so I decided to write a plugin for Jekyll.</p>
 
 <h2>The Code</h2>
-
-
-<p>I had never programmed in Ruby before writing this plugin, so I'm sure it isn't written in the best Ruby style, but it works and therefore I think it is worth sharing.  The code consists of an additional definition to the Filters module to provide a filter called <code>star_rating</code>.  The latest version of the code can be found under my <a href="http://github.com/LawrenceWoodman">GitHub</a> account in the <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">star_rating-liquid_filter</a> repository.</p>
+<p>I had never programmed in Ruby before writing this plugin, so I’m sure it isn’t written in the best Ruby style, but it works and therefore I think it is worth sharing.  The code consists of an additional definition to the Filters module to provide a filter called <code class="highlighter-rouge">star_rating</code>.  The latest version of the code can be found under my <a href="http://github.com/LawrenceWoodman">GitHub</a> account in the <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">star_rating-liquid_filter</a> repository.</p>
 
 <p>At the time of writing, the <strong>star_rating.filter.rb</strong> plugin file looks like the following:</p>
 
-<p><figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">######################################################################</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">######################################################################</span>
 <span class="c1"># A filter plugin for Jekyll to display ratings as a series</span>
 <span class="c1"># of nought to five star images.</span>
 <span class="c1">#---------------------------------------------------------------------</span>
@@ -253,72 +251,64 @@
 <span class="c1"># LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN </span>
 <span class="c1"># ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE </span>
 <span class="c1"># POSSIBILITY OF SUCH DAMAGE.</span>
-<span class="c1">######################################################################</span></p>
+<span class="c1">######################################################################</span>
 
-<p><span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">module</span> <span class="nn">Filters</span></p>
+<span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">module</span> <span class="nn">Filters</span>
 
-<pre><code>&lt;span class="c1"&gt;# Location of the star images from root of website&lt;/span&gt;
-&lt;span class="no"&gt;Star_imagesLoc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"/images"&lt;/span&gt;
+    <span class="c1"># Location of the star images from root of website</span>
+    <span class="no">Star_imagesLoc</span> <span class="o">=</span> <span class="s2">"/images"</span>
 
-&lt;span class="c1"&gt;# The format of the img tag used by % method&lt;/span&gt;
-&lt;span class="no"&gt;Star_imageTag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;img src=&lt;/span&gt;&lt;span class="se"&gt;\"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="no"&gt;Star_imagesLoc&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/%s&lt;/span&gt;&lt;span class="se"&gt;\"&lt;/span&gt;&lt;span class="s2"&gt; alt=&lt;/span&gt;&lt;span class="se"&gt;\"&lt;/span&gt;&lt;span class="s2"&gt;%s&lt;/span&gt;&lt;span class="se"&gt;\"&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&amp;gt;&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    <span class="c1"># The format of the img tag used by % method</span>
+    <span class="no">Star_imageTag</span> <span class="o">=</span> <span class="s2">"&lt;img src=</span><span class="se">\"</span><span class="si">#{</span><span class="no">Star_imagesLoc</span><span class="si">}</span><span class="s2">/%s</span><span class="se">\"</span><span class="s2"> alt=</span><span class="se">\"</span><span class="s2">%s</span><span class="se">\"</span><span class="s2"> </span><span class="se">\&gt;</span><span class="s2">"</span>
 
-&lt;span class="c1"&gt;# Displays the rating as a series of stars&lt;/span&gt;
-&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;star_rating&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    <span class="c1"># Displays the rating as a series of stars</span>
+    <span class="k">def</span> <span class="nf">star_rating</span><span class="p">(</span><span class="n">rating</span><span class="p">)</span>
 
-  &lt;span class="n"&gt;wholeStars&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;rating&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;floor&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;wholeStars&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;wholeStars&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
-  &lt;span class="n"&gt;halfStar&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;wholeStars&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="p"&gt;?&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-  &lt;span class="n"&gt;clearStars&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;wholeStars&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;halfStar&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      <span class="n">wholeStars</span> <span class="o">=</span> <span class="n">rating</span><span class="p">.</span><span class="nf">floor</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">rating</span> <span class="o">-</span> <span class="n">wholeStars</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">wholeStars</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">end</span>
+      <span class="n">halfStar</span> <span class="o">=</span> <span class="p">(</span><span class="n">rating</span> <span class="o">-</span> <span class="n">wholeStars</span> <span class="o">==</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">clearStars</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">-</span> <span class="p">(</span><span class="n">wholeStars</span> <span class="o">+</span> <span class="n">halfStar</span><span class="p">)</span>
 
-  &lt;span class="n"&gt;ratingAltText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"%.1f/5.0"&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;rating&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+      <span class="n">ratingAltText</span> <span class="o">=</span> <span class="s2">"%.1f/5.0"</span> <span class="o">%</span> <span class="p">[</span><span class="n">rating</span><span class="p">]</span>
 
-  &lt;span class="n"&gt;htmlOutput&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="no"&gt;String&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;new&lt;/span&gt;
-  &lt;span class="n"&gt;wholeStars&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;times&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;htmlOutput&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="no"&gt;Star_imageTag&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"star_filled.png"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;ratingAltText&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="n"&gt;ratingAltText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+      <span class="n">htmlOutput</span> <span class="o">=</span> <span class="no">String</span><span class="p">.</span><span class="nf">new</span>
+      <span class="n">wholeStars</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+        <span class="n">htmlOutput</span> <span class="o">+=</span> <span class="no">Star_imageTag</span> <span class="o">%</span> <span class="p">[</span><span class="s2">"star_filled.png"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">ratingAltText</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span>
+        <span class="n">ratingAltText</span> <span class="o">=</span> <span class="s2">""</span>
+      <span class="k">end</span>
 
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;halfStar&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-    &lt;span class="n"&gt;htmlOutput&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="no"&gt;Star_imageTag&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"star_half.png"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;ratingAltText&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="n"&gt;ratingAltText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+      <span class="k">if</span> <span class="p">(</span><span class="n">halfStar</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">htmlOutput</span> <span class="o">+=</span> <span class="no">Star_imageTag</span> <span class="o">%</span> <span class="p">[</span><span class="s2">"star_half.png"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">ratingAltText</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span>
+        <span class="n">ratingAltText</span> <span class="o">=</span> <span class="s2">""</span>
+      <span class="k">end</span>
 
-  &lt;span class="n"&gt;clearStars&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nf"&gt;times&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
-    &lt;span class="n"&gt;htmlOutput&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="no"&gt;Star_imageTag&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"star_clear.png"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="si"&gt;#{&lt;/span&gt;&lt;span class="n"&gt;ratingAltText&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-    &lt;span class="n"&gt;ratingAltText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;
-  &lt;span class="k"&gt;end&lt;/span&gt;
+      <span class="n">clearStars</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
+        <span class="n">htmlOutput</span> <span class="o">+=</span> <span class="no">Star_imageTag</span> <span class="o">%</span> <span class="p">[</span><span class="s2">"star_clear.png"</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">ratingAltText</span><span class="si">}</span><span class="s2">"</span><span class="p">]</span>
+        <span class="n">ratingAltText</span> <span class="o">=</span> <span class="s2">""</span>
+      <span class="k">end</span>
 
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;htmlOutput&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-</code></pre>
-
-<p>  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure></p>
+      <span class="k">return</span> <span class="n">htmlOutput</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
 <h2>Installation</h2>
-
-
 <p>Please refer to the instructions in the repository, but to give you an idea of
 how easy it is, here are the current instructions:
 <em>Please look at the <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter/blob/master/README.md">star_rating-liquid_filter README</a> for the latest instructions.</em>
 1. Download the latest version of the plugin from the <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">star_rating-liquid_filter</a> repository
-2. Copy <code>star_rating.filter.rb</code> to your <code>_plugins</code> directory
-3. Copy the contents of <code>images</code> to your <code>images</code> directory</p>
+2. Copy <code class="highlighter-rouge">star_rating.filter.rb</code> to your <code class="highlighter-rouge">_plugins</code> directory
+3. Copy the contents of <code class="highlighter-rouge">images</code> to your <code class="highlighter-rouge">images</code> directory</p>
 
 <h2>Using the Filter</h2>
-
-
-<p>If you had a variable such as <code>page.rating</code> then you could put <code>{{ page.rating|star_rating }}</code> in your text
+<p>If you had a variable such as <code class="highlighter-rouge">page.rating</code> then you could put <code class="highlighter-rouge"><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">page.rating|star_rating</span><span class="w"> </span><span class="p">}</span><span class="err">}</span></code> in your text
 and the relevant number of images would be displayed.</p>
 
 <h2>Final Thoughts</h2>
-
-
-<p>This filter will continue to be updated so please go to see it's github <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">repo</a> for the latest version.  I was pleased with how quick and easy it was to write plugins for Jekyll and it has given me ideas for all sorts of plugins which could aid my Jekyll use.  While writing the plugin, I had to skim a few Ruby tutorials to start learning the language.  During this I fell in love with the beauty and elegance of Ruby and intend to learn it properly very shortly.  For the type of work that I do, I can see how it will give me a good productivity boost and from what I have seen so far, even make programming more fun.</p>
+<p>This filter will continue to be updated so please go to see it’s github <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">repo</a> for the latest version.  I was pleased with how quick and easy it was to write plugins for Jekyll and it has given me ideas for all sorts of plugins which could aid my Jekyll use.  While writing the plugin, I had to skim a few Ruby tutorials to start learning the language.  During this I fell in love with the beauty and elegance of Ruby and intend to learn it properly very shortly.  For the type of work that I do, I can see how it will give me a good productivity boost and from what I have seen so far, even make programming more fun.</p>
 
   </div>
 </article>

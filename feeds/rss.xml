@@ -4,7 +4,7 @@
     <title>TechTinkering</title>
     <link>http://techtinkering.com</link>
     <description>TechTinkering is blog about Retro Computers, Programming, Open Source and General Technical Tinkering</description>
-    <lastBuildDate>06 Mar 2016 08:55:27 GMT</lastBuildDate>
+    <lastBuildDate>27 May 2016 09:01:47 BST</lastBuildDate>
     <language>en-gb</language>
 
     
@@ -23,7 +23,7 @@ Wher...]]></description>
         <link>http://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/</link>
         <guid isPermaLink="true">http://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/</guid>
         <pubDate>22 Jun 2014 00:00:01 BST</pubDate>
-        <description><![CDATA[Geary is a lightweight email client inspired by gmail's interface.  Its simple minimalistic interface is quite pleasant to use and initially I was really pleased to switch to it from Thunderbird.  However, after a while I started to miss the extra functionality that Thunderbird provides such as a...]]></description>
+        <description><![CDATA[Geary is a lightweight email client inspired by gmail’s interface.  Its simple minimalistic interface is quite pleasant to use and initially I was really pleased to switch to it from Thunderbird.  However, after a while I started to miss the extra functionality that Thunderbird provides such as a...]]></description>
       </item>
     
       <item>
@@ -39,7 +39,7 @@ Wher...]]></description>
         <link>http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/</guid>
         <pubDate>29 Aug 2013 00:00:01 BST</pubDate>
-        <description><![CDATA[With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hence a package's documentation, by putting them into the gh-pages branch of your repository.  This can be a little awkward to do though, s...]]></description>
+        <description><![CDATA[With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hence a package’s documentation, by putting them into the gh-pages branch of your repository.  This can be a little awkward to do though, s...]]></description>
       </item>
     
       <item>
@@ -55,7 +55,7 @@ Wher...]]></description>
         <link>http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/</guid>
         <pubDate>10 May 2013 00:00:01 BST</pubDate>
-        <description><![CDATA[To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you an insight into how Basic programs are stored in memory.  I'll show you how to do this and how t...]]></description>
+        <description><![CDATA[To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you an insight into how Basic programs are stored in memory.  I’ll show you how to do this and how t...]]></description>
       </item>
     
       <item>
@@ -71,7 +71,7 @@ Wher...]]></description>
         <link>http://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/</guid>
         <pubDate>23 Apr 2013 00:00:01 BST</pubDate>
-        <description><![CDATA[BBS Ads were important to users and sysops of BBS's.  There wasn't any universal directory like the phone book, and during the heyday of BBS's (early '80s to the mid '90s), most people couldn't easily access the Internet.  Every BBS had a different atmosphere.  It was important to attract users a...]]></description>
+        <description><![CDATA[BBS Ads were important to users and sysops of BBS’s.  There wasn’t any universal directory like the phone book, and during the heyday of BBS’s (early ’80s to the mid ’90s), most people couldn’t easily access the Internet.  Every BBS had a different atmosphere.  It was important to attract users a...]]></description>
       </item>
     
       <item>
@@ -87,7 +87,7 @@ Wher...]]></description>
         <link>http://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/</guid>
         <pubDate>09 Apr 2013 00:00:01 BST</pubDate>
-        <description><![CDATA[Most BBSs that are still running now do so via telnet.  In many ways this is great as it allows people from all around the world to access a BBS as if it were local to them.  The problem comes though, when you want to upload or download a file to/from the BBS.  Most telnet clients don't make this...]]></description>
+        <description><![CDATA[Most BBSs that are still running now do so via telnet.  In many ways this is great as it allows people from all around the world to access a BBS as if it were local to them.  The problem comes though, when you want to upload or download a file to/from the BBS.  Most telnet clients don’t make this...]]></description>
       </item>
     
       <item>
@@ -95,11 +95,10 @@ Wher...]]></description>
         <link>http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/</guid>
         <pubDate>02 Apr 2013 00:00:01 BST</pubDate>
-        <description><![CDATA[Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely over TCP/IP.
+        <description><![CDATA[Most modern machines don’t have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely over TCP/IP.
 
 Using ser2net to Connect a Serial Port to a TCP port
-
-ser2net listens to a TCP port a...]]></description>
+ser2net listens to a TCP port an...]]></description>
       </item>
     
       <item>
@@ -107,7 +106,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/</guid>
         <pubDate>25 Mar 2013 00:00:01 GMT</pubDate>
-        <description><![CDATA[Netcat is a simple Unix utility which reads and writes data across network connections using the TCP or UDP protocol.  It is often described as the "Swiss-army knife for TCP/IP" because of its flexibility and is often used to debug and investigate network connections directly from the command lin...]]></description>
+        <description><![CDATA[Netcat is a simple Unix utility which reads and writes data across network connections using the TCP or UDP protocol.  It is often described as the “Swiss-army knife for TCP/IP” because of its flexibility and is often used to debug and investigate network connections directly from the command lin...]]></description>
       </item>
     
       <item>
@@ -115,7 +114,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/</guid>
         <pubDate>12 Mar 2013 00:00:01 GMT</pubDate>
-        <description><![CDATA[I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP/M as it was only on the market for a brief period of time.  However, it was a superb product an...]]></description>
+        <description><![CDATA[I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven’t heard of Turbo Modula-2 for CP/M as it was only on the market for a brief period of time.  However, it was a superb product an...]]></description>
       </item>
     
       <item>
@@ -123,7 +122,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/</guid>
         <pubDate>05 Mar 2013 00:00:01 GMT</pubDate>
-        <description><![CDATA[CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 1983 by Borland, as their first software development application, it was quickly adopted by school...]]></description>
+        <description><![CDATA[CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I’m not alone.  When Turbo Pascal was released in 1983 by Borland, as their first software development application, it was quickly adopted by school...]]></description>
       </item>
     
       <item>
@@ -131,7 +130,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/</guid>
         <pubDate>27 Feb 2013 00:00:01 GMT</pubDate>
-        <description><![CDATA[Unix has traditionally lacked a consistent way of storing user specific and system wide configuration and support files.  This has lead to a mess of dot files in a user's home directory and other associated files being all over the file system.  The XDG Base Directory Specification describes a si...]]></description>
+        <description><![CDATA[Unix has traditionally lacked a consistent way of storing user specific and system wide configuration and support files.  This has lead to a mess of dot files in a user’s home directory and other associated files being all over the file system.  The XDG Base Directory Specification describes a si...]]></description>
       </item>
     
       <item>
@@ -147,7 +146,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/</link>
         <guid isPermaLink="true">http://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/</guid>
         <pubDate>19 Feb 2013 00:00:01 GMT</pubDate>
-        <description><![CDATA[I have just finished listening to the first episode of Floppy Days and I'm pleased to report that it looks like this is going to be a good addition to the vintage computing landscape.  The presenter, Randy Kindig, admits that he has been quite quiet within the retro community.  However, he seems ...]]></description>
+        <description><![CDATA[I have just finished listening to the first episode of Floppy Days and I’m pleased to report that it looks like this is going to be a good addition to the vintage computing landscape.  The presenter, Randy Kindig, admits that he has been quite quiet within the retro community.  However, he seems ...]]></description>
       </item>
     
       <item>
@@ -163,7 +162,7 @@ ser2net listens to a TCP port a...]]></description>
         <link>http://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/</link>
         <guid isPermaLink="true">http://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/</guid>
         <pubDate>26 Jun 2012 00:00:01 BST</pubDate>
-        <description><![CDATA[Tk is great, but sometimes it just isn't fast enough.  SDL is fast, but has no support for input dialogs and other GUI conventions.  By embedding an SDL surface in a Tk window you get the best of both worlds.  Whether you want to use Tk to add a nice GUI to an SDL app or want to access SDL via Tc...]]></description>
+        <description><![CDATA[Tk is great, but sometimes it just isn’t fast enough.  SDL is fast, but has no support for input dialogs and other GUI conventions.  By embedding an SDL surface in a Tk window you get the best of both worlds.  Whether you want to use Tk to add a nice GUI to an SDL app or want to access SDL via Tc...]]></description>
       </item>
     
       <item>
@@ -228,7 +227,7 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
         <link>http://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/</link>
         <guid isPermaLink="true">http://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/</guid>
         <pubDate>15 Jun 2010 00:00:01 BST</pubDate>
-        <description><![CDATA[The National Museum of Computing is the UK's largest museum dedicated to computing.  It is located on the Bletchley Park estate just south of Milton Keynes and is easy to get to by car, bus or train.  Tickets are £10 for an Adult, with a discount for booking on-line.  They allow you access to the...]]></description>
+        <description><![CDATA[The National Museum of Computing is the UK’s largest museum dedicated to computing.  It is located on the Bletchley Park estate just south of Milton Keynes and is easy to get to by car, bus or train.  Tickets are £10 for an Adult, with a discount for booking on-line.  They allow you access to the...]]></description>
       </item>
     
       <item>
@@ -236,8 +235,8 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
         <link>http://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/</link>
         <guid isPermaLink="true">http://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/</guid>
         <pubDate>06 May 2010 00:00:01 BST</pubDate>
-        <description><![CDATA[xAce is a great Jupiter Ace emulator and is in fact the one that I use the most, however it hasn't been actively developed since 1997 and
-therefore has some shortcomings.  I am keen to improve the emulator and have quite a few plans for it.  I have been in touch with Edward Patel, the original au...]]></description>
+        <description><![CDATA[xAce is a great Jupiter Ace emulator and is in fact the one that I use the most, however it hasn’t been actively developed since 1997 and 
+therefore has some shortcomings.  I am keen to improve the emulator and have quite a few plans for it.  I have been in touch with Edward Patel, the original a...]]></description>
       </item>
     
       <item>
@@ -256,9 +255,9 @@ The program came about because I wanted to be able to load images on the Jupiter
         <guid isPermaLink="true">http://techtinkering.com/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/</guid>
         <pubDate>14 Feb 2010 00:00:01 GMT</pubDate>
         <description><![CDATA[I have noticed that the number of people interested in using telnet to access BBSs
-seems to be growing, which I'm really pleased to see.  However lots of people seem to
-be having trouble getting colour ANSI emulation working properly with telnet under Linux.
-I have therefore put this tutorial tog...]]></description>
+seems to be growing, which I’m really pleased to see.  However lots of people seem to
+be having trouble getting colour ANSI emulation working properly with telnet under Linux. 
+I have therefore put this tutorial to...]]></description>
       </item>
     
       <item>
@@ -282,7 +281,7 @@ I have therefore put this tutorial tog...]]></description>
         <link>http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/</guid>
         <pubDate>14 Jul 2009 00:00:01 BST</pubDate>
-        <description><![CDATA[4K FORTRAN was a subset of FORTRAN II and was the first high-level language available for the DEC PDP-8.  It consisted of two parts: the 4K FORTRAN Compiler (nicknamed "Fivetran") and the 4K FORTRAN Operating System.  The compiler was written by Larry Portner and the operating system was written ...]]></description>
+        <description><![CDATA[4K FORTRAN was a subset of FORTRAN II and was the first high-level language available for the DEC PDP-8.  It consisted of two parts: the 4K FORTRAN Compiler (nicknamed “Fivetran”) and the 4K FORTRAN Operating System.  The compiler was written by Larry Portner and the operating system was written ...]]></description>
       </item>
     
       <item>
@@ -298,7 +297,7 @@ I have therefore put this tutorial tog...]]></description>
         <link>http://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/</guid>
         <pubDate>03 Jun 2009 00:00:01 BST</pubDate>
-        <description><![CDATA[This is an interesting history of computer development around the world during the 1940s and 50s.&nbsp; The book grew out of a radio series on BBS Radio 4 and contains lots of original material gained from interviews in 2001 and 2004.&nbsp; It is very accessible as it focuses slightly more on the...]]></description>
+        <description><![CDATA[This is an interesting history of computer development around the world during the 1940s and 50s.  The book grew out of a radio series on BBS Radio 4 and contains lots of original material gained from interviews in 2001 and 2004.  It is very accessible as it focuses slightly more on the events an...]]></description>
       </item>
     
       <item>
@@ -323,7 +322,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         <link>http://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/</guid>
         <pubDate>06 May 2009 00:00:01 BST</pubDate>
-        <description><![CDATA[I have a number of older printers that I would like to connect to my modern machine, but have been unable to do so because my computer doesn't have a parallel interface.  After searching the internet for a review of a usb to parallel cable that works reliably with Linux, I pretty much drew a blan...]]></description>
+        <description><![CDATA[I have a number of older printers that I would like to connect to my modern machine, but have been unable to do so because my computer doesn’t have a parallel interface.  After searching the internet for a review of a usb to parallel cable that works reliably with Linux, I pretty much drew a blan...]]></description>
       </item>
     
       <item>
@@ -339,7 +338,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         <link>http://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/</guid>
         <pubDate>23 Apr 2009 00:00:01 BST</pubDate>
-        <description><![CDATA[I was going through a backup of my dos machine, taken in 1998, and came across some source code which I haven't seen for a long time.  It was great to see that old code, and I must set-up a machine so that I can run some of it again.  In particular I came across an attempt at writing the world's ...]]></description>
+        <description><![CDATA[I was going through a backup of my dos machine, taken in 1998, and came across some source code which I haven’t seen for a long time.  It was great to see that old code, and I must set-up a machine so that I can run some of it again.  In particular I came across an attempt at writing the world’s ...]]></description>
       </item>
     
       <item>
@@ -347,7 +346,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         <link>http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/</guid>
         <pubDate>29 Mar 2009 00:00:01 GMT</pubDate>
-        <description><![CDATA[After writing a previous article: The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture.  I was left thinking that I should really have given at least a "hello, world" program as a demonstration.  I was then inspired after seeing John Metcalf's post: Hello World for ...]]></description>
+        <description><![CDATA[After writing a previous article: The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture.  I was left thinking that I should really have given at least a “hello, world” program as a demonstration.  I was then inspired after seeing John Metcalf’s post: Hello World for ...]]></description>
       </item>
     
       <item>
@@ -355,7 +354,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         <link>http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/</guid>
         <pubDate>18 Mar 2009 00:00:01 GMT</pubDate>
-        <description><![CDATA[For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I just have to share it's benefits with those who may not have heard of it. TDD reverses the normal order of testing as it requires develop...]]></description>
+        <description><![CDATA[For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I just have to share it’s benefits with those who may not have heard of it. TDD reverses the normal order of testing as it requires develop...]]></description>
       </item>
     
       <item>
@@ -371,7 +370,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         <link>http://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/</link>
         <guid isPermaLink="true">http://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/</guid>
         <pubDate>12 Feb 2009 00:00:01 GMT</pubDate>
-        <description><![CDATA[The only Jupiter Ace emulator that I found, which would work under Linux, was written by Edward Patel and is called xace.  There is also a Windows version available, but I don't know anything more about that.  The following instructions, taken partially from the site's help instructions
+        <description><![CDATA[The only Jupiter Ace emulator that I found, which would work under Linux, was written by Edward Patel and is called xace.  There is also a Windows version available, but I don’t know anything more about that.  The following instructions, taken partially from the site’s help instructions
 , will sh...]]></description>
       </item>
     
@@ -447,7 +446,7 @@ Here you can see the CGA graphics as...]]></description>
         <link>http://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/</guid>
         <pubDate>29 Oct 2008 00:00:01 GMT</pubDate>
-        <description><![CDATA[Udo Munk has just released the latest version of his z80pack emulator, version 1.17, which now includes John Kichury's FrontPanel library.  As well as being a superb emulator to run CP/M on, it now gives you a great graphical representation of the Altair 8800 and IMSAI 8080 with fully functional ...]]></description>
+        <description><![CDATA[Udo Munk has just released the latest version of his z80pack emulator, version 1.17, which now includes John Kichury’s FrontPanel library.  As well as being a superb emulator to run CP/M on, it now gives you a great graphical representation of the Altair 8800 and IMSAI 8080 with fully functional ...]]></description>
       </item>
     
       <item>
@@ -455,7 +454,7 @@ Here you can see the CGA graphics as...]]></description>
         <link>http://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/</guid>
         <pubDate>28 Oct 2008 00:00:01 GMT</pubDate>
-        <description><![CDATA[I was preparing the walls of our nursery on the weekend, ready for the arrival of our first child in December.  I was about to start steaming off the border and thought I'd better look at the instructions on the steamer.  The only writing on the steamer is the label pictured below and I couldn't ...]]></description>
+        <description><![CDATA[I was preparing the walls of our nursery on the weekend, ready for the arrival of our first child in December.  I was about to start steaming off the border and thought I’d better look at the instructions on the steamer.  The only writing on the steamer is the label pictured below and I couldn’t ...]]></description>
       </item>
     
       <item>
@@ -479,7 +478,7 @@ Here you can see the CGA graphics as...]]></description>
         <link>http://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/</guid>
         <pubDate>21 Oct 2008 00:00:01 BST</pubDate>
-        <description><![CDATA[To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is small, has lots of features, and uses Wordstar commands which are familiar to me and easy to lear...]]></description>
+        <description><![CDATA[To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren’t many in the archives, but I have tried most of them and found ZDE to be the best.  It is small, has lots of features, and uses Wordstar commands which are familiar to me and easy to lear...]]></description>
       </item>
     
       <item>
@@ -487,7 +486,7 @@ Here you can see the CGA graphics as...]]></description>
         <link>http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/</guid>
         <pubDate>17 Oct 2008 00:00:01 BST</pubDate>
-        <description><![CDATA[I have decided to try out some old CP/M software, but need something to run it on.&nbsp; I could either do this on my Commodore 128 or through emulation.&nbsp; Unfortunately the 1571 disk drive for my Commodore is currently out of action, so that leaves me with emulation.&nbsp; I was going to use...]]></description>
+        <description><![CDATA[I have decided to try out some old CP/M software, but need something to run it on.  I could either do this on my Commodore 128 or through emulation.  Unfortunately the 1571 disk drive for my Commodore is currently out of action, so that leaves me with emulation.  I was going to use vice to emulat...]]></description>
       </item>
     
       <item>
@@ -495,7 +494,7 @@ Here you can see the CGA graphics as...]]></description>
         <link>http://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/</guid>
         <pubDate>14 Oct 2008 00:00:01 BST</pubDate>
-        <description><![CDATA[I watched 'Three Days of the Condor' the other night and loved seeing what I believe is a Dec PDP 8/E being used.  Also featured in connection with this machine was a DecWriter, paper tape reader and possibly a VT-52 video terminal.
+        <description><![CDATA[I watched ‘Three Days of the Condor’ the other night and loved seeing what I believe is a Dec PDP 8/E being used.  Also featured in connection with this machine was a DecWriter, paper tape reader and possibly a VT-52 video terminal.
 
 The film revolves around a CIA researcher, Robert Redford, find...]]></description>
       </item>
@@ -513,7 +512,7 @@ The film revolves around a CIA researcher, Robert Redford, find...]]></descripti
         <link>http://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/</link>
         <guid isPermaLink="true">http://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/</guid>
         <pubDate>16 Sep 2008 00:00:01 BST</pubDate>
-        <description><![CDATA[Website hosting companies often provide a shared SSL certificate, but this presents the web designer with the problem of how to use it for a site that uses cookies.  I have read many people say that this can't be done.  However, this article will show a simple way of using a shared SSL certificat...]]></description>
+        <description><![CDATA[Website hosting companies often provide a shared SSL certificate, but this presents the web designer with the problem of how to use it for a site that uses cookies.  I have read many people say that this can’t be done.  However, this article will show a simple way of using a shared SSL certificat...]]></description>
       </item>
     
       <item>
