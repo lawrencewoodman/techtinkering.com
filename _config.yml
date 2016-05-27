@@ -1,14 +1,7 @@
 destination: ../gh-pages
 lsi:         false
 port: 4000
-highligher:    pygments
-markdown:    rdiscount
 permalink:   /:year/:month/:day/:title/
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_dir:    images/latex
-  png_url:    /images/latex
 exclude: [design, scripts, README.md]
 
 tag_title_prefix: "Articles Tagged With: "
