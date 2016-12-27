@@ -19,7 +19,7 @@ To see if when you were born does affect your future, I have decided to look at 
 The dates of birth were collated and from this frequency charts were constructed for the months of birth and star signs of the Nobel laureates.  The findings are illustrated below.
 
 ### Distribution of Months of Birth Among Nobel Prize Winners
-<img class="leftFlow" width="600" height="424" src="/images/posts/nobel_laureates_mob.png" title="Distribution of Months of Birth Among Nobel Laureates" alt=""/>
+<img src="/images/posts/nobel_laureates_mob.png" title="Distribution of Months of Birth Among Nobel Laureates"/>
 
 There is not too much difference here between the months, although June does stand out as having significantly more Nobel laureates than other months, and in fact is `3.75%` ahead of the lowest month, January.
 
@@ -43,9 +43,8 @@ February is interesting because it would be expected to be a bit lower since it 
 
 **Sample Size:** 747
 
-<br style="clear: left;" />
 ### Distribution of Star Signs Among Nobel Prize Winners
-<img class="leftFlow" width="600" height="424" src="/images/posts/nobel_laureates_star_sign.png" title="Distribution of Star Signs Among Nobel Laureates" alt=""/>
+<img src="/images/posts/nobel_laureates_star_sign.png" title="Distribution of Star Signs Among Nobel Laureates"/>
 
 The difference in the distribution of star signs among Nobel laureates seems to be much greater then the distribution of the months in which they were born.  It is quite clear here that Gemini and Libra stand out from the others, particularly when compared to Capricorn and Aquarius where the greatest difference is `5.09%`.
 
@@ -87,7 +86,6 @@ There does seem to be some variance between the birth periods and interestingly 
 This study highlights the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.  If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
 
 ## Other Articles in the Series
-
 * [Pisceans and October Babies More Likely to Become Poets. Scraping Wikipedia Reveals All](http://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/)
 ---
 

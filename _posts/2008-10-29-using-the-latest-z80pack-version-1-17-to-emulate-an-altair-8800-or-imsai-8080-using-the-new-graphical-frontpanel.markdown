@@ -61,7 +61,7 @@ $ imsaisim
 
 The IMSAI 8080 front panel:
 
-<img class="leftFlow" width="500" height="203" src="/images/posts/imsai_frontpanel_z80pack.jpg" title="Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080" alt=""/>
+<img src="/images/posts/imsai_frontpanel_z80pack.jpg" title="Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080"/>
 
 The example program we are going to use is taken from the IMSAI 8080 User's Manual mentioned above and can be found from page 19.  The program takes input from the _PROGRAMMED INPUT_ switches at the bottom left of the unit and outputs it to the _PROGRAMMED OUTPUT_ at the top left.
 

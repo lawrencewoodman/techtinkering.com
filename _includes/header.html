@@ -1,0 +1,81 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">TechTinkering</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li
+        {% if page.menuOption == "home" %}
+          class="active"
+        {% endif %}
+        ><a href="/">Home</a></li>
+
+        <li
+        {% if page.menuOption == "archive" %}
+          class="active"
+        {% endif %}
+        ><a href="/archive">Archive</a></li>
+
+        {% if page.menuOption == "article" %}
+        <li class="active"><a href="">Article</a></li>
+        {% endif %}
+
+        {% if page.menuOption == "profile" %}
+        <li class="active"><a href="">Profile</a></li>
+        {% endif %}
+
+        {% if page.menuOption == "statinfo" %}
+          <li class="active"><a href="">Statutory Information</a></li>
+        {% endif %}
+
+        {% if page.menuOption == "tagged" %}
+          <li class="active"><a href="">Tagged Articles</a></li>
+        {% endif %}
+
+        {% if page.menuOption == "terms" %}
+          <li class="active"><a href="">Terms and Conditions</a></li>
+        {% endif %}
+
+        <li
+        {% if page.menuOption == "about" %}
+          class="active"
+        {% endif %}
+        ><a href="/about">About</a></li>
+      </ul>
+
+      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
+        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+      </a>
+
+      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+      </a>
+
+
+      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+      <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+      </a>
+
+      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+      </a>
+
+    </div><!--/.nav-collapse -->
+  </div>
+
+</nav>
+

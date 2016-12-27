@@ -52,7 +52,7 @@ You should now be looking at the Turbo Pascal splash screen, showing the version
 
 Now you will be presented with the main screen.  You have a number of commands on this screen, which are accessed by a single letter.
 
-<img class="leftFlow" src="/images/posts/turbo_pascal_cpm_main.png" />
+<img src="/images/posts/turbo_pascal_cpm_main.png" />
 
 To work with a pascal source file, first press `W` and then enter a filename.  This is the file that the editor will open and it is also the file that the compiler will compile if you haven't selected a main file.
 

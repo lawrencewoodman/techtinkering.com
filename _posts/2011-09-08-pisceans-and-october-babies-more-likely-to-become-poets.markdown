@@ -18,7 +18,7 @@ This is the second in a series of articles looking into whether when you were bo
 The dates of birth were collated and from this frequency charts were constructed for the months of birth and star signs of the poets.  The findings are illustrated below.
 
 ### Distribution of Months of Birth Among Poets
-<img class="leftFlow" width="575" height="414" src="/images/posts/poets_mob.png" title="Distribution of Months of Birth Among Poets" alt=""/>
+<img src="/images/posts/poets_mob.png" title="Distribution of Months of Birth Among Poets"/>
 
 There is not too much difference here between the months, although October and June do stand out as having more poets or less poets respectively.  The difference between October and June is `2.99%`.  This is interesting as the result for poets born in June is the inverse of the result for Nobel laureates born in June, where they were most likely to become a Nobel laureate.
 
@@ -40,9 +40,8 @@ There is not too much difference here between the months, although October and J
 
 **Sample Size:** 536
 
-<br style="clear: left;" />
 ### Distribution of Star Signs Among Poets
-<img class="leftFlow" width="586" height="414" src="/images/posts/poets_star_sign.png" title="Distribution of Star Signs Among Poets" alt=""/>
+<img src="/images/posts/poets_star_sign.png" title="Distribution of Star Signs Among Poets"/>
 
 As with Nobel laureates the difference in distribution of star signs among poets seems to be much greater then the distribution of the months in which they were born.  We can see from the graph that Pisceans are more likely to be poets than Geminis and Taureans.  However, if you look more closely at Pisces at the top and Gemini at the bottom, you will find that while the difference is `2.8%`, this is actually less than the difference between highest and lowest for months of birth.
 

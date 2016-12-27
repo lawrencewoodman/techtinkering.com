@@ -4,160 +4,161 @@ title: TechTinkering
 menuOption: home
 ---
 
-<div class="rightColumn">
+<div class="row">
+  <div class="col-md-8">
+    <ul id="posts">
+      {% for post in site.posts limit: 15 %}
+        <li>
+          {% include post_summary.html %}
+        </li>
+      {% endfor %}
+    </ul>
 
-  <div class="columnAd">
-    <script type="text/javascript"><!--
-    google_ad_client = "ca-pub-1613732348909658";
-    /* 300x250 - TechTinkering */
-    google_ad_slot = "8883223823";
-    google_ad_width = 300;
-    google_ad_height = 250;
-    //-->
-    </script>
-    <script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
+    <div class="moreArticles">
+      <a href="/archive#item15">More Articles in Archive</a>
+    </div>
   </div>
 
-  <h2>Retro</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Retro" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  <div class="col-md-4">
+    <div class="columnAd">
+      <script type="text/javascript"><!--
+      google_ad_client = "ca-pub-1613732348909658";
+      /* 300x250 - TechTinkering */
+      google_ad_slot = "8883223823";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+      </script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+    </div>
+
+    <h2>Retro</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Retro" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/retro#item5">More Retro Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/retro#item5">More Retro Articles</a>
+    </div>
 
-  <h2>Programming</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Programming" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>Programming</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Programming" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/programming#item5">More Programming Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/programming#item5">More Programming Articles</a>
+    </div>
 
-  <h2>Emulation</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Emulation" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>Emulation</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Emulation" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/emulation#item5">More Emulation Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/emulation#item5">More Emulation Articles</a>
+    </div>
 
-  <h2>CP/M</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "CP/M" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>CP/M</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "CP/M" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/cpm#item5">More CP/M Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/cpm#item5">More CP/M Articles</a>
+    </div>
 
-  <h2>Linux</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Linux" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>Linux</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Linux" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/linux#item5">More Linux Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/linux#item5">More Linux Articles</a>
+    </div>
 
-  <h2>Commodore</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Commodore" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>Commodore</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Commodore" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
 
-  <h2>PDP-8</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "PDP-8" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>PDP-8</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "PDP-8" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
 
-  <h2>Assembly</h2>
-  <ul class="briefPosts">
-    {% assign numFound = 0 %}
-    {% for post in site.posts %}
-      {% if post.tags contains "Assembly" %}
-        {% assign numFound = numFound | plus: 1 %}
-        {% if numFound <= 5 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <h2>Assembly</h2>
+    <ul class="briefPosts">
+      {% assign numFound = 0 %}
+      {% for post in site.posts %}
+        {% if post.tags contains "Assembly" %}
+          {% assign numFound = numFound | plus: 1 %}
+          {% if numFound <= 5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
         {% endif %}
-      {% endif %}
-    {% endfor %}
-  </ul>
-  <div class="moreArticles">
-    <a href="/tag/assembly#item5">More Assembly Articles</a>
-  </div>
+      {% endfor %}
+    </ul>
+    <div class="moreArticles">
+      <a href="/tag/assembly#item5">More Assembly Articles</a>
+    </div>
 
-  <h2>Popular Tags</h2>
-  <div class="tagCloud">
-    {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
-  </div>
-</div>
-
-<div class="leftColumn gap">
-  <ul id="posts">
-    {% for post in site.posts limit: 15 %}
-      <li>
-        {% include post_summary.html %}
-      </li>
-    {% endfor %}
-  </ul>
-
-  <div class="moreArticles">
-    <a href="/archive#item15">More Articles in Archive</a>
+    <h2>Popular Tags</h2>
+    <div class="tagCloud">
+      {% tag_cloud font-size: 70 - 200%, threshold: 2 %}
+    </div>
   </div>
 </div>
