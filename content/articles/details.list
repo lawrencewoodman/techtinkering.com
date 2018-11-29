@@ -1,0 +1,626 @@
+{ filename    2016-03-06-book-review-what-the-dormouse-said-by-john-markoff.md
+  title       "Book Review: What the Dormouse Said by John Markoff"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Book" "Review" "History" "Retro"}
+  rating      4.0
+  image       "/img/articles/book_what_the_dormouse_said.jpg"
+}
+
+{ filename    2014-06-22-how-to-make-thunderbird-feel-like-geary.md
+  title       "How to Make Thunderbird Feel Like Geary"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Tutorial"}
+}
+
+{ filename    2014-04-19-beware-of-immutable-lists-for-fsharp-parallel-processing.md
+  title       "Beware of Immutable Lists for F# Parallel Processing"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"F#" "Parallel Processing" "Programming"}
+}
+
+{ filename    2013-08-29-rendering-racket-package-scribblings-on-github-using-gh-pages.md
+  title       "Rendering Racket Package Scribblings on Github Using gh-pages"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Racket" "Tutorial"}
+}
+
+{ filename    2013-05-29-programmable-character-sets-a-simple-alternative-to-bitmap-displays.md
+  title       "Programmable Character Sets: A Simple Alternative to Bitmap Displays"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "Text Mode"}
+}
+
+{ filename    2013-05-10-adding-a-basic-stub-to-a-vic-20-assembly-language-program.md
+  title       "Adding a Basic Stub to a Vic-20 Assembly Language Program"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Retro" "Commodore" "Vic-20" "Assembly" "Tutorial"}
+}
+
+{ filename    2013-05-04-creating-a-tty-simulator-in-assembly-language-on-the-vic-20.md
+  title       "Creating a TTY Simulator in Assembly Language on the Vic-20"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Retro" "Commodore" "Vic-20" "Assembly"}
+}
+
+{ filename    2013-04-23-bbs-ads-getting-the-word-out.md
+  title       "BBS Ads: Getting the Word Out"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "BBS" "History"}
+}
+
+{ filename    2013-04-16-beginning-assembly-programming-on-the-commodore-vic-20.md
+  title       "Beginning Assembly Programming on the Commodore Vic-20"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Tutorial" "Commodore" "Retro" "Vic-20" "Assembly"}
+}
+
+{ filename    2013-04-09-using-c-kermit-to-exchange-files-with-telnet-bbs-s.md
+  title       "Using C-Kermit to Exchange Files With Telnet BBS's"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Linux" "Tutorial" "BBS" "Retro"}
+}
+
+{ filename    2013-04-02-connecting-to-a-remote-serial-port-over-tcpip.md
+  title       "Connecting to a Remote Serial Port over TCP/IP"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Linux" "Tutorial" "Emulation" "Retro"}
+}
+
+{ filename    2013-03-25-using-netcat-to-create-ad-hoc-links-between-applications-and-machines.md
+  title       "Using Netcat to Create ad hoc Links Between Applications or Machines"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Linux" "Tutorial"}
+}
+
+{ filename    2013-03-12-if-only-borland-had-stuck-with-turbo-modula-2-for-cpm.md
+  title       "If Only Borland Had Stuck With Turbo Modula-2 For CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "CP/M" "Retro"}
+}
+
+{ filename    2013-03-05-turbo-pascal-a-great-choice-for-programming-under-cpm.md
+  title       "Turbo Pascal: A Great Choice For Programming Under CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Pascal" "CP/M" "Retro"}
+}
+
+{ filename    2013-02-27-xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification.md
+  title       "xdgbasedir: A Tcl Module to Access the XDG Base Directory Specification"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Tcl/Tk"}
+}
+
+{ filename    2013-02-20-compiling-a-tcl-script-into-an-executable.md
+  title       "Compiling a Tcl Script into an Executable"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Tcl/Tk" "Tutorial" "C"}
+}
+
+{ filename    2013-02-19-floppy-days-a-new-vintage-computing-podcast.md
+  title       "Floppy Days: A New Vintage Computing Podcast"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "Podcast"}
+}
+
+{ filename    2013-02-12-using-dynamically-generated-header-files-with-cmake.md
+  title       "Using Dynamically Generated Header Files with CMake"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Tutorial"}
+}
+
+{ filename    2012-06-26-embedding-an-sdl-surface-in-a-tk-window.md
+  title       "Embedding an SDL Surface in a Tk Window"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "SDL" "Tcl/Tk" "Tutorial"}
+  updated     2012-12-02
+}
+
+{ filename    2012-04-26-refactoring-arm-yourself-in-the-war-against-useless-comments.md
+  title       "Refactoring: Arm Yourself in the War Against Useless Comments"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming"}
+}
+
+{ filename    2012-04-20-dealing-sympathetically-with-legacy-code.md
+  title       "Dealing Sympathetically with Legacy Code"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Legacy Code" "Retro"}
+}
+
+{ filename    2011-09-08-pisceans-and-october-babies-more-likely-to-become-poets.md
+  title       "Pisceans and October Babies More Likely to Become Poets.  Scraping Wikipedia Reveals All"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Ruby" "JavaScript" "Web Scraping"}
+}
+
+{ filename    2011-08-24-does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate.md
+  title       "Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Ruby" "Web Scraping"}
+}
+
+{ filename    2011-08-17-improving-related-posts-on-jekyll.md
+  title       "Improving the related_posts feature of jekyll"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Jekyll" "Ruby" "Web Development"}
+}
+
+{ filename    2011-04-16-mida-a-microdata-parser-extractor-library-for-ruby.md
+  title       "Mida - A Microdata parser/extractor library for Ruby"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Microdata" "Library" "Ruby"}
+  image       "/img/articles/small_microdata.png"
+}
+
+{ filename    2011-02-15-a-jekyll-plugin-to-display-ratings-as-star-images.md
+  title       "A Jekyll Plugin to Display Ratings as Star Images"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Jekyll" "Liquid" "Ruby" "Web Development"}
+  image       "/img/articles/small_star_ratings.jpg"
+  imageTitle  "star_rating filter in action on http://trustafriend.com"
+}
+
+{ filename    2010-06-15-the-national-museum-of-computing-at-bletchley-park.md
+  title       "The National Museum of Computing at Bletchley Park"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Museum" "Retro"}
+  image       "/img/articles/small_pdp11.jpg"
+  imageTitle  "A DEC PDP-11"
+}
+
+{ filename    2010-05-06-xace-is-back-in-active-development-and-looking-for-contributors.md
+  title       "xAce is Back in Active Development and Looking For Contributors"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Emulation" "Jupiter Ace" "Retro" "xAce"}
+  image       "/img/articles/small_xace_v0.4.jpg"
+  imageTitle  "Screen shot of xAce"
+}
+
+{ filename    2010-04-16-introducing-textpix-v0-1.md
+  title       "Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Conversion" "Graphics" "Images" "Retro" "TextPix" "Text Mode"}
+  image       "/img/articles/small_textpix_eye.jpg"
+  imageTitle  "An example image reduced by TextPix"
+}
+
+{ filename    2010-02-14-getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux.md
+  title       "Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Linux" "Retro" "ANSI" "Text Mode" "Tutorial" "BBS"}
+  image       "/img/articles/small_bbs_splashscreen.jpg"
+  imageTitle  "A BBS Splash Screen"
+}
+
+{ filename    2009-12-02-setting-up-a-beowulf-cluster-using-open-mpi-on-linux.md
+  title       "Setting up a Beowulf Cluster Using Open MPI on Linux"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {
+    "MPI"
+    "Linux"
+    "Beowulf Clusters"
+    "High Performance Computing"
+    "Distributed Processing"
+    "Parallel Processing"
+    "Tutorial"
+  }
+  image       "/img/articles/small_master_slave_mpi.jpg"
+}
+
+{ filename    2009-08-11-my-top-10-classic-text-mode-bsd-games.md
+  title       "My Top 10 Classic Text Mode BSD Games"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"BSD" "Games" "Retro" "Text Mode"}
+  image       "/img/articles/small_bsd_games_trek_splash.jpg"
+}
+
+{ filename    2009-07-14-running-4k-fortran-on-a-dec-pdp8.md
+  title       "Running 4K FORTRAN on a DEC PDP-8"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"DEC" "Retro" "PDP-8" "FORTRAN" "Programming" "Tutorial"}
+  image       "/img/articles/small_fortran_source.jpg"
+}
+
+{ filename    2009-06-16-a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8.md
+  title       "A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"DEC" "Retro" "PDP-8" "Editors" "Tutorial"}
+  image       "/img/articles/small_paper_tape.jpg"
+}
+
+{ filename    2009-06-03-book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally.md
+  title       "Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Book" "Review" "History" "Retro"}
+  rating      5.0
+  image       "/img/articles/book_electronic_brains.jpg"
+}
+
+{ filename    2009-05-26-emulating-a-dec-pdp8-with-simh.md
+  title       "Emulating a DEC PDP-8 with SimH"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Emulation" "DEC" "PDP-8" "Retro" "SimH" "Tutorial"}
+  image       "/img/articles/small_dec_pdp8-fpanel.jpg"
+}
+
+{ filename    2009-05-15-improving-the-standard-subleq-oisc-architecture.md
+  title       "Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Computer Architecture" "SUBLEQ" "OISC"}
+  image       "/img/articles/small_subleq_plus.jpg"
+}
+
+{ filename    2009-05-06-connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable.md
+  title       "Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "Review" "Linux" "Hardware"}
+  rating      5.0
+  image       "/img/articles/cable_usb_to_parallel.jpg"
+}
+
+{ filename    2009-04-30-an-introduction-to-corewar.md
+  title       "An Introduction to Corewar"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Corewar" "Programming Games" "Retro"}
+  image       "/img/articles/small_corewar.jpg"
+}
+
+{ filename    2009-04-23-the-smallest-communication-program-in-the-world.md
+  title       "The Smallest Communication Program in the World?"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"80x86" "DOS" "Programming" "Retro" "Assembly"}
+  image       "/img/articles/small_small_comm_program.jpg"
+}
+
+{ filename    2009-03-29-hello-world-in-subleq-assembly.md
+  title       "Hello, World! in SUBLEQ Assembly"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "OISC" "SUBLEQ" "Assembly"}
+  image       "/img/articles/small_hello_subleq.jpg"
+}
+
+{ filename    2009-03-18-an-introduction-to-test-driven-development.md
+  title       "An Introduction to Test-Driven Development"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"TDD" "Debugging" "Programming"}
+  image       "/img/articles/small_tdd.jpg"
+}
+
+{ filename    2009-03-05-the-subleq-urisc-oisc-architecture.md
+  title       "The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Computer Architecture" "OISC" "SUBLEQ"}
+  image       "/img/articles/small_urisc_oisc.jpg"
+}
+
+{ filename    2009-02-12-xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display.md
+  title       "xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Forth" "Jupiter Ace" "Emulation" "Retro" "xAce"}
+  image       "/img/articles/small_jupiter_ace.jpg"
+  imageTitle  "A Jupiter Ace"
+}
+
+{ filename    2009-01-26-book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr.md
+  title       "Book Review: The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr."
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Book" "Programming" "Retro" "Review"}
+  rating      4.0
+  image       "/img/articles/book_mythical_man_month.jpg"
+}
+
+{ filename    2008-12-16-bouncing-babies.md
+  title       "Bouncing Babies"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"DOS" "Games" "Retro"}
+  image       "/img/articles/small_bouncing_babies_splash.jpg"
+  imageTitle  "Screenshot of Bouncing Babies' Splash Screen"
+}
+
+{ filename    2008-12-08-chinese-man-spotted-on-tissue.md
+  title       "Chinese Man Spotted On Tissue"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Off Topic"}
+  image       "/img/articles/small_chinese_man_toilet_paper_annotated.jpg"
+  imageTitle  "Chinese Man Found on Tissue (Annotated)"
+}
+
+{ filename    2008-11-24-my-top-10-commodore-64-demos.md
+  title       "My Top 10 Commodore 64 Demos"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"C64" "Demos" "Commodore" "Retro"}
+  image       "/img/articles/small_crest_deus_ex_machina_face.jpg"
+  imageTitle  "High Resolution Artwork"
+}
+
+{ filename    2008-11-13-beneath-a-steel-sky-my-favourite-graphical-adventure-game.md
+  title       "Beneath a Steel Sky, My Favourite Graphical Adventure Game"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Adventure Games" "Games" "Retro"}
+  image       "/img/articles/small_beneath_steel_sky_trash_elevator.jpg"
+  imageTitle  "Screenshot of Beneath a Steel Sky"
+}
+
+{ filename    2008-11-12-how-to-file-good-bug-reports.md
+  title       "How to File Good Bug Reports"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Debugging" "Open Source"}
+  image       "/img/articles/small_bug.jpg"
+}
+
+{ filename    2008-11-10-using-scummvm-to-play-classic-adventure-games.md
+  title       "Using ScummVM to Play Classic Adventure Games"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Adventure Games" "Games" "Emulation" "Retro"}
+  image       "/img/articles/small_scummvm_menu.jpg"
+  imageTitle  "ScummVM game selection screen"
+}
+
+{ filename    2008-11-05-writing-my-first-program-to-toggle-in-to-the-imsai-8080.md
+  title       "Writing my First Program to Toggle in to the IMSAI 8080"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"8080" "IMSAI" "Programming" "Retro" "Assembly"}
+}
+
+{ filename    2008-10-29-using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel.md
+  title       "Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"8080" "Emulation" "Retro" "Tutorial" "Altair" "IMSAI"}
+  image       "/img/articles/small_imsai_frontpanel_z80pack.jpg"
+  imageTitle  "Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080"
+}
+
+{ filename    2008-10-28-is-this-steamer-really-not-to-be-used-by-girls.md
+  title       "Is this steamer really not to be used by girls?"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Off Topic"}
+  image       "/img/articles/small_closeup_steamer_nogirls.jpg"
+  imageTitle  "Close-up of the label from a steamer"
+}
+
+{ filename    2008-10-24-using-dosbox-to-run-dos-games-and-applications.md
+  title       "Using DOSBox to Run DOS Games and Applications"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"DOS" "Emulation" "Retro" "Tutorial"}
+  image       "/img/articles/small_cnc_ingame.png"
+  imageTitle  "Command and Conquer In-Game Screenshot"
+}
+
+{ filename    2008-10-22-installing-the-hi-tech-z80-c-compiler-for-cpm.md
+  title       "Installing the HI-TECH Z80 C Compiler for CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"C" "CP/M" "Programming" "Retro" "Z80" "Tutorial"}
+  image       "/img/articles/small_war_c.png"
+  updated:    2012-12-11
+}
+
+{ filename    2008-10-21-installing-zde-1-6-a-programmers-editor-for-cpm.md
+  title       "Installing ZDE 1.6, a programmers editor for CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"CP/M" "Editors" "Programming" "Retro" "Tutorial"}
+  image       "/img/articles/small_zde16_screenshort.png"
+  imageTitle: "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
+}
+
+{ filename    2008-10-17-setting-up-z80pack-to-create-an-emulated-cpm-system.md
+  title       "Setting up z80pack to Create an Emulated CP/M System"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
+  image       "/img/articles/small_z80pack_cpm3.png"
+  imageTitle: "Loading Screen for CP/M 3.0 on z80pack"
+  updated:    2013-03-05
+}
+
+{ filename    2008-10-14-pdp-8-in-three-days-of-the-condor.md
+  title       "PDP-8 in 'Three Days of the Condor'"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Computers in Movies" "DEC" "PDP-8" "Retro"}
+  hideLicence true
+  image       "/img/articles/third_day_of_the_condor_pdp_8_1.jpg"
+}
+
+{ filename    2008-10-07-book-review-fundamentals-of-operating-systems-by-a-m-lister.md
+  title       "Book Review: Fundamentals of Operating Systems by A.M. Lister - Second Edition"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Book" "Operating Systems" "Retro" "Review"}
+  rating      4.0
+  image       "/img/articles/book_fundamentals_operating_systems.png"
+}
+
+{ filename    2008-09-16-how-to-share-an-ssl-certificate-and-still-use-cookies.md
+  title       "How to share an SSL certificate and still use cookies"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"PHP" "Programming" "Security" "SSL" "Web Development"}
+}
+
+{ filename    2008-08-08-is-cobol-really-understandable-after-14-years.md
+  title       "Is Cobol Really Understandable After 14 Years?"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming"  "Cobol"  "Retro"}
+}

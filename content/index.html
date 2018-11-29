@@ -1,0 +1,26 @@
+!* commandSubst true
+! source -directory [dir plugins] include.tcl
+! source -directory [dir plugins] posts.tcl
+<div class="row margin-buffer">
+  <div class="col-md-12">
+    [include main_tags.html]
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <a class="pull-right btn btn-success btn-lg" href="/archive/">View All</a>
+    <div id="indexHeader">Latest Articles</div>
+    <hr />
+  </div>
+</div>
+
+! set posts [posts::sort [collection get articles-posts]]
+! set postListParams [dict create posts $posts maxPosts 5]
+[ornament -params $postListParams -directory [dir includes] -file post_list.html]
+
+<div class="row">
+  <div class="col-md-12">
+    [include email_subscription.html]
+  </div>
+</div>

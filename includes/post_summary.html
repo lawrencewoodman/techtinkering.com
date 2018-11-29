@@ -1,0 +1,26 @@
+!* commandSubst true variableSubst true
+! source -directory [dir plugins] www.tcl
+! source -directory [dir plugins] posts.tcl
+! set date [getparam date]
+! set title [getparam title]
+
+<header>
+  <h3><a href="[www::url [getparam url]]">$title</a></h3>
+  <span class="post-meta">
+!   if {![getparam -default false hideDate]} {
+      <time datetime="[clock format $date -format {%Y-%m-%d}]">
+        [clock format $date -format {%e %B %Y}]
+      </time>
+      &nbsp; / &nbsp;
+!   }
+!   foreach tag [getparam tags] {
+      <a href="[www::url "/tag/[posts::tagToDirName $tag]/"]">$tag</a>
+      &nbsp; &nbsp;
+!   }
+  </span>
+</header>
+<div>
+  [getparam summary]...
+  &nbsp;
+  <a class="readMore" href="[www::url [getparam url]]">Read More</a>
+</div>

