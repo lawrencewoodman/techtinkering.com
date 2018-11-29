@@ -1,0 +1,33 @@
+code {
+  background-color: #272822;
+  color: #EEE;
+}
+
+table.neatTable {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+table.neatTable th {
+  text-align: left;
+  padding-right: 1em;
+  vertical-align: top;
+}
+table.neatTable td { text-align: left; padding-right: 1em; }
+table.neatTable td.note { font-style: italic; }
+
+.youtube-wrapper {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.youtube-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

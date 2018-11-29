@@ -1,52 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
   <title>Setting up a Beowulf Cluster Using Open MPI on Linux</title>
-
-  <title>Setting up a Beowulf Cluster Using Open MPI on Linux</title>
-  <meta name="description" content="I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Op...">
-
+  <meta name="description" content="I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open M">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Setting up a Beowulf Cluster Using Open MPI on Linux">
+  <meta name="twitter:description" content="I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open M">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Setting up a Beowulf Cluster Using Open MPI on Linux">
+  <meta property="og:description" content="I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open M">
+  <meta property="og:url" content="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/sitestyle.css" rel="stylesheet">
-  <link href="/css/html_pygments.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
 
-  <link rel="canonical" href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/">
-  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
 
-  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
-  <!--[if lte IE 6]>
-    <script defer type="text/javascript" src="/js/pngfix.js"></script>
-  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-    <script src="/js/html5shiv.3.7.2.min.js"></script>
-    <script src="/js/respond.1.4.2.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
-
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
   </script>
 
-  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
-  <!-- End Cookie Consent plugin -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
 </head>
 
-
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,431 +105,449 @@
       </button>
       <a class="navbar-brand" href="/">TechTinkering</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li
-        
-        ><a href="/">Home</a></li>
-
-        <li
-        
-        ><a href="/archive">Archive</a></li>
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        <li
-        
-        ><a href="/about">About</a></li>
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
       </ul>
-
-      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-      </a>
-
-
-      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-      <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-      </a>
-
-      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
-      </a>
 
     </div><!--/.nav-collapse -->
   </div>
-
 </nav>
 
-
     <div id="content" class="container">
-      <div class="row">
-  <div class="col-md-8">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="name"><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/" title="Setting up a Beowulf Cluster Using Open MPI on Linux">Setting up a Beowulf Cluster Using Open MPI on Linux</a></h1>
-    <span class="byLine">
-      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
-             <span itemprop="name">Lawrence Woodman</span>
-           </a>
-         </span>
-      <time itemprop="datePublished" datetime="2009-12-02">
-         2 December 2009
-      </time>
-    </span>
+      <header>
+        <a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/" title="Setting up a Beowulf Cluster Using Open MPI on Linux">
+          <h1 itemprop="headline name">Setting up a Beowulf Cluster Using Open MPI on Linux</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
 
-
-    <!-- AddThis Button BEGIN -->
-    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_reddit"></a>
-    <a class="addthis_button_compact"></a>
-    </div>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
-    <!-- AddThis Button END -->
-
-    <span class="tagLine">
+        </div>
+          <time itemprop="datePublished"
+                datetime="2009-12-02">
+             2 December 2009
+          </time>
+          &nbsp; / &nbsp;
+        <span itemscope itemprop="publisher"
+              itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="TechTinkering" />
+          <meta itemprop="url" content="http://techtinkering.com" />
+        </span>
+        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+          <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+            <span itemprop="name">Lawrence Woodman</span>
+          </a>
+        </span>
+        &nbsp; / &nbsp;
+          <a href="/tag/beowulfclusters/">Beowulf Clusters</a>
+          &nbsp; &nbsp;
+          <a href="/tag/distributedprocessing/">Distributed Processing</a>
+          &nbsp; &nbsp;
+          <a href="/tag/highperformancecomputing/">High Performance Computing</a>
+          &nbsp; &nbsp;
+          <a href="/tag/linux/">Linux</a>
+          &nbsp; &nbsp;
+          <a href="/tag/mpi/">MPI</a>
+          &nbsp; &nbsp;
+          <a href="/tag/parallelprocessing/">Parallel Processing</a>
+          &nbsp; &nbsp;
+          <a href="/tag/tutorial/">Tutorial</a>
+          &nbsp; &nbsp;
+      </header>
       <br />
-      Tags:
-      
-        <a rel="tag" href="/tag/mpi">MPI</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/linux">Linux</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/beowulfclusters">Beowulf Clusters</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/highperformancecomputing">High Performance Computing</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/distributedprocessing">Distributed Processing</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/parallelprocessing">Parallel Processing</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
-      
-    </span>
-
-  </header>
-
-  <div class="articleBody" itemprop="articleBody">
-    <p>I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open MPI to create a Linux cluster.   What follows is a quick guide to getting a cluster running.  The basics really are very simple and, depending on the size, you can get a simple cluster running in less than half an hour, assuming you already have the machines networked and running Linux.</p>
-
+      <div itemprop="articleBody">
+        <p>I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open MPI to create a Linux cluster.   What follows is a quick guide to getting a cluster running.  The basics really are very simple and, depending on the size, you can get a simple cluster running in less than half an hour, assuming you already have the machines networked and running Linux.</p>
 <h2>What is a Beowulf Cluster?</h2>
-<p>A Beowulf Cluster is a collection of privately networked computers which can be used for parallel computations.  They consist of commodity hardware running open source software such as Linux or a BSD, often coupled with PVM (Parallel Virtual Machine) or MPI (Message Passing Interface).  A standard set up will consist of one master node which will control a number of slave nodes.  The slave nodes are typically headless and generally all access the same files from a server.  They have been referred to as Beowulf Clusters since before 1998 when the original <a href="http://www.ibiblio.org/pub/linux/docs/HOWTO/archive/Beowulf-HOWTO.html">Beowulf HOWTO</a> was released.</p>
-
-<h2 id="what-is-open-mpi">What is Open MPI?</h2>
-<p><a href="http://www.open-mpi.org/&quot;">Open MPI</a> is one of the leading MPI-2 implementations used by many of the TOP 500 Supercomputers.  It is open source and is developed and maintained by a consortium of academic, research, and industry partners.  The Open MPI project has the stated aim of building the best Message Passing Interface (MPI) library available, which judging by where it is used, I would say they are well on their way to doing.</p>
-
+A Beowulf Cluster is a collection of privately networked computers which can be used for parallel computations.  They consist of commodity hardware running open source software such as Linux or a BSD, often coupled with PVM (Parallel Virtual Machine) or MPI (Message Passing Interface).  A standard set up will consist of one master node which will control a number of slave nodes.  The slave nodes are typically headless and generally all access the same files from a server.  They have been referred to as Beowulf Clusters since before 1998 when the original <a href="http://www.ibiblio.org/pub/linux/docs/HOWTO/archive/Beowulf-HOWTO.html">Beowulf HOWTO</a> was released.
+<h2>What is Open MPI?</h2>
+<p><a href="http://www.open-mpi.org/">Open MPI</a> is one of the leading MPI-2 implementations used by many of the TOP 500 Supercomputers.  It is open source and is developed and maintained by a consortium of academic, research, and industry partners.  The Open MPI project has the stated aim of building the best Message Passing Interface (MPI) library available, which judging by where it is used, I would say they are well on their way to doing.</p>
 <p>The main way that it is used is to start a program from the master node and specify how many processes you want to use, the program is then started for each of those process whether this is on the same machine or over multiple machines.  The processes can communicate using the MPI library and all data sent to STDOUT from the slave nodes is piped to STDOUT on the master node.</p>
-
 <h2>Setting up the Machines</h2>
 <p>I am making several assumptions in this article:</p>
-
 <ul>
-  <li>You have at least two machines connected via a TCP/IP network.</li>
-  <li>Each machine is using the same processor architecture, to ease sharing your program executables.</li>
-  <li>The machines all have Linux installed.</li>
-  <li>Each machine has a common login user name, such as <code class="highlighter-rouge">mpiuser</code>.  I will refer to the common login as <code class="highlighter-rouge">mpiuser</code> for the rest of this article.</li>
-  <li>Each machine has <code class="highlighter-rouge">mpiuser</code> sharing the same home folder, usually through NFS, or has the relevant parts of the home folder synchronised, perhaps with <code class="highlighter-rouge">rsync</code>.</li>
-  <li>I will refer to each of the slaves nodes as <code class="highlighter-rouge">slave1</code>, <code class="highlighter-rouge">slave2</code>, etc.  You, however, can choose whatever host names you like.</li>
+<li>You have at least two machines connected via a TCP/IP network.</li>
+<li>Each machine is using the same processor architecture, to ease sharing your program executables.</li>
+<li>The machines all have Linux installed.</li>
+<li>Each machine has a common login user name, such as <code>mpiuser</code>.  I will refer to the common login as <code>mpiuser</code> for the rest of this article.</li>
+<li>Each machine has <code>mpiuser</code> sharing the same home folder, usually through NFS, or has the relevant parts of the home folder synchronised, perhaps with <code>rsync</code>.</li>
+<li>I will refer to each of the slaves nodes as <code>slave1</code>, <code>slave2</code>, etc.  You, however, can choose whatever host names you like.</li>
 </ul>
-
 <p>One of the machines will be the master node, this is the machine from which you will control the cluster and run your programs.  The other nodes will be known as slaves.</p>
-
 <h3>Installing and Configuring Open MPI on all Nodes</h3>
-<p>Under Debian Lenny you need to install the following packages:</p>
-
+Under Debian Lenny you need to install the following packages:
 <ul>
-  <li>openmpi-bin</li>
-  <li>openmpi-common</li>
-  <li>libopenmpi1</li>
-  <li>libopenmpi-dev     (Not actually needed for a slave node.)</li>
+<li>openmpi-bin</li>
+<li>openmpi-common</li>
+<li>libopenmpi1</li>
+<li>libopenmpi-dev     (Not actually needed for a slave node.)</li>
 </ul>
-
 <p>This can be done as root, on Debian, with:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>apt-get install openmpi-bin openmpi-common libopenmpi1 libopenmpi-dev</code></pre></figure>
-
+<pre><code class="language-bash">$ apt-get install openmpi-bin openmpi-common libopenmpi1 libopenmpi-dev
+</code></pre>
 <p>The names may vary on your distribution, but the most important thing to remember is that you should have the same version of Open MPI on all the machines, for it to work properly.</p>
-
-<p>Under Debian Lenny, the Open MPI executables install into <code class="highlighter-rouge">/usr/bin</code>.  If they install into a different location, then you will need to ensure that this location is in the PATH for <code class="highlighter-rouge">mpiuser</code>.  You may also need to ensure that LD_LIBRARY_PATH points to <code class="highlighter-rouge">/usr/lib</code></p>
-
+<p>Under Debian Lenny, the Open MPI executables install into <code>/usr/bin</code>.  If they install into a different location, then you will need to ensure that this location is in the PATH for <code>mpiuser</code>.  You may also need to ensure that LD_LIBRARY_PATH points to <code>/usr/lib</code></p>
 <h3>Slave Nodes</h3>
-
 <p>So that the master node can control the slave nodes, each slave node needs an SSH server installed.  Under Debian, install the following package:</p>
-<ul><li>openssh-server</li></ul>
-
+<ul>
+<li>openssh-server</li>
+</ul>
 <p>Under Debian, this can be done as root with:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>apt-get install openssh-server</code></pre></figure>
-
+<pre><code class="language-bash">$ apt-get install openssh-server
+</code></pre>
 <h3>Master Node</h3>
-
 <h4>Setting up SSH</h4>
-<p><em>Before continuing with setting up <a href="http://www.openssh.com/">Open SSH</a> please refer to their site.  I am providing just enough information here to get the cluster working and make no guarantees as to how secure this method is.</em></p>
-
+<em>Before continuing with setting up <a href="http://www.openssh.com/">Open SSH</a> please refer to their site.  I am providing just enough information here to get the cluster working and make no guarantees as to how secure this method is.</em>
 <p>To be able to control the slave nodes from the master node you need an SSH client installed.  Under Debian, install the following package:</p>
-<ul><li>openssh-client</li></ul>
-
+<ul>
+<li>openssh-client</li>
+</ul>
 <p>Under Debian, this can be done as root with:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>apt-get install openssh-client</code></pre></figure>
-
-<p>While logged in as <code class="highlighter-rouge">mpiuser</code>, create SSH public/private key pairs with password: <code class="highlighter-rouge">h475k2!4553ffe</code> (Choose your own password) using file: <code class="highlighter-rouge">/home/mpiuser/.ssh/id_dsa</code>.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh-keygen -t dsa</code></pre></figure>
-
+<pre><code class="language-bash">$ apt-get install openssh-client
+</code></pre>
+<p>While logged in as <code>mpiuser</code>, create SSH public/private key pairs with password: <code>h475k2!4553ffe</code> (Choose your own password) using file: <code>/home/mpiuser/.ssh/id_dsa</code>.</p>
+<pre><code class="language-bash">$ ssh-keygen -t dsa
+</code></pre>
 <p>Make sure that each machine knows that this user is authorized to log into them.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>cp /home/mpiuser/.ssh/id_dsa.pub /home/mpiuser/.ssh/authorized_keys</code></pre></figure>
-
-<p>If you are not sharing the <code class="highlighter-rouge">/home/mpiuser</code> folder then make sure that each slave node knows that <code class="highlighter-rouge">mpiuser</code> on the master node is authorized to log into them.  For <code class="highlighter-rouge">slave1</code> use:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>scp /home/mpiuser/.ssh/id_dsa.pub mpiuser@slave1:.ssh/authorized_keys</code></pre></figure>
-
+<pre><code class="language-bash">$ cp /home/mpiuser/.ssh/id_dsa.pub /home/mpiuser/.ssh/authorized_keys
+</code></pre>
+<p>If you are not sharing the <code>/home/mpiuser</code> folder then make sure that each slave node knows that <code>mpiuser</code> on the master node is authorized to log into them.  For <code>slave1</code> use:</p>
+<pre><code class="language-bash">$ scp /home/mpiuser/.ssh/id_dsa.pub mpiuser@slave1:.ssh/authorized_keys
+</code></pre>
 <p>Correct file permissions (This will also need to be done on the slave nodes if not sharing the home folder):</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>chmod 700 /home/mpiuser/.ssh</code></pre></figure>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>chmod 600 /home/mpiuser/.ssh/authorized_keys</code></pre></figure>
-
+<pre><code class="language-bash">$ chmod 700 /home/mpiuser/.ssh
+$ chmod 600 /home/mpiuser/.ssh/authorized_keys
+</code></pre>
 <p>To test that this has worked try using SSH to connect to your slaves from the master, using the password you entered when creating the key pairs above:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh slave1</code></pre></figure>
-
+<pre><code class="language-bash">$ ssh slave1
+</code></pre>
 <h4>Configuring Open MPI</h4>
+<p>To let Open MPI know which machines to run your programs on, you can create a file to store this.  I will call this file <code>/home/mpiuser/.mpi_hostfile</code> and it could contain the following:</p>
+<pre><code class="language-bash"># The Hostfile for Open MPI
 
-<p>To let Open MPI know which machines to run your programs on, you can create a file to store this.  I will call this file <code class="highlighter-rouge">/home/mpiuser/.mpi_hostfile</code> and it could contain the following:</p>
+# The master node, 'slots=2' is used because it is a dual-processor machine.
+localhost slots=2
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># The Hostfile for Open MPI</span>
-
-<span class="c"># The master node, 'slots=2' is used because it is a dual-processor machine.</span>
-localhost <span class="nv">slots</span><span class="o">=</span>2
-
-<span class="c"># The following slave nodes are single processor machines:</span>
+# The following slave nodes are single processor machines:
 slave1
 slave2
-slave3</code></pre></figure>
-
+slave3
+</code></pre>
 <h2>Compiling Programs</h2>
-<p>OpenMPI can be used with a variety of languages, two of the most popular are FORTRAN and ‘C’.
-If your programs are written in ‘C’, then you can either use <code class="highlighter-rouge">mpicc</code> instead of your normal ‘C’ compiler
-or you can pass the additional arguments directly to your ‘C’ compiler.  With <code class="highlighter-rouge">mpicc</code> the arguments
-you pass are passed to your normal ‘C’ compiler.</p>
-
-<p>If you want to use <code class="highlighter-rouge">mpicc</code> to compile a ‘C’ source file called <code class="highlighter-rouge">testprogram.c</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpicc testprogram.c</code></pre></figure>
-
-<p>If you want to see what will be passed to your ‘C’ compiler when compiling and linking:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpicc -showme</code></pre></figure>
-
+OpenMPI can be used with a variety of languages, two of the most popular are FORTRAN and 'C'.
+If your programs are written in 'C', then you can either use `mpicc` instead of your normal 'C' compiler
+or you can pass the additional arguments directly to your 'C' compiler.  With `mpicc` the arguments
+you pass are passed to your normal 'C' compiler.
+<p>If you want to use <code>mpicc</code> to compile a 'C' source file called <code>testprogram.c</code>:</p>
+<pre><code class="language-bash">$ mpicc testprogram.c
+</code></pre>
+<p>If you want to see what will be passed to your 'C' compiler when compiling and linking:</p>
+<pre><code class="language-bash">$ mpicc -showme
+</code></pre>
 <h2>Running Your Programs on the Cluster</h2>
-
 <h3>Ensure That SSH Doesn't Ask For a Password</h3>
-<p>Because Open MPI will use SSH to connect to each of the machines and run your program, you need to ensure that the password doesn’t have to be entered for each connection.</p>
-
-<p>Use <code class="highlighter-rouge">ssh-agent</code> to remember the password while logged in as <code class="highlighter-rouge">mpiuser</code>:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span><span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span></code></pre></figure>
-
-<p>Tell <code class="highlighter-rouge">ssh-agent</code> the password for the SSH key:<br /></p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh-add ~/.ssh/id_dsa</code></pre></figure>
-
-<p>Test by logging into one of the slave nodes, while logged in as mpiuser; this shouldn’t ask for a password:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ssh slave1</code></pre></figure>
-
+Because Open MPI will use SSH to connect to each of the machines and run your program, you need to ensure that the password doesn't have to be entered for each connection.
+<p>Use <code>ssh-agent</code> to remember the password while logged in as <code>mpiuser</code>:</p>
+<pre><code class="language-bash">$ eval `ssh-agent`
+</code></pre>
+<p>Tell <code>ssh-agent</code> the password for the SSH key:<br/></p>
+<pre><code class="language-bash">$ ssh-add ~/.ssh/id_dsa
+</code></pre>
+<p>Test by logging into one of the slave nodes, while logged in as mpiuser; this shouldn't ask for a password:</p>
+<pre><code class="language-bash">$ ssh slave1
+</code></pre>
 <h3>Starting a Program on the Cluster</h3>
-
 <p>You can start a program on just one machine, and have it execute on multiple processors/cores.  This is handy if you have a powerful machine or are debugging/testing a program.  Alternatively, you can run the program over your cluster and request as many processes as you want to be run over it.</p>
-
-<p>To run <code class="highlighter-rouge">myprogram</code> on two processes on the local machine:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpirun -np 2 ./myprogram</code></pre></figure>
-
-<p>To run <code class="highlighter-rouge">myprogram</code> over five processes on the cluster using the <code class="highlighter-rouge">.mpi_hostfile</code> created above (Note that <code class="highlighter-rouge">myprogram</code> must be in the same location on each machine):</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpirun -np 2 --hostfile .mpi_hostfile ./myprogram</code></pre></figure>
-
+<p>To run <code>myprogram</code> on two processes on the local machine:</p>
+<pre><code class="language-bash">$ mpirun -np 2 ./myprogram
+</code></pre>
+<p>To run <code>myprogram</code> over five processes on the cluster using the <code>.mpi_hostfile</code> created above (Note that <code>myprogram</code> must be in the same location on each machine):</p>
+<pre><code class="language-bash">$ mpirun -np 2 --hostfile .mpi_hostfile ./myprogram
+</code></pre>
 <h2>An Example Test Program</h2>
-<p>The following program will send a random number from the master node to all the slave nodes.</p>
-
-<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="cp">#include &lt;stdio.h&gt;
+The following program will send a random number from the master node to all the slave nodes.
+<pre><code class="language-c">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
-</span>
-<span class="cp">#include &lt;mpi.h&gt;
-</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-  <span class="k">const</span> <span class="kt">int</span> <span class="n">MASTER</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">const</span> <span class="kt">int</span> <span class="n">TAG_GENERAL</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 
-  <span class="kt">int</span> <span class="n">numTasks</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">rank</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">source</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">dest</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">rc</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
-  <span class="kt">int</span> <span class="n">dataWaitingFlag</span><span class="p">;</span>
+#include &lt;mpi.h&gt;
 
-  <span class="kt">char</span> <span class="n">inMsg</span><span class="p">;</span>
-  <span class="kt">char</span> <span class="n">outMsg</span><span class="p">;</span>
+int main(int argc, char *argv[])
+{
+  const int MASTER = 0;
+  const int TAG_GENERAL = 1;
 
-  <span class="n">MPI_Status</span> <span class="n">Stat</span><span class="p">;</span>
+  int numTasks;
+  int rank;
+  int source;
+  int dest;
+  int rc;
+  int count;
+  int dataWaitingFlag;
 
-  <span class="c1">// Initialize the MPI stack and pass 'argc' and 'argv' to each slave node
-</span>  <span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
+  char inMsg;
+  char outMsg;
 
-  <span class="c1">// Gets number of tasks/processes that this program is running on
-</span>  <span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">numTasks</span><span class="p">);</span>
+  MPI_Status Stat;
 
-  <span class="c1">// Gets the rank (process/task number) that this program is running on
-</span>  <span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rank</span><span class="p">);</span>
+  // Initialize the MPI stack and pass 'argc' and 'argv' to each slave node
+  MPI_Init(&amp;argc,&amp;argv);
 
-  <span class="c1">// If the master node
-</span>  <span class="k">if</span> <span class="p">(</span><span class="n">rank</span> <span class="o">==</span> <span class="n">MASTER</span><span class="p">)</span> <span class="p">{</span>
+  // Gets number of tasks/processes that this program is running on
+  MPI_Comm_size(MPI_COMM_WORLD, &amp;numTasks);
 
-    <span class="c1">// Send out messages to all the sub-processes
-</span>    <span class="k">for</span> <span class="p">(</span><span class="n">dest</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">dest</span> <span class="o">&lt;</span> <span class="n">numTasks</span><span class="p">;</span> <span class="n">dest</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">outMsg</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">256</span><span class="p">;</span>	<span class="c1">// Generate random message to send to slave nodes
-</span>
-      <span class="c1">// Send a message to the destination
-</span>      <span class="n">rc</span> <span class="o">=</span> <span class="n">MPI_Send</span><span class="p">(</span><span class="o">&amp;</span><span class="n">outMsg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_CHAR</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">TAG_GENERAL</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
-      <span class="n">printf</span><span class="p">(</span><span class="s">"Task %d: Sent message %d to task %d with tag %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
-             <span class="n">rank</span><span class="p">,</span> <span class="n">outMsg</span><span class="p">,</span> <span class="n">dest</span><span class="p">,</span> <span class="n">TAG_GENERAL</span><span class="p">);</span>
-    <span class="p">}</span>
+  // Gets the rank (process/task number) that this program is running on
+  MPI_Comm_rank(MPI_COMM_WORLD, &amp;rank);
 
-  <span class="p">}</span>
+  // If the master node
+  if (rank == MASTER) {
 
-  <span class="c1">// Else a slave node
-</span>  <span class="k">else</span>  <span class="p">{</span>
-    <span class="c1">// Wait until a message is there to be received
-</span>    <span class="k">do</span> <span class="p">{</span>
-      <span class="n">MPI_Iprobe</span><span class="p">(</span><span class="n">MASTER</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">dataWaitingFlag</span><span class="p">,</span> <span class="n">MPI_STATUS_IGNORE</span><span class="p">);</span>
-      <span class="n">printf</span><span class="p">(</span><span class="s">"Waiting</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">dataWaitingFlag</span><span class="p">);</span>
+    // Send out messages to all the sub-processes
+    for (dest = 1; dest &lt; numTasks; dest++) {
+      outMsg = rand() % 256;	// Generate random message to send to slave nodes
 
-    <span class="c1">// Get the message and put it in 'inMsg'
-</span>    <span class="n">rc</span> <span class="o">=</span> <span class="n">MPI_Recv</span><span class="p">(</span><span class="o">&amp;</span><span class="n">inMsg</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MPI_CHAR</span><span class="p">,</span> <span class="n">MASTER</span><span class="p">,</span> <span class="n">TAG_GENERAL</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">Stat</span><span class="p">);</span>
+      // Send a message to the destination
+      rc = MPI_Send(&amp;outMsg, 1, MPI_CHAR, dest, TAG_GENERAL, MPI_COMM_WORLD);
+      printf(&quot;Task %d: Sent message %d to task %d with tag %d\n&quot;,
+             rank, outMsg, dest, TAG_GENERAL);
+    }
 
-    <span class="c1">// Get how big the message is and put it in 'count'
-</span>    <span class="n">rc</span> <span class="o">=</span> <span class="n">MPI_Get_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Stat</span><span class="p">,</span> <span class="n">MPI_CHAR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">count</span><span class="p">);</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">"Task %d: Received %d char(s) (%d) from task %d with tag %d </span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
-            <span class="n">rank</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">inMsg</span><span class="p">,</span> <span class="n">Stat</span><span class="p">.</span><span class="n">MPI_SOURCE</span><span class="p">,</span> <span class="n">Stat</span><span class="p">.</span><span class="n">MPI_TAG</span><span class="p">);</span>
-  <span class="p">}</span>
+  }
 
-  <span class="n">MPI_Finalize</span><span class="p">();</span>
-<span class="p">}</span></code></pre></figure>
+  // Else a slave node
+  else  {
+    // Wait until a message is there to be received
+    do {
+      MPI_Iprobe(MASTER, 1, MPI_COMM_WORLD, &amp;dataWaitingFlag, MPI_STATUS_IGNORE);
+      printf(&quot;Waiting\n&quot;);
+    } while (!dataWaitingFlag);
 
-<p>If you save the above source code to a file called <code class="highlighter-rouge">testprogram.c</code> then compile it using:</p>
+    // Get the message and put it in 'inMsg'
+    rc = MPI_Recv(&amp;inMsg, 1, MPI_CHAR, MASTER, TAG_GENERAL, MPI_COMM_WORLD, &amp;Stat);
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpicc testprogram.c</code></pre></figure>
+    // Get how big the message is and put it in 'count'
+    rc = MPI_Get_count(&amp;Stat, MPI_CHAR, &amp;count);
+    printf(&quot;Task %d: Received %d char(s) (%d) from task %d with tag %d \n&quot;,
+            rank, count, inMsg, Stat.MPI_SOURCE, Stat.MPI_TAG);
+  }
 
+  MPI_Finalize();
+}
+</code></pre>
+<p>If you save the above source code to a file called <code>testprogram.c</code> then compile it using:</p>
+<pre><code class="language-bash">$ mpicc testprogram.c
+</code></pre>
 <p>Then run it either over 20 processes on the local machine:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpirun -np 20 ./a.out</code></pre></figure>
-
+<pre><code class="language-bash">$ mpirun -np 20 ./a.out
+</code></pre>
 <p>Or over 5 processes on the cluster:</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>mpirun -np 5 --hostfile .mpi_hostfile ./a.out</code></pre></figure>
-
+<pre><code class="language-bash">$ mpirun -np 5 --hostfile .mpi_hostfile ./a.out
+</code></pre>
 <p>You should see on the master node that the output to STDOUT from the slave nodes is redirected to
 STDOUT on the master node.  The master node will output what it is sending and each slave node
 will output what it has received or if it is waiting.  Once each node has finished, the master node
 will exit and return you to the command prompt.</p>
-
 <h2>Where Can I Find More Information?</h2>
 <p>For Beowulf clusters take a look at <a href="http://www.beowulf.org/">beowulf.org</a> and <a href="http://www.clustermonkey.net/">Cluster Monkey</a>.  There is lots of information available for Open MPI at the <a href="http://open-mpi.org">Open MPI Project</a> and there is an excellent tutorial for programming using MPI at <a href="https://computing.llnl.gov/tutorials/mpi/">Lawrence Livermore National Laboratory</a>.</p>
+      </div>
+    </article>
+  </div>
+</div>
 
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Setting up a Beowulf Cluster Using Open MPI on Linux</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+      
+<header>
+  <h3><a href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Using C-Kermit to Exchange Files With Telnet BBS's</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-04-09">
+         9 April 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/bbs/">BBS</a>
+      &nbsp; &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Most BBSs that are still running now do so via telnet.  In many ways this is great as it allows people from all around the world to access a BBS as if it were local to them.  The problem comes though, ...
+  &nbsp;
+  <a class="readMore" href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-04-02">
+         2 April 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely ove...
+  &nbsp;
+  <a class="readMore" href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/">Using Netcat to Create ad hoc Links Between Applications or Machines</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-25">
+        25 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Netcat is a simple Unix utility which reads and writes data across network connections using the TCP or UDP protocol.  It is often described as the &quot;Swiss-army knife for TCP/IP&quot; because of it...
+  &nbsp;
+  <a class="readMore" href="/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></h3>
+  <span class="post-meta">
+      <time datetime="2010-02-14">
+        14 February 2010
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/ansi/">ANSI</a>
+      &nbsp; &nbsp;
+      <a href="/tag/bbs/">BBS</a>
+      &nbsp; &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/textmode/">Text Mode</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have noticed that the number of people interested in using telnet to access BBSs seems to be growing, which I'm really pleased to see.  However lots of people seem to be having trouble getting colour...
+  &nbsp;
+  <a class="readMore" href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></h3>
+  <span class="post-meta">
+      <time datetime="2014-06-22">
+        22 June 2014
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Geary is a lightweight email client inspired by gmail's interface.  Its simple minimalistic interface is quite pleasant to use and initially I was really pleased to switch to it from Thunderbird.  Howe...
+  &nbsp;
+  <a class="readMore" href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">Read More</a>
+</div>
 
   </div>
-</article>
+</div>
 
 
-    <div style="clear: left;"></div>
+<div class="row">
+  <div class="col-md-12">
+    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
 
-    
-      <hr />
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
-      </a>
-      <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
-        Setting up a Beowulf Cluster Using Open MPI on Linux
-      </span><br />
+  </div>
+</div>
 
-      by
-      <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/" property="cc:attributionName" rel="cc:attributionURL">
-      TechTinkering
-      </a>
-       is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-      Creative Commons Attribution 2.0 UK: England & Wales License
-      </a>
-    
-
-    <hr style="clear:both;" />
-
-    
-      <h2>Related</h2>
-      <ul class="briefPosts">
-        
-          <li><a href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Using C-Kermit to Exchange Files With Telnet BBS's</a></li>
-        
-          <li><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></li>
-        
-          <li><a href="/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/">Using Netcat to Create ad hoc Links Between Applications or Machines</a></li>
-        
-          <li><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></li>
-        
-          <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
-        
-      </ul>
-    
-
-    <hr />
-
-    <div id="rightAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Bookmark and Share</h2>
-    <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-    </a> Subscribe to RSS feed<br />
-
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
-      <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
-      <br />
-      <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
-      <br />
-      <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
-      <br />
-      <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
-      <br />
-      <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
-    </div>
-    <!-- AddThis Button END -->
-
-    <hr style="clear:both;" />
-
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/';
-      var disqus_url = 'http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/';
+      var disqus_identifier = '{{ page.url }}';
+      var disqus_url = 'http://techtinkering.com{{ page.url }}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -493,128 +559,24 @@ will exit and return you to the command prompt.</p>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
-
-
-  <div class="col-md-4">
-    <div class="columnAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Latest Articles</h2>
-    <ul class="briefPosts">
-      
-        <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
-      
-        <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
-      
-        <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
-      
-        <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
-      
-        <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
-      
-    </ul>
-
-    <h2>Popular Tags</h2>
-    <div>
-      <a style='font-size: 100%' href='/tag/dec'>DEC</a>
-<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
-<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
-<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
-<a style='font-size: 100%' href='/tag/book'>Book</a>
-<a style='font-size: 70%' href='/tag/z80'>Z80</a>
-<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
-<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
-<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
-<a style='font-size: 100%' href='/tag/games'>Games</a>
-<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
-<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
-<a style='font-size: 110%' href='/tag/review'>Review</a>
-<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
-<a style='font-size: 88%' href='/tag/dos'>DOS</a>
-<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
-<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
-<a style='font-size: 200%' href='/tag/retro'>Retro</a>
-<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
-<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
-<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
-<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
-<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
-<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
-<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
-<a style='font-size: 177%' href='/tag/programming'>Programming</a>
-<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
-<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
-<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
-<a style='font-size: 70%' href='/tag/c'>C</a>
-<a style='font-size: 70%' href='/tag/8080'>8080</a>
-<a style='font-size: 70%' href='/tag/xace'>xAce</a>
-<a style='font-size: 88%' href='/tag/history'>History</a>
-<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
-<a style='font-size: 70%' href='/tag/editors'>Editors</a>
-<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
-<a style='font-size: 118%' href='/tag/linux'>Linux</a>
-
-    </div>
-
-  </div>
 </div>
+
 
     </div>
 
     <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <strong>Legal:</strong> &nbsp;
-        <a href="/tandc/">Terms</a>,
-        <a href="/statinfo/">Statutory Information</a>
-
-        &nbsp; &nbsp;
-        <strong>RSS Feeds:</strong> &nbsp;
-        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
-        <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </footer>
-
-
-
-
-    <!-- Amazon Product Preview Code -->
-    <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
-    </script>
-    <noscript>
-        <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
-    </noscript>
-
-    <!-- Google Analytics tracking code -->
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-4388762-2");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>

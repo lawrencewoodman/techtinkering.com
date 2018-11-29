@@ -1,52 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
   <title>A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</title>
-
-  <title>A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</title>
-  <meta name="description" content="Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading progr...">
-
+  <meta name="description" content="Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs ">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8">
+  <meta name="twitter:description" content="Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs ">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8">
+  <meta property="og:description" content="Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs ">
+  <meta property="og:url" content="http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/sitestyle.css" rel="stylesheet">
-  <link href="/css/html_pygments.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
 
-  <link rel="canonical" href="/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/">
-  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
 
-  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
-  <!--[if lte IE 6]>
-    <script defer type="text/javascript" src="/js/pngfix.js"></script>
-  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-    <script src="/js/html5shiv.3.7.2.min.js"></script>
-    <script src="/js/respond.1.4.2.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
-
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
   </script>
 
-  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
-  <!-- End Cookie Consent plugin -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
 </head>
 
-
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,151 +105,118 @@
       </button>
       <a class="navbar-brand" href="/">TechTinkering</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li
-        
-        ><a href="/">Home</a></li>
-
-        <li
-        
-        ><a href="/archive">Archive</a></li>
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        <li
-        
-        ><a href="/about">About</a></li>
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
       </ul>
-
-      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-      </a>
-
-
-      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-      <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-      </a>
-
-      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
-      </a>
 
     </div><!--/.nav-collapse -->
   </div>
-
 </nav>
 
-
     <div id="content" class="container">
-      <div class="row">
-  <div class="col-md-8">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="name"><a href="/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/" title="A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8">A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</a></h1>
-    <span class="byLine">
-      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
-             <span itemprop="name">Lawrence Woodman</span>
-           </a>
-         </span>
-      <time itemprop="datePublished" datetime="2009-06-16">
-        16 June 2009
-      </time>
-    </span>
+      <header>
+        <a href="/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/" title="A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8">
+          <h1 itemprop="headline name">A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
 
-
-    <!-- AddThis Button BEGIN -->
-    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_reddit"></a>
-    <a class="addthis_button_compact"></a>
-    </div>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
-    <!-- AddThis Button END -->
-
-    <span class="tagLine">
+        </div>
+          <time itemprop="datePublished"
+                datetime="2009-06-16">
+            16 June 2009
+          </time>
+          &nbsp; / &nbsp;
+        <span itemscope itemprop="publisher"
+              itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="TechTinkering" />
+          <meta itemprop="url" content="http://techtinkering.com" />
+        </span>
+        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+          <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+            <span itemprop="name">Lawrence Woodman</span>
+          </a>
+        </span>
+        &nbsp; / &nbsp;
+          <a href="/tag/dec/">DEC</a>
+          &nbsp; &nbsp;
+          <a href="/tag/editors/">Editors</a>
+          &nbsp; &nbsp;
+          <a href="/tag/pdp-8/">PDP-8</a>
+          &nbsp; &nbsp;
+          <a href="/tag/retro/">Retro</a>
+          &nbsp; &nbsp;
+          <a href="/tag/tutorial/">Tutorial</a>
+          &nbsp; &nbsp;
+      </header>
       <br />
-      Tags:
-      
-        <a rel="tag" href="/tag/dec">DEC</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/pdp-8">PDP-8</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/editors">Editors</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
-      
-    </span>
-
-  </header>
-
-  <div class="articleBody" itemprop="articleBody">
-    <p>Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs on pre-punched tape, but left the problem of how to put new data onto punched tape and how to edit existing data.  This could be done off-line, but a better way was to use DEC’s Symbolic Editor.  This made life much easier as it allowed you to interactively edit a tape in a buffer, check the alterations and then output a new tape.  This editor was used for quite a few years by those wanting to edit Assembly or FORTRAN source code.  What follows is a brief introduction to using this editor.</p>
-
+      <div itemprop="articleBody">
+        <p>Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs on pre-punched tape, but left the problem of how to put new data onto punched tape and how to edit existing data.  This could be done off-line, but a better way was to use DEC's Symbolic Editor.  This made life much easier as it allowed you to interactively edit a tape in a buffer, check the alterations and then output a new tape.  This editor was used for quite a few years by those wanting to edit Assembly or FORTRAN source code.  What follows is a brief introduction to using this editor.</p>
 <h2>Obtaining the Symbolic Editor and Its Manual</h2>
-<p>The Symbolic Editor can be obtained from, the invaluable resource for retro software and documentation, <a href="http://bitsavers.org">Bitsavers</a>.  The paper-tape image is called: <a href="http://bitsavers.org/bits/DEC/pdp8/From_pdp8.hachti.de/hachti-pdp8-tapes/DEC-08-ESAB-PB.bin">DEC-08-ESAB-PB.bin</a>.  This file is loadable by emulators such as SimH, but owners of a real PDP-8 will have to find a way to punch this image to paper-tape.  The <a href="http://www.bitsavers.org/pdf/dec/pdp8/software/DEC-08-ESAB-D_EDITOR_Man.pdf">Symbolic Editor Programming Manual</a> is also available from bitsavers in PDF format.</p>
-
+The Symbolic Editor can be obtained from, the invaluable resource for retro software and documentation, <a href="http://bitsavers.org">Bitsavers</a>.  The paper-tape image is called: <a href="http://bitsavers.org/bits/DEC/pdp8/From_pdp8.hachti.de/hachti-pdp8-tapes/DEC-08-ESAB-PB.bin">DEC-08-ESAB-PB.bin</a>.  This file is loadable by emulators such as SimH, but owners of a real PDP-8 will have to find a way to punch this image to paper-tape.  The <a href="http://www.bitsavers.org/pdf/dec/pdp8/software/DEC-08-ESAB-D_EDITOR_Man.pdf">Symbolic Editor Programming Manual</a> is also available from bitsavers in PDF format.
 <h2>Theory of Operation</h2>
-<p>The editor works by containing the text you are editing in a buffer in memory referred to as a page.  So when you read in a paper-tape, it will read as much as it can into the free memory and then ring a bell to indicate that you may begin editing.  You can then edit this text and write it to a new paper tape.</p>
-
+The editor works by containing the text you are editing in a buffer in memory referred to as a page.  So when you read in a paper-tape, it will read as much as it can into the free memory and then ring a bell to indicate that you may begin editing.  You can then edit this text and write it to a new paper tape.
 <p>The editor works a bit like the Unix editor, vi, in that it has two modes of operation: <em>command mode</em> and <em>text mode</em>.  When in <em>command mode</em> all text typed via the teletype is interpreted as text editing commands.  When in <em>text mode</em> all text typed in via the teletype is either adding to or altering the text in the buffer.</p>
-
-<p>When the editor is first loaded it starts off in <em>command mode</em>, you can then type your desired command followed by <code class="highlighter-rouge">RETURN</code> to action it.  Depending on the command, the editor may now switch to <em>text mode</em> and allow you to edit the buffer.</p>
-
-<p>When in <em>text mode</em> you must press <code class="highlighter-rouge">RETURN</code> after each line that you enter to save it to the buffer.  To return to <em>command mode</em> and to cancel the current line you are typing press <code class="highlighter-rouge">CTRL+FORM</code> (<code class="highlighter-rouge">CTRL+L</code>).</p>
-
+<p>When the editor is first loaded it starts off in <em>command mode</em>, you can then type your desired command followed by <code>RETURN</code> to action it.  Depending on the command, the editor may now switch to <em>text mode</em> and allow you to edit the buffer.</p>
+<p>When in <em>text mode</em> you must press <code>RETURN</code> after each line that you enter to save it to the buffer.  To return to <em>command mode</em> and to cancel the current line you are typing press <code>CTRL+FORM</code> (<code>CTRL+L</code>).</p>
 <h2>Starting the Editor</h2>
 <h3>Instructions for Owners of a Real PDP-8</h3>
-<p>To load the editor from paper-tape on a real PDP-8 just load the Binary Loader first and then the editor from paper-tape in the normal way.  The program can then be started at Octal address 200.  If you have a high-speed punch or reader then you will want to set Switch Register bit 10 to high for a high-speed punch and bit 11 to high for a high-speed reader (See section 1.4 of Symbolic Editor Programming Manual).</p>
-
+To load the editor from paper-tape on a real PDP-8 just load the Binary Loader first and then the editor from paper-tape in the normal way.  The program can then be started at Octal address 200.  If you have a high-speed punch or reader then you will want to set Switch Register bit 10 to high for a high-speed punch and bit 11 to high for a high-speed reader (See section 1.4 of Symbolic Editor Programming Manual).
 <h3>Instructions for Those Using SimH to Emulate a PDP-8</h3>
-<p>If you are using SimH, then the following applies:</p>
-
-<p>To load the editor’s paper-tape image from the current directory in SimH:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; load DEC-08-ESAB-PB.bin</code></pre></figure>
-
-<p>SimH emulates a high-speed punch and reader, so you will want to set Switch Register bits <code class="highlighter-rouge">10</code> and <code class="highlighter-rouge">11</code> to high to tell the editor that this is what you will be using:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; de sr 3</code></pre></figure>
-
-<p>To run the editor (<code class="highlighter-rouge">200</code> here is in Octal):</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; run 200</code></pre></figure>
-
+If you are using SimH, then the following applies:
+<p>To load the editor's paper-tape image from the current directory in SimH:</p>
+<pre><code class="language-text">sim&gt; load DEC-08-ESAB-PB.bin
+</code></pre>
+<p>SimH emulates a high-speed punch and reader, so you will want to set Switch Register bits <code>10</code> and <code>11</code> to high to tell the editor that this is what you will be using:</p>
+<pre><code class="language-text">sim&gt; de sr 3
+</code></pre>
+<p>To run the editor (<code>200</code> here is in Octal):</p>
+<pre><code class="language-text">sim&gt; run 200
+</code></pre>
 <h2>Commands</h2>
-<p>The commands take the following form where <code class="highlighter-rouge">E</code> represents any command:</p>
+The commands take the following form where `E` represents any command:
 <table class="neatTable">
 <tr><th>Command Structure</th><th>Purpose</th></tr>
 <tr><td>E</td><td>Perform command <em>E</em></td></tr>
 <tr><td>nE</td><td>Perform command <em>E</em> on line <em>n</em></td></tr>
 <tr><td>m,nE</td><td>Perform command <em>E</em> on lines <em>m</em> to <em>n</em>, inclusive.</td></tr>
 </table>
-
 <p>Below is a brief list of useful commands to get you started:</p>
 <table class="neatTable">
 <tr><th>Command</th><th>Description</th></tr>
@@ -214,25 +229,18 @@
 <tr><td>P</td><td>Punches the contents of the buffer, line or range of lines to the paper-tape punch</td></tr>
 <tr><td>R</td><td>Reads a page of text from the paper-tape reader and appends it to the buffer</td></tr>
 </table>
-
 <h2>Examples</h2>
-
 <h3>Creating a new paper-tape with source code for a FORTRAN program</h3>
-
-<p>Start the Editor as above, note that when it is started it doesn’t come up with a prompt, so don’t worry if it looks as if it isn’t doing anything.</p>
-
+<p>Start the Editor as above, note that when it is started it doesn't come up with a prompt, so don't worry if it looks as if it isn't doing anything.</p>
 <p>Owners of a real PDP-8, attach a blank piece of paper-tape to the punch.
-If using SimH, then press <code class="highlighter-rouge">CTRL+E</code> to get to the <code class="highlighter-rouge">sim&gt;</code> prompt and attach a file to the paper-tape punch:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; attach ptp factorials.ft</code></pre></figure>
-
+If using SimH, then press <code>CTRL+E</code> to get to the <code>sim&gt;</code> prompt and attach a file to the paper-tape punch:</p>
+<pre><code class="language-text">sim&gt; attach ptp factorials.ft
+</code></pre>
 <p>To get back to the editor:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; cont</code></pre></figure>
-
-<p>The editor starts with a blank buffer.  To append the following source code to it, use the command: <code class="highlighter-rouge">A</code>, and then enter:</p>
-
-<figure class="highlight"><pre><code class="language-fortran" data-lang="fortran">C;      THIS PROGRAM CALCULATES FACTORIALS
+<pre><code class="language-text">sim&gt; cont
+</code></pre>
+<p>The editor starts with a blank buffer.  To append the following source code to it, use the command: <code>A</code>, and then enter:</p>
+<pre><code class="language-fortran">C;      THIS PROGRAM CALCULATES FACTORIALS
 5;      TYPE 200
 10;     ACCEPT 300,X
         FACT=Y=1.
@@ -244,130 +252,218 @@ If using SimH, then press <code class="highlighter-rouge">CTRL+E</code> to get t
         GO TO 30
 41;     PAUSE
         GO TO 5
-200;    FORMAT (/, "PLEASE TYPE A POSITIVE NUMBER", /)
+200;    FORMAT (/, &quot;PLEASE TYPE A POSITIVE NUMBER&quot;, /)
 300;    FORMAT (E)
-400;    FORMAT (/,E, "FACTORIAL IS",E)
-        END</code></pre></figure>
-
-<p>Remember to press <code class="highlighter-rouge">RETURN</code> after each line including the last line to make sure that it is saved to the buffer.</p>
-
-<p>Press <code class="highlighter-rouge">CTRL+FORM</code> (<code class="highlighter-rouge">CTRL+L</code>) to go back to command mode.</p>
-
-<p>Test some of the commands such as: <code class="highlighter-rouge">1,5L</code>, to list the first 5 lines in the buffer.</p>
-
-<p>Punch the buffer to paper-tape with the command: <code class="highlighter-rouge">P</code></p>
-
+400;    FORMAT (/,E, &quot;FACTORIAL IS&quot;,E)
+        END
+</code></pre>
+<p>Remember to press <code>RETURN</code> after each line including the last line to make sure that it is saved to the buffer.</p>
+<p>Press <code>CTRL+FORM</code> (<code>CTRL+L</code>) to go back to command mode.</p>
+<p>Test some of the commands such as: <code>1,5L</code>, to list the first 5 lines in the buffer.</p>
+<p>Punch the buffer to paper-tape with the command: <code>P</code></p>
 <h3>Reading an existing paper-tape into the editor</h3>
-
-<p>If the editor isn’t already started do so as above, otherwise use the command: <code class="highlighter-rouge">K</code> to clear the contents of the buffer.</p>
-
+<p>If the editor isn't already started do so as above, otherwise use the command: <code>K</code> to clear the contents of the buffer.</p>
 <p>Owners of a real PDP-8, attach the paper-tape that you want to edit to the paper-tape reader.
-If using SimH, then press CTRL+E to get to the <code class="highlighter-rouge">sim&gt;</code> prompt.</p>
-
-<p>If you haven’t already detached the file above from the paper-tape punch then:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; detach ptp</code></pre></figure>
-
+If using SimH, then press CTRL+E to get to the <code>sim&gt;</code> prompt.</p>
+<p>If you haven't already detached the file above from the paper-tape punch then:</p>
+<pre><code class="language-text">sim&gt; detach ptp
+</code></pre>
 <p>To attach the file we made previously to the paper-tape reader:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; attach ptr factorials.ft</code></pre></figure>
-
+<pre><code class="language-text">sim&gt; attach ptr factorials.ft
+</code></pre>
 <p>To get back to the editor:</p>
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">sim&gt; cont</code></pre></figure>
-
-<p>Read the paper-tape into the buffer with the command: <code class="highlighter-rouge">R</code></p>
-
-<p>List its contents with the command: <code class="highlighter-rouge">L</code></p>
-
+<pre><code class="language-text">sim&gt; cont
+</code></pre>
+<p>Read the paper-tape into the buffer with the command: <code>R</code></p>
+<p>List its contents with the command: <code>L</code></p>
 <h2>Where Now?</h2>
-<p>This editor can be really quite flexible and you can even create separate tape editing tapes which will automatically run the tape editors commands over a tape to be edited.  More information can be found by reading the <a href="http://www.bitsavers.org/pdf/dec/pdp8/software/DEC-08-ESAB-D_EDITOR_Man.pdf">Symbolic Editor Programming Manual</a>.  In addition if you haven’t used SimH before, take a look at my article: <a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a>.  I intend to follow this article with some further articles on programming the PDP-8 and will be using this editor to do this shortly.</p>
+This editor can be really quite flexible and you can even create separate tape editing tapes which will automatically run the tape editors commands over a tape to be edited.  More information can be found by reading the <a href="http://www.bitsavers.org/pdf/dec/pdp8/software/DEC-08-ESAB-D_EDITOR_Man.pdf">Symbolic Editor Programming Manual</a>.  In addition if you haven't used SimH before, take a look at my article: <a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a>.  I intend to follow this article with some further articles on programming the PDP-8 and will be using this editor to do this shortly.
+      </div>
+    </article>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+      
+<header>
+  <h3><a href="/2009/07/14/running-4k-fortran-on-a-dec-pdp8/">Running 4K FORTRAN on a DEC PDP-8</a></h3>
+  <span class="post-meta">
+      <time datetime="2009-07-14">
+        14 July 2009
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/dec/">DEC</a>
+      &nbsp; &nbsp;
+      <a href="/tag/fortran/">FORTRAN</a>
+      &nbsp; &nbsp;
+      <a href="/tag/pdp-8/">PDP-8</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  4K FORTRAN was a subset of FORTRAN II and was the first high-level language available for the DEC PDP-8.  It consisted of two parts: the 4K FORTRAN Compiler (nicknamed &quot;Fivetran&quot;) and the 4K ...
+  &nbsp;
+  <a class="readMore" href="/2009/07/14/running-4k-fortran-on-a-dec-pdp8/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></h3>
+  <span class="post-meta">
+      <time datetime="2009-05-26">
+        26 May 2009
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/dec/">DEC</a>
+      &nbsp; &nbsp;
+      <a href="/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/tag/pdp-8/">PDP-8</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/simh/">SimH</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The DEC PDP-8 mini-computer was launched on 22 March 1965 and was a great success.  It was fairly cheap for the day and could easily be expanded.  What attracts me most to the PDP-8 is its simple desig...
+  &nbsp;
+  <a class="readMore" href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/tag/editors/">Editors</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2008/10/14/pdp-8-in-three-days-of-the-condor/">PDP-8 in 'Three Days of the Condor'</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-14">
+        14 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/computersinmovies/">Computers in Movies</a>
+      &nbsp; &nbsp;
+      <a href="/tag/dec/">DEC</a>
+      &nbsp; &nbsp;
+      <a href="/tag/pdp-8/">PDP-8</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I watched 'Three Days of the Condor' the other night and loved seeing what I believe is a Dec PDP 8/E being used.  Also featured in connection with this machine was a DecWriter, paper tape reader and p...
+  &nbsp;
+  <a class="readMore" href="/2008/10/14/pdp-8-in-three-days-of-the-condor/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-05-10">
+        10 May 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+      <a href="/tag/vic-20/">Vic-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you ...
+  &nbsp;
+  <a class="readMore" href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Read More</a>
+</div>
 
   </div>
-</article>
+</div>
 
 
-    <div style="clear: left;"></div>
+<div class="row">
+  <div class="col-md-12">
+    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
 
-    
-      <hr />
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
-      </a>
-      <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
-        A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8
-      </span><br />
+  </div>
+</div>
 
-      by
-      <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/" property="cc:attributionName" rel="cc:attributionURL">
-      TechTinkering
-      </a>
-       is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-      Creative Commons Attribution 2.0 UK: England & Wales License
-      </a>
-    
-
-    <hr style="clear:both;" />
-
-    
-      <h2>Related</h2>
-      <ul class="briefPosts">
-        
-          <li><a href="/2009/07/14/running-4k-fortran-on-a-dec-pdp8/">Running 4K FORTRAN on a DEC PDP-8</a></li>
-        
-          <li><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></li>
-        
-          <li><a href="/2008/10/14/pdp-8-in-three-days-of-the-condor/">PDP 8 in 'Three Days of the Condor'</a></li>
-        
-          <li><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></li>
-        
-          <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
-        
-      </ul>
-    
-
-    <hr />
-
-    <div id="rightAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Bookmark and Share</h2>
-    <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-    </a> Subscribe to RSS feed<br />
-
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
-      <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
-      <br />
-      <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
-      <br />
-      <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
-      <br />
-      <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
-      <br />
-      <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
-    </div>
-    <!-- AddThis Button END -->
-
-    <hr style="clear:both;" />
-
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/';
-      var disqus_url = 'http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/';
+      var disqus_identifier = '{{ page.url }}';
+      var disqus_url = 'http://techtinkering.com{{ page.url }}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -379,128 +475,24 @@ If using SimH, then press CTRL+E to get to the <code class="highlighter-rouge">s
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
-
-
-  <div class="col-md-4">
-    <div class="columnAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Latest Articles</h2>
-    <ul class="briefPosts">
-      
-        <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
-      
-        <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
-      
-        <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
-      
-        <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
-      
-        <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
-      
-    </ul>
-
-    <h2>Popular Tags</h2>
-    <div>
-      <a style='font-size: 70%' href='/tag/z80'>Z80</a>
-<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
-<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
-<a style='font-size: 100%' href='/tag/book'>Book</a>
-<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
-<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
-<a style='font-size: 177%' href='/tag/programming'>Programming</a>
-<a style='font-size: 70%' href='/tag/editors'>Editors</a>
-<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
-<a style='font-size: 88%' href='/tag/dos'>DOS</a>
-<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
-<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
-<a style='font-size: 118%' href='/tag/linux'>Linux</a>
-<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
-<a style='font-size: 110%' href='/tag/review'>Review</a>
-<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
-<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
-<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
-<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
-<a style='font-size: 88%' href='/tag/history'>History</a>
-<a style='font-size: 70%' href='/tag/xace'>xAce</a>
-<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
-<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
-<a style='font-size: 70%' href='/tag/8080'>8080</a>
-<a style='font-size: 100%' href='/tag/games'>Games</a>
-<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
-<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
-<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
-<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
-<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
-<a style='font-size: 100%' href='/tag/dec'>DEC</a>
-<a style='font-size: 70%' href='/tag/c'>C</a>
-<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
-<a style='font-size: 200%' href='/tag/retro'>Retro</a>
-<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
-<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
-<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
-
-    </div>
-
-  </div>
 </div>
+
 
     </div>
 
     <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <strong>Legal:</strong> &nbsp;
-        <a href="/tandc/">Terms</a>,
-        <a href="/statinfo/">Statutory Information</a>
-
-        &nbsp; &nbsp;
-        <strong>RSS Feeds:</strong> &nbsp;
-        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
-        <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </footer>
-
-
-
-
-    <!-- Amazon Product Preview Code -->
-    <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
-    </script>
-    <noscript>
-        <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
-    </noscript>
-
-    <!-- Google Analytics tracking code -->
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-4388762-2");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>

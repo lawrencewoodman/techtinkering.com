@@ -1,52 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
   <title>Connecting to a Remote Serial Port over TCP/IP</title>
-
-  <title>Connecting to a Remote Serial Port over TCP/IP</title>
-  <meta name="description" content="Most modern machines don’t have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have ...">
-
+  <meta name="description" content="Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a se">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Connecting to a Remote Serial Port over TCP/IP">
+  <meta name="twitter:description" content="Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a se">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Connecting to a Remote Serial Port over TCP/IP">
+  <meta property="og:description" content="Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a se">
+  <meta property="og:url" content="http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/sitestyle.css" rel="stylesheet">
-  <link href="/css/html_pygments.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
 
-  <link rel="canonical" href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">
-  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
 
-  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
-  <!--[if lte IE 6]>
-    <script defer type="text/javascript" src="/js/pngfix.js"></script>
-  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-    <script src="/js/html5shiv.3.7.2.min.js"></script>
-    <script src="/js/respond.1.4.2.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
-
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
   </script>
 
-  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
-  <!-- End Cookie Consent plugin -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
 </head>
 
-
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,244 +105,298 @@
       </button>
       <a class="navbar-brand" href="/">TechTinkering</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li
-        
-        ><a href="/">Home</a></li>
-
-        <li
-        
-        ><a href="/archive">Archive</a></li>
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        <li
-        
-        ><a href="/about">About</a></li>
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
       </ul>
-
-      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-      </a>
-
-
-      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-      <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-      </a>
-
-      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
-      </a>
 
     </div><!--/.nav-collapse -->
   </div>
-
 </nav>
 
-
     <div id="content" class="container">
-      <div class="row">
-  <div class="col-md-8">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="name"><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/" title="Connecting to a Remote Serial Port over TCP/IP">Connecting to a Remote Serial Port over TCP/IP</a></h1>
-    <span class="byLine">
-      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
-             <span itemprop="name">Lawrence Woodman</span>
-           </a>
-         </span>
-      <time itemprop="datePublished" datetime="2013-04-02">
-         2 April 2013
-      </time>
-    </span>
+      <header>
+        <a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/" title="Connecting to a Remote Serial Port over TCP/IP">
+          <h1 itemprop="headline name">Connecting to a Remote Serial Port over TCP/IP</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
 
-
-    <!-- AddThis Button BEGIN -->
-    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_reddit"></a>
-    <a class="addthis_button_compact"></a>
-    </div>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
-    <!-- AddThis Button END -->
-
-    <span class="tagLine">
+        </div>
+          <time itemprop="datePublished"
+                datetime="2013-04-02">
+             2 April 2013
+          </time>
+          &nbsp; / &nbsp;
+        <span itemscope itemprop="publisher"
+              itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="TechTinkering" />
+          <meta itemprop="url" content="http://techtinkering.com" />
+        </span>
+        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+          <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+            <span itemprop="name">Lawrence Woodman</span>
+          </a>
+        </span>
+        &nbsp; / &nbsp;
+          <a href="/tag/emulation/">Emulation</a>
+          &nbsp; &nbsp;
+          <a href="/tag/linux/">Linux</a>
+          &nbsp; &nbsp;
+          <a href="/tag/retro/">Retro</a>
+          &nbsp; &nbsp;
+          <a href="/tag/tutorial/">Tutorial</a>
+          &nbsp; &nbsp;
+      </header>
       <br />
-      Tags:
-      
-        <a rel="tag" href="/tag/linux">Linux</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/emulation">Emulation</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/tutorial">Tutorial</a> &nbsp; &nbsp;
-      
-    </span>
-
-  </header>
-
-  <div class="articleBody" itemprop="articleBody">
-    <p>Most modern machines don’t have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely over TCP/IP.</p>
-
-<h2 id="using-ser2net-to-connect-a-serial-port-to-a-tcp-port">Using <code class="highlighter-rouge">ser2net</code> to Connect a Serial Port to a TCP port</h2>
-<p><a href="http://ser2net.sourceforge.net/">ser2net</a> listens to a TCP port and pipes data to and from a serial port via the TCP port.  It is configured by the file <code class="highlighter-rouge">/etc/ser2net.conf</code> and is run on the machine with the serial port that you want to make available over TCP/IP.  An example configuration file would look like this:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>3333:raw:0:/dev/ttyS0:115200,8DATABITS,NONE,1STOPBIT
+      <div itemprop="articleBody">
+        <p>Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely over TCP/IP.</p>
+<h2>Using <code>ser2net</code> to Connect a Serial Port to a TCP port</h2>
+<p><a href="http://ser2net.sourceforge.net/">ser2net</a> listens to a TCP port and pipes data to and from a serial port via the TCP port.  It is configured by the file <code>/etc/ser2net.conf</code> and is run on the machine with the serial port that you want to make available over TCP/IP.  An example configuration file would look like this:</p>
+<pre><code class="language-text">3333:raw:0:/dev/ttyS0:115200,8DATABITS,NONE,1STOPBIT
 </code></pre>
-</div>
-
-<p>This would tell <code class="highlighter-rouge">ser2net</code> to create a link between TCP port <code class="highlighter-rouge">3333</code> and <code class="highlighter-rouge">/dev/ttyS0</code>.  The serial port would be configured to 115200 baud, 8 data bits, no parity and 1 stop bit.</p>
-
-<p>Once you have created the configuration file you can either start <code class="highlighter-rouge">ser2net</code> by running:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ser2net
+<p>This would tell <code>ser2net</code> to create a link between TCP port <code>3333</code> and <code>/dev/ttyS0</code>.  The serial port would be configured to 115200 baud, 8 data bits, no parity and 1 stop bit.</p>
+<p>Once you have created the configuration file you can either start <code>ser2net</code> by running:</p>
+<pre><code class="language-text">$ ser2net
 </code></pre>
-</div>
-
 <p>or if you have started it as a service you may need do something like:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code># /etc/init.d/ser2net restart
+<pre><code class="language-bash">$ /etc/init.d/ser2net restart
 </code></pre>
+<p>or if using <code>systemd</code>:</p>
+<pre><code class="language-bash">$ systemctl restart ser2net
+</code></pre>
+<p>From this point I'll refer to the machine with the serial port as <code>SerialMachine</code>.  If you connect to port <code>3333</code> on <code>SerialMachine</code>, whatever you send or receive to/from that port will actually be to/from the serial port on <code>SerialMachine</code>.</p>
+<h2>Accessing a Remote Serial Port from DOSBox</h2>
+<p>A common use for this would to be to access a serial port form an emulator.  To access a remote serial port, that has been set up as above, from <a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">DOSBox</a> you would need the following line in your <code>dosbox.conf</code> file:</p>
+<pre><code class="language-text">serial1=nullmodem server:SerialMachine port:3333
+</code></pre>
+<p>Now, whenever you use <code>COM1</code> from within DOSBox, you'll actually be using the serial port on <code>SerialMachine</code>.</p>
+<h2>Using <code>socat</code> to Connect a Pseudo TTY to a Remote Serial Port</h2>
+<p>If the application you want to use doesn't know how to talk to serial ports over TCP/IP you can use <a href="http://www.dest-unreach.org/socat/">socat</a>.  This is an incredibly flexible utility and can even replicate much of the functionality of <code>ser2net</code>, however it is a little more difficult to use, hence the reason that I have combined the two utiltiies.  To create a psuedo tty device called <code>~/dev/ttyV0</code> and connect it to the remote serial port on <code>SerialMachine</code> run :</p>
+<pre><code class="language-bash">$ socat pty,link=$HOME/dev/ttyV0,waitslave tcp:SerialMachine:3333
+</code></pre>
+<p>This will then allow you to specify <code>~/dev/ttyV0</code> as the device name in an application such as <a href="http://alioth.debian.org/projects/minicom/">minicom</a>.</p>
+<h2>Where Now?</h2>
+<p><a href="http://ser2net.sourceforge.net/">ser2net</a> and <a href="http://www.dest-unreach.org/socat/">socat</a> are available on most Linux distributions, but if yours doesn't provide a package then they are fairly easy to download and install from their home pages.  If you are not sure what to do with the new serial ports that you now have access to, why not hook-up a modem and see what BBS's are still around.</p>
+      </div>
+    </article>
+  </div>
 </div>
 
-<p>or if using <code class="highlighter-rouge">systemd</code>:</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Connecting to a Remote Serial Port over TCP/IP</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># systemctl restart ser2net
-</code></pre>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+      
+<header>
+  <h3><a href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Using C-Kermit to Exchange Files With Telnet BBS's</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-04-09">
+         9 April 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/bbs/">BBS</a>
+      &nbsp; &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Most BBSs that are still running now do so via telnet.  In many ways this is great as it allows people from all around the world to access a BBS as if it were local to them.  The problem comes though, ...
+  &nbsp;
+  <a class="readMore" href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Read More</a>
 </div>
 
-<p>From this point I’ll refer to the machine with the serial port as <code class="highlighter-rouge">SerialMachine</code>.  If you connect to port <code class="highlighter-rouge">3333</code> on <code class="highlighter-rouge">SerialMachine</code>, whatever you send or receive to/from that port will actually be to/from the serial port on <code class="highlighter-rouge">SerialMachine</code>.</p>
-
-<h2 id="accessing-a-remote-serial-port-from-dosbox">Accessing a Remote Serial Port from DOSBox</h2>
-<p>A common use for this would to be to access a serial port form an emulator.  To access a remote serial port, that has been set up as above, from <a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">DOSBox</a> you would need the following line in your <code class="highlighter-rouge">dosbox.conf</code> file:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>serial1=nullmodem server:SerialMachine port:3333
-</code></pre>
+      
+<header>
+  <h3><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></h3>
+  <span class="post-meta">
+      <time datetime="2010-02-14">
+        14 February 2010
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/ansi/">ANSI</a>
+      &nbsp; &nbsp;
+      <a href="/tag/bbs/">BBS</a>
+      &nbsp; &nbsp;
+      <a href="/tag/linux/">Linux</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/textmode/">Text Mode</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have noticed that the number of people interested in using telnet to access BBSs seems to be growing, which I'm really pleased to see.  However lots of people seem to be having trouble getting colour...
+  &nbsp;
+  <a class="readMore" href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Read More</a>
 </div>
 
-<p>Now, whenever you use <code class="highlighter-rouge">COM1</code> from within DOSBox, you’ll actually be using the serial port on <code class="highlighter-rouge">SerialMachine</code>.</p>
-
-<h2 id="using-socat-to-connect-a-pseudo-tty-to-a-remote-serial-port">Using <code class="highlighter-rouge">socat</code> to Connect a Pseudo TTY to a Remote Serial Port</h2>
-<p>If the application you want to use doesn’t know how to talk to serial ports over TCP/IP you can use <a href="http://www.dest-unreach.org/socat/">socat</a>.  This is an incredibly flexible utility and can even replicate much of the functionality of <code class="highlighter-rouge">ser2net</code>, however it is a little more difficult to use, hence the reason that I have combined the two utiltiies.  To create a psuedo tty device called <code class="highlighter-rouge">~/dev/ttyV0</code> and connect it to the remote serial port on <code class="highlighter-rouge">SerialMachine</code> run :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ socat pty,link=$HOME/dev/ttyV0,waitslave tcp:SerialMachine:3333
-</code></pre>
+      
+<header>
+  <h3><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></h3>
+  <span class="post-meta">
+      <time datetime="2009-05-26">
+        26 May 2009
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/dec/">DEC</a>
+      &nbsp; &nbsp;
+      <a href="/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/tag/pdp-8/">PDP-8</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/simh/">SimH</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The DEC PDP-8 mini-computer was launched on 22 March 1965 and was a great success.  It was fairly cheap for the day and could easily be expanded.  What attracts me most to the PDP-8 is its simple desig...
+  &nbsp;
+  <a class="readMore" href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Read More</a>
 </div>
 
-<p>This will then allow you to specify <code class="highlighter-rouge">~/dev/ttyV0</code> as the device name in an application such as <a href="http://alioth.debian.org/projects/minicom/">minicom</a>.</p>
+      
+<header>
+  <h3><a href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-29">
+        29 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/8080/">8080</a>
+      &nbsp; &nbsp;
+      <a href="/tag/altair/">Altair</a>
+      &nbsp; &nbsp;
+      <a href="/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/tag/imsai/">IMSAI</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Udo Munk has just released the latest version of his z80pack emulator, version 1.17, which now includes John Kichury's FrontPanel library.  As well as being a superb emulator to run CP/M on, it now giv...
+  &nbsp;
+  <a class="readMore" href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Read More</a>
+</div>
 
-<h2 id="where-now">Where Now?</h2>
-<p><a href="http://ser2net.sourceforge.net/">ser2net</a> and <a href="http://www.dest-unreach.org/socat/">socat</a> are available on most Linux distributions, but if yours doesn’t provide a package then they are fairly easy to download and install from their home pages.  If you are not sure what to do with the new serial ports that you now have access to, why not hook-up a modem and see what BBS’s are still around.</p>
+      
+<header>
+  <h3><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Using DOSBox to Run DOS Games and Applications</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-24">
+        24 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/dos/">DOS</a>
+      &nbsp; &nbsp;
+      <a href="/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number of options to play these games today, f...
+  &nbsp;
+  <a class="readMore" href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Read More</a>
+</div>
 
   </div>
-</article>
+</div>
 
 
-    <div style="clear: left;"></div>
+<div class="row">
+  <div class="col-md-12">
+    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
 
-    
-      <hr />
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
-      </a>
-      <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
-        Connecting to a Remote Serial Port over TCP/IP
-      </span><br />
+  </div>
+</div>
 
-      by
-      <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/" property="cc:attributionName" rel="cc:attributionURL">
-      TechTinkering
-      </a>
-       is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-      Creative Commons Attribution 2.0 UK: England & Wales License
-      </a>
-    
-
-    <hr style="clear:both;" />
-
-    
-      <h2>Related</h2>
-      <ul class="briefPosts">
-        
-          <li><a href="/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/">Using C-Kermit to Exchange Files With Telnet BBS's</a></li>
-        
-          <li><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></li>
-        
-          <li><a href="/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/">Using Netcat to Create ad hoc Links Between Applications or Machines</a></li>
-        
-          <li><a href="/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/">Setting up a Beowulf Cluster Using Open MPI on Linux</a></li>
-        
-          <li><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></li>
-        
-      </ul>
-    
-
-    <hr />
-
-    <div id="rightAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Bookmark and Share</h2>
-    <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-    </a> Subscribe to RSS feed<br />
-
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
-      <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
-      <br />
-      <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
-      <br />
-      <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
-      <br />
-      <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
-      <br />
-      <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
-    </div>
-    <!-- AddThis Button END -->
-
-    <hr style="clear:both;" />
-
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/';
-      var disqus_url = 'http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/';
+      var disqus_identifier = '{{ page.url }}';
+      var disqus_url = 'http://techtinkering.com{{ page.url }}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -306,128 +408,24 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
-
-
-  <div class="col-md-4">
-    <div class="columnAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Latest Articles</h2>
-    <ul class="briefPosts">
-      
-        <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
-      
-        <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
-      
-        <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
-      
-        <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
-      
-        <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
-      
-    </ul>
-
-    <h2>Popular Tags</h2>
-    <div>
-      <a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
-<a style='font-size: 70%' href='/tag/c'>C</a>
-<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
-<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
-<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
-<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
-<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
-<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
-<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
-<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
-<a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
-<a style='font-size: 88%' href='/tag/dos'>DOS</a>
-<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
-<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
-<a style='font-size: 118%' href='/tag/linux'>Linux</a>
-<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
-<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
-<a style='font-size: 88%' href='/tag/history'>History</a>
-<a style='font-size: 70%' href='/tag/editors'>Editors</a>
-<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
-<a style='font-size: 110%' href='/tag/review'>Review</a>
-<a style='font-size: 70%' href='/tag/8080'>8080</a>
-<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
-<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
-<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
-<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
-<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
-<a style='font-size: 200%' href='/tag/retro'>Retro</a>
-<a style='font-size: 70%' href='/tag/z80'>Z80</a>
-<a style='font-size: 100%' href='/tag/games'>Games</a>
-<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
-<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
-<a style='font-size: 177%' href='/tag/programming'>Programming</a>
-<a style='font-size: 100%' href='/tag/book'>Book</a>
-<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
-<a style='font-size: 70%' href='/tag/xace'>xAce</a>
-<a style='font-size: 100%' href='/tag/dec'>DEC</a>
-
-    </div>
-
-  </div>
 </div>
+
 
     </div>
 
     <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <strong>Legal:</strong> &nbsp;
-        <a href="/tandc/">Terms</a>,
-        <a href="/statinfo/">Statutory Information</a>
-
-        &nbsp; &nbsp;
-        <strong>RSS Feeds:</strong> &nbsp;
-        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
-        <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </footer>
-
-
-
-
-    <!-- Amazon Product Preview Code -->
-    <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
-    </script>
-    <noscript>
-        <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
-    </noscript>
-
-    <!-- Google Analytics tracking code -->
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-4388762-2");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>

@@ -1,52 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
   <title>If Only Borland Had Stuck With Turbo Modula-2 For CP/M</title>
-
-  <title>If Only Borland Had Stuck With Turbo Modula-2 For CP/M</title>
-  <meta name="description" content="I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You pro...">
-
+  <meta name="description" content="I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probabl">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="If Only Borland Had Stuck With Turbo Modula-2 For CP/M">
+  <meta name="twitter:description" content="I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probabl">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="If Only Borland Had Stuck With Turbo Modula-2 For CP/M">
+  <meta property="og:description" content="I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probabl">
+  <meta property="og:url" content="http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
   <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/sitestyle.css" rel="stylesheet">
-  <link href="/css/html_pygments.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
 
-  <link rel="canonical" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">
-  <link rel="alternate" type="application/rss+xml" title="Techtinkering RSS Feed" href="http://feedproxy.google.com/TechTinkering" />
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
 
-  <!-- Fix for ie 5&6 where id doesnt render transparent images properly-->
-  <!--[if lte IE 6]>
-    <script defer type="text/javascript" src="/js/pngfix.js"></script>
-  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-    <script src="/js/html5shiv.3.7.2.min.js"></script>
-    <script src="/js/respond.1.4.2.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=vlifesystems"></script>
-
-  <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-  <script type="text/javascript">
-      window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website","dismiss":"Got it!","learnMore":"More info","link":"/tandc/#privacy","theme":"dark-bottom"};
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
   </script>
 
-  <script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script>
-  <!-- End Cookie Consent plugin -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
 </head>
 
-
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,125 +105,97 @@
       </button>
       <a class="navbar-brand" href="/">TechTinkering</a>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li
-        
-        ><a href="/">Home</a></li>
-
-        <li
-        
-        ><a href="/archive">Archive</a></li>
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        <li
-        
-        ><a href="/about">About</a></li>
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
       </ul>
-
-      <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">
-        <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-      <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-        <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-      </a>
-
-      <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-      <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-        <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-      </a>
-
-
-      <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-      <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-        <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-      </a>
-
-      <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
-        <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
-      </a>
 
     </div><!--/.nav-collapse -->
   </div>
-
 </nav>
 
-
     <div id="content" class="container">
-      <div class="row">
-  <div class="col-md-8">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="name"><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/" title="If Only Borland Had Stuck With Turbo Modula-2 For CP/M">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h1>
-    <span class="byLine">
-      by <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-           <a rel="author" itemprop="url" class="author" href="/profile/lawrencewoodman/">
-             <span itemprop="name">Lawrence Woodman</span>
-           </a>
-         </span>
-      <time itemprop="datePublished" datetime="2013-03-12">
-        12 March 2013
-      </time>
-    </span>
+      <header>
+        <a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/" title="If Only Borland Had Stuck With Turbo Modula-2 For CP/M">
+          <h1 itemprop="headline name">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
 
-
-    <!-- AddThis Button BEGIN -->
-    <div style="float: right;" class="addthis_toolbox addthis_default_style addthis_32x32_style">
-    <a class="addthis_button_google_plusone" g:plusone:count="false"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_reddit"></a>
-    <a class="addthis_button_compact"></a>
-    </div>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=vlifesystems"></script>
-    <!-- AddThis Button END -->
-
-    <span class="tagLine">
+        </div>
+          <time itemprop="datePublished"
+                datetime="2013-03-12">
+            12 March 2013
+          </time>
+          &nbsp; / &nbsp;
+        <span itemscope itemprop="publisher"
+              itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="TechTinkering" />
+          <meta itemprop="url" content="http://techtinkering.com" />
+        </span>
+        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+          <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+            <span itemprop="name">Lawrence Woodman</span>
+          </a>
+        </span>
+        &nbsp; / &nbsp;
+          <a href="/tag/cpm/">CP/M</a>
+          &nbsp; &nbsp;
+          <a href="/tag/programming/">Programming</a>
+          &nbsp; &nbsp;
+          <a href="/tag/retro/">Retro</a>
+          &nbsp; &nbsp;
+      </header>
       <br />
-      Tags:
-      
-        <a rel="tag" href="/tag/programming">Programming</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/cpm">CP/M</a> &nbsp; &nbsp;
-      
-        <a rel="tag" href="/tag/retro">Retro</a> &nbsp; &nbsp;
-      
-    </span>
-
-  </header>
-
-  <div class="articleBody" itemprop="articleBody">
-    <p>I have written previously about why <a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm">Turbo Pascal is a Great Choice For Programming Under CP/M</a> and now it is time to talk about what could have been.  You probably haven’t heard of Turbo Modula-2 for CP/M as it was only on the market for a brief period of time.  However, it was a superb product and, in many ways, feels like a grown-up version of Turbo Pascal.  Why TM-2 made such a fleeting appearance is shrouded in mystery.  It was released in 1986 by Echelon under license from Borland and then quickly withdrawn.  There doesn’t seem to be any publicly documented reason for the withdrawal and it is said that Borland even denied its existence for a time.  I want to show why it was a real shame this happened, and how much better a programmer’s life could have been.</p>
-
-<h2 id="integrated-development-environment">Integrated Development Environment</h2>
-<p>Like Turbo Pascal, Turbo Modula-2 was an Integrated Development Environment including a compiler and Wordstar based editor.  On top of this TM-2 added a separate linker and library manager.  The most obvious initial difference is the size of an installation: TM-2 takes up 142Kb, compared to TP’s tiny 34Kb.  However for this you get a lot more facilities, a bigger library and an altogether more sophisticated system.</p>
-
-<h2 id="language-enhancements">Language Enhancements</h2>
+      <div itemprop="articleBody">
+        <p>I have written previously about why <a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm">Turbo Pascal is a Great Choice For Programming Under CP/M</a> and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP/M as it was only on the market for a brief period of time.  However, it was a superb product and, in many ways, feels like a grown-up version of Turbo Pascal.  Why TM-2 made such a fleeting appearance is shrouded in mystery.  It was released in 1986 by Echelon under license from Borland and then quickly withdrawn.  There doesn't seem to be any publicly documented reason for the withdrawal and it is said that Borland even denied its existence for a time.  I want to show why it was a real shame this happened, and how much better a programmer's life could have been.</p>
+<h2>Integrated Development Environment</h2>
+<p>Like Turbo Pascal, Turbo Modula-2 was an Integrated Development Environment including a compiler and Wordstar based editor.  On top of this TM-2 added a separate linker and library manager.  The most obvious initial difference is the size of an installation: TM-2 takes up 142Kb, compared to TP's tiny 34Kb.  However for this you get a lot more facilities, a bigger library and an altogether more sophisticated system.</p>
+<h2>Language Enhancements</h2>
 <p>The language itself is similar to TP and it is pretty easy to convert TP code to TM-2.  With TM-2 you get many of the things that are liked about TP, including overlays, easy access to machine-code functions and a good standard library.  In addition the library has been extended and you gain more numeric data types, coroutines, exceptions, procedures as parameters, typeless parameters, etc.  To have these facilities on a CP/M machine in 1986 would have been incredible.</p>
-
-<h3 id="modules">Modules</h3>
+<h3>Modules</h3>
 <p>The <em>Modula</em> in Turbo Modula-2, of course indicates the use of modules to separate code.  These are similar to <em>Units</em> in later versions of Turbo Pascal.  They allow you you to hide data and functions within a namespace and only expose what you want to.  Because of this isolation it allows the linker to only link-in functions that are used and hence reduces the executable size.  In addition, because the modules are separate they can be compiled separately.  Therefore when you make a change to your codebase, you only need to recompile the modules that have actually changed, which on a big project can greatly increase build speeds.</p>
-
-<h2 id="native-vs-m-code">Native vs M-Code</h2>
-<p>Each module can be compiled to either native Z80 code or to M-code to be run on the built-in virtual machine.  This allows you to compile code that doesn’t need to run quickly to M-code, which executes more slowly, but compiles much quicker and the manual says it generally takes about 1/3 the size of native code.  Then, for code that must run quickly you can set the IDE to compile to native Z80 code which runs much faster, but takes up more disk space and compiles more slowly.  Because of the separate linker you can freely mix modules compiled with either native or M-code and hence get the best of both worlds.</p>
-
-<h2 id="size-and-speed-compared">Size and Speed Compared</h2>
+<h2>Native vs M-Code</h2>
+<p>Each module can be compiled to either native Z80 code or to M-code to be run on the built-in virtual machine.  This allows you to compile code that doesn't need to run quickly to M-code, which executes more slowly, but compiles much quicker and the manual says it generally takes about 1/3 the size of native code.  Then, for code that must run quickly you can set the IDE to compile to native Z80 code which runs much faster, but takes up more disk space and compiles more slowly.  Because of the separate linker you can freely mix modules compiled with either native or M-code and hence get the best of both worlds.</p>
+<h2>Size and Speed Compared</h2>
 <p>To compare the performance of TP and TM-2, I am using a program based on the Prime Sieve benchmark included with TM-2.</p>
-
 <p>The code for the Prime Sieve in Turbo Pascal:</p>
-
-<figure class="highlight"><pre><code class="language-pascal" data-lang="pascal">program primes(input, output);
+<pre><code class="language-pascal">program primes(input, output);
 
 const
    size = 8190;
@@ -213,11 +233,10 @@ begin
 
   end;
   writeln( count, ' primes');
-end.</code></pre></figure>
-
+end.
+</code></pre>
 <p>The code for the Prime Sieve in Turbo Modula-2:</p>
-
-<figure class="highlight"><pre><code class="language-modula2" data-lang="modula2">MODULE primes;
+<pre><code class="language-pascal">MODULE primes;
 
 CONST
   size = 8190;
@@ -228,8 +247,8 @@ VAR
   ch : CHAR;
 
 BEGIN
-  WRITELN("Type Return"); READLN(ch);
-  WRITELN("10 iterations");
+  WRITELN(&quot;Type Return&quot;); READLN(ch);
+  WRITELN(&quot;10 iterations&quot;);
   FOR iter := 1 TO 10 DO
     count := 0;
     FOR i := 0 TO size DO flags[i] := TRUE END;
@@ -245,110 +264,204 @@ BEGIN
       END;
     END;
   END;
-  WRITELN( count, " primes" );
-END primes.</code></pre></figure>
-
-<p>The following table shows the average results from running each test 10 times and timing their execution and build (compiling + linking).  This was performed under <a href="/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/">z80pack</a> running at 4Mhz and therefore doesn’t allow for the increased disk access time of a real system.  For the TM-2 tests it also doesn’t include the time to manually answer the questions required to build, instead it is just the processing time.</p>
-
+  WRITELN( count, &quot; primes&quot; );
+END primes.
+</code></pre>
+<p>The following table shows the average results from running each test 10 times and timing their execution and build (compiling + linking).  This was performed under <a href="/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/">z80pack</a> running at 4Mhz and therefore doesn't allow for the increased disk access time of a real system.  For the TM-2 tests it also doesn't include the time to manually answer the questions required to build, instead it is just the processing time.</p>
 <table class="neatTable">
   <tr><th>Compiler</th><th title="Total time processing during compiling and linking">Build</th><th title="Execution Time">Execution</th><th>Executable Size</th></tr>
   <tr><td>Turbo Modula-2 (M-Code)</td><td>6 Seconds</td><td>2 Minutes 8 Seconds</td><td>16Kb (123 records)</td></tr>
   <tr><td>Turbo Modula-2 (Native code)</td><td>9 Seconds</td><td>8 Seconds</td><td>16Kb (125 records)</td></tr>
   <tr><td>Turbo Pascal (Native code)</td><td>&lt; 1 second</td><td>24 Seconds</td><td>9Kb (67 records)</td></tr>
 </table>
-
-<p>Your can see from the table that there are trade-offs for each option and no-clear winner.  It therefore comes down to how the compiler will be used.  If you need very fast running code or have a large codebase then TM-2 will probably be a better choice.  However, if your program is smaller and doesn’t need to run so quickly or you are happy to rely on assembler for extra speed, then you may find TP a better option.</p>
-
-<h2 id="should-i-switch-from-turbo-pascal-to-turbo-modula-2">Should I Switch From Turbo Pascal to Turbo Modula-2?</h2>
+<p>Your can see from the table that there are trade-offs for each option and no-clear winner.  It therefore comes down to how the compiler will be used.  If you need very fast running code or have a large codebase then TM-2 will probably be a better choice.  However, if your program is smaller and doesn't need to run so quickly or you are happy to rely on assembler for extra speed, then you may find TP a better option.</p>
+<h2>Should I Switch From Turbo Pascal to Turbo Modula-2?</h2>
 <p>There is a <a href="http://oldcomputers.dyndns.org/public/pub/manuals/turbomodula2_bw.pdf">manual</a> available online, which while a poor scan, is certainly good enough to teach the language and TM-2 is similar enough to TP that it should be fairly easy to make the switch.  However, TM-2 is a bit of an unknown quantity when it comes to reliability and bugs, because not all that many people used it, compared to the huge number of Turbo Pascal users.  This also means that you are less likely to get help for TM-2 than TP.</p>
-
 <p>However, if you feel brave, there are certainly big advantages to be gained from TM-2, especially with larger projects.  So why not download a <a href="http://www.retroarchive.org/cpm/lang/turbom2.zip">Turbo Modula-2 archive</a> from the retroarchive <a href="http://www.retroarchive.org/cpm/lang/lang.htm">programming languages</a> page and give it a go.  If you have used, or now choose to use TM-2, do leave a comment to share your experiences.</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+      
+<header>
+  <h3><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-05">
+         5 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/tag/pascal/">Pascal</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-22">
+        22 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/c/">C</a>
+      &nbsp; &nbsp;
+      <a href="/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+      <a href="/tag/z80/">Z80</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
+  &nbsp;
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/tag/editors/">Editors</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-05-10">
+        10 May 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+      <a href="/tag/vic-20/">Vic-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you ...
+  &nbsp;
+  <a class="readMore" href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Read More</a>
+</div>
+
+      
+<header>
+  <h3><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the Vic-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-05-04">
+         4 May 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/tag/vic-20/">Vic-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The Vicmon machine language cartridge is an excellent tool for exploring the Vic-20.  This article and its associated video will show you how to use it to create a simple program that will change the n...
+  &nbsp;
+  <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
+</div>
 
   </div>
-</article>
+</div>
 
 
-    <div style="clear: left;"></div>
+<div class="row">
+  <div class="col-md-12">
+    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
 
-    
-      <hr />
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/88x31.png" />
-      </a>
-      <span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">
-        If Only Borland Had Stuck With Turbo Modula-2 For CP/M
-      </span><br />
+  </div>
+</div>
 
-      by
-      <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/" property="cc:attributionName" rel="cc:attributionURL">
-      TechTinkering
-      </a>
-       is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">
-      Creative Commons Attribution 2.0 UK: England & Wales License
-      </a>
-    
-
-    <hr style="clear:both;" />
-
-    
-      <h2>Related</h2>
-      <ul class="briefPosts">
-        
-          <li><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></li>
-        
-          <li><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></li>
-        
-          <li><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></li>
-        
-          <li><a href="/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/">Setting up z80pack to Create an Emulated CP/M System</a></li>
-        
-          <li><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></li>
-        
-      </ul>
-    
-
-    <hr />
-
-    <div id="rightAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Bookmark and Share</h2>
-    <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed"><img class="bookmarkIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-    </a> Subscribe to RSS feed<br />
-
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style addthis_32x32_style" style="left:50px;top:50px;">
-      <a class="addthis_button_google_plusone" g:plusone:count="false"></a> &nbsp; Share on Google+<br />
-      <br />
-      <a class="addthis_button_facebook"></a> &nbsp; Share on Facebook<br />
-      <br />
-      <a class="addthis_button_twitter"></a> &nbsp; Share on Twitter<br />
-      <br />
-      <a class="addthis_button_reddit"></a> &nbsp; Share on Reddit<br />
-      <br />
-      <a class="addthis_button_compact"></a> &nbsp; Share elsewhere<br />
-    </div>
-    <!-- AddThis Button END -->
-
-    <hr style="clear:both;" />
-
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/';
-      var disqus_url = 'http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/';
+      var disqus_identifier = '{{ page.url }}';
+      var disqus_url = 'http://techtinkering.com{{ page.url }}';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -360,128 +473,24 @@ END primes.</code></pre></figure>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
-
-
-  <div class="col-md-4">
-    <div class="columnAd">
-      <script type="text/javascript"><!--
-      google_ad_client = "ca-pub-1613732348909658";
-      /* 300x250 - TechTinkering */
-      google_ad_slot = "8883223823";
-      google_ad_width = 300;
-      google_ad_height = 250;
-      //-->
-      </script>
-      <script type="text/javascript"
-      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-      </script>
-    </div>
-
-    <h2>Latest Articles</h2>
-    <ul class="briefPosts">
-      
-        <li><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></li>
-      
-        <li><a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">How to Make Thunderbird Feel Like Geary</a></li>
-      
-        <li><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></li>
-      
-        <li><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></li>
-      
-        <li><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></li>
-      
-    </ul>
-
-    <h2>Popular Tags</h2>
-    <div>
-      <a style='font-size: 70%' href='/tag/computerarchitecure'>Computer Architecure</a>
-<a style='font-size: 100%' href='/tag/games'>Games</a>
-<a style='font-size: 70%' href='/tag/parallelprocessing'>Parallel Processing</a>
-<a style='font-size: 100%' href='/tag/pdp-8'>PDP-8</a>
-<a style='font-size: 110%' href='/tag/ruby'>Ruby</a>
-<a style='font-size: 70%' href='/tag/8080'>8080</a>
-<a style='font-size: 70%' href='/tag/z80'>Z80</a>
-<a style='font-size: 200%' href='/tag/retro'>Retro</a>
-<a style='font-size: 70%' href='/tag/debugging'>Debugging</a>
-<a style='font-size: 88%' href='/tag/history'>History</a>
-<a style='font-size: 100%' href='/tag/commodore'>Commodore</a>
-<a style='font-size: 70%' href='/tag/jekyll'>Jekyll</a>
-<a style='font-size: 100%' href='/tag/book'>Book</a>
-<a style='font-size: 88%' href='/tag/dos'>DOS</a>
-<a style='font-size: 70%' href='/tag/xace'>xAce</a>
-<a style='font-size: 118%' href='/tag/linux'>Linux</a>
-<a style='font-size: 88%' href='/tag/bbs'>BBS</a>
-<a style='font-size: 70%' href='/tag/jupiterace'>Jupiter Ace</a>
-<a style='font-size: 70%' href='/tag/editors'>Editors</a>
-<a style='font-size: 110%' href='/tag/cpm'>CP/M</a>
-<a style='font-size: 171%' href='/tag/tutorial'>Tutorial</a>
-<a style='font-size: 110%' href='/tag/review'>Review</a>
-<a style='font-size: 177%' href='/tag/programming'>Programming</a>
-<a style='font-size: 70%' href='/tag/textmode'>Text mode</a>
-<a style='font-size: 88%' href='/tag/tcltk'>Tcl/Tk</a>
-<a style='font-size: 70%' href='/tag/imsai'>IMSAI</a>
-<a style='font-size: 100%' href='/tag/dec'>DEC</a>
-<a style='font-size: 70%' href='/tag/offtopic'>Off Topic</a>
-<a style='font-size: 88%' href='/tag/oisc'>OISC</a>
-<a style='font-size: 88%' href='/tag/vic-20'>Vic-20</a>
-<a style='font-size: 88%' href='/tag/subleq'>SUBLEQ</a>
-<a style='font-size: 70%' href='/tag/c'>C</a>
-<a style='font-size: 131%' href='/tag/emulation'>Emulation</a>
-<a style='font-size: 70%' href='/tag/webscraping'>Web Scraping</a>
-<a style='font-size: 88%' href='/tag/webdevelopment'>Web Development</a>
-<a style='font-size: 70%' href='/tag/adventuregames'>Adventure Games</a>
-<a style='font-size: 118%' href='/tag/assembly'>Assembly</a>
-
-    </div>
-
-  </div>
 </div>
+
 
     </div>
 
     <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <strong>Legal:</strong> &nbsp;
-        <a href="/tandc/">Terms</a>,
-        <a href="/statinfo/">Statutory Information</a>
-
-        &nbsp; &nbsp;
-        <strong>RSS Feeds:</strong> &nbsp;
-        <a href="http://feedproxy.google.com/TechTinkering" title="Subscribe to TechTinkering's RSS Feed">Full</a>,
-        <a href="http://feeds.feedburner.com/Retro-Techtinkering" title="Subscribe to TechTinkering's Retro RSS Feed">Retro</a>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 </footer>
-
-
-
-
-    <!-- Amazon Product Preview Code -->
-    <script type="text/javascript" src="http://www.assoc-amazon.co.uk/s/link-enhancer?tag=techtinkering-21&amp;o=2">
-    </script>
-    <noscript>
-        <img src="http://www.assoc-amazon.co.uk/s/noscript?tag=techtinkering-21" alt="" />
-    </noscript>
-
-    <!-- Google Analytics tracking code -->
-    <script type="text/javascript">
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-      try {
-        var pageTracker = _gat._getTracker("UA-4388762-2");
-        pageTracker._trackPageview();
-      } catch(err) {}
-    </script>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>
