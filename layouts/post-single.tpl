@@ -83,15 +83,15 @@
   </div>
 </div>
 
-!* commandSubst false variableSubst false
 <div class="row">
   <div class="col-md-12">
     <h2>Comments</h2>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '{{ page.url }}';
-      var disqus_url = 'http://techtinkering.com{{ page.url }}';
+      var disqus_identifier = '[www::url [getparam url]]';
+      var disqus_url = '[www::url -full [getparam url]]';
+!* commandSubst false variableSubst false
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -104,4 +104,3 @@
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
 </div>
-
