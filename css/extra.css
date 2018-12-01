@@ -89,7 +89,7 @@ form#email-subscribe {
   text-align:center;
 }
 
-form#email-subscribe input.subscribe-button {
+form#email-subscribe input {
   color: black;
 }
 
