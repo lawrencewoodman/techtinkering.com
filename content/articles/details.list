@@ -326,7 +326,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"DEC" "Retro" "PDP-8" "Editors" "Tutorial"}
+  tags        {"DEC" "Retro" "PDP-8" "Editor" "Tutorial"}
   image       "/img/articles/small_paper_tape.jpg"
 }
 
@@ -568,7 +568,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"CP/M" "Editors" "Programming" "Retro" "Tutorial"}
+  tags        {"CP/M" "Editor" "Programming" "Retro" "Tutorial"}
   image       "/img/articles/small_zde16_screenshort.png"
   imageTitle: "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
 }
