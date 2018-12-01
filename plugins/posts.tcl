@@ -103,8 +103,7 @@ proc posts::CollectTags {collectionPrefixName files} {
 
 
 # Return any posts related to the supplied post. This is done by looking
-# at the tags.  The return post is a simplified version containing just
-# the title and url.
+# at the tags.
 proc posts::MakeRelated {posts post} {
   set postTags [dict get $post tags]
   set relatedPostStats [lmap oPost $posts {
@@ -162,20 +161,16 @@ proc posts::ProcessPostsDesc {
     set content [
       ornament -params $file -directory $srcDir -file [dict get $file filename]
     ]
-    set content [markdown -- $content]
-    dict set file summary [MakeExcerpt $content]
+    dict set file content [markdown -- $content]
+    dict set file summary [MakeExcerpt [dict get $file content]]
     set file
   }]
 
   set files [lmap file $files {
-    set content [
-      ornament -params $file -directory $srcDir -file [dict get $file filename]
-    ]
-    set content [markdown -- $content]
     dict set file relatedPosts [MakeRelated $files $file]
     collection add "$collectionPrefixName-posts" $file
     write [dict get $file destination] \
-          [layout::render $postLayout $file $content]
+          [layout::render $postLayout $file [dict get $file content]]
     set file
   }]
   set tags [CollectTags "$collectionPrefixName-tags" $files]
