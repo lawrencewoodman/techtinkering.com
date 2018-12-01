@@ -1,13 +1,10 @@
-html {
-  height: 100%;
-}
-
 body {
   color: #EEE;
   font-family: Arial, Tahoma, Verdana, sans-serif;
   line-height: 1.5;
   background: #232323;
   height: 100%;
+  font-size: 14pt;
 }
 
 .container {
@@ -168,16 +165,6 @@ div.moreArticles {
 
 article ul { list-style: disc outside none; }
 
-div#rightAd {
-  float: right;
-  margin-left: 1em;
-  margin-top: 3em;
-}
-
-div.columnAd {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
 
 div.articleBody { margin-top: 1em; }
 
