@@ -190,8 +190,80 @@
 <p>I am putting my solutions in a <a href="https://github.com/lawrencewoodman/adventofcode">repo</a> on GitHub.</p>
 <h2>Day 1: Chronal Calibration</h2>
 <p>To ease myself in gradually the <a href="https://adventofcode.com/2018/day/1">day 1</a> puzzle has been done with <a href="https://wiki.tcl-lang.org/">Tcl</a> alone.</p>
+<pre><code class="language-tcl"># Code for Day 1 of Advent of Code: https://adventofcode.com/2018/day/1
+# Tcl Solution
+set fp [open &quot;day1.input&quot; r]
+set input [read $fp]
+close $fp
+
+proc part1 {input} {
+  return [::tcl::mathop::+ {*}$input]
+}
+
+proc part2 {freqs startFreq input} {
+  dict set freqs $startFreq 1
+  set sum $startFreq
+  foreach line $input {
+    if {$line != &quot;&quot;} {
+      set sum [expr {$sum + $line}]
+      if {[dict exists $freqs $sum]} {
+        return $sum
+      } else {
+        dict set freqs $sum 1
+      }
+    }
+  }
+  tailcall part2 $freqs $sum $input
+}
+
+puts &quot;part1: [part1 $input]&quot;
+puts &quot;part2: [part2 {} 0 $input]&quot;
+</code></pre>
 <h2>Day 2: Inventory Management System</h2>
 <p>For <a href="https://adventofcode.com/2018/day/2">day2</a> I have chosen <a href="https://www.ruby-lang.org">ruby</a>.  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.</p>
+<pre><code class="language-ruby"># Code for Day 2 of Advent of Code: https://adventofcode.com/2018/day/2
+# Ruby Solution
+input = File.read(&quot;day2.input&quot;)
+
+def part1(input)
+  numDuplicates = Hash.new(0)
+  input.each_line do |id|
+    numIncreased = Hash.new(0)
+    freqs = Hash.new(0)
+    id.each_char { |c| freqs[c] += 1 }
+    freqs.each do |c, num|
+      if !numIncreased.key?(num)
+        numDuplicates[num] += 1
+        numIncreased[num] = 1
+      end
+    end
+  end
+  numDuplicates[2] * numDuplicates[3]
+end
+
+def part2(input)
+  input.each_line do |id1|
+    input.each_line do |id2|
+      numDiff = 0
+      commonLetters = &quot;&quot;
+      id1.each_char.with_index do |cid1, index|
+        cid2 = id2[index]
+        if cid1 == cid2
+          commonLetters &lt;&lt; cid1
+        else
+          numDiff += 1
+        end
+      end
+      if numDiff == 1
+        return commonLetters
+      end
+    end
+  end
+end
+
+puts &quot;Part1: #{part1(input)}&quot;
+puts &quot;Part2: #{part2(input)}&quot;
+</code></pre>
       </div>
     </article>
   </div>
