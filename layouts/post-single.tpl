@@ -33,7 +33,7 @@
         </span>
         &nbsp; / &nbsp;
 !       foreach tag [getparam tags] {
-          <a href="[www::url "/tag/[posts::tagToDirName $tag]/"]">$tag</a>
+          <a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a>
           &nbsp; &nbsp;
 !       }
       </header>

@@ -7,6 +7,7 @@
   tags        {"Book" "Review" "History" "Retro"}
   rating      4.0
   image       "/img/articles/book_what_the_dormouse_said.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2014-06-22-how-to-make-thunderbird-feel-like-geary.md
@@ -16,6 +17,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Tutorial"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2014-04-19-beware-of-immutable-lists-for-fsharp-parallel-processing.md
@@ -25,6 +27,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"F#" "Parallel Processing" "Programming"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-08-29-rendering-racket-package-scribblings-on-github-using-gh-pages.md
@@ -34,6 +37,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Racket" "Tutorial"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-05-29-programmable-character-sets-a-simple-alternative-to-bitmap-displays.md
@@ -43,6 +47,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Retro" "Text Mode"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-05-10-adding-a-basic-stub-to-a-vic-20-assembly-language-program.md
@@ -52,6 +57,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Retro" "Commodore" "Vic-20" "Assembly" "Tutorial"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-05-04-creating-a-tty-simulator-in-assembly-language-on-the-vic-20.md
@@ -61,6 +67,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Retro" "Commodore" "Vic-20" "Assembly"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-04-23-bbs-ads-getting-the-word-out.md
@@ -70,6 +77,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Retro" "BBS" "History"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-04-16-beginning-assembly-programming-on-the-commodore-vic-20.md
@@ -79,6 +87,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Tutorial" "Commodore" "Retro" "Vic-20" "Assembly"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-04-09-using-c-kermit-to-exchange-files-with-telnet-bbs-s.md
@@ -88,6 +97,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Linux" "Tutorial" "BBS" "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-04-02-connecting-to-a-remote-serial-port-over-tcpip.md
@@ -97,6 +107,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Linux" "Tutorial" "Emulation" "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-03-25-using-netcat-to-create-ad-hoc-links-between-applications-and-machines.md
@@ -106,6 +117,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Linux" "Tutorial"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-03-12-if-only-borland-had-stuck-with-turbo-modula-2-for-cpm.md
@@ -115,6 +127,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "CP/M" "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-03-05-turbo-pascal-a-great-choice-for-programming-under-cpm.md
@@ -124,6 +137,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Pascal" "CP/M" "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-02-27-xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification.md
@@ -133,6 +147,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Tcl/Tk"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-02-20-compiling-a-tcl-script-into-an-executable.md
@@ -142,6 +157,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Tcl/Tk" "Tutorial" "C"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-02-19-floppy-days-a-new-vintage-computing-podcast.md
@@ -151,6 +167,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Retro" "Podcast"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2013-02-12-using-dynamically-generated-header-files-with-cmake.md
@@ -160,6 +177,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Tutorial"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2012-06-26-embedding-an-sdl-surface-in-a-tk-window.md
@@ -170,6 +188,7 @@
   }
   tags        {"Programming" "SDL" "Tcl/Tk" "Tutorial"}
   updated     2012-12-02
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2012-04-26-refactoring-arm-yourself-in-the-war-against-useless-comments.md
@@ -179,6 +198,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2012-04-20-dealing-sympathetically-with-legacy-code.md
@@ -188,6 +208,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Legacy Code" "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2011-09-08-pisceans-and-october-babies-more-likely-to-become-poets.md
@@ -197,6 +218,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Ruby" "JavaScript" "Web Scraping"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2011-08-24-does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate.md
@@ -206,6 +228,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Ruby" "Web Scraping"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2011-08-17-improving-related-posts-on-jekyll.md
@@ -215,6 +238,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Jekyll" "Ruby" "Web Development"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2011-04-16-mida-a-microdata-parser-extractor-library-for-ruby.md
@@ -225,6 +249,7 @@
   }
   tags        {"Microdata" "Library" "Ruby"}
   image       "/img/articles/small_microdata.png"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2011-02-15-a-jekyll-plugin-to-display-ratings-as-star-images.md
@@ -236,6 +261,7 @@
   tags        {"Jekyll" "Liquid" "Ruby" "Web Development"}
   image       "/img/articles/small_star_ratings.jpg"
   imageTitle  "star_rating filter in action on http://trustafriend.com"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2010-06-15-the-national-museum-of-computing-at-bletchley-park.md
@@ -247,6 +273,7 @@
   tags        {"Museum" "Retro"}
   image       "/img/articles/small_pdp11.jpg"
   imageTitle  "A DEC PDP-11"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2010-05-06-xace-is-back-in-active-development-and-looking-for-contributors.md
@@ -258,6 +285,7 @@
   tags        {"Emulation" "Jupiter Ace" "Retro" "xAce"}
   image       "/img/articles/small_xace_v0.4.jpg"
   imageTitle  "Screen shot of xAce"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2010-04-16-introducing-textpix-v0-1.md
@@ -269,6 +297,7 @@
   tags        {"Conversion" "Graphics" "Images" "Retro" "TextPix" "Text Mode"}
   image       "/img/articles/small_textpix_eye.jpg"
   imageTitle  "An example image reduced by TextPix"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2010-02-14-getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux.md
@@ -280,6 +309,7 @@
   tags        {"Linux" "Retro" "ANSI" "Text Mode" "Tutorial" "BBS"}
   image       "/img/articles/small_bbs_splashscreen.jpg"
   imageTitle  "A BBS Splash Screen"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-12-02-setting-up-a-beowulf-cluster-using-open-mpi-on-linux.md
@@ -298,6 +328,7 @@
     "Tutorial"
   }
   image       "/img/articles/small_master_slave_mpi.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-08-11-my-top-10-classic-text-mode-bsd-games.md
@@ -308,6 +339,7 @@
   }
   tags        {"BSD" "Games" "Retro" "Text Mode"}
   image       "/img/articles/small_bsd_games_trek_splash.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-07-14-running-4k-fortran-on-a-dec-pdp8.md
@@ -318,6 +350,7 @@
   }
   tags        {"DEC" "Retro" "PDP-8" "FORTRAN" "Programming" "Tutorial"}
   image       "/img/articles/small_fortran_source.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-06-16-a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8.md
@@ -328,6 +361,7 @@
   }
   tags        {"DEC" "Retro" "PDP-8" "Editor" "Tutorial"}
   image       "/img/articles/small_paper_tape.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-06-03-book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally.md
@@ -339,6 +373,7 @@
   tags        {"Book" "Review" "History" "Retro"}
   rating      5.0
   image       "/img/articles/book_electronic_brains.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-05-26-emulating-a-dec-pdp8-with-simh.md
@@ -349,6 +384,7 @@
   }
   tags        {"Emulation" "DEC" "PDP-8" "Retro" "SimH" "Tutorial"}
   image       "/img/articles/small_dec_pdp8-fpanel.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-05-15-improving-the-standard-subleq-oisc-architecture.md
@@ -359,6 +395,7 @@
   }
   tags        {"Computer Architecture" "SUBLEQ" "OISC"}
   image       "/img/articles/small_subleq_plus.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-05-06-connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable.md
@@ -370,6 +407,7 @@
   tags        {"Retro" "Review" "Linux" "Hardware"}
   rating      5.0
   image       "/img/articles/cable_usb_to_parallel.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-04-30-an-introduction-to-corewar.md
@@ -380,6 +418,7 @@
   }
   tags        {"Programming" "Corewar" "Programming Games" "Retro"}
   image       "/img/articles/small_corewar.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-04-23-the-smallest-communication-program-in-the-world.md
@@ -390,6 +429,7 @@
   }
   tags        {"80x86" "DOS" "Programming" "Retro" "Assembly"}
   image       "/img/articles/small_small_comm_program.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-03-29-hello-world-in-subleq-assembly.md
@@ -400,6 +440,7 @@
   }
   tags        {"Programming" "OISC" "SUBLEQ" "Assembly"}
   image       "/img/articles/small_hello_subleq.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-03-18-an-introduction-to-test-driven-development.md
@@ -410,6 +451,7 @@
   }
   tags        {"TDD" "Debugging" "Programming"}
   image       "/img/articles/small_tdd.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-03-05-the-subleq-urisc-oisc-architecture.md
@@ -420,6 +462,7 @@
   }
   tags        {"Computer Architecture" "OISC" "SUBLEQ"}
   image       "/img/articles/small_urisc_oisc.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-02-12-xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display.md
@@ -431,6 +474,7 @@
   tags        {"Forth" "Jupiter Ace" "Emulation" "Retro" "xAce"}
   image       "/img/articles/small_jupiter_ace.jpg"
   imageTitle  "A Jupiter Ace"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2009-01-26-book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr.md
@@ -442,6 +486,7 @@
   tags        {"Book" "Programming" "Retro" "Review"}
   rating      4.0
   image       "/img/articles/book_mythical_man_month.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-12-16-bouncing-babies.md
@@ -453,6 +498,7 @@
   tags        {"DOS" "Games" "Retro"}
   image       "/img/articles/small_bouncing_babies_splash.jpg"
   imageTitle  "Screenshot of Bouncing Babies' Splash Screen"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-12-08-chinese-man-spotted-on-tissue.md
@@ -464,6 +510,7 @@
   tags        {"Off Topic"}
   image       "/img/articles/small_chinese_man_toilet_paper_annotated.jpg"
   imageTitle  "Chinese Man Found on Tissue (Annotated)"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-11-24-my-top-10-commodore-64-demos.md
@@ -475,6 +522,7 @@
   tags        {"C64" "Demos" "Commodore" "Retro"}
   image       "/img/articles/small_crest_deus_ex_machina_face.jpg"
   imageTitle  "High Resolution Artwork"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-11-13-beneath-a-steel-sky-my-favourite-graphical-adventure-game.md
@@ -486,6 +534,7 @@
   tags        {"Adventure Games" "Games" "Retro"}
   image       "/img/articles/small_beneath_steel_sky_trash_elevator.jpg"
   imageTitle  "Screenshot of Beneath a Steel Sky"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-11-12-how-to-file-good-bug-reports.md
@@ -496,6 +545,7 @@
   }
   tags        {"Debugging" "Open Source"}
   image       "/img/articles/small_bug.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-11-10-using-scummvm-to-play-classic-adventure-games.md
@@ -507,6 +557,7 @@
   tags        {"Adventure Games" "Games" "Emulation" "Retro"}
   image       "/img/articles/small_scummvm_menu.jpg"
   imageTitle  "ScummVM game selection screen"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-11-05-writing-my-first-program-to-toggle-in-to-the-imsai-8080.md
@@ -516,6 +567,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"8080" "IMSAI" "Programming" "Retro" "Assembly"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-29-using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel.md
@@ -527,6 +579,7 @@
   tags        {"8080" "Emulation" "Retro" "Tutorial" "Altair" "IMSAI"}
   image       "/img/articles/small_imsai_frontpanel_z80pack.jpg"
   imageTitle  "Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-28-is-this-steamer-really-not-to-be-used-by-girls.md
@@ -538,6 +591,7 @@
   tags        {"Off Topic"}
   image       "/img/articles/small_closeup_steamer_nogirls.jpg"
   imageTitle  "Close-up of the label from a steamer"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-24-using-dosbox-to-run-dos-games-and-applications.md
@@ -549,6 +603,7 @@
   tags        {"DOS" "Emulation" "Retro" "Tutorial"}
   image       "/img/articles/small_cnc_ingame.png"
   imageTitle  "Command and Conquer In-Game Screenshot"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-22-installing-the-hi-tech-z80-c-compiler-for-cpm.md
@@ -560,6 +615,7 @@
   tags        {"C" "CP/M" "Programming" "Retro" "Z80" "Tutorial"}
   image       "/img/articles/small_war_c.png"
   updated:    2012-12-11
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-21-installing-zde-1-6-a-programmers-editor-for-cpm.md
@@ -571,6 +627,7 @@
   tags        {"CP/M" "Editor" "Programming" "Retro" "Tutorial"}
   image       "/img/articles/small_zde16_screenshort.png"
   imageTitle: "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-17-setting-up-z80pack-to-create-an-emulated-cpm-system.md
@@ -583,6 +640,7 @@
   image       "/img/articles/small_z80pack_cpm3.png"
   imageTitle: "Loading Screen for CP/M 3.0 on z80pack"
   updated:    2013-03-05
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-14-pdp-8-in-three-days-of-the-condor.md
@@ -594,6 +652,7 @@
   tags        {"Computers in Movies" "DEC" "PDP-8" "Retro"}
   hideLicence true
   image       "/img/articles/third_day_of_the_condor_pdp_8_1.jpg"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-10-07-book-review-fundamentals-of-operating-systems-by-a-m-lister.md
@@ -605,6 +664,7 @@
   tags        {"Book" "Operating Systems" "Retro" "Review"}
   rating      4.0
   image       "/img/articles/book_fundamentals_operating_systems.png"
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-09-16-how-to-share-an-ssl-certificate-and-still-use-cookies.md
@@ -614,6 +674,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"PHP" "Programming" "Security" "SSL" "Web Development"}
+  postURLStyle "/@year/@month/@day/@title/"
 }
 
 { filename    2008-08-08-is-cobol-really-understandable-after-14-years.md
@@ -623,4 +684,5 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming"  "Cobol"  "Retro"}
+  postURLStyle "/@year/@month/@day/@title/"
 }

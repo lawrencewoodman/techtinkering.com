@@ -10,7 +10,7 @@ proc posts::generate {} {
   foreach postDesc [getvar plugins posts] {
     dict with postDesc {
       ProcessPostsDesc $collectionPrefixName $postLayout \
-                       $tagLayout $srcDir $url
+                       $tagLayout $srcDir $postURLStyle
     }
   }
 }
@@ -40,15 +40,29 @@ proc posts::makeDate {post} {
 
 
 # url is where the url should be based off, such as blog
-proc posts::makeURL {url filename} {
-  set filename [file tail $filename]
+proc posts::MakeURL {postURLStyle file} {
+ set filename [file tail [dict get $file filename]]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return "[www::url $url $year $month $day $titleDir]/"
+    if {[dict exists $file postURLStyle]} {
+      set postURLStyle [dict get $file postURLStyle]
+    }
+    # TODO make this properly dynamic
+    switch $postURLStyle {
+      "/articles/@title/" {
+        return "[www::url articles $titleDir]/"
+      }
+      "/@year/@month/@day/@title/" {
+        return "[www::url $year $month $day $titleDir]/"
+      }
+      default {
+        return -code error "unknown postURLStyle: $postURLStyle"
+      }
+    }
   }
-  return -code error "makeURL: invalid filename: $filename"
+  return -code error "MakeURL: invalid filename: $filename"
 }
 
 
@@ -143,19 +157,17 @@ proc posts::ProcessPostsDesc {
   postLayout
   tagLayout
   srcDir
-  url
+  postURLStyle
 } {
   # TODO: sort in date order
   set files [read -directory $srcDir details.list]
 
   set files [lmap file $files {
     dict set file destination [
-      MakeDestination $url [dict get $file filename]
+      MakeDestination $postURLStyle $file
     ]
     dict set file tags [lsort [dict get $file tags]]
-    dict set file url  [
-      makeURL $url [dict get $file filename]\
-    ]
+    dict set file url  [MakeURL $postURLStyle $file]
     dict set file date [posts::makeDate $file]
     dict set file menuOption article
     set content [
@@ -174,7 +186,8 @@ proc posts::ProcessPostsDesc {
     set file
   }]
   set tags [CollectTags "$collectionPrefixName-tags" $files]
-  GenerateTagPages $tagLayout $files $url $tags
+  # TODO: Must make articles dynamic like postURLStyle
+  GenerateTagPages $tagLayout $files articles $tags
 }
 
 
@@ -184,13 +197,29 @@ proc posts::MakeExcerpt {partialContent} {
 
 
 # url is where the destination should be based off, such as blog
-proc posts::MakeDestination {url filename} {
-  set filename [file tail $filename]
+proc posts::MakeDestination {postURLStyle file} {
+  set filename [file tail [dict get $file filename]]
   set ok [regexp {^(\d{4})-(\d{2})-(\d{2})-(.*).md$} \
                  $filename match year month day titleDir \
   ]
   if {$ok} {
-    return [www::makeDestination $url $year $month $day $titleDir index.html]
+    if {[dict exists $file postURLStyle]} {
+      set postURLStyle [dict get $file postURLStyle]
+    }
+    # TODO make this properly dynamic
+    switch $postURLStyle {
+      "/articles/@title/" {
+        return [www::makeDestination articles $titleDir index.html]
+      }
+      "/@year/@month/@day/@title/" {
+        return [
+          www::makeDestination $year $month $day $titleDir index.html
+        ]
+      }
+      default {
+        return -error "unknown postURLStyle: $postURLStyle"
+      }
+    }
   }
   # TODO: Raise an error
 }
