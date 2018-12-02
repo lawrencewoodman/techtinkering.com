@@ -1,3 +1,14 @@
+{ filename    2018-12-01-advent-of-code-2018-25-days-25-languages.md
+  title       "Advent of Code 2018: 25 Days, 25 Languages"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Programming" "Challenge"}
+  socialImg   "adventofcode.png"
+  updated     2018-12-02
+}
+
 { filename    2016-03-06-book-review-what-the-dormouse-said-by-john-markoff.md
   title       "Book Review: What the Dormouse Said by John Markoff"
   author      {
