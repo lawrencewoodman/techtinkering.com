@@ -6,6 +6,24 @@
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
+      <title>Advent of Code 2018: 25 Days, 25 Languages</title>
+      <id>http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/</id>
+      <link href="http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2018-12-01
+        </published>
+
+        <updated>
+          2018-12-02
+        </updated>
+
+        <summary>There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code starts 1st December with daily programming p</summary>
+    </entry>
+    <entry>
       <title>Book Review: What the Dormouse Said by John Markoff</title>
       <id>http://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/</id>
       <link href="http://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/"/>

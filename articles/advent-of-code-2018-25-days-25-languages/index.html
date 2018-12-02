@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>An Introduction to Test-Driven Development</title>
-  <meta name="description" content="For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I j">
+  <title>Advent of Code 2018: 25 Days, 25 Languages</title>
+  <meta name="description" content="There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code star">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="An Introduction to Test-Driven Development">
-  <meta name="twitter:description" content="For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I j">
+  <meta name="twitter:title" content="Advent of Code 2018: 25 Days, 25 Languages">
+  <meta name="twitter:description" content="There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code star">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/adventofcode.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="An Introduction to Test-Driven Development">
-  <meta property="og:description" content="For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I j">
-  <meta property="og:url" content="http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/">
+  <meta property="og:title" content="Advent of Code 2018: 25 Days, 25 Languages">
+  <meta property="og:description" content="There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code star">
+  <meta property="og:url" content="http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/adventofcode.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/">
+  <link rel="canonical" href="http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -146,8 +150,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2009/03/18/an-introduction-to-test-driven-development/" title="An Introduction to Test-Driven Development">
-          <h1 itemprop="headline name">An Introduction to Test-Driven Development</h1>
+        <a href="/articles/advent-of-code-2018-25-days-25-languages/" title="Advent of Code 2018: 25 Days, 25 Languages">
+          <h1 itemprop="headline name">Advent of Code 2018: 25 Days, 25 Languages</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -159,8 +163,8 @@
 
         </div>
           <time itemprop="datePublished"
-                datetime="2009-03-18">
-            18 March 2009
+                datetime="2018-12-01">
+             1 December 2018
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -174,68 +178,20 @@
           </a>
         </span>
         &nbsp; / &nbsp;
-          <a href="/articles/tag/debugging/">Debugging</a>
+          <a href="/articles/tag/challenge/">Challenge</a>
           &nbsp; &nbsp;
           <a href="/articles/tag/programming/">Programming</a>
-          &nbsp; &nbsp;
-          <a href="/articles/tag/tdd/">TDD</a>
           &nbsp; &nbsp;
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I just have to share it's benefits with those who may not have heard of it. TDD reverses the normal order of testing as it requires developers to create automated unit tests <em>before</em> code is written not after.  This takes some getting used to, and it can be quite difficult to resist the urge to write code first and then a test, but it really is essential to test first in order to gain the full benefits of TDD.  The beauty of this is that it allows you to concentrate on <em>what</em> you want the code to do before you concentrate on <em>how</em> to implement it.</p>
-<h2>Test-Driven Development Cycle</h2>
-<p>To use TDD, you need a unit testing framework such as <a href="http://www.junit.org/">JUnit</a> for Java.  The first thing to remember about TDD, is that you shouldn't write a single line of code without first creating a test for it.   Therefore, TDD is a constant cycle of creating tests, then writing the code to pass them.  Each test contains an assertion that is either true or false, so that a test can only pass or fail, thus enabling the tests to be fully automatic and not require developers to trawl through logs.   Development is therefore often carried out in the following way:</p>
-<ul>
-<li>
-<p><strong>Add a test</strong></p>
-<p>Before implementing a new function or improvement to an existing function you should write just enough of a test to fail.  It should fail on the first run because you haven't implemented it.</p>
-</li>
-<li>
-<p><strong>Run all tests and see if the new one fails</strong></p>
-<p>It is important that the new test fails to start with to make sure that it wouldn't blindly pass regardless.</p>
-</li>
-<li>
-<p><strong>Write enough code to pass the new test</strong></p>
-<p>You should write <strong>only</strong> enough code to pass the test.  This reduces the chances of untested code.</p>
-</li>
-<li>
-<p><strong>Run all the tests and see if they pass</strong></p>
-<p>If the test passes then you can add another test at step 1 ready for further code to be tested, or go to step 5 once you are happy that the implementation is complete and fully tested.</p>
-</li>
-<li>
-<p><strong>Re-factor Code</strong></p>
-<p>If all the tests pass, then you can be confident that refactoring the code will not break it.  If it does break, then you can easily spot this and correct it.</p>
-</li>
-</ul>
-<h2>Tips for TDD</h2>
-<p>There are a number of tips that can help improve your success with TDD:</p>
-<ul>
-<li>
-<p><strong>Design for testability</strong></p>
-<p>This can make things much easier to test and can make the design much cleaner.</p>
-</li>
-<li>
-<p><strong>Don't break the encapsulation of your classes</strong></p>
-<p>It is important to respect the encapsulation of the class so that the tests are not reliant on the implementation details.  Therefore, you shouldn't test private methods directly, instead just thoroughly test the public methods and try to exercise the private methods as far as is needed through the public methods.</p>
-</li>
-<li>
-<p><strong>Create extra tests to find suspected bugs</strong></p>
-<p>While you can use a debugger to find bugs, it is important to complement this bug finding with extra unit tests to ensure that the bug doesn't come back and to improve the robustness of the tests.</p>
-</li>
-</ul>
-<h2>Benefits of TDD</h2>
-<p>TDD normally means that you end up producing a lot more code because of all the testing, but I have found that this dramatically improves the quality of the code and design.  I have also found there to be a definite speed improvement to my development work, because I am not spending so much time debugging.  In addition the following benefits are generally considered to be a hallmark of TDD:</p>
-<ul>
-<li>Helps you to concentrate on the expected behaviour of classes and their methods.  So that you can focus on how you would like them to work and be used, without worrying about the implementation details.</li>
-<li>Gives you greater confidence to alter the implementations of the methods without breaking them or the programs using them.  This in particular is invaluable.  All too often we can be put-off cleaning up code or tweaking it to improve efficiency, because we are worried about introducing bugs.</li>
-<li>Isolates bugs early rather than suffering from a mass of hard-to-locate bugs, thereby reducing the amount of time spent debugging.</li>
-<li>Makes project time planning easier as you are not so reliant on guessing the amount of time required at the end of a project to test and debug.</li>
-<li>The tests document extensively how to use the libraries,classes,functions,etc.</li>
-<li>The tests can't get out of sync with the production code.</li>
-</ul>
-<h2>Where Now?</h2>
-<p>Unfortunately I have found that information about Test-Driven Development on the internet is a little chaotic.  However, I do like <a href="http://www.testdriven.com">TESTdriven.com</a>, which has a good RSS feed and I particularly like their <a href="http://www.testdriven.com/modules/mylinks/">Web Links</a>, which has a great selection of articles.  I firmly believe that TDD can, with patience, improve virtually anyone's code, and certainly recommend that you give it a good go before making up your mind.</p>
+        <p>There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  <a href="https://adventofcode.com">Advent of Code</a> starts 1st December with daily programming puzzles throughout <a href="https://en.wikipedia.org/wiki/Advent">advent</a>.</p>
+<p>To make this challenge a little more interesting I have decided to do the 25 puzzles in 25 different programming languages.  This will be interesting as while I have used quite a lot of different languages, I don't know 25 well.  I'm also have quite limited time in the run up to Christmas.  Therefore, I'm going to solve each puzzle first in Tcl and then create a second version in another language that gives the same result.  Tcl is one of my favourite languages so the code should be reasonably good.</p>
+<p>I am putting my solutions in a <a href="https://github.com/lawrencewoodman/adventofcode">repo</a> on GitHub.</p>
+<h2>Day 1: Chronal Calibration</h2>
+<p>To ease myself in gradually the <a href="https://adventofcode.com/2018/day/1">day 1</a> puzzle has been done with <a href="https://wiki.tcl-lang.org/">Tcl</a> alone.</p>
+<h2>Day 2: Inventory Management System</h2>
+<p>For <a href="https://adventofcode.com/2018/day/2">day2</a> I have chosen <a href="https://www.ruby-lang.org">ruby</a>.  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.</p>
       </div>
     </article>
   </div>
@@ -248,8 +204,8 @@
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">An Introduction to Test-Driven Development</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advent of Code 2018: 25 Days, 25 Languages</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -262,26 +218,6 @@
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-      
-<header>
-  <h3><a href="/articles/advent-of-code-2018-25-days-25-languages/">Advent of Code 2018: 25 Days, 25 Languages</a></h3>
-  <span class="post-meta">
-      <time datetime="2018-12-01">
-         1 December 2018
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/challenge/">Challenge</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code starts 1st December with daily programming p...
-  &nbsp;
-  <a class="readMore" href="/articles/advent-of-code-2018-25-days-25-languages/">Read More</a>
-</div>
-
       
 <header>
   <h3><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></h3>
@@ -386,6 +322,28 @@
   <a class="readMore" href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Read More</a>
 </div>
 
+      
+<header>
+  <h3><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-12">
+        12 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP...
+  &nbsp;
+  <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
+</div>
+
   </div>
 </div>
 
@@ -410,8 +368,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2009/03/18/an-introduction-to-test-driven-development/';
-      var disqus_url = 'http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/';
+      var disqus_identifier = '/articles/advent-of-code-2018-25-days-25-languages/';
+      var disqus_url = 'http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
