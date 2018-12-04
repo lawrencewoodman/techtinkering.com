@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2018-12-02</updated>
+  <updated>2018-12-04</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -18,7 +18,7 @@
         </published>
 
         <updated>
-          2018-12-02
+          2018-12-04
         </updated>
 
         <summary>There are lots of different programming challenges, but this year one in particular has caught my attention and I have decided to take part.  Advent of Code starts 1st December with daily programming p</summary>

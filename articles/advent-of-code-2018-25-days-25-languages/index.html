@@ -220,7 +220,7 @@ puts &quot;part1: [part1 $input]&quot;
 puts &quot;part2: [part2 {} 0 $input]&quot;
 </code></pre>
 <h2>Day 2: Inventory Management System</h2>
-<p>For <a href="https://adventofcode.com/2018/day/2">day2</a> I have chosen <a href="https://www.ruby-lang.org">ruby</a>.  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.</p>
+<p>For <a href="https://adventofcode.com/2018/day/2">day 2</a> I have chosen <a href="https://www.ruby-lang.org">ruby</a>.  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.</p>
 <pre><code class="language-ruby"># Code for Day 2 of Advent of Code: https://adventofcode.com/2018/day/2
 # Ruby Solution
 input = File.read(&quot;day2.input&quot;)
@@ -263,6 +263,123 @@ end
 
 puts &quot;Part1: #{part1(input)}&quot;
 puts &quot;Part2: #{part2(input)}&quot;
+</code></pre>
+<h2>Day 3: No Matter How You Slice It</h2>
+<p>For <a href="https://adventofcode.com/2018/day/3">day 3</a> I have chosen <a href="https://en.wikipedia.org/wiki/C_(programming_language)">c</a>.  This is a language that I've used longer than any other, but haven't touched for over 3 years, so was a bit rusty.  It was quite enjoyable getting back in the saddle after so long.  For the solution to the puzzle I have made it do just enough to solve the problem and therefore it uses static arrays and isn't very dynamic.</p>
+<pre><code class="language-c">// Code for Day 3 of Advent of Code: https://adventofcode.com/2018/day/3
+// C Solution
+//
+// Copyright (C) 2018 Lawrence Woodman &lt;lwoodman@vlifesystems.com&gt;
+// Licensed under an MIT licence.  Please see LICENCE.md for details.
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define BITMAPMAXX 1500
+#define BITMAPMAXY 1500
+#define CLAIMSIZE 100
+#define MAXCLASHIDS 2000
+
+int part1 () {
+  int count;
+  int x, y, maxX, maxY;
+  int id, leftMargin, topMargin, width, height;
+  char bitmap[BITMAPMAXY][BITMAPMAXX];
+  FILE *fp;
+  static char claim[CLAIMSIZE];
+
+  for (x = 0; x &lt; BITMAPMAXX; x++) {
+    for (y = 0; y &lt; BITMAPMAXY; y++) {
+      bitmap[y][x] = 0;
+    }
+  }
+
+  if ((fp = fopen(&quot;day3.input&quot;, &quot;r&quot;)) == NULL) {
+		exit(EXIT_FAILURE);
+  }
+  while (fgets(claim, CLAIMSIZE, fp)) {
+    sscanf(claim, &quot;#%d @ %d,%d: %dx%d&quot;,
+         &amp;id, &amp;leftMargin, &amp;topMargin, &amp;width, &amp;height);
+    maxX = leftMargin + width;
+    maxY = topMargin + height;
+    if (maxX &gt;= BITMAPMAXX || maxY &gt;= BITMAPMAXY) {
+      fprintf(stderr, &quot;bitmap too small\n&quot;);
+      exit(EXIT_FAILURE);
+    }
+    for (x = leftMargin + 1; x &lt;= maxX; x++) {
+      for (y = topMargin + 1; y &lt;= maxY; y++) {
+        bitmap[y][x]++;
+      }
+    }
+  }
+
+  fclose(fp);
+
+  count = 0;
+  for (x = 0; x &lt; BITMAPMAXX; x++) {
+    for (y = 0; y &lt; BITMAPMAXY; y++) {
+      if (bitmap[y][x] &gt;= 2) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+int part2 () {
+  int clashIDS[MAXCLASHIDS];
+  int maxID = 0;
+  int x, y, maxX, maxY;
+  int id, leftMargin, topMargin, width, height;
+  short bitmap[BITMAPMAXY][BITMAPMAXX];
+  FILE *fp;
+  static char claim[CLAIMSIZE];
+
+  for (x = 0; x &lt; BITMAPMAXX; x++) {
+    for (y = 0; y &lt; BITMAPMAXY; y++) {
+      bitmap[y][x] = 0;
+    }
+  }
+  if ((fp = fopen(&quot;day3.input&quot;, &quot;r&quot;)) == NULL) {
+    fprintf(stderr, &quot;Couldn't open input\n&quot;);
+		exit(EXIT_FAILURE);
+  }
+  while (fgets(claim, CLAIMSIZE, fp)) {
+    sscanf(claim, &quot;#%d @ %d,%d: %dx%d&quot;,
+         &amp;id, &amp;leftMargin, &amp;topMargin, &amp;width, &amp;height);
+    maxX = leftMargin + width;
+    maxY = topMargin + height;
+    if (id &gt;= MAXCLASHIDS) {
+      fprintf(stderr, &quot;clashIDS too small\n&quot;);
+      exit(EXIT_FAILURE);
+    }
+    for (x = leftMargin + 1; x &lt;= maxX; x++) {
+      for (y = topMargin + 1; y &lt;= maxY; y++) {
+        if (bitmap[y][x] &gt;= 1) {
+          clashIDS[id] = 1;
+          maxID = id &gt; maxID ? id : maxID;
+          clashIDS[bitmap[y][x]] = 1;
+        } else {
+          bitmap[y][x] = id;
+        }
+      }
+    }
+  }
+
+  fclose(fp);
+
+  for (id = 1; id &lt;= maxID; id++) {
+    if (clashIDS[id] == 0) {
+      return id;
+    }
+  }
+  return -1;
+}
+
+void main(void) {
+  printf(&quot;part1: %d\n&quot;, part1());
+  printf(&quot;part2: %d\n&quot;, part2());
+}
 </code></pre>
       </div>
     </article>
