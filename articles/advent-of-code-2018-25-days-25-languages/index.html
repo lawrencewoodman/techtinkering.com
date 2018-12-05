@@ -490,6 +490,72 @@ def part2(input):
 print(&quot;Part1: &quot;, part1(input))
 print(&quot;Part2: &quot;, part2(input))
 </code></pre>
+<h2>Day 5: Alchemical Reduction</h2>
+<p>For <a href="https://adventofcode.com/2018/day/5">day 5</a> I have chosen <a href="https://racket-lang.org/">racket</a>.  I haven't written much in racket and what I have was quite a few years ago.  To start with I quite liked using the DrRacket environment and REPL, but after a while I was struggling to get my head into the mindset required for racket.  I managed to do a recursive solution, but it is pretty ugly and slow.</p>
+<pre><code class="language-scheme">#lang racket/base
+; Code for Day 5 of Advent of Code: https://adventofcode.com/2018/day/5
+; Racket Solution
+;
+; Copyright (C) 2018 Lawrence Woodman &lt;lwoodman@vlifesystems.com&gt;
+; Licensed under an MIT licence.  Please see LICENCE.md for details.
+
+(require racket/file
+         racket/list
+         racket/math
+         racket/string)
+
+(define (opposite-case? a b)
+  (and (not (equal? a b)) (equal? (string-upcase a) (string-upcase b))))
+
+(define input
+  (map string (string-&gt;list (string-trim (file-&gt;string &quot;day5.input&quot;)))))
+
+
+(define (react input start)
+  (if (&gt;= start (- (length input) 1))
+      input
+      (let ([trial (list-tail input start)])
+        (let ([a (first trial)]
+              [b (second trial)])
+          (if (opposite-case? a b)
+              (react (append (take input start)
+                             (list-tail input (+ start 2)))
+                     start)
+              (react input (+ start 1)))))))
+
+
+(define (chainreaction input)
+  (let ([new-input (react input 0)])
+    (if (= (length input) (length new-input))
+        input
+        (chainreaction new-input))))
+
+(define (part1 input)
+  (length (chainreaction input)))
+
+(define (part2 input)
+  (second
+   (let* ([letters '(&quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot;
+                            &quot;i&quot; &quot;j&quot; &quot;k&quot; &quot;l&quot; &quot;m&quot; &quot;n&quot; &quot;o&quot; &quot;p&quot;
+                            &quot;q&quot; &quot;r&quot; &quot;s&quot; &quot;t&quot; &quot;u&quot; &quot;v&quot; &quot;w&quot; &quot;x&quot; &quot;y&quot; &quot;z&quot;)]
+          [lens (map (lambda (l)
+                       (let ([new-input
+                            (filter (lambda (e)
+                                      (not (equal? (string-downcase l)
+                                                   (string-downcase e))))
+                                    input)])
+                         (list l (part1 new-input))))
+                     letters)])
+          (for/fold ([shortest (list &quot;!&quot; (length input))])
+                    ([l lens])
+            (if (&lt; (second l) (second shortest))
+                l
+                shortest)))))
+
+
+(printf &quot;Part1: ~a\n&quot; (part1 input))
+(printf &quot;Part2: ~a\n&quot; (part2 input))
+</code></pre>
       </div>
     </article>
   </div>
