@@ -2,8 +2,12 @@ There are lots of different programming challenges, but this year one in particu
 
 To make this challenge a little more interesting I have decided to do the 25 puzzles in 25 different programming languages.  This will be interesting as while I have used quite a lot of different languages, I don't know 25 well.  I'm also have quite limited time in the run up to Christmas.  Therefore, I'm going to solve each puzzle first in Tcl and then create a second version in another language that gives the same result.  Tcl is one of my favourite languages so the code should be reasonably good.
 
+So far I have solutions in: [tcl](#tcl), [ruby](#ruby), [c](#c), [python](#python)
+and [racket](#racket).
+
 I am putting my solutions in a [repo](https://github.com/lawrencewoodman/adventofcode) on GitHub.
 
+<a name="tcl" /></a>
 ## Day 1: Chronal Calibration
 
 To ease myself in gradually the [day 1](https://adventofcode.com/2018/day/1) puzzle has been done with [Tcl](https://wiki.tcl-lang.org/) alone.
@@ -39,6 +43,7 @@ puts "part1: [part1 $input]"
 puts "part2: [part2 {} 0 $input]"
 ````
 
+<a name="ruby" /></a>
 ## Day 2: Inventory Management System
 
 For [day 2](https://adventofcode.com/2018/day/2) I have chosen [ruby](https://www.ruby-lang.org).  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.
@@ -87,6 +92,8 @@ end
 puts "Part1: #{part1(input)}"
 puts "Part2: #{part2(input)}"
 ````
+
+<a name="c" /></a>
 ## Day 3: No Matter How You Slice It
 
 For [day 3](https://adventofcode.com/2018/day/3) I have chosen [c](https://en.wikipedia.org/wiki/C_(programming_language)).  This is a language that I've used longer than any other, but haven't touched for over 3 years, so was a bit rusty.  It was quite enjoyable getting back in the saddle after so long.  For the solution to the puzzle I have made it do just enough to solve the problem and therefore it uses static arrays and isn't very dynamic.
@@ -208,6 +215,7 @@ void main(void) {
 }
 ````
 
+<a name="python" /></a>
 ## Day 4: Repose Record
 For [day 4](https://adventofcode.com/2018/day/4) I have chosen [python](https://www.python.org/).  This is one of the most popular programming languages and yet I have never written anything in it before today.  This made it quite interesting as I have heard lots of good things about the language and it was great to give it a go.  Apologies to any Python programmers for my naturally poor style.
 
@@ -320,6 +328,7 @@ print("Part1: ", part1(input))
 print("Part2: ", part2(input))
 ````
 
+<a name="racket" /></a>
 ## Day 5: Alchemical Reduction
 For [day 5](https://adventofcode.com/2018/day/5) I have chosen [racket](https://racket-lang.org/).  I haven't written much in racket and what I have was quite a few years ago.  To start with I quite liked using the DrRacket environment and REPL, but after a while I was struggling to get my head into the mindset required for racket.  I managed to do a recursive solution, but it is pretty ugly and slow.
 
