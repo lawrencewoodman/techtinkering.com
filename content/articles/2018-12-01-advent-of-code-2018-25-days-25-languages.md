@@ -2,13 +2,19 @@ There are lots of different programming challenges, but this year one in particu
 
 To make this challenge a little more interesting I have decided to do the 25 puzzles in 25 different programming languages.  This will be interesting as while I have used quite a lot of different languages, I don't know 25 well.  I'm also have quite limited time in the run up to Christmas.  Therefore, I'm going to solve each puzzle first in Tcl and then create a second version in another language that gives the same result.  Tcl is one of my favourite languages so the code should be reasonably good.
 
-So far I have solutions in: [tcl](#tcl), [ruby](#ruby), [c](#c), [python](#python)
-and [racket](#racket).
+So far I have solutions for:
+* [Day 1: Chronal Calibration - Tcl](#day1)
+* [Day 2: Inventory Management System - Ruby](#day2)
+* [Day 3: No Matter How You Slice It - C](#day3)
+* [Day 4: Repose Record - Python](#day4)
+* [Day 5: Alchemical Reduction - Racket](#day5)
+* [Day 6: Chronal Coordinates - Commodore 128 Basic](#day6)
+* [Day 7: The Sum of Its Parts - Pascal](#day7)
 
 I am putting my solutions in a [repo](https://github.com/lawrencewoodman/adventofcode) on GitHub.
 
-<a name="tcl" /></a>
-## Day 1: Chronal Calibration
+<a name="day1" /></a>
+## Day 1: Chronal Calibration - Tcl
 
 To ease myself in gradually the [day 1](https://adventofcode.com/2018/day/1) puzzle has been done with [Tcl](https://wiki.tcl-lang.org/) alone.
 
@@ -43,8 +49,8 @@ puts "part1: [part1 $input]"
 puts "part2: [part2 {} 0 $input]"
 ````
 
-<a name="ruby" /></a>
-## Day 2: Inventory Management System
+<a name="day2" /></a>
+## Day 2: Inventory Management System - Ruby
 
 For [day 2](https://adventofcode.com/2018/day/2) I have chosen [ruby](https://www.ruby-lang.org).  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.
 
@@ -93,8 +99,8 @@ puts "Part1: #{part1(input)}"
 puts "Part2: #{part2(input)}"
 ````
 
-<a name="c" /></a>
-## Day 3: No Matter How You Slice It
+<a name="day3" /></a>
+## Day 3: No Matter How You Slice It - C
 
 For [day 3](https://adventofcode.com/2018/day/3) I have chosen [c](https://en.wikipedia.org/wiki/C_(programming_language)).  This is a language that I've used longer than any other, but haven't touched for over 3 years, so was a bit rusty.  It was quite enjoyable getting back in the saddle after so long.  For the solution to the puzzle I have made it do just enough to solve the problem and therefore it uses static arrays and isn't very dynamic.
 
@@ -215,8 +221,8 @@ void main(void) {
 }
 ````
 
-<a name="python" /></a>
-## Day 4: Repose Record
+<a name="day4" /></a>
+## Day 4: Repose Record - Python
 For [day 4](https://adventofcode.com/2018/day/4) I have chosen [python](https://www.python.org/).  This is one of the most popular programming languages and yet I have never written anything in it before today.  This made it quite interesting as I have heard lots of good things about the language and it was great to give it a go.  Apologies to any Python programmers for my naturally poor style.
 
 ```` python
@@ -328,8 +334,8 @@ print("Part1: ", part1(input))
 print("Part2: ", part2(input))
 ````
 
-<a name="racket" /></a>
-## Day 5: Alchemical Reduction
+<a name="day5" /></a>
+## Day 5: Alchemical Reduction - Racket
 For [day 5](https://adventofcode.com/2018/day/5) I have chosen [racket](https://racket-lang.org/).  I haven't written much in racket and what I have was quite a few years ago.  To start with I quite liked using the DrRacket environment and REPL, but after a while I was struggling to get my head into the mindset required for racket.  I managed to do a recursive solution, but it is pretty ugly and slow.
 
 ```` scheme
@@ -396,4 +402,232 @@ For [day 5](https://adventofcode.com/2018/day/5) I have chosen [racket](https://
 
 (printf "Part1: ~a\n" (part1 input))
 (printf "Part2: ~a\n" (part2 input))
+````
+
+<a name="day6" /></a>
+## Day 6: Chronal Coordinates - Commodore 128 Basic
+
+This is still calculating...
+
+<a name="day7" /></a>
+## Day 7: The Sum of Its Parts - Pascal
+For [day 7](https://adventofcode.com/2018/day/7) I have chosen [pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)).  I haven't written anything in pascal for over five years and prior to that I hadn't written anything in pascal for about 17 years.  So I was more than a little rusty.  The code isn't very elegant but I just wanted to come up with a solution in the language.  I used the [free pascal](https://www.freepascal.org/) compiler to compile the code.
+
+```` pascal
+// Code for Day 7 of Advent of Code: https://adventofcode.com/2018/day/7
+// Pascal Solution
+//
+// Copyright (C) 2018 Lawrence Woodman <lwoodman@vlifesystems.com>
+// Licensed under an MIT licence.  Please see LICENCE.md for details.
+
+program day7;
+
+uses
+  Sysutils, Strutils;
+
+type
+  step_details = array [0..2] of char;
+  all_step_details = array of step_details;
+  char_array = array of char;
+  worker_details = record
+    letter: char;
+    secs: integer;
+  end;
+
+function num_seconds(const l: char) : integer;
+begin
+  num_seconds := ord(l) - 65 + 1 + 60;
+end;
+
+function get_steps(const filename: string) : all_step_details;
+var
+  i: integer;
+  s: string;
+  a: string;
+  b: string;
+  f: TextFile;
+begin
+  i := 0;
+  assign(f, filename);
+  reset(f);
+  while not eof(f) do
+  begin
+    setlength(get_steps, i+1);
+    readln(f, s);
+    a := ExtractWord(2, s, [' ']);
+    b := ExtractWord(8, s, [' ']);
+    get_steps[i,0] := a[1];
+    get_steps[i,1] := b[1];
+    inc(i);
+  end;
+  close(f);
+end;
+
+function remove_letter(steps: all_step_details; letter: char) : all_step_details;
+var
+  i: integer;
+  details: step_details;
+begin
+  i := 0;
+  setlength(remove_letter, 0);
+  for details in steps do
+  begin
+    if details[0] <> letter then
+    begin
+      setlength(remove_letter, i+1);
+      remove_letter[i] := details;
+      inc(i);
+    end;
+  end;
+end;
+
+function cando_letters(steps: all_step_details) : char_array;
+var
+  i: integer;
+  s: step_details;
+  l: char;
+  waiting_letters: set of char;
+  starting_letters: set of char;
+begin
+  i := 0;
+  starting_letters := [];
+  waiting_letters := [];
+  for s in steps do
+  begin
+    include(starting_letters, s[0]);
+    include(waiting_letters, s[1]);
+  end;
+  for l in starting_letters do
+  begin
+    if not(l in waiting_letters) then
+    begin
+      setlength(cando_letters, i+1);
+      cando_letters[i] := l;
+      inc(i);
+    end;
+  end;
+end;
+
+// This should be included as part of cando_letters
+function waiting_letters(steps: all_step_details) : char_array;
+var
+  i: integer;
+  s: step_details;
+  l: char;
+  waiting_letters_set: set of char;
+begin
+  i := 0;
+  waiting_letters_set := [];
+  for s in steps do
+  begin
+    include(waiting_letters_set, s[1]);
+  end;
+  for l in waiting_letters_set do
+  begin
+    setlength(waiting_letters, i+1);
+    waiting_letters[i] := l;
+    inc(i);
+  end;
+end;
+
+function part1 (steps: all_step_details) : string;
+var
+  l: char;
+  next_letter: char;
+  last_letter: char;
+begin
+  part1 := '';
+  while length(steps) > 0 do
+  begin
+    last_letter := waiting_letters(steps)[0];
+    next_letter := 'Z';
+    for l in cando_letters(steps) do
+    begin
+      if l < next_letter then
+      begin
+        next_letter := l;
+      end;
+    end;
+    steps := remove_letter(steps, next_letter);
+    part1 := part1+next_letter;
+  end;
+  part1 := part1+last_letter;
+end;
+
+function isLetterBeingWorkedOn(workers: array of worker_details; l: char)
+: boolean;
+var
+  w: worker_details;
+begin
+  isLetterBeingWorkedOn := false;
+  for w in workers do
+  begin
+    if w.letter = l then
+    begin
+      isLetterBeingWorkedOn := true;
+      break;
+    end;
+  end;
+end;
+
+function part2 (steps: all_step_details) : integer;
+var
+  i: integer;
+  l: char;
+  seconds: integer;
+  workers: array of worker_details;
+  last_letter: char;
+
+begin
+  setlength(workers, 5);
+  for i := 0 to 5 do
+  begin
+    workers[i].letter := '.';
+    workers[i].secs := -1;
+  end;
+  seconds := 0;
+  while length(steps) > 0 do
+  begin
+    for i := 0 to 5 do
+    begin
+      if workers[i].letter <> '.' then
+      begin
+        workers[i].secs := workers[i].secs-1;
+        if workers[i].secs = 0 then
+        begin
+          steps := remove_letter(steps, workers[i].letter);
+          workers[i].letter := '.';
+          workers[i].secs := -1;
+        end;
+      end;
+    end;
+
+    for i := 0 to 5 do
+    begin
+      if workers[i].letter = '.' then
+      begin
+        last_letter := waiting_letters(steps)[0];
+        for l in cando_letters(steps) do
+        begin
+          if not(isLetterBeingWorkedOn(workers, l)) then
+          begin
+            workers[i].letter := l;
+            workers[i].secs := num_seconds(l);
+            break;
+          end;
+        end;
+      end;
+    end;
+    inc(seconds);
+  end;
+  part2 := seconds + num_seconds(last_letter) -1;
+end;
+
+var
+  steps: all_step_details;
+begin
+  steps := get_steps('day7.input');
+  writeln('Part1: ', part1(steps));
+  writeln('Part2: ', part2(steps));
+end.
 ````
