@@ -407,7 +407,7 @@ For [day 5](https://adventofcode.com/2018/day/5) I have chosen [racket](https://
 <a name="day6" /></a>
 ## Day 6: Chronal Coordinates - Commodore 128 Basic
 
-I have decided to go retro for [day 6](https://adventofcode.com/2018/day/6) and have created the solution on the [Commodore 128](https://en.wikipedia.org/wiki/Commodore_128) using its built-in [Basic 7.0](https://en.wikipedia.org/wiki/Commodore_BASIC).  It must have been over 25 years since I have written anything in basic on the 128, so it was great fun to have an excuse to tinker with it again.   The only real problem is that it took days for it to do the calculation.
+I have decided to go [retro](/articles/tag/retro/) for [day 6](https://adventofcode.com/2018/day/6) and have created the solution on the [Commodore 128](https://en.wikipedia.org/wiki/Commodore_128) using its built-in [Basic 7.0](https://en.wikipedia.org/wiki/Commodore_BASIC).  It must have been over 25 years since I have written anything in basic on the 128, so it was great fun to have an excuse to tinker with it again.   The only real problem is that it took days for it to do the calculation.
 
 <img src="/img/articles/c128_aoc_day6.png" title="Screenshot of Basic code on c128" />
 
