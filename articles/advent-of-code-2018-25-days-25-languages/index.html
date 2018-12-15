@@ -196,6 +196,7 @@
 <li><a href="#day5">Day 5: Alchemical Reduction - Racket</a></li>
 <li><a href="#day6">Day 6: Chronal Coordinates - Commodore 128 Basic</a></li>
 <li><a href="#day7">Day 7: The Sum of Its Parts - Pascal</a></li>
+<li><a href="#day8">Day 8: Memory Maneuver - F#</a></li>
 </ul>
 <p>I am putting my solutions in a <a href="https://github.com/lawrencewoodman/adventofcode">repo</a> on GitHub.</p>
 <p><a name="day1" /></a></p>
@@ -937,6 +938,79 @@ begin
   writeln('Part1: ', part1(steps));
   writeln('Part2: ', part2(steps));
 end.
+</code></pre>
+<p><a name="day8" /></a></p>
+<h2>Day 8: Memory Maneuver - F#</h2>
+<p>For <a href="https://adventofcode.com/2018/day/8">day 8</a> I have chosen <a href="https://fsharp.org/">f#</a>.  I've written very little in F#, but when I have I've really liked the language.  It was great to play with it again and I found today's problem a good fit for a functional style solution.</p>
+<pre><code class="language-fsharp">// Code for Day 8 of Advent of Code: https://adventofcode.com/2018/day/8
+// F# Solution
+//
+// Copyright (C) 2018 Lawrence Woodman &lt;lwoodman@vlifesystems.com&gt;
+// Licensed under an MIT licence.  Please see LICENCE.md for details.
+
+open System.IO
+open System
+
+type Node = {Children: list&lt;Node&gt;; Meta: array&lt;Int32&gt;}
+
+let rec GetChildren (header : array&lt;Int32&gt;) =
+  let numChildNodes = header.[0]
+  let folder acc i =
+    let (totalNumNums,pos,children) = acc
+    let (childNode, numNums) = ParseHeader header.[pos..]
+    (totalNumNums+numNums, pos+numNums, childNode::children)
+  let (totalNumNums,pos,children) =
+    List.fold folder (0,2,[]) [0..numChildNodes-1]
+  (List.rev children, totalNumNums)
+
+and ParseHeader header =
+  let numMetadata = header.[1]
+  let (children, numNums) = GetChildren header
+  let metadata =
+    if numMetadata &gt; 0 then
+      header.[numNums+2..numNums+1+numMetadata]
+    else
+      [||]
+  let totalNumNums = 2+numNums+numMetadata
+  ({Children = children; Meta = metadata}, totalNumNums)
+
+let rec AddMetadata (node) =
+  let childrenMetadataSum =
+    node.Children
+    |&gt; List.map AddMetadata
+    |&gt; List.sum
+  childrenMetadataSum + Array.sum(node.Meta)
+
+let rec AddMetadata2 (node) =
+  let mapper m =
+    if m &lt;= List.length(node.Children) then
+      AddMetadata2 node.Children.[m-1]
+    else
+      0
+  if List.length(node.Children) = 0 then
+    Array.sum(node.Meta)
+  else
+    node.Meta
+    |&gt; Array.map mapper
+    |&gt; Array.sum
+
+let Part1 input =
+  let (root, numNums) = ParseHeader input
+  AddMetadata root
+
+let Part2 input =
+  let (root, numNums) = ParseHeader input
+  AddMetadata2 root
+
+let ReadInput filename : array&lt;Int32&gt; =
+  let InputFile = File.ReadAllLines(filename)
+  InputFile.[0].Split ' '
+  |&gt; Seq.map System.Int32.Parse
+  |&gt; Seq.toArray
+
+let Input = ReadInput(&quot;day8.input&quot;)
+printfn &quot;Part1: %d&quot; (Part1 Input)
+printfn &quot;Part2: %A&quot; (Part2 Input)
 </code></pre>
       </div>
     </article>
