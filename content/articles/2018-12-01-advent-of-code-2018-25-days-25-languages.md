@@ -860,7 +860,7 @@ printfn "Part2: %A" (Part2 Input)
 
 <a name="day9" /></a>
 ## Day 9: Marble Mania - Julia
-For [day 9](https://adventofcode.com/2018/day/9) I have chosen [Julia](https://julialang.org/).  I've never written anything in Julia so this was complete new for me.  I found it pretty easy to get a solution written and found this to be a really clear and good looking language.
+For [day 9](https://adventofcode.com/2018/day/9) I have chosen [Julia](https://julialang.org/).  I've never written anything in Julia so this was complete new for me.  I found it pretty easy to get a solution written and really like this clear and good looking language.  I particularly like the type system and its dispatch methods.
 
 ```` julia
 # Code for Day 9 of Advent of Code: https://adventofcode.com/2018/day/9
