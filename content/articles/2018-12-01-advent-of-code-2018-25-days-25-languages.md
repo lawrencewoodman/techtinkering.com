@@ -11,6 +11,7 @@ So far I have solutions for:
 * [Day 6: Chronal Coordinates - Commodore 128 Basic](#day6)
 * [Day 7: The Sum of Its Parts - Pascal](#day7)
 * [Day 8: Memory Maneuver - F#](#day8)
+* [Day 9: Marble Mania - Julia](#day9)
 
 I am putting my solutions in a [repo](https://github.com/lawrencewoodman/adventofcode) on GitHub.
 
@@ -53,7 +54,7 @@ puts "part2: [part2 {} 0 $input]"
 <a name="day2" /></a>
 ## Day 2: Inventory Management System - Ruby
 
-For [day 2](https://adventofcode.com/2018/day/2) I have chosen [ruby](https://www.ruby-lang.org).  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.
+For [day 2](https://adventofcode.com/2018/day/2) I have chosen [Ruby](https://www.ruby-lang.org).  I used to use ruby quite a lot at one time, but was surprised how much I had forgotten.  The code is probably not very idiomatic, but it wasn't too hard to convert the Tcl solution over to ruby.
 
 ```` ruby
 # Code for Day 2 of Advent of Code: https://adventofcode.com/2018/day/2
@@ -103,7 +104,7 @@ puts "Part2: #{part2(input)}"
 <a name="day3" /></a>
 ## Day 3: No Matter How You Slice It - C
 
-For [day 3](https://adventofcode.com/2018/day/3) I have chosen [c](https://en.wikipedia.org/wiki/C_(programming_language)).  This is a language that I've used longer than any other, but haven't touched for over 3 years, so was a bit rusty.  It was quite enjoyable getting back in the saddle after so long.  For the solution to the puzzle I have made it do just enough to solve the problem and therefore it uses static arrays and isn't very dynamic.
+For [day 3](https://adventofcode.com/2018/day/3) I have chosen [C](https://en.wikipedia.org/wiki/C_(programming_language)).  This is a language that I've used longer than any other, but haven't touched for over 3 years, so was a bit rusty.  It was quite enjoyable getting back in the saddle after so long.  For the solution to the puzzle I have made it do just enough to solve the problem and therefore it uses static arrays and isn't very dynamic.
 
 ```` c
 // Code for Day 3 of Advent of Code: https://adventofcode.com/2018/day/3
@@ -224,7 +225,7 @@ void main(void) {
 
 <a name="day4" /></a>
 ## Day 4: Repose Record - Python
-For [day 4](https://adventofcode.com/2018/day/4) I have chosen [python](https://www.python.org/).  This is one of the most popular programming languages and yet I have never written anything in it before today.  This made it quite interesting as I have heard lots of good things about the language and it was great to give it a go.  Apologies to any Python programmers for my naturally poor style.
+For [day 4](https://adventofcode.com/2018/day/4) I have chosen [Python](https://www.python.org/).  This is one of the most popular programming languages and yet I have never written anything in it before today.  This made it quite interesting as I have heard lots of good things about the language and it was great to give it a go.  Apologies to any Python programmers for my naturally poor style.
 
 ```` python
 # Code for Day 4 of Advent of Code: https://adventofcode.com/2018/day/4
@@ -337,7 +338,7 @@ print("Part2: ", part2(input))
 
 <a name="day5" /></a>
 ## Day 5: Alchemical Reduction - Racket
-For [day 5](https://adventofcode.com/2018/day/5) I have chosen [racket](https://racket-lang.org/).  I haven't written much in racket and what I have was quite a few years ago.  To start with I quite liked using the DrRacket environment and REPL, but after a while I was struggling to get my head into the mindset required for racket.  I managed to do a recursive solution, but it is pretty ugly and slow.
+For [day 5](https://adventofcode.com/2018/day/5) I have chosen [Racket](https://racket-lang.org/).  I haven't written much in racket and what I have was quite a few years ago.  To start with I quite liked using the DrRacket environment and REPL, but after a while I was struggling to get my head into the mindset required for racket.  I managed to do a recursive solution, but it is pretty ugly and slow.
 
 ```` scheme
 #lang racket/base
@@ -560,7 +561,7 @@ I have decided to go [retro](/articles/tag/retro/) for [day 6](https://adventofc
 
 <a name="day7" /></a>
 ## Day 7: The Sum of Its Parts - Pascal
-For [day 7](https://adventofcode.com/2018/day/7) I have chosen [pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)).  I haven't written anything in pascal for over five years and prior to that I hadn't written anything in pascal for about 17 years.  So I was more than a little rusty.  The code isn't very elegant but I just wanted to come up with a solution in the language.  I used the [free pascal](https://www.freepascal.org/) compiler to compile the code.
+For [day 7](https://adventofcode.com/2018/day/7) I have chosen [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)).  I haven't written anything in pascal for over five years and prior to that I hadn't written anything in pascal for about 17 years.  So I was more than a little rusty.  The code isn't very elegant but I just wanted to come up with a solution in the language.  I used the [free pascal](https://www.freepascal.org/) compiler to compile the code.
 
 ```` pascal
 // Code for Day 7 of Advent of Code: https://adventofcode.com/2018/day/7
@@ -783,7 +784,7 @@ end.
 
 <a name="day8" /></a>
 ## Day 8: Memory Maneuver - F#
-For [day 8](https://adventofcode.com/2018/day/8) I have chosen [f#](https://fsharp.org/).  I've written very little in F#, but when I have I've really liked the language.  It was great to play with it again and I found today's problem a good fit for a functional style solution.
+For [day 8](https://adventofcode.com/2018/day/8) I have chosen [F#](https://fsharp.org/).  I've written very little in F#, but when I have I've really liked the language.  It was great to play with it again and I found today's problem a good fit for a functional style solution.
 
 ```` fsharp
 // Code for Day 8 of Advent of Code: https://adventofcode.com/2018/day/8
@@ -855,4 +856,133 @@ let ReadInput filename : array<Int32> =
 let Input = ReadInput("day8.input")
 printfn "Part1: %d" (Part1 Input)
 printfn "Part2: %A" (Part2 Input)
+````
+
+<a name="day9" /></a>
+## Day 9: Marble Mania - Julia
+For [day 9](https://adventofcode.com/2018/day/9) I have chosen [Julia](https://julialang.org/).  I've never written anything in Julia so this was complete new for me.  I found it pretty easy to get a solution written and found this to be a really clear and good looking language.
+
+```` julia
+# Code for Day 9 of Advent of Code: https://adventofcode.com/2018/day/9
+# Julia Solution
+#
+# Copyright (C) 2018 Lawrence Woodman <lwoodman@vlifesystems.com>
+# Licensed under an MIT licence.  Please see LICENCE.md for details.
+
+using Printf
+
+mutable struct Game
+  numPlayers
+  lastMarble
+  current
+  marbles
+  Game(numPlayers, lastMarble) = new(numPlayers, lastMarble, -1, Dict())
+  Game() = new(0, 0, -1, Dict())
+end
+
+mutable struct Marble
+  prev
+  next
+end
+
+function start(g::Game)
+  g.marbles = Dict(0 => Marble(0,0))
+  g.current = 0
+end
+
+function next(g::Game, value)
+  g.marbles[value].next
+end
+
+function prev(g::Game, value)
+  g.marbles[value].prev
+end
+
+function prev7(g::Game)
+  v = g.current
+  for i in 1:7
+    v = prev(g, v)
+  end
+  v
+end
+
+function remove(g::Game, value)
+  prev = g.marbles[value].prev
+  next = g.marbles[value].next
+  g.marbles[prev].next = next
+  g.marbles[next].prev = prev
+  g.current = next
+  delete!(g.marbles, value)
+end
+
+function insert(g::Game, beforeValue, value)
+  before = g.marbles[beforeValue]
+  beforePrev = before.prev
+  g.marbles[value] = Marble(before.prev, beforeValue)
+  g.marbles[beforeValue].prev = value
+  g.marbles[beforePrev].next = value
+  g.current = value
+end
+
+function add(g::Game, value)
+  if value % 23 == 0
+    throw(ArgumentError("can't add multiple of 23"))
+  end
+  next1 = next(g, g.current)
+  next2 = next(g, next1)
+  insert(g, next2, value)
+end
+
+function getInput(filename)
+  game = Game()
+  open(filename) do file
+    for ln in eachline(file)
+      gameWords = split(ln)
+      game = Game(parse(Int32, gameWords[1]), parse(Int32, gameWords[7]))
+      break
+    end
+  end
+  game
+end
+
+function play(g::Game)
+  playerNum = 1
+  start(g)
+  scores = Dict()
+  for m in 1:g.lastMarble
+    if m % 23 == 0
+      removeValue = prev7(g)
+      remove(g, removeValue)
+      playerScore = get(scores, playerNum, 0)
+      scores[playerNum] = playerScore+m+removeValue
+    else
+      add(g, m)
+    end
+    playerNum = playerNum + 1
+    if playerNum >= g.numPlayers
+      playerNum = 0
+    end
+  end
+  highestScore = 0
+  for (p, s) in scores
+    if s > highestScore
+      highestScore = s
+    end
+  end
+  highestScore
+end
+
+
+function part1(game)
+  play(game)
+end
+
+function part2(game)
+  game.lastMarble = game.lastMarble*100
+  play(game)
+end
+
+game = getInput("day9.input")
+@printf "part1: %d\n" part1(game)
+@printf "part2: %d\n" part2(game)
 ````
