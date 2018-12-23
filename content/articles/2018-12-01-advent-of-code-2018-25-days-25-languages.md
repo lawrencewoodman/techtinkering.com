@@ -12,6 +12,7 @@ So far I have solutions for:
 * [Day 7: The Sum of Its Parts - Pascal](#day7)
 * [Day 8: Memory Maneuver - F#](#day8)
 * [Day 9: Marble Mania - Julia](#day9)
+* [Day 10: The Stars Align](#day10)
 
 I am putting my solutions in a [repo](https://github.com/lawrencewoodman/adventofcode) on GitHub.
 
@@ -985,4 +986,177 @@ end
 game = getInput("day9.input")
 @printf "part1: %d\n" part1(game)
 @printf "part2: %d\n" part2(game)
+````
+
+<a name="day10" /></a>
+## Day 10: The Stars Align
+
+For [day 10](https://adventofcode.com/2018/day/10) I have chosen [JavaScript](https://en.wikipedia.org/wiki/JavaScript).  I've never really written anything in JavaScript, other than tinkering with existing code, despite having the Rhino book sitting on a bookshelf behind me.  It was relatively straight-forward to adapt my solution to it and I was impressed with its runtime speed.
+
+
+```` html
+<!--
+  Code for Day 10 of Advent of Code: https://adventofcode.com/2018/day/10
+  JavaScript Solution
+
+  Copyright (C) 2018 Lawrence Woodman <lwoodman@vlifesystems.com>
+  Licensed under an MIT licence.  Please see LICENCE.md for details.
+-->
+<html>
+  <head>
+  <title>Advent of Code 2018 - Day 10</title>
+  <style>
+    #part1-answer {font-family: monospace;}
+  </style>
+  </head>
+  <body>
+    <h1>Advent of Code 2018 - Day 10</h2>
+    <strong>Enter input file</strong></br>
+    <input type="file" id="file-input" />
+    <h2>Part1</h2>
+    <p id="part1-answer"></p>
+
+    <h2>Part2</h2>
+    <p id="part2-answer"></p>
+
+    <script type='text/javascript'>
+
+      function readInputFile(e) {
+        var file = e.target.files[0];
+        if (!file) {
+          return;
+        }
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var input = e.target.result.trim().split("\n");
+          points = getPoints(input);
+          msg = findMessage(points);
+          part1(msg);
+          part2(msg);
+        };
+        reader.readAsText(file);
+      }
+
+      function findBoundaries(points) {
+        minX = points[0].px
+        minY = points[0].py
+        maxX = points[0].px
+        maxY = points[0].py
+        for (i = 0; i < points.length; i++) {
+          if(points[i].px < minX) {minX = points[i].px;}
+          if(points[i].py < minY) {minY = points[i].py;}
+          if(points[i].px > maxX) {maxX = points[i].px;}
+          if(points[i].py > maxY) {maxY = points[i].py;}
+        }
+        return {minX: minX, minY: minY, maxX: maxX, maxY: maxY};
+      }
+
+      function makeMap(boundaries, points) {
+        mapMaxX = 100
+        mapMaxY = 100
+        numVisiblePoints = 0
+        minX = boundaries.minX
+        minY = boundaries.minY
+        width = boundaries.maxX-minX
+        height = boundaries.maxY-minY
+        if (width < mapMaxX) {mapMaxX = width;}
+        if (height < mapMaxY) {mapMaxY = height;}
+        plot = new Array(mapMaxY+1);
+        for (y = 0; y <= mapMaxY; y++) {
+          row = new Array(mapMaxX+1);
+          for (x = 0; x <= mapMaxX; x++) {
+            hasPoint = false
+            for (i = 0; i < points.length; i++) {
+              px = points[i].px; py = points[i].py;
+              if (x == px-Math.abs(minX) && y == py-Math.abs(minY)) {
+                hasPoint = true
+                row[x] = '#';
+                numVisiblePoints++;
+              }
+            }
+            if (!hasPoint) {row[x] = '.';}
+          }
+          plot[y] = row;
+        }
+        return {plot: plot, size: (mapMaxX+1)*(mapMaxY+1),
+                numVisiblePoints: numVisiblePoints};
+      }
+
+      function drawMap(map) {
+        answerElement = document.getElementById('part1-answer');
+        answerElement.innerHTML = "";
+        for (y = 0; y < map.plot.length; y++) {
+          row = map.plot[y];
+          for (x = 0; x < row.length; x++) {
+            answerElement.innerHTML += row[x];
+          }
+          answerElement.innerHTML += "<br />";
+        }
+      }
+
+      function findMessage(points) {
+        answerElement = document.getElementById('part1-answer');
+        smallestMap = {plot: new Array(0), size: 0};
+        secsMessage = 20000;
+        for (sec = 0; sec < 20000; sec++) {
+          if (sec % 1000 == 0) {
+            answerElement.innerHTML = "Finding message: "+sec/200+"%";
+            console.log("Finding message: "+sec/200+"%");
+          }
+          boundaries = findBoundaries(points);
+          if (boundaries.maxX - boundaries.minX < 100 &&
+              boundaries.maxY - boundaries.minY < 100) {
+            map = makeMap(boundaries, points);
+            if (map.numVisiblePoints = points.length) {
+              if (smallestMap.size == 0 ||
+                  map.size < smallestMap.size) {
+                smallestMap = map;
+                secsMessage = sec;
+              }
+            }
+          }
+          points = movePoints(points);
+        }
+        answerElement.innerHTML = "Finding message: 100%";
+        console.log("Finding message: 100%");
+        return {map: smallestMap, secs: secsMessage};
+      }
+
+      function movePoints(points) {
+        newPoints = new Array(points.length);
+        for (i = 0; i < points.length; i++) {
+          px = points[i].px; py = points[i].py;
+          vx = points[i].vx; vy = points[i].vy;
+          newPoints[i] = {px: px+vx, py: py+vy, vx: vx, vy: vy};
+        }
+        return newPoints;
+      }
+
+      function getPoints(input) {
+        points = new Array(input.length)
+        for (i = 0; i < input.length; i++) {
+          pointValues = input[i].match(
+            /^position=<\s*(.*?),\s*(.*?)> velocity=<\s*(.*?),\s*(.*?)>$/
+          );
+          points[i] = {px: parseInt(pointValues[1], 10),
+                       py: parseInt(pointValues[2], 10),
+                       vx: parseInt(pointValues[3], 10),
+                       vy: parseInt(pointValues[4], 10)};
+        }
+        return points;
+      }
+
+      function part1 (msg) {
+        drawMap(msg.map);
+      }
+
+      function part2 (msg) {
+        document.getElementById('part2-answer').innerHTML = msg.secs
+      }
+
+      document.getElementById('file-input')
+        .addEventListener('change', readInputFile, false);
+    </script>
+  </body>
+</html>
 ````
