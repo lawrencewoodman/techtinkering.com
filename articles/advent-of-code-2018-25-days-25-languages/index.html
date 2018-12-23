@@ -198,6 +198,7 @@
 <li><a href="#day7">Day 7: The Sum of Its Parts - Pascal</a></li>
 <li><a href="#day8">Day 8: Memory Maneuver - F#</a></li>
 <li><a href="#day9">Day 9: Marble Mania - Julia</a></li>
+<li><a href="#day10">Day 10: The Stars Align</a></li>
 </ul>
 <p>I am putting my solutions in a <a href="https://github.com/lawrencewoodman/adventofcode">repo</a> on GitHub.</p>
 <p><a name="day1" /></a></p>
@@ -1138,6 +1139,174 @@ end
 game = getInput(&quot;day9.input&quot;)
 @printf &quot;part1: %d\n&quot; part1(game)
 @printf &quot;part2: %d\n&quot; part2(game)
+</code></pre>
+<p><a name="day10" /></a></p>
+<h2>Day 10: The Stars Align</h2>
+<p>For <a href="https://adventofcode.com/2018/day/10">day 10</a> I have chosen <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>.  I've never really written anything in JavaScript, other than tinkering with existing code, despite having the Rhino book sitting on a bookshelf behind me.  It was relatively straight-forward to adapt my solution to it and I was impressed with its runtime speed.</p>
+<pre><code class="language-html">&lt;!--
+  Code for Day 10 of Advent of Code: https://adventofcode.com/2018/day/10
+  JavaScript Solution
+
+  Copyright (C) 2018 Lawrence Woodman &lt;lwoodman@vlifesystems.com&gt;
+  Licensed under an MIT licence.  Please see LICENCE.md for details.
+--&gt;
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;title&gt;Advent of Code 2018 - Day 10&lt;/title&gt;
+  &lt;style&gt;
+    #part1-answer {font-family: monospace;}
+  &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Advent of Code 2018 - Day 10&lt;/h2&gt;
+    &lt;strong&gt;Enter input file&lt;/strong&gt;&lt;/br&gt;
+    &lt;input type=&quot;file&quot; id=&quot;file-input&quot; /&gt;
+    &lt;h2&gt;Part1&lt;/h2&gt;
+    &lt;p id=&quot;part1-answer&quot;&gt;&lt;/p&gt;
+
+    &lt;h2&gt;Part2&lt;/h2&gt;
+    &lt;p id=&quot;part2-answer&quot;&gt;&lt;/p&gt;
+
+    &lt;script type='text/javascript'&gt;
+
+      function readInputFile(e) {
+        var file = e.target.files[0];
+        if (!file) {
+          return;
+        }
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var input = e.target.result.trim().split(&quot;\n&quot;);
+          points = getPoints(input);
+          msg = findMessage(points);
+          part1(msg);
+          part2(msg);
+        };
+        reader.readAsText(file);
+      }
+
+      function findBoundaries(points) {
+        minX = points[0].px
+        minY = points[0].py
+        maxX = points[0].px
+        maxY = points[0].py
+        for (i = 0; i &lt; points.length; i++) {
+          if(points[i].px &lt; minX) {minX = points[i].px;}
+          if(points[i].py &lt; minY) {minY = points[i].py;}
+          if(points[i].px &gt; maxX) {maxX = points[i].px;}
+          if(points[i].py &gt; maxY) {maxY = points[i].py;}
+        }
+        return {minX: minX, minY: minY, maxX: maxX, maxY: maxY};
+      }
+
+      function makeMap(boundaries, points) {
+        mapMaxX = 100
+        mapMaxY = 100
+        numVisiblePoints = 0
+        minX = boundaries.minX
+        minY = boundaries.minY
+        width = boundaries.maxX-minX
+        height = boundaries.maxY-minY
+        if (width &lt; mapMaxX) {mapMaxX = width;}
+        if (height &lt; mapMaxY) {mapMaxY = height;}
+        plot = new Array(mapMaxY+1);
+        for (y = 0; y &lt;= mapMaxY; y++) {
+          row = new Array(mapMaxX+1);
+          for (x = 0; x &lt;= mapMaxX; x++) {
+            hasPoint = false
+            for (i = 0; i &lt; points.length; i++) {
+              px = points[i].px; py = points[i].py;
+              if (x == px-Math.abs(minX) &amp;&amp; y == py-Math.abs(minY)) {
+                hasPoint = true
+                row[x] = '#';
+                numVisiblePoints++;
+              }
+            }
+            if (!hasPoint) {row[x] = '.';}
+          }
+          plot[y] = row;
+        }
+        return {plot: plot, size: (mapMaxX+1)*(mapMaxY+1),
+                numVisiblePoints: numVisiblePoints};
+      }
+
+      function drawMap(map) {
+        answerElement = document.getElementById('part1-answer');
+        answerElement.innerHTML = &quot;&quot;;
+        for (y = 0; y &lt; map.plot.length; y++) {
+          row = map.plot[y];
+          for (x = 0; x &lt; row.length; x++) {
+            answerElement.innerHTML += row[x];
+          }
+          answerElement.innerHTML += &quot;&lt;br /&gt;&quot;;
+        }
+      }
+
+      function findMessage(points) {
+        answerElement = document.getElementById('part1-answer');
+        smallestMap = {plot: new Array(0), size: 0};
+        secsMessage = 20000;
+        for (sec = 0; sec &lt; 20000; sec++) {
+          if (sec % 1000 == 0) {
+            answerElement.innerHTML = &quot;Finding message: &quot;+sec/200+&quot;%&quot;;
+            console.log(&quot;Finding message: &quot;+sec/200+&quot;%&quot;);
+          }
+          boundaries = findBoundaries(points);
+          if (boundaries.maxX - boundaries.minX &lt; 100 &amp;&amp;
+              boundaries.maxY - boundaries.minY &lt; 100) {
+            map = makeMap(boundaries, points);
+            if (map.numVisiblePoints = points.length) {
+              if (smallestMap.size == 0 ||
+                  map.size &lt; smallestMap.size) {
+                smallestMap = map;
+                secsMessage = sec;
+              }
+            }
+          }
+          points = movePoints(points);
+        }
+        answerElement.innerHTML = &quot;Finding message: 100%&quot;;
+        console.log(&quot;Finding message: 100%&quot;);
+        return {map: smallestMap, secs: secsMessage};
+      }
+
+      function movePoints(points) {
+        newPoints = new Array(points.length);
+        for (i = 0; i &lt; points.length; i++) {
+          px = points[i].px; py = points[i].py;
+          vx = points[i].vx; vy = points[i].vy;
+          newPoints[i] = {px: px+vx, py: py+vy, vx: vx, vy: vy};
+        }
+        return newPoints;
+      }
+
+      function getPoints(input) {
+        points = new Array(input.length)
+        for (i = 0; i &lt; input.length; i++) {
+          pointValues = input[i].match(
+            /^position=&lt;\s*(.*?),\s*(.*?)&gt; velocity=&lt;\s*(.*?),\s*(.*?)&gt;$/
+          );
+          points[i] = {px: parseInt(pointValues[1], 10),
+                       py: parseInt(pointValues[2], 10),
+                       vx: parseInt(pointValues[3], 10),
+                       vy: parseInt(pointValues[4], 10)};
+        }
+        return points;
+      }
+
+      function part1 (msg) {
+        drawMap(msg.map);
+      }
+
+      function part2 (msg) {
+        document.getElementById('part2-answer').innerHTML = msg.secs
+      }
+
+      document.getElementById('file-input')
+        .addEventListener('change', readInputFile, false);
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
       </div>
     </article>
