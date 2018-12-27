@@ -2,7 +2,7 @@ body {
   color: #EEE;
   font-family: Arial, Tahoma, Verdana, sans-serif;
   line-height: 1.5;
-  background: #232323;
+  background: #171528;
   height: 100%;
   font-size: 14pt;
 }
@@ -13,8 +13,12 @@ body {
   border-bottom: #444 solid 3px;
 }
 
+.navbar > .container {
+  background-color: #282828;
+}
+
 .navbar {
-  background: #232323;
+  background: #171528;
 }
 
 .navbar-default {
@@ -46,26 +50,6 @@ li { line-height: 1.5; }
 hr {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #eee;
-}
-
-pre {
-  color: black;
-  display: block;
-  padding: 9.5px;
-  margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 20px;
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-  white-space: pre-wrap;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0,0,0,0.15);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  margin-right: 1em;
 }
 
 footer .container {
