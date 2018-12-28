@@ -1270,44 +1270,62 @@ where:
   find-largest-square(make-grid(42,300), 3) is [list: 21,61]
 end
 
+fun find-cell-highest-power-square(grid, x, y):
+  square-sizes = range(2, grid.length())
+  square-power = calc-square-power(grid, 1, x, y)
+  best = fold(
+    lam(acc, size):
+      previous-square-power = acc.get(0)
+      if (x + size) <= grid.length():
+        if  (y + size) <= grid.length():
+          next-square-power = calc-next-square-power(
+            grid, size, x, y, previous-square-power)
+          max-total-power = acc.get(1)
+          if next-square-power > max-total-power:
+            [list: next-square-power, next-square-power, size]
+          else:
+            acc.set(0, next-square-power)
+          end
+        else:
+          acc
+        end
+      else:
+        acc
+      end
+    end,
+    [list: square-power, square-power, 1],
+    square-sizes)
+    [list: best.get(1), best.get(2)]
+where:
+  grid = make-grid(18,4)
+  find-cell-highest-power-square(grid, 0, 0) is [list: -4, 1]
+  find-cell-highest-power-square(grid, 1, 2) is [list: 9, 3]
+  find-cell-highest-power-square(grid, 2, 2) is [list: 8, 3]
+end
+
 fun find-any-largest-square(grid):
   row-positions = range(1, grid.length())
   col-positions = range(1, grid.length())
-  square-sizes = range(2, grid.length())
   best = fold(
     lam(acc-y, y):
       fold(
         lam(acc-x, x):
-          square-power = calc-square-power(grid, 1, x, y)
-          fold(
-            lam(acc-size, size):
-              previous-square-power = acc-size.get(0)
-              if (x + size) <= grid.length():
-                if  (y + size) <= grid.length():
-                  next-square-power = calc-next-square-power(
-                    grid, size, x, y, previous-square-power)
-                  max-total-power = acc-size.get(1)
-                  if next-square-power > max-total-power:
-                    [list: next-square-power, next-square-power, x, y, size]
-                  else:
-                    acc-size.set(0, next-square-power)
-                  end
-                else:
-                  acc-size
-                end
-              else:
-                acc-size
-              end
-            end,
-            acc-x.set(0, square-power),
-            square-sizes)
+          best = find-cell-highest-power-square(grid, x, y)
+          max-power = acc-x.get(0)
+          cell-max-power = best.get(0)
+          if cell-max-power > max-power:
+            size = best.get(1)
+            [list: cell-max-power, x, y, size]
+          else:
+            acc-x
+          end
         end,
         acc-y,
         col-positions)
     end,
-    [list: -1,-1, 0, 0, 1],
+    [list: -1, 0, 0, 1],
     row-positions)
-  [list: best.get(2), best.get(3), best.get(4)]
+  [list: best.get(1), best.get(2), best.get(3)]
 where:
   find-any-largest-square(make-grid(18,4)) is [list: 1,2,3]
 end
