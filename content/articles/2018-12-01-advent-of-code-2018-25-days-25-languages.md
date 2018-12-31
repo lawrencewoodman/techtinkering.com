@@ -1357,3 +1357,8 @@ SERIAL-NUMBER = 7857
 print(string-append("part1: ", part1(SERIAL-NUMBER)))
 print(string-append("part2: ", part2(SERIAL-NUMBER, GRID-SIZE)))
 ````
+
+## New Year's Eve Conclusion
+It's new years eve and I've decided to call time on this challenge.  It was fun to work through them and try some new languages or revisit old ones, but it got quite tiring finding the time to write two solutions for each language (Tcl plus another).  The main problem was the time to learn the little idiosyncrasies of languages I was unfamiliar with.  That said I loved being able to create a solution using the Commodore 128's Basic 7.0.  As far as new languages Julia turned out to be a quick and beautiful looking language, while Pyret had a nice simple functional style with tests easily integrated with the function definitions.
+
+For anyone interested in doing the Advent of Code challenges, they stay open on the website so you might like to give them a go in preperation for next year's.
