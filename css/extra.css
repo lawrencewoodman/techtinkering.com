@@ -14,15 +14,6 @@ a.btn:visited {
   background-color: #00C100;
 }
 
-.navbar-right > .navbar-right {
-  margin-right: -15px;
-}
-
-.navbar-default .navbar-brand {
-  font-size: 18pt;
-  font-family: monospace;
-}
-
 ul.contact-buttons{
   list-style: none;
   margin-top: 5px;
