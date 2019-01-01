@@ -169,7 +169,6 @@ proc posts::ProcessPostsDesc {
     dict set file tags [lsort [dict get $file tags]]
     dict set file url  [MakeURL $postURLStyle $file]
     dict set file date [posts::makeDate $file]
-    dict set file menuOption article
     set content [
       ornament -params $file -directory $srcDir -file [dict get $file filename]
     ]
