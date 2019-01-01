@@ -28,9 +28,21 @@ body {
 .navbar-default .navbar-brand {
   color: #00C100;
   font-family: monospace;
-  font-size: 200%;
+  font-size: 18pt;
   font-weight: 700;
 }
+
+.navbar-right > .navbar-right {
+  margin-right: -15px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #00C100;
+}
+.navbar-default .navbar-nav>li>a:hover {
+  color: #777;
+}
+
 
 img.bannerIcon {
   float: right;
