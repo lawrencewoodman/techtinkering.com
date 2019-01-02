@@ -1,3 +1,12 @@
+{ filename    2019-01-02-introducing-ornament-a-tcl-template-module.md
+  title       "Introducing Ornament a Tcl Template Module"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Tcl" "Ornament"}
+}
+
 { filename    2018-12-01-advent-of-code-2018-25-days-25-languages.md
   title       "Advent of Code 2018: 25 Days, 25 Languages"
   author      {
