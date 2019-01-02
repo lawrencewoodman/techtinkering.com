@@ -4,6 +4,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
+  socialImg   "stpetersburg_isaac_kathedrahle.jpg"
   tags        {"Tcl" "Ornament"}
 }
 
