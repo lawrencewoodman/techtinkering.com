@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-01-01</updated>
+  <updated>2019-01-02</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Introducing Ornament a Tcl Template Module</title>
+      <id>http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/</id>
+      <link href="http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-01-02
+        </published>
+
+        <updated>
+          2019-01-02
+        </updated>
+
+        <summary>Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  The idea came from the Templates and subst</summary>
+    </entry>
     <entry>
       <title>Advent of Code 2018: 25 Days, 25 Languages</title>
       <id>http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/</id>

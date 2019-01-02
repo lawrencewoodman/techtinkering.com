@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Introducing Ornament a Tcl Template Module</title>
+  <meta name="description" content="Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  Th">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Introducing Ornament a Tcl Template Module">
+  <meta name="twitter:description" content="Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  Th">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Introducing Ornament a Tcl Template Module">
+  <meta property="og:description" content="Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  Th">
+  <meta property="og:url" content="http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">TechTinkering</a>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On Github ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" alt="Techtinkering Repo on  Github"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <a href="/articles/introducing-ornament-a-tcl-template-module/" title="Introducing Ornament a Tcl Template Module">
+          <h1 itemprop="headline name">Introducing Ornament a Tcl Template Module</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
+        </div>
+          <time itemprop="datePublished"
+                datetime="2019-01-02">
+             2 January 2019
+          </time>
+          &nbsp; / &nbsp;
+        <span itemscope itemprop="publisher"
+              itemtype="http://schema.org/Organization">
+          <meta itemprop="name" content="TechTinkering" />
+          <meta itemprop="url" content="http://techtinkering.com" />
+        </span>
+        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+          <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+            <span itemprop="name">Lawrence Woodman</span>
+          </a>
+        </span>
+        &nbsp; / &nbsp;
+          <a href="/articles/tag/ornament/">Ornament</a>
+          &nbsp; &nbsp;
+          <a href="/articles/tag/tcl/">Tcl</a>
+          &nbsp; &nbsp;
+      </header>
+      <br />
+      <div itemprop="articleBody">
+        <p>Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  The idea came from the <a href="https://wiki.tcl.tk/18455">Templates and subst</a> page of the <a href="https://wiki.tcl.tk">Tclers Wiki</a>.</p>
+<h2>Module Commands</h2>
+<p>Ornament has two commands:</p>
+<dl>
+  <dt><code>compile</code></dt>
+  <dd>Takes a template and outputs a script to be evaluated with <code>run</code></dd>
+  <dt><code>run</code></dt>
+  <dd>Takes a script created with <code>compile</code> and evaluates it using a safe interpreter to create its final output.</dd>
+</dl>
+<h2>Usage</h2>
+<p>You control <em>ornament</em> using a <code>commandChar</code> in the first column of a line, this defaults to <code>!</code>.  If you want to change the <code>commandChar</code> you can do so using the <code>commandChar</code> followed by <code>*</code>.</p>
+<pre><code class="language-tcl">!# This is a command
+!* commandChar %
+%# commandChar is now %, so we have to use %# as a comment
+%* commandChar !
+!# Now we are back to where we started
+</code></pre>
+<br />
+<p>The following Tcl script demonstrates how to use <em>ornament</em>.</p>
+<pre><code class="language-tcl">package require ornament
+namespace import ornament::*
+
+# This is the template
+set tpl {
+!# You can configure ornament the defaults are:
+!#    commandChar     !
+!#    commandSubst    false
+!#    variableSubst   false
+!#    backslashSubst  false
+!* commandSubst true variableSubst true backslashSubst true
+!#
+This is some normal text
+!# This is a comment and is ignored by `compile`
+!# The following line will be executed as it begins with a `!` followed by a space
+! for {set i 0} {$i &lt; 5} {incr i} {
+    Number: $i
+! }
+
+!# You can also use `!!` followed by a space instead of a `!`
+!! set flow 152
+flow: $flow
+
+!# You can use `\` at the end of a line beginning with `!` or `!!` to
+!# continue it
+! set nums [list 1 2 \
+                 3 4]
+nums: $nums
+
+!# Alternatively you can continue a line using `!\` at the start
+!\ set letters [list a b
+!                    c d]
+letters: $letters
+
+ ! Because the ! wasn't in the first column of the line, this line isn't executed
+!# Below some variables are used that have been passed to the template:
+Name: $name
+Age: $age
+!# Below a command is called that has been passed to the template:
+I want to say: [greet $name]
+
+!# You can change the command character to anyone of {! % @ ~}
+!* commandChar %
+% set nextAge [expr {$age + 2}]
+nextAge: $nextAge
+%* commandChar !
+
+!# You can change whether variable substitution happens
+!* variableSubst false
+look at this: $nextAge
+!* variableSubst true
+and now: $nextAge
+
+!# You can change whether command substitution happens
+!* commandSubst false
+look at this: [expr {5 + 6}]
+!* commandSubst true
+and now: [expr {5 + 6}]
+
+!# You can change whether backslash substitution happens
+!* backslashSubst false
+look at this:\n
+!* backslashSubst true
+and now:\n
+}
+
+
+# int is the safe interpreter that is running the script
+proc CmdGreet {greeting int name} {
+  return &quot;$greeting $name&quot;
+}
+
+# You can pass commands to the template
+set cmds [dict create greet [list CmdGreet &quot;hello&quot;]]
+
+# You can pass variables to the template
+set vars [dict create name Brodie age 37]
+
+set script [compile $tpl]
+puts [run $script $cmds $vars]
+</code></pre>
+<br />
+<p>The script above gives the following output.</p>
+<pre><code>This is some normal text
+    Number: 0
+    Number: 1
+    Number: 2
+    Number: 3
+    Number: 4
+
+flow: 152
+
+nums: 1 2 3 4
+
+letters: a b c d
+
+ ! Because the ! wasn't in the first column of the line, this line isn't executed
+Name: Brodie
+Age: 37
+I want to say: hello Brodie
+
+nextAge: 39
+
+look at this: $nextAge
+and now: 39
+
+look at this: [expr {5 + 6}]
+and now: 11
+
+look at this:\n
+and now:
+</code></pre>
+<h2>Ornament on GitHub</h2>
+<p>There is a <a href="https://github.com/lawrencewoodman/ornament_tcl">repo</a> on GitHub, from which you can download Ornament and where you can contribute to it.  There is also an <a href="https://github.com/lawrencewoodman/ornament_tcl/issues">issues tracker</a> where you can report bugs.</p>
+<h2>Licence</h2>
+<p>Copyright (C) 2018 Lawrence Woodman <a href="mailto:lwoodman@vlifesystems.com">lwoodman@vlifesystems.com</a></p>
+<p>This software is licensed under an MIT Licence.  Please see the file, <a href="https://github.com/lawrencewoodman/ornament_tcl/blob/master/LICENCE.md">LICENCE.md</a>, for details.</p>
+      </div>
+    </article>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introducing Ornament a Tcl Template Module</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+      <header>
+  <h3><a href="/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/">xdgbasedir: A Tcl Module to Access the XDG Base Directory Specification</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-02-27">
+        27 February 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tcl/">Tcl</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Unix has traditionally lacked a consistent way of storing user specific and system wide configuration and support files.  This has lead to a mess of dot files in a user's home directory and other assoc...
+  &nbsp;
+  <a class="readMore" href="/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2013/02/20/compiling-a-tcl-script-into-an-executable/">Compiling a Tcl Script into an Executable</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-02-20">
+        20 February 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/c/">C</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tcl/">Tcl</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Locating Tcl scripts to load from an executable can be awkward if you want to make your program cross-platform.  An easier way is to compile a Tcl script directly into the executable and let that scrip...
+  &nbsp;
+  <a class="readMore" href="/2013/02/20/compiling-a-tcl-script-into-an-executable/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/">Embedding an SDL Surface in a Tk Window</a></h3>
+  <span class="post-meta">
+      <time datetime="2012-06-26">
+        26 June 2012
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/sdl/">SDL</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tcl/">Tcl</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tk/">Tk</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Tk is great, but sometimes it just isn't fast enough.  SDL is fast, but has no support for input dialogs and other GUI conventions.  By embedding an SDL surface in a Tk window you get the best of both ...
+  &nbsp;
+  <a class="readMore" href="/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/">Read More</a>
+</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'techtinkering';
+      var disqus_identifier = '/articles/introducing-ornament-a-tcl-template-module/';
+      var disqus_url = 'http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="https://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
+    </div>
+
+    <footer>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
