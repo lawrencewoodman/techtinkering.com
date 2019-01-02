@@ -1,6 +1,11 @@
 !* commandChar @
 Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.  The idea came from the [Templates and subst](https://wiki.tcl.tk/18455) page of the [Tclers Wiki](https://wiki.tcl.tk).
 
+
+## Ornament on GitHub
+Ornament is licensed under an MIT licence and there is a [repo](https://github.com/lawrencewoodman/ornament_tcl) on GitHub, from which you can download Ornament and where you can contribute to it.  There is also an [issues tracker](https://github.com/lawrencewoodman/ornament_tcl/issues) where you can report bugs.
+
+
 ## Module Commands
 Ornament has two commands:
 
@@ -141,14 +146,3 @@ The script above gives the following output.
 
     look at this:\n
     and now:
-
-
-
-## Ornament on GitHub
-There is a [repo](https://github.com/lawrencewoodman/ornament_tcl) on GitHub, from which you can download Ornament and where you can contribute to it.  There is also an [issues tracker](https://github.com/lawrencewoodman/ornament_tcl/issues) where you can report bugs.
-
-
-## Licence
-Copyright (C) 2018 Lawrence Woodman <lwoodman@vlifesystems.com>
-
-This software is licensed under an MIT Licence.  Please see the file, [LICENCE.md](https://github.com/lawrencewoodman/ornament_tcl/blob/master/LICENCE.md), for details.
