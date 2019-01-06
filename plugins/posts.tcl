@@ -77,7 +77,8 @@ proc posts::tagToDirName {tag} {
 }
 
 
-proc posts::GenerateTagPages {tagLayout files url {tags {}}} {
+proc posts::GenerateTagPages {srcDir tagLayout files url {tags {}}} {
+  set tagDetails [read -directory $srcDir tags.details]
   foreach tag $tags {
     set tagFiles [list]
     foreach file $files {
@@ -97,6 +98,12 @@ proc posts::GenerateTagPages {tagLayout files url {tags {}}} {
       url [www::url $url tag $tagDirName index.html] \
       title "Articles tagged with: $tag" \
     ]
+    if {[dict exists $tagDetails $tagDirName]} {
+      set summary [dict get $tagDetails $tagDirName summary]
+      set summaryHTML [markdown $summary]
+      dict set params summaryHTML $summaryHTML
+      dict set params summary [strip_html $summaryHTML]
+    }
     write $destination [layout::render $tagLayout $params]
   }
 }
@@ -160,7 +167,7 @@ proc posts::ProcessPostsDesc {
   postURLStyle
 } {
   # TODO: sort in date order
-  set files [read -directory $srcDir details.list]
+  set files [read -directory $srcDir posts.details]
 
   set files [lmap file $files {
     dict set file destination [
@@ -186,7 +193,7 @@ proc posts::ProcessPostsDesc {
   }]
   set tags [CollectTags "$collectionPrefixName-tags" $files]
   # TODO: Must make articles dynamic like postURLStyle
-  GenerateTagPages $tagLayout $files articles $tags
+  GenerateTagPages $srcDir $tagLayout $files articles $tags
 }
 
 
