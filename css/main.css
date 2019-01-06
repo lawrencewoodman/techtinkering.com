@@ -132,6 +132,9 @@ h1,h2,h3,h4 {
   font-family: monospace;
 }
 
+#btn-view-all {
+  margin-left: 1em;
+}
 
 /* ---- Home ---- */
 ul.headlinePosts h3 { margin-top: 0; }
