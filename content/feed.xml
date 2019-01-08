@@ -2,14 +2,14 @@
 ! source -directory [dir plugins] www.tcl
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>[www::var title]</title>
-! if {[www::var -noerror subtitle] ne ""} {
+! if {[www::var -default "" subtitle] ne ""} {
   <subtitle>[www::var subtitle]</subtitle>
 ! }
   <link href="[www::url -full "/feed.xml"]" rel="self"/>
   <link href="[www::var url]"/>
   <updated>[clock format [clock seconds] -format {%Y-%m-%d}]</updated>
   <id>[www::url -full "/feed.xml"]</id>
-! if {[www::var -noerror author] ne ""} {
+! if {[www::var -default "" author] ne ""} {
     <author>
       <name>[www::var author name]</name>
       <email>[www::var author email]</email>

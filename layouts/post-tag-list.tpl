@@ -11,7 +11,7 @@
   <div class="col-md-12">
     <a id="btn-view-all" class="pull-right btn btn-success btn-lg" href="/articles/">View All</a>
     <div id="indexHeader">[getparam tag]</div>
-    [getparam -noerror summaryHTML]
+    [getparam -default "" summaryHTML]
     <hr />
   </div>
 </div>

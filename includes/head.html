@@ -15,12 +15,12 @@
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-! if {[getparam -noerror author twitter] != ""} {
+! if {[getparam -default "" author twitter] != ""} {
     <meta name="twitter:creator" content="[getparam author twitter]">
 ! }
   <meta name="twitter:title" content="$title">
   <meta name="twitter:description" content="$desc">
-! if {[getparam -noerror socialImg] != ""} {
+! if {[getparam -default "" socialImg] != ""} {
     <meta name="twitter:image"
          content="[www::url -full "/img/social_images/[getparam socialImg]"]">
 ! }
@@ -31,7 +31,7 @@
   <meta property="og:title" content="$title">
   <meta property="og:description" content="$desc">
   <meta property="og:url" content="[www::url -canonical [getparam url]]">
-! if {[getparam -noerror socialImg] != ""} {
+! if {[getparam -default "" socialImg] != ""} {
     <meta property="og:image"
          content="[www::url -full "/img/social_images/[getparam socialImg]"]">
 ! }

@@ -49,19 +49,18 @@ proc www::urlToPath {url} {
 }
 
 proc www::var {args} {
-  array set options {noerror 0 default {}}
+  array set options {}
   while {[llength $args]} {
     switch -glob -- [lindex $args 0] {
-      -noerror {set options(noerror) 1 ; set args [lrange $args 1 end]}
       -default {set args [lassign $args - options(default)]}
       --      {set args [lrange $args 1 end] ; break}
       -*      {error "var: unknown option [lindex $args 0]"}
       default break
     }
   }
-  set getCmd [list getvar -default $options(default)]
-  if {$options(noerror)} {
-    lappend getCmd -noerror
+  set getCmd getvar
+  if {[info exists options(default)]} {
+    lappend getCmd -default $options(default)
   }
   {*}$getCmd plugins www {*}$args
 }
