@@ -1,0 +1,3 @@
+ornament {
+  summary {Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.}
+}
