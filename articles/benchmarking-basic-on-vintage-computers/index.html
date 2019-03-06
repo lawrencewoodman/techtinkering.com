@@ -5,25 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Dealing Sympathetically with Legacy Code</title>
-  <meta name="description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
+  <title>Benchmarking Basic on Vintage Computers</title>
+  <meta name="description" content="There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Dealing Sympathetically with Legacy Code">
-  <meta name="twitter:description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
+  <meta name="twitter:title" content="Benchmarking Basic on Vintage Computers">
+  <meta name="twitter:description" content="There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/basic_benchmark_results.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dealing Sympathetically with Legacy Code">
-  <meta property="og:description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
-  <meta property="og:url" content="http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/">
+  <meta property="og:title" content="Benchmarking Basic on Vintage Computers">
+  <meta property="og:description" content="There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark">
+  <meta property="og:url" content="http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/basic_benchmark_results.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -42,7 +43,7 @@ worryi">
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/">
+  <link rel="canonical" href="http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -148,8 +149,8 @@ worryi">
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2012/04/20/dealing-sympathetically-with-legacy-code/" title="Dealing Sympathetically with Legacy Code">
-          <h1 itemprop="headline name">Dealing Sympathetically with Legacy Code</h1>
+        <a href="/articles/benchmarking-basic-on-vintage-computers/" title="Benchmarking Basic on Vintage Computers">
+          <h1 itemprop="headline name">Benchmarking Basic on Vintage Computers</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -160,8 +161,8 @@ worryi">
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2012-04-20">
-            20 April 2012
+                datetime="2019-03-06">
+             6 March 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -175,8 +176,6 @@ worryi">
           </a>
         </span>
         &nbsp; / &nbsp;
-          <a href="/articles/tag/legacycode/">Legacy Code</a>
-          &nbsp; &nbsp;
           <a href="/articles/tag/programming/">Programming</a>
           &nbsp; &nbsp;
           <a href="/articles/tag/retro/">Retro</a>
@@ -184,25 +183,354 @@ worryi">
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worrying about making changes for fear of unexpected side-effects.  However, it is important to see the code for what it is and in the context of when it was written.  Coding styles change, programmers change.  What a programmer did then, they may not do today.  Once this is accepted, I find the code base is accepted.</p>
-<h2>What is legacy code?</h2>
-<p>I define legacy code as code that is no longer maintained, or that is frightening to work on because it not fully understood.  Typically this code has no tests and is hard to test because it hasn't been written to be tested.</p>
-<h2>Preparing the environment</h2>
-<p>Before you can work effectively with the code, you need to ensure the environment is conducive.  This can be a big hurdle if the build tools or environments  themselves are outdated or poorly understood.  I have repeatedly come across poor build automation so that builds took longer and were more complicated than should have been the case.  Improving this can make a huge difference to the speed with which you can make a change and test it.</p>
-<h2>Exploring the code base</h2>
-<p>To make changes to the code you need to take the time to explore and properly understand it.  Do this by adding temporary comments, refactoring, adding tests and using your revision control software to create branches where you can take the code apart and test your understanding.</p>
-<h2>Making style changes</h2>
-<p>Coding styles do change and every programmer has their own preference.  Don't be too critical of coding styles that were typical when the code was written and don't judge the code by today's standards.  Try to fit in with the coding style of a file.  A mixture of styles in a file can be very confusing and makes it much harder to work with.  If you feel that you can't adapt to the style, then change it throughout the file or start the new style in a separate file.  When you do make style changes, try to put them in a separate commit, so functional changes and style changes are distinct.  This helps future maintainers of the code.</p>
-<p>Elements of coding styles that you may want to consider seriously before changing include:  tabs vs spaces, camel caps vs snake case, K&amp;R declarations vs prototypes, procedural vs object-orientated paradigm.</p>
-<h1>Comments lie</h1>
-<p>Comments can be useful to explain complex code or dependencies.  However, they are often out of step with the code and therefore can confuse.  Think seriously before putting comments in code.  I often use them as I am exploring code to understand it.  Once I have gained the understanding that I was looking for, I will refactor the code and remove virtually all the comments.  Less is more as far as comments go.</p>
-<h2>Refactoring</h2>
-<p>Rather than using comments to explain code, I would much rather refactor the code so that the variables and functions make it clear what is happening.  Functions can be tested and maintained more easily and if your understanding of the code changes, you are more likely to change the functions to suit, this may not be the case with comments.  For more on this take a look at: <a href="/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments">Refactoring: Arm Yourself in the War Against Useless Comments</a>.</p>
-<h2>Testing</h2>
-<p>Adding tests to code can be the most useful change that you make.  It will often feel difficult if the code wasn't designed to be tested, but will reap rewards in terms of understanding and confidence in the code.  Think of good tests as a gift to yourself and those that maintain the code after you.</p>
-<h2>Remember the next guy</h2>
-<p>Any changes that you make should improve the maintainability of the code not add to the technical debt.  You may not be the last person to work on this code, so please remember the next guy.</p>
+        <p>There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark tests 7 aspects and is inspired by qsbb, which is included with the <a href="http://web.inter.nl.net/hcc/A.Jaw.Venema/">qlay</a> Sinclair QL emulator.  The Basic source code for all the machines tested is available in the <a href="https://github.com/lawrencewoodman/vintage_basic_benchmark">GitHub repo</a>.  I chose Basic because it was available on all the machines I wanted to test and because the versions I created for each machine would require few changes.</p>
+<p>Benchmarks are only ever a test of what you are benchmarking and there are often other tasks that the machines would do much better at.  In this case because all the benchmarks are written in Basic they are a test of both the hardware and the Basic implementation.</p>
+<h2>Results</h2>
+<p>The results are listed below and for each the higher the number the faster they are.</p>
+<table class="neatTable">
+  <tr>
+    <th>Machine</th>
+    <th>Basic</th>
+    <th>Printing</th>
+    <th>Functions</th>
+    <th>Strings</th>
+    <th>For Loops</th>
+    <th>Gosubs</th>
+    <th>Arrays</th>
+    <th>Maths</th>
+    <th>Average</th>
+  </tr>
+  <tr>
+    <td>Atari ST</td>
+    <td>ST Basic</td>
+    <td>243</td>
+    <td>177</td>
+    <td>96</td>
+    <td>53</td>
+    <td>363</td>
+    <td>269</td>
+    <td>119</td>
+    <td>189</td>
+  </tr>
+  <tr>
+    <td>Amstrad CPC6128</td>
+    <td>Locomotive Basic</td>
+    <td>143</td>
+    <td>29</td>
+    <td>164</td>
+    <td>39</td>
+    <td>384</td>
+    <td>193</td>
+    <td>53</td>
+    <td>144</td>
+  </tr>
+  <tr>
+    <td>Amstrad PCW 9256</td>
+    <td>Mallard Basic</td>
+    <td>251</td>
+    <td>26</td>
+    <td>140</td>
+    <td>43</td>
+    <td>314</td>
+    <td>173</td>
+    <td>53</td>
+    <td>143</td>
+  </tr>
+  <tr>
+    <td>C128<sub>c1</sub></td>
+    <td>Basic 7.0</td>
+    <td>305</td>
+    <td>22</td>
+    <td>86</td>
+    <td>32</td>
+    <td>108</td>
+    <td>141</td>
+    <td>35</td>
+    <td>104</td>
+  </tr>
+  <tr>
+    <td>Amstrad PCW 9256</td>
+    <td>Basic-80 (MBasic)</td>
+    <td>214</td>
+    <td>19</td>
+    <td>89</td>
+    <td>21</td>
+    <td>240</td>
+    <td>104</td>
+    <td>31</td>
+    <td>103</td>
+  </tr>
+  <tr>
+    <td>C128<sub>c2</sub></td>
+    <td>Basic 7.0</td>
+    <td>292</td>
+    <td>22</td>
+    <td>82</td>
+    <td>30</td>
+    <td>93</td>
+    <td>137</td>
+    <td>35</td>
+    <td>99</td>
+  </tr>
+  <tr>
+    <td>Vic-20</td>
+    <td>Basic 2</td>
+    <td>267</td>
+    <td>14</td>
+    <td>109</td>
+    <td>28</td>
+    <td>140</td>
+    <td>115</td>
+    <td>25</td>
+    <td>98</td>
+  </tr>
+  <tr>
+    <td>C64</td>
+    <td>Basic 2</td>
+    <td>222</td>
+    <td>12</td>
+    <td>92</td>
+    <td>24</td>
+    <td>117</td>
+    <td>97</td>
+    <td>21</td>
+    <td>84</td>
+  </tr>
+  <tr>
+    <td>Pet 8032</td>
+    <td>Basic 4.0</td>
+    <td>249</td>
+    <td>12</td>
+    <td>86</td>
+    <td>24</td>
+    <td>86</td>
+    <td>98</td>
+    <td>22</td>
+    <td>82</td>
+  </tr>
+  <tr>
+    <td>Sinclair QL</td>
+    <td>SuperBasic</td>
+    <td>112</td>
+    <td>43</td>
+    <td>68</td>
+    <td>16</td>
+    <td>93</td>
+    <td>98</td>
+    <td>77</td>
+    <td>72</td>
+  </tr>
+  <tr>
+    <td>Plus/4</td>
+    <td>Basic 3.5</td>
+    <td>180</td>
+    <td>14</td>
+    <td>53</td>
+    <td>18</td>
+    <td>70</td>
+    <td>83</td>
+    <td>22</td>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>C128<sub>c4</sub></td>
+    <td>Basic 7.0</td>
+    <td>144</td>
+    <td>11</td>
+    <td>41</td>
+    <td>16</td>
+    <td>52</td>
+    <td>68</td>
+    <td>17</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>C128<sub>c3</sub></td>
+    <td>Basic 7.0</td>
+    <td>148</td>
+    <td>11</td>
+    <td>40</td>
+    <td>15</td>
+    <td>45</td>
+    <td>66</td>
+    <td>17</td>
+    <td>49</td>
+  </tr>
+  <tr>
+    <td>C128<sub>c5</sub></td>
+    <td>Basic-80 (MBasic)</td>
+    <td>99</td>
+    <td>9</td>
+    <td>42</td>
+    <td>9</td>
+    <td>101</td>
+    <td>52</td>
+    <td>15</td>
+    <td>47</td>
+  </tr>
+  <tr>
+    <td>Spectrum 48k</td>
+    <td>48 Basic</td>
+    <td>88</td>
+    <td>6</td>
+    <td>28</td>
+    <td>5</td>
+    <td>27</td>
+    <td>42</td>
+    <td>17</td>
+    <td>30</td>
+  </tr>
+</table>
+<h3>Notes</h3>
+<p><sub>c1</sub> Basic 7.0, 80 column, fast mode, running <em>commodore/bench.bas</em> version</br>
+<sub>c2</sub> Basic 7.0, 80 column, fast mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
+<sub>c3</sub> Basic 7.0, 80 column, slow mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
+<sub>c4</sub> Basic 7.0, 40 column, slow mode, running <em>commodore/bench.bas</em> version</br>
+<sub>c5</sub> CP/M 80 column, running <em>cpm/mbasic.bas</em><br /></p>
+<h2>Observations</h2>
+<p>The benchmarks for a few of the machines stand out for me because they were unexpected or confirmed what I had already heard.</p>
+<h3>Sinclair QL</h3>
+<p>The biggest surprise for me was how slow the Sinclair QL was.  I knew it was hampered by the choice of a Motorola 68008, instead of a 68000, but the benchmark indicates just what a difference this decision made.  It is particularly apparent if you consider the Amstrad PCW and Amstrad CPC6128 which were aimed at or could appeal to a similar market and deliver the sorts of speed that the QL should have delivered even if they had just stuck with the z80.  That said, when it comes to the Functions and Maths test it was ahead of all the 8-bit machines and it would have been much easier to make use of the extra memory it could address without having to resort to bank switching.</p>
+<h3>Commodore 128</h3>
+<p>It is often said how slow CP/M was on the C128 and if you compare the benchmarks for the C128 vs the Amstrad PCW using Basic-80, it is quite clear just how slow it was.  I'm also struck by how much slower the C128 was using Basic 7.0 in slow mode than the C64 using Basic 2.  It would be interesting to know why this is.</p>
+<h3>Atari ST</h3>
+<p>The benchmark for ST Basic, while being top of the list, probably says more about the poor implementation of Basic than it does about the Hardware itself.</p>
+<h3>Sinclair Spectrum</h3>
+<p>I'm assuming that this benchmark was so slow because of the Basic implementation.  I would love to see the Spectrum +3 run the Basic-80 version of the benchmark under CP/M, but unfortunately I haven't been able to transfer <code>mbasic.com</code> successfully to a disk image to try it.</p>
+<h2>Emulators</h2>
+<p>All the tests have been run on emulators as I don't have all the machines and it makes the tests easy to reproduce.  They all aim to be cycle accurate, but naturally they have to allow some flexibility otherwise they would be too resource intensive.  Therefore the benchmark figures will never be quite as accurate as running on real hardware, but should give a good indication of their speed.</p>
+<table class="neatTable">
+  <tr><th>Emulator</th><th>Machines</th></tr>
+  <tr>
+    <td><a href="http://www.cpcwiki.eu/index.php/Arnold_(Emulator)">Arnold</a></td>
+    <td>Amstrad: CPC6128</td>
+  <tr>
+    <td><a href="http://fuse-emulator.sourceforge.net/">Fuse</a></td>
+    <td>Sinclair: Spectrum 48k</td>
+  </tr>
+  <tr>
+    <td><a href="https://hatari.tuxfamily.org/">Hatari</a></td>
+    <td>Atari: ST</td>
+  </tr>
+  <tr>
+    <td><a href="https://www.seasip.info/Unix/Joyce/">JOYCE</a></td>
+    <td>Amstrad: PCW</td>
+  </tr>
+  <tr>
+    <td><a href="http://www.terdina.net/ql/q-emulator.html">Q-emuLator</a></td>
+    <td>Sinclair: QL</td>
+  </tr>
+  <tr>
+    <td><a href="http://vice-emu.sourceforge.net/">Vice</a></td>
+    <td>Commodore: Pet, Vic-20, C64, C128, Plus/4</td>
+  </tr>
+</table>
+<h2>The Basic Code</h2>
+<p>I have put the Commodore Basic version below as I think it is the simplest version to understand.  In the code the variable <code>ti</code> holds the value of the system clock and is updated every 1/60th of a second.  The Basic source code for all versions are held in the <a href="https://github.com/lawrencewoodman/vintage_basic_benchmark">GitHub repo</a>.
+<br /><br /></p>
+<pre><code class="language-basic">10 rem basic benchmark
+20 rem inspired by qsbb from qlay sinclair ql emulator
+30 rem
+40 rem copyright (c) 2019 lawrence woodman
+50 rem licensed under an mit licence
+
+100 rem array used later
+110 dim ar(20)
+
+200 print &quot;basic benchmark&quot;
+210 print &quot;7 tests, 20 seconds each&quot;
+220 print
+
+1000 rem calculate benchmarks
+1010 print
+1020 print &quot;please wait...&quot;
+1030 print
+
+1100 rem benchmark printing
+1110 t=ti
+1120 p=0
+1130 for i=1 to 20
+1140 print &quot;.&quot;;
+1150 next i
+1160 p=p+1
+1170 if ti-t&lt;=1200 then goto 1130
+
+1300 rem benchmark functions
+1310 t=ti
+1320 f=0
+1330 for i=1 to 20
+1340 ra=sin(0.1):rb=log(4):rc=exp(10)
+1350 next i
+1360 f=f+1
+1370 if ti-t&lt;=1200 then goto 1330
+
+1500 rem benchmark strings
+1510 t=ti
+1520 s=0
+1530 for i=1 to 20
+1540 a$=&quot;abcdefghijklmnopqrstuvwxyz&quot;
+1550 b$=&quot;zyxwvutsrqponmlkjihgfedcba&quot;
+1560 c$=a$+b$
+1570 next i
+1580 s=s+1
+1590 if ti-t&lt;=1200 then goto 1530
+
+1700 rem benchmark for loops
+1710 t=ti
+1720 l=0
+1730 for i=1 to 20
+1740 for j=1 to 20: next j
+1750 next i
+1760 l=l+1
+1770 if ti-t&lt;=1200 then goto 1730
+
+1800 rem benchmark gosubs
+1810 goto 1830
+1820 return
+1830 t=ti
+1840 g=0
+1850 for i=1 to 20
+1860 gosub 1820:gosub 1910
+1870 next i
+1880 g=g+1
+1890 if ti-t&lt;=1200 then goto 1850
+1900 goto 1920
+1910 return
+1920 :
+
+2000 rem benchmark arrays
+2010 t=ti
+2020 a=0
+2030 for i=1 to 20
+2040 ar(i)=i:b=ar(i)
+2050 next i
+2060 a=a+1
+2070 if ti-t&lt;=1200 then goto 2030
+
+
+2200 rem benchmark maths
+2210 t=ti
+2220 m=0
+2230 ka=5
+2240 kb=6.2
+2250 for i=1 to 20
+2260 r=ka+kb-ka/kb*ka*kb
+2270 r=5+6.2-5/6.2*5*6.2
+2280 next i
+2290 m=m+1
+2300 if ti-t&lt;=1200 then goto 2250
+
+3010 print:print
+3020 print &quot;results&quot;
+3030 print &quot;=======&quot;
+3040 print &quot;printing:  &quot;; p
+3050 print &quot;functions: &quot;; f
+3060 print &quot;strings:   &quot;; s
+3070 print &quot;for loops: &quot;; l
+3080 print &quot;gosubs:    &quot;; g
+3090 print &quot;arrays:    &quot;; a
+3100 print &quot;maths:     &quot;; m
+</code></pre>
       </div>
     </article>
   </div>
@@ -215,8 +543,8 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Dealing Sympathetically with Legacy Code</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Benchmarking Basic on Vintage Computers</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -229,24 +557,6 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-      <header>
-  <h3><a href="/articles/benchmarking-basic-on-vintage-computers/">Benchmarking Basic on Vintage Computers</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-03-06">
-         6 March 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark tests 7 aspects and is inspired by qsbb...
-  &nbsp;
-  <a class="readMore" href="/articles/benchmarking-basic-on-vintage-computers/">Read More</a>
-</div>
       <header>
   <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></h3>
   <span class="post-meta">
@@ -343,6 +653,28 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
   &nbsp;
   <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
 </div>
+      <header>
+  <h3><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-05">
+         5 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/pascal/">Pascal</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
   </div>
 </div>
 
@@ -365,8 +697,8 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2012/04/20/dealing-sympathetically-with-legacy-code/';
-      var disqus_url = 'http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/';
+      var disqus_identifier = '/articles/benchmarking-basic-on-vintage-computers/';
+      var disqus_url = 'http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
