@@ -1,3 +1,13 @@
+{ filename    2019-03-06-benchmarking-basic-on-vintage-computers.md
+  title       "Benchmarking Basic on Vintage Computers"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "basic_benchmark_results.png"
+  tags        {"Retro" "Programming"}
+}
+
 { filename    2019-01-02-introducing-ornament-a-tcl-template-module.md
   title       "Introducing Ornament a Tcl Template Module"
   author      {
