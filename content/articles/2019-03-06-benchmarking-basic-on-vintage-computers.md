@@ -139,6 +139,19 @@ The results are listed below and for each the higher the number the faster they 
   </tr>
 
   <tr>
+    <td>MFA Mikrocomputer<sub>m1</sub></td>
+    <td>Basic-80 (MBasic)</td>
+    <td>186</td>
+    <td>14</td>
+    <td>64</td>
+    <td>15</td>
+    <td>167</td>
+    <td>77</td>
+    <td>23</td>
+    <td>78</td>
+  </tr>
+
+  <tr>
     <td>Sinclair QL</td>
     <td>SuperBasic</td>
     <td>112</td>
@@ -190,7 +203,6 @@ The results are listed below and for each the higher the number the faster they 
     <td>49</td>
   </tr>
 
-
   <tr>
     <td>C128<sub>c5</sub></td>
     <td>Basic-80 (MBasic)</td>
@@ -225,6 +237,7 @@ The results are listed below and for each the higher the number the faster they 
 <sub>c3</sub> Basic 7.0, 80 column, slow mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
 <sub>c4</sub> Basic 7.0, 40 column, slow mode, running <em>commodore/bench.bas</em> version</br>
 <sub>c5</sub> CP/M 80 column, running <em>cpm/mbasic.bas</em><br />
+<sub>m1</sub> <a href="http://www.vcfed.org/forum/showthread.php?68776-Sinclair-Spectrum-CP-M-2-2-Creating-Fuse-Compatible-Disk-Images&p=561178#post561178">2Mhz 8085 machine</a> - Thanks to Robert<br />
 
 ## Observations
 The benchmarks for a few of the machines stand out for me because they were unexpected or confirmed what I had already heard.
