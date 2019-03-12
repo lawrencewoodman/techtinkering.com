@@ -1,6 +1,6 @@
 There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark tests 7 aspects and is inspired by qsbb, which is included with the [qlay](http://web.inter.nl.net/hcc/A.Jaw.Venema/) Sinclair QL emulator.  The Basic source code for all the machines tested is available in the [GitHub repo](https://github.com/lawrencewoodman/vintage_basic_benchmark).  I chose Basic because it was available on all the machines I wanted to test and because the versions I created for each machine would require few changes.
 
-Benchmarks are only ever a test of what you are benchmarking and there are often other tasks that the machines would do much better at.  In this case because all the benchmarks are written in Basic they are a test of both the hardware and the Basic implementation.
+Benchmarks are only ever a test of what you are benchmarking and there are often other tasks that the machines would do much better at.  In this case because all the benchmarks are written in Basic they are a test of both the hardware and the Basic implementation as can be seen by the Spectrum results.
 
 
 ## Results
@@ -242,6 +242,19 @@ The results are listed below and for each the higher the number the faster they 
     <td>30</td>
   </tr>
 
+  <tr>
+    <td>Spectrum +3</td>
+    <td>+3 Basic</td>
+    <td>69</td>
+    <td>6</td>
+    <td>24</td>
+    <td>4</td>
+    <td>23</td>
+    <td>34</td>
+    <td>16</td>
+    <td>25</td>
+  </tr>
+
 </table>
 
 ### Notes
@@ -265,7 +278,7 @@ It is often said how slow CP/M was on the C128 and if you compare the benchmarks
 The benchmark for ST Basic, while being top of the list, probably says more about the poor implementation of Basic than it does about the Hardware itself.
 
 ### Sinclair Spectrum
-I'm assuming that this benchmark was so slow because of the Basic implementation.  I would love to see the Spectrum +3 run the Basic-80 version of the benchmark under CP/M, but unfortunately I haven't been able to transfer `mbasic.com` successfully to a disk image to try it.
+It seems quite clear that the built-in basic implementation is very slow when compared to Basic-80 running under CP/M on the +3.
 
 
 ## Emulators
@@ -279,7 +292,7 @@ All the tests have been run on emulators as I don't have all the machines and it
     <td>Amstrad: CPC6128</td>
   <tr>
     <td><a href="http://fuse-emulator.sourceforge.net/">Fuse</a></td>
-    <td>Sinclair: Spectrum 48k</td>
+    <td>Sinclair: Spectrum 48k, Spectrum +3</td>
   </tr>
   <tr>
     <td><a href="https://hatari.tuxfamily.org/">Hatari</a></td>
