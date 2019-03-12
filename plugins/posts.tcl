@@ -91,7 +91,7 @@ proc posts::GenerateTagPages {srcDir tagLayout files url {tags {}}} {
     }
     set tagDirName [tagToDirName $tag]
     set destination [
-      www::makeDestination {*}[www::urlToPath $url] tag $tagDirName index.html
+      www::makeDestination [www::urlToPath $url] tag $tagDirName index.html
     ]
     set params [dict create \
       tag $tag posts $tagFiles \

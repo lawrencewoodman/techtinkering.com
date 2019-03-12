@@ -45,8 +45,22 @@ proc www::makeDestination {args} {
 }
 
 proc www::urlToPath {url} {
-  return [file join [split $url "/"]]
+  if {[string trim $url] eq ""} {return {}}
+  return [file join {*}[split $url "/"]]
 }
+
+test www::urlToPath {{ns t} {
+  set cases [list \
+    [dict create input {bob/harry} result [file join bob harry]] \
+    [dict create input {bob/harry/nerris} \
+                 result [file join bob harry nerris]] \
+    [dict create input {bob/harry/nerris/} \
+                 result [file join bob harry nerris]] \
+    [dict create input {} result {}] \
+    [dict create input { } result {}] \
+  ]
+  testCases $t $cases {{ns case} {dict with case {${ns}::urlToPath $input}}}
+}}
 
 proc www::var {args} {
   array set options {}
