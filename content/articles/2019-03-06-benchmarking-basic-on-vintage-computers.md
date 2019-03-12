@@ -278,7 +278,7 @@ It is often said how slow CP/M was on the C128 and if you compare the benchmarks
 The benchmark for ST Basic, while being top of the list, probably says more about the poor implementation of Basic than it does about the Hardware itself.
 
 ### Sinclair Spectrum
-It seems quite clear that the built-in basic implementation is very slow when compared to Basic-80 running under CP/M on the +3.
+This really underlines what a difference the implementation of Basic makes.  If you take the Spectrum +3 running +3 Basic compared to when it is running Basic-80 under CP/M; the Basic-80 version runs about 3 times as quickly on the same hardware.
 
 
 ## Emulators
