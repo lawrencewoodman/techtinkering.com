@@ -61,6 +61,19 @@ The results are listed below and for each the higher the number the faster they 
   </tr>
 
   <tr>
+    <td>Spectrum +3</td>
+    <td>Mallard Basic</td>
+    <td>145</td>
+    <td>26</td>
+    <td>136</td>
+    <td>42</td>
+    <td>306</td>
+    <td>167</td>
+    <td>52</td>
+    <td>125</td>
+  </tr>
+
+  <tr>
     <td>C128<sub>c1</sub></td>
     <td>Basic 7.0</td>
     <td>305</td>
@@ -278,7 +291,7 @@ It is often said how slow CP/M was on the C128 and if you compare the benchmarks
 The benchmark for ST Basic, while being top of the list, probably says more about the poor implementation of Basic than it does about the Hardware itself.
 
 ### Sinclair Spectrum
-This really underlines what a difference the implementation of Basic makes.  If you take the Spectrum +3 running +3 Basic compared to when it is running Basic-80 under CP/M; the Basic-80 version runs about 3 times as quickly on the same hardware.
+This really underlines what a difference the implementation of Basic makes.  If you take the Spectrum +3 running +3 Basic compared to when it is running Mallard Basic under CP/M; the Mallard Basic version runs about 5 times as quickly on the same hardware.
 
 
 ## Emulators
