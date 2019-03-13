@@ -671,7 +671,7 @@
   tags        {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
   image       "/img/articles/small_z80pack_cpm3.png"
   imageTitle: "Loading Screen for CP/M 3.0 on z80pack"
-  updated:    2013-03-05
+  updated:    2018-03-13
   postURLStyle "/@year/@month/@day/@title/"
 }
 

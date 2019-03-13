@@ -23,7 +23,7 @@ I have decided to try out some old CP/M software, but need something to run it o
    $ make clean
    ````
 
-This is leaves, on Linux, a few bash scripts in the `~/z80pack/cpmsim/` directory, `cpm2`, `cpm3`, `mpm`, which automatically start the emulator by booting into CP/M 2.2, CP/M 3.0, MP/M, etc.
+This leaves, on Linux, a few bash scripts in the `~/z80pack/cpmsim/` directory, `cpm2`, `cpm3`, `mpm`, which automatically start the emulator by booting into CP/M 2.2, CP/M 3.0, MP/M, etc.
 
 ## Creating disk images
 We now needed to create some disk images; to do this I recommend [Cpmtools](http://www.moria.de/~michael/cpmtools/) which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from [here](http://www.moria.de/~michael/cpmtools/cpmtools-2.7.tar.gz).  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.
