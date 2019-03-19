@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-03-13</updated>
+  <updated>2019-03-19</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Write Hand Man - CP/M's Answer to Sidekick</title>
+      <id>http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/</id>
+      <link href="http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-03-19
+        </published>
+
+        <updated>
+          2019-03-19
+        </updated>
+
+        <summary>CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program that would make my life easier, however</summary>
+    </entry>
     <entry>
       <title>Benchmarking Basic on Vintage Computers</title>
       <id>http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/</id>
