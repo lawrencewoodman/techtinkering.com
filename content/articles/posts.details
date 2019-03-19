@@ -1,3 +1,13 @@
+{ filename    2019-03-13-write-hand-man-cpms-answer-to-sidekick.md
+  title       "Write Hand Man - CP/M's Answer to Sidekick"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "write_hand_man.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2019-03-06-benchmarking-basic-on-vintage-computers.md
   title       "Benchmarking Basic on Vintage Computers"
   author      {
