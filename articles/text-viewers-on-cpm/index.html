@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Programmable Character Sets: A Simple Alternative to Bitmap Displays</title>
-  <meta name="description" content="Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire">
+  <title>Text Viewers on CP/M</title>
+  <meta name="description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Programmable Character Sets: A Simple Alternative to Bitmap Displays">
-  <meta name="twitter:description" content="Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire">
+  <meta name="twitter:title" content="Text Viewers on CP/M">
+  <meta name="twitter:description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/ql.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Programmable Character Sets: A Simple Alternative to Bitmap Displays">
-  <meta property="og:description" content="Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire">
-  <meta property="og:url" content="http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">
+  <meta property="og:title" content="Text Viewers on CP/M">
+  <meta property="og:description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
+  <meta property="og:url" content="http://techtinkering.com/articles/text-viewers-on-cpm/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/ql.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">
+  <link rel="canonical" href="http://techtinkering.com/articles/text-viewers-on-cpm/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -145,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/" title="Programmable Character Sets: A Simple Alternative to Bitmap Displays">
-          <h1 itemprop="headline name">Programmable Character Sets: A Simple Alternative to Bitmap Displays</h1>
+        <a href="/articles/text-viewers-on-cpm/" title="Text Viewers on CP/M">
+          <h1 itemprop="headline name">Text Viewers on CP/M</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -157,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2013-05-29">
-            29 May 2013
+                datetime="2019-03-27">
+            27 March 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -172,62 +176,25 @@
           </a>
         </span>
         &nbsp; / &nbsp;
-          <a href="/articles/tag/retro/">Retro</a>
+          <a href="/articles/tag/cpm/">CP/M</a>
           &nbsp; &nbsp;
-          <a href="/articles/tag/textmode/">Text Mode</a>
+          <a href="/articles/tag/retro/">Retro</a>
           &nbsp; &nbsp;
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire to keep the cost of computers low: RAM was expensive and bitmappable displays need more complex hardware.  Programmable character sets were a half-way house between the preceding extended character sets, which contained most of the 7-bit ASCII characters plus extra graphic characters, and bitmappable displays.</p>
-<p>By creating your own character set you could create different fonts, software sprites and even simulate a bitmap.  They gave a much greater degree of control than a fixed extended character set at the same time as reducing the cost of the computer.  With careful planning you could create very quick and compact code because a single write to memory would allow you to output a character which would typically contain a group of 8x8 pixels.  Two machines that really captured how well this could be done are the Commodore Vic-20 and the Jupiter ACE.</p>
-<h2>The Commodore Vic-20</h2>
-<p>The unexpanded machine had 5KB of RAM and the character set would typically approach the screen memory.  Therefore if you wanted to reduce the memory taken up by the character set to just 64 or 128 characters this could easily be done by overlapping the screen memory.  In addition this could be reduced further or used more flexibly by storing other data or code in the character set memory.</p>
-<p>A lot of Vic-20 software was distributed as cartridges, which meant that additional character sets could be stored in ROM and used as needed.  This further enhanced the power of the method.</p>
-<p>The Vic-20 was quite a flexible machine; you could change the character set as the raster line moves down the screen, giving additional possibilities;  you could even simulate a bitmap display by using 8x16 characters, but this would of course use twice as much memory so wasn't suitable for the unexpanded Vic-20.</p>
-<p>Below you can see how much memory various configurations use:</p>
-<pre><code>Text Screen + 256 8x8 Character set + colour attributes:
-(22x23) + (256x8) + (22x23) = 3060 bytes
-
-Text Screen + 128 8x8 Character set + colour attributes:
-(22x23) + (128x8) + (22x23) = 2036 bytes
-
-Text Screen + 64 8x8 Character set + colour attributes:
-(22x23) + (64x8) + (22x23) = 1524 bytes
-
-176x184 nearest bitmap equivalent + colour attributes:
-(176x184/8) + (22x23) = 4554 bytes
-
-
-Text Screen (Simulated bitmap) + 8x16 Character set + colour attributes:
-(23x11) + (256x16) + (23x11) = 4602 bytes
-
-184x176 nearest bitmap equivalent + colour attributes:
-(184x176/8) + (23x11) = 4301 bytes
-</code></pre>
-<p>You can see that the simulated bitmap takes more memory than a real bitmap, but if you can can work with the 256, 128 or 64 programmable characters you make a saving of 1494, 2518 or 3030 bytes respectively.  On a 5KB machine this is a considerable saving.</p>
-<img src="/img/articles/vic20-jetpac.png" title="JetPac for the Vic-20" />
-<h2>The Jupiter ACE</h2>
-<p>The ACE's character set had 256 characters where the first 128 were definable and the second 128 were the inverse of the first 128.  Unlike the Vic-20, the ACE's video sub-system had its own 2KB of SRAM used to store the text display screen and character set.  Therefore a programmable character set didn't effect the 1KB of RAM that the machine had.  The ACE's screen was 32 columns by 24 rows using an 8x8 font.  This naturally meant that a simulated bitmap of the whole screen wasn't straightforward, however in practise with a good design the 128+inverse characters can be enough.</p>
-<p>Below you can see a comparison of the RAM used by the character set vs a bitmap equivalent.  The programmable character set saves 4352 bytes.</p>
-<pre><code>ACE Text Screen + 128 8x8 Character Set:
-(32*24) + (128x8) = 1792 bytes
-
-ACE 256x192 bitmap equivalent:
-256x192/8 = 6144 bytes
-</code></pre>
-<p>A bitmap image can often be made to fit into the restricted character set by matching and altering tiles to conform to the 128+inverse characters.  Below you can see a picture that has been converted using <a href="/2010/04/16/introducing-textpix-v0-1/">TextPix</a> so that it can be displayed using the ACE's programmable character set.</p>
-<img src="/img/articles/xace-textpix-v0.2-screenshot.jpg" title="Bitmap converted to ACE's character set using TextPix" />
-<h2>Other Machines</h2>
-<p>There were other machines that used a programmable character set such as the Commodore 64 and Sinclair Spectrum, but these machines also had access to a bitmappable display.  Where these machines used the programmable character set instead of a bitmappable display, this was mainly to reduce RAM usage, speed up certain routines and make things simpler.</p>
-<h2>Alternative Low RAM Displays</h2>
-<p>Beyond the extended and programmable character sets already mentioned, there were two other notable examples of low RAM displays:</p>
-<p>Vector Graphics
-: To create a picture on this type of display you had to specify the points of the vector and then keep redrawing them to keep the display stable.  This required no RAM to hold the picture, but did require a special Vector monitor and therefore increased the cost as it couldn't be used with a TV.</p>
-<p>Atari 2600 TIA
-: The <a href="http://en.wikipedia.org/wiki/Television_Interface_Adapter">Television Interface Adapter</a> was designed as a RAM-less way of outputting graphics to a Television.  Instead of using a framebuffer in RAM to create a bitmappable display, the TIA chip was controlled through a few registers which provided five movable graphic objects and a static playfield object, which you could change for each raster line.</p>
-<h2>Impact</h2>
-<p>You should now see why the Vic-20, Jupiter ACE and other machines used a programmable character set instead of a bitmappable display.  Both of these machines seemed to get along just fine like this and importantly it kept the cost down so that more people could afford them.</p>
+        <p>There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the <a href="http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD">Walnut Creek CD</a> to see if I can find any better text viewers, but after trying all those I could find I still think the three below are the best that CP/M has to offer, at least for my needs.</p>
+<h2>TYPE</h2>
+<p>This comes with CP/M as standard and is good to quickly look at a short text file, but you can only page forward through the file and therefore if you miss something and want to go back you have to quit and restart it.</p>
+<h2>PEEP</h2>
+<p>This is a small and quick text file viewer that allows you to move through a file with ease.  The control keys are arranged around the home keys which makes it very comfortable to use.  While it attempts to load the whole file into memory, if this isn't possible then you can press <em>r</em> at the end of a loaded section to load more and therefore peep can be used to view files of any length.  The executable is only around 2k, which makes it ideal for putting in a ram disk and is available <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/peep13.lbr" title="peep13.lbr">here</a> on the Walnut Creek CD.</p>
+<h2>QL</h2>
+<img src="/img/articles/ql_cpm_file_view.png" class="img-right" style="clear: left;" title="QL File View">
+<p>This is my favourite of the three, but also the biggest at about 10k because it can do so much.  I remember using <em>list</em> on MS-DOS and this is very similar to that.  QL allows you to call it without a filename and then it will display a list of files on the drive which you can select by typing the number displayed next to it.  It works really fast, has a built-in hex viewer and holds the entire file in memory, which also means, unfortunately, that if the file is too big then it will truncate it.  However, CP/M files tend to be split into smaller files anyway so I rarely find this a problem.  Another nice thing about QL is that you can view files contained in .LBR files and you can also view squeezed and crunched files even if they are contained in an .LBR file.  QL is available <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/ql41.lbr" title="ql41.lbr">here</a> on the Walnut Creek CD.</p>
+<p>You can see the text file viewers in action below.</p>
+<div class="youtube-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cGhZ72srcIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
       </div>
     </article>
   </div>
@@ -240,8 +207,8 @@ ACE 256x192 bitmap equivalent:
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Programmable Character Sets: A Simple Alternative to Bitmap Displays</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Text Viewers on CP/M</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/text-viewers-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -254,99 +221,6 @@ ACE 256x192 bitmap equivalent:
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-      <header>
-  <h3><a href="/2010/04/16/introducing-textpix-v0-1/">Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</a></h3>
-  <span class="post-meta">
-      <time datetime="2010-04-16">
-        16 April 2010
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/conversion/">Conversion</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/graphics/">Graphics</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/images/">Images</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textpix/">TextPix</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  I have today released TextPix v0.1  This is a program to take an image and convert it into a redefined character set and the associated text mode screen data referencing that character set.
-The program...
-  &nbsp;
-  <a class="readMore" href="/2010/04/16/introducing-textpix-v0-1/">Read More</a>
-</div>
-      <header>
-  <h3><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></h3>
-  <span class="post-meta">
-      <time datetime="2010-02-14">
-        14 February 2010
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/ansi/">ANSI</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/bbs/">BBS</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/linux/">Linux</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/tutorial/">Tutorial</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  I have noticed that the number of people interested in using telnet to access BBSs seems to be growing, which I'm really pleased to see.  However lots of people seem to be having trouble getting colour...
-  &nbsp;
-  <a class="readMore" href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Read More</a>
-</div>
-      <header>
-  <h3><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">My Top 10 Classic Text Mode BSD Games</a></h3>
-  <span class="post-meta">
-      <time datetime="2009-08-11">
-        11 August 2009
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/bsd/">BSD</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/games/">Games</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  Recently, I have been playing a collection of text mode games that were commonly found on Unix Systems during the 70s and 80s.  These games are surprisingly playable and, for me, they really show that ...
-  &nbsp;
-  <a class="readMore" href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">Read More</a>
-</div>
-      <header>
-  <h3><a href="/articles/text-viewers-on-cpm/">Text Viewers on CP/M</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-03-27">
-        27 March 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I can find any better text viewers, but afte...
-  &nbsp;
-  <a class="readMore" href="/articles/text-viewers-on-cpm/">Read More</a>
-</div>
       <header>
   <h3><a href="/articles/write-hand-man-cpms-answer-to-sidekick/">Write Hand Man - CP/M's Answer to Sidekick</a></h3>
   <span class="post-meta">
@@ -364,6 +238,98 @@ The program...
   CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program that would make my life easier, however...
   &nbsp;
   <a class="readMore" href="/articles/write-hand-man-cpms-answer-to-sidekick/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-12">
+        12 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP...
+  &nbsp;
+  <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-05">
+         5 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/pascal/">Pascal</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-22">
+        22 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/c/">C</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/z80/">Z80</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
+  &nbsp;
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/editor/">Editor</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
 </div>
   </div>
 </div>
@@ -387,8 +353,8 @@ The program...
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/';
-      var disqus_url = 'http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/';
+      var disqus_identifier = '/articles/text-viewers-on-cpm/';
+      var disqus_url = 'http://techtinkering.com/articles/text-viewers-on-cpm/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {

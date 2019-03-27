@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-03-19</updated>
+  <updated>2019-03-27</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Text Viewers on CP/M</title>
+      <id>http://techtinkering.com/articles/text-viewers-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/text-viewers-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-03-27
+        </published>
+
+        <updated>
+          2019-03-27
+        </updated>
+
+        <summary>There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I can find any better text viewers, but afte</summary>
+    </entry>
     <entry>
       <title>Write Hand Man - CP/M's Answer to Sidekick</title>
       <id>http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/</id>
