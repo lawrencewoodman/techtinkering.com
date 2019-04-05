@@ -1,3 +1,12 @@
+{ filename    2019-04-05-compression-and-archiving-on-cpm.md
+  title       "Compression and Archiving on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2019-03-27-text-viewers-on-cpm.md
   title       "Text Viewers on CP/M"
   author      {
