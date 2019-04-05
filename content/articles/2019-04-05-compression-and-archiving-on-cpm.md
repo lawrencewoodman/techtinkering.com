@@ -131,7 +131,7 @@ The various compression formats produce different results. To compare them I hav
   </tr>
 </table>
 
-# Video of Compression and Archiving Tools
+## Video of Compression and Archiving Tools
 
 You can see some of the tools in action below.
 
