@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-03-27</updated>
+  <updated>2019-04-05</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Compression and Archiving on CP/M</title>
+      <id>http://techtinkering.com/articles/compression-and-archiving-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/compression-and-archiving-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-04-05
+        </published>
+
+        <updated>
+          2019-04-05
+        </updated>
+
+        <summary>CP/M has the ability to handle lots of different compression and archive formats which was important due to the limited capacity of floppy disks and the cost of downloading/uploading files on BBS's.  T</summary>
+    </entry>
     <entry>
       <title>Text Viewers on CP/M</title>
       <id>http://techtinkering.com/articles/text-viewers-on-cpm/</id>
