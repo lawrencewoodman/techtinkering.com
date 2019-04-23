@@ -1,3 +1,13 @@
+{ filename    2019-04-23-felix-animation-system-on-cpm.md
+  title       "Felix Animation System on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "felix_bee.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2019-04-05-compression-and-archiving-on-cpm.md
   title       "Compression and Archiving on CP/M"
   author      {
