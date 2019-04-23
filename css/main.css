@@ -110,9 +110,10 @@ div#content {
   line-height: 1.5;
 }
 
+/* TODO: Move this to article.css */
 div#content img {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
   max-width: 100%;
   height: auto;
 }

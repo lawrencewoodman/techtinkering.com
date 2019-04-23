@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-04-05</updated>
+  <updated>2019-04-23</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Felix Animation System on CP/M</title>
+      <id>http://techtinkering.com/articles/felix-animation-system-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/felix-animation-system-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-04-23
+        </published>
+
+        <updated>
+          2019-04-23
+        </updated>
+
+        <summary>In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation </summary>
+    </entry>
     <entry>
       <title>Compression and Archiving on CP/M</title>
       <id>http://techtinkering.com/articles/compression-and-archiving-on-cpm/</id>

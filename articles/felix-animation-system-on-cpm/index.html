@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Write Hand Man - CP/M's Answer to Sidekick</title>
-  <meta name="description" content="CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program">
+  <title>Felix Animation System on CP/M</title>
+  <meta name="description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Write Hand Man - CP/M's Answer to Sidekick">
-  <meta name="twitter:description" content="CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program">
+  <meta name="twitter:title" content="Felix Animation System on CP/M">
+  <meta name="twitter:description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
     <meta name="twitter:image"
-         content="http://techtinkering.com/img/social_images/write_hand_man.png">
+         content="http://techtinkering.com/img/social_images/felix_bee.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Write Hand Man - CP/M's Answer to Sidekick">
-  <meta property="og:description" content="CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program">
-  <meta property="og:url" content="http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/">
+  <meta property="og:title" content="Felix Animation System on CP/M">
+  <meta property="og:description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
+  <meta property="og:url" content="http://techtinkering.com/articles/felix-animation-system-on-cpm/">
     <meta property="og:image"
-         content="http://techtinkering.com/img/social_images/write_hand_man.png">
+         content="http://techtinkering.com/img/social_images/felix_bee.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/">
+  <link rel="canonical" href="http://techtinkering.com/articles/felix-animation-system-on-cpm/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -149,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/articles/write-hand-man-cpms-answer-to-sidekick/" title="Write Hand Man - CP/M's Answer to Sidekick">
-          <h1 itemprop="headline name">Write Hand Man - CP/M's Answer to Sidekick</h1>
+        <a href="/articles/felix-animation-system-on-cpm/" title="Felix Animation System on CP/M">
+          <h1 itemprop="headline name">Felix Animation System on CP/M</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -161,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2019-03-19">
-            19 March 2019
+                datetime="2019-04-23">
+            23 April 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -183,21 +183,96 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program that would make my life easier, however.  When I was in college, using MS-DOS, we used a program called <a href="https://en.wikipedia.org/wiki/Borland_Sidekick">Borland Sidekick</a>.  This is a TSR that stayed in memory and when you pressed a hot key combination the program would display on the screen.  Sidekick was great because it would allow you to run a program from the DOS prompt and then if in the middle of this program you wanted to edit a document or check the ASCII table, you could press the correct keys and it would suspend your executing program and start Sidekick.</p>
-<p><a href="http://www.classiccmp.org/cpmarchives/cpm/Library/Magazines/TCJ/tcj_21%201985-1112.pdf" title="The Computer Journal Issue Number 21 - 1985"><img src="/img/articles/advert_write_hand_man.png" class="img-right"></a></p>
-<p>I was thinking of writing something like this as an RSX for CP/M Plus when I came across Write-Hand-Man.  It was published by Poor Person Software and version 2.1 seems to have been released around the mid 1980s.  As you would expect on CP/M-80 it isn't as functional as Sidekick but is useful nonetheless.  It comes with a notepad, phonebook, calender, directory lister, text-file viewer, calculator, ASCII chart, key macro editor and some sort of application swapper.</p>
-<p>Setting up the program is simple.  WHM comes with a configuration program called, <code>WHMCONF</code>, which when run asks you three questions:</p>
-<ul>
-<li>The terminal cursor home string, which for my VT100 is <code>&lt;ESC&gt;[H</code> so I use <code>1B5B48</code></li>
-<li>The hot-key that is pressed along with CONTROL. I use <code>@</code></li>
-<li>The amount of memory to reserve for WHM's loaded applications.  I use <code>2</code> as I'm only using the standard applications.</li>
-</ul>
-<img src="/img/articles/whm_menu_basic.png" class="img-left" style="clear: left;">
-<p>When WHM is activated through its hot key a little menu appears in the top left corner of the screen from which you can access the various functions.  These are loaded from disk as needed and you can even write your own programs for it.  The programs restrict themselves to a small window in the corner of the screen, but that keeps the memory usage down and is sufficient for many tasks.</p>
-<p>WHM is still very new to me and unfortunately I don't have the manual, so I know I'm not getting the most out of it.  Particularly from the <code>SWAP</code> command that appears to allow some sort of task switching by saving the TPA to disk and allowing you to start another task.  I would love to get this working so am on the look out for more documentation now.  I have also only been able to find a version for CP/M 2.2, whereas I normally use CP/M+, which the advert indicates there is a version for, but I have as yet been unable to find it.</p>
-<p>If anyone knows where I can get a version that works with CP/M+ or a manual it would be great to hear from you.  For now here is a video showing Write-Hand-Man in operation.</p>
+        <p>In 1979 the University of Tennessee/Knoxville's Computer Science Department released <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/cpmug/cpmug035.ark" title="cmpug035.ark">Felix v2.1</a> for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation experiments and projects for education and hobbyist use.</p>
+<img src="/img/articles/felix_bee.png" class="img-left" style="width: 256px; clear: right;" title="BEE#.FEX In Action Using Felix">
+<p>The system used an early graphics card for S-100 bus computers called the <a href="https://en.wikipedia.org/wiki/Cromemco_Dazzler">Cromemco Dazzler</a> to display the animations on a television screen.  The Dazzler was released in 1976 and could display a maximum resolution of 128x128 in monochrome or 64x64 using 8 colours with or without intensity.</p>
+<p>Felix uses a VM to display and control the animations with the hope of creating a portable animation system across computing platforms.  The animations are created in a form of assembly language targeted at the Felix VM which is assembled using the <code>FASM</code> command to produce a <code>.FEX</code> file which is then run using the <code>EXEC</code> command.</p>
+<p>An example file called <code>BEE.FAS</code> is included in the archive and listed below:</p>
+<br />
+<pre><code class="language-nasm">; 8 SEPT 79 - MOSHELL
+;
+; BLOOMING FLOWER; BEE LANDS,FLIES AGAIN.BIRD
+; COMES ALONG AND EATS BEE.
+;
+SPEED	EQU	0
+GROUND	EQU	0
+STEM	EQU	1
+LEFTPETAL EQU	2
+RIGHTPETAL EQU	3
+BEE	EQU	4
+BEEPATH	EQU	5
+B2PATH	EQU	6
+BIRD	EQU	7
+BIRDPATH EQU	8
+;
+	DELAY	SPEED
+	ONLIST	2,STEM,GROUND
+	MOVE	15,.COUNT
+;
+;FIRST THE PLANT GROWS AND BLOSSOMS.
+;
+STEMLOOP:	FLY	STEM,0,1
+	SHOW
+	SUB	.COUNT,1,.COUNT
+	JNZ	STEMLOOP
+;
+	BACKGRND	STEM
+	ONLIST	4,LEFTPETAL,RIGHTPETAL,STEM,GROUND
+	MOVE	5,.COUNT
+	DELAY	150
+;
+PETALOOP:BACKGRND	LEFTPETAL
+	BACKGRND	RIGHTPETAL
+	SPIN	LEFTPETAL,-1
+	SPIN	RIGHTPETAL,1
+	SHOW
+	SUB	.COUNT,1,.COUNT
+	JNZ	PETALOOP
+;
+	CALL	PAUSE
+	ONLIST	1,BEE
+;
+;NOW A BEE WANDERS ACROSS THE SCENE,SETTLES ON FLOWER.
+;
+BEELOOP:PATH	BEE,BEEPATH
+	SHOW
+	JNZ	BEELOOP
+;
+	CALL	PAUSE
+	ONLIST	2,BEE,BIRD
+;
+;NOW THE BEE LEAVES THE FLOWER,MEETS BIRD.
+;
+B2LOOP: PATH	BIRD,BIRDPATH
+	PATH	BEE,B2PATH
+	SHOW
+	JNZ	B2LOOP
+;
+	ONLIST	1,BIRD	;BEE DONE BEEN ET.
+;
+; BIRD NOW FLIES AROUND THE SCREEN FOREVER.
+;
+BIRDLOOP:PATH	BIRD,BIRDPATH
+	SHOW
+	JUMP	BIRDLOOP
+;
+;- - - - - - - - - - - - - - - - - - - - -
+;
+PAUSE:	DELAY	250
+	MOVE	5,.COUNT
+PLOOP:	SUB	.COUNT,1,.COUNT
+	JNZ	PLOOP
+	DELAY	SPEED
+	RETURN
+;
+COUNT:	DB	0
+;
+	END
+</code></pre>
+<br />
+<p>You can see a couple of animations using Felix in the following video.  It demonstrates Felix using <a href="/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/">z80pack</a> to emulate an IMSAI 8080 with a Dazzler, running CP/M 2.2.  Unfortunately, I'm not able to fully test Felix because the emulator doesn't emulate the required analog-to-digital converter to use the joysticks.  However, it was fun to play with and I think it's nice to see the system in action.</p>
 <div class="youtube-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/_a5b5AtnqXw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/QdmXZ0U9XHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -211,8 +286,8 @@
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Write Hand Man - CP/M's Answer to Sidekick</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Felix Animation System on CP/M</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/felix-animation-system-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -225,24 +300,6 @@
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-      <header>
-  <h3><a href="/articles/felix-animation-system-on-cpm/">Felix Animation System on CP/M</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-04-23">
-        23 April 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation ...
-  &nbsp;
-  <a class="readMore" href="/articles/felix-animation-system-on-cpm/">Read More</a>
-</div>
       <header>
   <h3><a href="/articles/compression-and-archiving-on-cpm/">Compression and Archiving on CP/M</a></h3>
   <span class="post-meta">
@@ -278,6 +335,24 @@
   There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I can find any better text viewers, but afte...
   &nbsp;
   <a class="readMore" href="/articles/text-viewers-on-cpm/">Read More</a>
+</div>
+      <header>
+  <h3><a href="/articles/write-hand-man-cpms-answer-to-sidekick/">Write Hand Man - CP/M's Answer to Sidekick</a></h3>
+  <span class="post-meta">
+      <time datetime="2019-03-19">
+        19 March 2019
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program that would make my life easier, however...
+  &nbsp;
+  <a class="readMore" href="/articles/write-hand-man-cpms-answer-to-sidekick/">Read More</a>
 </div>
       <header>
   <h3><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h3>
@@ -343,8 +418,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/articles/write-hand-man-cpms-answer-to-sidekick/';
-      var disqus_url = 'http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/';
+      var disqus_identifier = '/articles/felix-animation-system-on-cpm/';
+      var disqus_url = 'http://techtinkering.com/articles/felix-animation-system-on-cpm/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
