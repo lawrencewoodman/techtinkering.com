@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-04-23</updated>
+  <updated>2019-04-25</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -72,7 +72,7 @@
         </published>
 
         <updated>
-          2019-03-19
+          2019-04-25
         </updated>
 
         <summary>CP/M is a single tasking operating system and having grown-up with single tasking systems this has never really been a problem for me.  There is style of program that would make my life easier, however</summary>
