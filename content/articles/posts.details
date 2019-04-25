@@ -36,6 +36,7 @@
   }
   socialImg   "write_hand_man.png"
   tags        {"Retro" "CP/M"}
+  updated     2019-04-25
 }
 
 { filename    2019-03-06-benchmarking-basic-on-vintage-computers.md
