@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-04-25</updated>
+  <updated>2019-05-10</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Interactive File Managers on CP/M</title>
+      <id>http://techtinkering.com/articles/interactive-file-managers-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/interactive-file-managers-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-05-10
+        </published>
+
+        <updated>
+          2019-05-10
+        </updated>
+
+        <summary>CP/M has a number of interactive file managers that can be used to make it easier to handle common file operations rather than using the command line driven commands supplied with CP/M such as: DIR, ER</summary>
+    </entry>
     <entry>
       <title>Felix Animation System on CP/M</title>
       <id>http://techtinkering.com/articles/felix-animation-system-on-cpm/</id>
