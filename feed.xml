@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-05-10</updated>
+  <updated>2019-05-15</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Instrument Flight Simulator on CP/M</title>
+      <id>http://techtinkering.com/articles/instrument-flight-simulator-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/instrument-flight-simulator-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-05-15
+        </published>
+
+        <updated>
+          2019-05-15
+        </updated>
+
+        <summary>Instrument Flight Simulator is a text mode flight simulator for CP/M which uses standard ASCII characters to display an instrument panel for the plane.  The aim of the game is to land the aircraft safe</summary>
+    </entry>
     <entry>
       <title>Interactive File Managers on CP/M</title>
       <id>http://techtinkering.com/articles/interactive-file-managers-on-cpm/</id>
