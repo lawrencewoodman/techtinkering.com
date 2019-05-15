@@ -1,3 +1,13 @@
+{ filename    2019-05-15-instrument-flight-simulator-on-cpm.md
+  title       "Instrument Flight Simulator on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_instrument_flight_simulator.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2019-05-10-interactive-file-managers-on-cpm.md
   title       "Interactive File Managers on CP/M"
   author      {
