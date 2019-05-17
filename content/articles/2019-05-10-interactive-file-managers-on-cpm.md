@@ -44,7 +44,7 @@ Frank Gaudé states in the documentation for [DISK7](http://www.classiccmp.org/c
 
 <img src="/img/articles/cpm_vfiler_dir.png" class="img-right" style="width: 465px; clear: right;" title="VFILER v1.7 Directory View">
 
-[VFILER](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/lambda/soundpot/p/vfiler17.lbr "vfiler17.lbr"), by Richard Conn, follows 'in the footsteps of SWEEP, CLEAN [sic] and DISK' and tries to make it more user friendly by using direct cursor control to create a screen oriented file manipulation utility.  Instead of going from one file to the next as in the other utilities, VFILER presents a screen of file names that you can move between using Wordstar cursor control keys.  It requires a Z80 processor to run and has features similar to DISK7.
+[VFILER](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/lambda/soundpot/p/vfiler17.lbr "vfiler17.lbr"), by Richard Conn, follows 'in the footsteps of SWEEP, CLEAN [_sic_] and DISK' and tries to make it more user friendly by using direct cursor control to create a screen oriented file manipulation utility.  Instead of going from one file to the next as in the other utilities, VFILER presents a screen of file names that you can move between using Wordstar cursor control keys.  It requires a Z80 processor to run and has features similar to DISK7.
 
 <br style="clear:right;" />
 
