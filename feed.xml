@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-05-17</updated>
+  <updated>2019-05-19</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -72,7 +72,7 @@
         </published>
 
         <updated>
-          2019-04-05
+          2019-05-19
         </updated>
 
         <summary>CP/M has the ability to handle lots of different compression and archive formats which was important due to the limited capacity of floppy disks and the cost of downloading/uploading files on BBS's.  T</summary>
