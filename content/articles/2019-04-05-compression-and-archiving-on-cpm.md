@@ -41,7 +41,7 @@ CP/M can also decompress formats that were common on other platforms such as MS-
 
 <dl>
   <dt>.ZIP</dt>
-  <dd>There are lots of files compressed as .ZIP files on the Walnut Creek CD and therefore despite this not being able to decompress modern .ZIP files it is still useful and can be decompressed with <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/unzip18.lbr" title="unzip18.lbr">unzip</a>.</dd>
+  <dd>There are lots of files compressed as .ZIP files on the Walnut Creek CD and therefore despite not being able to decompress modern .ZIP files under CP/M it is still useful to decompress them.  They can be unzipped with <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/unzip18.lbr" title="unzip18.lbr">unzip</a>.</dd>
   <dt>.ARJ</dt>
   <dd>This was pretty common at one time but got overtaken by .ZIP.  To decompress
   use <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/cpmunarj.ark" title="cpmunarj.ark">unarj</a>.</dd>
