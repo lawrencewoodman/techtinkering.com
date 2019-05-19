@@ -36,6 +36,7 @@
   }
   socialImg   "nulu_menu.png"
   tags        {"Retro" "CP/M"}
+  updated     2019-05-19
 }
 
 { filename    2019-03-27-text-viewers-on-cpm.md

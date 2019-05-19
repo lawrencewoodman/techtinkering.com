@@ -37,11 +37,11 @@ Later on CP/M adopted formats from other platforms, such as MS-DOS, which integr
 </dl>
 
 ## Decompress Only
-CP/M can also decompress formats that were common on other platforms such as MS-DOS and Windows and in the case of .ZIP still is. They can't be created under CP/M but it is useful to be able to decompress them so that you can read files created on other systems.
+CP/M can also decompress formats that were common on other platforms such as MS-DOS and Windows and in the case of .ZIP still is.  They can't be created under CP/M but it is useful to be able to decompress them so that you can read files created on other systems.  Unfortunately, the _unzip_ utilities I've found only unzip files created with PKZIP 1.x and therefore can't use the DEFLATE algorithm introduced by Phil Katz's 1993 release of PKZIP 2.04g.
 
 <dl>
   <dt>.ZIP</dt>
-  <dd>This is probably the most common modern day format and can be decompressed with <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/unzip18.lbr" title="unzip18.lbr">unzip</a>.</dd>
+  <dd>There are lots of files compressed as .ZIP files on the Walnut Creek CD and therefore despite this not being able to decompress modern .ZIP files it is still useful and can be decompressed with <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/unzip18.lbr" title="unzip18.lbr">unzip</a>.</dd>
   <dt>.ARJ</dt>
   <dd>This was pretty common at one time but got overtaken by .ZIP.  To decompress
   use <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/jsage/znode3/uploads/cpmunarj.ark" title="cpmunarj.ark">unarj</a>.</dd>
