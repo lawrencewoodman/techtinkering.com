@@ -1,3 +1,13 @@
+{ filename    2019-05-21-emulating-a-cpm-system-with-z80pack.md
+  title       "Emulating a CP/M System With z80pack"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "z80pack_boot_cpm3.png"
+  tags        {"CP/M" "Emulation" "Retro" "Tutorial"}
+}
+
 { filename    2019-05-15-instrument-flight-simulator-on-cpm.md
   title       "Instrument Flight Simulator on CP/M"
   author      {
@@ -708,7 +718,7 @@
   }
   tags        {"C" "CP/M" "Programming" "Retro" "Z80" "Tutorial"}
   image       "/img/articles/small_war_c.png"
-  updated:    2012-12-11
+  updated     2012-12-11
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -720,7 +730,7 @@
   }
   tags        {"CP/M" "Editor" "Programming" "Retro" "Tutorial"}
   image       "/img/articles/small_zde16_screenshort.png"
-  imageTitle: "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
+  imageTitle  "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -730,10 +740,12 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
-  image       "/img/articles/small_z80pack_cpm3.png"
-  imageTitle: "Loading Screen for CP/M 3.0 on z80pack"
-  updated:    2018-03-13
+  tags         {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
+  image        "/img/articles/small_z80pack_cpm3.png"
+  imageTitle   "Loading Screen for CP/M 3.0 on z80pack"
+  updated      2018-03-13
+  redirectTo   "/articles/emulating-a-cpm-system-with-z80pack/"
+  redirectName "Emulating a CP/M System with z80pack"
   postURLStyle "/@year/@month/@day/@title/"
 }
 

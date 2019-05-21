@@ -4,6 +4,25 @@
 ! source -directory [dir plugins] include.tcl
 ! set title [getparam title]
 ! set date [getparam date]
+!#
+!# Redirect if necessary
+! if {[getparam -default "" redirectTo] ne ""} {
+    <script language="javascript" type="text/javascript">
+      window.location.replace("[getparam redirectTo]")
+    </script>
+
+    <div class="row margin-buffer">
+      <div class="col-md-12">
+        <div class="articleRedirected">
+          <h1>Old Article</h1>
+          <p>This is an old article which is only being kept for historical purposes.</p>
+
+          <p>Please navigate and update any links to the new article: <a href="[getparam redirectTo]">[getparam redirectName]</a>.</p>
+        </div>
+      </div>
+   </div>
+! }
+!#
 <div class="row margin-buffer">
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">

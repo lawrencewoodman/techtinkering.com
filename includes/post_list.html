@@ -3,12 +3,14 @@
   <div class="col-md-12">
 !   set numPosts 0
 !   foreach post [getparam posts] {
-!     dict set post postNum $numPosts
-!     incr numPosts
-!     if {[getparam maxPosts] != 0 && $numPosts > [getparam maxPosts]} {
-!       break
+!     if {![dict exists $post redirectTo]} {
+!       dict set post postNum $numPosts
+!       incr numPosts
+!       if {[getparam maxPosts] != 0 && $numPosts > [getparam maxPosts]} {
+!         break
+!       }
+        [ornament -params $post -directory [dir includes] -file post_summary.html]
 !     }
-      [ornament -params $post -directory [dir includes] -file post_summary.html]
 !   }
   </div>
 </div>
