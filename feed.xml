@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-05-19</updated>
+  <updated>2019-05-21</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Emulating a CP/M System With z80pack</title>
+      <id>http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/</id>
+      <link href="http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-05-21
+        </published>
+
+        <updated>
+          2019-05-21
+        </updated>
+
+        <summary>z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI or ALTAIR including a graphical front-pan</summary>
+    </entry>
     <entry>
       <title>Instrument Flight Simulator on CP/M</title>
       <id>http://techtinkering.com/articles/instrument-flight-simulator-on-cpm/</id>
@@ -1173,7 +1191,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         </published>
 
         <updated>
-          2008-10-22
+          2012-12-11
         </updated>
 
         <summary>My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a</summary>
@@ -1209,7 +1227,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         </published>
 
         <updated>
-          2008-10-17
+          2018-03-13
         </updated>
 
         <summary>I have decided to try out some old CP/M software, but need something to run it on.  I could either do this on my Commodore 128 or through emulation.  Unfortunately the 1571 disk drive for my Commodore </summary>

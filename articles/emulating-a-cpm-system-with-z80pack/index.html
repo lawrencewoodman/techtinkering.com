@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Using DOSBox to Run DOS Games and Applications</title>
-  <meta name="description" content="There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number">
+  <title>Emulating a CP/M System With z80pack</title>
+  <meta name="description" content="z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI o">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Using DOSBox to Run DOS Games and Applications">
-  <meta name="twitter:description" content="There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number">
+  <meta name="twitter:title" content="Emulating a CP/M System With z80pack">
+  <meta name="twitter:description" content="z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI o">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/z80pack_boot_cpm3.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Using DOSBox to Run DOS Games and Applications">
-  <meta property="og:description" content="There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number">
-  <meta property="og:url" content="http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">
+  <meta property="og:title" content="Emulating a CP/M System With z80pack">
+  <meta property="og:description" content="z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI o">
+  <meta property="og:url" content="http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/z80pack_boot_cpm3.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">
+  <link rel="canonical" href="http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -145,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/" title="Using DOSBox to Run DOS Games and Applications">
-          <h1 itemprop="headline name">Using DOSBox to Run DOS Games and Applications</h1>
+        <a href="/articles/emulating-a-cpm-system-with-z80pack/" title="Emulating a CP/M System With z80pack">
+          <h1 itemprop="headline name">Emulating a CP/M System With z80pack</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -157,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2008-10-24">
-            24 October 2008
+                datetime="2019-05-21">
+            21 May 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -172,7 +176,7 @@
           </a>
         </span>
         &nbsp; / &nbsp;
-          <a href="/articles/tag/dos/">DOS</a>
+          <a href="/articles/tag/cpm/">CP/M</a>
           &nbsp; &nbsp;
           <a href="/articles/tag/emulation/">Emulation</a>
           &nbsp; &nbsp;
@@ -183,46 +187,131 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number of options to play these games today, from using a Virtual Machine such as <a href="http://bellard.org/qemu/">QEMU</a>, to <a href="http://dosbox.com">DOSBox</a> which is a dedicated DOS emulator.  Both of these are included in most Linux distributions.  I have chosen DOSBox as it is quick and very easy to use, you don't need to install a DOS compatible operating system on it, and it uses your native file system for storage.</p>
-<h2>Configuring DOSBox</h2>
-<p>If DOSBox isn't included with your Linux distribution then it can be obtained from the <a href="http://www.dosbox.com/download.php?main=1">download</a> section of their site.  Below is a quick example of how to configure DOSBox once you have it installed.  More information can be found by looking at the <a href="http://www.dosbox.com/wiki/Basic_Setup_and_Installation_of_DosBox">Installation Instructions</a> on the emulator's site.</p>
-<p>First create a directory to store you DOS files in:</p>
-<pre><code class="language-bash">$ mkdir ~/dos_c
+        <p><a href="http://www.autometer.de/unix4fun/z80pack/">z80pack</a> is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI or ALTAIR including a graphical front-panel.  It is well documented and is being actively developed.</p>
+<h2>Installing z80pack</h2>
+<ul>
+<li>
+<p>First download the source (z80pack-x.y.tgz, currently z80pack-1.36.tgz) for z80pack from <a href="http://www.autometer.de/unix4fun/z80pack/ftp/">here</a>.  The following <a href="http://www.autometer.de/unix4fun/z80pack/#dri_quick" title="Installation instructions for z80pack">installation instructions</a> are adapted from those on the z80pack site.  More information can be found there, in particular, information on installing z80pack on non Linux/Unix systems.</p>
+</li>
+<li>
+<p>Unpack the source archive in your home directory:</p>
+<pre><code class="language-bash">$ tar xzvf z80pack-1.36.tgz
 </code></pre>
-<p>Now run DOSBox from your home directory:</p>
-<pre><code class="language-bash">$ dosbox
+</li>
+<li>
+<p>Change the directory it is extracted to, to make this article easier to explain.  There is no need for you to do this.</p>
+<pre><code class="language-bash">$ mv z80pack-1.36 z80pack
 </code></pre>
-<p>You should see a screen similar to the following:</p>
-<img style="clear: right;" width="482" height="300" src="/img/articles/dosbox.png" title="DOSBox Startup Screen" alt="Picture of DOSBox Startup Screen"/>
-<p>From within the DOSBox emulation window create a <code>dosbox.conf</code> file in the current native directory:</p>
-<pre><code class="language-text">Z:\&gt; CONFIG -writeconf dosbox.conf
+</li>
+<li>
+<p>Compile the emulator for your operating system, e.g. for linux use <code>-f Makefile.linux</code>:</p>
+<pre><code class="language-bash">$ cd ~/z80pack/cpmsim/srcsim
+$ make -f Makefile.operating-system
+$ make -f Makefile.operating-system clean
 </code></pre>
-<p>Leave DOSBox:</p>
-<pre><code class="language-text">Z:&gt; exit
+</li>
+<li>
+<p>Compile the support programs:</p>
+<pre><code class="language-bash">$ cd ~/z80pack/cpmsim/srctools
+$ make
+$ make clean
 </code></pre>
-<p>To get DOSBox to automatically mount the <code>~/dos_c</code> directory as drive C:, add the following lines to <code>dosbox.conf</code>:</p>
-<pre><code class="language-text">mount c ~/dos_c
-c:
+</li>
+<li>
+<p>If you want to copy the <em>srctools</em> to your <em>~/bin</em> directory then from within <em>~/z80pack/cpmsim/srctools</em> run:</p>
+<pre><code class="language-bash">$ make install
 </code></pre>
-<h2>Installing Software on DOSBox</h2>
-<p>Now comes the real beauty of DOSBox.  All you have to do is put your games or applications in <code>~/dos_c</code>, start DOSBox, and they will be on the C: drive.</p>
-<h3>An Example Using Command and Conquer</h3>
-<p>As an example I have chosen to use Command and Conquer.  This is available from the <a href="http://www.abandonia.com">Abandonia</a> website <a href="http://www.abandonia.com/en/games/378/Command+%2526+Conquer.html">here</a>.  It is available free, and the site says that it is <em><a href="http://en.wikipedia.org/wiki/Freeware">Freeware</a></em>.  Please be aware that some of the software on the site is termed <em><a href="http://en.wikipedia.org/wiki/Abandonware">Abandonware</a></em>, which has disputed legality.  If you want to be sure, just pick software marked as <em>Freeware</em> or <em><a href="http://en.wikipedia.org/wiki/Shareware">Shareware</a></em>.</p>
-<p>To start, it would be useful to create a subdirectory in <code>~/dos_c/</code> called <code>cnc</code>.  In it, unzip the file, <code>Command &amp; Conquer.zip</code>, that you obtained from the Abandonia website.  Now start DOSBox from your home directory:</p>
-<pre><code class="language-bash">$ dosbox
+</li>
+</ul>
+<p>This leaves a few bash scripts in the <em>~/z80pack/cpmsim/</em> directory, <em>cpm2</em>, <em>cpm3</em>, <em>mpm</em>, etc, which automatically start the emulator by booting into CP/M 2.2, CP/M 3.0, MP/M, respectively.</p>
+<h2>Backup Included Disk Images</h2>
+<p>z80pack includes a number of disk images in <em>~/z80pack/cpmsim/disks/library/</em>.  These can easily get corrupted so it makes sense to backup these first:</p>
+<pre><code class="language-bash">cd ~/z80pack/cpmsim/disks/library
+cp -p * ../backups
 </code></pre>
-<p>Within the emulation window change to the cnc directory:</p>
-<pre><code class="language-text">C:\&gt; cd\cnc
+<p>I also keep my own disk images of useful software in the <em>library/</em> directory and keep a backup in the <em>backups/</em> directory as well.</p>
+<h2>Creating disk images</h2>
+<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/~michael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/~michael/cpmtools/files/cpmtools-2.20.tar.gz" title="cpmtools-2.20.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
+<h3>Creating Floppy Diskette Images</h3>
+<p>The emulator uses 8&quot; SD disk drives as the first 4 drives: <em>A:</em>, <em>B:</em>, <em>C:</em>, <em>D:</em>.  This disk specification is the default for Cpmtools.  To create a floppy diskette image called, <em>work.floppy.cpm</em>, run:</p>
+<pre><code class="language-bash">$ mkfs.cpm work.floppy.cpm
 </code></pre>
-<p>To run the English version (<code>cnc_de</code> for German version, <code>cnc_fr</code> for French version):</p>
-<pre><code class="language-text">C:\CNC&gt; cnc_en
+<p>When working with floppies I create a blank floppy called <em>blank.floppy.cpm</em> and then just copy that every time I want to create a new image, rather than creating the image directly.</p>
+<h3>Creating Hard Disk Images</h3>
+<p>z80pack supports a 4Mb hard disk image connected to the <em>I:</em> drive and a 512Mb hard disk image connnected to the <em>P:</em> drive.  These can be particularly useful when dealing with bigger applications such as a C compiler.  To create these we can use Cpmtools, but first we need to make sure that it has the correct disk definition by editing <em>/usr/share/diskdefs</em> and adding the following lines, if not already present:</p>
+<pre><code class="language-text"># 4mb HDD for z80pack
+diskdef z80pack-hd
+  seclen 128
+  tracks 255
+  sectrk 128
+  blocksize 2048
+  maxdir 1024
+  skew 0
+  boottrk 0
+  os 2.2
+end
+
+# 512mb HDD for z80pack
+diskdef z80pack-hdb
+  seclen 128
+  tracks 256
+  sectrk 16384
+  blocksize 16384
+  maxdir 8192
+  skew 0
+  boottrk 0
+  os 2.2
+end
 </code></pre>
-<p>The splash screen should come up, and then present you with a menu:
-<img style="clear: right;" width="482" height="300" src="/img/articles/cnc_menu.jpg" title="Command and Conquer Menu" alt="Picture of Command and Conquer Menu"/></p>
-<p>If you click on the emulation window with your mouse, then the emulation window will grab your mouse and you can use it to move the mouse in the DOS window.  <code>CTRL+F10</code> will release the mouse.  <code>ALT+ENTER</code> will toggle between full screen and normal screen mode.</p>
-<p>If you haven't got any sound, try installing the <code>alsa-oss</code> module to have the OSS sound system routed to your ALSA sound system.</p>
+<p>To create a blank 4Mb Hard Disk image called <em>main.hd4.cpm</em>, run:</p>
+<pre><code class="language-bash">$ mkfs.cpm -fz80pack-hd hd4.cpm
+</code></pre>
+<p>To create a blank 512Mb Hard Disk image called <em>main.hd512.cpm</em>, run:</p>
+<pre><code class="language-bash">$ mkfs.cpm -fz80pack-hdb hd512.cpm
+</code></pre>
+<h2>Managing Files on Disk Images With Cpmtools</h2>
+<p>Cpmtools comes with a number of commands such as: <em>cpmls</em>, <em>cpmcp</em>, <em>cpmrm</em>.  These allow you to manage files on a disk image and get them on and off.  With all of the commands below if using a 4Mb HDD image add <code>-fz80pack-hd</code> and for a 512Mb HDD image add <code>-fz80pack-hdb</code> after the Unix command.</p>
+<p>CP/M has 16 'user areas' which can be used to organize data on a disk.  They are effectively like a crude directory system. User area 0 is the default and the only one we will work with in this article.</p>
+<p>To copy all the <em>.DOC</em> files from the current directory into the image, <em>work.floppy.cpm</em> in user area 0 run:</p>
+<pre><code class="language-bash">$ cpmcp work.floppy.cpm *.DOC 0:
+</code></pre>
+<p>To copy all the <em>.COM</em> files from the current directory into the <em>hd4.cpm</em> image in user area 0 we need to specify the format with <code>-fz80pack-hd</code>:</p>
+<pre><code class="language-bash">$ cpmcp -fz80pack-hd hd4.cpm *.COM 0:
+</code></pre>
+<p>To copy all the <em>.DOC</em> files in user area 0, from the <em>work.floppy.cpm</em> image to the current directory:</p>
+<pre><code class="language-bash">$ cpmcp work.floppy.cpm &quot;0:*.DOC&quot; .
+</code></pre>
+<p>To list the files on <code>work.floppy.cpm</code>:</p>
+<pre><code class="language-bash">$ cpmls work.floppy.cpm
+</code></pre>
+<h2>Configuring z80pack</h2>
+<p>In the <em>~/z80pack/cpmsim/</em> directory there are a number of scripts such as <em>cpm2</em>, <em>cpm3</em>, etc.  These are scripts which tell z80pack which disk images to use for which drives.  We can edit these or create our own.  z80pack expects the disk image files to be in <em>~/z80pack/cpmsim/disks/</em> with the first four 8&quot; floppy disks called <em>drivea.dsk</em> to <em>drived.dsk</em>, the 4Mb HDD called <em>drivei.dsk</em> and the 512Mb HDD called <em>drivep.dsk</em>.  You don't have to have all these disks, but this is what is available to be used.</p>
+<p>As an example we'll create a script called <em>work</em> which uses our 4Mb HDD and floppy disk images created above.  First copy <em>main.hd4.cpm</em> and <em>work.floppy.cpm</em> to the <em>~z80pack/cpmsim/disks/library/</em> directory.  It is also worth copying them to the backups directory as well: <em>~/z80pack/cpmsim/disks/backups/</em></p>
+<p>Now create a script in <em>~/z80pack/cpmsim/</em> called <em>work</em> to start z80pack with our disk image files attached:</p>
+<pre><code class="language-bash">#!/bin/sh
+rm -f disks/drive[abci].dsk
+cp disks/library/cpm3-1.dsk disks/drivea.dsk
+cp disks/library/cpm3-2.dsk disks/driveb.dsk
+ln disks/library/work.floppy.cpm disks/drivec.dsk
+ln disks/library/main.hd4.cpm disks/drivei.dsk
+./cpmsim -f4
+</code></pre>
+<p>This attaches the two CP/M disks on drive A and B, our <em>work.floppy.cpm</em> image on drive <em>C:</em>, and our <em>main.hd4.cpm</em> image on <em>I:</em>.  I copy rather than create links to disk images I know I don't want altered to keep them in a consistent state.  The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which makes it a bit more realistic.</p>
+<p>To make the script executable run:</p>
+<pre><code class="language-bash">$ chmod +x work
+</code></pre>
+<h2>Starting the Emulator</h2>
+<img src="/img/articles/z80pack_boot_cpm3.png" class="img-right" style="width: 465px; clear: right;" title="z80pack booting CP/M 3">
+<p>From the <code>~/z80pack/cpmsim/</code> directory, run the script we created:</p>
+<pre><code class="language-bash">$ ./work
+</code></pre>
+<p>The CP/M operating system will now boot up and leave you at the <code>A&gt;</code> prompt.  You will have access to the <em>A:</em> and <em>B:</em> diskette images which will contain the CP/M 3 files.  <em>C:</em> will be linked to your <em>work.floppy.cpm</em> disk image and <em>I:</em> will be linked to your 4Mb HDD image.</p>
+<p>For here you can run the normal CP/M commands such as <em>DIR</em> and start exploring.</p>
+<p>There is a command on the <em>A:</em> drive called <em>bye</em> to leave the emulator:</p>
+<pre><code class="language-text">A&gt; bye
+</code></pre>
 <h2>Where Now?</h2>
-<p>Now you can load your old DOS software onto your new machine and remember the good old days.  Alternatively you can download DOS software from a number of websites on the internet for free.  It is worth checking the legality of some of the software before downloading, but there is still plenty of free legal software to download, as well as some to buy.</p>
+<p>I have a growing number of <a href="/articles/tag/cpm/">CP/M articles</a> on this site and there is also a <a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NEGOhOca8_3MP1zUSYDGwc">CP/M Playlist</a> on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a>.</p>
       </div>
     </article>
   </div>
@@ -235,8 +324,8 @@ c:
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Using DOSBox to Run DOS Games and Applications</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Emulating a CP/M System With z80pack</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -249,28 +338,6 @@ c:
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/emulating-a-cpm-system-with-z80pack/">Emulating a CP/M System With z80pack</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-05-21">
-        21 May 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/tutorial/">Tutorial</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI or ALTAIR including a graphical front-pan...
-  &nbsp;
-  <a class="readMore" href="/articles/emulating-a-cpm-system-with-z80pack/">Read More</a>
-</div>
         <header>
   <h3><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></h3>
   <span class="post-meta">
@@ -346,15 +413,37 @@ c:
   <a class="readMore" href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Read More</a>
 </div>
         <header>
-  <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a Vic-20 Assembly Language Program</a></h3>
+  <h3><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Using DOSBox to Run DOS Games and Applications</a></h3>
   <span class="post-meta">
-      <time datetime="2013-05-10">
-        10 May 2013
+      <time datetime="2008-10-24">
+        24 October 2008
       </time>
       &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
+      <a href="/articles/tag/dos/">DOS</a>
       &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
+      <a href="/articles/tag/emulation/">Emulation</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  There were some brilliant games and applications released for DOS, and some of the games such as Command and Conquer are still very playable.  There are a number of options to play these games today, f...
+  &nbsp;
+  <a class="readMore" href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-22">
+        22 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/c/">C</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
       &nbsp; &nbsp;
       <a href="/articles/tag/programming/">Programming</a>
       &nbsp; &nbsp;
@@ -362,14 +451,14 @@ c:
       &nbsp; &nbsp;
       <a href="/articles/tag/tutorial/">Tutorial</a>
       &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">Vic-20</a>
+      <a href="/articles/tag/z80/">Z80</a>
       &nbsp; &nbsp;
   </span>
 </header>
 <div>
-  To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you ...
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
   &nbsp;
-  <a class="readMore" href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Read More</a>
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
 </div>
   </div>
 </div>
@@ -393,8 +482,8 @@ c:
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2008/10/24/using-dosbox-to-run-dos-games-and-applications/';
-      var disqus_url = 'http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/';
+      var disqus_identifier = '/articles/emulating-a-cpm-system-with-z80pack/';
+      var disqus_url = 'http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
