@@ -1,3 +1,6 @@
+cpm {
+  summary {CP/M is an operating system created by Gary Kildall of Digital Research, Inc. originally for Intel 8080/8085 based microcomputers.  As well as the articles here there is also a [CP/M Playlist](https://www.youtube.com/playlist?list=PL6PrE7UVkn_NEGOhOca8_3MP1zUSYDGwc) on the [TechTinkering YouTube Channel](https://www.youtube.com/user/TechTinkering).}
+}
 ornament {
   summary {Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.}
 }
