@@ -55,7 +55,7 @@ When working with floppies I create a blank floppy called _blank.floppy.cpm_ and
 
 
 ### Creating Hard Disk Images
-z80pack supports a 4Mb hard disk image connected to the _I:_ drive and a 512Mb hard disk image connnected to the _P:_ drive.  These can be particularly useful when dealing with bigger applications such as a C compiler.&nbsp; To create these we can use Cpmtools, but first we need to make sure that it has the correct disk definition by editing _/usr/share/diskdefs_ and adding the following lines, if not already present:
+z80pack supports a 4Mb hard disk image connected to the _I:_ drive and a 512Mb hard disk image connnected to the _P:_ drive.  These can be particularly useful when dealing with bigger applications such as a C compiler.&nbsp; To create these we can use Cpmtools, but first we need to make sure that it has the correct disk definitions by editing the _diskdefs_ file typically found in _/usr/share/_ or _/usr/local/share/_ and adding the following lines, if not already present:
 
 ```` text
 # 4mb HDD for z80pack
