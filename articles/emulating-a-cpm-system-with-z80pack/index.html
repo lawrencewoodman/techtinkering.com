@@ -238,7 +238,7 @@ cp -p * ../backups
 </code></pre>
 <p>When working with floppies I create a blank floppy called <em>blank.floppy.cpm</em> and then just copy that every time I want to create a new image, rather than creating the image directly.</p>
 <h3>Creating Hard Disk Images</h3>
-<p>z80pack supports a 4Mb hard disk image connected to the <em>I:</em> drive and a 512Mb hard disk image connnected to the <em>P:</em> drive.  These can be particularly useful when dealing with bigger applications such as a C compiler.  To create these we can use Cpmtools, but first we need to make sure that it has the correct disk definition by editing <em>/usr/share/diskdefs</em> and adding the following lines, if not already present:</p>
+<p>z80pack supports a 4Mb hard disk image connected to the <em>I:</em> drive and a 512Mb hard disk image connnected to the <em>P:</em> drive.  These can be particularly useful when dealing with bigger applications such as a C compiler.  To create these we can use Cpmtools, but first we need to make sure that it has the correct disk definitions by editing the <em>diskdefs</em> file typically found in <em>/usr/share/</em> or <em>/usr/local/share/</em> and adding the following lines, if not already present:</p>
 <pre><code class="language-text"># 4mb HDD for z80pack
 diskdef z80pack-hd
   seclen 128
