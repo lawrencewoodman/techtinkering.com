@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-05-22</updated>
+  <updated>2019-05-24</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Transferring Files to and from CP/M .D71 Disk Images Using ctools</title>
+      <id>http://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/</id>
+      <link href="http://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-05-24
+        </published>
+
+        <updated>
+          2019-05-24
+        </updated>
+
+        <summary>Using Vice to emulate a Commodore 128 running CP/M works very well, but it isn't easy to get CP/M files directly onto and off a .D64/.D71 disk image.  The easiest way to do this under Linux is to use c</summary>
+    </entry>
     <entry>
       <title>Emulating a CP/M System With z80pack</title>
       <id>http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/</id>
