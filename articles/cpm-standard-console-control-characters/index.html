@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Text Viewers on CP/M</title>
-  <meta name="description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
+  <title>CP/M Standard Console Control Characters</title>
+  <meta name="description" content="CP/M helped provide a consistent console interface for the user by supporting a number of standard control characters through the BDOS console functions.  This w">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Text Viewers on CP/M">
-  <meta name="twitter:description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
+  <meta name="twitter:title" content="CP/M Standard Console Control Characters">
+  <meta name="twitter:description" content="CP/M helped provide a consistent console interface for the user by supporting a number of standard control characters through the BDOS console functions.  This w">
     <meta name="twitter:image"
-         content="http://techtinkering.com/img/social_images/ql.png">
+         content="http://techtinkering.com/img/social_images/cpm_line_editing.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Text Viewers on CP/M">
-  <meta property="og:description" content="There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the Walnut Creek CD to see if I ca">
-  <meta property="og:url" content="http://techtinkering.com/articles/text-viewers-on-cpm/">
+  <meta property="og:title" content="CP/M Standard Console Control Characters">
+  <meta property="og:description" content="CP/M helped provide a consistent console interface for the user by supporting a number of standard control characters through the BDOS console functions.  This w">
+  <meta property="og:url" content="http://techtinkering.com/articles/cpm-standard-console-control-characters/">
     <meta property="og:image"
-         content="http://techtinkering.com/img/social_images/ql.png">
+         content="http://techtinkering.com/img/social_images/cpm_line_editing.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/articles/text-viewers-on-cpm/">
+  <link rel="canonical" href="http://techtinkering.com/articles/cpm-standard-console-control-characters/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -149,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/articles/text-viewers-on-cpm/" title="Text Viewers on CP/M">
-          <h1 itemprop="headline name">Text Viewers on CP/M</h1>
+        <a href="/articles/cpm-standard-console-control-characters/" title="CP/M Standard Console Control Characters">
+          <h1 itemprop="headline name">CP/M Standard Console Control Characters</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -161,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2019-03-27">
-            27 March 2019
+                datetime="2019-06-07">
+             7 June 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -183,18 +183,221 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>There are lots of text viewers on CP/M and I want to show the three that I use most often.  I have recently been going through the <a href="http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD">Walnut Creek CD</a> to see if I can find any better text viewers, but after trying all those I could find I still think the three below are the best that CP/M has to offer, at least for my needs.</p>
-<h2>TYPE</h2>
-<p>This comes with CP/M as standard and is good to quickly look at a short text file, but you can only page forward through the file and therefore if you miss something and want to go back you have to quit and restart it.</p>
-<h2>PEEP</h2>
-<p>This is a small and quick text file viewer that allows you to move through a file with ease.  The control keys are arranged around the home keys which makes it very comfortable to use.  While it attempts to load the whole file into memory, if this isn't possible then you can press <em>r</em> at the end of a loaded section to load more and therefore peep can be used to view files of any length.  The executable is only around 2k, which makes it ideal for putting in a ram disk and is available <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/peep13.lbr" title="peep13.lbr">here</a> on the Walnut Creek CD.</p>
-<h2>QL</h2>
-<img src="/img/articles/ql_cpm_file_view.png" class="img-right" style="clear: left;" title="QL File View">
-<p>This is my favourite of the three, but also the biggest at about 10k because it can do so much.  I remember using <em>list</em> on MS-DOS and this is very similar to that.  QL allows you to call it without a filename and then it will display a list of files on the drive which you can select by typing the number displayed next to it.  It works really fast, has a built-in hex viewer and holds the entire file in memory, which also means, unfortunately, that if the file is too big then it will truncate it.  However, CP/M files tend to be split into smaller files anyway so I rarely find this a problem.  Another nice thing about QL is that you can view files contained in .LBR files and you can also view squeezed and crunched files even if they are contained in an .LBR file.  QL is available <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/ql41.lbr" title="ql41.lbr">here</a> on the Walnut Creek CD.</p>
-<p>You can see the text file viewers in action below.</p>
+        <p>CP/M helped provide a consistent console interface for the user by supporting a number of standard control characters through the BDOS console functions.  This was great for the user and made life much easier for the programmer as a lot of the work was already done for them.</p>
+<h2>CP/M 2.2 Control Characters</h2>
+<table class="neatTable neatBorder">
+  <tr><th>Character</th><th>Meaning</th></tr>
+  </tr>
+    <td>CTRL-C</td>
+    <td>Restart (warm boot) system.  This is used to exit a running program and to reset the disk system.  On CP/M 2.2 you use this at the system prompt after changing a diskette to allow you write to it without corrupting the disk.</td>
+  </tr>
+  </tr>
+    <td>CTRL-E</td>
+    <td>Move cursor to beginning of next line without sending line to be processed.  This is useful for typing long lines that are longer than the terminal's line length.</td>
+  </tr>
+  <tr>
+    <td>CTRL-H,<br />RUBOUT,<br />DELETE</td>
+    <td>Delete character to the left of cursor.  On some terminals this will repeat the character deleted on others it will move the cursor one character to the left.</td>
+  <tr>
+    <td>CTRL-I,<br />TAB</td>
+    <td>Move cursor to next tap stop which is automatically set at each  column.</td>
+  </tr>
+  <tr>
+    <td>CTRL-J,<br />CTRL-M,<br />RETURN</td>
+    <td>Send the line to be processed and move the cursor to the beginning of a new line below.</td>
+  </tr>
+  </tr>
+    <td>CTRL-P</td>
+    <td>Start echoing everything sent to the console to the printer.  A second CTRL-P stops printer echo.</td>
+  </tr>
+  <tr>
+    <td>CTRL-R</td>
+    <td>Re-type current line.  It will place a '#' at the end of the current line and then redisplay the current line below.  This is useful if you have been deleting characters in a line or the line has got corrupted for some reason.</td>
+  </tr>
+  <tr>
+    <td>CTRL-S</td>
+    <td>Stop terminal from scrolling.  This is useful if text is scrolling too fast on the terminal to read it.  If the scrolling is paused you can terminate the program with CTRL-C.  A second CTRL-S allows terminal to start scrolling again.</td>
+  </tr>
+  <tr>
+    <td>CTRL-U</td>
+    <td>Discard line and allows you to start again on the line below.  It will place a '#' at the end of the discarded line and then move to the beginning of the next line to allow you to enter replacement text.</td>
+  </tr>
+  <tr>
+    <td>CTRL-X</td>
+    <td>Erase line and move the cursor to the beginning of that line.</td>
+  </tr>
+</table>
 <div class="youtube-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/cGhZ72srcIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/TVOnK6b5plo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<h2>CP/M 3 Control Characters</h2>
+<p>CP/M 3 added a number of control characters and changed others.</p>
+<table class="neatTable neatBorder">
+  <tr><th>Character</th><th>Meaning</th></tr>
+  <tr>
+    <td>CTRL-Q</td>
+    <td>Restart terminal scrolling after being stopped with CTRL-S.</td>
+  </tr>
+  <tr>
+    <td>CTRL-R</td>
+    <td>Re-type current line.  It will place a '#' at the <em>current cursor position and display the current line left of the cursor on the line below.  This is useful if you have been editing a line</em> or the line has got corrupted for some reason.</td>
+  </tr>
+  <tr>
+    <td>CTRL-S</td>
+    <td>Stop terminal from scrolling.  This is useful if text is scrolling too fast on the terminal to read it.  If the scrolling is paused you can terminate the program with CTRL-C.  <em>CTRL-Q allows terminal to start scrolling again.</em></td>
+  </tr>
+  <tr>
+    <td>CTRL-X</td>
+    <td>Erase line <em>to the left of the cursor and move the cursor to the beginning of that line.  This keeps any characters to the right of the cursor.</em></td>
+  </tr>
+</table>
+<h3>CP/M 3 Line Editing Control Characters</h3>
+<p>One of the great additions in CP/M 3 is the line editing control characters that provide a standard way to edit a line.  This only worked on systems that were configured for banked memory, but by the time CP/M 3 came out most new machines were.</p>
+<table class="neatTable neatBorder">
+  <tr><th>Character</th><th>Meaning</th></tr>
+  <tr>
+    <td>CTRL-A</td>
+    <td>Move the cursor one character to the left.</td>
+  </tr>
+  <tr>
+    <td>CTRL-B</td>
+    <td>Move the cursor to the beginning of the line.  If the cursor is beginning of the line then it moves the cursor to the end of the line.</td>
+  </tr>
+  <tr>
+    <td>CTRL-F</td>
+    <td>Move the cursor one character to the right.</td>
+  </tr>
+  <tr>
+    <td>CTRL-G</td>
+    <td>Delete the character at the cursor.  The rest of the line to the right of the cursor moves one character to the left.</td>
+  </tr>
+  <tr>
+    <td>CTRL-I,<br />TAB</td>
+    <td>Move cursor to next tap stop which is automatically set at each eighth column.  <em>If there is text to the right of the cursor it will be moved to the next tab stop.</em></td>
+  </tr>
+  <tr>
+    <td>CTRL-K</td>
+    <td>Delete from the cursor to the end of the line.</td>
+  </tr>
+  <tr>
+    <td>CTRL-W</td>
+    <td>Recall previous line discarded that was to the left of the cursor when CTRL-U was pressed.</td>
+  </tr>
+</table>
+<div class="youtube-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cgyIpAkcFyA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2>Test Programs</h2>
+<p>To demonstrate that these control characters were handled by the built-in BDOS calls, two programs are supplied below.</p>
+<h3>Testing Line Input Control Characters</h3>
+<p>The following program repeatedly accepts a line of text and then when 'RETURN' or similar is pressed it will echo it back to the user.  It demonstrates how the built-in BDOS 10 (<code>RBUFF</code>) function, called from within <code>CIMSG</code>, handles the standard console input control characters for the programmer.</p>
+<pre><code class="language-NASM">; ECHO LINES OF TEXT ENTERED
+; BASED ON EXAMPLE FROM CP/M ASSEMBLY LANGUAGE PROGRAMMING BY KEN BARBIER
+; 4 JUNE 2019
+
+; ASCII CHARACTERS
+CR      EQU     0DH             ; CARRIAGE RETURN
+LF      EQU     0AH             ; LINE FEED
+
+; CP/M BDOS FUNCTIONS
+WCONF   EQU     2               ; WRITE (E) TO CON:
+RBUFF   EQU     10              ; READ A CONSOLE LINE
+
+; CP/M ADDRESSES
+BDOS    EQU     5               ; SYSTEM CALL ENTRY
+TPA     EQU     100H            ; TRANSIENT PROGRAM AREA
+
+        ORG     TPA
+
+START:  LXI     SP,STAK         ; SET UP USER'S STACK
+START2: CALL    CIMSG           ; GET A LINE OF INPUT
+        CALL    CCRLF
+        LXI     H,INBUF+2       ; POINT TO ITS TEXT
+        CALL    COMSG           ; ECHO THE WHOLE LINE
+        CALL    CCRLF           ; AND CR, LF
+        JMP     START2          ; THEN DO ANOTHER
+
+; CHARACTER IN REGISTER A OUTPUT TO CONSOLE
+CO:     PUSH    B               ; SAVE REGISTERS
+        PUSH    D
+        PUSH    H
+        MVI     C,WCONF         ; SELECT FUNCTION
+        MOV     E,A             ; CHARACTER TO E
+        CALL    BDOS            ; OUTPUT BY CP/M
+        POP     H               ; RESTORE REGISTERS
+        POP     D
+        POP     B
+        RET
+
+; CARRIAGE RETURN, LINE FEED TO CONSOLE
+CCRLF:  MVI     A,CR
+        CALL    CO
+        MVI     A,LF
+        JMP     CO
+
+; MESSAGE POINTED TO BY HL OUT TO CONSOLE
+COMSG:  MOV     A,M             ; GET A CHARACTER
+        ORA     A               ; ZERO IS THE TERMINATOR
+        RZ                      ; RETURN ON ZERO
+        CALL    CO              ; ELSE OUTPUT THE CHARACTER
+        INX     H               ; POINT TO THE NEXT ONE
+        JMP     COMSG           ; AND CONTINUE
+
+; INPUT CONSOLE MESSAGE INTO BUFFER
+CIMSG:  PUSH    B               ; SAVE REGISTERS
+        PUSH    D
+        PUSH    H
+        LXI     H,INBUF+1       ; ZERO CHARACTER COUNTER
+        MVI     M,0
+        DCX     H               ; SET MAXIMUM LINE LENGTH
+        MVI     M,80
+        XCHG                    ; INBUF POINTER TO DE REGISTERS
+        MVI     C,RBUFF         ; SET UP READ BUFFER FUNCTION
+        CALL    BDOS            ; INPUT A LINE
+        LXI     H,INBUF+1       ; GET CHARACTER COUNTER
+        MOV     E,M             ; INTO LSB OF DE REGISTER PAIR
+        MVI     D,0             ; ZERO MSB
+        DAD     D               ; ADD LENGTH TO START
+        INX     H               ; PLUS ONE POINTS TO END
+        MVI     M,0             ; INSERT TERMINATOR AT END
+        POP     H               ; RESTORE ALL REGISTERS
+        POP     D
+        POP     B
+        RET
+
+INBUF:  DS      83              ; LINE INPUT BUFFER
+
+; SET UP STACK SPACE
+        DS      64              ; NUM LOCATIONS ON STACK
+STAK    DB      0               ; TOP OF STACK
+
+        END
+</code></pre>
+<h3>Testing Output Control Characters</h3>
+<p>The program below will output alternating '0' or '1' characters which you can pause/unpause with 'CTRL-S' and 'CTRL-Q' as appropriate.  If paused you can exit the program with 'CTRL-C'.  The standard console output control characters are handled by the built-in BDOS 2 (<code>WCONF</code>) function which relieves the programmer of this task.</p>
+<pre><code class="language-NASM">; OUTPUT ALTERNATE '0' OR '1' CHARACTERS
+; BY LAWRENCE WOODMAN
+; 4 JUNE 2019
+
+; CP/M BDOS FUNCTIONS
+WCONF   EQU     2               ; WRITE (E) TO CON:
+
+; CP/M ADDRESSES
+BDOS    EQU     5
+TPA     EQU     100H
+
+        ORG     TPA
+
+START:  MVI     C,WCONF
+        MVI     E,'0'
+        CALL    BDOS
+        MVI     C,WCONF
+        MVI     E,'1'
+        CALL    BDOS
+        JMP     START
+
+        END
+</code></pre>
       </div>
     </article>
   </div>
@@ -207,8 +410,8 @@
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Text Viewers on CP/M</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/text-viewers-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CP/M Standard Console Control Characters</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/cpm-standard-console-control-characters/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -221,24 +424,6 @@
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/cpm-standard-console-control-characters/">CP/M Standard Console Control Characters</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-06-07">
-         7 June 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  CP/M helped provide a consistent console interface for the user by supporting a number of standard control characters through the BDOS console functions.  This was great for the user and made life much...
-  &nbsp;
-  <a class="readMore" href="/articles/cpm-standard-console-control-characters/">Read More</a>
-</div>
         <header>
   <h3><a href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Transferring Files to and from CP/M .D71 Disk Images Using ctools</a></h3>
   <span class="post-meta">
@@ -321,6 +506,24 @@
   &nbsp;
   <a class="readMore" href="/articles/interactive-file-managers-on-cpm/">Read More</a>
 </div>
+        <header>
+  <h3><a href="/articles/felix-animation-system-on-cpm/">Felix Animation System on CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2019-04-23">
+        23 April 2019
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation ...
+  &nbsp;
+  <a class="readMore" href="/articles/felix-animation-system-on-cpm/">Read More</a>
+</div>
   </div>
 </div>
 
@@ -343,8 +546,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/articles/text-viewers-on-cpm/';
-      var disqus_url = 'http://techtinkering.com/articles/text-viewers-on-cpm/';
+      var disqus_identifier = '/articles/cpm-standard-console-control-characters/';
+      var disqus_url = 'http://techtinkering.com/articles/cpm-standard-console-control-characters/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
