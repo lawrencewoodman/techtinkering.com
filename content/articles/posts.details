@@ -1,3 +1,13 @@
+{ filename    2019-06-07-cpm-standard-console-control-characters.md
+  title       "CP/M Standard Console Control Characters"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_line_editing.png"
+  tags        {"CP/M" "Retro"}
+}
+
 { filename    2019-05-24-transferring-files-to-and-from-cpm-d71-disk-images-using-ctools.md
   title       "Transferring Files to and from CP/M .D71 Disk Images Using ctools"
   author      {
