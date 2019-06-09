@@ -16,7 +16,7 @@ Finally, Borland included a highly readable and very complete [manual](http://bi
 ## How to install
 First download [Turbo Pascal 3.01a](http://www.retroarchive.org/cpm/lang/TP_301A.ZIP) for CP/M-80 and unzip the archive.
 
-Put at least `TINST.*` and `TURBO.*` files onto a disk.  The real advantage of not copying all the files is seen if you only have a single drive.  The extra room will allow you to edit, compile and run your programs all from the same disk.  For instructions on how to create a virtual disk for z80pack look at: [Setting up z80pack to Create an Emulated CP/M System](/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/).
+Put at least `TINST.*` and `TURBO.*` files onto a disk.  The real advantage of not copying all the files is seen if you only have a single drive.  The extra room will allow you to edit, compile and run your programs all from the same disk.  For instructions on how to create a virtual disk for z80pack look at: [Emulating a CP/M System With z80pack](/articles/emulating-a-cpm-system-with-z80pack/).
 
 Boot up your CP/M system, put in the disk with TP on it and change to this drive if necessary.  In my examples I am using `B:`
 

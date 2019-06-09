@@ -94,7 +94,7 @@ COUNT:	DB	0
 
 <br />
 
-You can see a couple of animations using Felix in the following video.  It demonstrates Felix using [z80pack](/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/) to emulate an IMSAI 8080 with a Dazzler, running CP/M 2.2.  Unfortunately, I'm not able to fully test Felix because the emulator doesn't emulate the required analog-to-digital converter to use the joysticks.  However, it was fun to play with and I think it's nice to see the system in action.
+You can see a couple of animations using Felix in the following video.  It demonstrates Felix using [z80pack](/articles/emulating-a-cpm-system-with-z80pack/) to emulate an IMSAI 8080 with a Dazzler, running CP/M 2.2.  Unfortunately, I'm not able to fully test Felix because the emulator doesn't emulate the required analog-to-digital converter to use the joysticks.  However, it was fun to play with and I think it's nice to see the system in action.
 
 <div class="youtube-wrapper">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/QdmXZ0U9XHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

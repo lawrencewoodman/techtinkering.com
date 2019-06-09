@@ -1,7 +1,7 @@
 Udo Munk has just released the latest version of his [z80pack](http://www.unix4fun.org/z80pack/) emulator, version 1.17, which now includes John Kichury's FrontPanel library.  As well as being a superb emulator to run CP/M on, it now gives you a great graphical representation of the [Altair 8800](http://en.wikipedia.org/wiki/Altair_8800 "Altair 8800 Wikipedia Article") and [IMSAI 8080](http://en.wikipedia.org/wiki/IMSAI_8080 "IMSAI 8080 Wikipedia Article") with fully functional switches and flashing lights.  If you've ever wondered what it would be like to use one of these machines, why not give it a try?
 
 ## Installing z80pack
-The following installation instructions are only for the Altair 8800 and IMSAI 8080 systems.  For installation instructions of the complete system, why not have a look at my previous article: [Setting up z80pack to create an emulated CP/M system](/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system).
+The following installation instructions are only for the Altair 8800 and IMSAI 8080 systems.  For installation instructions of the complete system, why not have a look at another article: [Emulating a CP/M System With z80pack](/articles/emulating-a-cpm-system-with-z80pack/).
 
 * First download the source (z80pack-x.y.tgz, currently z80pack-1.17.tgz) for [z80pack](http://www.unix4fun.org/z80pack/ "z80pack main site") from its [ftp site](ftp://ftp.unix4fun.org/z80pack).  The following [installation instructions](http://www.unix4fun.org/z80pack/#dri_quick "Installation instructions for z80pack") are taken from the z80pack site.  More information can be found there, in particular, information on installing z80pack on non Linux/Unix systems.
 

@@ -93,7 +93,7 @@ BEGIN
 END primes.
 ````
 
-The following table shows the average results from running each test 10 times and timing their execution and build (compiling + linking).  This was performed under [z80pack](/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/) running at 4Mhz and therefore doesn't allow for the increased disk access time of a real system.  For the TM-2 tests it also doesn't include the time to manually answer the questions required to build, instead it is just the processing time.
+The following table shows the average results from running each test 10 times and timing their execution and build (compiling + linking).  This was performed under [z80pack](/articles/emulating-a-cpm-system-with-z80pack/) running at 4Mhz and therefore doesn't allow for the increased disk access time of a real system.  For the TM-2 tests it also doesn't include the time to manually answer the questions required to build, instead it is just the processing time.
 
 <table class="neatTable">
   <tr><th>Compiler</th><th title="Total time processing during compiling and linking">Build</th><th title="Execution Time">Execution</th><th>Executable Size</th></tr>
