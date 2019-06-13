@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-06-09</updated>
+  <updated>2019-06-13</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Hunt the Wumpus on CP/M</title>
+      <id>http://techtinkering.com/articles/hunt-the-wumpus-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/hunt-the-wumpus-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-06-13
+        </published>
+
+        <updated>
+          2019-06-13
+        </updated>
+
+        <summary>Hunt The Wumpus was created by Gregory Yob in 1973 after seeing some of the hide and seek style games distributed by the People's Computer Company.  Games such as  Hurkle, Snark and Mugwump were all ba</summary>
+    </entry>
     <entry>
       <title>CP/M Standard Console Control Characters</title>
       <id>http://techtinkering.com/articles/cpm-standard-console-control-characters/</id>
