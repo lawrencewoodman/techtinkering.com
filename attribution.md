@@ -1,4 +1,13 @@
 # Image Attribution
+
+<style>
+.thumbnail {
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: top;
+}
+</style>
+
 TechTinkering uses a number of third-party images which are detailed below.
 
 The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) licence.
@@ -6,4 +15,11 @@ The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) li
 * [Candle](https://www.maxpixel.net/Candlelight-Candle-Mood-Light-Romance-Flame-2631921)
 * [St Petersburg Isaac Kathedrahle](https://www.maxpixel.net/St-Petersburg-Isaac-Kathedrahle-World-Heritage-3710243)
 
-The social media icons used to share the articles are from: [https://simplesharingbuttons.com](https://simplesharingbuttons.com) and are licensed under a [CC By 3.0](https://creativecommons.org/licenses/by/3.0/) licence.
+The following use a [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) licence.
+
+* <img src="https://raw.githubusercontent.com/lawrencewoodman/techtinkering.com/master/content/static/img/articles/496px-Dodecahedron_schlegel_diagram.png" class="thumbnail"><br />
+  [Dodecahedron schlegel diagram](https://commons.wikimedia.org/wiki/File:Dodecahedron_schlegel_diagram.png) by [Tomruen](https://en.wikipedia.org/wiki/User:Tomruen).
+
+The following use a [CC By 3.0](https://creativecommons.org/licenses/by/3.0/) licence.
+
+* The social media icons used to share the articles are from: [https://simplesharingbuttons.com](https://simplesharingbuttons.com).

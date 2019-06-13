@@ -1,3 +1,13 @@
+{ filename    2019-06-13-hunt-the-wumpus-on-cpm.md
+  title       "Hunt the Wumpus on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_wumpus.png"
+  tags        {"CP/M" "Retro" "Games"}
+}
+
 { filename    2019-06-07-cpm-standard-console-control-characters.md
   title       "CP/M Standard Console Control Characters"
   author      {
@@ -36,7 +46,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "cpm_instrument_flight_simulator.png"
-  tags        {"Retro" "CP/M"}
+  tags        {"Retro" "CP/M" "Games"}
 }
 
 { filename    2019-05-10-interactive-file-managers-on-cpm.md
