@@ -52,6 +52,7 @@ file copy [file join $jsDir *.js] [www::makeDestination js]
 
 set downloadsDir [dir content static downloads]
 file copy [file join $downloadsDir *.gz] \
+          [file join $downloadsDir *.lbr] \
           [file join $downloadsDir *.patch] \
           [www::makeDestination downloads]
 
