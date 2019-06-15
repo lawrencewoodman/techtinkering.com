@@ -14,6 +14,8 @@ In the original version of the game, the cave system was a regular dodecahedron 
 
 Gregory Yob envisioned that people would use the maps and then carefully narrow down where the Wumpus must be before killing it, but he says that it turned out that people preferred to chase the Wumpus instead.  Your are free to choose the best strategy for yourself.
 
+<img src="/img/articles/wumpus_advisor_abstract_mit.png" class="img-right" style="width: 750px; clear: right;" title="Abstract for Wumpus Advisor Report from MIT">
+
 Interestingly work was done on 'Computer Assisted Instruction' at MIT to create a [Wumpus Advisor](https://archive.org/details/DTIC_ADA036678/page/n3) program which would offer advice to a player as to how to choose the best move in a game.  Thanks to [Martin on comp.os.cpm](https://groups.google.com/d/msg/comp.os.cpm/aTdGmgDKF-c/2YIrPicqCgAJ) for finding that report.
 
 ## Fixing the Version on the Walnut Creek CD
