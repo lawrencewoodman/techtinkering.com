@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-06-14</updated>
+  <updated>2019-06-15</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -18,7 +18,7 @@
         </published>
 
         <updated>
-          2019-06-13
+          2019-06-15
         </updated>
 
         <summary>Hunt The Wumpus was created by Gregory Yob in 1973 after seeing some of the hide and seek style games distributed by the People's Computer Company.  Games such as  Hurkle, Snark and Mugwump were all ba</summary>
