@@ -8,6 +8,8 @@ The premise of the game is that you are in a cave system of connecting 'rooms' a
 
 In the original version of the game, the cave system was a regular dodecahedron with each vertex representing a room.  This was extended by Wumpus 2 which added five more caves, each with different properties.  The cave systems were consistent and used the same room number for each vertex, therefore you could create maps like the flattened dodecahedron in the image to the left.
 
+<br style="clear:left;" />
+
 ## Strategy
 
 Gregory Yob envisioned that people would use the maps and then carefully narrow down where the Wumpus must be before killing it, but he says that it turned out that people preferred to chase the Wumpus instead.  Your are free to choose the best strategy for yourself.
