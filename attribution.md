@@ -9,9 +9,10 @@ The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) li
 
 The following use a [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) licence.
 
+
 <div>
   <img src="https://raw.githubusercontent.com/lawrencewoodman/techtinkering.com/master/content/static/img/articles/496px-Dodecahedron_schlegel_diagram.png"
-         style="max-width: 300px; max-height: 300px; vertical-align: top"><br />
+       width="300px"><br />
 
   <a href="https://commons.wikimedia.org/wiki/File:Dodecahedron_schlegel_diagram.png">Dodecahedron schlegel diagram</a> by <a href="https://en.wikipedia.org/wiki/User:Tomruen">Tomruen</a>.
 </div>
