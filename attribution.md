@@ -1,13 +1,5 @@
 # Image Attribution
 
-<style>
-.thumbnail {
-  max-width: 300px;
-  max-height: 300px;
-  vertical-align: top;
-}
-</style>
-
 TechTinkering uses a number of third-party images which are detailed below.
 
 The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) licence.
@@ -17,8 +9,12 @@ The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) li
 
 The following use a [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) licence.
 
-* <img src="https://raw.githubusercontent.com/lawrencewoodman/techtinkering.com/master/content/static/img/articles/496px-Dodecahedron_schlegel_diagram.png" class="thumbnail"><br />
-  [Dodecahedron schlegel diagram](https://commons.wikimedia.org/wiki/File:Dodecahedron_schlegel_diagram.png) by [Tomruen](https://en.wikipedia.org/wiki/User:Tomruen).
+<div>
+  <img src="https://raw.githubusercontent.com/lawrencewoodman/techtinkering.com/master/content/static/img/articles/496px-Dodecahedron_schlegel_diagram.png"
+         style="max-width: 300px; max-height: 300px; vertical-align: top"><br />
+
+  <a href="https://commons.wikimedia.org/wiki/File:Dodecahedron_schlegel_diagram.png">Dodecahedron schlegel diagram</a> by <a href="https://en.wikipedia.org/wiki/User:Tomruen">Tomruen</a>.
+</div>
 
 The following use a [CC By 3.0](https://creativecommons.org/licenses/by/3.0/) licence.
 
