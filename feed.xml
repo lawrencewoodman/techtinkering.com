@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-06-15</updated>
+  <updated>2019-06-19</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Mission: Impossible on CP/M</title>
+      <id>http://techtinkering.com/articles/mission-impossible-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/mission-impossible-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-06-19
+        </published>
+
+        <updated>
+          2019-06-19
+        </updated>
+
+        <summary>Mission: Impossible simulates a foreign espionage mission based on the TV series.  Your mission, should you decide to accept it, is to recover the objects or person taken by enemy agents and hidden in </summary>
+    </entry>
     <entry>
       <title>Hunt the Wumpus on CP/M</title>
       <id>http://techtinkering.com/articles/hunt-the-wumpus-on-cpm/</id>
