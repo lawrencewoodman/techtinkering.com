@@ -1,3 +1,13 @@
+{ filename    2019-06-19-mission-impossible-on-cpm.md
+  title       "Mission: Impossible on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_mission_impossible.png"
+  tags        {"CP/M" "Retro" "Games"}
+}
+
 { filename    2019-06-13-hunt-the-wumpus-on-cpm.md
   title       "Hunt the Wumpus on CP/M"
   author      {
