@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-06-19</updated>
+  <updated>2019-07-13</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>DIR Alternatives on CP/M</title>
+      <id>http://techtinkering.com/articles/dir-alternatives-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/dir-alternatives-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-07-13
+        </published>
+
+        <updated>
+          2019-07-13
+        </updated>
+
+        <summary>There are lots of great alternatives to the standard CP/M DIR command, which add extra functionality and combine features that normally have to be accessed through other CP/M commands such as STAT or S</summary>
+    </entry>
     <entry>
       <title>Mission: Impossible on CP/M</title>
       <id>http://techtinkering.com/articles/mission-impossible-on-cpm/</id>
