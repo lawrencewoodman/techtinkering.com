@@ -7,7 +7,7 @@ Benchmarks are only ever a test of what you are benchmarking and there are often
 
 The results are listed below and for each the higher the number the faster they are.
 
-<table class="neatTable">
+<div class="overflow-auto"><table class="neatTable">
   <tr>
     <th>Machine</th>
     <th>Basic</th>
@@ -268,7 +268,7 @@ The results are listed below and for each the higher the number the faster they 
     <td>25</td>
   </tr>
 
-</table>
+</table></div>
 
 ### Notes
 <sub>c1</sub> Basic 7.0, 80 column, fast mode, running <em>commodore/bench.bas</em> version</br>

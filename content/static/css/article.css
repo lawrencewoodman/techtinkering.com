@@ -69,3 +69,8 @@ table.neatBorder td,th {
   float: right;
   padding-left: 1em;
 }
+
+/* Useful to allow scrollable tables */
+div.overflow-auto {
+  overflow-x: auto;
+}
