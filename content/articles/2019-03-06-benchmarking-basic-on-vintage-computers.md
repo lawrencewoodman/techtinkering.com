@@ -271,12 +271,15 @@ The results are listed below and for each the higher the number the faster they 
 </table></div>
 
 ### Notes
-<sub>c1</sub> Basic 7.0, 80 column, fast mode, running <em>commodore/bench.bas</em> version</br>
-<sub>c2</sub> Basic 7.0, 80 column, fast mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
-<sub>c3</sub> Basic 7.0, 80 column, slow mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
-<sub>c4</sub> Basic 7.0, 40 column, slow mode, running <em>commodore/bench.bas</em> version</br>
-<sub>c5</sub> CP/M 80 column, running <em>cpm/mbasic.bas</em><br />
-<sub>m1</sub> <a href="http://www.vcfed.org/forum/showthread.php?68776-Sinclair-Spectrum-CP-M-2-2-Creating-Fuse-Compatible-Disk-Images&p=561178#post561178">2Mhz 8085 machine</a> - Thanks to Robert<br />
+
+<div class="overflow-auto">
+  <sub>c1</sub> Basic 7.0, 80 column, fast mode, running <em>commodore/bench.bas</em> version</br>
+  <sub>c2</sub> Basic 7.0, 80 column, fast mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
+  <sub>c3</sub> Basic 7.0, 80 column, slow mode, running C128 windowed version: <em>commodore/bench_c128.bas</em></br>
+  <sub>c4</sub> Basic 7.0, 40 column, slow mode, running <em>commodore/bench.bas</em> version</br>
+  <sub>c5</sub> CP/M 80 column, running <em>cpm/mbasic.bas</em><br />
+  <sub>m1</sub> <a href="http://www.vcfed.org/forum/showthread.php?68776-Sinclair-Spectrum-CP-M-2-2-Creating-Fuse-Compatible-Disk-Images&p=561178#post561178">2Mhz 8085 machine</a> - Thanks to Robert<br />
+</div>
 
 ## Observations
 The benchmarks for a few of the machines stand out for me because they were unexpected or confirmed what I had already heard.
@@ -298,7 +301,7 @@ This really underlines what a difference the implementation of Basic makes.  If 
 
 All the tests have been run on emulators as I don't have all the machines and it makes the tests easy to reproduce.  They all aim to be cycle accurate, but naturally they have to allow some flexibility otherwise they would be too resource intensive.  Therefore the benchmark figures will never be quite as accurate as running on real hardware, but should give a good indication of their speed.
 
-<table class="neatTable">
+<div class="overflow-auto"><table class="neatTable">
   <tr><th>Emulator</th><th>Machines</th></tr>
   <tr>
     <td><a href="http://www.cpcwiki.eu/index.php/Arnold_(Emulator)">Arnold</a></td>
@@ -323,7 +326,7 @@ All the tests have been run on emulators as I don't have all the machines and it
     <td><a href="http://vice-emu.sourceforge.net/">Vice</a></td>
     <td>Commodore: Pet, Vic-20, C64, C128, Plus/4</td>
   </tr>
-</table>
+</table></div>
 
 
 ## The Basic Code
