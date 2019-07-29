@@ -95,6 +95,13 @@ SD provides, for me, the nicest display with a configurable highlighted title sh
 
 From comparing [SD-22.ASM](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/sd-22.asm "SD-22.ASM") with SD138B.ASM using [meld](https://meldmerge.org/) on Linux, it seems to have originally have been written by Bruce R. Ratoff.  The earliest revision mentioned in the SD-22.ASM source code is 22 November 1980 and below that it says that the program is based on 'DIRS' by Keith Petersen, W8SDZ.  The program linked to above is v138B, released by Ken Reid, 20 August 1989.
 
+### Video: How to Configure Super Directory
+
+The following video shows how to configure SD for a terminal and how to extend the number of drives and users that SD can access.
+
+<div class="youtube-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9UD271LLFL8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Something Different
 
