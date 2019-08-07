@@ -1,3 +1,13 @@
+{ filename    2019-08-08-backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm.md
+  title       "Backgammon: The Peelgrunt Game of Gammon IV on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_gammon_iv.png"
+  tags        {"CP/M" "Retro" "Games"}
+}
+
 { filename    2019-07-13-dir-alternatives-on-cpm.md
   title       "DIR Alternatives on CP/M"
   author      {
