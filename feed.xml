@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-07-29</updated>
+  <updated>2019-08-07</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Backgammon: The Peelgrunt Game of Gammon IV on CP/M</title>
+      <id>http://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-08-08
+        </published>
+
+        <updated>
+          2019-08-08
+        </updated>
+
+        <summary>My favourite traditional board game is Backgammon and the best version I have found for CP/M is The Peelgrunt Game of Gammon IV, v2.0 released 1st April 1986 by David C. Oshel.  It is available on the </summary>
+    </entry>
     <entry>
       <title>DIR Alternatives on CP/M</title>
       <id>http://techtinkering.com/articles/dir-alternatives-on-cpm/</id>
