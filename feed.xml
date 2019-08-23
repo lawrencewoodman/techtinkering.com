@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-08-07</updated>
+  <updated>2019-08-23</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>40 Columns in Basic on the Commdore VIC-20</title>
+      <id>http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/</id>
+      <link href="http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-08-23
+        </published>
+
+        <updated>
+          2019-08-23
+        </updated>
+
+        <summary>There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 22 columns by 23 rows.  They are supplied</summary>
+    </entry>
     <entry>
       <title>Backgammon: The Peelgrunt Game of Gammon IV on CP/M</title>
       <id>http://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/</id>
@@ -384,7 +402,7 @@
         <summary>Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire to keep the cost of computers low: RAM </summary>
     </entry>
     <entry>
-      <title>Adding a Basic Stub to a Vic-20 Assembly Language Program</title>
+      <title>Adding a Basic Stub to a VIC-20 Assembly Language Program</title>
       <id>http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/</id>
       <link href="http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/"/>
         <author>
@@ -402,7 +420,7 @@
         <summary>To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the Vic-20 and the process gives you </summary>
     </entry>
     <entry>
-      <title>Creating a TTY Simulator in Assembly Language on the Vic-20</title>
+      <title>Creating a TTY Simulator in Assembly Language on the VIC-20</title>
       <id>http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/</id>
       <link href="http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/"/>
         <author>
@@ -438,7 +456,7 @@
         <summary>BBS Ads were important to users and sysops of BBS's.  There wasn't any universal directory like the phone book, and during the heyday of BBS's (early '80s to the mid '90s), most people couldn't easily </summary>
     </entry>
     <entry>
-      <title>Beginning Assembly Programming on the Commodore Vic-20</title>
+      <title>Beginning Assembly Programming on the Commodore VIC-20</title>
       <id>http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/</id>
       <link href="http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/"/>
         <author>
