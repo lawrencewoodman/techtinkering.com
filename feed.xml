@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-09-07</updated>
+  <updated>2019-09-11</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -14,11 +14,11 @@
           <uri>https://lawrencewoodman.github.io</uri>
         </author>
         <published>
-          2019-09-19
+          2019-09-07
         </published>
 
         <updated>
-          2019-09-19
+          2019-09-07
         </updated>
 
         <summary>The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known are SimpliCalc and PractiCalc, but ther</summary>
