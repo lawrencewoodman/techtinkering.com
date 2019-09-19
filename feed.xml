@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-09-11</updated>
+  <updated>2019-09-19</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>DABAR: A Hebrew Vocabulary Drill System on CP/M</title>
+      <id>http://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/</id>
+      <link href="http://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-09-19
+        </published>
+
+        <updated>
+          2019-09-19
+        </updated>
+
+        <summary>I recently came across an interesting program called DABAR to drill Hebrew vocabulary.  The program works in a similar way to flash cards, by displaying a word in Hebrew and then asking for its English</summary>
+    </entry>
     <entry>
       <title>Spreadsheets on the Commodore VIC-20</title>
       <id>http://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/</id>
