@@ -1,3 +1,12 @@
+{ filename    2019-09-19-dabar-a-hebrew-vocabulary-drill-system-on-cpm.md
+  title       "DABAR: A Hebrew Vocabulary Drill System on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  tags        {"Retro" "Commodore" "VIC-20"}
+}
+
 { filename    2019-09-07-spreadsheets-on-the-commodore-vic-20.md
   title       "Spreadsheets on the Commodore VIC-20"
   author      {
