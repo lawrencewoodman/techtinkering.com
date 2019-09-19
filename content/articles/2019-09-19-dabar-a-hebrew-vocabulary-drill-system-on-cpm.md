@@ -1,6 +1,6 @@
 I recently came across an interesting program called DABAR to drill Hebrew vocabulary.  The program works in a similar way to flash cards, by displaying a word in Hebrew and then asking for its English translation.  To keep the program portable it uses ASCII art to display the Hebrew characters, which is important because at the time it was created there was little support for Hebrew characters on computers.
 
-<img src="/img/articles/cpm_dabar_hebrew_drill_forever.png" class="img-right" style="width: 500px; clear: right;" title="SimpliCalc">
+<img src="/img/articles/cpm_dabar_hebrew_drill_forever.png" class="img-right" style="width: 500px; clear: right;" title="Dabar">
 
 [DABAR 1.0](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/educatin/hebrew.lbr "hebrew.lbr") was released in 1986 by Daniel R. Crider while he was studying at Southwestern Baptist Seminary.  It is written for Microsoft Basic v5.2 and he says that it should run with little or no change on MS-DOS and TRSDOS systems.  The version linked to is from the Walnut Creek CD.
 
