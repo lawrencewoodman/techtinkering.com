@@ -4,7 +4,8 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Retro" "Commodore" "VIC-20"}
+  socialImg   "cpm_dabar_perfect.png"
+  tags        {"Retro" "CP/M"}
 }
 
 { filename    2019-09-07-spreadsheets-on-the-commodore-vic-20.md
