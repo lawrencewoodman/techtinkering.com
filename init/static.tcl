@@ -19,6 +19,7 @@ file copy [file join $imagesDir *.png] \
 set articleImagesDir [dir content static img articles]
 file copy [file join $articleImagesDir *.png] \
           [file join $articleImagesDir *.jpg] \
+          [file join $articleImagesDir *.gif] \
           [www::makeDestination img articles]
 
 set socialButtonsImagesDir [dir content static img social_flat_rounded_rects_svg]
