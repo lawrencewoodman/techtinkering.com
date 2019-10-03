@@ -5,7 +5,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "vic20_simple_vertical_scroll.png"
-  tags        {"Retro" "Commodore" "VIC-20"}
+  tags        {"Retro" "Commodore" "VIC-20" "Programming"}
 }
 
 { filename    2019-09-19-dabar-a-hebrew-vocabulary-drill-system-on-cpm.md
