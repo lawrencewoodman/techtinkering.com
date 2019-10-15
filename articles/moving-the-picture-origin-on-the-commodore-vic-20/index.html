@@ -205,8 +205,8 @@ Default: 5 on NTSC systems, 12 on PAL systems.</dd>
 Default: 25 on NTSC systems, 38 on PAL systems.</p>
 <h2>Simple Vertical Scroll Program</h2>
 <img src="/img/articles/vic20_simple_vertical_scroll.gif" class="img-right" style="width: 400px; clear: right;" title="Simple Vertical Scroll Program">
-<p>The program below simply scrolls the screen from a position off the bottom up to the default origin at the top.  Both programs store the default location and therefore will work on PAL or NTSC systems.</p>
-<p>You may want to run each program with the normal colour scheme as well as with alternative colour schemes which make the scrolling look better.  For example to change to a black background and border with a yellow text:</p>
+<p>The programs below simply scrolls the screen from a position off the bottom up to the default origin at the top.  Both programs store the default location and therefore will work on PAL or NTSC systems.</p>
+<p>You may want to run each program with the normal colour scheme as well as with alternative colour schemes which make the scrolling look better.  For example to change to a black background and border with yellow text:</p>
 <pre><code class="language-basic">POKE 36879,8:POKE 646,7
 </code></pre>
 <h3>Basic</h3>
@@ -219,12 +219,12 @@ Default: 25 on NTSC systems, 38 on PAL systems.</p>
 <h3>Assembler</h3>
 <p>Below is a simple assembler program to do the same as the Basic program.  It could easily be entered using Vicmon, please see <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a> for more details on how to use it.  The program is only small so it could fit in the tape buffer at location 828 ($33C).</p>
 <pre><code class="language-asm6502">      JMP MAIN
-DFLT  NOP          ; VAR: Default horizontal picture origin minus one
+DFLT  NOP          ; VAR: Default vertical picture origin minus one
 MAIN  LDX $9001
-      DEX
-      STX DFLT     ; Store default horizontal picture orign
+      DEX          ; Decrement picture origin to make loop simpler
+      STX DFLT     ; Store default vertical picture origin minus one
       LDA #$BE     ; Begin with picture origin off screen
-LOOP  STA $9001    ; Change horizontal picture origin
+LOOP  STA $9001    ; Change vertical picture origin
       LDX #$09
 WAIT  LDY #$FF
 WAI2  DEY
@@ -232,12 +232,12 @@ WAI2  DEY
       DEX
       BNE WAIT
       SBC #$01     ; Move picture origin up one
-      CMP DFLT     ; Is horizontal picture origin back at default?
+      CMP DFLT     ; Is vertical picture origin back at default?
       BNE LOOP
       BRK
 </code></pre>
 <h2>Simple Horizontal Scroll Program</h2>
-<p>The program below simply scrolls the screen from a position off the bottom up to the default origin at the top.  Both programs store the default location and therefore will work on PAL or NTSC systems.  As with the horizontal scroll program above it is worth experimenting with different screen colours.</p>
+<p>The program below simply scrolls the screen from a position off the right of the screen to the default origin on the left.  The program stores the default location and therefore will work on PAL or NTSC systems.  As with the vertical scroll program above it is worth experimenting with different screen colours.</p>
 <h3>Basic</h3>
 <pre><code class="language-basic">10 D=PEEK(36864)
 20 FOR X=60 TO D STEP -1
