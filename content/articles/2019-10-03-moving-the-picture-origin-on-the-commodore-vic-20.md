@@ -1,13 +1,17 @@
 The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to move the position that the screen displays on the TV up and down or left and right by changing either of two memory locations.
 
-## Horizontal TV Picture Origin
+## TV Picture Origin
 
-Location 36864 ($9000).
+Two memory locations define the TV picture origin.
+
+### $9000 (36864)
+
+<em>Horizontal TV picture origin / interlace bit</em>
 
 <dl>
   <dt>Bit 7</dt>
   <dd>The interlace bit, which we'll ignore for this article.  Default: 0.</dd>
-  <dt>Bit 0-6</dt>
+  <dt>Bits 6-0</dt>
   <dd>The horizontal origin.  To move the picture origin to the left
 reduce the number and to move it to the right increase the number.
 Every change moves the picture by 4 pixels.
@@ -16,11 +20,12 @@ Default: 5 on NTSC systems, 12 on PAL systems.</dd>
 
 
 
-## Vertical TV Picture Origin
 
-Location 36865 ($9001).
+### $9001 (36865)
 
-The vertical origin.  Every change moves the picture by 2 pixels.
+<em>Vertical TV Picture Origin</em>
+
+To move the picture origin up reduce the number and to move it down increase the number.  Every change moves the picture by 2 pixels.
 Default: 25 on NTSC systems, 38 on PAL systems.
 
 
