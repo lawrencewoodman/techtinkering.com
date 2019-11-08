@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Moving the Picture Origin on the Commodore VIC-20</title>
-  <meta name="description" content="The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on">
+  <title>Changing Screen Dimensions on the Commodore VIC-20</title>
+  <meta name="description" content="To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we wa">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Moving the Picture Origin on the Commodore VIC-20">
-  <meta name="twitter:description" content="The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on">
+  <meta name="twitter:title" content="Changing Screen Dimensions on the Commodore VIC-20">
+  <meta name="twitter:description" content="To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we wa">
     <meta name="twitter:image"
-         content="http://techtinkering.com/img/social_images/vic20_simple_vertical_scroll.png">
+         content="http://techtinkering.com/img/social_images/vic20_choose_screen_size.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Moving the Picture Origin on the Commodore VIC-20">
-  <meta property="og:description" content="The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on">
-  <meta property="og:url" content="http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/">
+  <meta property="og:title" content="Changing Screen Dimensions on the Commodore VIC-20">
+  <meta property="og:description" content="To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we wa">
+  <meta property="og:url" content="http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/">
     <meta property="og:image"
-         content="http://techtinkering.com/img/social_images/vic20_simple_vertical_scroll.png">
+         content="http://techtinkering.com/img/social_images/vic20_choose_screen_size.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/">
+  <link rel="canonical" href="http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -149,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/" title="Moving the Picture Origin on the Commodore VIC-20">
-          <h1 itemprop="headline name">Moving the Picture Origin on the Commodore VIC-20</h1>
+        <a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/" title="Changing Screen Dimensions on the Commodore VIC-20">
+          <h1 itemprop="headline name">Changing Screen Dimensions on the Commodore VIC-20</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -161,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2019-10-03">
-             3 October 2019
+                datetime="2019-11-08">
+             8 November 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -187,70 +187,251 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to move the position that the screen displays on the TV up and down or left and right by changing either of two memory locations.</p>
-<h2>TV Picture Origin</h2>
-<p>Two memory locations define the TV picture origin.</p>
-<h3>$9000 (36864)</h3>
-<p><em>Horizontal TV picture origin / interlace bit</em></p>
+        <p>To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we want to achieve.  If we increase the size of the screen then we also have to reduce the amount of memory our program can use, alternatively we could gain room for our program by reducing the size of the screen map.</p>
+<h2>Change Size of Screen</h2>
+<p>To change the size of the screen displayed we need to alter a number of locations.</p>
+<h3>$9002 (36866)</h3>
+<p><em>Number of character columns displayed / part of screen map address / colour map location toggle</em></p>
 <dl>
   <dt>Bit 7</dt>
-  <dd>The interlace bit, which we'll ignore for this article.  Default: 0.</dd>
+  <dd>This acts as bit 9 of the 14 bit screen map address.  It also acts as a toggle for the location of the colour map.  When it is 0 the colour map is at $9400 (37888) and when it is 1 the colour map is at $9600 (38400).  Default: 1.</dd>
   <dt>Bits 6-0</dt>
-  <dd>The horizontal origin.  To move the picture origin to the left
-reduce the number and to move it to the right increase the number.
-Every change moves the picture by 4 pixels.
-Default: 5 on NTSC systems, 12 on PAL systems.</dd>
+  <dd>The number of character columns displayed. You will probably find that you can display fewer columns on an NTSC system than you can on a PAL system. Default: 22.<br /><br />
+To alter use the following where 'c' is the number of columns:
+<pre><code class="language-basic">poke 36866,(peek(36866) and 128) or c</code></pre>
+  </dd>
 </dl>
-<h3>$9001 (36865)</h3>
-<p><em>Vertical TV Picture Origin</em></p>
-<p>To move the picture origin up reduce the number and to move it down increase the number.  Every change moves the picture by 2 pixels.
-Default: 25 on NTSC systems, 38 on PAL systems.</p>
-<h2>Simple Vertical Scroll Program</h2>
-<img src="/img/articles/vic20_simple_vertical_scroll.gif" class="img-right" style="width: 400px; clear: right;" title="Simple Vertical Scroll Program">
-<p>The programs below simply scrolls the screen from a position off the bottom up to the default origin at the top.  Both programs store the default location and therefore will work on PAL or NTSC systems.</p>
-<p>You may want to run each program with the normal colour scheme as well as with alternative colour schemes which make the scrolling look better.  For example to change to a black background and border with yellow text:</p>
-<pre><code class="language-basic">POKE 36879,8:POKE 646,7
+<h3>$9003 (36867)</h3>
+<p><em>Number of character lines displayed / part of raster location / character size</em></p>
+<dl>
+  <dt>Bit 7</dt>
+  <dd>This is part of the raster beam location and can be ignored for this article.  Default: 1/0.</dd>
+  <dt>Bits 6-1</dt>
+  <dd>The number of character lines displayed multiplied by two.  You will probably find that you can display fewer rows on an NTSC system than you can on a PAL system.  Default: 46.<br /><br />
+To alter use the following where 'r' is the number of rows:
+<pre><code class="language-basic">poke 36867,(peek(36867) and 129) or (2*r)</code></pre>
+  </dd>
+  <dt>Bit 0</dt>
+  <dd>The character size and can be ignored for this article.  Default: 0.</dd>
+</dl>
+<h3>$9005 (36869)</h3>
+<p><em>Screen map and character map address</em></p>
+<p><strong>Bits 7-4</strong>
+This acts as bits 13-10 of the 14 bit screen map address.  If we want a bigger screen map then we may have to move it.  If this address is moved and Basic is being used then we will have to alter the memory that Basic uses.  Default: 240.</p>
+<table class="neatTable neatTableCentre">
+  <tr>
+    <th>36869<br />Bits 7-4</th>
+    <th>36866<br />Bit 7</th>
+    <th>Screen Map</th>
+    <th>Colour Map</th>
+  </tr>
+  <tr><td>1100</td><td>0</td><td>$1000 (4096)</td><td>$9400 (37888)</td></tr>
+  <tr><td>1100</td><td>1</td><td>$1200 (4608)</td><td>$9600 (38400)</td></tr>
+  <tr><td>1101</td><td>0</td><td>$1400 (5120)</td><td>$9400 (37888)</td></tr>
+  <tr><td>1101</td><td>1</td><td>$1600 (5632)</td><td>$9600 (38400)</td></tr>
+  <tr><td>1110</td><td>0</td><td>$1800 (6144)</td><td>$9400 (37888)</td></tr>
+  <tr><td>1110</td><td>1</td><td>$1A00 (6656)</td><td>$9600 (38400)</td></tr>
+  <tr><td>1111</td><td>0</td><td>$1C00 (7168)</td><td>$9400 (37888)</td></tr>
+  <tr><td>1111</td><td>1</td><td>$1E00 (7680)</td><td>$9600 (38400)</td></tr>
+</table>
+<p><strong>Bits 3-0</strong>
+This acts as bits 13-10 of the character map address and can be ignored for this article.  Default: 0.</p>
+<h2>Memory Configurations</h2>
+<p>The locations of Basic, the screen map and the colour map default to different locations depending on the Vic's memory configuration.  On systems with less than 8K the screen map is located after Basic, whereas on systems with 8K or more the screen map is located before Basic.  Therefore, if we alter the size or location of the screen map and are using Basic, then we need to reduce the size of Basic.  The following shows the defaults for various memory configurations.</p>
+<img src="/img/articles/vic20_memory_map_basic_screen_colour.png" style="width: 100%" title="VIC-20 Memory Map Showing Basic, Screen Map and Colour Map">
+<table class="neatTable">
+  <tr>
+    <th>Memory</th>
+    <th>Basic</th>
+    <th>Screen map</th>
+    <th>Colour map</th>
+  </tr>
+  <tr>
+    <td>Unexpanded</td>
+    <td>$1000-$1DFF</td>
+    <td>$1E00-$1FFF</td>
+    <td>$9600-$97FF</td>
+  </tr>
+  <tr>
+    <td>+3K</td>
+    <td>$0400-$1DFF</td>
+    <td>$1E00-$1FFF</td>
+    <td>$9600-$97FF</td>
+  </tr>
+  <tr>
+    <td>+8K</td>
+    <td>$1200-$3FFF</td>
+    <td>$1000-$11FF</td>
+    <td>$9400-$95FF</td>
+  </tr>
+  <tr>
+    <td>+16K</td>
+    <td>$1200-$5FFF</td>
+    <td>$1000-$11FF</td>
+    <td>$9400-$95FF</td>
+  </tr>
+  <tr>
+    <td>+24K</td>
+    <td>$1200-$7FFF</td>
+    <td>$1000-$11FF</td>
+    <td>$9400-$95FF</td>
+  </tr>
+</table>
+<h2>Change Top of Basic</h2>
+<p>On an unexpanded Vic or one with a 3k RAM expansion, the screen map is located above the top of Basic.  The default screen map is from $1E00-$1FFF, which is 511 bytes and is enough room for the default 22x23 character display.  To make room for a bigger screen map we would need to lower the top of Basic.  On the VIC-20 the memory at the top of Basic is used to store variables.  We use the following locations to change the top of Basic.</p>
+<h3>$37-38 (55-56)</h3>
+<p><em>End of Basic memory</em></p>
+<p>This allows us to alter the end of Basic memory.  The defaults are listed in the table below.</p>
+<table class="neatTable">
+  <tr><th>Memory</th><th>Default</th></tr>
+  <tr><td>Unexpanded</td><td>$00/1E (0/30)</td></tr>
+  <tr><td>+3K</td><td>$00/1E (0/30)</td></tr>
+  <tr><td>+8K</td><td>$00/40 (0/64)</td></tr>
+  <tr><td>+16K</td><td>$00/60 (0/96)</td></tr>
+  <tr><td>+24K</td><td>$00/80 (0/128)</td></tr>
+</table>
+<h3>$33-34 (51-52)</h3>
+<p><em>Bottom of Basic active strings</em></p>
+<p>This indicates the top of available free space and defaults to the same as memory locations $37-38.</p>
+<h4>Example</h4>
+<p>To lower the top of Basic to $1C00 and delete all variables.  This would give enough room for a 30x30 screen:</p>
+<pre><code class="language-basic">poke 55,0:  rem set end of basic memory low byte to $00
+poke 56,28: rem set end of basic memory high byte to $1C
+poke 51,0:  rem set bottom of basic strings low byte to $00
+poke 52,28: rem set bottom of basic strings high byte to $1C
+clr:        rem delete variables
 </code></pre>
-<h3>Basic</h3>
-<pre><code class="language-basic">10 D=PEEK(36865)
-20 FOR X=190 TO D STEP -1
-30 POKE 36865, X
-40 FOR Y=1 TO 3:NEXT
-50 NEXT
+<h2>Change Bottom of Basic</h2>
+<p>On an Vic with an 8K or more RAM expansion the screen map is located below the bottom of Basic from $1000-$11FF, which is 511 bytes and is enough room for the default 22x23 character display.  To make room for a bigger screen map we would need to raise the bottom of Basic.  On the VIC-20 the memory at the bottom of Basic is where the tokenized Basic programs are stored.  We use the following locations to change the bottom of Basic.</p>
+<h3>$FF9C (65436)</h3>
+<p><em>Read or set bottom of Basic memory (vector)</em></p>
+<dl>
+  <dt>Carry flag</dt>
+  <dd>If clear then bottom of Basic set to registers X and Y<br />
+      If set then X and Y registers are set to bottom of Basic</dd>
+</dl>
+<h3>$E378 (58232)</h3>
+<p><em>Cold start Basic</em></p>
+<p>Before the change to the bottom of Basic will take effect, Basic needs cold starting with this routine.</p>
+<h4>Example</h4>
+<p>To move the bottom of Basic to $1385. This would give enough room for a 30x30 screen:</p>
+<pre><code class="language-basic">poke 783,0:   rem clear the carry
+poke 781,133: rem set x-register to $85
+poke 782,19:  rem set y-register to $13
+sys 65436:    rem set membot
+sys 58232:    rem cold start basic
 </code></pre>
-<h3>Assembler</h3>
-<p>Below is a simple assembler program to do the same as the Basic program.  It could easily be entered using Vicmon, please see <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a> for more details on how to use it.  The program is only small so it could fit in the tape buffer at location 828 ($33C).</p>
-<pre><code class="language-asm6502">      JMP MAIN
-DFLT  NOP          ; VAR: Default vertical picture origin minus one
-MAIN  LDX $9001
-      DEX          ; Decrement picture origin to make loop simpler
-      STX DFLT     ; Store default vertical picture origin minus one
-      LDA #$BE     ; Begin with picture origin off screen
-LOOP  STA $9001    ; Change vertical picture origin
-      LDX #$09
-WAIT  LDY #$FF
-WAI2  DEY
-      BNE WAI2
-      DEX
-      BNE WAIT
-      SBC #$01     ; Move picture origin up one
-      CMP DFLT     ; Is vertical picture origin back at default?
-      BNE LOOP
-      BRK
+<h2>Move the Picture Origin</h2>
+<p>Because the screen is displayed in relation to the top-left tv picture origin we will want to move this to centre the picture.  To read more about this look at our previous article <a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a>.</p>
+<p>Here are some values that I have found work well with the <a href="http://vice-emu.sourceforge.net/">Vice emulator</a>.  Please note that they are shifted from the original values, not the actual values to use.  On NTSC systems 24x28 is probably the highest you can go before the screen disappears off the sides of the TV screen.</p>
+<table class="neatTable neatTableCentre">
+  <tr>
+    <th>Columns</th>
+    <th>Rows</th>
+    <th>36864<br />Bits 6-0<br />Horizontal Offset</th>
+    <th>36865<br />Vertical Offset</th>
+  </tr>
+  <tr><td>16</td><td>16</td><td>+6</td><td>+16</td></tr>
+  <tr><td>22</td><td>23</td><td>0</td><td>0</td></tr>
+  <tr><td>24</td><td>28</td><td>-3</td><td>-9</td></tr>
+  <tr><td>25</td><td>30</td><td>-3</td><td>-12</td></tr>
+  <tr><td>27</td><td>33</td><td>-5</td><td>-19</td></tr>
+</table>
+<h2>Print the ASCII Char</h2>
+<p>Once the screen is all set up we can print to it.  However, the Basic print routines expect a screen with the default 22x23 dimension.  Therefore, we can manipulate the screen map and colour map directly using the following:</p>
+<table class="neatTable">
+  <tr><th>Variable</th><th>Purpose</th></tr>
+  <tr><td>sm</td><td>Screen map address</td></tr>
+  <tr><td>cm</td><td>Colour map address</td></tr>
+  <tr><td>sw</td><td>Screen width in characters</td></tr>
+  <tr><td>sc</td><td>Screen code, i.e. the character</td></tr>
+  <tr><td>cl</td><td>Colour of the character</td></tr>
+  <tr><td>px</td><td>X coordinate, i.e. the column - starting at 0</td></tr>
+  <tr><td>py</td><td>Y coordinate, i.e. the row - starting at 0</td></tr>
+</table>
+<pre><code class="language-basic">poke sm+px+(py*sw), sc: rem put screen code in screen map
+poke cm+px+(py*sw), cl: rem put colour in colour map
 </code></pre>
-<h2>Simple Horizontal Scroll Program</h2>
-<p>The program below simply scrolls the screen from a position off the right of the screen to the default origin on the left.  The program stores the default location and therefore will work on PAL or NTSC systems.  As with the vertical scroll program above it is worth experimenting with different screen colours.</p>
-<h3>Basic</h3>
-<pre><code class="language-basic">10 D=PEEK(36864)
-20 FOR X=60 TO D STEP -1
-30 POKE 36864, X
-40 FOR Y=1 TO 6:NEXT
-50 NEXT
+<h2>An Example Program</h2>
+<p>To demonstrate how this is all put together I have written a short Basic program which demonstrates the screen dimensions being changed to 27x33.  This is designed for unexpanded Vics and works best on PAL displays because of the size.  This program and another which will allow you to choose the dimensions and will work on PAL or NTSC systems with +3K, +8K, +16K, +24K or no memory expansion can be found in a repo on GitHub: <a href="https://github.com/lawrencewoodman/change_screen_dimensions_vic20">change_screen_dimensions_vic20</a>.</p>
+<pre><code class="language-basic">  10 rem demonstrate a 27x33 screen
+  20 rem lawrence woodman, nov 2019
+  30 print &quot;{clr}&quot;
+
+ 100 rem lower top of basic to $1c00
+ 110 poke 55,0:poke 56,28:poke 51,0:poke 52,28:clr
+ 120 sm=7168:cm=37888:rem screen map: $1c00 colour map: $9400
+ 130 sw=27:sh=33:rem screen width/height
+ 140 ox=-5:oy=-19:rem picture origin x/y offset
+
+ 200 rem record initial screen settings
+ 210 da=peek(36866):db=peek(36867):dc=peek(36869)
+ 220 dd=peek(36864):de=peek(36865)
+
+ 300 rem set up screen
+ 310 poke 36869,240:rem set screen map: $1c00
+ 320 poke 36866,sw:rem width
+ 330 poke 36867,(peek(36867)and 128)or (sh*2):rem height
+ 340 poke 36864,peek(36864)+ox:rem picture origin x offset
+ 350 poke 36865,peek(36865)+oy:rem picture origin y offset
+
+ 400 rem clear screen
+ 410 for i=0 to (sw*sh)-1
+ 420 poke sm+i,32:poke cm+i,6
+ 430 next i
+
+ 500 rem print hello worlds
+ 510 pc=0
+ 520 for py=1 to sh-2
+ 530 px=sw-13:st$=&quot;Hello World!&quot;:gosub 5000
+ 540 pc=pc+1:if pc=1 then pc=2
+ 550 if pc&gt;7 then pc=2
+ 560 next py
+
+ 600 rem wait for a key press
+ 610 pc=0:px=(sw-13)/2:py=sh-1:st$=&quot;Press any key&quot;:gosub 5000
+ 620 get a$:if a$=&quot;&quot; then 620
+
+ 700 rem restore screen settings
+ 710 poke 36866,da:poke 36867,db:poke 36869,dc
+ 720 poke 36864,dd:poke 36865,de
+ 730 print &quot;{clr}&quot;
+ 740 end
+
+4000 rem ascii to screen code - p111 mapping the vic
+4001 rem args: ac - ret: sc
+4010 sc=ac:if ac&gt;127 and ac&lt;159 then sc=0: goto 4100
+4020 if ac&lt;64 then 4100
+4030 sc=ac-32
+4040 if ac&lt;96 then sc=sc-32:goto 4100
+4050 if ac&lt;128 then 4100
+4060 sc=sc-32
+4070 if ac&gt;191 then sc=sc-64
+4080 if ac=255 then sc=30
+4100 return
+
+5000 rem print string - args: st$, px, py, pc
+5010 for i=1 to len(st$)
+5020 ac=asc(mid$(st$,i,1)):gosub 4000
+5030 ps=sc
+5040 gosub 6000
+5050 px=px+1
+5060 next i
+5070 return
+
+6000 rem print char - args: px,py,ps,pc
+6010 poke sm+px+(py*sw),ps:poke cm+px+(py*sw),pc
+6020 return
 </code></pre>
-<h2>Video of Simple Scrollers</h2>
-<p>You can see the scrollers being written in Basic and Assembler in the video below:</p>
+<br />
+<p>If you would like to try this code with smaller screen dimensions, which may may be more appropriate for NTSC systems, then you could use set the screen dimensions to 24x28 by changing the following lines.</p>
+<pre><code class="language-basic"> 130 sw=24:sh=28:rem screen width/height
+ 140 ox=-3:oy=-9:rem picture origin x/y offset
+</code></pre>
+<h2>Video Demonstrating Changing the Screen Dimensions</h2>
+<p>You can see how the screen dimensions are changed in the following video:</p>
 <div class="youtube-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w_O2D14L6e8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/p3mkE2FXbaM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -264,8 +445,8 @@ WAI2  DEY
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Moving the Picture Origin on the Commodore VIC-20</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Changing Screen Dimensions on the Commodore VIC-20</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -279,10 +460,10 @@ WAI2  DEY
     <div class="row margin-buffer">
   <div class="col-md-12">
         <header>
-  <h3><a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a></h3>
+  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
   <span class="post-meta">
-      <time datetime="2019-11-08">
-         8 November 2019
+      <time datetime="2019-10-03">
+         3 October 2019
       </time>
       &nbsp; / &nbsp;
       <a href="/articles/tag/commodore/">Commodore</a>
@@ -296,9 +477,9 @@ WAI2  DEY
   </span>
 </header>
 <div>
-  To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we want to achieve.  If we increase the size ...
+  The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to ...
   &nbsp;
-  <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
+  <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
 </div>
         <header>
   <h3><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></h3>
@@ -420,8 +601,8 @@ WAI2  DEY
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/articles/moving-the-picture-origin-on-the-commodore-vic-20/';
-      var disqus_url = 'http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/';
+      var disqus_identifier = '/articles/changing-screen-dimensions-on-the-commodore-vic-20/';
+      var disqus_url = 'http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
