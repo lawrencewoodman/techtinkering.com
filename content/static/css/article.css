@@ -36,13 +36,16 @@ table.neatTable th {
   padding-right: 1em;
   vertical-align: top;
 }
+
 table.neatTable td { text-align: left; padding-right: 1em; }
 table.neatTable td.note { font-style: italic; }
+table.neatTable td.centre { text-align: center; }
 
 table.neatBorder td,th {
   border: 1px solid #AAA;
   padding: 0.5em;
 }
+table.neatTableCentre td,th { text-align: center; }
 
 .youtube-wrapper {
   margin-top: 1em;
