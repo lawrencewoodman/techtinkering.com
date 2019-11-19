@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-_Last Updated: 27th November 2018 at 10:20 GMT_
+_Last Updated: 19th November 2019 at 11:40 GMT_
 
 ## Description of TechTinkering
 
@@ -45,7 +45,7 @@ TechTinkering reserves the right to change or modify the terms and conditions at
 
 * Violation of the Terms and Conditions may lead to legal proceedings.
 * TechTinkering reserves the right, but shall have no obligation, to investigate your use of the website in order to determine whether a violation of the Terms and Conditions has occurred or to comply with any applicable law, regulation, legal process or governmental request.
-* Your use of the website is subject to your acceptance of and compliance with the entirety of the Terms and Conditions, [Privacy Policy](/privacy/) and [Disclaimer](/disclaimer).
+* Your use of the website is subject to your acceptance of and compliance with the entirety of the Terms and Conditions and the [Privacy Policy](/privacy/).
 
 
 ## Linking
