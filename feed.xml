@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-11-08</updated>
+  <updated>2019-11-21</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Tokenize/De-tokenize Commodore Basic Programs Using petcat</title>
+      <id>http://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/</id>
+      <link href="http://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-11-21
+        </published>
+
+        <updated>
+          2019-11-21
+        </updated>
+
+        <summary>petcat is a utility provided with the VICE Commodore emulator that you can use to convert Basic source code contained in ASCII text files to .PRG files or vice versa.  It is also able to convert ASCII </summary>
+    </entry>
     <entry>
       <title>Changing Screen Dimensions on the Commodore VIC-20</title>
       <id>http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/</id>
