@@ -1,3 +1,13 @@
+{ filename    2019-11-21-tokenize-detokenize-commodore-basic-programs-using-petcat.md
+  title       "Tokenize/De-tokenize Commodore Basic Programs Using petcat"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "petcat_detokenize.png"
+  tags        {"Retro" "Commodore" "Programming"}
+}
+
 { filename    2019-11-08-changing-screen-dimensions-on-the-commodore-vic-20.md
   title       "Changing Screen Dimensions on the Commodore VIC-20"
   author      {
