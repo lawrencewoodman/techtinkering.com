@@ -4,7 +4,7 @@ Most modern machines don't have a serial port as standard; you could use a USB t
 [ser2net](http://ser2net.sourceforge.net/) listens to a TCP port and pipes data to and from a serial port via the TCP port.  It is configured by the file `/etc/ser2net.conf` and is run on the machine with the serial port that you want to make available over TCP/IP.  An example configuration file would look like this:
 
 ```` text
-3333:raw:0:/dev/ttyS0:115200,8DATABITS,NONE,1STOPBIT
+3333:raw:0:/dev/ttyS0:115200 8DATABITS NONE 1STOPBIT
 ````
 
 This would tell `ser2net` to create a link between TCP port `3333` and `/dev/ttyS0`.  The serial port would be configured to 115200 baud, 8 data bits, no parity and 1 stop bit.
