@@ -314,6 +314,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Tutorial" "Commodore" "Retro" "VIC-20" "Assembly"}
+  updated     2019-11-26
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -867,7 +868,7 @@
   tags         {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
   image        "/img/articles/small_z80pack_cpm3.png"
   imageTitle   "Loading Screen for CP/M 3.0 on z80pack"
-  updated      2018-03-13
+  updated      2019-11-26
   redirectTo   "/articles/emulating-a-cpm-system-with-z80pack/"
   redirectName "Emulating a CP/M System with z80pack"
   postURLStyle "/@year/@month/@day/@title/"
