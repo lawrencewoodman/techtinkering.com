@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Hello, World! in SUBLEQ Assembly</title>
-  <meta name="description" content="After writing a previous article: The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture.  I was left thinking that I should really ">
+  <title>6502 Machine Language Tables and Aids</title>
+  <meta name="description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Hello, World! in SUBLEQ Assembly">
-  <meta name="twitter:description" content="After writing a previous article: The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture.  I was left thinking that I should really ">
+  <meta name="twitter:title" content="6502 Machine Language Tables and Aids">
+  <meta name="twitter:description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/6502_machine_language_hex_codes_table.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hello, World! in SUBLEQ Assembly">
-  <meta property="og:description" content="After writing a previous article: The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture.  I was left thinking that I should really ">
-  <meta property="og:url" content="http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/">
+  <meta property="og:title" content="6502 Machine Language Tables and Aids">
+  <meta property="og:description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
+  <meta property="og:url" content="http://techtinkering.com/articles/6502-machine-language-tables-and-aids/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/6502_machine_language_hex_codes_table.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/">
+  <link rel="canonical" href="http://techtinkering.com/articles/6502-machine-language-tables-and-aids/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -145,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2009/03/29/hello-world-in-subleq-assembly/" title="Hello, World! in SUBLEQ Assembly">
-          <h1 itemprop="headline name">Hello, World! in SUBLEQ Assembly</h1>
+        <a href="/articles/6502-machine-language-tables-and-aids/" title="6502 Machine Language Tables and Aids">
+          <h1 itemprop="headline name">6502 Machine Language Tables and Aids</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -157,8 +161,8 @@
 </ul>
         </div>
           <time itemprop="datePublished"
-                datetime="2009-03-29">
-            29 March 2009
+                datetime="2019-12-04">
+             4 December 2019
           </time>
           &nbsp; / &nbsp;
         <span itemscope itemprop="publisher"
@@ -174,71 +178,24 @@
         &nbsp; / &nbsp;
           <a href="/articles/tag/assembly/">Assembly</a>
           &nbsp; &nbsp;
-          <a href="/articles/tag/oisc/">OISC</a>
-          &nbsp; &nbsp;
           <a href="/articles/tag/programming/">Programming</a>
           &nbsp; &nbsp;
-          <a href="/articles/tag/subleq/">SUBLEQ</a>
+          <a href="/articles/tag/retro/">Retro</a>
           &nbsp; &nbsp;
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>After writing a previous article: <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</a>.  I was left thinking that I should really have given at least a &quot;hello, world&quot; program as a demonstration.  I was then inspired after seeing John Metcalf's post: <a href="http://retrocode.blogspot.com/2009/01/hello-world-for-rssb-virtual-computer.html">Hello World for the RSSB Virtual Computer</a>.  This showed that these OISCs don't require as much code as people may think to do what you want.  So here is my version of a &quot;hello, world&quot; program for the SUBLEQ Architecture.</p>
-<h2>Assembly Source Code</h2>
-<p>The following assembly code is written for Oleg Mazonka's SUBLEQ assembler, which can be found on his <a href="http://mazonka.com/subleq/index.html">page</a>.  I have saved it to a file called <code>helloworld.sq</code></p>
-<pre><code class="language-text">############################################
-#  FileName:   helloworld.sq
-#  Author:     Lawrence Woodman
-#  Date:       26th March 2009
-#===========================================
-#  Outputs 'hello, world'
-############################################
-loop:       hello (-1)              # Outputs character pointed to by hello
-            minusOne loop           # Increments character output pointer to next character
-            minusOne checkEnd+1     # Increments end of string pointer to next character
-checkEnd:   Z hello (-1)            # Halts program if character at pointer is zero
-            Z Z loop                # Jumps to loop
-
-# Data Storage
-. minusOne: -1                      # Used to increment pointer
-. hello: &quot;hello, world\n&quot; Z: 0      # Zero terminated string to print
-</code></pre>
-<p>The program is fairly simple and essentially manipulates two pointers, one to contain the address of the character to be output and the other to contain the address which is checked for zero termination of the string.  You will see that the pointers are actually operands of SUBLEQ instructions, so therefore we are manipulating operands to create a pointer.  This is typical of programming in SUBLEQ assembly.</p>
-<p>To recap from my previous article on <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/">SUBLEQ Architecture</a>.  Every line is assumed to be a SUBLEQ instruction, so just the operands are specified.  The SUBLEQ instruction works as follows:</p>
-<p><strong>SUBLEQ</strong> = Subtract and Branch if Less then or Equal to zero</p>
-<pre><code class="language-text">SUBLEQ a, b, c
-Mem[b] = Mem[b] - Mem[a]
-if (Mem[b] ≤ 0) goto c
-</code></pre>
-<p>There are a couple of points to note in the above assembly source code:</p>
-<ul>
-<li>(-1) is used on the line labeled <code>loop</code> to indicate that the result should be output to STDOUT.</li>
-<li>(-1) is used on the line labeled <code>checkEnd</code> to halt the program as -1 is an invalid address to jump to.</li>
-<li>(-1) is in parenthesis to indicate another expression, as opposed to <code>hello-1</code>, which would be the address prior to <code>hello</code>.</li>
-<li>The assembler assumes that the branch destination is the next address for the three lines that only have two operands.</li>
-<li>The period on the last two lines indicates that these lines don't contain instructions and hence are not operands of a SUBLEQ instruction.</li>
-</ul>
-<p>I assembled the file using:</p>
-<pre><code class="language-bash">$ sqasm &lt; helloworld.sq &gt; helloworld.out
-</code></pre>
-<h2>Object Code</h2>
-<p>Assembling produces the file <code>helloworld.out</code>, which contains the following:</p>
-<pre><code>16 -1 3
-15 0 6
-15 10 9
-30 16 -1
-30 30 0
--1
-104 101 108 108 111 44 32 119 111 114 108 100 33 10 0
-</code></pre>
-<h2>Executing the Program</h2>
-<p>To run this you just use:</p>
-<pre><code class="language-bash">$ sqrun helloworld.out
-</code></pre>
-<p>Which produces the correct output:</p>
-<pre><samp>hello, world</samp></pre>
-<h2>Further Information</h2>
-<p>To find out more about SUBLEQ architecture have a look at my article mentioned above: <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</a>.  This offers a fuller explanation and contains a few links of interest.</p>
+        <p>When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the process easier.  They are based on tables found in 'Machine Code for Beginners', which <a href="https://usborne.com/browse-books/features/computer-and-coding-books/">Usborne have made available as a PDF for free</a>.</p>
+<h2>6502 Machine Language Hex Codes</h2>
+<p>When writing a program in machine code we need to be able to quickly find the machine language hex code for the instruction we want to enter.  The following table should make this fairly simple.
+<img src="/img/articles/6502_machine_language_hex_codes_table.jpg" class="img-left" style="width: 100%; clear: left;" title="6502 Machine Language Hex Code Table">
+<br style="clear:left"/><br /></p>
+<h2>Two's Complement Hex Code</h2>
+<p>If we need to use a negative number such as when using relative addresses, then the following table will allow us to quickly find the correct hex code to use.  For example the two's complement of <code>-92</code> in hex is <code>A4</code>.
+<img src="/img/articles/8_bit_twos_complement_hex_table.jpg" class="img-left" style="width: 100%; clear: left;" title="8-bit Two's Complement Hex Table">
+<br style="clear:left"/><br /></p>
+<h2>Source Files</h2>
+<p>If you want to alter these tables, I have put the original files used to create them in a <a href="https://github.com/lawrencewoodman/machine_language_aids">repo</a> on GitHub.</p>
       </div>
     </article>
   </div>
@@ -251,8 +208,8 @@ if (Mem[b] ≤ 0) goto c
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Hello, World! in SUBLEQ Assembly</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">6502 Machine Language Tables and Aids</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/6502-machine-language-tables-and-aids/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -265,26 +222,6 @@ if (Mem[b] ≤ 0) goto c
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/6502-machine-language-tables-and-aids/">6502 Machine Language Tables and Aids</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-12-04">
-         4 December 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the process easier.  They are based on table...
-  &nbsp;
-  <a class="readMore" href="/articles/6502-machine-language-tables-and-aids/">Read More</a>
-</div>
         <header>
   <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a VIC-20 Assembly Language Program</a></h3>
   <span class="post-meta">
@@ -362,25 +299,52 @@ if (Mem[b] ≤ 0) goto c
   <a class="readMore" href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Read More</a>
 </div>
         <header>
-  <h3><a href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</a></h3>
+  <h3><a href="/2009/04/23/the-smallest-communication-program-in-the-world/">The Smallest Communication Program in the World?</a></h3>
   <span class="post-meta">
-      <time datetime="2009-05-15">
-        15 May 2009
+      <time datetime="2009-04-23">
+        23 April 2009
       </time>
       &nbsp; / &nbsp;
-      <a href="/articles/tag/computerarchitecture/">Computer Architecture</a>
+      <a href="/articles/tag/80x86/">80x86</a>
       &nbsp; &nbsp;
-      <a href="/articles/tag/oisc/">OISC</a>
+      <a href="/articles/tag/assembly/">Assembly</a>
       &nbsp; &nbsp;
-      <a href="/articles/tag/subleq/">SUBLEQ</a>
+      <a href="/articles/tag/dos/">DOS</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
       &nbsp; &nbsp;
   </span>
 </header>
 <div>
-  When I first came across The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture,
-I really liked the beauty and simplicity of the design.  However, I have now been experimen...
+  I was going through a backup of my dos machine, taken in 1998, and came across some source code which I haven't seen for a long time.  It was great to see that old code, and I must set-up a machine so ...
   &nbsp;
-  <a class="readMore" href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Read More</a>
+  <a class="readMore" href="/2009/04/23/the-smallest-communication-program-in-the-world/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/">Writing my First Program to Toggle in to the IMSAI 8080</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-11-05">
+         5 November 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/8080/">8080</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/imsai/">IMSAI</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have long been fascinated with entering programs into computers by methods not involving a standard keyboard and monitor.  This interest was peeked by my last article: Using the latest z80pack, versi...
+  &nbsp;
+  <a class="readMore" href="/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/">Read More</a>
 </div>
   </div>
 </div>
@@ -404,8 +368,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2009/03/29/hello-world-in-subleq-assembly/';
-      var disqus_url = 'http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/';
+      var disqus_identifier = '/articles/6502-machine-language-tables-and-aids/';
+      var disqus_url = 'http://techtinkering.com/articles/6502-machine-language-tables-and-aids/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {

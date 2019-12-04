@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="http://techtinkering.com/feed.xml" rel="self"/>
   <link href="http://techtinkering.com"/>
-  <updated>2019-11-26</updated>
+  <updated>2019-12-04</updated>
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>6502 Machine Language Tables and Aids</title>
+      <id>http://techtinkering.com/articles/6502-machine-language-tables-and-aids/</id>
+      <link href="http://techtinkering.com/articles/6502-machine-language-tables-and-aids/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2019-12-04
+        </published>
+
+        <updated>
+          2019-12-04
+        </updated>
+
+        <summary>When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the process easier.  They are based on table</summary>
+    </entry>
     <entry>
       <title>Tokenize/De-tokenize Commodore Basic Programs Using petcat</title>
       <id>http://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/</id>
@@ -558,7 +576,7 @@
         </published>
 
         <updated>
-          2013-04-16
+          2019-11-26
         </updated>
 
         <summary>The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The </summary>
@@ -1443,7 +1461,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
         </published>
 
         <updated>
-          2018-03-13
+          2019-11-26
         </updated>
 
         <summary>I have decided to try out some old CP/M software, but need something to run it on.  I could either do this on my Commodore 128 or through emulation.  Unfortunately the 1571 disk drive for my Commodore </summary>
