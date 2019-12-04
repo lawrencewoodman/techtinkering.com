@@ -1,3 +1,13 @@
+{ filename    2019-12-04-6502-machine-language-tables-and-aids.md
+  title       "6502 Machine Language Tables and Aids"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "6502_machine_language_hex_codes_table.png"
+  tags        {"Retro" "Assembly" "Programming"}
+}
+
 { filename    2019-11-21-tokenize-detokenize-commodore-basic-programs-using-petcat.md
   title       "Tokenize/De-tokenize Commodore Basic Programs Using petcat"
   author      {
