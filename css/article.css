@@ -26,6 +26,10 @@ pre {
   margin-right: 1em;
 }
 
+div.neatTable-responsive {
+  overflow-x: auto;
+}
+
 table.neatTable {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -33,13 +37,18 @@ table.neatTable {
 
 table.neatTable th {
   text-align: left;
-  padding-right: 1em;
   vertical-align: top;
+}
+
+table.neatTable td,th {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 table.neatTable td { text-align: left; padding-right: 1em; }
 table.neatTable td.note { font-style: italic; }
 table.neatTable td.centre { text-align: center; }
+table.neatTable td.right { text-align: right; }
 
 table.neatBorder td,th {
   border: 1px solid #AAA;

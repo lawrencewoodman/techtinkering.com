@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>40 Columns in Basic on the Commodore VIC-20</title>
-  <meta name="description" content="There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 2">
+  <title>Hand Assembling to Machine Code on the Commodore VIC-20</title>
+  <meta name="description" content="I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got ">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="40 Columns in Basic on the Commodore VIC-20">
-  <meta name="twitter:description" content="There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 2">
+  <meta name="twitter:title" content="Hand Assembling to Machine Code on the Commodore VIC-20">
+  <meta name="twitter:description" content="I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got ">
     <meta name="twitter:image"
-         content="http://techtinkering.com/img/social_images/vic20_fat-40.png">
+         content="http://techtinkering.com/img/social_images/vic20_hex_loader.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="40 Columns in Basic on the Commodore VIC-20">
-  <meta property="og:description" content="There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 2">
-  <meta property="og:url" content="http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/">
+  <meta property="og:title" content="Hand Assembling to Machine Code on the Commodore VIC-20">
+  <meta property="og:description" content="I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got ">
+  <meta property="og:url" content="http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">
     <meta property="og:image"
-         content="http://techtinkering.com/img/social_images/vic20_fat-40.png">
+         content="http://techtinkering.com/img/social_images/vic20_hex_loader.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/">
+  <link rel="canonical" href="http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -149,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/" title="40 Columns in Basic on the Commodore VIC-20">
-          <h1 itemprop="headline name">40 Columns in Basic on the Commodore VIC-20</h1>
+        <a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/" title="Hand Assembling to Machine Code on the Commodore VIC-20">
+          <h1 itemprop="headline name">Hand Assembling to Machine Code on the Commodore VIC-20</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -162,8 +162,8 @@
         </div>
         <div>
             <time itemprop="datePublished"
-                  datetime="2019-08-23">
-              23 August 2019
+                  datetime="2019-12-18">
+              18 December 2019
             </time>
             &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
@@ -177,6 +177,8 @@
             </a>
           </span>
           &nbsp; / &nbsp;
+            <a href="/articles/tag/assembly/">Assembly</a>
+            &nbsp; &nbsp;
             <a href="/articles/tag/commodore/">Commodore</a>
             &nbsp; &nbsp;
             <a href="/articles/tag/programming/">Programming</a>
@@ -189,44 +191,92 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 22 columns by 23 rows.  They are supplied as a machine language programs which take over some of the Basic printing routines to provide you with a display using a smaller font.  Because of the need to remap the screen each of these programs needs at least an additional 8K RAM expansion.</p>
-<h2>VIC 40/FAT-40</h2>
-<img src="/img/articles/vic20_fat-40.png" class="img-right" style="width: 500px; clear: right;" title="FAT-40">
-<p>There is a little bit of confusion surrounding the name and origin of this.  The date given by <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/utilities/8k/Fat%2040.prg" title="Fat 40.prg">FAT-40</a> on Zimmers is 13th July 1983 and is for a PAL screen.  However, there is a program called <em>VIC 40</em> published in <a href="https://archive.org/details/ahoy-magazine-10/page/n43">Ahoy! Magazine, October 1984</a> for NTSC.  Either way they seem to be compatible as FAT-40 works with the <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/utilities/8k/Fat40%20Demo.prg" title="Fat40 Demo.prg">Ahoy! Magazine, VIC 40 Demo</a> also on Zimmers and is dated 1984.</p>
-<p>The demo really demonstrates how good this extension is because it shows full character sets plus hi-res graphics being used at the same time.  From the Ahoy! Magazine article it says how this program makes the Vic compatible with PET Basic programs and also demonstrates how to use this mode from machine code programs.  With an 8K RAM expansion it leaves 4466 bytes free for your Basic programs.</p>
-<p>The PET support is quite good in that it moves the screen map to the correct location for the PET so that you can Poke directly into it and it also emulates the Sound system.  Naturally it doesn't extend the Basic to v4 which PET's often use, but other than that it is pretty good.</p>
-<h3>PET Compatibility Tests</h3>
-<p>You can test the PET compatibility of <em>VIC 40</em> using the following:</p>
-<p>Switch to lowercase:</p>
-<pre><code>poke 59468,14
+        <p>I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got a more advanced machine language monitor or assembler.  I want to show how to approach this and how to enter these programs on the Vic.</p>
+<h2>An Example Program</h2>
+<p>As an example I'm going to show how to create a routine that cycles through the various <a href="https://archive.org/details/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/page/n279" title="VIC-20 Programmers Reference Guide, page 265">screen border and background colour combinations</a> by changing the value of <code>$900F</code>.</p>
+<p>It is easier to create the routine if we use a coding sheet like the one below to record the mnemonics, operands, labels and comments.  In many respects this is similar to how we would create the routine using source code on a computer which is going to be run through an assembler, but on paper.</p>
+<div class="neatTable-responsive">
+  <table class="neatTable">
+    <tr>
+      <th>Address</th>
+      <th>Code</th>
+      <th>Label</th>
+      <th>Mnemonic</th>
+      <th>Operand</th>
+      <th>Comment</th>
+    </tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">LDA</td><td>$900F</td><td>Record initial screen border/background combo</td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">LDX</td><td>#$FF</td><td>First combo is $FF</td></tr>
+    <tr><td class="right"></td><td></td><td>SETCOMBO</td><td class="centre">STX</td><td>$900F</td><td>Set screen border/background combo</td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">LDY</td><td>#$FF</td><td>Time delay</td></tr>
+    <tr><td class="right"></td><td></td><td>DELAY</td><td class="centre">DEY</td><td></td><td></td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">BNE</td><td>DELAY</td><td></td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">DEX</td><td></td><td>Next combo</td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">BNE</td><td>SETCOMBO</td><td></td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">STA</td><td>$900F</td><td>Restore initial screen border/background combo</td></tr>
+    <tr><td class="right"></td><td></td><td></td><td class="centre">RTS</td><td></td><td></td></tr>
+  </table>
+</div>
+<p>Once the routine is created we can enter the addresses and enter the machine code using <a href="/articles/6502-machine-language-tables-and-aids/" title="6502 Machine Language Tables and Aids">lookup tables for opcodes and two's complement</a>.  This routine doesn't jump to any absolute addresses and therefore can be located wherever we find suitable.  Where I have filled in the addresses I have started at location <code>$02A1</code> as there is free space here between <code>$02A1</code> and <code>$02FF</code> which is reserved for user program indirects.</p>
+<div class="neatTable-responsive">
+  <table class="neatTable">
+    <tr>
+      <th>Address</th>
+      <th>Code</th>
+      <th>Label</th>
+      <th>Mnemonic</th>
+      <th>Operand</th>
+      <th>Comment</th>
+    </tr>
+    <tr><td class="right">02A1</td><td>AD 0F 90</td><td></td><td class="centre">LDA</td><td>$900F</td><td>Record initial screen border/background combo</td></tr>
+    <tr><td class="right">02A4</td><td>A2 FF</td><td></td><td class="centre">LDX</td><td>#$FF</td><td>First combo is $FF</td></tr>
+    <tr><td class="right">02A6</td><td>8E 0F 90</td><td>SETCOMBO</td><td class="centre">STX</td><td>$900F</td><td>Set screen border/background combo</td></tr>
+    <tr><td class="right">02A9</td><td>A0 FF</td><td></td><td class="centre">LDY</td><td>#$FF</td><td>Time delay</td></tr>
+    <tr><td class="right">02AB</td><td>88</td><td>DELAY</td><td class="centre">DEY</td><td></td><td></td></tr>
+    <tr><td class="right">02AC</td><td>D0 FD</td><td></td><td class="centre">BNE</td><td>DELAY</td><td></td></tr>
+    <tr><td class="right">02AE</td><td>CA</td><td></td><td class="centre">DEX</td><td></td><td>Next combo</td></tr>
+    <tr><td class="right">02AF</td><td>D0 F5</td><td></td><td class="centre">BNE</td><td>SETCOMBO</td><td></td></tr>
+    <tr><td class="right">02B1</td><td>8D 0F 90</td><td></td><td class="centre">STA</td><td>$900F</td><td>Restore initial screen border/background combo</td></tr>
+    <tr><td class="right">02B4</td><td>60</td><td></td><td class="centre">RTS</td><td></td><td></td></tr>
+  </table>
+</div>
+<p>This leaves us with the following machine code:</p>
+<pre><code class="language-text">AD 0F 90 A2 FF
+8E 0F 90 A0 FF
+88 D0 FD CA D0
+F5 8D 0F 90 60
 </code></pre>
-<p>Switch to uppercase:</p>
-<pre><code>poke 59468,12
+<h2>BASIC Data Statements</h2>
+<p>One of the easiest ways to enter a routine into memory is to to convert the machine code to decimal and <code>poke</code> it.  This works well for short machine code routines, but the <code>data</code> statements take up quite a lot of memory and sometimes it is better to put the routine directly into memory and load it separately.</p>
+<pre><code class="language-basic">10 for a=673 to 692
+20 read b
+30 poke a,b
+40 next a
+50 data 173,15,144,162,255,142,15,144,160,255
+60 data 136,208,253,202,208,245,141,15,144,96
 </code></pre>
-<p>Print an A in top-left corner of screen:</p>
-<pre><code>poke 32768,65
+<h2>A Simple Hex Loader</h2>
+<p>This is almost a machine language monitor and is one of the quickest and easiest ways to enter machine language directly onto a Vic.  This could be used when we have created our program by hand and just want to enter the hex codes into the computer to test it.  It is also useful to load the machine code for a proper monitor.  The address is in decimal but each byte is entered in hex.</p>
+<p>The program is based on one in <a href="https://archive.org/details/VIC-20_Machine_Code/page/n27" title="Vic-20 Machine Code, Page 22">Vic-20 Machine Code by Bruce Smith</a>.</p>
+<pre><code class="language-basic">10 print chr$(147)
+20 input &quot;start address:&quot;;a
+30 print a;&quot;:$&quot;;
+40 gosub 100:h=n:print z$;
+50 gosub 100:l=n:print z$
+60 b=h*16+l:poke a,b
+70 a=a+1:goto 30
+
+100 get z$
+110 if z$=&quot;s&quot; then end
+120 if z$&gt;&quot;f&quot; then 100
+130 if z$ &gt;=&quot;a&quot; and z$ &lt;= &quot;f&quot; then n=asc(z$)-55:return
+140 if z$ = &quot;&quot; then 100
+150 n=val(z$):return
 </code></pre>
-<h2>Screen-40</h2>
-<img src="/img/articles/vic20_screen-40.png" class="img-right" style="width: 500px; clear: right;" title="Screen-40">
-<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/utilities/8k/Screen-40.prg" title="Screen-40.prg">Screen-40</a> is a available for NTSC screens on Zimmers and seems to have been published in <a href="https://archive.org/details/1985-06-computegazette/page/n93">Compute! Gazette, June 1985</a>.  It is much the same at VIC 40, but lacks PET support.  However, it uses 653 fewer bytes and therefore with an 8K RAM expansion it leaves 5119 bytes free.</p>
-<br style="clear:right;" />
-<h2>Super Screen</h2>
-<img src="/img/articles/vic20_super_screen.png" class="img-right" style="width: 500px; clear: right;" title="Super Screen">
-<p>This was a commercial program sold by Audiogenic and reviewed in <a href="https://archive.org/details/commodore-user-magazine-02/page/n55">Commodore Magazine, November 1983</a>.  A PAL version of it is available on a <a href="https://onedrive.live.com/redir?resid=C546FFC678A19925!146&amp;authkey=!AFPQpUADLooHK48&amp;ithint=file%2Ct64" title="super_screen.t64 download">.T64 tape image</a>.</p>
-<p>For me this version has the nicest font, however unfortunately it has an annoying behaviour in that it prints an extra new line after every print.  The included demo show this not being done, but it is cumbersome and makes Super Screen a pain to work with.</p>
-<br style="clear:right;" />
-<h2>PET Loader</h2>
-<img src="/img/articles/vic20_pet_loader.png" class="img-right" style="width: 500px; clear: right;" title="PET Loader">
-<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/8k/PET%20Loader.prg" title="PET Loader.prg">PET Loader</a> is a cartridge for PAL systems available from Zimmers.  It is presumably meant to make it easier/possible to run PET programs written in Basic on the Vic.  However, while it patches Basic and provides 40 columns, common pokes for sound and text display don't work.  That said, because it is a cartridge, it is nice to be able to boot directly into 40 columns.  There is more <a href="http://sleepingelephant.com/ipw-web/bulletin/bb/viewtopic.php?t=1552">discussion</a> about patching it to work with NTSC systems on the denial forum.</p>
-<br style="clear:right;" />
-<h2>The Big One</h2>
-<img src="/img/articles/vic20_the_big_one.png" class="img-right" style="width: 500px; clear: right;" title="The Big One">
-<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/demos.basic/unexpanded/Big%20One%20(s).prg" title="Big One (s).prg">The Big One</a> is a little different from the other programs listed in this article in that it doesn't display 40 columns.  Instead, it uses the same character font for a normal Vic, but expands the number of columns displayed to 25 and the number of rows to 30.  It works on an unexpanded Vic and comes with a <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/demos.basic/unexpanded/Big%202.prg" title="Big 2.prg">demonstration</a> program.</p>
-<p>Because of overscan, 25 columns is just about as much as you can extend the number of columns to before they start disappearing off the side of older television set screens.  The version linked to is for PAL systems and is hosted on the Zimmers website.  I mention it here because you may find that it is more comfortable to use than the small fonts of the 40 column extensions and because it works on an unexpanded Vic.</p>
-<h2>Video of the Extensions</h2>
-<p>You can see the extensions being used on a Commodore VIC-20 in the video below:</p>
+<h2>Video Demonstrating Hand Assembling Machine Code</h2>
+<p>You can see the machine code being hand assembled, entered and run in the following video:</p>
 <div class="youtube-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/AjRAtJbWOAQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qlZF1oGgnio" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -240,8 +290,8 @@
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">40 Columns in Basic on the Commodore VIC-20</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Hand Assembling to Machine Code on the Commodore VIC-20</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -254,74 +304,6 @@
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-12-18">
-        18 December 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got a more advanced machine language monitor...
-  &nbsp;
-  <a class="readMore" href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Read More</a>
-</div>
-        <header>
-  <h3><a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-11-08">
-         8 November 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we want to achieve.  If we increase the size ...
-  &nbsp;
-  <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
-</div>
-        <header>
-  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-10-03">
-         3 October 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to ...
-  &nbsp;
-  <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
-</div>
         <header>
   <h3><a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">Adding a Basic Stub to a VIC-20 Assembly Language Program</a></h3>
   <span class="post-meta">
@@ -372,6 +354,76 @@
   &nbsp;
   <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
 </div>
+        <header>
+  <h3><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-04-16">
+        16 April 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/tutorial/">Tutorial</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The ...
+  &nbsp;
+  <a class="readMore" href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2019-11-08">
+         8 November 2019
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we want to achieve.  If we increase the size ...
+  &nbsp;
+  <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2019-10-03">
+         3 October 2019
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to ...
+  &nbsp;
+  <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
+</div>
   </div>
 </div>
 
@@ -394,8 +446,8 @@
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/articles/40-columns-in-basic-on-the-commodore-vic-20/';
-      var disqus_url = 'http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/';
+      var disqus_identifier = '/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/';
+      var disqus_url = 'http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
