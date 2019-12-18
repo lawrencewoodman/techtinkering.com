@@ -33,28 +33,30 @@
         <div class="pull-right">
           [include simple_share_buttons.html]
         </div>
-!       if {![getparam -default false hideDate]} {
-          <time itemprop="datePublished"
-                datetime="[clock format $date -format {%Y-%m-%d}]">
-            [clock format $date -format {%e %B %Y}]
-          </time>
+        <div>
+!         if {![getparam -default false hideDate]} {
+            <time itemprop="datePublished"
+                  datetime="[clock format $date -format {%Y-%m-%d}]">
+              [clock format $date -format {%e %B %Y}]
+            </time>
+            &nbsp; / &nbsp;
+!         }
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="http://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="[getparam author url]">
+              <span itemprop="name">[getparam author name]</span>
+            </a>
+          </span>
           &nbsp; / &nbsp;
-!       }
-        <span itemscope itemprop="publisher"
-              itemtype="http://schema.org/Organization">
-          <meta itemprop="name" content="TechTinkering" />
-          <meta itemprop="url" content="http://techtinkering.com" />
-        </span>
-        <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-          <a rel="author" itemprop="url" href="[getparam author url]">
-            <span itemprop="name">[getparam author name]</span>
-          </a>
-        </span>
-        &nbsp; / &nbsp;
-!       foreach tag [getparam tags] {
-          <a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a>
-          &nbsp; &nbsp;
-!       }
+!         foreach tag [getparam tags] {
+            <a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a>
+            &nbsp; &nbsp;
+!         }
+        </div>
       </header>
       <br />
       <div itemprop="articleBody">
