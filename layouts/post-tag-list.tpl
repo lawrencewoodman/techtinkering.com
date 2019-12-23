@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <a id="btn-view-all" class="pull-right btn btn-success btn-lg" href="/articles/">View All</a>
+    <a id="btn-view-all" class="pull-right btn btn-success btn-lg" href="/articles/">View All Articles</a>
     <div id="indexHeader">[getparam tag]</div>
     [getparam -default "" summaryHTML]
     <hr />
