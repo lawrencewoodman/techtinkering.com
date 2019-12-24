@@ -137,7 +137,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "ctools.png"
-  tags        {"CP/M" "Commodore" "Emulation" "Retro" "Tutorial"}
+  tags        {"CP/M" "Commodore" "Emulation" "Retro"}
 }
 
 { filename    2019-05-21-emulating-a-cpm-system-with-z80pack.md
@@ -147,7 +147,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "z80pack_boot_cpm3.png"
-  tags        {"CP/M" "Emulation" "Retro" "Tutorial"}
+  tags        {"CP/M" "Emulation" "Retro"}
   updated     2019-05-22
 }
 
@@ -263,7 +263,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Tutorial"}
+  tags        {}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -283,7 +283,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Racket" "Tutorial"}
+  tags        {"Racket"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -303,7 +303,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "Retro" "Commodore" "VIC-20" "Assembly" "Tutorial"}
+  tags        {"Programming" "Retro" "Commodore" "VIC-20" "Assembly"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -333,7 +333,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "Tutorial" "Commodore" "Retro" "VIC-20" "Assembly"}
+  tags        {"Programming" "Commodore" "Retro" "VIC-20" "Assembly"}
   updated     2019-11-26
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -344,7 +344,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Linux" "Tutorial" "BBS" "Retro"}
+  tags        {"Linux" "BBS" "Retro"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -354,7 +354,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Linux" "Tutorial" "Emulation" "Retro"}
+  tags        {"Linux" "Emulation" "Retro"}
   updated     2019-11-26
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -365,7 +365,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Linux" "Tutorial"}
+  tags        {"Linux"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -405,7 +405,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "Tcl" "Tutorial" "C"}
+  tags        {"Programming" "Tcl" "C"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -425,7 +425,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "Tutorial"}
+  tags        {"Programming"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
@@ -435,7 +435,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "SDL" "Tcl" "Tk" "Tutorial"}
+  tags        {"Programming" "SDL" "Tcl" "Tk"}
   updated     2012-12-02
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -555,7 +555,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Linux" "Retro" "ANSI" "Text Mode" "Tutorial" "BBS"}
+  tags        {"Linux" "Retro" "ANSI" "Text Mode" "BBS"}
   image       "/img/articles/small_bbs_splashscreen.jpg"
   imageTitle  "A BBS Splash Screen"
   postURLStyle "/@year/@month/@day/@title/"
@@ -574,7 +574,6 @@
     "High Performance Computing"
     "Distributed Processing"
     "Parallel Processing"
-    "Tutorial"
   }
   image       "/img/articles/small_master_slave_mpi.jpg"
   postURLStyle "/@year/@month/@day/@title/"
@@ -597,7 +596,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"DEC" "Retro" "PDP-8" "FORTRAN" "Programming" "Tutorial"}
+  tags        {"DEC" "Retro" "PDP-8" "FORTRAN" "Programming"}
   image       "/img/articles/small_fortran_source.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -608,7 +607,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"DEC" "Retro" "PDP-8" "Editor" "Tutorial"}
+  tags        {"DEC" "Retro" "PDP-8" "Editor"}
   image       "/img/articles/small_paper_tape.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -631,7 +630,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Emulation" "DEC" "PDP-8" "Retro" "SimH" "Tutorial"}
+  tags        {"Emulation" "DEC" "PDP-8" "Retro" "SimH"}
   image       "/img/articles/small_dec_pdp8-fpanel.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -825,7 +824,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"8080" "Emulation" "Retro" "Tutorial" "Altair" "IMSAI"}
+  tags        {"8080" "Emulation" "Retro" "Altair" "IMSAI"}
   image       "/img/articles/small_imsai_frontpanel_z80pack.jpg"
   imageTitle  "Screenshot of z80pack using FrontPanel to emulate an IMSAI 8080"
   postURLStyle "/@year/@month/@day/@title/"
@@ -849,7 +848,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"DOS" "Emulation" "Retro" "Tutorial"}
+  tags        {"DOS" "Emulation" "Retro"}
   image       "/img/articles/small_cnc_ingame.png"
   imageTitle  "Command and Conquer In-Game Screenshot"
   postURLStyle "/@year/@month/@day/@title/"
@@ -861,7 +860,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"C" "CP/M" "Programming" "Retro" "Z80" "Tutorial"}
+  tags        {"C" "CP/M" "Programming" "Retro" "Z80"}
   image       "/img/articles/small_war_c.png"
   updated     2012-12-11
   postURLStyle "/@year/@month/@day/@title/"
@@ -873,7 +872,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"CP/M" "Editor" "Programming" "Retro" "Tutorial"}
+  tags        {"CP/M" "Editor" "Programming" "Retro"}
   image       "/img/articles/small_zde16_screenshort.png"
   imageTitle  "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
   postURLStyle "/@year/@month/@day/@title/"
@@ -885,7 +884,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags         {"CP/M" "Emulation" "Retro" "Z80" "Tutorial"}
+  tags         {"CP/M" "Emulation" "Retro" "Z80"}
   image        "/img/articles/small_z80pack_cpm3.png"
   imageTitle   "Loading Screen for CP/M 3.0 on z80pack"
   updated      2019-11-26
