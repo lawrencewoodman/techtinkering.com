@@ -11,7 +11,7 @@ A9 93 20 D2 FF 00
 
 as assembly language (with comments to explain what is happening)
 
-```` 6502 assembly
+```` asm6502
 LDA #$93   ; Load the Accumulator register (A storage location in the CPU)
            ; with the value $93, which is the Clear Screen code
 JSR $FFD2  ; Jump to a subroutine at location $FFD2 (Print a character routine).
