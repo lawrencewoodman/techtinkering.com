@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Adding a Basic Stub to a VIC-20 Assembly Language Program</title>
-  <meta name="description" content="To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do ">
+  <title>Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20</title>
+  <meta name="description" content="To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do o">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Adding a Basic Stub to a VIC-20 Assembly Language Program">
-  <meta name="twitter:description" content="To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do ">
+  <meta name="twitter:title" content="Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20">
+  <meta name="twitter:description" content="To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do o">
+    <meta name="twitter:image"
+         content="http://techtinkering.com/img/social_images/vic20_basic_stub_vicmon.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Adding a Basic Stub to a VIC-20 Assembly Language Program">
-  <meta property="og:description" content="To make machine language programs more friendly it is nice to add a basic stub which contains a line with a SYS statement to start the code.  This is easy to do ">
-  <meta property="og:url" content="http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">
+  <meta property="og:title" content="Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20">
+  <meta property="og:description" content="To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do o">
+  <meta property="og:url" content="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/">
+    <meta property="og:image"
+         content="http://techtinkering.com/img/social_images/vic20_basic_stub_vicmon.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/">
+  <link rel="canonical" href="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -141,26 +145,12 @@
   </div>
 </nav>
     <div id="content" class="container">
-          <script language="javascript" type="text/javascript">
-      window.location.replace("/articles/adding-a-basic-stub-to-an-assembly-language-program-on-the-commodore-vic-20/")
-    </script>
-
-    <div class="row margin-buffer">
-      <div class="col-md-12">
-        <div class="articleRedirected">
-          <h1>Old Article</h1>
-          <p>This is an old article which is only being kept for historical purposes.</p>
-
-          <p>Please navigate and update any links to the new article: <a href="/articles/adding-a-basic-stub-to-an-assembly-language-program-on-the-commodore-vic-20/">Adding a Basic Stub to an Assembly Language Program on the Commodore VIC-20</a>.</p>
-        </div>
-      </div>
-   </div>
-<div class="row margin-buffer">
+      <div class="row margin-buffer">
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/" title="Adding a Basic Stub to a VIC-20 Assembly Language Program">
-          <h1 itemprop="headline name">Adding a Basic Stub to a VIC-20 Assembly Language Program</h1>
+        <a href="/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/" title="Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20">
+          <h1 itemprop="headline name">Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -172,8 +162,8 @@
         </div>
         <div>
             <time itemprop="datePublished"
-                  datetime="2013-05-10">
-              10 May 2013
+                  datetime="2020-01-16">
+              16 January 2020
             </time>
             &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
@@ -201,54 +191,65 @@
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>To make machine language programs more friendly it is nice to add a basic stub which contains a line with a <code>SYS</code> statement to start the code.  This is easy to do on the Vic-20 and the process gives you an insight into how Basic programs are stored in memory.  I'll show you how to do this and how to extend the programs to meet your needs.</p>
+        <p>To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a <code>SYS</code> statement to start the code.  This is easy to do on the VIC-20 and the process gives you an insight into how Basic programs are stored in memory.</p>
 <p>A Basic program consists of a series of Basic lines followed by two <code>00</code> octets to signify the end of the program.  Each Basic line starts with a 16-bit next line link to the next Basic line in memory. Then there is a 16-bit Basic line number.  The following bytes represents the statements on the Basic line and is terminated by a <code>00</code> octet.</p>
-<p>To create the following Basic program:</p>
-<pre><code class="language-basic">2013 SYS 4110
+<p>To create the following Basic program for an unexpanded Vic:</p>
+<pre><code class="language-basic">2020 SYS 4110
 </code></pre>
-<p>We could use this simple Basic stub for an unexpanded Vic in <a href="http://www.floodgap.com/retrotech/xa/">xa65</a> assembler:</p>
-<pre><code class="language-6502">            * = $1001
+<p>We could use this simple Basic stub for an unexpanded Vic in <a href="http://www.floodgap.com/retrotech/xa/">xa65</a> assembler.  The code contains a load address to make the output a valid .PRG file.</p>
+<pre><code class="language-asm6502">TOK_SYS   = $9E               ; SYS token
+
+            .byt  $01, $10    ; Load address ($1001)
+
+            * = $1001
             .word basicEnd    ; Next Line link, here end of Basic program
-            .word 2013        ; The line number for the SYS statement
-            .byt  $9e         ; SYS token
+            .word 2020        ; The line number for the SYS statement
+            .byt  TOK_SYS     ; SYS token
             .asc  &quot; &quot;
             .asc  &quot;4110&quot;      ; Start of machine language
             .byt  0           ; End of Basic line
 basicEnd    .word 0           ; End of Basic program
 </code></pre>
-<p>The location <code>4110</code> is the next memory address after the end of the Basic program.  The Basic program starts at memory location <code>$1001</code> which is <code>4097</code> in decimal, and the Basic stub is <code>13</code> bytes long, so <code>4097 + 13 = 4110</code>.</p>
+<p>The location <code>4110</code> is the next memory address after the end of the Basic program on an unexpanded Vic.  The Basic program starts at memory location <code>$1001</code> which is <code>4097</code> in decimal, and the Basic stub is <code>13</code> bytes long, so <code>4097 + 13 = 4110</code>.</p>
 <h2>Using Vicmon to Explore a Basic Program</h2>
-<p>To see how the Vic-20 stores a BASIC program in memory we can use the Vicmon Cartridge, introduced <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/" title="Beginning Assembly Programming on the Commodore Vic-20">previously</a>.  First power cycle your Vic and enter the following program:</p>
-<pre><code class="language-basic">2013 SYS 4110
+<p>To see how the Vic stores a Basic program in memory we can use the Vicmon Cartridge, introduced <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/" title="Beginning Assembly Programming on the Commodore Vic-20">previously</a>.  First power cycle your Vic and enter the following program:</p>
+<pre><code class="language-basic">2020 SYS 4110
 </code></pre>
-<p>On an unexpanded Vic-20 the User Basic Area is at $1000 and a Basic program begins at $1001.  If we enter the monitor and look at the program:</p>
+<p>On an unexpanded Vic the User Basic Area is at $1000 and a Basic program begins at $1001.  If we enter the monitor and look at the program:</p>
 <pre><code class="language-text">.M 1001 100F
 </code></pre>
 <p>We'll see</p>
-<pre><code class="language-text">1001 0C 10 DD 07 9E
+<pre><code class="language-text">1001 0C 10 E4 07 9E
 1006 20 34 31 31 30
 100B 00 00 00 00 00
 </code></pre>
 <p>The first two bytes <code>0C 10</code> is an address, <code>$100C</code>, representing the next line of Basic in memory, in this case it points to <code>00 00</code> which signifies the end of the program.</p>
-<p>The second two bytes <code>DD 07</code> is the number <code>$07DD</code> which when converted to decimal is <code>2013</code>.  So this is the line number of the first line.</p>
+<p>The second two bytes <code>E4 07</code> is the number <code>$07E4</code> which when converted to decimal is <code>2020</code>.  So this is the line number of the first line.</p>
 <p>We now have the actual contents of the Basic line.  It starts with <code>9E</code> which is the token for <code>SYS</code>, followed by <code>20</code> which is a space character.  Then come four bytes <code>34 31 31 30</code>, which are the ASCII characters <code>4110</code>.  The line is terminated by the octet <code>00</code>.</p>
 <p>Finally the end of the program is marked by <code>00 00</code>.</p>
 <h2>Hiding the SYS Statement With a Message</h2>
 <p>When you load many programs and do a <code>LIST</code>, all you see is a message such as:</p>
-<pre><code class="language-text">(C) 2013 LORRY WOODMAN
+<pre><code class="language-text">(C) 2020 LORRY WOODMAN
 </code></pre>
 <p>This is done by following the <code>SYS</code> statement with a <code>REM</code> containing backspace characters, which would look like:</p>
-<pre><code class="language-6502">            * = $1001
+<pre><code class="language-asm6502">BSPACE    = $14               ; Backspace character
+COLON     = $3A               ; Colon character
+TOK_REM   = $8F               ; REM token
+TOK_SYS   = $9E               ; SYS token
+
+            .byt  $01, $10    ; Load address ($1001)
+
+            * = $1001
             .word basicEnd    ; Next Line link, here end of BASIC program
             .word 1           ; The line number for the SYS statement
-            .byt  $9e         ; SYS token
+            .byt  TOK_SYS     ; SYS token
             .asc  &quot; &quot;
             .asc  &quot;4150&quot;      ; Start of machine language
-            .byt  $3a         ; colon symbol token
-            .byt  $8f         ; REM token
+            .byt  COLON       ; Colon character
+            .byt  TOK_REM     ; REM token
             .asc  &quot; &quot;
-            .dsb  15,$14      ; Backspace characters to make line invisible
-            .asc  &quot;(C) 2013 LORRY WOODMAN&quot;
+            .dsb  15,BSPACE   ; Backspace characters to make line invisible
+            .asc  &quot;(C) 2020 LORRY WOODMAN&quot;
             .byt  0           ; End of Basic line
 basicEnd    .word 0           ; End of Basic program
 </code></pre>
@@ -266,50 +267,115 @@ basicEnd    .word 0           ; End of Basic program
   <tr><td>4150</td><td>1078</td><td>4662</td></tr>
 </table>
 <p>So the first Basic stub would look like the following for a 3Kb configuration:</p>
-<pre><code class="language-6502">            ; 2013 SYS 1038
+<pre><code class="language-asm6502">TOK_SYS   = $9E               ; SYS token
+
+            .byt  $01, $04    ; Load address ($0401)
+
+            ; 2020 SYS 1038
             * = $401
             .word basicEnd    ; Next Line link, here end of Basic program
-            .word 2013        ; The line number for the SYS statement
-            .byt  $9e         ; SYS token
+            .word 2020        ; The line number for the SYS statement
+            .byt  TOK_SYS     ; SYS token
             .asc  &quot; &quot;
             .asc  &quot;1038&quot;      ; Start of machine language
             .byt  0           ; End of Basic line
 basicEnd    .word 0           ; End of Basic program
 </code></pre>
 <p>And for an 8Kb+ configuration:</p>
-<pre><code class="language-6502">            ; 2013 SYS 4622
+<pre><code class="language-asm6502">TOK_SYS   = $9E               ; SYS token
+
+            .byt  $01, $12    ; Load address ($1201)
+
+            ; 2020 SYS 4622
             * = $1201
             .word basicEnd    ; Next Line link, here end of Basic program
-            .word 2013        ; The line number for the SYS statement
-            .byt  $9e         ; SYS token
+            .word 2020        ; The line number for the SYS statement
+            .byt  TOK_SYS     ; SYS token
             .asc  &quot; &quot;
             .asc  &quot;4622&quot;      ; Start of machine language
             .byt  0           ; End of Basic line
 basicEnd    .word 0           ; End of Basic program
 </code></pre>
+<h2>Memory Configuration Independent</h2>
+<p>To create a stub that will work no matter what memory configuration the program is loaded into we need to calculate the start of the machine code for the <code>SYS</code> statement.  We can do this by examining location 43/44 which points to the start of tokenized Basic programs to create the following program, where 27 is the size of the Basic stub:</p>
+<pre><code class="language-basic">2020 SYS PEEK(43)+PEEK(44)*256+27
+</code></pre>
+<p>In the code for the Basic stub below we don't need to worry about the value for <code>basicEnd</code> being wrong on expanded Vics as the value will be corrected by the Basic loader.</p>
+<pre><code class="language-asm6502">OPEN_PR   = $28               ; ( character
+CLOSE_PR  = $29               ; ) character
+PLUS      = $AA               ; + character
+TIMES     = $AC               ; * character
+TOK_PEEK  = $C2               ; PEEK token
+TOK_SYS   = $9E               ; SYS token
+
+            .byt $01, $80     ; Load Address.  Using character ROM because
+                              ; correct RAM location memory configuration
+                              ; dependent
+
+            ; 2020 SYS PEEK(43)+PEEK(44)*256+27
+            * = $1001         ; Only used to give basicEnd a reasonable value
+start       .word basicEnd    ; Next Line link, here end of Basic program
+            .word 2020        ; The line number for the SYS statement
+            .byt  TOK_SYS     ; SYS token
+            .asc  &quot; &quot;
+            .byt  TOK_PEEK    ; PEEK token
+            .byt  OPEN_PR     ; (
+            .asc  &quot;43&quot;        ; 43
+            .byt  CLOSE_PR    ; )
+            .byt  PLUS        ; +
+            .byt  TOK_PEEK    ; PEEK token
+            .byt  OPEN_PR     ; (
+            .asc  &quot;44&quot;        ; 44
+            .byt  CLOSE_PR    ; )
+            .byt  TIMES       ; *
+            .asc  &quot;256&quot;       ; 256
+            .byt  PLUS        ; +
+            .asc  &quot;27&quot;        ; 27 (The size of the stub)
+            .byt  0           ; End of Basic line
+basicEnd    .word 0           ; End of Basic program
+</code></pre>
+<p>It should be noted that the machine code that follows the Basic stub in this example will have to be made position independent as its start location will be unknown when the code is assembled.</p>
 <h2>Putting it All Together</h2>
 <p>To finish, here is a complete program including a Basic stub, which has been added to the &quot;Hello, World!&quot; example from: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20">Beginning Assembly Programming on the Commodore Vic-20</a>.</p>
-<pre><code class="language-6502">CHROUT  =   $ffd2
+<pre><code class="language-asm6502">BSPACE    = $14               ; Backspace character
+COLON     = $3A               ; Colon character
+TOK_REM   = $8F               ; REM token
+TOK_SYS   = $9E               ; SYS token
+
+CCHROUT   = $FFD2
+
+            .byt  $01, $10    ; Load address ($1001)
 
             * = $1001
             .word basicEnd    ; Next Line link, here end of Basic program
-            .word 2013        ; The line number for the SYS statement
-            .byt  $9e         ; SYS token
+            .word 2020        ; The line number for the SYS statement
+            .byt  TOK_SYS     ; SYS token
             .asc  &quot; &quot;
-            .asc  &quot;4110&quot;      ; Start of machine language
+            .asc  &quot;4150&quot;      ; Start of machine language
+            .byt  COLON       ; Colon character
+            .byt  TOK_REM     ; REM token
+            .asc  &quot; &quot;
+            .dsb  15,BSPACE   ; Backspace characters to make line invisible
+            .asc  &quot;(C) 2020 LORRY WOODMAN&quot;
             .byt  0           ; End of Basic line
 basicEnd    .word 0           ; End of Basic program
 
+            ; Print 'HELLO, WORLD!&quot;
             ldx #$00
 loop        lda message, x
             beq finished
-            jsr CHROUT
+            jsr CCHROUT
             inx
             bne loop
 finished    rts
 
 message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
 </code></pre>
+<h2>Video Demonstrating Basic Stubs</h2>
+<p>You can see the Basic stubs being investigated with Vicmon and implemented in the following video:</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qLbFqbJtuhw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
       </div>
     </article>
   </div>
@@ -322,8 +388,8 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Adding a Basic Stub to a VIC-20 Assembly Language Program</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -336,30 +402,6 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2020-01-16">
-        16 January 2020
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
-  &nbsp;
-  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/">Read More</a>
-</div>
         <header>
   <h3><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h3>
   <span class="post-meta">
@@ -454,6 +496,28 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
   &nbsp;
   <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
 </div>
+        <header>
+  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2019-10-03">
+         3 October 2019
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to ...
+  &nbsp;
+  <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
+</div>
   </div>
 </div>
 
@@ -476,8 +540,8 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/';
-      var disqus_url = 'http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/';
+      var disqus_identifier = '/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/';
+      var disqus_url = 'http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/';
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
