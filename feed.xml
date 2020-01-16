@@ -6,9 +6,9 @@
   <id>http://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
-      <title>Adding Basic Stubs to Assembly Language Programs on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-programs-on-the-commodore-vic-20/"/>
+      <title>Adding Basic Stubs to Assembly Language on the Commodore VIC-20</title>
+      <id>http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/</id>
+      <link href="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
