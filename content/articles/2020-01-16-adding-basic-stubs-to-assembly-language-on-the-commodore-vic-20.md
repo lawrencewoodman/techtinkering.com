@@ -186,7 +186,7 @@ basicEnd    .word 0           ; End of Basic program
 It should be noted that the machine code that follows the Basic stub in this example will have to be made position independent as its start location will be unknown when the code is assembled.
 
 ## Putting it All Together
-To finish, here is a complete program including a Basic stub, which has been added to the "Hello, World!" example from: [Beginning Assembly Programming on the Commodore Vic-20](/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20).
+To finish, here is a complete program including a Basic stub with the SYS command hidden by a copyright message.  The stub has been added to the "Hello, World!" example from: [Beginning Assembly Programming on the Commodore Vic-20](/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20).
 
 ``` asm6502
 BSPACE    = $14               ; Backspace character
