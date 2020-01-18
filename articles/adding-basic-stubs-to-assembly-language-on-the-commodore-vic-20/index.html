@@ -336,7 +336,7 @@ basicEnd    .word 0           ; End of Basic program
 </code></pre>
 <p>It should be noted that the machine code that follows the Basic stub in this example will have to be made position independent as its start location will be unknown when the code is assembled.</p>
 <h2>Putting it All Together</h2>
-<p>To finish, here is a complete program including a Basic stub, which has been added to the &quot;Hello, World!&quot; example from: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20">Beginning Assembly Programming on the Commodore Vic-20</a>.</p>
+<p>To finish, here is a complete program including a Basic stub with the SYS command hidden by a copyright message.  The stub has been added to the &quot;Hello, World!&quot; example from: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20">Beginning Assembly Programming on the Commodore Vic-20</a>.</p>
 <pre><code class="language-asm6502">BSPACE    = $14               ; Backspace character
 COLON     = $3A               ; Colon character
 TOK_REM   = $8F               ; REM token
