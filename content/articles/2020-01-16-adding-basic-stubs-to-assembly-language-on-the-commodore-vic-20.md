@@ -196,7 +196,7 @@ COLON     = $3A               ; Colon character
 TOK_REM   = $8F               ; REM token
 TOK_SYS   = $9E               ; SYS token
 
-CCHROUT   = $FFD2
+CCHROUT   = $FFD2             ; Output character to current output device
 
             .byt  $01, $10    ; Load address ($1001)
 
