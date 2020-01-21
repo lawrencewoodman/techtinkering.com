@@ -3,9 +3,9 @@ To make machine language programs more friendly it's nice to add a Basic stub wh
 A Basic program consists of a series of Basic lines followed by two `00` octets to signify the end of the program.  Each Basic line starts with a 16-bit next line link to the next Basic line in memory. Then there is a 16-bit Basic line number.  The following bytes represents the statements on the Basic line and is terminated by a `00` octet.
 
 To create the following Basic program for an unexpanded Vic:
-```` basic
+``` basic
 2020 SYS 4110
-````
+```
 
 We could use this simple Basic stub for an unexpanded Vic in [xa65](http://www.floodgap.com/retrotech/xa/) assembler.  The code contains a load address to make the output a valid .PRG file.
 
@@ -57,11 +57,12 @@ Finally the end of the program is marked by `00 00`.
 
 ## Hiding the SYS Statement With a Message
 When you load many programs and do a `LIST`, all you see is a message such as:
-```` text
+``` text
 (C) 2020 LORRY WOODMAN
-````
+```
 
 This is done by following the `SYS` statement with a `REM` containing backspace characters, which would look like:
+
 ``` asm6502
 BSPACE    = $14               ; Backspace character
 COLON     = $3A               ; Colon character
@@ -104,6 +105,7 @@ There are three main memory configurations that you have to be aware of with the
 </table>
 
 So the first Basic stub would look like the following for a 3Kb configuration:
+
 ``` asm6502
 TOK_SYS   = $9E               ; SYS token
 
