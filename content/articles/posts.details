@@ -1,3 +1,14 @@
+{ filename    2020-02-04-position-independent-code-6502-on-the-commodore-vic-20.md
+  title       "Position Independent Code (6502) on the Commodore VIC-20"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "6502_pic_make_data_table_assembly.png"
+  tags        {"Retro" "Assembly" "Programming" "Commodore" "VIC-20"}
+}
+
+
 { filename    2020-01-16-adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20.md
   title       "Adding Basic Stubs to Assembly Language on the Commodore VIC-20"
   author      {
