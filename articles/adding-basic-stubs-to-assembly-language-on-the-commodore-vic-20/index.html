@@ -342,7 +342,7 @@ COLON     = $3A               ; Colon character
 TOK_REM   = $8F               ; REM token
 TOK_SYS   = $9E               ; SYS token
 
-CCHROUT   = $FFD2
+CCHROUT   = $FFD2             ; Output character to current output device
 
             .byt  $01, $10    ; Load address ($1001)
 
@@ -402,6 +402,30 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
+        <header>
+  <h3><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2020-02-04">
+         4 February 2020
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create Position Independent Code (PIC) or make the code relocatable.  H...
+  &nbsp;
+  <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
+</div>
         <header>
   <h3><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h3>
   <span class="post-meta">
@@ -495,28 +519,6 @@ message     .asc &quot;HELLO, WORLD!&quot; : .byt 0
   To make the most of the limited amount of memory on the VIC-20, we can increase and decrease the screen size depending on our program's priorities and what we want to achieve.  If we increase the size ...
   &nbsp;
   <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
-</div>
-        <header>
-  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-10-03">
-         3 October 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  The VIC-20's VIC chip provides a simple yet flexible video display and one of the features that can be quite useful is the ability to alter the picture origin on the screen.  This feature allows us to ...
-  &nbsp;
-  <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
 </div>
   </div>
 </div>
