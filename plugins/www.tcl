@@ -62,6 +62,25 @@ test www::urlToPath {{ns t} {
   testCases $t $cases {{ns case} {dict with case {${ns}::urlToPath $input}}}
 }}
 
+proc www::encodeURL {url} {
+  set chRE {[^-A-Za-z0-9._~\n]}
+  set replacement {%[format "%02X" [scan "\\\0" "%c"]]}
+  return [string map {"\n" "%0A"} [subst [regsub -all $chRE $url $replacement]]]
+}
+
+test www::encodeURL {{ns t} {
+  set cases {
+    {input {https://techtinkering.com/2020/02/05/some-article/}
+     result {https%3A%2F%2Ftechtinkering.com%2F2020%2F02%2F05%2Fsome-article%2F}}
+    {input {https://example.com/fred and bob}
+     result {https%3A%2F%2Fexample.com%2Ffred%20and%20bob}}
+    {input {https://example.com/fred
+and bob}
+     result {https%3A%2F%2Fexample.com%2Ffred%0Aand%20bob}}
+  }
+  testCases $t $cases {{ns case} {dict with case {${ns}::encodeURL $input}}}
+}}
+
 proc www::var {args} {
   array set options {}
   while {[llength $args]} {
