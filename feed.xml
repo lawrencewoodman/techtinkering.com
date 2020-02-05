@@ -1,14 +1,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
-  <link href="http://techtinkering.com/feed.xml" rel="self"/>
-  <link href="http://techtinkering.com"/>
-  <updated>2020-02-04</updated>
-  <id>http://techtinkering.com/feed.xml</id>
+  <link href="https://techtinkering.com/feed.xml" rel="self"/>
+  <link href="https://techtinkering.com"/>
+  <updated>2020-02-05</updated>
+  <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
       <title>Position Independent Code (6502) on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/position-independent-code-6502-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/position-independent-code-6502-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/position-independent-code-6502-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/position-independent-code-6502-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -25,8 +25,8 @@
     </entry>
     <entry>
       <title>Adding Basic Stubs to Assembly Language on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -43,8 +43,8 @@
     </entry>
     <entry>
       <title>Hand Assembling to Machine Code on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -61,8 +61,8 @@
     </entry>
     <entry>
       <title>6502 Machine Language Tables and Aids</title>
-      <id>http://techtinkering.com/articles/6502-machine-language-tables-and-aids/</id>
-      <link href="http://techtinkering.com/articles/6502-machine-language-tables-and-aids/"/>
+      <id>https://techtinkering.com/articles/6502-machine-language-tables-and-aids/</id>
+      <link href="https://techtinkering.com/articles/6502-machine-language-tables-and-aids/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -79,8 +79,8 @@
     </entry>
     <entry>
       <title>Tokenize/De-tokenize Commodore Basic Programs Using petcat</title>
-      <id>http://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/</id>
-      <link href="http://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/"/>
+      <id>https://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/</id>
+      <link href="https://techtinkering.com/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -97,8 +97,8 @@
     </entry>
     <entry>
       <title>Changing Screen Dimensions on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/changing-screen-dimensions-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -115,8 +115,8 @@
     </entry>
     <entry>
       <title>Moving the Picture Origin on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/moving-the-picture-origin-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -133,8 +133,8 @@
     </entry>
     <entry>
       <title>DABAR: A Hebrew Vocabulary Drill System on CP/M</title>
-      <id>http://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/"/>
+      <id>https://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -151,8 +151,8 @@
     </entry>
     <entry>
       <title>Spreadsheets on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -169,8 +169,8 @@
     </entry>
     <entry>
       <title>40 Columns in Basic on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/articles/40-columns-in-basic-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -187,8 +187,8 @@
     </entry>
     <entry>
       <title>Backgammon: The Peelgrunt Game of Gammon IV on CP/M</title>
-      <id>http://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/"/>
+      <id>https://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -205,8 +205,8 @@
     </entry>
     <entry>
       <title>DIR Alternatives on CP/M</title>
-      <id>http://techtinkering.com/articles/dir-alternatives-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/dir-alternatives-on-cpm/"/>
+      <id>https://techtinkering.com/articles/dir-alternatives-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/dir-alternatives-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -223,8 +223,8 @@
     </entry>
     <entry>
       <title>Mission: Impossible on CP/M</title>
-      <id>http://techtinkering.com/articles/mission-impossible-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/mission-impossible-on-cpm/"/>
+      <id>https://techtinkering.com/articles/mission-impossible-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/mission-impossible-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -241,8 +241,8 @@
     </entry>
     <entry>
       <title>Hunt the Wumpus on CP/M</title>
-      <id>http://techtinkering.com/articles/hunt-the-wumpus-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/hunt-the-wumpus-on-cpm/"/>
+      <id>https://techtinkering.com/articles/hunt-the-wumpus-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/hunt-the-wumpus-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -259,8 +259,8 @@
     </entry>
     <entry>
       <title>CP/M Standard Console Control Characters</title>
-      <id>http://techtinkering.com/articles/cpm-standard-console-control-characters/</id>
-      <link href="http://techtinkering.com/articles/cpm-standard-console-control-characters/"/>
+      <id>https://techtinkering.com/articles/cpm-standard-console-control-characters/</id>
+      <link href="https://techtinkering.com/articles/cpm-standard-console-control-characters/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -277,8 +277,8 @@
     </entry>
     <entry>
       <title>Transferring Files to and from CP/M .D71 Disk Images Using ctools</title>
-      <id>http://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/</id>
-      <link href="http://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/"/>
+      <id>https://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/</id>
+      <link href="https://techtinkering.com/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -295,8 +295,8 @@
     </entry>
     <entry>
       <title>Emulating a CP/M System With z80pack</title>
-      <id>http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/</id>
-      <link href="http://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/"/>
+      <id>https://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/</id>
+      <link href="https://techtinkering.com/articles/emulating-a-cpm-system-with-z80pack/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -313,8 +313,8 @@
     </entry>
     <entry>
       <title>Instrument Flight Simulator on CP/M</title>
-      <id>http://techtinkering.com/articles/instrument-flight-simulator-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/instrument-flight-simulator-on-cpm/"/>
+      <id>https://techtinkering.com/articles/instrument-flight-simulator-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/instrument-flight-simulator-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -331,8 +331,8 @@
     </entry>
     <entry>
       <title>Interactive File Managers on CP/M</title>
-      <id>http://techtinkering.com/articles/interactive-file-managers-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/interactive-file-managers-on-cpm/"/>
+      <id>https://techtinkering.com/articles/interactive-file-managers-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/interactive-file-managers-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -349,8 +349,8 @@
     </entry>
     <entry>
       <title>Felix Animation System on CP/M</title>
-      <id>http://techtinkering.com/articles/felix-animation-system-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/felix-animation-system-on-cpm/"/>
+      <id>https://techtinkering.com/articles/felix-animation-system-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/felix-animation-system-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -367,8 +367,8 @@
     </entry>
     <entry>
       <title>Compression and Archiving on CP/M</title>
-      <id>http://techtinkering.com/articles/compression-and-archiving-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/compression-and-archiving-on-cpm/"/>
+      <id>https://techtinkering.com/articles/compression-and-archiving-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/compression-and-archiving-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -385,8 +385,8 @@
     </entry>
     <entry>
       <title>Text Viewers on CP/M</title>
-      <id>http://techtinkering.com/articles/text-viewers-on-cpm/</id>
-      <link href="http://techtinkering.com/articles/text-viewers-on-cpm/"/>
+      <id>https://techtinkering.com/articles/text-viewers-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/text-viewers-on-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -403,8 +403,8 @@
     </entry>
     <entry>
       <title>Write Hand Man - CP/M's Answer to Sidekick</title>
-      <id>http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/</id>
-      <link href="http://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/"/>
+      <id>https://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/</id>
+      <link href="https://techtinkering.com/articles/write-hand-man-cpms-answer-to-sidekick/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -421,8 +421,8 @@
     </entry>
     <entry>
       <title>Benchmarking Basic on Vintage Computers</title>
-      <id>http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/</id>
-      <link href="http://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/"/>
+      <id>https://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/</id>
+      <link href="https://techtinkering.com/articles/benchmarking-basic-on-vintage-computers/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -439,8 +439,8 @@
     </entry>
     <entry>
       <title>Introducing Ornament a Tcl Template Module</title>
-      <id>http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/</id>
-      <link href="http://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/"/>
+      <id>https://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/</id>
+      <link href="https://techtinkering.com/articles/introducing-ornament-a-tcl-template-module/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -457,8 +457,8 @@
     </entry>
     <entry>
       <title>Advent of Code 2018: 25 Days, 25 Languages</title>
-      <id>http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/</id>
-      <link href="http://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/"/>
+      <id>https://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/</id>
+      <link href="https://techtinkering.com/articles/advent-of-code-2018-25-days-25-languages/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -475,8 +475,8 @@
     </entry>
     <entry>
       <title>Book Review: What the Dormouse Said by John Markoff</title>
-      <id>http://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/</id>
-      <link href="http://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/"/>
+      <id>https://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/</id>
+      <link href="https://techtinkering.com/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -493,8 +493,8 @@
     </entry>
     <entry>
       <title>How to Make Thunderbird Feel Like Geary</title>
-      <id>http://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/</id>
-      <link href="http://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/"/>
+      <id>https://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/</id>
+      <link href="https://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -511,8 +511,8 @@
     </entry>
     <entry>
       <title>Beware of Immutable Lists for F# Parallel Processing</title>
-      <id>http://techtinkering.com/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/</id>
-      <link href="http://techtinkering.com/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/"/>
+      <id>https://techtinkering.com/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/</id>
+      <link href="https://techtinkering.com/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -529,8 +529,8 @@
     </entry>
     <entry>
       <title>Rendering Racket Package Scribblings on Github Using gh-pages</title>
-      <id>http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/</id>
-      <link href="http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/"/>
+      <id>https://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/</id>
+      <link href="https://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -547,8 +547,8 @@
     </entry>
     <entry>
       <title>Programmable Character Sets: A Simple Alternative to Bitmap Displays</title>
-      <id>http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/</id>
-      <link href="http://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/"/>
+      <id>https://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/</id>
+      <link href="https://techtinkering.com/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -565,8 +565,8 @@
     </entry>
     <entry>
       <title>Adding a Basic Stub to a VIC-20 Assembly Language Program</title>
-      <id>http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/</id>
-      <link href="http://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/"/>
+      <id>https://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/</id>
+      <link href="https://techtinkering.com/2013/05/10/adding-a-basic-stub-to-a-vic-20-assembly-language-program/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -583,8 +583,8 @@
     </entry>
     <entry>
       <title>Creating a TTY Simulator in Assembly Language on the VIC-20</title>
-      <id>http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/</id>
-      <link href="http://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/"/>
+      <id>https://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/</id>
+      <link href="https://techtinkering.com/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -601,8 +601,8 @@
     </entry>
     <entry>
       <title>BBS Ads: Getting the Word Out</title>
-      <id>http://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/</id>
-      <link href="http://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/"/>
+      <id>https://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/</id>
+      <link href="https://techtinkering.com/2013/04/23/bbs-ads-getting-the-word-out/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -619,8 +619,8 @@
     </entry>
     <entry>
       <title>Beginning Assembly Programming on the Commodore VIC-20</title>
-      <id>http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/</id>
-      <link href="http://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/"/>
+      <id>https://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/</id>
+      <link href="https://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -637,8 +637,8 @@
     </entry>
     <entry>
       <title>Using C-Kermit to Exchange Files With Telnet BBS's</title>
-      <id>http://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/</id>
-      <link href="http://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/"/>
+      <id>https://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/</id>
+      <link href="https://techtinkering.com/2013/04/09/using-c-kermit-to-exchange-files-with-telnet-bbs-s/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -655,8 +655,8 @@
     </entry>
     <entry>
       <title>Connecting to a Remote Serial Port over TCP/IP</title>
-      <id>http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/</id>
-      <link href="http://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/"/>
+      <id>https://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/</id>
+      <link href="https://techtinkering.com/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -673,8 +673,8 @@
     </entry>
     <entry>
       <title>Using Netcat to Create ad hoc Links Between Applications or Machines</title>
-      <id>http://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/</id>
-      <link href="http://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/"/>
+      <id>https://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/</id>
+      <link href="https://techtinkering.com/2013/03/25/using-netcat-to-create-ad-hoc-links-between-applications-and-machines/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -691,8 +691,8 @@
     </entry>
     <entry>
       <title>If Only Borland Had Stuck With Turbo Modula-2 For CP/M</title>
-      <id>http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/</id>
-      <link href="http://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/"/>
+      <id>https://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/</id>
+      <link href="https://techtinkering.com/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -709,8 +709,8 @@
     </entry>
     <entry>
       <title>Turbo Pascal: A Great Choice For Programming Under CP/M</title>
-      <id>http://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/</id>
-      <link href="http://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/"/>
+      <id>https://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/</id>
+      <link href="https://techtinkering.com/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -727,8 +727,8 @@
     </entry>
     <entry>
       <title>xdgbasedir: A Tcl Module to Access the XDG Base Directory Specification</title>
-      <id>http://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/</id>
-      <link href="http://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/"/>
+      <id>https://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/</id>
+      <link href="https://techtinkering.com/2013/02/27/xdgbasedir-a-tcl-module-to-access-the-xdg-base-directory-specification/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -745,8 +745,8 @@
     </entry>
     <entry>
       <title>Compiling a Tcl Script into an Executable</title>
-      <id>http://techtinkering.com/2013/02/20/compiling-a-tcl-script-into-an-executable/</id>
-      <link href="http://techtinkering.com/2013/02/20/compiling-a-tcl-script-into-an-executable/"/>
+      <id>https://techtinkering.com/2013/02/20/compiling-a-tcl-script-into-an-executable/</id>
+      <link href="https://techtinkering.com/2013/02/20/compiling-a-tcl-script-into-an-executable/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -763,8 +763,8 @@
     </entry>
     <entry>
       <title>Floppy Days: A New Vintage Computing Podcast</title>
-      <id>http://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/</id>
-      <link href="http://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/"/>
+      <id>https://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/</id>
+      <link href="https://techtinkering.com/2013/02/19/floppy-days-a-new-vintage-computing-podcast/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -781,8 +781,8 @@
     </entry>
     <entry>
       <title>Using Dynamically Generated Header Files with CMake</title>
-      <id>http://techtinkering.com/2013/02/12/using-dynamically-generated-header-files-with-cmake/</id>
-      <link href="http://techtinkering.com/2013/02/12/using-dynamically-generated-header-files-with-cmake/"/>
+      <id>https://techtinkering.com/2013/02/12/using-dynamically-generated-header-files-with-cmake/</id>
+      <link href="https://techtinkering.com/2013/02/12/using-dynamically-generated-header-files-with-cmake/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -799,8 +799,8 @@
     </entry>
     <entry>
       <title>Embedding an SDL Surface in a Tk Window</title>
-      <id>http://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/</id>
-      <link href="http://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/"/>
+      <id>https://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/</id>
+      <link href="https://techtinkering.com/2012/06/26/embedding-an-sdl-surface-in-a-tk-window/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -817,8 +817,8 @@
     </entry>
     <entry>
       <title>Refactoring: Arm Yourself in the War Against Useless Comments</title>
-      <id>http://techtinkering.com/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments/</id>
-      <link href="http://techtinkering.com/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments/"/>
+      <id>https://techtinkering.com/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments/</id>
+      <link href="https://techtinkering.com/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -835,8 +835,8 @@
     </entry>
     <entry>
       <title>Dealing Sympathetically with Legacy Code</title>
-      <id>http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/</id>
-      <link href="http://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/"/>
+      <id>https://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/</id>
+      <link href="https://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -854,8 +854,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>Pisceans and October Babies More Likely to Become Poets.  Scraping Wikipedia Reveals All</title>
-      <id>http://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/</id>
-      <link href="http://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/"/>
+      <id>https://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/</id>
+      <link href="https://techtinkering.com/2011/09/08/pisceans-and-october-babies-more-likely-to-become-poets/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -872,8 +872,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out</title>
-      <id>http://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate/</id>
-      <link href="http://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate/"/>
+      <id>https://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate/</id>
+      <link href="https://techtinkering.com/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -890,8 +890,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>Improving the related_posts feature of jekyll</title>
-      <id>http://techtinkering.com/2011/08/17/improving-related-posts-on-jekyll/</id>
-      <link href="http://techtinkering.com/2011/08/17/improving-related-posts-on-jekyll/"/>
+      <id>https://techtinkering.com/2011/08/17/improving-related-posts-on-jekyll/</id>
+      <link href="https://techtinkering.com/2011/08/17/improving-related-posts-on-jekyll/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -908,8 +908,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>Mida - A Microdata parser/extractor library for Ruby</title>
-      <id>http://techtinkering.com/2011/04/16/mida-a-microdata-parser-extractor-library-for-ruby/</id>
-      <link href="http://techtinkering.com/2011/04/16/mida-a-microdata-parser-extractor-library-for-ruby/"/>
+      <id>https://techtinkering.com/2011/04/16/mida-a-microdata-parser-extractor-library-for-ruby/</id>
+      <link href="https://techtinkering.com/2011/04/16/mida-a-microdata-parser-extractor-library-for-ruby/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -926,8 +926,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>A Jekyll Plugin to Display Ratings as Star Images</title>
-      <id>http://techtinkering.com/2011/02/15/a-jekyll-plugin-to-display-ratings-as-star-images/</id>
-      <link href="http://techtinkering.com/2011/02/15/a-jekyll-plugin-to-display-ratings-as-star-images/"/>
+      <id>https://techtinkering.com/2011/02/15/a-jekyll-plugin-to-display-ratings-as-star-images/</id>
+      <link href="https://techtinkering.com/2011/02/15/a-jekyll-plugin-to-display-ratings-as-star-images/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -944,8 +944,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>The National Museum of Computing at Bletchley Park</title>
-      <id>http://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/</id>
-      <link href="http://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/"/>
+      <id>https://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/</id>
+      <link href="https://techtinkering.com/2010/06/15/the-national-museum-of-computing-at-bletchley-park/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -962,8 +962,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>xAce is Back in Active Development and Looking For Contributors</title>
-      <id>http://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/</id>
-      <link href="http://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/"/>
+      <id>https://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/</id>
+      <link href="https://techtinkering.com/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -980,8 +980,8 @@ worrying about making changes for fear of unex</summary>
     </entry>
     <entry>
       <title>Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</title>
-      <id>http://techtinkering.com/2010/04/16/introducing-textpix-v0-1/</id>
-      <link href="http://techtinkering.com/2010/04/16/introducing-textpix-v0-1/"/>
+      <id>https://techtinkering.com/2010/04/16/introducing-textpix-v0-1/</id>
+      <link href="https://techtinkering.com/2010/04/16/introducing-textpix-v0-1/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -999,8 +999,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</title>
-      <id>http://techtinkering.com/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/</id>
-      <link href="http://techtinkering.com/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/"/>
+      <id>https://techtinkering.com/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/</id>
+      <link href="https://techtinkering.com/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1017,8 +1017,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Setting up a Beowulf Cluster Using Open MPI on Linux</title>
-      <id>http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/</id>
-      <link href="http://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/"/>
+      <id>https://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/</id>
+      <link href="https://techtinkering.com/2009/12/02/setting-up-a-beowulf-cluster-using-open-mpi-on-linux/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1035,8 +1035,8 @@ The program</summary>
     </entry>
     <entry>
       <title>My Top 10 Classic Text Mode BSD Games</title>
-      <id>http://techtinkering.com/2009/08/11/my-top-10-classic-text-mode-bsd-games/</id>
-      <link href="http://techtinkering.com/2009/08/11/my-top-10-classic-text-mode-bsd-games/"/>
+      <id>https://techtinkering.com/2009/08/11/my-top-10-classic-text-mode-bsd-games/</id>
+      <link href="https://techtinkering.com/2009/08/11/my-top-10-classic-text-mode-bsd-games/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1053,8 +1053,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Running 4K FORTRAN on a DEC PDP-8</title>
-      <id>http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/</id>
-      <link href="http://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/"/>
+      <id>https://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/</id>
+      <link href="https://techtinkering.com/2009/07/14/running-4k-fortran-on-a-dec-pdp8/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1071,8 +1071,8 @@ The program</summary>
     </entry>
     <entry>
       <title>A Quickstart Guide to Editing Paper Tape With the Symbolic Tape Editor on the DEC PDP-8</title>
-      <id>http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/</id>
-      <link href="http://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/"/>
+      <id>https://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/</id>
+      <link href="https://techtinkering.com/2009/06/16/a-quickstart-guide-to-editing-paper-tape-with-the-symbolic-tape-editor-on-the-dec-pdp-8/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1089,8 +1089,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally</title>
-      <id>http://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/</id>
-      <link href="http://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/"/>
+      <id>https://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/</id>
+      <link href="https://techtinkering.com/2009/06/03/book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1107,8 +1107,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Emulating a DEC PDP-8 with SimH</title>
-      <id>http://techtinkering.com/2009/05/26/emulating-a-dec-pdp8-with-simh/</id>
-      <link href="http://techtinkering.com/2009/05/26/emulating-a-dec-pdp8-with-simh/"/>
+      <id>https://techtinkering.com/2009/05/26/emulating-a-dec-pdp8-with-simh/</id>
+      <link href="https://techtinkering.com/2009/05/26/emulating-a-dec-pdp8-with-simh/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1125,8 +1125,8 @@ The program</summary>
     </entry>
     <entry>
       <title>Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</title>
-      <id>http://techtinkering.com/2009/05/15/improving-the-standard-subleq-oisc-architecture/</id>
-      <link href="http://techtinkering.com/2009/05/15/improving-the-standard-subleq-oisc-architecture/"/>
+      <id>https://techtinkering.com/2009/05/15/improving-the-standard-subleq-oisc-architecture/</id>
+      <link href="https://techtinkering.com/2009/05/15/improving-the-standard-subleq-oisc-architecture/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1144,8 +1144,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin</title>
-      <id>http://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/</id>
-      <link href="http://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/"/>
+      <id>https://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/</id>
+      <link href="https://techtinkering.com/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1162,8 +1162,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>An Introduction to Corewar</title>
-      <id>http://techtinkering.com/2009/04/30/an-introduction-to-corewar/</id>
-      <link href="http://techtinkering.com/2009/04/30/an-introduction-to-corewar/"/>
+      <id>https://techtinkering.com/2009/04/30/an-introduction-to-corewar/</id>
+      <link href="https://techtinkering.com/2009/04/30/an-introduction-to-corewar/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1180,8 +1180,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>The Smallest Communication Program in the World?</title>
-      <id>http://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/</id>
-      <link href="http://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/"/>
+      <id>https://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/</id>
+      <link href="https://techtinkering.com/2009/04/23/the-smallest-communication-program-in-the-world/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1198,8 +1198,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Hello, World! in SUBLEQ Assembly</title>
-      <id>http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/</id>
-      <link href="http://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/"/>
+      <id>https://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/</id>
+      <link href="https://techtinkering.com/2009/03/29/hello-world-in-subleq-assembly/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1216,8 +1216,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>An Introduction to Test-Driven Development</title>
-      <id>http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/</id>
-      <link href="http://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/"/>
+      <id>https://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/</id>
+      <link href="https://techtinkering.com/2009/03/18/an-introduction-to-test-driven-development/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1234,8 +1234,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</title>
-      <id>http://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/</id>
-      <link href="http://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/"/>
+      <id>https://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/</id>
+      <link href="https://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1252,8 +1252,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)</title>
-      <id>http://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/</id>
-      <link href="http://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/"/>
+      <id>https://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/</id>
+      <link href="https://techtinkering.com/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1270,8 +1270,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Book Review: The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr.</title>
-      <id>http://techtinkering.com/2009/01/26/book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr/</id>
-      <link href="http://techtinkering.com/2009/01/26/book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr/"/>
+      <id>https://techtinkering.com/2009/01/26/book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr/</id>
+      <link href="https://techtinkering.com/2009/01/26/book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1288,8 +1288,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Bouncing Babies</title>
-      <id>http://techtinkering.com/2008/12/16/bouncing-babies/</id>
-      <link href="http://techtinkering.com/2008/12/16/bouncing-babies/"/>
+      <id>https://techtinkering.com/2008/12/16/bouncing-babies/</id>
+      <link href="https://techtinkering.com/2008/12/16/bouncing-babies/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1306,8 +1306,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Chinese Man Spotted On Tissue</title>
-      <id>http://techtinkering.com/2008/12/08/chinese-man-spotted-on-tissue/</id>
-      <link href="http://techtinkering.com/2008/12/08/chinese-man-spotted-on-tissue/"/>
+      <id>https://techtinkering.com/2008/12/08/chinese-man-spotted-on-tissue/</id>
+      <link href="https://techtinkering.com/2008/12/08/chinese-man-spotted-on-tissue/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1324,8 +1324,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>My Top 10 Commodore 64 Demos</title>
-      <id>http://techtinkering.com/2008/11/24/my-top-10-commodore-64-demos/</id>
-      <link href="http://techtinkering.com/2008/11/24/my-top-10-commodore-64-demos/"/>
+      <id>https://techtinkering.com/2008/11/24/my-top-10-commodore-64-demos/</id>
+      <link href="https://techtinkering.com/2008/11/24/my-top-10-commodore-64-demos/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1342,8 +1342,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Beneath a Steel Sky, My Favourite Graphical Adventure Game</title>
-      <id>http://techtinkering.com/2008/11/13/beneath-a-steel-sky-my-favourite-graphical-adventure-game/</id>
-      <link href="http://techtinkering.com/2008/11/13/beneath-a-steel-sky-my-favourite-graphical-adventure-game/"/>
+      <id>https://techtinkering.com/2008/11/13/beneath-a-steel-sky-my-favourite-graphical-adventure-game/</id>
+      <link href="https://techtinkering.com/2008/11/13/beneath-a-steel-sky-my-favourite-graphical-adventure-game/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1360,8 +1360,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>How to File Good Bug Reports</title>
-      <id>http://techtinkering.com/2008/11/12/how-to-file-good-bug-reports/</id>
-      <link href="http://techtinkering.com/2008/11/12/how-to-file-good-bug-reports/"/>
+      <id>https://techtinkering.com/2008/11/12/how-to-file-good-bug-reports/</id>
+      <link href="https://techtinkering.com/2008/11/12/how-to-file-good-bug-reports/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1378,8 +1378,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Using ScummVM to Play Classic Adventure Games</title>
-      <id>http://techtinkering.com/2008/11/10/using-scummvm-to-play-classic-adventure-games/</id>
-      <link href="http://techtinkering.com/2008/11/10/using-scummvm-to-play-classic-adventure-games/"/>
+      <id>https://techtinkering.com/2008/11/10/using-scummvm-to-play-classic-adventure-games/</id>
+      <link href="https://techtinkering.com/2008/11/10/using-scummvm-to-play-classic-adventure-games/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1396,8 +1396,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Writing my First Program to Toggle in to the IMSAI 8080</title>
-      <id>http://techtinkering.com/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/</id>
-      <link href="http://techtinkering.com/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/"/>
+      <id>https://techtinkering.com/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/</id>
+      <link href="https://techtinkering.com/2008/11/05/writing-my-first-program-to-toggle-in-to-the-imsai-8080/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1414,8 +1414,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel</title>
-      <id>http://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/</id>
-      <link href="http://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/"/>
+      <id>https://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/</id>
+      <link href="https://techtinkering.com/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1432,8 +1432,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Is this steamer really not to be used by girls?</title>
-      <id>http://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/</id>
-      <link href="http://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/"/>
+      <id>https://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/</id>
+      <link href="https://techtinkering.com/2008/10/28/is-this-steamer-really-not-to-be-used-by-girls/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1450,8 +1450,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Using DOSBox to Run DOS Games and Applications</title>
-      <id>http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/</id>
-      <link href="http://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/"/>
+      <id>https://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/</id>
+      <link href="https://techtinkering.com/2008/10/24/using-dosbox-to-run-dos-games-and-applications/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1468,8 +1468,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Installing the HI-TECH Z80 C Compiler for CP/M</title>
-      <id>http://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/</id>
-      <link href="http://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/"/>
+      <id>https://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/</id>
+      <link href="https://techtinkering.com/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1486,8 +1486,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Installing ZDE 1.6, a programmers editor for CP/M</title>
-      <id>http://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/</id>
-      <link href="http://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/"/>
+      <id>https://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/</id>
+      <link href="https://techtinkering.com/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1504,8 +1504,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Setting up z80pack to Create an Emulated CP/M System</title>
-      <id>http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/</id>
-      <link href="http://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/"/>
+      <id>https://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/</id>
+      <link href="https://techtinkering.com/2008/10/17/setting-up-z80pack-to-create-an-emulated-cpm-system/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1522,8 +1522,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>PDP-8 in 'Three Days of the Condor'</title>
-      <id>http://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/</id>
-      <link href="http://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/"/>
+      <id>https://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/</id>
+      <link href="https://techtinkering.com/2008/10/14/pdp-8-in-three-days-of-the-condor/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1540,8 +1540,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Book Review: Fundamentals of Operating Systems by A.M. Lister - Second Edition</title>
-      <id>http://techtinkering.com/2008/10/07/book-review-fundamentals-of-operating-systems-by-a-m-lister/</id>
-      <link href="http://techtinkering.com/2008/10/07/book-review-fundamentals-of-operating-systems-by-a-m-lister/"/>
+      <id>https://techtinkering.com/2008/10/07/book-review-fundamentals-of-operating-systems-by-a-m-lister/</id>
+      <link href="https://techtinkering.com/2008/10/07/book-review-fundamentals-of-operating-systems-by-a-m-lister/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1558,8 +1558,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>How to share an SSL certificate and still use cookies</title>
-      <id>http://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/</id>
-      <link href="http://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/"/>
+      <id>https://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/</id>
+      <link href="https://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>
@@ -1576,8 +1576,8 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     </entry>
     <entry>
       <title>Is Cobol Really Understandable After 14 Years?</title>
-      <id>http://techtinkering.com/2008/08/08/is-cobol-really-understandable-after-14-years/</id>
-      <link href="http://techtinkering.com/2008/08/08/is-cobol-really-understandable-after-14-years/"/>
+      <id>https://techtinkering.com/2008/08/08/is-cobol-really-understandable-after-14-years/</id>
+      <link href="https://techtinkering.com/2008/08/08/is-cobol-really-understandable-after-14-years/"/>
         <author>
           <name>Lawrence Woodman</name>
           <uri>https://lawrencewoodman.github.io</uri>

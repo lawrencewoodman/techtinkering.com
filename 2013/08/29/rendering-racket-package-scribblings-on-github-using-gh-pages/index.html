@@ -20,7 +20,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Rendering Racket Package Scribblings on Github Using gh-pages">
   <meta property="og:description" content="With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hen">
-  <meta property="og:url" content="http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">
+  <meta property="og:url" content="https://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +39,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">
+  <link rel="canonical" href="https://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -141,150 +141,7 @@
   </div>
 </nav>
     <div id="content" class="container">
-      <div class="row margin-buffer">
-  <div class="col-md-12">
-    <article itemscope itemtype="http://schema.org/BlogPosting">
-      <header>
-        <a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/" title="Rendering Racket Package Scribblings on Github Using gh-pages">
-          <h1 itemprop="headline name">Rendering Racket Package Scribblings on Github Using gh-pages</h1>
-        </a>
-        <div class="pull-right">
-          <ul class="share-buttons">
-  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
-  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
-  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
-</ul>
-        </div>
-        <div>
-            <time itemprop="datePublished"
-                  datetime="2013-08-29">
-              29 August 2013
-            </time>
-            &nbsp; / &nbsp;
-          <span itemscope itemprop="publisher"
-                itemtype="http://schema.org/Organization">
-            <meta itemprop="name" content="TechTinkering" />
-            <meta itemprop="url" content="http://techtinkering.com" />
-          </span>
-          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
-            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
-              <span itemprop="name">Lawrence Woodman</span>
-            </a>
-          </span>
-          &nbsp; / &nbsp;
-            <a href="/articles/tag/racket/">Racket</a>
-            &nbsp; &nbsp;
-        </div>
-      </header>
-      <br />
-      <div itemprop="articleBody">
-        <p>With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hence a package's documentation, by putting them into the <em>gh-pages</em> branch of your repository.  This can be a little awkward to do though, so this article will demonstrate an easy way to manage the process.</p>
-<h2>Reorganising your Directory Structure</h2>
-<p>If your package was in <code>/home/you/dev/mypackage/</code>, you would want to reorganize it so that the contents of this directory is now in <code>/home/you/dev/mypackage/master/</code>:</p>
-<pre><code class="language-bash">$ cd /home/you/dev/mypackage/
-$ mkdir master
-$ mv * master/
-
-# You may need to move additional hidden files to the
-# ones in the line below
-$ mv .g* master/
-</code></pre>
-<p>Now you can set up the <code>gh-pages</code> directory, where you will store the scribblings rendered as html:</p>
-<pre><code class="language-bash">$ mkdir gh-pages
-
-# Clone your `master` branch into the `gh-pages` directory:
-$ cd /home/you/dev/mypackage/gh-pages
-$ git clone git@github.com:username/mypackage.git
-$ mv mypackage/* .
-
-# As above, you may need to move additional hidden files to
-# the ones in the line below
-$ mv mypackage/.g* .
-
-$ rmdir mypackage
-
-# Create a clean orphan branch: gh-pages
-$ git checkout --orphan gh-pages
-$ git rm -rf .
-</code></pre>
-<h2>Render the Package's Scribblings to gh-pages as html</h2>
-<p>To render the package's scribblings to html and store them in the <code>gh-pages</code> branch you can create a script called <code>/home/you/dev/mypackage/create-gh-pages.sh</code> which contains the following:</p>
-<pre><code class="language-bash">#!/usr/bin/env sh
-
-scribble +m --dest-name index.html --dest gh-pages/ --redirect-main  http://download.racket-lang.org/docs/5.3.6/html/ master/collection/scribblings/collection.scrbl
-</code></pre>
-<p>Where <code>5.3.6</code> is the version of Racket's documentation that you want to cross reference and <code>collection</code> is the name of the collection within the package that you want to render.</p>
-<p>You will need to make the script executable with:</p>
-<pre><code class="language-bash">$ chmod +x create-gh-pages.sh
-</code></pre>
-<p>Now you just need to run it, add the rendered files into the <code>gh-pages</code> branch in the normal way and push them to github:</p>
-<pre><code class="language-bash">$ cd /home/you/dev/mypackage/
-$ ./create-gh-pages.sh
-$ cd /home/you/dev/mypackage/gh-pages
-$ git add *.html *.css *.js
-$ git commit -am &quot;Import project into repo&quot;
-$ git push origin gh-pages
-</code></pre>
-<h2>Accessing the Documentation</h2>
-<p>You will now be able to access the rendered documentation at:
-<code>http://username.github.io/mypackage/</code></p>
-<p>You may want to point to it from your github repository's <code>README</code>, if you have one, as well as set the repository's homepage to the url.  Finally you can define <code>homepage</code> within a collection's <code>info.rkt</code> file to point to the url.</p>
-<h2>Where Now?</h2>
-<p>This should be enough to get you started and there are may variations on this that you could try.  You may also want to automate the process of generating the scribblings with a Makefile, or perhaps using a git hook.</p>
-      </div>
-    </article>
-  </div>
-</div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div id="cclicence">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Rendering Racket Package Scribblings on Github Using gh-pages</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
-       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-      </div>
-    </div>
-  </div>
-
-
-<div class="row">
-  <div class="col-md-12">
-    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-  <p>Sign up to get new articles straight to your inbox.</p>
-  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
-  <input type="hidden" value="TechTinkering" name="uri"/>
-  <input type="hidden" name="loc" value="en_US"/>
-  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
-  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
-</form>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-12">
-    <h2>Comments</h2>
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      var disqus_shortname = 'techtinkering';
-      var disqus_identifier = '/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/';
-      var disqus_url = 'http://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/';
-
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="https://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-  </div>
-</div>
+      
     </div>
 
     <footer>
