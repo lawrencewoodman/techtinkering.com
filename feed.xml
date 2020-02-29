@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-02-05</updated>
+  <updated>2020-02-29</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</title>
+      <id>https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/</id>
+      <link href="https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-02-29
+        </published>
+
+        <updated>
+          2020-02-29
+        </updated>
+
+        <summary>Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti</summary>
+    </entry>
     <entry>
       <title>Position Independent Code (6502) on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/position-independent-code-6502-on-the-commodore-vic-20/</id>

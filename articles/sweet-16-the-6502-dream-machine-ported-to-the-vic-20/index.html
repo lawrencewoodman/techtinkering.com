@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>6502 Machine Language Tables and Aids</title>
-  <meta name="description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
+  <title>Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</title>
+  <meta name="description" content="Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it a">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="6502 Machine Language Tables and Aids">
-  <meta name="twitter:description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
+  <meta name="twitter:title" content="Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20">
+  <meta name="twitter:description" content="Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it a">
     <meta name="twitter:image"
-         content="https://techtinkering.com/img/social_images/6502_machine_language_hex_codes_table.png">
+         content="https://techtinkering.com/img/social_images/vic20_sweet16_test.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="6502 Machine Language Tables and Aids">
-  <meta property="og:description" content="When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the ">
-  <meta property="og:url" content="https://techtinkering.com/articles/6502-machine-language-tables-and-aids/">
+  <meta property="og:title" content="Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20">
+  <meta property="og:description" content="Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it a">
+  <meta property="og:url" content="https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">
     <meta property="og:image"
-         content="https://techtinkering.com/img/social_images/6502_machine_language_hex_codes_table.png">
+         content="https://techtinkering.com/img/social_images/vic20_sweet16_test.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/articles/6502-machine-language-tables-and-aids/">
+  <link rel="canonical" href="https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -149,8 +149,8 @@
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
-        <a href="/articles/6502-machine-language-tables-and-aids/" title="6502 Machine Language Tables and Aids">
-          <h1 itemprop="headline name">6502 Machine Language Tables and Aids</h1>
+        <a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/" title="Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20">
+          <h1 itemprop="headline name">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -162,8 +162,8 @@
         </div>
         <div>
             <time itemprop="datePublished"
-                  datetime="2019-12-04">
-               4 December 2019
+                  datetime="2020-02-29">
+              29 February 2020
             </time>
             &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
@@ -179,25 +179,181 @@
           &nbsp; / &nbsp;
             <a href="/articles/tag/assembly/">Assembly</a>
             &nbsp; &nbsp;
+            <a href="/articles/tag/commodore/">Commodore</a>
+            &nbsp; &nbsp;
             <a href="/articles/tag/programming/">Programming</a>
             &nbsp; &nbsp;
             <a href="/articles/tag/retro/">Retro</a>
+            &nbsp; &nbsp;
+            <a href="/articles/tag/vic-20/">VIC-20</a>
             &nbsp; &nbsp;
         </div>
       </header>
       <br />
       <div itemprop="articleBody">
-        <p>When programming using machine code there are a few useful aids that can make it easier to do.  I have created a couple of tables for the 6502 that can make the process easier.  They are based on tables found in 'Machine Code for Beginners', which <a href="https://usborne.com/browse-books/features/computer-and-coding-books/">Usborne have made available as a PDF for free</a>.</p>
-<h2>6502 Machine Language Hex Codes</h2>
-<p>When writing a program in machine code we need to be able to quickly find the machine language hex code for the instruction we want to enter.  The following table should make this fairly simple.
-<img src="/img/articles/6502_machine_language_hex_codes_table.jpg" class="img-left" style="width: 100%; clear: left;" title="6502 Machine Language Hex Code Table">
-<br style="clear:left"/><br /></p>
-<h2>Two's Complement Hex Code</h2>
-<p>If we need to use a negative number such as when using relative addresses, then the following table will allow us to quickly find the correct hex code to use.  For example the two's complement of <code>-92</code> in hex is <code>A4</code>.
-<img src="/img/articles/8_bit_twos_complement_hex_table.jpg" class="img-left" style="width: 100%; clear: left;" title="8-bit Two's Complement Hex Table">
-<br style="clear:left"/><br /></p>
-<h2>Source Files</h2>
-<p>If you want to alter these tables, I have put the original files used to create them in a <a href="https://github.com/lawrencewoodman/machine_language_aids">repo</a> on GitHub.</p>
+        <p>Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an article as <em>The 6502 Dream Machine</em>.  I have ported this to the Commodore VIC-20 so that we can play with it on the Vic.</p>
+<h2>Outline of Sweet 16</h2>
+<p>Sweet 16 is described as a pseudo-machine interpreter, which is probably a better description than a virtual machine because it shares native memory for storage and is designed to switch back and forth between itself and native 6502 code.  The pseudo-machine has sixteen 16-bit registers with five of them having a defined function.</p>
+<ul>
+<li>R0   Accumulator</li>
+<li>R12 Subroutine return stack pointer</li>
+<li>R13 Comparison instruction results</li>
+<li>R14 Status register</li>
+<li>R15 Program counter</li>
+</ul>
+<p>To execute Sweet 16 code you <code>JSR</code> to an address within it which will save the registers and status then execute the following bytes in memory as Sweet 16 code until it reaches the Sweet 16 <code>RTN</code> instruction which will restore the registers and status and continue executing the native 6502 that follows it.</p>
+<p>The code is pretty compact and only takes around 300 bytes, it could have been made a little more compact and faster but it had to reside in ROM and therefore couldn't use self-modifying code.</p>
+<h3>Instruction Set</h3>
+<div class="overflow-auto"><table class="neatTable">
+  <tr>
+    <th colspan="3">Register Operations</th>
+    <th colspan="3">Nonregister Operations</th>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td>
+    <td>00</td><td>RTN</td><td>Return to 6502 mode</td>
+  </tr>
+  <tr>
+    <td>1n</td><td>SET Rn</td><td>Constant set</td>
+    <td>01</td><td>BR ea</td><td>Branch always</td>
+  </tr>
+  <tr>
+    <td>2n</td><td>LD Rn</td><td>Load</td>
+    <td>02</td><td>BNC ea</td><td>Branch if No Carry</td>
+  </tr>
+  <tr>
+    <td>3n</td><td>ST Rn</td><td>Store</td>
+    <td>03</td><td>BC ea</td><td>Branch if Carry</td>
+  </tr>
+  <tr>
+    <td>4n</td><td>LD @Rn</td><td>Load indirect</td>
+    <td>04</td><td>BP ea</td><td>Branch if Plus</td>
+  </tr>
+  <tr>
+    <td>5n</td><td>ST @Rn</td><td>Store indirect</td>
+    <td>05</td><td>BM ea</td><td>Branch if Minus</td>
+  </tr>
+  <tr>
+    <td>6n</td><td>LDD @Rn</td><td>Load double indirect</td>
+    <td>06</td><td>BZ ea</td><td>Branch if Zero</td>
+  </tr>
+  <tr>
+    <td>7n</td><td>STD @Rn</td><td>Store double indirect</td>
+    <td>07</td><td>BNZ ea</td><td>Branch if NonZero</td>
+  </tr>
+  <tr>
+    <td>8n</td><td>POP @Rn</td><td>Pop indirect</td>
+    <td>08</td><td>BM1 ea</td><td>Branch if Minus 1</td>
+  </tr>
+  <tr>
+    <td>9n</td><td>STP @Rn</td><td>Store Pop indirect</td>
+    <td>09</td><td>BNM1 ea</td><td>Branch if Not Minus 1</td>
+  </tr>
+  <tr>
+    <td>An</td><td>ADD Rn</td><td>Add</td>
+    <td>0A</td><td>BK</td><td>Break</td>
+  </tr>
+  <tr>
+    <td>Bn</td><td>SUB Rn</td><td>Subtract</td>
+    <td>0B</td><td>RS</td><td>Return from Subroutine</td>
+  </tr>
+  <tr>
+    <td>Cn</td><td>POPD @Rn</td><td>Pop double indirect</td>
+    <td>0C</td><td>BS ea</td><td>Branch to Subroutine</td>
+  </tr>
+  <tr>
+    <td>Dn</td><td>CPR Rn</td><td>Compare</td>
+    <td>0D</td><td colspan="2">Unassigned</td>
+  </tr>
+  <tr>
+    <td>En</td><td>INR Rn</td><td>Increment</td>
+    <td>0E</td><td>Unassigned</td>
+  </tr>
+  <tr>
+    <td>Fn</td><td>DCR Rn</td><td>Decrement</td>
+    <td>0F</td><td>Unassigned</td>
+  </tr>
+</table></div>
+<p>There is an implicit <em>Accumulator</em> argument for most of the <em>Register Operations</em> and the <em>Branch</em> instructions all use <em>relative addressing</em>.  The instruction set is well thought out with the ability to use 8-bit bytes or 16-bit words and helpfully instructions like the indirect instructions increment/decrement the register being used before/after use as appropriate.  For a full description of the instructions take a look at the <a href="https://archive.org/details/byte-magazine-1977-11-rescan/page/n155/mode/2up">Byte Magazine Volume 02 Number 11 - November 1977</a> article.</p>
+<h2>Porting Sweet 16 to the Commodore VIC-20</h2>
+<p>The original Sweet 16 source code has been published a number of times including in <a href="https://archive.org/details/byte-magazine-1977-11-rescan/page/n151/mode/2up">Byte Magazine Volume 02 Number 11 - November 1977</a>.  In this article Steve Wozniak encourages users to modify Sweet 16 and even to port it to other processors, so hopefully he won't mind its being ported to the Vic.  However, despite this and the fact that the code is widely available, it is still probably under copyright and therefore the port relies on patching the original source code rather than supplying a complete version.</p>
+<p>I can't claim too much credit for porting it as beyond deciding on a suitable location for the registers in the zero page and aligning the code so that part of it fits into a single page, the majority of the work was converting the code to assemble using the <a href="https://www.floodgap.com/retrotech/xa/">XA</a> assembler.  Sweet16 needs 32 bytes in zero page for the registers, so I chose locations <em>$2B-$4A</em>.  This will stop Basic programs from working, unless you save and restore those locations when needed, but does allow the Basic <code>SYS</code> command to still execute machine code.</p>
+<p>I have uploaded the patch and test program to github: <a href="https://github.com/lawrencewoodman/sweet16_vic20">sweet16_vic20</a>.  Full instructions for patching, assembling and running the code are provided in the <a href="https://github.com/lawrencewoodman/sweet16_vic20/blob/master/README.md">README</a>.</p>
+<h2>Example Code</h2>
+<p>Below are a few examples to show what Sweet 16 looks like in use.</p>
+<h3>Memory Region Copy</h3>
+<p>Copying a string to a new location with Sweet 16.</p>
+<pre><code class="language-asm6502">DST         = $02BC                   ; Destination for memory copy
+LEN         = $0005                   ; Length of memory to copy
+
+        
+copyHello   jsr  SW16                 ; Execute following Sweet 16 code
+            .byt $11, &lt;hello, &gt;hello  ; SET  R1   Source Address
+            .byt $12, &lt;DST, &gt;DST      ; SET  R2   Destination Address
+            .byt $13, &lt;LEN, &gt;LEN      ; SET  R3   Length
+            .byt $41                  ; LD   @R1
+            .byt $52                  ; ST   @R2
+            .byt $F3                  ; DCR  R3
+            .byt $07, $FB             ; BNZ  -4
+            .byt $00                  ; RTN
+            rts
+
+hello       .asc &quot;HELLO&quot;              ; String to copy
+</code></pre>
+<h3>16-bit Multiplication</h3>
+<p>Using Sweet 16 to calculate 255*100.</p>
+<pre><code class="language-asm6502">X           = 255                     ; The values to multiply
+Y           = 100
+
+mulNums     jsr  SW16                 ; Execute following Sweet 16 code
+            .byt $10 : .word 0000     ; SET  R0   sum
+            .byt $11 : .word X        ; SET  R1   x
+            .byt $12 : .word Y        ; SET  R2   y
+            .byt $13 : .word result   ; SET  R3   result
+            .byt $F2                  ; DCR  R2
+            .byt $05, $03             ; BM 3
+            .byt $A1                  ; ADD  R1
+            .byt $01, $FA             ; BR   -5
+            .byt $73                  ; STD  @R3
+            .byt $00                  ; RTN
+            rts
+
+result      .word $0000               ; The result of the multiplication
+</code></pre>
+<h3>Two's Complement</h3>
+<p>Getting the two's complement of a number by using Sweet 16 to load the value, then returning to 6502 code to call a routine to one's complement the value, then finally going back to Sweet 16 to add one to the value.</p>
+<pre><code class="language-asm6502">A           = $0010                   ; The value to two's complement
+
+negate      jsr  SW16                 ; Execute following Sweet 16 code
+            .byt $11 : .word A        ; SET  R1   a
+            .byt $13 : .word result   ; SET  R3   result
+            .byt $21                  ; LD   R1
+            .byt $73                  ; STD  @R3
+            .byt $00                  ; RTN
+            jsr  notRes               ; One's complement RESULT
+            jsr  SW16                 ; Continue executing Sweet 16 code
+            .byt $C3                  ; POPD @R3
+            .byt $E0                  ; INR  R0
+            .byt $73                  ; STD  @R3
+            .byt $00                  ; RTN
+
+
+            ; One's complement RESULT
+notRes      lda  result
+            eor  #$FF
+            sta  result
+            lda  result+1
+            eor  #$FF
+            sta  result+1
+            rts
+
+result      .word $0000               ; The result of the operation
+</code></pre>
+<h2>Video Demonstrating Sweet 16</h2>
+<p>You can see <em>Sweet 16</em> running on the Vic in the following video:</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NkbY-1BL5Qo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
       </div>
     </article>
   </div>
@@ -210,8 +366,8 @@
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">6502 Machine Language Tables and Aids</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/6502-machine-language-tables-and-aids/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
       </div>
     </div>
@@ -223,16 +379,16 @@
       <div class="col-md-6">
         <h2 style="margin-top:0;">Share This Post</h2>
         <ul class="share-buttons-text">
-  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F&title=6502%20Machine%20Language%20Tables%20and%20Aids" target="_blank" title="Submit to Reddit">Reddit</a></li>
-  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F&quote=6502%20Machine%20Language%20Tables%20and%20Aids" target="_blank" title="Share on Facebook">Facebook</a></li>
-  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F&text=6502%20Machine%20Language%20Tables%20and%20Aids:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-  <li><a class="btn btn-email" href="mailto:?subject=6502%20Machine%20Language%20Tables%20and%20Aids&body=When%20programming%20using%20machine%20code%20there%20are%20a%20few%20useful%20aids%20that%20can%20make%20it%20easier%20to%20do.%20%20I%20have%20created%20a%20couple%20of%20tables%20for%20the%206502%20that%20can%20make%20the%20process%20easier.%20%20They%20are%20based%20on%20table...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F" target="_blank" title="Send email">Email</a></li>
+  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F&title=Sweet%2016%20%28The%206502%20Dream%20Machine%29%20Ported%20to%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F&quote=Sweet%2016%20%28The%206502%20Dream%20Machine%29%20Ported%20to%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F&text=Sweet%2016%20%28The%206502%20Dream%20Machine%29%20Ported%20to%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+  <li><a class="btn btn-email" href="mailto:?subject=Sweet%2016%20%28The%206502%20Dream%20Machine%29%20Ported%20to%20the%20VIC-20&body=Sweet%2016%20was%20created%20by%20Steve%20Wozniak%20to%20reduce%20code%20size%20and%20make%20it%20easier%20to%20handle%2016-bit%20pointers%20and%20arithmetic%20for%20his%20Apple%20Integer%20BASIC.%20%20He%20wrote%20it%20around%201977%20and%20referred%20to%20it%20in%20an%20arti...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
 </ul>
 
         <h2>Feedback/Discuss</h2>
         <ul>
 
-  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%206502%20Machine%20Language%20Tables%20and%20Aids&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2F6502-machine-language-tables-and-aids%2F%0A" title="Send us an email">Email</a></li>
+  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Sweet%2016%20%28The%206502%20Dream%20Machine%29%20Ported%20to%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsweet-16-the-6502-dream-machine-ported-to-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
 </ul>
       </div>
 
@@ -257,30 +413,6 @@
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2020-02-29">
-        29 February 2020
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
-  &nbsp;
-  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
-</div>
         <header>
   <h3><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h3>
   <span class="post-meta">
@@ -376,6 +508,30 @@
   The Vicmon machine language cartridge is an excellent tool for exploring the Vic-20.  This article and its associated video will show you how to use it to create a simple program that will change the n...
   &nbsp;
   <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-04-16">
+        16 April 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The ...
+  &nbsp;
+  <a class="readMore" href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Read More</a>
 </div>
   </div>
 </div>
