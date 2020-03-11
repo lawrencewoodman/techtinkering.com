@@ -47,7 +47,7 @@ table.neatTable td,th {
 
 table.neatTable td { text-align: left; padding-right: 1em; }
 table.neatTable td.note { font-style: italic; }
-table.neatTable td.centre { text-align: center; }
+table.neatTable td.centre,th.centre { text-align: center !important; }
 table.neatTable td.right { text-align: right; }
 
 table.neatBorder td,th {

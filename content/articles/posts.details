@@ -1,3 +1,13 @@
+{ filename    2020-03-11-the-mouse-programming-language-on-cpm.md
+  title       "The Mouse Programming Language on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_mouse_2_3_add_output.jpg"
+  tags        {"Programming" "CP/M" "Retro"}
+}
+
 { filename    2020-02-29-sweet-16-the-6502-dream-machine-ported-to-the-vic-20.md
   title       "Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20"
   author      {
