@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>The Mouse Programming Language on CP/M</title>
+  <meta name="description" content="Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers,">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="The Mouse Programming Language on CP/M">
+  <meta name="twitter:description" content="Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers,">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_mouse_2_3_add_output.jpg">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Mouse Programming Language on CP/M">
+  <meta property="og:description" content="Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers,">
+  <meta property="og:url" content="https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_mouse_2_3_add_output.jpg">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/prism.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/extra.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="http://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "http://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">TechTinkering</a>
+    </div>
+
+    <div id="navbar" class="collapse navbar-collapse navbar-right">
+      <ul class="nav navbar-nav navbar-right contact-buttons">
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
+            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
+            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
+          </a>
+        </li>
+        <li>
+          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
+            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">
+            <img class="bannerIcon" src="/images/octocat_fluid.png" "TechTinkering Repo on GitHub"/>
+          </a>
+        </li>
+        <li>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
+            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
+          </a>
+        </li>
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="row margin-buffer">
+  <div class="col-md-12">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <a href="/articles/the-mouse-programming-language-on-cpm/" title="The Mouse Programming Language on CP/M">
+          <h1 itemprop="headline name">The Mouse Programming Language on CP/M</h1>
+        </a>
+        <div class="pull-right">
+          <ul class="share-buttons">
+  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
+  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
+  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
+  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
+</ul>
+        </div>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-03-11">
+              11 March 2020
+            </time>
+            &nbsp; / &nbsp;
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+          &nbsp; / &nbsp;
+            <a href="/articles/tag/cpm/">CP/M</a>
+            &nbsp; &nbsp;
+            <a href="/articles/tag/programming/">Programming</a>
+            &nbsp; &nbsp;
+            <a href="/articles/tag/retro/">Retro</a>
+            &nbsp; &nbsp;
+        </div>
+      </header>
+      <br />
+      <div itemprop="articleBody">
+        <p>Mouse is an interpreted stack orientated language designed by <a href="https://users.encs.concordia.ca/~grogono/">Peter Grogono</a> around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  One obvious difference to Forth is that Mouse interprets a steam of characters most of which are only a single character and it relies more on variables rather than rearranging the stack as much.  The version for CP/M on the <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/">Walnut Creek CD</a> is quite small at only 2k.</p>
+<p>Peter Grogono says in <a href="https://archive.org/details/byte-magazine-1979-07/page/n197/mode/2up">Byte Magazine Volume 04 Number 07 - July 1979</a>:</p>
+<blockquote cite="https://archive.org/details/byte-magazine-1979-07/page/n197/mode/2up">The justification for Mouse is that it incorporates many features of high level languages, yet it can be implemented without the resources needed by most high level languages.  More specifically, Mouse programs demonstrate the use and implementation of arrays, functions, procedures, nested control structures, local variables, recursion and several methods of passing parameters from one procedure to another.</blockquote> 
+<h2>Hello, World! Example</h2>
+<p>As a first example to show what Mouse code looks like, here is a program to output &quot;Hello, Word!&quot; ten times to the screen.</p>
+<pre><code class="language-text">~ Output 'Hello, World' ten times
+
+10 c: ( c. ^ &quot;Hello, World!&quot; c. 1 - c: )
+$
+</code></pre>
+<p>The first line beginning with <code>~</code> is a comment indicated by the <code>~</code> character.</p>
+<p>Next we have <code>10 c:</code>  This pushes <code>10</code> onto the stack, then <code>c:</code> pops it off the stack and stores it in the <code>c</code> variable.  <code>c</code> is being used as a counter.</p>
+<p>We now have a loop begun using the <code>(</code> character and ended using with <code>)</code>.  This loop will process its contents indefinitely until it is broken out of using the <code>^</code> character.</p>
+<p>Next we have <code>c. ^</code>, the <code>c.</code> pushes the contents of variable <code>c</code> onto the stack and then <code>^</code> pops it off the stack and if it is less than 1 it breaks out of the loop.</p>
+<p><code>&quot;Hello, World!&quot;</code> outputs 'Hello, World', using <code>&quot;</code> to output the string.  The <code>!</code> inside the string is converted to a newline character.</p>
+<p><code>c. 1 - c:</code> decrements <code>c</code> by first pushing its value to the stack using <code>c.</code> then subtracting <code>1</code> from the top of stack using <code>1 -</code>, then it stores the value on the stack back to the <code>c</code> variable using <code>c:</code>.</p>
+<p>Finally the program ends using <code>$</code>.</p>
+<h2>Instructions</h2>
+<p>Most instructions are a single character and all numbers are integers.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th class="centre" >Symbol</th>
+      <th class="centre" style="min-width: 16em">Action</th>
+      <th class="centre" style="min-width: 30em">Notes</th>
+  </tr>
+  <tr><td class="centre">&lt;blank&gt;</td><td>No action</td><td></td></tr>
+  <tr><td class="centre">$</td><td>End program / Define macro</td><td></td></tr>
+  <tr><td class="centre">&lt;number&gt;</td>
+      <td>Push &lt;number&gt; onto stack</td><td></td></tr>
+  <tr><td class="centre">+</td><td>Add</td><td></td></tr>
+  <tr><td class="centre">-</td><td>Subtract</td><td></td></tr>
+  <tr><td class="centre">&ast;</td><td>Multiply</td><td></td></tr>
+  <tr><td class="centre">/</td><td>Divide</td><td></td></tr>
+  <tr><td class="centre">\</td><td>Remainder (modulo)</td><td></td><tr>
+  <tr><td class="centre">?</td><td>Input number</td><td>Read a number from the keyboard and push its value onto stack</td></tr>
+  <tr><td class="centre">?'</td><td>Input character</td><td>Read a character from the keyboard and push the value of its ASCII code onto stack</td></tr>
+  <tr><td class="centre">!</td><td>Output number</td><td>Pop an operand from stack and display its value</td></tr>
+  <tr><td class="centre">!'</td><td>Output character</td><td>Pop an operand from stack and display the corresponding ASCII character</td></tr>
+  <tr><td class="centre">'&lt;char&gt;</td><td>Character literal</td><td>Push the ASCII code for the character &lt;char&gt; onto stack</td></tr>
+  <tr><td class="centre">"</td><td>Output string</td><td>Display each character between the double quote and the next double quote.  Translate exclamation marks to newlines.</td></tr>
+  <tr><td class="centre">&lt;letter&gt;</td><td>Variable address</td>
+      <td>Convert the letter to an integer in the range 
+          0..25 (A = a = 0, B = b = 1, ..., Z = z = 25).  Add this 
+          value, which is an address in Data, to OffSet and push the 
+          result onto Stack.  NOTE:  LOCAL variables are supported. 
+          Lower case (a..z) variables are LOCAL. 
+          Upper case (A..Z) variables are GLOBAL.
+      </td></tr>
+  <tr><td class="centre">:</td><td>Store</td>
+      <td>Pop two operands from stack and store the value
+       of the second at the address in Data specified by the value
+       of the first.
+      </td></tr>
+  <tr><td class="centre">.</td><td>Fetch</td>
+      <td>Pop an operand from stack and push the 
+       value in Data of which it is the address.
+      </td></tr>
+  <tr><td class="centre">&lt;</td><td>Less than</td>
+      <td>Pop two operands from stack.  If the first is
+       less than the second, push 1, else push 0 onto stack.
+      </td></tr>
+  <tr><td class="centre">=</td><td>Equal</td>
+      <td>Pop two operands from stack.  If they are
+       equal, push 1, else push 0 onto stack.
+      </td></tr>
+  <tr><td class="centre">&gt;</td><td>Greater than</td>
+      <td>Pop two operands from stack.  If the first is
+       greater than the second, push 1, else push 0 onto stack.
+      </td></tr>
+  <tr><td class="centre">[</td><td>Start of conditional block</td>
+      <td>Pop a value from stack.  If it is zero or negative,
+          skip over characters until a matching ] is encountered.
+      </td></tr>
+  <tr><td class="centre">]</td><td>End of conditional block</td><td></td></tr>
+  <tr><td class="centre">(</td><td>Start of loop</td>
+      <td>Loop is infinite unless ^ is used to exit it</td></tr>
+  <tr><td class="centre">)</td><td>End of loop</td><td></td><tr>
+  <tr><td class="centre">^</td><td>Exit loop</td>
+      <td>Pop an operand from stack.  If it is zero or
+       negative, exit loop
+     </td></tr>
+  <tr><td class="centre">#&lt;letter&gt;</td><td>Macro call</td><td></td></tr>
+  <tr><td class="centre">@</td><td>Exit from macro</td><td></td></tr>
+  <tr><td class="centre">%</td><td>Macro parameter</td>
+      <td>Pop a value from stack and use it to count
+       parameters in the calling environment (parameter n follows
+       the nth comma)</td></tr>
+  <tr><td class="centre">,</td><td>End of parameter</td><td></td></tr>
+  <tr><td class="centre">;</td><td>End of macro parameters</td><td></td></tr>
+  <tr><td class="centre">{</td><td>Start trace</td><td></td></tr>
+  <tr><td class="centre">}</td><td>End trace</td><td></td></tr>
+  <tr><td class="centre">&amp;&lt;filename&gt;&amp;</td><td>Load and run &lt;filename&gt;</td>
+      <td>With this feature several Mouse programs may be linked together</td></tr>
+  <tr><td class="centre">~</td><td>Comment</td><td></td></tr>
+</table></div>
+<h2>Macros</h2>
+<p>Mouse allows you to create macros/subroutines using the <code>$</code> character to define them and the <code>#</code> character to call them.  Within the macros the <code>%</code> character is used to reference the parameters and <code>@</code> says to end the macro.  The following code creates a macro to output which of two numbers is bigger.</p>
+<pre><code class="language-text">~ Accept two numbers as input and say which is biggest
+
+~ Get numbers
+&quot;Enter first number: &quot; ? a:
+&quot;!Enter second number: &quot; ? b:
+
+#b,a.,b.;
+$
+
+~ Macro to output which number is biggest
+$b 1% 2% = [ &quot;!!Numbers are equal&quot; @ ]
+   1% 2% &gt; [ 1% g: ] 2% 1% &gt; [ 2% g: ]
+   &quot;!!Biggest number: &quot; g. ! @
+</code></pre>
+<p>This code starts by asking for two numbers and uses the <code>?</code> character to accept input of a number.  The numbers are stored in variables <code>a</code> and <code>b</code>.</p>
+<p>Once the numbers have been input the line <code>#b,a.,b.;</code> calls the macro defined lower down.  This uses <code>a.</code> and <code>b.</code> as arguments to give the macro the values within those two variables.  Parameters are separated with <code>,</code> and <code>;</code> indicates the end of the parameter list.</p>
+<p>The <code>$</code> indicates the end of the main program.</p>
+<p>The macro is defined using <code>$b</code> where <code>$</code> says define a macro and <code>b</code> is the name of the macro.  Within this it uses <code>1%</code> and <code>2%</code> to push the arguments onto the stack.</p>
+<p>There is now a test for equality using <code>=</code> and we can see the use of conditional blocks begun with <code>[</code> and ended with <code>]</code>.  These are entered after popping the stack and if it is greater than or equal 1 processing is continued inside the block, otherwise the block is skipped until a <code>]</code> is reached.</p>
+<p>In the first conditional block we can see that the subroutine ends if the numbers are equal.  This is done using the <code>@</code> character.</p>
+<p>There then follows another two tests with conditional blocks which store the biggest number in <code>g</code>.</p>
+<p>Finally the code finishes by outputting the biggest number and returning with <code>@</code>.</p>
+<h3>Recursive Macros</h3>
+<p>You can even create recursive macros as the following program demonstrates by using recursion to output 'Hello, World!&quot; ten times.</p>
+<pre><code class="language-text">~ Output 'Hello, World' ten times using recursive macro
+
+#p,10;
+$
+$p 1% [ &quot;Hello, World!&quot; #p,1% 1 - ; ] @
+</code></pre>
+<p>The line <code>#p,10;</code>  Calls the <code>p</code> macro with the argument <code>10</code>.</p>
+<p>The next <code>$</code> ends the program.</p>
+<p>The macro definition is started with <code>$p</code> and continues until <code>@</code> is reached.</p>
+<p>Next we have <code>1%</code> which pushes the argument supplied to the macro to the top of the stack.  Here, it is being used to say how many more 'Hello, World!' messages should be output.</p>
+<p>Now we have a conditional block indicated by the <code>[</code> and <code>]</code> characters, which in this case will process the block for each call to the macro unless it the argument to <code>p</code> reaches 0.</p>
+<p>Inside the conditional block we have <code>&quot;Hello, World!&quot;</code> to output our message.</p>
+<p>Next we call the macro again with <code>#p,1% 1 - ;</code>.  This time the argument is <code>1% 1 -</code> which pushes the supplied argument to the stack and subtracts <code>1</code> from it.</p>
+<h2>Variables</h2>
+<p>The letter variables actually represent memory locations within an area for data storage.  So when for example the letter <code>A</code> is used it pushes 0 onto the stack and then <code>:</code> or <code>.</code> can be used to store/fetch a value to/from it.  Within macros we can use lower case letters to access local variables and uppercase values to access global variables.  The following program illustrates this.</p>
+<pre><code class="language-text">~ Demonstrate var letter/memory locations
+
+&quot;Value of A: &quot; A !
+&quot;!Value of B: &quot; B !
+
+#i,3;
+
+~ Store 17 in data location 2
+17 2 :
+
+~ Show location/value for C
+&quot;!!Value of C: &quot; C !
+&quot;!Value in C var: &quot; C. !
+$
+
+$i
+   &quot;!!Inside $i 1%: &quot; 1% !
+   &quot;!Inside $i value of A: &quot; A !
+   &quot;!Inside $i value of a: &quot; a !
+   &quot;!Inside $i value of B: &quot; B !
+   &quot;!Inside $i value of b: &quot; b !
+   1% [ #i,1% 1 - ; ] @
+</code></pre>
+<p>The <code>!</code> character outputs the number on the top of stack, however within the strings output using <code>&quot;</code>, each <code>!</code> is converted to a newline.</p>
+<p>Output from above program:</p>
+<pre><code class="language-text">MOUSE.MAC, 6/15/86
+Value of A: 0
+Value of B: 1
+
+Inside $i 1%: 3
+Inside $i value of A: 0
+Inside $i value of a: 26
+Inside $i value of B: 1
+Inside $i value of b: 27
+
+Inside $i 1%: 2
+Inside $i value of A: 0
+Inside $i value of a: 52
+Inside $i value of B: 1
+Inside $i value of b: 53
+
+Inside $i 1%: 1
+Inside $i value of A: 0
+Inside $i value of a: 78
+Inside $i value of B: 1
+Inside $i value of b: 79
+
+Inside $i 1%: 0
+Inside $i value of A: 0
+Inside $i value of a: 104
+Inside $i value of B: 1
+Inside $i value of b: 105
+
+Value of C: 2
+Value in C var: 17
+</code></pre>
+<br />
+<p>The following program demonstrates that local variables, indicated with a lowercase letter, within macros are separate from global variables, indicated with an uppercase letter.  If a lowercase letter is used outside of a macro then it is taken to be the same as an uppercase letter and hence a global variable.</p>
+<pre><code class="language-text">~ Test local variables
+
+12 A:
+17 a:
+#c;
+
+&quot;!Outside $c  a = &quot; a. ! &quot; A = &quot; A. !
+$
+
+$c 100 a: A. a. + a: &quot;!Inside  $c  a = &quot; a. ! &quot; A = &quot; A. ! @
+</code></pre>
+<p>Output from above program:</p>
+<pre><code class="language-text">MOUSE.MAC, 6/15/86
+
+Inside  $c  a = 117 A = 17
+Outside $c  a = 17 A = 17
+</code></pre>
+<h2>Obtaining Mouse for CP/M</h2>
+<p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/misc/mouse.lbr" title="MOUSE.LBR">Mouse</a> can be downloaded from the <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/">Walnut Creek CD</a>.  This version was updated by Lee R. Bradley and is based on the Z80 version published in &quot;Mouse,  a  language  for Microcomputers&quot;, 1983, Petrocelli Books.</p>
+<p>The .LBR file contains a few useful Mouse program, ending '.MSE', such as:</p>
+<dl>
+  <dt>FILES.MSE</dt>
+  <dd>Lists the files in the package</dd>
+  <dt>HELP.MSE</dt>
+  <dd>Lists the instructions</dd>
+</dl>
+<h2>Video Demonstrating Mouse on CP/M</h2>
+<p>Mouse is an interesting and fun little programming language that can be seen being used in the following video.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EaunbXlDUWI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="cclicence">
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+        </a>
+        <br />
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The Mouse Programming Language on CP/M</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+      </div>
+    </div>
+  </div>
+
+
+  <div class="discuss">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 style="margin-top:0;">Share This Post</h2>
+        <ul class="share-buttons-text">
+  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F&title=The%20Mouse%20Programming%20Language%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F&quote=The%20Mouse%20Programming%20Language%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F&text=The%20Mouse%20Programming%20Language%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+  <li><a class="btn btn-email" href="mailto:?subject=The%20Mouse%20Programming%20Language%20on%20CP%2FM&body=Mouse%20is%20an%20interpreted%20stack%20orientated%20language%20designed%20by%20Peter%20Grogono%20around%201975.%20%20It%20was%20designed%20to%20be%20a%20small%20but%20powerful%20language%20for%20microcomputers%2C%20similar%20to%20Forth%2C%20but%20much%20simpler.%20%20On...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+</ul>
+
+        <h2>Feedback/Discuss</h2>
+        <ul>
+
+  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20The%20Mouse%20Programming%20Language%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-mouse-programming-language-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+</ul>
+      </div>
+
+      <div class="col-md-6">
+        <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+  <p>Sign up to get new articles straight to your inbox.</p>
+  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+  <input type="hidden" value="TechTinkering" name="uri"/>
+  <input type="hidden" name="loc" value="en_US"/>
+  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+</form>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Related Articles</h2>
+      </div>
+    </div>
+    <div class="row margin-buffer">
+  <div class="col-md-12">
+        <header>
+  <h3><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-12">
+        12 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP...
+  &nbsp;
+  <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2013-03-05">
+         5 March 2013
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/pascal/">Pascal</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-22">
+        22 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/c/">C</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/z80/">Z80</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
+  &nbsp;
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h3>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/cpm/">CP/M</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/editor/">Editor</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
+</div>
+        <header>
+  <h3><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h3>
+  <span class="post-meta">
+      <time datetime="2020-02-29">
+        29 February 2020
+      </time>
+      &nbsp; / &nbsp;
+      <a href="/articles/tag/assembly/">Assembly</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/commodore/">Commodore</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/programming/">Programming</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/retro/">Retro</a>
+      &nbsp; &nbsp;
+      <a href="/articles/tag/vic-20/">VIC-20</a>
+      &nbsp; &nbsp;
+  </span>
+</header>
+<div>
+  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
+  &nbsp;
+  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
+</div>
+  </div>
+</div>
+
+    </div>
+
+    <footer>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <strong>Legal:</strong> &nbsp;
+          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
+          <a href="/privacy/">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

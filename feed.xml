@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-02-29</updated>
+  <updated>2020-03-11</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>The Mouse Programming Language on CP/M</title>
+      <id>https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-03-11
+        </published>
+
+        <updated>
+          2020-03-11
+        </updated>
+
+        <summary>Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On</summary>
+    </entry>
     <entry>
       <title>Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</title>
       <id>https://techtinkering.com/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/</id>
