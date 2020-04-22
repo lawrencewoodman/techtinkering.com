@@ -1,3 +1,7 @@
+<div class="amazon-product-link-text-and-image">
+  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ac&ref=tf_til&ad_type=product_link&tracking_id=trustafriend-21&marketplace=amazon&region=GB&placement=0143036769&asins=0143036769&linkId=3f83795cd8f94cc90491b067061a6a48&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff"></iframe>
+</div>
+
 The premise of this book is that the 60s/70s counter-culture led to the personal computer revolution. I think the book demonstrated well how this influenced SAIL and how the Augment lab innovations led to the work at Xerox on the Alto and in turn became an influence for Apple and Microsoft.
 
 Where I think the connection is weaker is around the 'Homebrew Computer Club', although I do accept that Fred Moore was instrumental in setting this up.  I see this club as being similar in many ways to the amateur radio clubs that predated this, where people experimented, shared ideas and developed companies from what they came up with.

@@ -27,7 +27,11 @@
 !#
 <div class="row margin-buffer">
   <div class="col-md-12">
+! if {[getparam -default 0 rating] > 0} {
+    <article itemscope itemtype="http://schema.org/Review">
+! } else {
     <article itemscope itemtype="http://schema.org/BlogPosting">
+! }
       <header>
         <a href="[www::url [getparam url]]" title="$title">
           <h1 itemprop="headline name">$title</h1>
@@ -53,6 +57,14 @@
               <span itemprop="name">[getparam author name]</span>
             </a>
           </span>
+! if {[getparam -default 0 rating] > 0} {
+        &nbsp; / &nbsp; Rating:
+        <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+          <meta itemprop="worstRating" content="1" />
+          <span itemprop="ratingValue">[expr {int([getparam rating])}]</span>/<span itemprop="bestRating">5</span>
+        </span>
+! }
+
           &nbsp; / &nbsp;
 !         foreach tag [getparam tags] {
             <a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a>
@@ -85,6 +97,7 @@
         <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">$title</span>
         by <a xmlns:cc="http://creativecommons.org/ns#" href="[www::url -canonical [getparam url]]" property="cc:attributionName" rel="cc:attributionURL">[getparam author name]</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+       [getparam -default "" extraDisclaimer]
       </div>
     </div>
   </div>

@@ -86,3 +86,9 @@ table.neatTableCentre td,th { text-align: center; }
 div.overflow-auto {
   overflow-x: auto;
 }
+
+.amazon-product-link-text-and-image {
+  float: left;
+  margin-right: 1em;
+  margin-top: 10px;
+}

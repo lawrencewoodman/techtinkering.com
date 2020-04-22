@@ -1,3 +1,14 @@
+{ filename    2020-04-22-home-computers-100-icons-that-defined-a-digital-generation.md
+  title       "Home Computers: 100 Icons that Defined a Digital Generation"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  rating      5
+  extraDisclaimer "I received this book as a review copy from the publisher, Thames & Hudson.  I was asked if I would like to receive a copy and haven't been paid for this review.  As an Amazon Associate I earn from qualifying purchases."
+  tags        {"Book" "Review" "History" "Retro"}
+}
+
 { filename    2020-03-11-the-mouse-programming-language-on-cpm.md
   title       "The Mouse Programming Language on CP/M"
   author      {
@@ -296,7 +307,8 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Book" "Review" "History" "Retro"}
-  rating      4.0
+  rating      4
+  extraDisclaimer "As an Amazon Associate I earn from qualifying purchases."
   image       "/img/articles/book_what_the_dormouse_said.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
