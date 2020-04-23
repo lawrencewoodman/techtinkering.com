@@ -2,9 +2,30 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-03-12</updated>
+  <updated>2020-04-23</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Home Computers: 100 Icons that Defined a Digital Generation</title>
+      <id>https://techtinkering.com/articles/home-computers-100-icons-that-defined-a-digital-generation/</id>
+      <link href="https://techtinkering.com/articles/home-computers-100-icons-that-defined-a-digital-generation/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-04-23
+        </published>
+
+        <updated>
+          2020-04-23
+        </updated>
+
+        <summary>
+  
+
+As soon as you pick up this coffee style book you know that you're in for a treat.  A quick flick through reveals page after page of beautiful photos accompanied by well layed out text describing </summary>
+    </entry>
     <entry>
       <title>The Mouse Programming Language on CP/M</title>
       <id>https://techtinkering.com/articles/the-mouse-programming-language-on-cpm/</id>
@@ -525,7 +546,10 @@
           2016-03-06
         </updated>
 
-        <summary>The premise of this book is that the 60s/70s counter-culture led to the personal computer revolution. I think the book demonstrated well how this influenced SAIL and how the Augment lab innovations led</summary>
+        <summary>
+  
+
+The premise of this book is that the 60s/70s counter-culture led to the personal computer revolution. I think the book demonstrated well how this influenced SAIL and how the Augment lab innovation</summary>
     </entry>
     <entry>
       <title>How to Make Thunderbird Feel Like Geary</title>
