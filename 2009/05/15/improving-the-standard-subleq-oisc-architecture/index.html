@@ -186,7 +186,7 @@ I really liked the beauty and simplicity of the des">
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>When I first came across <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</a>,
 I really liked the beauty and simplicity of the design.  However, I have now been experimenting with it for quite a while and have noticed one aspect of the standard implementation that I am not so happy with.  In the standard implementation, negative numbers are used for Input/Output Ports or to Halt the machine in the case of a branch destination.  This seems such as waste of the
 negative numbers, as generally only a couple will be used meaning that nearly half of the addressing capacity is lost for little gain.  I propose the following improvement to the standard SUBLEQ design.</p>

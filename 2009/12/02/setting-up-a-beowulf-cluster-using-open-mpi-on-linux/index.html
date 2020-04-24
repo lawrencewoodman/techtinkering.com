@@ -189,7 +189,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>I have been doing a lot of work recently on Linear Genetic Programming.  This requires a great deal of processing power and to meet this I have been using Open MPI to create a Linux cluster.   What follows is a quick guide to getting a cluster running.  The basics really are very simple and, depending on the size, you can get a simple cluster running in less than half an hour, assuming you already have the machines networked and running Linux.</p>
 <h2>What is a Beowulf Cluster?</h2>
 A Beowulf Cluster is a collection of privately networked computers which can be used for parallel computations.  They consist of commodity hardware running open source software such as Linux or a BSD, often coupled with PVM (Parallel Virtual Machine) or MPI (Message Passing Interface).  A standard set up will consist of one master node which will control a number of slave nodes.  The slave nodes are typically headless and generally all access the same files from a server.  They have been referred to as Beowulf Clusters since before 1998 when the original <a href="http://www.ibiblio.org/pub/linux/docs/HOWTO/archive/Beowulf-HOWTO.html">Beowulf HOWTO</a> was released.

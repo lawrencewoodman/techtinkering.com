@@ -144,6 +144,8 @@
       <div class="row margin-buffer">
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="itemReviewed" content="LogiLink USB to Parallel Cable, D-SUB 25pin" />
+
       <header>
         <a href="/2009/05/06/connecting-a-parallel-printer-to-a-modern-linux-machine-using-a-logilink-usb-to-parallel-cable/" title="Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin">
           <h1 itemprop="headline name">Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin</h1>
@@ -190,7 +192,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="reviewBody">
         <p>I have a number of older printers that I would like to connect to my modern machine, but have been unable to do so because my computer doesn't have a parallel interface.  After searching the internet for a review of a usb to parallel cable that works reliably with Linux, I pretty much drew a blank.  I then decided to look on Amazon and just give one a go.  Below is my brief review of the product that I found to work.  I hope that it is of some help to others who are looking for a similar cable.</p>
 <p>I decided to purchase the <em>USB Parallel Printer Port Cable 25 pin female socket</em> advertised on Amazon by Cablestar.  I went for the version with a female 25pin D-SUB on the end, as not all my printers have a standard Centronics interface.  My HP LaserJet 1100, for example, has a Mini-Centronics interface.  When the package arrived two days later I found that it was a <em>LogiLink USB to Parallel Cable, D-SUB 25pin</em>.  The package had the standard drivers for various flavours of Windows, but no drivers for Linux.  This came as no surprise, indeed I really would have been surprised if there had been drivers for Linux.</p>
 <p>Now it was time to see whether my kernel (2.6.26 on Debian Lenny 5.01) would recognise this cable.  I plugged the cable into a free USB port on my computer and plugged my printer's parallel cable into the other end; straight away a printer port was created at <code>/dev/usb/lp0</code>.  All I had to do then was configure CUPS to see this printer, which was easily achieved through the <code>Printing</code> configuration option in the <code>Administration</code> menu of <code>Gnome</code>.</p>
@@ -281,7 +283,7 @@ As soon as you pick up this coffee table style book you know that you're in for 
   <a class="readMore" href="/articles/home-computers-100-icons-that-defined-a-digital-generation/">Read More</a>
 </div>
         <header>
-  <h3><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">Book Review: What the Dormouse Said by John Markoff</a></h3>
+  <h3><a href="/2016/03/06/book-review-what-the-dormouse-said-by-john-markoff/">What the Dormouse Said by John Markoff</a></h3>
   <span class="post-meta">
       <time datetime="2016-03-06">
          6 March 2016

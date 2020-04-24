@@ -201,7 +201,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>To make machine language programs more friendly it is nice to add a basic stub which contains a line with a <code>SYS</code> statement to start the code.  This is easy to do on the Vic-20 and the process gives you an insight into how Basic programs are stored in memory.  I'll show you how to do this and how to extend the programs to meet your needs.</p>
 <p>A Basic program consists of a series of Basic lines followed by two <code>00</code> octets to signify the end of the program.  Each Basic line starts with a 16-bit next line link to the next Basic line in memory. Then there is a 16-bit Basic line number.  The following bytes represents the statements on the Basic line and is terminated by a <code>00</code> octet.</p>
 <p>To create the following Basic program:</p>

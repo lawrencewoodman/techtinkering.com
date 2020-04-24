@@ -183,7 +183,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>With F#, the <em>list</em> often feels like the default choice of data structure.  It is immutable and hence easy to reason about, however its use can come at a great cost.  If you are using lists to process large amounts of data, then a lot of time will be spent creating objects and garbage collecting.  When I stress tested lists with F#, it became clear that this can cause a major synchronization issue when parallel processing.  In fact, I was often seeing programs written in parallel which were effectively just context switching between threads rather than running in parallel.</p>
 <h1>Investigating an Answer</h1>
 <p>I tried to find an answer to this problem and posted on stackoverflow: <a href="http://stackoverflow.com/questions/22778028/how-to-execute-a-function-that-creates-a-lot-of-objects-in-parallel">How to execute a function, that creates a lot of objects, in parallel?</a>.  This didn't lead to an answer, which left me with two options:</p>

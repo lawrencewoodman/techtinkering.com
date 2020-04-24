@@ -183,7 +183,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>For the past 6 months I have been using Test-Driven Development (TDD) on a new project.  It has made such a difference to the quality of my code, that I feel I just have to share it's benefits with those who may not have heard of it. TDD reverses the normal order of testing as it requires developers to create automated unit tests <em>before</em> code is written not after.  This takes some getting used to, and it can be quite difficult to resist the urge to write code first and then a test, but it really is essential to test first in order to gain the full benefits of TDD.  The beauty of this is that it allows you to concentrate on <em>what</em> you want the code to do before you concentrate on <em>how</em> to implement it.</p>
 <h2>Test-Driven Development Cycle</h2>
 <p>To use TDD, you need a unit testing framework such as <a href="http://www.junit.org/">JUnit</a> for Java.  The first thing to remember about TDD, is that you shouldn't write a single line of code without first creating a test for it.   Therefore, TDD is a constant cycle of creating tests, then writing the code to pass them.  Each test contains an assertion that is either true or false, so that a test can only pass or fail, thus enabling the tests to be fully automatic and not require developers to trawl through logs.   Development is therefore often carried out in the following way:</p>

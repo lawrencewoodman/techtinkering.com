@@ -191,7 +191,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create <em>Position Independent Code (PIC)</em> or make the code relocatable.  Here I'm going to show how to make our code  <em>Position Independent</em>.  There are three full examples near the end of the article which show how to put this altogether.</p>
 <h2>Branches Instead of Jumps</h2>
 <p>One of the first things we can do is use branches instead of <code>JMP</code> to an absolute address where possible.  This is because branches jump to a relative address that will still be the same if the code moves.  A branch allows a relative jump to an address -127/+128 bytes from the current address.</p>

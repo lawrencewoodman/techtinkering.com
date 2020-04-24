@@ -179,7 +179,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>Sometimes it can be useful to dynamically generate header files and include them from a C source file.  However, it can be a little difficult getting <a href="http://www.cmake.org">CMake</a> to recognize when to generate the files and when to recompile the source files that include those headers.  What follows is a method to do this.</p>
 <h2>Telling CMake to Generate the Header File</h2>
 <p>To generate the header file we need to create a <em>custom_command</em> which will run the command to generate the header file, when the file it is based on has changed. The following shows how to use the hypothetical <code>generatewordlistheader</code> command to create <code>wordlist.h</code> everytime <code>wordlist.txt</code> changes.</p>

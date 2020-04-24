@@ -185,7 +185,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>I have been using <a href="http://jekyllrb.com/">Jekyll</a> a lot recently on the <a href="http://trustafriend.com">Trust a Friend</a> website and found the need to display a rating as a series of stars.  Initially I implemented this in JavaScript, which worked fine, but I like to limit the amount of JavaScript on my sites.  I could have done this with some straight <em>Liquid</em> but it would have been quite messy, so I decided to write a plugin for Jekyll.</p>
 <h2>The Code</h2>
 <p>I had never programmed in Ruby before writing this plugin, so I'm sure it isn't written in the best Ruby style, but it works and therefore I think it is worth sharing.  The code consists of an additional definition to the Filters module to provide a filter called <code>star_rating</code>.  The latest version of the code can be found under my <a href="http://github.com/LawrenceWoodman">GitHub</a> account in the <a href="https://github.com/LawrenceWoodman/star_rating-liquid_filter">star_rating-liquid_filter</a> repository.</p>

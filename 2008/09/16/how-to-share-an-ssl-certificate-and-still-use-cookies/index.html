@@ -187,7 +187,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>Website hosting companies often provide a shared SSL certificate, but this presents the web designer with the problem of how to use it for a site that uses cookies.  I have read many people say that this can't be done.  However, this article will show a simple way of using a shared SSL certificate with cookies for a login page.</p>
 <h2>Explanation of the problem</h2>
 <p>When the data is entered into the login form it is passed to a script handling it on a secure server.  The secure server will be using a different session from the one connected with the login page because the session cookie is associated with a specific server.  Therefore when you change a session variable to reflect that the user has logged in successfully you will find that this has only changed the variable for the session on the secure server.  When you return to the insecure part of the site you will be returning to the original session, so you won't be able to see any changes made to reflect the success of the login.</p>

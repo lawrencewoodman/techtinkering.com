@@ -183,7 +183,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>Now that I have converted TechTinkering over to <a href="http://jekyllrb.com/">Jekyll</a>, I have come up against a bit of a problem with <code>site.related_posts</code>: The results are always just the latest posts, and are not filtered or ordered for relevance.  I see that lots of people are struggling with a similar problem and have therefore decided to write a plugin which will improve it.  Because the posts on this site make use of <em>tags</em>, I decided to match against those to assess relevance.</p>
 <h2>The Code</h2>
 <p>I was in two minds as to how to structure this plugin: whether to write a straight monkey patch, or whether to put it in a module and include it.  I went with the latter as I have heard a lot of talk about this being the preferred route to ease debugging.  However it doesn't seem quite right because I have had to force the removal of the old <code>related_posts</code> method to do so.  If anyone has any suggestions on this, then please leave a comment here or via the <a href="https://github.com/LawrenceWoodman/related_posts-jekyll_plugin">GitHub repo</a>.</p>

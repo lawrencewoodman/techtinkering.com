@@ -185,7 +185,7 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+        <div itemprop="articleBody">
         <p>Tk is great, but sometimes it just isn't fast enough.  SDL is fast, but has no support for input dialogs and other GUI conventions.  By embedding an SDL surface in a Tk window you get the best of both worlds.  Whether you want to use Tk to add a nice GUI to an SDL app or want to access SDL via Tcl/Tk, this article will show you how.</p>
 <h2>Embedding the SDL Surface</h2>
 <p>To embed an SDL surface in another window you have to alter the <code>SDL_WINDOWID</code> environmental variable so that it matches the ID of the window that you want the SDL surface embedded in.  This must be done after the main window is displayed and before <code>SDL_Init()</code> is called.</p>
