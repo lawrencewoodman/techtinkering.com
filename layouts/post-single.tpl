@@ -83,7 +83,13 @@
 ! if {[getparam -default false hideLicence]} {
   <div class="row">
     <div class="col-md-12">
-      <hr />
+!     if {[getparam -default "" extraDisclaimer] ne ""} {
+        <div id="cclicence" style ="padding-top: 0.5em">
+          [getparam extraDisclaimer]
+        </div>
+!     } else {
+        <hr />
+!     }
     </div>
   </div>
 ! } else {
