@@ -34,6 +34,10 @@
 ! } else {
     <article itemscope itemtype="http://schema.org/BlogPosting">
 ! }
+! if {[getparam -default "" socialImg] != ""} {
+    <meta itemprop="image"
+         content="[www::url -full "/img/social_images/[getparam socialImg]"]" />
+! }
       <header>
         <a href="[www::url [getparam url]]" title="$title">
           <h1 itemprop="headline name">$title</h1>
