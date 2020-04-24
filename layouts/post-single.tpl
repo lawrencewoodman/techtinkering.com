@@ -29,6 +29,8 @@
   <div class="col-md-12">
 ! if {[getparam -default 0 rating] > 0} {
     <article itemscope itemtype="http://schema.org/Review">
+    <meta itemprop="itemReviewed" content="[getparam itemReviewed]" />
+
 ! } else {
     <article itemscope itemtype="http://schema.org/BlogPosting">
 ! }
@@ -73,7 +75,11 @@
         </div>
       </header>
       <br />
-      <div itemprop="articleBody">
+!     if {[getparam -default 0 rating] > 0} {
+        <div itemprop="reviewBody">
+!     } else {
+        <div itemprop="articleBody">
+!     }
         [getparam content]
       </div>
     </article>

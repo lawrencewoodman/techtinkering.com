@@ -4,6 +4,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
+  itemReviewed "Home Computers: 100 Icons that Defined a Digital Generation"
   rating      5
   extraDisclaimer "I received this book as a review copy from the publisher, Thames & Hudson.  I was asked if I would like to receive a copy and haven't been paid for this review.  As an Amazon Associate I earn from qualifying purchases."
   socialImg   "book_home_computers_100_icons_that_defined_a_digital_generation.png"
@@ -304,12 +305,13 @@
 }
 
 { filename    2016-03-06-book-review-what-the-dormouse-said-by-john-markoff.md
-  title       "Book Review: What the Dormouse Said by John Markoff"
+  title       "What the Dormouse Said by John Markoff"
   author      {
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Book" "Review" "History" "Retro"}
+  itemReviewed "What the Dormouse Said by John Markoff"
   rating      4
   extraDisclaimer "As an Amazon Associate I earn from qualifying purchases."
   image       "/img/articles/book_what_the_dormouse_said.jpg"
@@ -674,13 +676,14 @@
 }
 
 { filename    2009-06-03-book-review-electronic-brains-stories-from-the-dawn-of-the-computer-age-by-mike-hally.md
-  title       "Book Review: Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally"
+  title       "Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally"
   author      {
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Book" "Review" "History" "Retro"}
-  rating      5.0
+  itemReviewed "Electronic Brains: Stories from the Dawn of the Computer Age by Mike Hally"
+  rating      5
   image       "/img/articles/book_electronic_brains.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -714,7 +717,8 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Retro" "Review" "Linux" "Hardware"}
-  rating      5.0
+  itemReviewed "LogiLink USB to Parallel Cable, D-SUB 25pin"
+  rating      5
   image       "/img/articles/cable_usb_to_parallel.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -787,13 +791,14 @@
 }
 
 { filename    2009-01-26-book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr.md
-  title       "Book Review: The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr."
+  title       "The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr."
   author      {
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Book" "Programming" "Retro" "Review"}
-  rating      4.0
+  itemReviewed "The Mythical Man-Month: Essays on Software Engineering by Frederick P. Brooks, Jr."
+  rating      4
   image       "/img/articles/book_mythical_man_month.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -967,13 +972,14 @@
 }
 
 { filename    2008-10-07-book-review-fundamentals-of-operating-systems-by-a-m-lister.md
-  title       "Book Review: Fundamentals of Operating Systems by A.M. Lister - Second Edition"
+  title       "Fundamentals of Operating Systems by A.M. Lister - Second Edition"
   author      {
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Book" "Operating Systems" "Retro" "Review"}
-  rating      4.0
+  itemReviewed "Fundamentals of Operating Systems by A.M. Lister - Second Edition"
+  rating      4
   image       "/img/articles/book_fundamentals_operating_systems.png"
   postURLStyle "/@year/@month/@day/@title/"
 }
