@@ -1,4 +1,4 @@
-SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is called a Once Instruction Set Computer (OISC), which isn't the best name considering that most processors have one instruction set.  URISC is good, but perhaps One Instruction Computer (OIC) would be more accurate.
+SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is called a One Instruction Set Computer (OISC), which isn't the best name considering that most processors have one instruction set.  URISC is good, but perhaps One Instruction Computer (OIC) would be more accurate.
 
 ### SUBLEQ (Subtract and Branch if Less then or Equal to zero)
 
