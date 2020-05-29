@@ -1,4 +1,4 @@
-When I first came across [The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture](/2009/03/05/the-subleq-urisc-oisc-architecture/),
+When I first came across [SUBLEQ](/articles/subleq-a-one-instruction-set-computer/),
 I really liked the beauty and simplicity of the design.  However, I have now been experimenting with it for quite a while and have noticed one aspect of the standard implementation that I am not so happy with.  In the standard implementation, negative numbers are used for Input/Output Ports or to Halt the machine in the case of a branch destination.  This seems such as waste of the
 negative numbers, as generally only a couple will be used meaning that nearly half of the addressing capacity is lost for little gain.  I propose the following improvement to the standard SUBLEQ design.
 
@@ -6,7 +6,7 @@ negative numbers, as generally only a couple will be used meaning that nearly ha
 While working out how to stop the waste of negative numbers, I considered the following factors: beauty, ease of implementation/simplicity, instructions executed, number of memory accesses and code size. A number of options were looked at, including negative numbers representing: <em>literals</em>, <em>relative addressing</em> and <em>in-direct addressing</em>.
 
 ## Improved Design
-The improved design is similar to the standard design as described in my article: <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</a>.  The key difference is that negative numbers now refer to <em>in-direct addressing</em>.
+The improved design is similar to the standard design as described in my article: <a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a>.  The key difference is that negative numbers now refer to <em>in-direct addressing</em>.
 
 The improved design is described as follows:
 

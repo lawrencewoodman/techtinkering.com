@@ -1,3 +1,13 @@
+{ filename    2020-05-29-subleq-a-one-instruction-set-computer.md
+  title       "SUBLEQ - A One Instruction Set Computer (OISC)"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "subleq_hello_world.png"
+  tags        {"SUBLEQ" "OISC"}
+}
+
 { filename    2020-04-23-home-computers-100-icons-that-defined-a-digital-generation.md
   title       "Home Computers: 100 Icons that Defined a Digital Generation"
   author      {
@@ -705,7 +715,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Computer Architecture" "SUBLEQ" "OISC"}
+  tags        {"SUBLEQ" "OISC"}
   image       "/img/articles/small_subleq_plus.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -752,6 +762,8 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "OISC" "SUBLEQ" "Assembly"}
+  redirectTo   "/articles/subleq-a-one-instruction-set-computer/"
+  redirectName "SUBLEQ - A One Instructin Set Computer (OISC)"
   image       "/img/articles/small_hello_subleq.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -773,7 +785,9 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Computer Architecture" "OISC" "SUBLEQ"}
+  tags        {"OISC" "SUBLEQ"}
+  redirectTo   "/articles/subleq-a-one-instruction-set-computer/"
+  redirectName "SUBLEQ - A One Instructin Set Computer (OISC)"
   image       "/img/articles/small_urisc_oisc.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
