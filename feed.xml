@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-04-24</updated>
+  <updated>2020-05-29</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>SUBLEQ - A One Instruction Set Computer (OISC)</title>
+      <id>https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/</id>
+      <link href="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-05-29
+        </published>
+
+        <updated>
+          2020-05-29
+        </updated>
+
+        <summary>SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is</summary>
+    </entry>
     <entry>
       <title>Home Computers: 100 Icons that Defined a Digital Generation</title>
       <id>https://techtinkering.com/articles/home-computers-100-icons-that-defined-a-digital-generation/</id>
@@ -1199,8 +1217,8 @@ The program</summary>
           2009-05-15
         </updated>
 
-        <summary>When I first came across The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture,
-I really liked the beauty and simplicity of the design.  However, I have now been experimen</summary>
+        <summary>When I first came across SUBLEQ,
+I really liked the beauty and simplicity of the design.  However, I have now been experimenting with it for quite a while and have noticed one aspect of the standard im</summary>
     </entry>
     <entry>
       <title>Connecting a Parallel Printer to a Modern Linux Machine Using a LogiLink USB to Parallel Cable, D-SUB 25pin</title>

@@ -5,22 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</title>
-  <meta name="description" content="I have been interested in the limits of RISC (Reduced Instruction Set Computer) architecture for a while and recently came across OISC (One Instruction Set Compu">
+  <title>SUBLEQ - A One Instruction Set Computer (OISC)</title>
+  <meta name="description" content="SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It h">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture">
-  <meta name="twitter:description" content="I have been interested in the limits of RISC (Reduced Instruction Set Computer) architecture for a while and recently came across OISC (One Instruction Set Compu">
+  <meta name="twitter:title" content="SUBLEQ - A One Instruction Set Computer (OISC)">
+  <meta name="twitter:description" content="SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It h">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/subleq_hello_world.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture">
-  <meta property="og:description" content="I have been interested in the limits of RISC (Reduced Instruction Set Computer) architecture for a while and recently came across OISC (One Instruction Set Compu">
-  <meta property="og:url" content="https://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/">
+  <meta property="og:title" content="SUBLEQ - A One Instruction Set Computer (OISC)">
+  <meta property="og:description" content="SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It h">
+  <meta property="og:url" content="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/subleq_hello_world.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +43,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/">
+  <link rel="canonical" href="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -141,26 +145,14 @@
   </div>
 </nav>
     <div id="content" class="container">
-          <script language="javascript" type="text/javascript">
-      window.location.replace("/articles/subleq-a-one-instruction-set-computer/")
-    </script>
-
-    <div class="row margin-buffer">
-      <div class="col-md-12">
-        <div class="articleRedirected">
-          <h1>Old Article</h1>
-          <p>This is an old article which is only being kept for historical purposes.</p>
-
-          <p>Please navigate and update any links to the new article: <a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instructin Set Computer (OISC)</a>.</p>
-        </div>
-      </div>
-   </div>
-<div class="row margin-buffer">
+      <div class="row margin-buffer">
   <div class="col-md-12">
     <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/subleq_hello_world.png" />
       <header>
-        <a href="/2009/03/05/the-subleq-urisc-oisc-architecture/" title="The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture">
-          <h1 itemprop="headline name">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</h1>
+        <a href="/articles/subleq-a-one-instruction-set-computer/" title="SUBLEQ - A One Instruction Set Computer (OISC)">
+          <h1 itemprop="headline name">SUBLEQ - A One Instruction Set Computer (OISC)</h1>
         </a>
         <div class="pull-right">
           <ul class="share-buttons">
@@ -172,8 +164,8 @@
         </div>
         <div>
             <time itemprop="datePublished"
-                  datetime="2009-03-05">
-               5 March 2009
+                  datetime="2020-05-29">
+              29 May 2020
             </time>
             &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
@@ -196,76 +188,103 @@
       </header>
       <br />
         <div itemprop="articleBody">
-        <p>I have been interested in the limits of RISC (Reduced Instruction Set Computer) architecture for a while and recently came across OISC (One Instruction Set Computer) \ URISC (Ultimate RISC) architecture when looking for a simple way to implement a Virtual Machine for an A.I. project I was working on.  It has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence the name, which isn't the best name considering that most processors have one instruction set.  URISC is good, but perhaps OIC (One Instruction Computer) would have been more accurate.</p>
-<p>There are a number of types of OISCs, but this article will concentrate on those using the SUBLEQ instruction, as this is the one that I favour.  Mention should also be made of those using the SUBNEG instruction which is very similar.  Because there is only one instruction, only the operands are specified, which in this case consists of 3 memory addresses that are acted on as explained below:</p>
+        <p>SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is called a Once Instruction Set Computer (OISC), which isn't the best name considering that most processors have one instruction set.  URISC is good, but perhaps One Instruction Computer (OIC) would be more accurate.</p>
 <h3>SUBLEQ (Subtract and Branch if Less then or Equal to zero)</h3>
+<p>Because there is only one instruction, only the operands are specified, which consist of 3 memory addresses that are acted on as follows:</p>
 <pre><code class="language-text">SUBLEQ a, b, c
 Mem[b] := Mem[b] - Mem[a]
 if (Mem[b] ≤ 0) goto c
 </code></pre>
-<h3>SUBNEG (Subtract and Branch if Negative)</h3>
-<pre><code class="language-text">SUBNEG a, b, c
-Mem[b] := Mem[b] - Mem[a]
-if (Mem[b] &lt; 0) goto c
-</code></pre>
-<h2>Implementation Options</h2>
-<p>There are a number of implementation options for a SUBLEQ processor:</p>
-<ul>
-<li>Negative numbers could refer to Input/Output ports.</li>
-<li>Relative addressing could be used rather than direct addressing.</li>
-<li>If an address is used as an Input/Output port, then this could copy the data rather than run SUBLEQ on it.</li>
-<li>The branch destination could refer to a memory location that contains the actual branch destination, i.e. <code>goto mem[c]</code> instead of <code>goto c</code>.</li>
-</ul>
 <h2>Programming Using Macros</h2>
-<p>To program the SUBLEQ OISC machine we can create a set of Macros to ease development.  Below are some simple examples of useful macros that could be implemented.  The contents of each Macro consists of previously defined macros or 3 memory location references to be executed by the SUBLEQ instruction.  Where the third operand is missing, it is assumed to be the location of the next instruction, i.e. it doesn't conditionally branch.  Mem[Z] is assumed by most of the macros to contain zero.</p>
-<pre><code class="language-nasm">Macro Jmp c     ; Jump directly to c (Resets mem[Z] to zero)
-  Z, Z, c       ; mem[Z] := zero and jumps as result is 0
-EndMacro
+<p>To program in SUBLEQ we can create a set of macros to ease development.  Below are some simple examples of useful macros that could be implemented.  The contents of each macro consists of previously defined macros or the <code>sble</code> instructin which is short for SUBLEQ.</p>
+<p>The examples below are written using my <a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> macro assembler.  Where the third operand is missing for <code>sble</code>, it is assumed to be the location of the next instruction, i.e. it doesn't conditionally branch.  Mem[z] is assumed to contain zero.  Numbers beginning with <code>#</code> are literals which are memory locations containing that number.</p>
+<pre><code class="language-nasm">; Add a to b
+.macro      add   a b
+            sble  a z
+            sble  z b
+            sble  z z
+.endm
 
-Macro Sub a, b  ; Subtract mem[a] from mem[b]
-  a, b          ; Trivial Macro, but can make things clearer
-EndMacro
 
-Macro Add a, b  ; Add mem[a] to mem[b] (Assumes mem[Z] = 0)
-  Sub a, Z      ; As mem[Z] contains zero, stores negative of mem[a] at mem[Z]
-  Sub Z, b      ; Equivalent of: mem[b] := mem[b] - -mem[a] i.e. mem[b] := mem[b] + mem[a]
-  Sub Z, Z      ; Set mem[Z] to zero
-EndMacro
+; Increment value at n
+.macro      inc   n
+            sble  #-1 n
+.endm
 
-Macro Mov a, b  ; Copy mem[a] to mem[b] (Assumes mem[Z] = 0)
-  Sub b, b      ; Set mem[b] to zero
-  Add a,b       ; Add mem[a] to mem[b]
-EndMacro
 
-Macro Jge b, c  ; Jump to c if mem[b] ≥ 0
-  b, Z, c       ; (Assumes mem[Z] = 0, leaves mem[Z] := -mem[b])
-EndMacro
+; Decrement value at n
+.macro      dec   n
+            sble  #1 n
+.endm
 
-Macro Jle b, c  ; Jump to c if mem[b] ≤ 0 (Assumes mem[Z] = 0)
-  Z, b, c
-EndMacro
 
-Macro Jz b, c   ; Jump to c if mem[b] = 0 (Assumes mem[Z] = 0)
-  Jge b, GE0    ; If b ≥ 0 Jump to GE0
-  Jmp NotZero   ; Jump to NotZero and mem[Z] := 0
-GE0:
-  Sub Z, Z      ; mem[Z] := 0
-  Jle b, c      ; If b ≤ 0 Jump to c.  As b is ≥ 0, therefore: If b = 0 jump to c
-NotZero:
-EndMacro
+; Jump to addr
+.macro      jump  addr
+            sble  z z addr
+.endm
+
+
+; Copy value at src to dest
+.macro      copy  src dest
+            sble  dest dest
+            add   src dest
+.endm
+
+
+; Jump to 'addr' if 'a' &gt;= 0
+.macro      jge   a addr
+            sble  a z gte
+            jump  done
+gte:        sble  z z addr
+done:       sble  z z
+.endm
 </code></pre>
 <p>It can been seen that by building up macros and using certain memory locations in a standard way, that it is relatively easy to program this type of machine.</p>
+<h2>Hello World</h2>
+<p>This program is fairly simple and essentially manipulates two pointers, one to contain the address of the character to be output and the other to contain the address which is checked for zero termination of the string.  We can see that the pointers are actually operands of <code>sble</code> instructions, so therefore we are self-modifying code to create a pointer.  This is typical of programming in SUBLEQ.  I have written
+this without any macros as it makes it easier to see how SUBLEQ is used.</p>
+<pre><code>; Outputs &quot;HELLO, WORLD!\n&quot;
+;
+; Copyright (C) 2020 Lawrence Woodman &lt;lwoodman@vlifesystems.com&gt;
+; Licensed under a BSD 0-Clause licence.  See 0BSD_LICENCE.md for details.
+
+.equ        OUT  -1                     ; The display output port
+.equ        HALT -1                     ; A location which halts execution
+
+;========================================
+;           Start
+;========================================
+loop:       sble  hello OUT             ; Outputs char pointed to by hello
+            sble  minusOne loop         ; Increments char output ptr to next char
+            sble  minusOne checkEnd+1   ; Increments end of string ptr to next char
+checkEnd:   sble  z hello HALT          ; Halts program if char at ptr is zero
+            sble  z z loop              ; Jumps to loop
+
+;========================================
+;           Data Storage
+;========================================
+minusOne:   .word -1                    ; Used to increment ptr
+hello:      .asciiz &quot;HELLO, WORLD!\n&quot;
+z:          .word 0
+</code></pre>
+<p>In the above code we can see that <code>OUT</code> is used as a 'b' operand.  This will move the character to the display rather than subtract.  The program finishes when the line at label <code>checkEnd:</code> jumps to <code>HALT</code>.</p>
 <h2>Parallelization Possibilities</h2>
 <p>There are, of course, many more memory accesses per operation than most standard processors which will make object code larger and will have a negative speed impact.  The speed of the processor could be increased, however, by running some instructions in parallel.  This could be done by running several instructions at the same time if they are using different operands and aren't branching.</p>
+<h2>Video Demonstrating SUBLEQ</h2>
+<p>SUBLEQ can be seen being used via my 'sblasm' assembler in the following video.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/o0e7_U7ZmBM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <h2>Further Information</h2>
-<p>There isn't much about SUBLEQ OISC computers on the internet.  However I have found the following to be useful:</p>
-<ul>
-<li><a href="http://bitstuff.blogspot.com/2007/02/subtract-and-branch-if-negative.html">A SUBNEG computer built using 7400 series logic chips</a></li>
-<li><a href="http://mazonka.com/subleq/index.html">Oleg Mazonka's page discussing a self interpreter for a SUBLEQ virtual machine</a>.  It also includes an assembler and interpreter.</li>
-<li><a href="http://en.wikipedia.org/wiki/One_instruction_set_computer">The Wikipedia article on One Instruction Set Computers</a></li>
-</ul>
-<p>I have also written a follow up article: <a href="/2009/03/29/hello-world-in-subleq-assembly/">Hello, World! in SUBLEQ Assembly</a>.</p>
-<p>I hope that you find this interesting and would love to hear of any uses that you find for it.</p>
+<p>There are a few other projects that use SUBLEQ which might be of interest.</p>
+<h3>Oleg Mazonka</h3>
+<p>My first experiments with SUBLEQ were using <a href="http://mazonka.com/subleq/index.html">Oleg Mazonka's</a> assembler and interpreter.  He has done quite a bit with SUBLEQ including creating a simplified typeless C style language which he calls 'Higher Subleq'.</p>
+<h3>KimUno</h3>
+<p>The <a href="https://www.instructables.com/id/The-KIM-Uno-a-5-Microprocessor-Dev-Kit-Emulator/">KIM Uno</a> is a microprocessor dev kit that uses an Arduino microcontroller to run a SUBLEQ emulator.</p>
+<h3>Dawn Operating System</h3>
+<p><a href="http://gerigeri.uw.hu/DawnOS/index.html">Dawn</a> is a multi-tasking operating system created to run on a SUBLEQ, featuring a GUI, touchscreen support, sound, joysticks, cameras, SMP, etc.  It seems to have been written using it's supplied C compiler which compiles down to SUBLEQ and it really is very impressive.  It was written by a Hungarian called Geri.</p>
+<h3>sblasm</h3>
+<p><a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> is a macro assembler that I've written for SUBLEQ.  It's a work in progress but has some quite nice features and I'm continuing to develop it.</p>
       </div>
     </article>
   </div>
@@ -278,8 +297,8 @@ EndMacro
           <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>
         <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The SUBLEQ URISC (Ultimate RISC) / OISC (One Instruction Set Computer) Architecture</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2009/03/05/the-subleq-urisc-oisc-architecture/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SUBLEQ - A One Instruction Set Computer (OISC)</span>
+        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
        is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
        
       </div>
@@ -292,16 +311,16 @@ EndMacro
       <div class="col-md-6">
         <h2 style="margin-top:0;">Share This Post</h2>
         <ul class="share-buttons-text">
-  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F&title=The%20SUBLEQ%20URISC%20%28Ultimate%20RISC%29%20%2F%20OISC%20%28One%20Instruction%20Set%20Computer%29%20Architecture" target="_blank" title="Submit to Reddit">Reddit</a></li>
-  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F&quote=The%20SUBLEQ%20URISC%20%28Ultimate%20RISC%29%20%2F%20OISC%20%28One%20Instruction%20Set%20Computer%29%20Architecture" target="_blank" title="Share on Facebook">Facebook</a></li>
-  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F&text=The%20SUBLEQ%20URISC%20%28Ultimate%20RISC%29%20%2F%20OISC%20%28One%20Instruction%20Set%20Computer%29%20Architecture:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-  <li><a class="btn btn-email" href="mailto:?subject=The%20SUBLEQ%20URISC%20%28Ultimate%20RISC%29%20%2F%20OISC%20%28One%20Instruction%20Set%20Computer%29%20Architecture&body=I%20have%20been%20interested%20in%20the%20limits%20of%20RISC%20%28Reduced%20Instruction%20Set%20Computer%29%20architecture%20for%20a%20while%20and%20recently%20came%20across%20OISC%20%28One%20Instruction%20Set%20Computer%29%20%26%2392%3B%20URISC%20%28Ultimate%20RISC%29%20archite...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F" target="_blank" title="Send email">Email</a></li>
+  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F&title=SUBLEQ%20-%20A%20One%20Instruction%20Set%20Computer%20%28OISC%29" target="_blank" title="Submit to Reddit">Reddit</a></li>
+  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F&quote=SUBLEQ%20-%20A%20One%20Instruction%20Set%20Computer%20%28OISC%29" target="_blank" title="Share on Facebook">Facebook</a></li>
+  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F&text=SUBLEQ%20-%20A%20One%20Instruction%20Set%20Computer%20%28OISC%29:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+  <li><a class="btn btn-email" href="mailto:?subject=SUBLEQ%20-%20A%20One%20Instruction%20Set%20Computer%20%28OISC%29&body=SUBLEQ%20has%20to%20be%20one%20of%20the%20easiest%20architectures%20to%20implement%20in%20either%20software%20or%20hardware%20and%20this%20is%20the%20main%20reason%20for%20its%20design%20as%20a%20teaching%20aid.%20%20It%20has%20only%20one%20instruction%2C%20hence%20why%20it%20is...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F" target="_blank" title="Send email">Email</a></li>
 </ul>
 
         <h2>Feedback/Discuss</h2>
         <ul>
 
-  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20The%20SUBLEQ%20URISC%20%28Ultimate%20RISC%29%20%2F%20OISC%20%28One%20Instruction%20Set%20Computer%29%20Architecture&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2009%2F03%2F05%2Fthe-subleq-urisc-oisc-architecture%2F%0A" title="Send us an email">Email</a></li>
+  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20SUBLEQ%20-%20A%20One%20Instruction%20Set%20Computer%20%28OISC%29&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-a-one-instruction-set-computer%2F%0A" title="Send us an email">Email</a></li>
 </ul>
       </div>
 
@@ -326,24 +345,6 @@ EndMacro
     </div>
     <div class="row margin-buffer">
   <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h3>
-  <span class="post-meta">
-      <time datetime="2020-05-29">
-        29 May 2020
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/oisc/">OISC</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/subleq/">SUBLEQ</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is...
-  &nbsp;
-  <a class="readMore" href="/articles/subleq-a-one-instruction-set-computer/">Read More</a>
-</div>
         <header>
   <h3><a href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</a></h3>
   <span class="post-meta">
