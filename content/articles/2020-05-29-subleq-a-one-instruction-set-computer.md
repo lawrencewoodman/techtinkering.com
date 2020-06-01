@@ -1,8 +1,8 @@
 SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is called a One Instruction Set Computer (OISC), which isn't the best name considering that most processors have one instruction set.  URISC is good, but perhaps One Instruction Computer (OIC) would be more accurate.
 
-### SUBLEQ (Subtract and Branch if Less then or Equal to zero)
+### SUBLEQ (SUbtract and Branch if Less than or EQual to zero)
 
-Because there is only one instruction, only the operands are specified, which consist of 3 memory addresses that are acted on as follows:
+The SUBLEQ instruction stands for _SUbtract and Branch if Less than or EQual to zero_.  Because there is only one instruction, only the operands are specified, which consist of 3 memory addresses that are acted on as follows:
 
 ```` text
 SUBLEQ a, b, c
