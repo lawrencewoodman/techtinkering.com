@@ -1,20 +1,20 @@
 !* commandSubst true
 ! source -directory [dir plugins] posts.tcl
 
-<div class="row margin-buffer">
-  <div class="col-md-12">
-    <h1 class="text-center">404 - File Not Found</h1>
-    <h3 class="text-center">Sorry, we can't find that file.  Try looking elsewhere on the site.</h3>
-  </div>
+<div class="margin-buffer">
+  <h1 class="text-center">404 - File Not Found</h1>
+  <h3 class="text-center">Sorry, we can't find that file.  Try looking elsewhere on the site.</h3>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <a class="pull-right btn btn-success btn-lg" href="/articles/">View All Articles</a>
-    <div id="indexHeader">Latest Articles</div>
-    <hr />
-  </div>
+<div>
+  <a class="view-all pull-right" href="/articles/">View All Articles</a>
+  <div id="index-header">Latest Articles</div>
+  <hr />
 </div>
 ! set posts [posts::sort [collection get articles-posts]]
 ! set postListParams [dict create posts $posts maxPosts 5]
 [ornament -params $postListParams -directory [dir includes] -file post_list.html]
+
+<div class="text-center">
+  <a class="view-all" href="/articles/">View All Articles</a>
+</div>

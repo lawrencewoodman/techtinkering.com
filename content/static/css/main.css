@@ -1,46 +1,85 @@
 body {
+  background: #222129;
   color: #EEE;
-  font-family: Arial, Tahoma, Verdana, sans-serif;
+  font-family: monospace;
   line-height: 1.5;
-  background: #171528;
   height: 100%;
-  font-size: 14pt;
+  font-size: 16px;
 }
 
 .container {
-  border-left: #444 solid 3px;
-  border-right: #444 solid 3px;
-  border-bottom: #444 solid 3px;
+  margin: 0 auto;
+  max-width: 860px;
 }
 
-.navbar > .container {
-  background-color: #282828;
-}
-
-.navbar {
-  background: #171528;
-}
-
-.navbar-default {
-  border: none;
-}
-
-.navbar-default .navbar-brand {
+.navbar-header {
   color: #00C100;
-  font-family: monospace;
-  font-size: 18pt;
-  font-weight: 700;
+  line-height: 1.1;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.navbar-right > .navbar-right {
-  margin-right: -15px;
+
+.contact ul {
+  margin: 0;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  padding-top: 0.8rem;
+  list-style: none;
 }
 
-.navbar-default .navbar-nav>li>a {
-  color: #00C100;
+
+.contact ul li {
+  font-size: 1rem;
+  display: inline;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
 }
-.navbar-default .navbar-nav>li>a:hover {
-  color: #777;
+
+.contact a {
+  text-decoration: underline;
+  color: #EEE;
+}
+
+.contact a:visited {
+  text-decoration: underline;
+  color: #EEE;
+}
+
+
+ul.tags {
+  margin: 0;
+  padding-left: 0em;
+  padding-right: 0em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  list-style: none;
+}
+
+
+ul.tags li {
+  color: #979794;
+  font-size: 1rem;
+  display: inline;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+ul.tags a {
+  color: #979794;
+}
+
+ul.tags a:visited {
+  color: #979794;
+}
+
+div#popular-tags {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+span.popular-tags-header {
+  font-weight: bold;
 }
 
 
@@ -103,7 +142,6 @@ div#profileText { margin-top: 1em; }
 
 /* ----- Main content ----- */
 div#content {
-  background: #111;
   padding-bottom: 4em;
   padding-top: 20px;
   letter-spacing: 1px;
@@ -127,14 +165,46 @@ h1,h2,h3,h4 {
   padding-bottom: 0;
 }
 
-#indexHeader {
-  font-size: 20pt;
+.pull-right { float: right; }
+.text-center { text-align: center; }
+
+.margin-buffer { margin-bottom: 30px; }
+
+#index-header {
+  font-size: 1.6rem;
   font-weight: bold;
-  font-family: monospace;
 }
 
-#btn-view-all {
-  margin-left: 1em;
+
+a.view-all {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: .2rem;
+}
+
+
+div#email-subscribe {
+  margin-top: 2em;
+  border:1px solid #ccc;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  text-align:center;
+}
+
+div#email-subscribe input {
+  color: black;
+}
+
+
+div.discuss {
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 1.5em;
 }
 
 /* ---- Home ---- */
@@ -142,9 +212,11 @@ ul.headlinePosts h3 { margin-top: 0; }
 
 /* ---- Posts ---- */
 h1 { font-size: 160%; line-height: 1.4; }
-h2 { font-size: 150%; line-height: 1.4; }
-h3 { font-size: 140%; line-height: 1.4; }
-h4 { font-size: 130%; line-height: 1.4; }
+h2 { font-size: 140%; line-height: 1.4; }
+h3 { font-size: 120%; line-height: 1.4; }
+h4 { font-size: 100%; line-height: 1.4; }
+
+table { border-collapse: collapse; }
 
 dt {font-style: italic;}
 
@@ -170,7 +242,6 @@ div.articleBody { margin-top: 1em; }
 
 
 div.articleRedirected {
-  width: 100%;
   margin-top: 2em;
   padding-left: 2em;
   padding-right: 2em;

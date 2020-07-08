@@ -387,7 +387,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Retro" "Commodore" "VIC-20" "Assembly"}
-  redirectTo   "/articles/adding-a-basic-stub-to-an-assembly-language-program-on-the-commodore-vic-20/"
+  redirectTo   "/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/"
   redirectName "Adding a Basic Stub to an Assembly Language Program on the Commodore VIC-20"
   postURLStyle "/@year/@month/@day/@title/"
 }
