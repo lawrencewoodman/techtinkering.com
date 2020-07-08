@@ -112,7 +112,7 @@ Copying a string to a new location with Sweet 16.
 DST         = $02BC                   ; Destination for memory copy
 LEN         = $0005                   ; Length of memory to copy
 
-        
+
 copyHello   jsr  SW16                 ; Execute following Sweet 16 code
             .byt $11, <hello, >hello  ; SET  R1   Source Address
             .byt $12, <DST, >DST      ; SET  R2   Destination Address
