@@ -19,8 +19,6 @@ The following use a [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.
 
 The following use a [CC By 3.0](https://creativecommons.org/licenses/by/3.0/) licence.
 
-* The social media icons used to share the articles are from: [https://simplesharingbuttons.com](https://simplesharingbuttons.com).
-
 
 ## Image Provided by Thames & Hudson
 
