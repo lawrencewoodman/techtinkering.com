@@ -33,7 +33,6 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/prism.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/extra.css" rel="stylesheet">
@@ -50,8 +49,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
   <script src="/js/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -93,97 +90,94 @@
   </script>
 </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav>
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">TechTinkering</a>
+      <a href="/">TechTinkering</a><br />
+      =============
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse navbar-right">
-      <ul class="nav navbar-nav navbar-right contact-buttons">
+    <div class="contact">
+      <ul>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-          </a>
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
         </li>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-          </a>
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
         </li>
         <li>
-          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-          </a>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
         </li>
         <li>
-          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">
-            <img class="bannerIcon" src="/images/octocat_fluid.png" "TechTinkering Repo on GitHub"/>
-          </a>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
         </li>
         <li>
-          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
-            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-          </a>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
         </li>
       </ul>
-
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
     <div id="content" class="container">
-      <div class="row margin-buffer">
-  <div class="col-md-12">
-    <ul class="main-tags">
-  <li style="color: white; font-weight: bold;">Popular Tags:</li>
-  <li><a href="/articles/tag/retro/">Retro</a></li>
-  <li><a href="/articles/tag/programming/">Programming</a></li>
-  <li><a href="/articles/tag/vic-20/">VIC-20</a></li>
-  <li><a href="/articles/tag/cpm/">CP/M</a></li>
-  <li><a href="/articles/tag/assembly/">Assembly</a></li>
-  <li><a href="/articles/tag/commodore/">Commodore</a></li>
-  <li><a href="/articles/tag/pdp-8/">PDP-8</a></li>
-</ul>
-  </div>
+      <div class="margin-buffer">
+  <div id="popular-tags">
+  <span class="popular-tags-header">Popular Tags:</span>
+  <ul class="tags">
+    <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    <li>#<a href="/articles/tag/programming/">Programming</a></li>
+    <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+    <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+    <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+    <li>#<a href="/articles/tag/pdp-8/">PDP-8</a></li>
+  </ul>
+</div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <a id="btn-view-all" class="pull-right btn btn-success btn-lg" href="/articles/">View All Articles</a>
-    <div id="indexHeader">Commodore</div>
-    
-    <hr />
-  </div>
+<div>
+  <a class="view-all pull-right" href="/articles/">View All Articles</a>
+  <div id="index-header">Commodore</div>
+  
+  <hr />
 </div>
 
-<div class="row margin-buffer">
-  <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h3>
+<div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-07-09">
+         9 July 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2020-02-29">
         29 February 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -191,23 +185,20 @@
   &nbsp;
   <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2020-02-04">
          4 February 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -215,23 +206,20 @@
   &nbsp;
   <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2020-01-16">
         16 January 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -239,23 +227,20 @@
   &nbsp;
   <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2019-12-18">
         18 December 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -263,19 +248,18 @@
   &nbsp;
   <a class="readMore" href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/">Tokenize/De-tokenize Commodore Basic Programs Using petcat</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/">Tokenize/De-tokenize Commodore Basic Programs Using petcat</a></h2>
   <span class="post-meta">
       <time datetime="2019-11-21">
         21 November 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -283,21 +267,19 @@
   &nbsp;
   <a class="readMore" href="/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2019-11-08">
          8 November 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -305,21 +287,19 @@
   &nbsp;
   <a class="readMore" href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Moving the Picture Origin on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2019-10-03">
          3 October 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -327,19 +307,18 @@
   &nbsp;
   <a class="readMore" href="/articles/moving-the-picture-origin-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/spreadsheets-on-the-commodore-vic-20/">Spreadsheets on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/spreadsheets-on-the-commodore-vic-20/">Spreadsheets on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2019-09-07">
          7 September 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -347,21 +326,19 @@
   &nbsp;
   <a class="readMore" href="/articles/spreadsheets-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2019-08-23">
         23 August 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -369,21 +346,19 @@
   &nbsp;
   <a class="readMore" href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Transferring Files to and from CP/M .D71 Disk Images Using ctools</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Transferring Files to and from CP/M .D71 Disk Images Using ctools</a></h2>
   <span class="post-meta">
       <time datetime="2019-05-24">
         24 May 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -391,23 +366,20 @@
   &nbsp;
   <a class="readMore" href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2013-05-04">
          4 May 2013
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -415,23 +387,20 @@
   &nbsp;
   <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2013-04-16">
         16 April 2013
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -439,21 +408,19 @@
   &nbsp;
   <a class="readMore" href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2008/11/24/my-top-10-commodore-64-demos/">My Top 10 Commodore 64 Demos</a></h3>
+<br />
+      <header>
+  <h2><a href="/2008/11/24/my-top-10-commodore-64-demos/">My Top 10 Commodore 64 Demos</a></h2>
   <span class="post-meta">
       <time datetime="2008-11-24">
         24 November 2008
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/c64/">C64</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/demos/">Demos</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/c64/">C64</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/demos/">Demos</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -461,32 +428,31 @@
   &nbsp;
   <a class="readMore" href="/2008/11/24/my-top-10-commodore-64-demos/">Read More</a>
 </div>
-  </div>
+<br />
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-  <p>Sign up to get new articles straight to your inbox.</p>
-  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
-  <input type="hidden" value="TechTinkering" name="uri"/>
-  <input type="hidden" name="loc" value="en_US"/>
-  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
-  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
-</form>
-  </div>
+<div class="text-center">
+  <a class="view-all" href="/articles/">View All Articles</a>
+</div>
+
+<div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
 </div>
     </div>
 
     <footer>
-  <nav class="navbar navbar-default">
+  <nav>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <strong>Legal:</strong> &nbsp;
-          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
-          <a href="/privacy/">Privacy Policy</a>
-        </div>
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
       </div>
     </div>
   </nav>

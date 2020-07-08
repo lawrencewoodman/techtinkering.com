@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Spreadsheets on the Commodore VIC-20</title>
-  <meta name="description" content="The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known">
+  <title>SUBLEQ on the Commodore VIC-20</title>
+  <meta name="description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Spreadsheets on the Commodore VIC-20">
-  <meta name="twitter:description" content="The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known">
+  <meta name="twitter:title" content="SUBLEQ on the Commodore VIC-20">
+  <meta name="twitter:description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
     <meta name="twitter:image"
-         content="https://techtinkering.com/img/social_images/vic20_practicalc.png">
+         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Spreadsheets on the Commodore VIC-20">
-  <meta property="og:description" content="The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known">
-  <meta property="og:url" content="https://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/">
+  <meta property="og:title" content="SUBLEQ on the Commodore VIC-20">
+  <meta property="og:description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
+  <meta property="og:url" content="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/">
     <meta property="og:image"
-         content="https://techtinkering.com/img/social_images/vic20_practicalc.png">
+         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -42,7 +42,7 @@
   <link href="/css/extra.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/">
+  <link rel="canonical" href="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="http://feedproxy.google.com/TechTinkering" />
 
@@ -126,15 +126,15 @@
       <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
     <meta itemprop="image"
-         content="https://techtinkering.com/img/social_images/vic20_practicalc.png" />
+         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png" />
       <header>
-        <a href="/articles/spreadsheets-on-the-commodore-vic-20/" title="Spreadsheets on the Commodore VIC-20">
-          <h1 itemprop="headline name">Spreadsheets on the Commodore VIC-20</h1>
+        <a href="/articles/subleq-on-the-commodore-vic-20/" title="SUBLEQ on the Commodore VIC-20">
+          <h1 itemprop="headline name">SUBLEQ on the Commodore VIC-20</h1>
         </a>
         <div>
             <time itemprop="datePublished"
-                  datetime="2019-09-07">
-               7 September 2019
+                  datetime="2020-07-09">
+               9 July 2020
             </time>
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
@@ -148,28 +148,76 @@
           </span>
 
           <ul class="tags">
+              <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
               <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
               <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
               <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
           </ul>
         </div>
       </header>
         <div itemprop="articleBody">
-        <p>The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known are SimpliCalc and PractiCalc, but there were others such as TechniCalc and BusiCalc as well as one written in Basic to use a 40 column extension such as <a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">FAT-40</a>.</p>
-<h2>SimpliCalc</h2>
-<img src="/img/articles/vic20_simplicalc.png" class="img-right" style="width: 500px; clear: right;" title="SimpliCalc">
-<p>SimpliCalc was originally written for the Commodore PET and was later released in about 1983 by Commodore Business Machines for the Vic.  It was available on cassette tape and disk.  The spreadsheet works quite well and supports mixed case text which can make the sheets easier to follow and is something that PractiCalc can't do.</p>
-<p>Overall it's a good early spreadsheet but a little simplistic compared to PractiCalc.  A disk image can be found on <a href="https://cbm8bit.com">cbm8bit</a> by <a href="https://cbm8bit.com/8bit/commodore/search?query=simplicalc.d64">searching for simplicalc.d64</a> and clicking on <em>simplicalc.d64</em> from the menu.  The <a href="https://archive.org/details/Simplicalc_vic-3301">manual</a> is available on <a href="https://archive.org">archive.org</a>.</p>
-<h2>PractiCalc</h2>
-<img src="/img/articles/vic20_practicalc.png" class="img-right" style="width: 500px; clear: right;" title="PractiCalc">
-<p>PractiCalc was released in about 1982 on tape and disk by Computer Software Associates and is a really impressive piece of software for the Vic.  It is quicker than SimpliCalc and supports many of the features of modern spreadsheets such as formatting, complex formulas, column resizing, moving and inserting rows and columns, etc.</p>
-<p>One thing that is particularly interesting is that you can automate part of the data entry by using a formula in a cell such as <code>?sales smith</code>, which when the spreadsheet calculates the formulas it will prompt the user to give 'sales smith'.  Therefore if you had a spreadsheet where you regularly change the entries such as for sales reps each month you could put a similar formula in for each rep and then the program would just go through and prompt you for each entry before calculating the final figures.</p>
-<p>PractiCalc was also capable of displaying histograms inline by representing a number in a cell using either stars or in hi-res mode by having a smooth graphical representation.</p>
-<p>The <a href="http://commodore.bombjack.org/commodore/applications/PractiCalc_Plus_Manual.pdf" title="PractiCalc_Plus_Manual.pdf">manual for PractiCalc Plus</a> is available from <a href="http://bombjack.org/">BombJack</a> and this manual, as far as I can tell, seems to be compatible with the version of <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/utilities/16k/Practicalc.prg" title="Practicalc.prg">PractiCalc available on Zimmers</a>.  I have also come across a version mentioned in a <a href="http://sleepingelephant.com/ipw-web/bulletin/bb/viewtopic.php?f=4&amp;t=2653&amp;sid=14a4880cd12c03a45e45531548fb9c64&amp;start=30">thread on the denial forums about PractiCalc</a> which says that it is <a href="https://onedrive.live.com/?authkey=%21APekIakjEEq8s4o&amp;id=7B3B15C3E5BA5B42%2117446&amp;cid=7B3B15C3E5BA5B42">PractiCalc Plus</a>.</p>
-<h2>Video of SimpliCalc and PractiCalc</h2>
-<p>You can see SimpliCalc and PractiCalc being used on a Commodore VIC-20 in the video below:</p>
+        <p>I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for <em>SUbtract and Branch if Less than or EQual to zero</em>.  Code for the VM can be found in the <a href="https://github.com/lawrencewoodman/subleq_vic20">subleq_vic20 repo</a> on GitHub.</p>
+<h2>SUBLEQ (SUbtract and Branch if Less than or EQual to zero)</h2>
+<p>The SUBLEQ instruction stands for <em>SUbtract and Branch if Less than or EQual to zero</em>.  Because there is only one instruction, only the operands are specified, which consist of 3 memory addresses that are acted on as follows:</p>
+<pre><code class="language-text">SUBLEQ a, b, c
+Mem[b] := Mem[b] - Mem[a]
+if (Mem[b] ≤ 0) goto c
+</code></pre>
+<p>To find out more about SUBLEQ have a look at my previous article: <a href="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a> and its accompanying <a href="https://www.youtube.com/watch?v=o0e7_U7ZmBM" title="SUBLEQ - A One Instruction Set Computer (OISC)">video</a>.</p>
+<h2>Example: echo</h2>
+<p>The following executes a simple SUBLEQ program that loops continuously, accepting a key as input and then displaying it on the screen.  It is taken from an example in the <a href="https://github.com/lawrencewoodman/subleq_vic20">subleq_vic20 repo</a>.</p>
+<pre><code class="language-asm6502">            jmp main
+
+; Point the SUBLEQ VM's memory to the SUBLEQ program code
+SL_MEM      = prog
+
+; Include the SUBLEQ virtual machine
+#include &quot;subleq.a65&quot;
+
+main        ; SL_run starts the VM executing at SL_MEM
+            jsr SL_run
+            rts
+
+; The SUBLEQ program code
+prog        .word -1, -1, 3
+            .word 6, 6, 0
+            .word 0
+</code></pre>
+<br />
+<p>This SUBLEQ program would look like the following in my <a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> assembly language, which uses <code>sble</code> to indicate a SUBLEQ instruction.</p>
+<pre><code class="language-nasm">.equ        IN  -1
+.equ        OUT -1
+
+loop:       sble  IN, OUT
+            sble  z, z, loop
+z:          .word 0
+</code></pre>
+<p>The assembler assumes that if the last argument of the <code>sble</code> instruction isn't supplied then it will be equal to the next location in memory.  It doesn't actually store an opcode for the <code>sble</code> instruction as there is only one instruction so only the operands are needed.</p>
+<h2>Creating a New SUBLEQ Program Loader</h2>
+<p>This SUBLEQ VM for the Vic uses 16-bit words and to load a new SUBLEQ program into it you can follow these steps.</p>
+<ol>
+<li>Create a file containing you're SUBLEQ program as a series of numbers.  To do this you can use my <a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> assembler.  Which also contains a number of examples to try and contains a file to link to 'arch.inc.asq' to provide correct values for the VIC-20.</li>
+<li>Use the <em>sqtoword.tcl</em> script to convert the output from <em>sblasm</em> to <code>.word</code> entries, using someting like the following for a <em>fizzbuzz</em> program:
+<pre><code class="language-text">$ tclsh sqtoword.tcl -n 12 fizzbuzz.sq &gt; fizzbuzz.words
+</code></pre>
+The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.</li>
+<li>There are included skeleton files for unexpanded and 8k+ systems.  Append the output of <em>sqtoword.tcl</em> to one of them:
+<pre><code class="language-text">$ cat skeleton_8k.a65 fizzbuzz.words &gt; fizzbuzz.a65
+</code></pre>
+</li>
+<li>Assemble the file using <a href="https://www.floodgap.com/retrotech/xa/">XA</a>, making sure that the path to 'subleq.a65' is in the include path:
+<pre><code class="language-text">$ xa -o fizzbuzz.prg fizzbuzz.a65
+</code></pre>
+</li>
+<li>Load the program on your VIC-20 with 8K+ ram expansion and type <code>RUN</code> to start it.</li>
+</ol>
+<h2>Video Demonstrating the SUBLEQ VM on the VIC-20</h2>
+<p>You can see the SUBLEQ VM being used on a Commodore VIC-20 in the following video.  It shows the process of assembling a 'rock, paper, scissors' game written in SUBLEQ using <em>sblasm</em>, creating a <em>.a65</em> file, assembling that with XA and then running it on a VIC.</p>
 <div class="youtube-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YaSrHIU7vac" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YwjlblkTNqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -180,8 +228,8 @@
       <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
     </a>
     <br />
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Spreadsheets on the Commodore VIC-20</span>
-    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/spreadsheets-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SUBLEQ on the Commodore VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
    is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
    
   </div>
@@ -191,10 +239,10 @@
     <h2 style="margin-top:0;">Share This Post</h2>
     <div class="contact">
   <ul>
-    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F&title=Spreadsheets%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F&quote=Spreadsheets%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
-    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F&text=Spreadsheets%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-    <li><a href="mailto:?subject=Spreadsheets%20on%20the%20Commodore%20VIC-20&body=The%20VIC-20%20had%20a%20number%20a%20spreadsheet%20programs%20released%20for%20it%20which%20despite%20the%20limited%20resources%20of%20the%20Vic%20could%20actually%20be%20quite%20usable.%20%20The%20two%20best%20known%20are%20SimpliCalc%20and%20PractiCalc%2C%20but%20ther...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&title=SUBLEQ%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&quote=SUBLEQ%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&text=SUBLEQ%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=SUBLEQ%20on%20the%20Commodore%20VIC-20&body=I%20have%20created%20a%20SUBLEQ%20Virtual%20Machine%20for%20the%20Commodore%20VIC-20.%20%20SUBLEQ%20is%20a%20computer%20architecture%20that%20has%20only%20one%20instruction%3A%20SUBLEQ.%20%20The%20instruction%20stands%20for%20SUbtract%20and%20Branch%20if%20Less%20than%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
   </ul>
 </div>
 
@@ -202,7 +250,7 @@
     <div class="contact">
   <ul>
 
-    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Spreadsheets%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fspreadsheets-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20SUBLEQ%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
   </ul>
 </div>
   </div>
@@ -222,29 +270,6 @@
     <div>
     <h2>Related Articles</h2>
     <div class="margin-buffer">
-      <header>
-  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
-  <span class="post-meta">
-      <time datetime="2020-07-09">
-         9 July 2020
-      </time>
-    <ul class="tags">
-      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
-      <li>#<a href="/articles/tag/programming/">Programming</a></li>
-      <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
-      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
-    </ul>
-  </span>
-</header>
-<div>
-  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
-  &nbsp;
-  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
-</div>
-<br />
       <header>
   <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
   <span class="post-meta">
@@ -327,6 +352,27 @@
   I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got a more advanced machine language monitor...
   &nbsp;
   <a class="readMore" href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Creating a TTY Simulator in Assembly Language on the VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2013-05-04">
+         4 May 2013
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  The Vicmon machine language cartridge is an excellent tool for exploring the Vic-20.  This article and its associated video will show you how to use it to create a simple program that will change the n...
+  &nbsp;
+  <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
 </div>
 <br />
 </div>

@@ -33,7 +33,6 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/prism.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/extra.css" rel="stylesheet">
@@ -50,8 +49,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
   <script src="/js/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -93,95 +90,70 @@
   </script>
 </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav>
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">TechTinkering</a>
+      <a href="/">TechTinkering</a><br />
+      =============
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse navbar-right">
-      <ul class="nav navbar-nav navbar-right contact-buttons">
+    <div class="contact">
+      <ul>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-          </a>
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
         </li>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-          </a>
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
         </li>
         <li>
-          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-          </a>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
         </li>
         <li>
-          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">
-            <img class="bannerIcon" src="/images/octocat_fluid.png" "TechTinkering Repo on GitHub"/>
-          </a>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
         </li>
         <li>
-          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
-            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-          </a>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
         </li>
       </ul>
-
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
     <div id="content" class="container">
-      <div class="row margin-buffer">
-  <div class="col-md-12">
-    <ul class="main-tags">
-  <li style="color: white; font-weight: bold;">Popular Tags:</li>
-  <li><a href="/articles/tag/retro/">Retro</a></li>
-  <li><a href="/articles/tag/programming/">Programming</a></li>
-  <li><a href="/articles/tag/vic-20/">VIC-20</a></li>
-  <li><a href="/articles/tag/cpm/">CP/M</a></li>
-  <li><a href="/articles/tag/assembly/">Assembly</a></li>
-  <li><a href="/articles/tag/commodore/">Commodore</a></li>
-  <li><a href="/articles/tag/pdp-8/">PDP-8</a></li>
-</ul>
-  </div>
+      <div class="margin-buffer">
+  <div id="popular-tags">
+  <span class="popular-tags-header">Popular Tags:</span>
+  <ul class="tags">
+    <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    <li>#<a href="/articles/tag/programming/">Programming</a></li>
+    <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+    <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+    <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+    <li>#<a href="/articles/tag/pdp-8/">PDP-8</a></li>
+  </ul>
+</div>
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <a id="btn-view-all" class="pull-right btn btn-success btn-lg" href="/articles/">View All Articles</a>
-    <div id="indexHeader">Emulation</div>
-    
-    <hr />
-  </div>
+<div>
+  <a class="view-all pull-right" href="/articles/">View All Articles</a>
+  <div id="index-header">Emulation</div>
+  
+  <hr />
 </div>
 
-<div class="row margin-buffer">
-  <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Transferring Files to and from CP/M .D71 Disk Images Using ctools</a></h3>
+<div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Transferring Files to and from CP/M .D71 Disk Images Using ctools</a></h2>
   <span class="post-meta">
       <time datetime="2019-05-24">
         24 May 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -189,19 +161,18 @@
   &nbsp;
   <a class="readMore" href="/articles/transferring-files-to-and-from-cpm-d71-disk-images-using-ctools/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/emulating-a-cpm-system-with-z80pack/">Emulating a CP/M System With z80pack</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/emulating-a-cpm-system-with-z80pack/">Emulating a CP/M System With z80pack</a></h2>
   <span class="post-meta">
       <time datetime="2019-05-21">
         21 May 2019
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -209,19 +180,18 @@
   &nbsp;
   <a class="readMore" href="/articles/emulating-a-cpm-system-with-z80pack/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></h3>
+<br />
+      <header>
+  <h2><a href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Connecting to a Remote Serial Port over TCP/IP</a></h2>
   <span class="post-meta">
       <time datetime="2013-04-02">
          2 April 2013
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/linux/">Linux</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/linux/">Linux</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -229,21 +199,19 @@
   &nbsp;
   <a class="readMore" href="/2013/04/02/connecting-to-a-remote-serial-port-over-tcpip/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/">xAce is Back in Active Development and Looking For Contributors</a></h3>
+<br />
+      <header>
+  <h2><a href="/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/">xAce is Back in Active Development and Looking For Contributors</a></h2>
   <span class="post-meta">
       <time datetime="2010-05-06">
          6 May 2010
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/jupiterace/">Jupiter Ace</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/xace/">xAce</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/jupiterace/">Jupiter Ace</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/xace/">xAce</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -251,23 +219,20 @@
   &nbsp;
   <a class="readMore" href="/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></h3>
+<br />
+      <header>
+  <h2><a href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Emulating a DEC PDP-8 with SimH</a></h2>
   <span class="post-meta">
       <time datetime="2009-05-26">
         26 May 2009
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/dec/">DEC</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/pdp-8/">PDP-8</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/simh/">SimH</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/dec/">DEC</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/pdp-8/">PDP-8</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/simh/">SimH</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -275,23 +240,20 @@
   &nbsp;
   <a class="readMore" href="/2009/05/26/emulating-a-dec-pdp8-with-simh/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/">xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)</a></h3>
+<br />
+      <header>
+  <h2><a href="/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/">xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)</a></h2>
   <span class="post-meta">
       <time datetime="2009-02-12">
         12 February 2009
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/forth/">Forth</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/jupiterace/">Jupiter Ace</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/xace/">xAce</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/forth/">Forth</a></li>
+      <li>#<a href="/articles/tag/jupiterace/">Jupiter Ace</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/xace/">xAce</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -299,21 +261,19 @@
   &nbsp;
   <a class="readMore" href="/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2008/11/10/using-scummvm-to-play-classic-adventure-games/">Using ScummVM to Play Classic Adventure Games</a></h3>
+<br />
+      <header>
+  <h2><a href="/2008/11/10/using-scummvm-to-play-classic-adventure-games/">Using ScummVM to Play Classic Adventure Games</a></h2>
   <span class="post-meta">
       <time datetime="2008-11-10">
         10 November 2008
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/adventuregames/">Adventure Games</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/games/">Games</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/adventuregames/">Adventure Games</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/games/">Games</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -321,23 +281,20 @@
   &nbsp;
   <a class="readMore" href="/2008/11/10/using-scummvm-to-play-classic-adventure-games/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel</a></h3>
+<br />
+      <header>
+  <h2><a href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Using the latest  z80pack, version 1.17, to emulate an Altair 8800 or IMSAI 8080 using the new graphical FrontPanel</a></h2>
   <span class="post-meta">
       <time datetime="2008-10-29">
         29 October 2008
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/8080/">8080</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/altair/">Altair</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/imsai/">IMSAI</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/8080/">8080</a></li>
+      <li>#<a href="/articles/tag/altair/">Altair</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/imsai/">IMSAI</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -345,19 +302,18 @@
   &nbsp;
   <a class="readMore" href="/2008/10/29/using-the-latest-z80pack-version-1-17-to-emulate-an-altair-8800-or-imsai-8080-using-the-new-graphical-frontpanel/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Using DOSBox to Run DOS Games and Applications</a></h3>
+<br />
+      <header>
+  <h2><a href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Using DOSBox to Run DOS Games and Applications</a></h2>
   <span class="post-meta">
       <time datetime="2008-10-24">
         24 October 2008
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/dos/">DOS</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/emulation/">Emulation</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/dos/">DOS</a></li>
+      <li>#<a href="/articles/tag/emulation/">Emulation</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -365,32 +321,31 @@
   &nbsp;
   <a class="readMore" href="/2008/10/24/using-dosbox-to-run-dos-games-and-applications/">Read More</a>
 </div>
-  </div>
+<br />
 </div>
 
-<div class="row">
-  <div class="col-md-12">
-    <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-  <p>Sign up to get new articles straight to your inbox.</p>
-  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
-  <input type="hidden" value="TechTinkering" name="uri"/>
-  <input type="hidden" name="loc" value="en_US"/>
-  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
-  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
-</form>
-  </div>
+<div class="text-center">
+  <a class="view-all" href="/articles/">View All Articles</a>
+</div>
+
+<div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
 </div>
     </div>
 
     <footer>
-  <nav class="navbar navbar-default">
+  <nav>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <strong>Legal:</strong> &nbsp;
-          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
-          <a href="/privacy/">Privacy Policy</a>
-        </div>
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
       </div>
     </div>
   </nav>

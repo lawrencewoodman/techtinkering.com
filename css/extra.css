@@ -1,17 +1,6 @@
-.navbar {
-  margin-bottom: 0;
-}
 
 a:hover {
   color: #00C100;
-}
-
-a.btn:visited {
-  color: white;
-}
-
-.btn-success {
-  background-color: #00C100;
 }
 
 ul.contact-buttons{
@@ -54,122 +43,9 @@ ul.main-tags li a:hover {
   color: #00C100;
 }
 
-.margin-buffer { margin-bottom: 30px; }
-
-h1,h2,h3,h4,h5 {
-  font-weight: 600;
-}
-
-h1 { font-size: 24pt; }
-h2 { font-size: 22pt; }
-h3 { font-size: 18pt; }
-h4 { font-size: 16pt; }
 
 div#cclicence {
   border-top: 1px solid #DDD;
   border-bottom: 1px solid #DDD;
   padding-bottom: 1em;
-}
-
-form#email-subscribe {
-  margin-top: 1em;
-  border:1px solid #ccc;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align:center;
-}
-
-form#email-subscribe input {
-  color: black;
-}
-
-/* Simple Sharing Buttons
-   https://simplesharingbuttons.com */
-ul.share-buttons{
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-}
-
-ul.share-buttons li{
-  display: inline;
-}
-
-ul.share-buttons .sr-only{
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
-
-ul.share-buttons img{
-  width: 32px;
-}
-
-/* Simple Sharing Buttons
-   https://simplesharingbuttons.com */
-ul.share-buttons-text {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-ul.share-buttons-text li{
-  display: inline;
-}
-
-
-div.discuss {
-  width: 100%;
-  text-align: center;
-  margin-top: 1em;
-  border-bottom: 1px solid #DDD;
-  padding-bottom: 1.5em;
-}
-
-div.discuss ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 0;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.discuss li{
-  display: inline;
-}
-
-div.discuss a {
-  font-weight: bold;
-  margin-top: 1em;
-}
-
-div.discuss a.btn-email {
-  color: black;
-  background: white;
-}
-
-div.discuss a.btn-facebook {
-  color: white;
-  background: #4266B2;
-}
-
-div.discuss a.btn-reddit {
-  color: white;
-  background: #FF4500;
-}
-
-div.discuss a.btn-twitter {
-  color: white;
-  background: #00ABF1;
 }

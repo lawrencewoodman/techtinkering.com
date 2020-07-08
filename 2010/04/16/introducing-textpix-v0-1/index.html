@@ -33,7 +33,6 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/prism.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/extra.css" rel="stylesheet">
@@ -50,8 +49,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
   <script src="/js/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -93,75 +90,46 @@
   </script>
 </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav>
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">TechTinkering</a>
+      <a href="/">TechTinkering</a><br />
+      =============
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse navbar-right">
-      <ul class="nav navbar-nav navbar-right contact-buttons">
+    <div class="contact">
+      <ul>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-          </a>
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
         </li>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-          </a>
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
         </li>
         <li>
-          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-          </a>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
         </li>
         <li>
-          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">
-            <img class="bannerIcon" src="/images/octocat_fluid.png" "TechTinkering Repo on GitHub"/>
-          </a>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
         </li>
         <li>
-          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
-            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-          </a>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
         </li>
       </ul>
-
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
     <div id="content" class="container">
-      <div class="row margin-buffer">
-  <div class="col-md-12">
+      <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
         <a href="/2010/04/16/introducing-textpix-v0-1/" title="Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data">
           <h1 itemprop="headline name">Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</h1>
         </a>
-        <div class="pull-right">
-          <ul class="share-buttons">
-  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
-  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
-  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
-</ul>
-        </div>
         <div>
             <time itemprop="datePublished"
                   datetime="2010-04-16">
               16 April 2010
             </time>
-            &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
             <meta itemprop="name" content="TechTinkering" />
@@ -173,22 +141,16 @@
             </a>
           </span>
 
-          &nbsp; / &nbsp;
-            <a href="/articles/tag/conversion/">Conversion</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/graphics/">Graphics</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/images/">Images</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/retro/">Retro</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/textmode/">Text Mode</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/textpix/">TextPix</a>
-            &nbsp; &nbsp;
+          <ul class="tags">
+              <li>#<a href="/articles/tag/conversion/">Conversion</a></li>
+              <li>#<a href="/articles/tag/graphics/">Graphics</a></li>
+              <li>#<a href="/articles/tag/images/">Images</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/textmode/">Text Mode</a></li>
+              <li>#<a href="/articles/tag/textpix/">TextPix</a></li>
+          </ul>
         </div>
       </header>
-      <br />
         <div itemprop="articleBody">
         <p>I have today released <a href="https://github.com/LawrenceWoodman/TextPix/">TextPix</a> v0.1  This is a program to take an image and convert it into a redefined character set and the associated text mode screen data referencing that character set.</p>
 <p>The program came about because I wanted to be able to load images on the Jupiter Ace, but the Ace has no way of allowing you to control individual pixels on the screen.  The best that you can do is redefine the character set and then use those redefined characters to display your image.  This does however present a problem as the Ace only allows you 128 characters plus their inverse in the character set.  Since the screen contains 32x24=768 characters, there would have to be massive repetition in the image to be able to use only 128 characters plus their inverse to display the image.  TextPix therefore tries to find similar sections of the images to replace other similar sections so that the number of characters needed in the character set can be brought down to 128.</p>
@@ -202,75 +164,65 @@ set and a text mode screen that will approximate a source image.  To the right c
 As mentioned above, the program is not ready for general use, however more details can be found in the TextPix <a href="https://github.com/LawrenceWoodman/TextPix/blob/master/README.md">README</a>.  If you would like to contribute to the project then I would particularly love to hear from you.
       </div>
     </article>
-  </div>
 </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div id="cclicence">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2010/04/16/introducing-textpix-v0-1/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
-       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-       
-      </div>
-    </div>
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Introducing TextPix v0.1 - A program to convert an image into a character set and text mode screen data</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2010/04/16/introducing-textpix-v0-1/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
   </div>
 
 
   <div class="discuss">
-    <div class="row">
-      <div class="col-md-6">
-        <h2 style="margin-top:0;">Share This Post</h2>
-        <ul class="share-buttons-text">
-  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&title=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data" target="_blank" title="Submit to Reddit">Reddit</a></li>
-  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&quote=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data" target="_blank" title="Share on Facebook">Facebook</a></li>
-  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&text=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-  <li><a class="btn btn-email" href="mailto:?subject=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data&body=I%20have%20today%20released%20TextPix%20v0.1%20%20This%20is%20a%20program%20to%20take%20an%20image%20and%20convert%20it%20into%20a%20redefined%20character%20set%20and%20the%20associated%20text%20mode%20screen%20data%20referencing%20that%20character%20set.%0AThe%20program...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F" target="_blank" title="Send email">Email</a></li>
-</ul>
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&title=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&quote=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&text=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data&body=I%20have%20today%20released%20TextPix%20v0.1%20%20This%20is%20a%20program%20to%20take%20an%20image%20and%20convert%20it%20into%20a%20redefined%20character%20set%20and%20the%20associated%20text%20mode%20screen%20data%20referencing%20that%20character%20set.%0AThe%20program...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
 
-        <h2>Feedback/Discuss</h2>
-        <ul>
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
 
-  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F%0A" title="Send us an email">Email</a></li>
-</ul>
-      </div>
-
-      <div class="col-md-6">
-        <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-  <p>Sign up to get new articles straight to your inbox.</p>
-  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
-  <input type="hidden" value="TechTinkering" name="uri"/>
-  <input type="hidden" name="loc" value="en_US"/>
-  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
-  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
-</form>
-      </div>
-    </div>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Introducing%20TextPix%20v0.1%20-%20A%20program%20to%20convert%20an%20image%20into%20a%20character%20set%20and%20text%20mode%20screen%20data&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2010%2F04%2F16%2Fintroducing-textpix-v0-1%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
   </div>
 
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Related Articles</h2>
-      </div>
-    </div>
-    <div class="row margin-buffer">
-  <div class="col-md-12">
-        <header>
-  <h3><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></h3>
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Programmable Character Sets: A Simple Alternative to Bitmap Displays</a></h2>
   <span class="post-meta">
       <time datetime="2013-05-29">
         29 May 2013
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/textmode/">Text Mode</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -278,23 +230,20 @@ As mentioned above, the program is not ready for general use, however more detai
   &nbsp;
   <a class="readMore" href="/2013/05/29/programmable-character-sets-a-simple-alternative-to-bitmap-displays/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></h3>
+<br />
+      <header>
+  <h2><a href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Getting Colour ANSI Emulation to Work Properly When Connecting to a BBS With Telnet Under Linux</a></h2>
   <span class="post-meta">
       <time datetime="2010-02-14">
         14 February 2010
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/ansi/">ANSI</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/bbs/">BBS</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/linux/">Linux</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/ansi/">ANSI</a></li>
+      <li>#<a href="/articles/tag/bbs/">BBS</a></li>
+      <li>#<a href="/articles/tag/linux/">Linux</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/textmode/">Text Mode</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -302,21 +251,19 @@ As mentioned above, the program is not ready for general use, however more detai
   &nbsp;
   <a class="readMore" href="/2010/02/14/getting-colour-ansi-emulation-to-work-properly-when-connecting-to-a-bbs-with-telnet-under-linux/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">My Top 10 Classic Text Mode BSD Games</a></h3>
+<br />
+      <header>
+  <h2><a href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">My Top 10 Classic Text Mode BSD Games</a></h2>
   <span class="post-meta">
       <time datetime="2009-08-11">
         11 August 2009
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/bsd/">BSD</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/games/">Games</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/textmode/">Text Mode</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/bsd/">BSD</a></li>
+      <li>#<a href="/articles/tag/games/">Games</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/textmode/">Text Mode</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -324,21 +271,42 @@ As mentioned above, the program is not ready for general use, however more detai
   &nbsp;
   <a class="readMore" href="/2009/08/11/my-top-10-classic-text-mode-bsd-games/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/home-computers-100-icons-that-defined-a-digital-generation/">Home Computers: 100 Icons that Defined a Digital Generation</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-07-09">
+         9 July 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/home-computers-100-icons-that-defined-a-digital-generation/">Home Computers: 100 Icons that Defined a Digital Generation</a></h2>
   <span class="post-meta">
       <time datetime="2020-04-23">
         23 April 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/book/">Book</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/history/">History</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/review/">Review</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/book/">Book</a></li>
+      <li>#<a href="/articles/tag/history/">History</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/review/">Review</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -349,40 +317,18 @@ As soon as you pick up this coffee table style book you know that you're in for 
   &nbsp;
   <a class="readMore" href="/articles/home-computers-100-icons-that-defined-a-digital-generation/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h3>
-  <span class="post-meta">
-      <time datetime="2020-03-11">
-        11 March 2020
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
-  &nbsp;
-  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+<br />
 </div>
-  </div>
-</div>
+    </div>
 
     </div>
 
     <footer>
-  <nav class="navbar navbar-default">
+  <nav>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <strong>Legal:</strong> &nbsp;
-          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
-          <a href="/privacy/">Privacy Policy</a>
-        </div>
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
       </div>
     </div>
   </nav>

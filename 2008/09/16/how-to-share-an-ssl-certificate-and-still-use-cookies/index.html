@@ -33,7 +33,6 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <link href="/css/prism.css" rel="stylesheet">
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/extra.css" rel="stylesheet">
@@ -50,8 +49,6 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-  <script src="/js/jquery-3.3.1.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
   <script src="/js/prism.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -93,75 +90,46 @@
   </script>
 </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav>
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">TechTinkering</a>
+      <a href="/">TechTinkering</a><br />
+      =============
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse navbar-right">
-      <ul class="nav navbar-nav navbar-right contact-buttons">
+    <div class="contact">
+      <ul>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Twitter-Buttons-1124.html -->
-          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">
-            <img class="bannerIcon" src="/images/twitter-button-36.png" alt="@techtinkering on Twitter"/>
-          </a>
+          <a href="http://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
         </li>
         <li>
-          <!-- From: http://www.buttonshut.com/Get-Button-Huts-Code/Youtube-Buttons-831.html -->
-          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">
-            <img class="bannerIcon" src="/images/youtube-small-square-32.png" alt="YouTube Channel"/>
-          </a>
+          <a href="http://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
         </li>
         <li>
-          <!-- From: http://www.graphicsfuel.com/2011/05/email-icon-psd/ -->
-          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">
-            <img class="bannerIcon" src="/images/email.png" alt="Email"/>
-          </a>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
         </li>
         <li>
-          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">
-            <img class="bannerIcon" src="/images/octocat_fluid.png" "TechTinkering Repo on GitHub"/>
-          </a>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
         </li>
         <li>
-          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">
-            <img class="bannerIcon" src="/images/feed-icon-28x28.png" alt="RSS Feed"/>
-          </a>
+          <a href="http://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
         </li>
       </ul>
-
-    </div><!--/.nav-collapse -->
+    </div>
   </div>
 </nav>
     <div id="content" class="container">
-      <div class="row margin-buffer">
-  <div class="col-md-12">
+      <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
       <header>
         <a href="/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/" title="How to share an SSL certificate and still use cookies">
           <h1 itemprop="headline name">How to share an SSL certificate and still use cookies</h1>
         </a>
-        <div class="pull-right">
-          <ul class="share-buttons">
-  <li><a href="https://twitter.com/intent/tweet?source=http%3A%2F%2Ftechtinkering.com&text=:%20http%3A%2F%2Ftechtinkering.com&via=TechTinkering" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="/img/social_flat_rounded_rects_svg/Twitter.svg" /></a></li>
-  <li><a href="http://www.reddit.com/submit?url=http%3A%2F%2Ftechtinkering.com&title=" target="_blank" title="Submit to Reddit" onclick="window.open('http://www.reddit.com/submit?url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><img alt="Submit to Reddit" src="/img/social_flat_rounded_rects_svg/Reddit.svg" /></a></li>
-  <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftechtinkering.com&quote=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&quote=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="/img/social_flat_rounded_rects_svg/Facebook.svg" /></a></li>
-  <li><a href="mailto:?subject=&body=:%20http%3A%2F%2Ftechtinkering.com" target="_blank" title="Send email" onclick="window.open('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL)); return false;"><img alt="Send email" src="/img/social_flat_rounded_rects_svg/Email.svg" /></a></li>
-</ul>
-        </div>
         <div>
             <time itemprop="datePublished"
                   datetime="2008-09-16">
               16 September 2008
             </time>
-            &nbsp; / &nbsp;
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
             <meta itemprop="name" content="TechTinkering" />
@@ -173,20 +141,15 @@
             </a>
           </span>
 
-          &nbsp; / &nbsp;
-            <a href="/articles/tag/php/">PHP</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/programming/">Programming</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/ssl/">SSL</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/security/">Security</a>
-            &nbsp; &nbsp;
-            <a href="/articles/tag/webdevelopment/">Web Development</a>
-            &nbsp; &nbsp;
+          <ul class="tags">
+              <li>#<a href="/articles/tag/php/">PHP</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/ssl/">SSL</a></li>
+              <li>#<a href="/articles/tag/security/">Security</a></li>
+              <li>#<a href="/articles/tag/webdevelopment/">Web Development</a></li>
+          </ul>
         </div>
       </header>
-      <br />
         <div itemprop="articleBody">
         <p>Website hosting companies often provide a shared SSL certificate, but this presents the web designer with the problem of how to use it for a site that uses cookies.  I have read many people say that this can't be done.  However, this article will show a simple way of using a shared SSL certificate with cookies for a login page.</p>
 <h2>Explanation of the problem</h2>
@@ -258,77 +221,109 @@ session_start();
 <p>To increase the security of this method you could also check that the referrer is as you expect using <code>$_SERVER[HTTP_REFERER]</code>.  This is not foolproof as it can be faked, but it is useful to reduce the likelihood of low-level attacks.</p>
       </div>
     </article>
-  </div>
 </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div id="cclicence">
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
-        </a>
-        <br />
-        <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">How to share an SSL certificate and still use cookies</span>
-        by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
-       is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-       
-      </div>
-    </div>
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">How to share an SSL certificate and still use cookies</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2008/09/16/how-to-share-an-ssl-certificate-and-still-use-cookies/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
   </div>
 
 
   <div class="discuss">
-    <div class="row">
-      <div class="col-md-6">
-        <h2 style="margin-top:0;">Share This Post</h2>
-        <ul class="share-buttons-text">
-  <li><a class="btn btn-reddit" href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&title=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies" target="_blank" title="Submit to Reddit">Reddit</a></li>
-  <li><a class="btn btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&quote=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies" target="_blank" title="Share on Facebook">Facebook</a></li>
-  <li><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&text=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-  <li><a class="btn btn-email" href="mailto:?subject=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies&body=Website%20hosting%20companies%20often%20provide%20a%20shared%20SSL%20certificate%2C%20but%20this%20presents%20the%20web%20designer%20with%20the%20problem%20of%20how%20to%20use%20it%20for%20a%20site%20that%20uses%20cookies.%20%20I%20have%20read%20many%20people%20say%20that%20th...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F" target="_blank" title="Send email">Email</a></li>
-</ul>
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&title=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&quote=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&text=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies&body=Website%20hosting%20companies%20often%20provide%20a%20shared%20SSL%20certificate%2C%20but%20this%20presents%20the%20web%20designer%20with%20the%20problem%20of%20how%20to%20use%20it%20for%20a%20site%20that%20uses%20cookies.%20%20I%20have%20read%20many%20people%20say%20that%20th...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
 
-        <h2>Feedback/Discuss</h2>
-        <ul>
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
 
-  <li><a class="btn btn-email" href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F%0A" title="Send us an email">Email</a></li>
-</ul>
-      </div>
-
-      <div class="col-md-6">
-        <form id="email-subscribe" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
-  <p>Sign up to get new articles straight to your inbox.</p>
-  <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
-  <input type="hidden" value="TechTinkering" name="uri"/>
-  <input type="hidden" name="loc" value="en_US"/>
-  <input class="subscribe-button" type="submit" value="Subscribe" /></p>
-  <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
-</form>
-      </div>
-    </div>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20How%20to%20share%20an%20SSL%20certificate%20and%20still%20use%20cookies&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2008%2F09%2F16%2Fhow-to-share-an-ssl-certificate-and-still-use-cookies%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
   </div>
 
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <h2>Related Articles</h2>
-      </div>
-    </div>
-    <div class="row margin-buffer">
-  <div class="col-md-12">
-        <header>
-  <h3><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h3>
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-07-09">
+         9 July 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-05-29">
+        29 May 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-a-one-instruction-set-computer/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
   <span class="post-meta">
       <time datetime="2020-03-11">
         11 March 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/cpm/">CP/M</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -336,23 +331,20 @@ session_start();
   &nbsp;
   <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2020-02-29">
         29 February 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -360,23 +352,20 @@ session_start();
   &nbsp;
   <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h3>
+<br />
+      <header>
+  <h2><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <time datetime="2020-02-04">
          4 February 2020
       </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
   </span>
 </header>
 <div>
@@ -384,68 +373,18 @@ session_start();
   &nbsp;
   <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
 </div>
-        <header>
-  <h3><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2020-01-16">
-        16 January 2020
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
-  &nbsp;
-  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+<br />
 </div>
-        <header>
-  <h3><a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a></h3>
-  <span class="post-meta">
-      <time datetime="2019-12-18">
-        18 December 2019
-      </time>
-      &nbsp; / &nbsp;
-      <a href="/articles/tag/assembly/">Assembly</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/commodore/">Commodore</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/programming/">Programming</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/retro/">Retro</a>
-      &nbsp; &nbsp;
-      <a href="/articles/tag/vic-20/">VIC-20</a>
-      &nbsp; &nbsp;
-  </span>
-</header>
-<div>
-  I quite enjoy designing machine language routines on paper and then hand assembling them.  For many people this would have been their only option until they got a more advanced machine language monitor...
-  &nbsp;
-  <a class="readMore" href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Read More</a>
-</div>
-  </div>
-</div>
+    </div>
 
     </div>
 
     <footer>
-  <nav class="navbar navbar-default">
+  <nav>
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <strong>Legal:</strong> &nbsp;
-          <a href="/terms/">T & C</a>, &nbsp; &nbsp;
-          <a href="/privacy/">Privacy Policy</a>
-        </div>
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
       </div>
     </div>
   </nav>
