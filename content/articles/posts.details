@@ -4,6 +4,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
+  twitterID   "1281253795016687628"
   socialImg   "vic20_subleq_fizzbuzz.png"
   tags        {"SUBLEQ" "OISC" "Programming" "Commodore"
                "VIC-20" "Retro" "Assembly"}
