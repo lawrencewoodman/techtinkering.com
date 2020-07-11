@@ -1,19 +1,22 @@
 code {
-  background: #2d2d2d;
-  color: #EEE;
-}
-pre[class*="language-"] {
-  font-size: 10pt;
+  background: #2D2D2D;
+  color: #00FF00;
+  padding: 1px 6px;
+  font-size: 0.95rem;
 }
 
+/* Kept incase I re-enable syntax highlighting
+pre[class*="language-"] {
+  color: #00FF00;
+}
+*/
+
 pre {
+  font-size: 0.95rem;
   background: #2D2D2D;
-  color: #EEE;
+  color: #00FF00;
   display: block;
   padding: 9.5px;
-  margin: 0 0 10px;
-  font-size: 13px;
-  line-height: 20px;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
@@ -25,6 +28,11 @@ pre {
   border-radius: 4px;
   margin-right: 1em;
 }
+
+pre code {
+  padding: 0px;
+}
+
 
 div.neatTable-responsive {
   overflow-x: auto;
