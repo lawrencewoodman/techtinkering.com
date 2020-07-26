@@ -182,6 +182,21 @@
 <li><a href="http://cbbsoutpost.servebbs.com/">CBBS Outpost</a> for Commodore BBSs</li>
 <li><a href="https://www.telnetbbsguide.com/">telnet BBS Guide</a> for a list of hundreds of BBS of all sorts.</li>
 </ul>
+<h2>Configuring VICE to use Tcpser</h2>
+<img src="/img/articles/vice_configure_rs232_for_tcpser.png" class="img-right" style="width: 500px; clear: right;" title="Configuring VICE to connect to tcpser">
+<p>If you are using VICE to connect to telnet BBS's via <em>tcpser</em> you need to configure the RS232 settings properly for the Userport.  I use the SDL version of VICE where I go to <em>Machine settings</em> &gt; <em>RS232 settings</em>.  On the GUI versions there will be a similar menu structure somewhere.</p>
+<p>First you need to configure the Userport:</p>
+<ul>
+<li>Enable the <em>Userport RS232 emulation</em></li>
+<li>Set the <em>Userport RS232 host device</em>.  This is the device used under host settings.  I use device 3 as this is already part configured for <em>tcpser</em>.</li>
+<li>Set the <em>Userport RS232 baud rate</em>.  This should match the baud rate you are using for <em>tcpser</em>.</li>
+</ul>
+<p>Second you need to configure the <em>Host settings</em>.  I use device 3 so I'll base this around that, but you can use a different device if you wish.  The main thing is that you use the same device number as you specified for the <em>Userport RS232 host device</em> above.</p>
+<ul>
+<li>Connect the device to <em>tcpser</em> using the same port specified after the <code>-v</code> switch when running <em>tcpser</em>: Device 3 127.0.0.1:25232</li>
+<li>Set the device baud rate, as above for the <em>Userport RS232 baud rate</em>: Device 3 baud rate -&gt; 300</li>
+<li>Enable IP232 protocol: Device 3 use IP232 protocol</li>
+</ul>
 <h2>HAYES Modem Commands</h2>
 <p>If you are connecting via a Hayes compatible modem or <em>tcpser</em> you will need the following modem commands to dial and hang-up the modem.  If you are using a VICModem then you can ignore these as this can't dial and therefore you have to dial manually with a normal phone and then connect the VICModem.</p>
 <p>The modem starts off in command mode from which you can use the following commands:</p>
