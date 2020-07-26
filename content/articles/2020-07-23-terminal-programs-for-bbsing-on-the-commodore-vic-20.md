@@ -60,6 +60,24 @@ For a list of telnet BBSs look at:
 * [CBBS Outpost](http://cbbsoutpost.servebbs.com/) for Commodore BBSs
 * [telnet BBS Guide](https://www.telnetbbsguide.com/) for a list of hundreds of BBS of all sorts.
 
+## Configuring VICE to use Tcpser
+
+<img src="/img/articles/vice_configure_rs232_for_tcpser.png" class="img-right" style="width: 500px; clear: right;" title="Configuring VICE to connect to tcpser">
+
+If you are using VICE to connect to telnet BBS's via _tcpser_ you need to configure the RS232 settings properly for the Userport.  I use the SDL version of VICE where I go to _Machine settings_ > _RS232 settings_.  On the GUI versions there will be a similar menu structure somewhere.
+
+First you need to configure the Userport:
+
+* Enable the _Userport RS232 emulation_
+* Set the _Userport RS232 host device_.  This is the device used under host settings.  I use device 3 as this is already part configured for _tcpser_.
+* Set the _Userport RS232 baud rate_.  This should match the baud rate you are using for _tcpser_.
+
+Second you need to configure the _Host settings_.  I use device 3 so I'll base this around that, but you can use a different device if you wish.  The main thing is that you use the same device number as you specified for the _Userport RS232 host device_ above.
+
+* Connect the device to _tcpser_ using the same port specified after the `-v` switch when running _tcpser_: Device 3 127.0.0.1:25232
+* Set the device baud rate, as above for the _Userport RS232 baud rate_: Device 3 baud rate -> 300
+* Enable IP232 protocol: Device 3 use IP232 protocol
+
 
 ## HAYES Modem Commands
 
