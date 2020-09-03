@@ -1,3 +1,13 @@
+{ filename    2020-09-03-image-viewers-on-cpm.md
+  title       "Image Viewers on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_c128_pcxem.png"
+  tags        {"CP/M" "Retro"}
+}
+
 { filename    2020-07-23-terminal-programs-for-bbsing-on-the-commodore-vic-20.md
   title       "Terminal Programs for BBSing on the Commodore VIC-20"
   author      {
