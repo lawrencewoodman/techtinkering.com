@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-07-26</updated>
+  <updated>2020-09-03</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Image Viewers on CP/M</title>
+      <id>https://techtinkering.com/articles/image-viewers-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/image-viewers-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-09-03
+        </published>
+
+        <updated>
+          2020-09-03
+        </updated>
+
+        <summary>CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing started to grow so too did the distribution o</summary>
+    </entry>
     <entry>
       <title>Terminal Programs for BBSing on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/terminal-programs-for-bbsing-on-the-commodore-vic-20/</id>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Image Viewers on CP/M</title>
+  <meta name="description" content="CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing start">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Image Viewers on CP/M">
+  <meta name="twitter:description" content="CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing start">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_c128_pcxem.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Viewers on CP/M">
+  <meta property="og:description" content="CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing start">
+  <meta property="og:url" content="https://techtinkering.com/articles/image-viewers-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_c128_pcxem.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/image-viewers-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_c128_pcxem.png" />
+      <header>
+        <a href="/articles/image-viewers-on-cpm/" title="Image Viewers on CP/M">
+          <h1 itemprop="headline name">Image Viewers on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-09-03">
+               3 September 2020
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing started to grow so too did the distribution of electronic images in formats such as: .RLE, .PCX, .GIF and .BMP.  Therefore, programs were written on popular CP/M machines to display these pictures.  Each program was hardware dependant because there were no standard operating system calls to interact with the graphics hardware.  There was GSX-80, but you still needed a hardware dependant screen driver for each machine and not that many machines had them, plus it was pretty slow.  There were also programs that printed the image to a printer rather than display on screen.  This was particularly useful for those machines that didn't have sufficient graphical hardware or a version couldn't be found or adapted for them.</p>
+<p>The main image formats, prior to 1990, were are as follows.</p>
+<h2>.RLE</h2>
+<img src="/img/articles/cpm_v1050_rle.png" class="img-right" style="width: 300px; clear: right;" title="VTCRLE on a Visual 1050">
+<p>CompuServe developed what is probably the earliest widespread image format in the mid eighties, possibly before 1985.  It encodes black and white images in resolutions of 128×96 or 256×192, compressed using <a href="https://en.wikipedia.org/wiki/Run-length_encoding">Run Length Encoding</a>.  This had the most widespread support and I've found the following <em>RLE</em> viewers for CP/M on the Walnut Creek CD:</p>
+<ul>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/starlet/pixrle.ark" title="pixrle.ark">PIXRLE.ARK</a> - RLE graphics viewer for the NEC CP/M Starlet/8500</li>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/vis1050/vtcrle.lbr" title="vtcrle.lbr">VTCRLE.LBR</a> - RLE graphics viewer for the Visual 1050.  This can display an <em>.RLE</em> image as well as save a screen to <em>.RLE</em>.  It only works with 'high-resolution' 256x192 images, which the author states virtually all were then anyway.  It was written by Alex Fetesoff in 1988.</li>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/graphics/rdump10.lbr" title="rdump10.lbr">RDUMP10.LBR</a>  - RLE graphics viewer, which can display on a TeleVideo TPC-1 or TS-803 graphics screen or print to EPSON FX, SEIKOSHA SP-1000 or 1200, or almost any other EPSON-FX 'work-a-like' printer on any CP/M computer.   It was written in Basic and Assembler by Dave Clifford in 1987.</li>
+</ul>
+<h2>MacPaint: .MAC, .PNTG, .PIC, etc</h2>
+<p>MacPaint was released in 1984 by Apple and its image format used a form of <em>Run Length Encoding</em> called <a href="https://en.wikipedia.org/wiki/PackBits">PackBits</a>.  The images are always 576×720 and monochrome.  I found one viewer for this on the Walnut Creek CD:</p>
+<ul>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/beehive/utilitys/prntep06.ark" title="prntep06.ark">PRINTEP v0.6</a> - Prints Electric Paintbrush/Macpaint images to a MicroBee DP80/100 printer or if you have a Microbee Premium or 256TC, to the screen.  Dated 1992.</li>
+</ul>
+<h2>.PCX</h2>
+<img src="/img/articles/cpm_c128_pcx.png" class="img-right" style="width: 500px; clear: right;" title="PCX'EM on a C128">
+<p>ZSoft Corporation released <em><a href="https://en.wikipedia.org/wiki/PCX">PCX</a></em> in 1985 as an image format for its <em>PC Paintbrush</em> graphics editing software.  <em>PCX</em> stands for PiCture eXchange and supported a version of <em>Run Length Encoding</em> to compress the images.  Over time several releases of the format were made to support more features and colour palettes.</p>
+<p>The only viewers I found for <em>PCX</em> files were written by Steve Goldsmith in 1993 for the Commodore 128 with an 80 column monitor.  They work reasonably well but can only view monochrome images and there is some image distortion.  The best variants can be found on the Walnut Creek CD:</p>
+<ul>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/f/pcxem10.arc" title="pcxem10.arc">PCX'EM 1.0</a> - This can view 640x200 images and works with a 16k VDC.  If you do have a 64k VDC then it has a mode which supports this and works faster.</li>
+<li><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/f/pcxem11.arc" title="pcxem11.arc">PCX'EM 1.1</a> - This can view 640x480 images but requires a 64k VDC and a monitor capable of displaying in interlace mode.</li>
+</ul>
+<h2>.GIF</h2>
+<img src="/img/articles/cpm_pcw_gif.png" class="img-right" style="width: 300px; clear: right;" title="GIFVIEW on an Amstrad PCW">
+<p>As colour support and display resolutions increased CompuServe decided to release a new image format in 1987, called the <em><a href="https://en.wikipedia.org/wiki/GIF">Graphics Interchange Format</a></em> (GIF).  This supported upto 256 colours and its use of LZW data compression was much more efficient than RLE.  The original release was known as GIF87 and a further release was made in 1989 called GIF89a which added several features, most notably animation.  However, not all <em>GIF</em> viewers can view the '89 version of the files so there is a program called <a href="http://www.classiccmp.org/cpmarchives/cpm/mirrors/ftp.demon.com/pub/cpm/gifstrip.arc" title="gifstrip.arc">GIFSTRIP</a> to convert GIF89a images to GIF87.  There are a few GIF viewers for CP/M:</p>
+<ul>
+<li>
+<p><strong>GIFVIEW v1.05</strong> - A GIF viewer for the Amstrad PCW.  It was released by John Elliott in 1996 and is available from his <a href="https://www.seasip.info/Cpm/software/amstrad.html">John Elliott's Amstrad CP/M Software</a> page as <em>PWGIFSEA.COM</em>.  This is a self-extracting archive and the program allows you to view image files in GIF87 or GIF89a format as monochrome or greyscale images.</p>
+</li>
+<li>
+<p><strong>GIFPAS</strong> - The Turbo Pascal source for a GIF viewer/printer.  This is useful if you want to adapt a GIF viewer to your own machine.  It can be found on the <a href="http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD/">Walnut Creek CD</a> <em>uuencoded</em> within <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/graphics/gifcpm.zip" title="gifcpm.zip">two emails</a> about it, dated 1992.</p>
+</li>
+<li>
+<p><strong>VALGIF</strong> - This was available for the Epson QX-10/QX-16.  I've seen it mentioned in a few places, such as on <a href="http://www.vcfed.org/forum/archive/index.php/t-48690.html">Vintage Computer Federation Forum</a>, which has documentation dating to 1989.  The documentation says that it could also view <em>RLE</em> files, but I haven't been unable to obtain a copy of the program.</p>
+</li>
+</ul>
+<h2>.BMP</h2>
+<img src="/img/articles/cpm_pcw_bmp.png" class="img-right" style="width: 300px; clear: right;" title="PCWBMP on an Amstrad PCW">
+<p>Microsoft developed the <em><a href="https://en.wikipedia.org/wiki/BMP_file_format">BMP</a></em> format in 1987 to store Device Independent Bitmaps and was first used in Windows 2.0.  It supports compression using RLE or a form of Huffman coding.  I found one viewer for this format:</p>
+<ul>
+<li><strong>PCWBMP v1.5</strong> - A BMP viewer for the Amstrad PCW, released by John Elliott in 1996 and available from <a href="https://www.seasip.info/Cpm/software/amstrad.html">John Elliott's Amstrad CP/M Software</a> page as <em>PWBMPSEA.COM</em>.  It can only view uncompressed <em>.BMP</em> files in monochrome or greyscale.</li>
+</ul>
+<h2>Miscellaneous Formats</h2>
+<p>There were many other formats supported by various applications, which tended to be specific to a single machine or hardware manufacturer.  Some of the most notable are:</p>
+<dl>
+  <dt>Stop Press: .SPC, .CUT</dt>
+  <dd>A Desktop publishing application for the Amstrad PCW.</dd>
+  <dt>Valdocs</dt>
+  <dd>An integrated software suite featuring a word processor; spreadsheet; charting, graphing and painting applications; email and more.  It was written for the Epson QX-10/QX-16.</dd>
+  <dt>DR Graph</dt>
+  <dd>A graphing program written by Digital Research which used a GSX driver.</dd>
+  <dt>DR Draw</dt>
+  <dd>A drawing program written by Digital Research which used a GSX driver.</dd>
+</dl>
+<h2>Video Demonstrating the Image Viewers</h2>
+<p>You can see some of the images viewers in action on various types of machine in the following video.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/P9krXcdcV9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Image Viewers on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/image-viewers-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F&title=Image%20Viewers%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F&quote=Image%20Viewers%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F&text=Image%20Viewers%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Image%20Viewers%20on%20CP%2FM&body=CP%2FM%20is%20by%20default%20a%20text-only%20affair.%20%20However%2C%20many%20of%20the%20machines%20that%20can%20run%20CP%2FM%20have%20hardware%20that%20would%20allow%20them%20to%20display%20graphics.%20%20As%20BBSing%20started%20to%20grow%20so%20too%20did%20the%20distribution%20o...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Image%20Viewers%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fimage-viewers-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-03-11">
+        11 March 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
+  &nbsp;
+  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/">DABAR: A Hebrew Vocabulary Drill System on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2019-09-19">
+        19 September 2019
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I recently came across an interesting program called DABAR to drill Hebrew vocabulary.  The program works in a similar way to flash cards, by displaying a word in Hebrew and then asking for its English...
+  &nbsp;
+  <a class="readMore" href="/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/">Backgammon: The Peelgrunt Game of Gammon IV on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2019-08-08">
+         8 August 2019
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/games/">Games</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  My favourite traditional board game is Backgammon and the best version I have found for CP/M is The Peelgrunt Game of Gammon IV, v2.0 released 1st April 1986 by David C. Oshel.  It is available on the ...
+  &nbsp;
+  <a class="readMore" href="/articles/backgammon-the-peelgrunt-game-of-gammon-iv-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/dir-alternatives-on-cpm/">DIR Alternatives on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2019-07-13">
+        13 July 2019
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  There are lots of great alternatives to the standard CP/M DIR command, which add extra functionality and combine features that normally have to be accessed through other CP/M commands such as STAT or S...
+  &nbsp;
+  <a class="readMore" href="/articles/dir-alternatives-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/mission-impossible-on-cpm/">Mission: Impossible on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2019-06-19">
+        19 June 2019
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/games/">Games</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Mission: Impossible simulates a foreign espionage mission based on the TV series.  Your mission, should you decide to accept it, is to recover the objects or person taken by enemy agents and hidden in ...
+  &nbsp;
+  <a class="readMore" href="/articles/mission-impossible-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
