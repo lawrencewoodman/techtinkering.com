@@ -2,9 +2,28 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-09-03</updated>
+  <updated>2020-09-17</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Walnut Creek CD: .RLE Images</title>
+      <id>https://techtinkering.com/articles/walnut-creek-cd-rle-images/</id>
+      <link href="https://techtinkering.com/articles/walnut-creek-cd-rle-images/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-09-17
+        </published>
+
+        <updated>
+          2020-09-17
+        </updated>
+
+        <summary>The Walnut Creek CD has lots of images on it from the 1980s and this article displays a selection of the .RLE images that can be found on the CD.  Where there are duplicates they are only shown once.
+.</summary>
+    </entry>
     <entry>
       <title>Image Viewers on CP/M</title>
       <id>https://techtinkering.com/articles/image-viewers-on-cpm/</id>
