@@ -21,6 +21,21 @@ file copy [file join $articleImagesDir *.png] \
           [file join $articleImagesDir *.gif] \
           [www::makeDestination img articles]
 
+set articleWalnutCreekCDRdump10ImagesDir \
+    [dir content static img articles walnut_creek_cd rdump10]
+file copy [file join $articleWalnutCreekCDRdump10ImagesDir *.png] \
+          [www::makeDestination img articles walnut_creek_cd rdump10]
+
+set articleWalnutCreekCDRlegraf1ImagesDir \
+    [dir content static img articles walnut_creek_cd rlegraf1]
+file copy [file join $articleWalnutCreekCDRlegraf1ImagesDir *.png] \
+          [www::makeDestination img articles walnut_creek_cd rlegraf1]
+
+set articleWalnutCreekCDEnterprsC64GfxImagesDir \
+    [dir content static img articles walnut_creek_cd enterprs.c64.gfx]
+file copy [file join $articleWalnutCreekCDEnterprsC64GfxImagesDir *.png] \
+          [www::makeDestination img articles walnut_creek_cd enterprs.c64.gfx]
+
 set socialImagesDir [dir content static img social_images]
 file copy [file join $socialImagesDir *.png] \
           [file join $socialImagesDir *.jpg] \
