@@ -4,6 +4,8 @@ The [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Softwa
 
 CompuServe developed what is probably the earliest widespread image format in the mid eighties, possibly before 1985.  It encodes black and white images in resolutions of 128×96 or 256×192, compressed using [Run Length Encoding](https://en.wikipedia.org/wiki/Run-length_encoding).  I have taken a look at some .RLE image viewers for CP/M in a recent article: [Image Viewers on CP/M](/articles/image-viewers-on-cpm/).
 
+An interesting detail that can be seen on some of the images is that they have been signed with a CompuServe user ID in the form 7xxxx,xxx and 7xxxx,xxxx.
+
 ## File: rdump10.lbr
 
 The following images were contained within the file, [rdump10.lbr](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/graphics/rdump10.lbr "rdump10.lbr"), on the [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD/).  This file can be found in the following location on the CD:
