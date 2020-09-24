@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-09-18</updated>
+  <updated>2020-09-24</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Walnut Creek CD: C64 Images</title>
+      <id>https://techtinkering.com/articles/walnut-creek-cd-c64-images/</id>
+      <link href="https://techtinkering.com/articles/walnut-creek-cd-c64-images/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-09-24
+        </published>
+
+        <updated>
+          2020-09-24
+        </updated>
+
+        <summary>The Walnut Creek CD has a number of images on it from the 1980s and this article displays a selection of the Commodore C64 images that can be found on the CD.  The ones shown here are in either Koala P</summary>
+    </entry>
     <entry>
       <title>Walnut Creek CD: .RLE Images</title>
       <id>https://techtinkering.com/articles/walnut-creek-cd-rle-images/</id>
