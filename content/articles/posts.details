@@ -1,3 +1,15 @@
+{ filename    2020-09-24-walnut-creek-cd-c64-images.md
+  title       "Walnut Creek CD: C64 Images"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "walnut_creek_cd_c64_ggego.cmd.png"
+  hideLicence true
+  extraDisclaimer "The copyright of the images remains with the original owners and I make no claim to them.  They are contained here as they have been freely available via the Walnut Creek CD for over 20 years."
+  tags        {"Retro" "Images"}
+}
+
 { filename    2020-09-17-walnut-creek-cd-rle-images.md
   title       "Walnut Creek CD: .RLE Images"
   author      {
@@ -8,7 +20,7 @@
   twitterID   "1306614941340831745"
   hideLicence true
   extraDisclaimer "The copyright of the images remains with the original owners and I make no claim to them.  They are contained here as they have been freely available via the Walnut Creek CD for over 20 years."
-  tags        {"Retro"}
+  tags        {"Retro" "Images"}
 }
 
 { filename    2020-09-03-image-viewers-on-cpm.md
@@ -19,7 +31,7 @@
   }
   socialImg   "cpm_c128_pcxem.png"
   twitterID   "1301527048016535553"
-  tags        {"CP/M" "Retro"}
+  tags        {"CP/M" "Retro" "Images"}
 }
 
 { filename    2020-07-23-terminal-programs-for-bbsing-on-the-commodore-vic-20.md
