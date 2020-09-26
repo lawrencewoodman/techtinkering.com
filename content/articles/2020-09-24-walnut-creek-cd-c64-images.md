@@ -1,9 +1,9 @@
-The [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD/) has a number of images on it from the 1980s and this article displays a selection of the Commodore C64 images that can be found on the CD.  The ones shown here are in either Koala Painter or Doodle format.
+The [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD/) has a number of images on it from the 1980s and this article displays a selection of the Commodore C64 images that can be found on the CD.  The quality of some of these pictures is great for this time period and I really enjoyed recovering them.
 
 
 ## Directory: /enterprs/c64/gfx/
 
-The images below are contained within the following directory on the Walnut Creek CD.
+The images below are contained within the following directory on the Walnut Creek CD and are in either Koala Painter or Doodle format.
 * [/enterprs/c64/gfx/](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD/enterprs/c64/gfx/)
 
 <img src="/img/articles/walnut_creek_cd/enterprs.c64.gfx/gg66chev.png" class="img-right" style="width: 400px;" title="gg66chev.cbm">
