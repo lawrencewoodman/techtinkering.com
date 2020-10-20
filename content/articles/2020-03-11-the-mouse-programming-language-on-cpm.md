@@ -1,8 +1,8 @@
-Mouse is an interpreted stack orientated language designed by [Peter Grogono](https://users.encs.concordia.ca/~grogono/) around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  One obvious difference to Forth is that Mouse interprets a steam of characters most of which are only a single character and it relies more on variables rather than rearranging the stack as much.  The version for CP/M on the [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/) is quite small at only 2k.  
+Mouse is an interpreted stack orientated language designed by [Peter Grogono](https://users.encs.concordia.ca/~grogono/) around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  One obvious difference to Forth is that Mouse interprets a steam of characters most of which are only a single character and it relies more on variables rather than rearranging the stack as much.  The version for CP/M on the [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/) is quite small at only 2k.
 
 Peter Grogono says in [Byte Magazine Volume 04 Number 07 - July 1979](https://archive.org/details/byte-magazine-1979-07/page/n197/mode/2up):
 
-<blockquote cite="https://archive.org/details/byte-magazine-1979-07/page/n197/mode/2up">The justification for Mouse is that it incorporates many features of high level languages, yet it can be implemented without the resources needed by most high level languages.  More specifically, Mouse programs demonstrate the use and implementation of arrays, functions, procedures, nested control structures, local variables, recursion and several methods of passing parameters from one procedure to another.</blockquote> 
+<blockquote cite="https://archive.org/details/byte-magazine-1979-07/page/n197/mode/2up">The justification for Mouse is that it incorporates many features of high level languages, yet it can be implemented without the resources needed by most high level languages.  More specifically, Mouse programs demonstrate the use and implementation of arrays, functions, procedures, nested control structures, local variables, recursion and several methods of passing parameters from one procedure to another.</blockquote>
 
 
 ## Hello, World! Example
@@ -57,11 +57,11 @@ Most instructions are a single character and all numbers are integers.
   <tr><td class="centre">'&lt;char&gt;</td><td>Character literal</td><td>Push the ASCII code for the character &lt;char&gt; onto stack</td></tr>
   <tr><td class="centre">"</td><td>Output string</td><td>Display each character between the double quote and the next double quote.  Translate exclamation marks to newlines.</td></tr>
   <tr><td class="centre">&lt;letter&gt;</td><td>Variable address</td>
-      <td>Convert the letter to an integer in the range 
-          0..25 (A = a = 0, B = b = 1, ..., Z = z = 25).  Add this 
-          value, which is an address in Data, to OffSet and push the 
-          result onto Stack.  NOTE:  LOCAL variables are supported. 
-          Lower case (a..z) variables are LOCAL. 
+      <td>Convert the letter to an integer in the range
+          0..25 (A = a = 0, B = b = 1, ..., Z = z = 25).  Add this
+          value, which is an address in Data, to OffSet and push the
+          result onto Stack.  NOTE:  LOCAL variables are supported.
+          Lower case (a..z) variables are LOCAL.
           Upper case (A..Z) variables are GLOBAL.
       </td></tr>
   <tr><td class="centre">:</td><td>Store</td>
@@ -70,7 +70,7 @@ Most instructions are a single character and all numbers are integers.
        of the first.
       </td></tr>
   <tr><td class="centre">.</td><td>Fetch</td>
-      <td>Pop an operand from stack and push the 
+      <td>Pop an operand from stack and push the
        value in Data of which it is the address.
       </td></tr>
   <tr><td class="centre">&lt;</td><td>Less than</td>
