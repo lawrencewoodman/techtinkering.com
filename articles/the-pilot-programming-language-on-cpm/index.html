@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>The Pilot Programming Language on CP/M</title>
+  <meta name="description" content="Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo bec">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="The Pilot Programming Language on CP/M">
+  <meta name="twitter:description" content="Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo bec">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_pilot_hello_pil.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Pilot Programming Language on CP/M">
+  <meta property="og:description" content="Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo bec">
+  <meta property="og:url" content="https://techtinkering.com/articles/the-pilot-programming-language-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_pilot_hello_pil.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/the-pilot-programming-language-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_pilot_hello_pil.png" />
+      <header>
+        <a href="/articles/the-pilot-programming-language-on-cpm/" title="The Pilot Programming Language on CP/M">
+          <h1 itemprop="headline name">The Pilot Programming Language on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-10-22">
+              22 October 2020
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p><a href="https://en.wikipedia.org/wiki/PILOT">Pilot</a> was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a> because of its use with children.  However, it is a much simpler language than Logo and really specializes in providing an easy way to create question and answer systems.</p>
+<h2>Language Description</h2>
+<p>Pilot source code consists of lines of the following format:</p>
+<p>[label][command][conditional expression]:[operands]</p>
+<p><em>Labels</em> are prefixed with <code>*</code> and are used by <code>J:</code> to Jump to and by <code>U:</code> to call a User subroutine.</p>
+<p>Common <em>Commands</em> are listed in a table below.</p>
+<p>The <em>conditional expression</em> is generally <code>Y</code> or <code>N</code> to indicate whether to execute the command based on the last <code>M:</code> Match command.  Some implementations of Pilot also support more complicated expressions.</p>
+<p>The <em>operands</em> for a command are delimited by commas.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th>Command</th><th>Action</th></tr>
+  <tr><td>A:&lt;Variable&gt;</td><td>Ask for keyboard input and put result in <em>Variable</em></td></tr>
+  <tr><td>C:&lt;Expression&gt;</td><td>Compute <em>Expression</em></td></tr>
+  <tr><td>E:</td><td>End user subroutine / program</td></tr>
+  <tr><td>J:&lt;Label&gt;</td><td>Jump to <em>Label</em></td></tr>
+  <tr><td>M:&lt;List&gt;</td><td>Match last keyboard input against any value in <em>List</em> (Set Y/N logic flag)</td></tr>
+  <tr><td>R:&lt;Comment&gt;</td><td>Remark / Comment</td></tr>
+  <tr><td>T:&lt;String&gt;</td><td>Type <em>String</em> to display</td></tr>
+  <tr><td>U:&lt;Label&gt;</td><td>Jump to a User subroutine at <em>Label</em></td></tr>
+</table></div>
+<p><em>Variables</em> are prefixed with a <code>$</code> if a string and for those implementations that support numbers they are generally prefixed with a <code>#</code>.</p>
+<h2>Example: Looping Hello, World!</h2>
+<p>This example prints 'Hello, World!' ten times with the number prefixing the string.</p>
+<pre><code class="language-text">         C: I=1
+*LOOP    T: #I Hello, World!
+         C: I=I+1
+         C: J=11-I
+      J(J): *LOOP
+         E:
+</code></pre>
+<p>The line to print the message, <code>*LOOP    T: #I Hello, World!</code>, uses <code>#I</code> to reference the variable <code>I</code>.  The loop is controlled by the line <code>J(J): *LOOP</code>, which uses a conditional expression, <code>(J)</code>, to indicate that the jump should be performed if 'J &gt; 0'.</p>
+<h2>Example: String Matching and Subroutines</h2>
+<p>This example demonstrates string matching and subroutines as it repeatedly asks a user to type <code>STRAWBERRIES</code>, <code>QUIT</code> or <code>EXIT</code>.  If the user types <code>STRAWBERRIES</code> it will tell the user how much it likes them with cream  and if the user types either <code>QUIT</code> or <code>EXIT</code> it will exit the program.</p>
+<pre><code class="language-text">*LOOP     T: TYPE STRAWBERRIES OR ELSE (OR QUIT OR EXIT)
+          A: $FRUIT
+          M: QUIT,EXIT
+         JY: *QUIT
+          M: STRAWBERRIES
+         UY: *ILIKE
+          J: *LOOP
+*ILIKE    T: I SURE LIKE $FRUIT AND CREAM
+*QUIT     E:
+</code></pre>
+<p>The line <code>A: $FRUIT</code> accepts a string into the variable <code>FRUIT</code>, which is then tested to see if it matches either <code>QUIT</code> or <code>EXIT</code> using <code>M: QUIT,EXIT</code>.  The <code>M:</code> command sets the logic flag which is then tested with <code>JY: *QUIT</code> and if it is true (Yes) then the program jumps to the label <code>*QUIT</code>.  If not then the accept string is tested against <code>STRAWBERRIES</code> and if it matches then the subroutine <code>*ILIKE</code> is called with, <code>UY: *ILIKE</code>.  The <code>*ILIKE</code> subroutine refers to the accepted input string through the variable <code>$FRUIT</code> in, <code>T: I SURE LIKE $FRUIT AND CREAM</code>.  Finally <code>E:</code> is used to exit the subroutine and doubles as the program quit indicator at <code>*QUIT</code>.  Unfortunately, for some reason <code>E:</code> doesn't seem to exit '8080 PILOT' properly.</p>
+<h2>8080 PILOT</h2>
+<p>8080 PILOT was written by John A. Starkweather, the original author of Pilot, under contract to the Lister Hill National Center for Biomedical Communications, National Library of Medicine.  This was ported to CP/M by John I. Frederick in 1977 and v1.2 is available on the Walnut Creek CD in <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/cpmug/cpmug012.ark" title="CPMUG012.ARK">CPMUG012.ARK</a>.  Although the version number of the executing program states v1.1.  Interestingly, although this version was released in 1977, John Starkweather says in the March 1982 edition of InfoWorld that <a href="https://books.google.co.uk/books?id=fz4EAAAAMBAJ&amp;pg=PA47&amp;redir_esc=y#v=onepage&amp;q&amp;f=false">he is <em>going</em> to release a CP/M version</a>.  There is a <a href="https://archive.org/details/dr_dobbs_journal_vol_02_201803/page/n173/mode/2up">Guide to 8080 Pilot, Version 1.1</a> in the April 1977 issue of Dr. Dobbs Journal.</p>
+<p>The examples above are written for <em>8080 PILOT</em>.</p>
+<h2>Z-80 PILOT</h2>
+<p>Also in the file <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/cpmug/cpmug012.ark" title="CPMUG012.ARK">CPMUG012.ARK</a> is a much smaller version of Pilot written for the Z-80.  The source code is only 7k and the .COM file is only 1k, compared to 8080 PILOT whose source code is 67k and .COM file is 5k.  However, this smaller size comes at a cost.  This version doesn't support subroutines or numeric variables.  It also refers to variables in a <code>T:</code> command using a <code>\</code>, e.g. <code>\fruit</code> and <code>A:</code> doesn't accept a variable name, instead it uses the label of the line on which the <code>A:</code> is being executed to indicate the variable name.  Despite these differences for many uses it wouldn't matter much if you just want to present information and question a user.</p>
+<h2>PILOT/80</h2>
+<p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/languags/pilot80/pilot80.lbr" title="pilot80.lbr">PILOT/80</a> was written in MBASIC by Kurt Albrecht and the version on the Walnut Creek CD is dated 1983.  It contains its own text-editor, although you can use any editor to create the Pilot source programs by saving them with a '.PIL' extension.  Its use of MBASIC does make it slower but that may not be much of a problem because it doesn't support maths through the <code>C:</code> command.  The documentation is good and I like the inclusion of the <code>I:</code> command to accept single key input as well as the <code>S:</code> command to handle screen functions such as <code>CLEAR</code> to clear the screen.</p>
+<h2>Pilot/P</h2>
+<p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/sigm/vols200/vol237/pilot-p.lbr" title="pilot-p.lbr">Pilot/P</a> takes Pilot source code and transpiles it to Pascal/Z source code.  It was written by David Mundie and Raymond E. Penley and the Walnut Creek CD contains v2.5 from 1984.  This implementation departs quite a lot from other Pilot implementations by having a more complex subroutine definition using <code>%:</code> and allowing Pascal statements to be integrated into the Pilot source code.  It also has additional commands such as <code>X:</code> to process an expression which then sets the logic flag.  One last significant change is that variables are referred to by the <code>T:</code> command by surrounding them with the <code>@</code> symbol, e.g. <code>@$varName@</code>.</p>
+<p>Pilot/P contains great documentation, has lots of examples and uses 'SUPERSUB' (renamed as 'DO.COM') to automate the process of transpiling to Pascal/Z source code, compiling and linking.</p>
+<h2>Video Demonstrating Pilot on CP/M</h2>
+<p>Pilot can be seen being used in the following video.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_6VpvHYHlrg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">The Pilot Programming Language on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/the-pilot-programming-language-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F&title=The%20Pilot%20Programming%20Language%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F&quote=The%20Pilot%20Programming%20Language%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F&text=The%20Pilot%20Programming%20Language%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=The%20Pilot%20Programming%20Language%20on%20CP%2FM&body=Pilot%20was%20created%20by%20John%20A.%20Starkweather%20in%20the%20early%201960s%20as%20a%20programming%20language%20for%20Computer%20Assisted%20Instruction.%20%20It%20has%20often%20been%20compared%20to%20Logo%20because%20of%20its%20use%20with%20children.%20%20However%2C...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20The%20Pilot%20Programming%20Language%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fthe-pilot-programming-language-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-03-11">
+        11 March 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
+  &nbsp;
+  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2013-03-12">
+        12 March 2013
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP...
+  &nbsp;
+  <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2013-03-05">
+         5 March 2013
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/pascal/">Pascal</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2008-10-22">
+        22 October 2008
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/c/">C</a></li>
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/z80/">Z80</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
+  &nbsp;
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/editor/">Editor</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

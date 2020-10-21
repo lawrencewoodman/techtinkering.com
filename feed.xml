@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-09-26</updated>
+  <updated>2020-10-21</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>The Pilot Programming Language on CP/M</title>
+      <id>https://techtinkering.com/articles/the-pilot-programming-language-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/the-pilot-programming-language-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-10-22
+        </published>
+
+        <updated>
+          2020-10-22
+        </updated>
+
+        <summary>Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,</summary>
+    </entry>
     <entry>
       <title>Walnut Creek CD: C64 Images</title>
       <id>https://techtinkering.com/articles/walnut-creek-cd-c64-images/</id>
