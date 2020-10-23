@@ -1,9 +1,14 @@
 !* commandSubst true variableSubst true
 ! set twitterID [getparam -default "" twitterID]
+! set hackerNewsID [getparam -default "" hackerNewsID]
 <div class="contact">
   <ul>
 !   if {$twitterID ne ""} {
       <li><a href="https://twitter.com/TechTinkering/status/$twitterID" target="_blank" title="Discuss on Twitter">Twitter</a></li>
+!   }
+
+!   if {$hackerNewsID ne ""} {
+      <li><a href="https://news.ycombinator.com/item?id=$hackerNewsID" target="_blank" title="Discuss on Hacker News">Hacker News</a></li>
 !   }
 
     <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20[www::encodeURL [getparam title]]&body=Article%20URL:%20[www::encodeURL [www::url -full [getparam url]]]%0A" title="Send us an email">Email</a></li>
