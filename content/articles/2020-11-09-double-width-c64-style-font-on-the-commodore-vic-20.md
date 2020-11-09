@@ -90,10 +90,10 @@ Finally we create a short program to load the machine code routine into memory, 
 It is worth highlighting a few points in the code:
 * Location 51/52 points to the bottom of BASIC active strings and hence the top of
   available free space.  On an unexpanded system it defaults to: 7680 ($1E00), by poking 28 ($1C) into 52 this lowers it to 7168 ($1C00).
-* Location 55/56 point to the end of BASIC memory.  On an unexpanded system it defaults to: 7680 ($1E00), by poking 28 ($1C) into 56 this lowers it to 7168 ($1C00).
+* Location 55/56 points to the end of BASIC memory.  On an unexpanded system it defaults to: 7680 ($1E00), by poking 28 ($1C) into 56 this lowers it to 7168 ($1C00).
 * The command `clr`, clears program variables and registers the bottom of BASIC active strings and end of BASIC memory.
-* Location 673 ($02A1) is the location we assembled the machine code to.  There is an area of memory from 673-767 ($02A1-$02FF) which is used user user indirect vectors or other storage and hence is a good location to put our machine code routine.
-* Location 36869 controls the location of the character set.  Ee set it to 255 as this sets the location to 7168 ($1C00), just below the screen map at 7680 ($1E00).  To see more about setting the character map location look at: [Mapping the Vic, p.129-133](https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/page/n149/mode/2up).
+* Location 673 ($02A1) is the location we assembled the machine code to.  There is an area of memory from 673-767 ($02A1-$02FF) which is used for user indirect vectors or other storage and hence is a good location to put our machine code routine.
+* Location 36869 ($9005) controls the location of the character set.  We set it to 255 as this sets the location to 7168 ($1C00), just below the screen map at 7680 ($1E00).  To see more about setting the character map location look at: [Mapping the Vic, p.129-133](https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/page/n149/mode/2up).
 
 
 ## Video Demonstrating Fat Font
