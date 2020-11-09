@@ -61,7 +61,7 @@ loop        lda  $8000,y       ; Get row of character from ROM
 
 ### Machine Code
 
-Next we assemble the routine to muchine code using location $02A1-$02C0 to store it in.
+Next we assemble the routine to machine code using location $02A1-$02C0 to store it in.
 
 ``` text
 a0 00 b9 00 80 aa 0a 85 0a 8a 05 0a 99 00 1c
