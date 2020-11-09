@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>SUBLEQ on the Commodore VIC-20</title>
-  <meta name="description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
+  <title>Double-Width C64 Style Font on the Commodore VIC-20</title>
+  <meta name="description" content="The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the V">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="SUBLEQ on the Commodore VIC-20">
-  <meta name="twitter:description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
+  <meta name="twitter:title" content="Double-Width C64 Style Font on the Commodore VIC-20">
+  <meta name="twitter:description" content="The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the V">
     <meta name="twitter:image"
-         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png">
+         content="https://techtinkering.com/img/social_images/vic20_screenshot_fat_listing_postrun.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SUBLEQ on the Commodore VIC-20">
-  <meta property="og:description" content="I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stan">
-  <meta property="og:url" content="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/">
+  <meta property="og:title" content="Double-Width C64 Style Font on the Commodore VIC-20">
+  <meta property="og:description" content="The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the V">
+  <meta property="og:url" content="https://techtinkering.com/articles/double-width-c64-style-font-on-the-commodore-vic-20/">
     <meta property="og:image"
-         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png">
+         content="https://techtinkering.com/img/social_images/vic20_screenshot_fat_listing_postrun.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -40,7 +40,7 @@
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/">
+  <link rel="canonical" href="https://techtinkering.com/articles/double-width-c64-style-font-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="https://feedproxy.google.com/TechTinkering" />
 
@@ -121,15 +121,15 @@
       <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
     <meta itemprop="image"
-         content="https://techtinkering.com/img/social_images/vic20_subleq_fizzbuzz.png" />
+         content="https://techtinkering.com/img/social_images/vic20_screenshot_fat_listing_postrun.png" />
       <header>
-        <a href="/articles/subleq-on-the-commodore-vic-20/" title="SUBLEQ on the Commodore VIC-20">
-          <h1 itemprop="headline name">SUBLEQ on the Commodore VIC-20</h1>
+        <a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/" title="Double-Width C64 Style Font on the Commodore VIC-20">
+          <h1 itemprop="headline name">Double-Width C64 Style Font on the Commodore VIC-20</h1>
         </a>
         <div>
             <time itemprop="datePublished"
-                  datetime="2020-07-09">
-               9 July 2020
+                  datetime="2020-11-09">
+               9 November 2020
             </time>
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
@@ -145,74 +145,82 @@
           <ul class="tags">
               <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
               <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-              <li>#<a href="/articles/tag/oisc/">OISC</a></li>
               <li>#<a href="/articles/tag/programming/">Programming</a></li>
               <li>#<a href="/articles/tag/retro/">Retro</a></li>
-              <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
               <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
           </ul>
         </div>
       </header>
         <div itemprop="articleBody">
-        <p>I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for <em>SUbtract and Branch if Less than or EQual to zero</em>.  Code for the VM can be found in the <a href="https://github.com/lawrencewoodman/subleq_vic20">subleq_vic20 repo</a> on GitHub.</p>
-<h2>SUBLEQ (SUbtract and Branch if Less than or EQual to zero)</h2>
-<p>The SUBLEQ instruction stands for <em>SUbtract and Branch if Less than or EQual to zero</em>.  Because there is only one instruction, only the operands are specified, which consist of 3 memory addresses that are acted on as follows:</p>
-<pre><code class="language-text">SUBLEQ a, b, c
-Mem[b] := Mem[b] - Mem[a]
-if (Mem[b] ≤ 0) goto c
+        <p>The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look quite nice and there's an easy way of replicating something similar on the VIC-20.</p>
+<p>Rather than loading in a whole new font we can double the width of the existing font stored in ROM to create a new fatter font in RAM, which we can then point to.</p>
+<h2>Standard Character Definitions</h2>
+<img src="/img/articles/vic20_standard_letter_a_close_cropped_small.png" class="img-right" style="width: 300px; clear: right;" title="Standard VIC-20 letter 'A' Character Definition">
+<p>Each character definition is stored in ROM and for this demonstration we'll base our new fatter font on the uppercase characters stored from location 32768 ($8000).  Because this example is for an unexpanded VIC-20 we'll only use the first 64 characters.</p>
+<p>The Vic uses 8x8 fonts as default and each character definition is stored as a series of 8 bytes with each byte representing a row of the definition.</p>
+<h2>Fat Double-width Character Definition</h2>
+<img src="/img/articles/vic20_fat_letter_a_close_cropped_small.png" class="img-right" style="width: 300px; clear: right;" title="Fat double-width letter 'A' Character Definition">
+<p>To create the double-width font we get the value of each line of the original font, double it and then <em>OR</em> it with the original value.  This has the effect of doubling each pixel's width in the character definition.</p>
+<p>This looks like the following where <code>a</code> equals the original value of the row in the character definition and <code>b</code> is the new value.</p>
+<pre><code class="language-text">b := a or (a*2)
 </code></pre>
-<p>To find out more about SUBLEQ have a look at my previous article: <a href="https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a> and its accompanying <a href="https://www.youtube.com/watch?v=o0e7_U7ZmBM" title="SUBLEQ - A One Instruction Set Computer (OISC)">video</a>.</p>
-<h2>Example: echo</h2>
-<p>The following executes a simple SUBLEQ program that loops continuously, accepting a key as input and then displaying it on the screen.  It is taken from an example in the <a href="https://github.com/lawrencewoodman/subleq_vic20">subleq_vic20 repo</a>.</p>
-<pre><code class="language-asm6502">            jmp main
+<p>All we need to do then is go through each row of each character definition and store the results in RAM.  Once we have stored them in RAM, we use location 36869 ($9005) to set the character map address to our location in RAM.</p>
+<h2>A Short Program to Create a Fat Font</h2>
+<p>The following program will use the first 64 characters of the uppercase character set to create a double-width font.  Because we're only altering the first 64 characters it means that the reverse characters aren't defined as usual so the cursor won't blink properly nor will the characters above 63 be defined properly.</p>
+<h3>Assembly</h3>
+<p>First we'll create a little routine in assembly language to create the double-width font in RAM from location 7168 ($1C00).  This location is being used because we are creating a custom character set with 64 entries and 7680 (Start of screen memory) - 512 (8*64 characters) = 7168.</p>
+<pre><code class="language-asm6502">TMP       = $0A                ; Store result of shift
 
-; Point the SUBLEQ VM's memory to the SUBLEQ program code
-SL_MEM      = prog
-
-; Include the SUBLEQ virtual machine
-#include &quot;subleq.a65&quot;
-
-main        ; SL_run starts the VM executing at SL_MEM
-            jsr SL_run
+            ldy  #$00
+loop        lda  $8000,y       ; Get row of character from ROM
+            tax
+            asl                ; Double the value for the row
+            sta  TMP
+            txa
+            ora  TMP
+            sta  $1C00,y       ; Store row of character in RAM
+            lda  $8100,y       ; Get row of character from ROM
+            tax
+            asl                ; Double the value for the row
+            sta  TMP
+            txa
+            ora  TMP
+            sta  $1D00,y       ; Store row of character in RAM
+            iny
+            bne  loop
             rts
-
-; The SUBLEQ program code
-prog        .word -1, -1, 3
-            .word 6, 6, 0
-            .word 0
 </code></pre>
-<br />
-<p>This SUBLEQ program would look like the following in my <a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> assembly language, which uses <code>sble</code> to indicate a SUBLEQ instruction.</p>
-<pre><code class="language-nasm">.equ        IN  -1
-.equ        OUT -1
-
-loop:       sble  IN, OUT
-            sble  z, z, loop
-z:          .word 0
+<h3>Machine Code</h3>
+<p>Next we assemble the routine to muchine code using location $02A1-$02C0 to store it in.</p>
+<pre><code class="language-text">a0 00 b9 00 80 aa 0a 85 0a 8a 05 0a 99 00 1c
+b9 00 81 aa 0a 85 0a 8a 05 0a 99 00 1d c8 d0
+e3 60
 </code></pre>
-<p>The assembler assumes that if the last argument of the <code>sble</code> instruction isn't supplied then it will be equal to the next location in memory.  It doesn't actually store an opcode for the <code>sble</code> instruction as there is only one instruction so only the operands are needed.</p>
-<h2>Creating a New SUBLEQ Program Loader</h2>
-<p>This SUBLEQ VM for the Vic uses 16-bit words and to load a new SUBLEQ program into it you can follow these steps.</p>
-<ol>
-<li>Create a file containing you're SUBLEQ program as a series of numbers.  To do this you can use my <a href="https://github.com/lawrencewoodman/sblasm">sblasm</a> assembler.  Which also contains a number of examples to try and contains a file to link to 'arch.inc.asq' to provide correct values for the VIC-20.</li>
-<li>Use the <em>sqtoword.tcl</em> script to convert the output from <em>sblasm</em> to <code>.word</code> entries, using someting like the following for a <em>fizzbuzz</em> program:
-<pre><code class="language-text">$ tclsh sqtoword.tcl -n 12 fizzbuzz.sq &gt; fizzbuzz.words
+<h3>BASIC</h3>
+<p>Finally we create a short program to load the machine code routine into memory, execute it and point to the new character map.</p>
+<pre><code class="language-basic">10 poke 52,28:poke 56,28:clr
+20 for i=673to704:read a:poke i,a:next i
+30 sys 673
+40 poke 36869,255
+50 data 160,0,185,0,128,170,10,133,10,138,5,10,153,0,28
+60 data 185,0,129,170,10,133,10,138,5,10,153,0,29,200,208
+70 data 227,96
 </code></pre>
-The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.</li>
-<li>There are included skeleton files for unexpanded and 8k+ systems.  Append the output of <em>sqtoword.tcl</em> to one of them:
-<pre><code class="language-text">$ cat skeleton_8k.a65 fizzbuzz.words &gt; fizzbuzz.a65
-</code></pre>
-</li>
-<li>Assemble the file using <a href="https://www.floodgap.com/retrotech/xa/">XA</a>, making sure that the path to 'subleq.a65' is in the include path:
-<pre><code class="language-text">$ xa -o fizzbuzz.prg fizzbuzz.a65
-</code></pre>
-</li>
-<li>Load the program on your VIC-20 with 8K+ ram expansion and type <code>RUN</code> to start it.</li>
-</ol>
-<h2>Video Demonstrating the SUBLEQ VM on the VIC-20</h2>
-<p>You can see the SUBLEQ VM being used on a Commodore VIC-20 in the following video.  It shows the process of assembling a 'rock, paper, scissors' game written in SUBLEQ using <em>sblasm</em>, creating a <em>.a65</em> file, assembling that with XA and then running it on a VIC.</p>
+<img src="/img/articles/vic20_fatfont_run_and_listing_prerun.png" class="img-right" style="width: 400px; clear: right;" title="Double-width fat font listing before run">
+<img src="/img/articles/vic20_fatfont_run_and_listing_postrun.png" class="img-right" style="width: 400px; clear: right;" title="Double-width fat font listing after run">
+<p>It is worth highlighting a few points in the code:</p>
+<ul>
+<li>Location 51/52 points to the bottom of BASIC active strings and hence the top of
+available free space.  On an unexpanded system it defaults to: 7680 ($1E00), by poking 28 ($1C) into 52 this lowers it to 7168 ($1C00).</li>
+<li>Location 55/56 point to the end of BASIC memory.  On an unexpanded system it defaults to: 7680 ($1E00), by poking 28 ($1C) into 56 this lowers it to 7168 ($1C00).</li>
+<li>The command <code>clr</code>, clears program variables and registers the bottom of BASIC active strings and end of BASIC memory.</li>
+<li>Location 673 ($02A1) is the location we assembled the machine code to.  There is an area of memory from 673-767 ($02A1-$02FF) which is used user user indirect vectors or other storage and hence is a good location to put our machine code routine.</li>
+<li>Location 36869 controls the location of the character set.  Ee set it to 255 as this sets the location to 7168 ($1C00), just below the screen map at 7680 ($1E00).  To see more about setting the character map location look at: <a href="https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/page/n149/mode/2up">Mapping the Vic, p.129-133</a>.</li>
+</ul>
+<h2>Video Demonstrating Fat Font</h2>
+<p>The double-width fat font can be seen in the following video.</p>
 <div class="youtube-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/YwjlblkTNqs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NeRNb4vB54U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -223,8 +231,8 @@ The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.
       <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
     </a>
     <br />
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">SUBLEQ on the Commodore VIC-20</span>
-    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/subleq-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Double-Width C64 Style Font on the Commodore VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/double-width-c64-style-font-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
    is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
    
   </div>
@@ -234,20 +242,19 @@ The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.
     <h2 style="margin-top:0;">Share This Post</h2>
     <div class="contact">
   <ul>
-    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&title=SUBLEQ%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&quote=SUBLEQ%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
-    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&text=SUBLEQ%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-    <li><a href="mailto:?subject=SUBLEQ%20on%20the%20Commodore%20VIC-20&body=I%20have%20created%20a%20SUBLEQ%20Virtual%20Machine%20for%20the%20Commodore%20VIC-20.%20%20SUBLEQ%20is%20a%20computer%20architecture%20that%20has%20only%20one%20instruction%3A%20SUBLEQ.%20%20The%20instruction%20stands%20for%20SUbtract%20and%20Branch%20if%20Less%20than%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F&title=Double-Width%20C64%20Style%20Font%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F&quote=Double-Width%20C64%20Style%20Font%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F&text=Double-Width%20C64%20Style%20Font%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Double-Width%20C64%20Style%20Font%20on%20the%20Commodore%20VIC-20&body=The%20C64%20used%20a%20fatter%20double-width%20font%20because%20the%20video%20quality%20of%20early%20VIC-IIs%20wasn%27t%20very%20good.%20%20Therefore%20they%20had%20to%20make%20the%20C64%27s%20font%20fatter%20than%20the%20VIC-20%27s.%20%20However%2C%20this%20fatter%20font%20look...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
   </ul>
 </div>
 
     <h2>Feedback/Discuss</h2>
     <div class="contact">
   <ul>
-      <li><a href="https://twitter.com/TechTinkering/status/1281253795016687628" target="_blank" title="Discuss on Twitter">Twitter</a></li>
 
 
-    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20SUBLEQ%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsubleq-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Double-Width%20C64%20Style%20Font%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fdouble-width-c64-style-font-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
   </ul>
 </div>
   </div>
@@ -268,24 +275,26 @@ The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.
     <h2>Related Articles</h2>
     <div class="margin-buffer">
       <header>
-  <h2><a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Double-Width C64 Style Font on the Commodore VIC-20</a></h2>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
   <span class="post-meta">
-      <time datetime="2020-11-09">
-         9 November 2020
+      <time datetime="2020-07-09">
+         9 July 2020
       </time>
     <ul class="tags">
       <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
       <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
       <li>#<a href="/articles/tag/programming/">Programming</a></li>
       <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
       <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
     </ul>
   </span>
 </header>
 <div>
-  The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look...
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
   &nbsp;
-  <a class="readMore" href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Read More</a>
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
 </div>
 <br />
       <header>
