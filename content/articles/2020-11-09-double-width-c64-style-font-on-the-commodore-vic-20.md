@@ -35,38 +35,33 @@ The following program will use the first 64 characters of the uppercase characte
 First we'll create a little routine in assembly language to create the double-width font in RAM from location 7168 ($1C00).  This location is being used because we are creating a custom character set with 64 entries and 7680 (Start of screen memory) - 512 (8*64 characters) = 7168.
 
 ``` asm6502
-TMP       = $0A                ; Store result of shift
-
             ldy  #$00
 loop        lda  $8000,y       ; Get row of character from ROM
-            tax
             asl                ; Double the value for the row
-            sta  TMP
-            txa
-            ora  TMP
+            ora  $8000,y
             sta  $1C00,y       ; Store row of character in RAM
             lda  $8100,y       ; Get row of character from ROM
-            tax
             asl                ; Double the value for the row
-            sta  TMP
-            txa
-            ora  TMP
+            ora  $8100,y
             sta  $1D00,y       ; Store row of character in RAM
             iny
             bne  loop
             rts
 ```
 
-
+_Thanks to C.S. Bruce for his suggestions to make this more succinct._
 
 ### Machine Code
 
-Next we assemble the routine to machine code using location $02A1-$02C0 to store it in.
+Next we assemble the routine to machine code using location $02A1-$02BA to store it in.
 
 ``` text
-a0 00 b9 00 80 aa 0a 85 0a 8a 05 0a 99 00 1c
-b9 00 81 aa 0a 85 0a 8a 05 0a 99 00 1d c8 d0
-e3 60
+02A1: A0 00 B9 00 80
+02A6: 0A 19 00 80 99
+02AB: 00 1C B9 00 81
+02B0: 0A 19 00 81 99
+02B5: 00 1D C8 D0 E9
+02BA: 60
 ```
 
 ### BASIC
@@ -75,12 +70,12 @@ Finally we create a short program to load the machine code routine into memory, 
 
 ``` basic
 10 poke 52,28:poke 56,28:clr
-20 for i=673to704:read a:poke i,a:next i
+20 for i=673to698:read a:poke i,a:next i
 30 sys 673
 40 poke 36869,255
-50 data 160,0,185,0,128,170,10,133,10,138,5,10,153,0,28
-60 data 185,0,129,170,10,133,10,138,5,10,153,0,29,200,208
-70 data 227,96
+50 data 160,0,185,0,128,10,25,0,128,153
+60 data 0,28,185,0,129,10,25,0,129,153
+70 data 0,29,200,208,233,96
 ```
 
 <img src="/img/articles/vic20_fatfont_run_and_listing_prerun.png" class="img-right" style="width: 400px; clear: right;" title="Double-width fat font listing before run">
