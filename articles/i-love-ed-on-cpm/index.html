@@ -169,9 +169,17 @@
   <tr><td><code>T</code></td><td>Display the rest of the line from CP to end </td></tr>
   <tr><td><code>6Z</code></td><td>Pause</td></tr>
   <tr><td><code>-3C</code></td><td>Move CP back 3 characters</td></tr>
-  <tr><td style="padding-right: 2em;"><code>SCPM^ZCP/M^</code></td><td>Substitute 'CPM' for 'CP/M'</td></tr>
+  <tr><td style="width: 17ex;"><code>SCPM^ZCP/M^</code></td><td>Substitute 'CPM' for 'CP/M'</td></tr>
 </table>
 <p><code>^Z</code> in the above is CTRL-Z and indicates the end of an argument for a command.</p>
+<p>The above macro could also be written:</p>
+<pre><code>MFCPM^Z0TT6Z-3DICP/M^Z
+</code></pre>
+<p>In which case:</p>
+<table>
+  <tr><td><code>-3D</code></td><td>Delete the 3 previous characters</td></tr>
+  <tr><td style="width: 17ex;"><code>ICPM^Z</code></td><td>Insert the text 'CP/M'</td></tr>
+</table>
 <h2>Video</h2>
 <p>The video below shows ED being used properly and some of the things that make it great, including searching and replacing text, copying and pasting, macros and handling files bigger than the available memory.</p>
 <div class="youtube-wrapper">
