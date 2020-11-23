@@ -83,14 +83,7 @@ In the table above the following holds true:
 </dl>
 
 
-## CP/M Plus
-
-ED for CP/M Plus has a few enhancements over the one for CP/M 2.2, the most notable of which are:
-* It can open a file and send edited result to another file.  CP/M 2.2 is limited to being able to only edit the source file in place or to put the output on another drive but not specify the filename.
-* The 'X' command can be given a filename to specify which file you want to write to
-
-The [CP/M 3 User's Guide](https://archive.org/details/CP-M_Plus_Users_Programmers_and_System_Guides_1983_Digital_Research/page/n171/mode/2up) has a good description of its use under CP/M Plus.
-
+<br />
 
 ## Do You Like ED Too?
 
