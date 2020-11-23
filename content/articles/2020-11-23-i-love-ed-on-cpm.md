@@ -30,10 +30,25 @@ The 'M' command will run the sequences of commands that follows it until an erro
   <tr><td><code>T</code></td><td>Display the rest of the line from CP to end </td></tr>
   <tr><td><code>6Z</code></td><td>Pause</td></tr>
   <tr><td><code>-3C</code></td><td>Move CP back 3 characters</td></tr>
-  <tr><td style="padding-right: 2em;"><code>SCPM^ZCP/M^</code></td><td>Substitute 'CPM' for 'CP/M'</td></tr>
+  <tr><td style="width: 17ex;"><code>SCPM^ZCP/M^</code></td><td>Substitute 'CPM' for 'CP/M'</td></tr>
 </table>
 
 `^Z` in the above is CTRL-Z and indicates the end of an argument for a command.
+
+
+The above macro could also be written:
+
+```
+MFCPM^Z0TT6Z-3DICP/M^Z
+```
+
+
+In which case:
+
+<table>
+  <tr><td><code>-3D</code></td><td>Delete the 3 previous characters</td></tr>
+  <tr><td style="width: 17ex;"><code>ICPM^Z</code></td><td>Insert the text 'CP/M'</td></tr>
+</table>
 
 ## Video
 
