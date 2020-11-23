@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>I Love ED on CP/M</title>
+  <meta name="description" content="I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's easy to learn and o">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="I Love ED on CP/M">
+  <meta name="twitter:description" content="I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's easy to learn and o">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/i_love_ed_cpm.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="I Love ED on CP/M">
+  <meta property="og:description" content="I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's easy to learn and o">
+  <meta property="og:url" content="https://techtinkering.com/articles/i-love-ed-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/i_love_ed_cpm.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/i-love-ed-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/i_love_ed_cpm.png" />
+      <header>
+        <a href="/articles/i-love-ed-on-cpm/" title="I Love ED on CP/M">
+          <h1 itemprop="headline name">I Love ED on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-11-23">
+              23 November 2020
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/editors/">Editors</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's easy to learn and only has about 25 commands but these can be combined and once you get used to it, most editing tasks are pretty quick.  If I'm editing text that is made up of separate lines, ideally not more than the width of the terminal, I find it excellent.  It does have a line limit of 128 characters so for continuous prose I will switch to something like Wordstar, but for editing source code and config files on CP/M, it's my first choice.</p>
+<p>ED came as standard with CP/M and is only 7k for CP/M 2.2 and 10k for CP/M Plus.  One advantage of ED is that it will work both with teleprinters and video terminals without having to be configured for each device.  It is also good at manipulating large files even when the system is short of memory.</p>
+<img src="/img/articles/cpm_ed_copy_paste.png" class="img-right" style="width: 400px; clear: right;" title="Copying and Pasting with ED">
+<p>Like many early editors, ED is a modal editor which you start in command mode and while in this mode you can view existing text, move between lines and points in the line.  It allows you to do standard operations such as copy and paste, inserting text from other files, searching for and replacing text, etc.  When we want to enter input mode, we can use the 'I' command.  This is much like VI, except that you can only enter text in the non-command mode but not edit it.  To exit data input mode and return to command mode you use ^Z (CTRL-Z).  These commands can be combined together and one of the most powerful facilities that ED has is the 'M' Macro command to repeat sequences of commands.</p>
+<p>Upon executing ED it creates a temporary output file and as you write out from ED it goes to this temporary file.  When editing a file we append text from it into the memory buffer and save to the temporary output file as we go or at the end.</p>
+<p>ED keeps track of a number of values such as where it is in the source file,  the line number in the memory buffer and the character pointer (CP) on the line.  These are altered as you move around the file and memory buffer.</p>
+<p>I'm not going to give a fuller explanation of how to use ED here because the CP/M 2.2 Operating Manual has a good section on the <a href="http://www.gaby.de/cpm/manuals/archive/cpm22htm/ch2.htm">CP/M Editor</a>.  I do, however, want to show it being used properly in the video below.  Further down in this article I have highlighted some useful command sequences.</p>
+<h2>An Example Macro</h2>
+<p>ED has a macro facility which allows you to repeat a sequence of commands as many times as you like.  This makes it a good example of the power of ED and the following is a typical macro which searches through the memory buffer and displays any occurrences of the text 'CPM', pauses in case you want to stop the macro and then replaces it with 'CP/M'.</p>
+<pre><code>MFCPM^Z0TT6Z-3CSCPM^ZCP/M^Z
+</code></pre>
+<p>The 'M' command will run the sequences of commands that follows it until an error is raised, such as end of file.  If we wanted to we could prepend 'M' with a number to indicate the number of times we want it to run.  I'll break down each command in the sequence below:</p>
+<table>
+  <tr><td><code>M</code></td><td>Run the following command sequence until an error</td></tr>
+  <tr><td><code>FCPM^Z</code></td><td>Find 'CPM' and leave Character Pointer (CP) after it</td></tr>
+  <tr><td><code>0T</code></td><td>Display the line up to CP</td></tr>
+  <tr><td><code>T</code></td><td>Display the rest of the line from CP to end </td></tr>
+  <tr><td><code>6Z</code></td><td>Pause</td></tr>
+  <tr><td><code>-3C</code></td><td>Move CP back 3 characters</td></tr>
+  <tr><td style="padding-right: 2em;"><code>SCPM^ZCP/M^</code></td><td>Substitute 'CPM' for 'CP/M'</td></tr>
+</table>
+<p><code>^Z</code> in the above is CTRL-Z and indicates the end of an argument for a command.</p>
+<h2>Video</h2>
+<p>The video below shows ED being used properly and some of the things that make it great, including searching and replacing text, copying and pasting, macros and handling files bigger than the available memory.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7pqaj050X7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2>Common Command Sequences</h2>
+<p>Below are some useful command command sequences which may be overlooked when reading the manual for ED.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th>Sequence</th><th>Explanation</th></tr>
+  <tr><td>#A</td><td>Load whole file into buffer</td></tr>
+  <tr><td>0A</td><td>Load enough of the file to fill half the buffer.  This is great for large files</td></tr>
+  <tr><td>#W0A</td><td>Save entire buffer and load more of the source file, enough to fill half of the buffer.  Useful to move through large files.</td></tr>
+  <tr><td>0W</td><td>Write half of the buffer to the new file.  Useful to make room of the buffer is full.</td></tr>
+  <tr><td>-B</td><td>Move to end of the last line in the buffer</td></tr>
+  <tr><td>0L</td><td>Move CP to beginning of line</td></tr>
+  <tr><td>L-2C</td><td>Move to end of line before the &lt;cr&gt;&lt;lf&gt; sequence</td></tr>
+  <tr><td>0P</td><td>Display page from CP without moving CP</td></tr>
+  <tr><td>0LT</td><td>Move CP to beginning of line and display line (Should this be +/-n ??)</td></tr>
+  <tr><td>0T</td><td>Type line up to but not including CP</td></tr>
+  <tr><td>0TT</td><td>Type whole line without moving CP</td></tr>
+  <tr><td>0T&lt;cr&gt;T</td><td>Type whole line without moving CP.  Display up to CP on first list and from CP on next line.  This is useful to see where CP is on line.</td></tr>
+  <tr><td>B#T</td><td>Display the whole buffer</td></tr>
+  <tr><td>KI</td><td>Replace a line</td></tr>
+  <tr><td>0K</td><td>Delete up to CP on current line</td></tr>
+  <tr><td>S^L^Z</td><td>Join current line with next</td></tr>
+  <tr><td>I^L^Z</td><td>To split a line at CP</td></tr>
+  <tr><td>0V</td><td>Print free/total memory buffer stats</td></tr>
+  <tr><td>0X</td><td>Empties the temporary default exchange file: X$$$$$$$.LIB, used by the <em>X</em> command</td></tr>
+</table></div>
+<p>In the table above the following holds true:</p>
+<dl>
+  <dt>#</dt><dd>Represents the highest value for n</dd>
+  <dt>^L</dt><dd>CTRL-L - Stands for carriage return sequence &lt;cr&gt;&lt;lf&gt;</dd>
+  <dt>^Z</dt><dd>CTRL-Z - Indicates the end of a command's argument</dd>
+  <dt>&lt;cr&gt;</dt><dd>Carriage Return - Actually pressing the <em>Return</em> key</dd>
+</dl>
+<h2>CP/M Plus</h2>
+<p>ED for CP/M Plus has a few enhancements over the one for CP/M 2.2, the most notable of which are:</p>
+<ul>
+<li>It can open a file and send edited result to another file.  CP/M 2.2 is limited to being able to only edit the source file in place or to put the output on another drive but not specify the filename.</li>
+<li>The 'X' command can be given a filename to specify which file you want to write to</li>
+</ul>
+<p>The <a href="https://archive.org/details/CP-M_Plus_Users_Programmers_and_System_Guides_1983_Digital_Research/page/n171/mode/2up">CP/M 3 User's Guide</a> has a good description of its use under CP/M Plus.</p>
+<h2>Do You Like ED Too?</h2>
+<p>I know that I'm in the minority, but I'm sure there must be other people who also like ED.  I'd love to hear if I'm not alone in this.  You can leave comments via the links below or via the YouTube video above.</p>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">I Love ED on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/i-love-ed-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F&title=I%20Love%20ED%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F&quote=I%20Love%20ED%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F&text=I%20Love%20ED%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=I%20Love%20ED%20on%20CP%2FM&body=I%20love%20ED%20on%20CP%2FM.%20%20It%27s%20often%20derided%20but%20I%20think%20it%27s%20just%20misunderstood%20and%20with%20a%20little%20practise%20its%20true%20value%20can%20shine%20through.%20%20It%27s%20easy%20to%20learn%20and%20only%20has%20about%2025%20commands%20but%20these%20can%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20I%20Love%20ED%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fi-love-ed-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Installing ZDE 1.6, a programmers editor for CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2008-10-21">
+        21 October 2008
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/editors/">Editors</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  To do any serious programming under CP/M, the first thing you need is a good programmers editor.  There aren't many in the archives, but I have tried most of them and found ZDE to be the best.  It is s...
+  &nbsp;
+  <a class="readMore" href="/2008/10/21/installing-zde-1-6-a-programmers-editor-for-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-pilot-programming-language-on-cpm/">The Pilot Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-10-22">
+        22 October 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,...
+  &nbsp;
+  <a class="readMore" href="/articles/the-pilot-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/image-viewers-on-cpm/">Image Viewers on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-09-03">
+         3 September 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/images/">Images</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing started to grow so too did the distribution o...
+  &nbsp;
+  <a class="readMore" href="/articles/image-viewers-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-03-11">
+        11 March 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
+  &nbsp;
+  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/">DABAR: A Hebrew Vocabulary Drill System on CP/M</a></h2>
+  <span class="post-meta">
+      <time datetime="2019-09-19">
+        19 September 2019
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I recently came across an interesting program called DABAR to drill Hebrew vocabulary.  The program works in a similar way to flash cards, by displaying a word in Hebrew and then asking for its English...
+  &nbsp;
+  <a class="readMore" href="/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

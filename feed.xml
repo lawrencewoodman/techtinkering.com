@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2020-11-14</updated>
+  <updated>2020-11-23</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>I Love ED on CP/M</title>
+      <id>https://techtinkering.com/articles/i-love-ed-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/i-love-ed-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2020-11-23
+        </published>
+
+        <updated>
+          2020-11-23
+        </updated>
+
+        <summary>I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's easy to learn and only has about 25 commands but these can </summary>
+    </entry>
     <entry>
       <title>Double-Width C64 Style Font on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/double-width-c64-style-font-on-the-commodore-vic-20/</id>
