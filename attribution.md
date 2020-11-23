@@ -6,6 +6,8 @@ The following use a [CC0](https://creativecommons.org/publicdomain/zero/1.0/) li
 
 * [Candle](https://www.maxpixel.net/Candlelight-Candle-Mood-Light-Romance-Flame-2631921)
 * [St Petersburg Isaac Kathedrahle](https://www.maxpixel.net/St-Petersburg-Isaac-Kathedrahle-World-Heritage-3710243)
+* [Heart_icon_red_hollow.svg](https://commons.wikimedia.org/wiki/File:Heart_icon_red_hollow.svg)
+
 
 The following use a [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) licence.
 

@@ -1,3 +1,13 @@
+{ filename    2020-11-23-i-love-ed-on-cpm.md
+  title       "I Love ED on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "i_love_ed_cpm.png"
+  tags        {"Retro" "CP/M" "Editors"}
+}
+
 { filename    2020-11-09-double-width-c64-style-font-on-the-commodore-vic-20.md
   title       "Double-Width C64 Style Font on the Commodore VIC-20"
   author      {
@@ -767,7 +777,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"DEC" "Retro" "PDP-8" "Editor"}
+  tags        {"DEC" "Retro" "PDP-8" "Editors"}
   image       "/img/articles/small_paper_tape.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }
@@ -1039,7 +1049,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"CP/M" "Editor" "Programming" "Retro"}
+  tags        {"CP/M" "Editors" "Programming" "Retro"}
   image       "/img/articles/small_zde16_screenshort.png"
   imageTitle  "ZDE 1.6 viewing ZDE10.DOC and showing help menu"
   postURLStyle "/@year/@month/@day/@title/"
