@@ -52,10 +52,19 @@ In which case:
 
 ## Video
 
-The video below shows ED being used properly and some of the things that make it great, including searching and replacing text, copying and pasting, macros and handling files bigger than the available memory.
+The videos below show ED being used properly and some of the things that make it great, including searching and replacing text, copying and pasting, macros and handling files bigger than the available memory.  There are two videos below, the second is a concise edit of the first so there is no need to watch both.
 
+## I Love ED on CP/M
+This is a fairly detailed demonstration of most of ED's commands.
 <div class="youtube-wrapper">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7pqaj050X7g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+## A Very Quick Tour of ED
+This is a concise edit of the first video down to about 5 minutes long.  It showcases most of the commands but doesn't give as detailed an explanation.
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DY58jTcidxE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
