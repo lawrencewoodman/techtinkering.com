@@ -1,7 +1,5 @@
 The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some of this memory and therefore one option is to make use of some of the screen and colour map for code and data.
 
-**More enthusiasm at start**
-
 This article will only concentrate on unexpanded Vics and those with a 3K RAM expansion because this is where it is needed most.  The principles will work with systems with more memory but you will have to use alternative locations for the screen and colour map.
 
 
@@ -19,7 +17,7 @@ The _screen map_ is 512 bytes long from location $1E00, although the visible por
 
 ## Storing Data in the Colour Map
 
-We can also store data in the _colour map_, but be aware that the colour map is stored in a 4-bit by 1Kb RAM chip.  Therefore, we can only store 4-bit values in each location.   If we read from the colour map we will find the upper 4 bites are unstable and therefore we have to AND the value with 15.  This makes it unsuitable for putting code in but it can be useful for storing data in.
+We can also store data in the _colour map_, but be aware that the colour map is stored in a 4-bit by 1Kb RAM chip.  Therefore, we can only store 4-bit values in each location.   If we read from the colour map we will find the upper 4 bites are unstable and therefore we have to AND the value with 15.  This makes it unsuitable for putting code in but it can be useful for storing data.
 
 There are two locations for the _colour map_, each is 512 4-bit nibbles long.  On an unexpanded Vic or one with a 3Kb RAM expansion the one at $9600 is selected.  On systems with an 8Kb RAM expansion or more the colour map at $9400 is selected.  This means that we have 512 4-bit nibbles which we are free to use in addition to any 4-bit nibbles we use from the selected colour map.
 
@@ -112,7 +110,7 @@ POKE 36867,(PEEK(36867) AND 129) OR (2*18)
 
 ## Example: Using the Colour Map for Data
 
-The same 100 Doors Problem above could also be done by using the unused colour map at location $9400 (37888) to store data for open/closed doors.  This wouldn't alter the display and therefore we can use 0 and 1 for closed and open doors respectively.  When we read the statuses we `AND 15` to get the lower nibble because the colour map uses 4-bit RAM.
+The same 100 Doors Problem above could also be done by using the unused colour map at location $9400 (37888) to store the statuses of open/closed doors.  This wouldn't alter the display and therefore we can use 0 and 1 for closed and open doors respectively.  When we read the statuses we `AND 15` to get the lower nibble because the colour map uses 4-bit RAM.
 
 ```
 10 D=37888:FOR I=1TO100:POKE D+I,0:NEXT I
@@ -133,7 +131,7 @@ The same 100 Doors Problem above could also be done by using the unused colour m
 
 <img src="/img/articles/vic20_border_colours_code_in_screen_map.png" class="img-right" style="width: 400px; clear: right;" title="Running Code in the Screen Map">
 
-The last example stores a machine language routine in the last line of the screen map.  The routine is a short piece of code to cycle the screen and border colours and is from our article: [Hand Assembling to Machine Code on the Commodore VIC-20](/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/).
+The last example stores and executes a machine language routine in the last line of the screen map.  The routine is a short piece of code to cycle the screen and border colours and is from our article: [Hand Assembling to Machine Code on the Commodore VIC-20](/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/).
 
 <br style="clear:right"/>
 
