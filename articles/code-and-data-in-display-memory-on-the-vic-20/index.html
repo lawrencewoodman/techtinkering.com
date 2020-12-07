@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Code and Data in Display Memory on the VIC-20</title>
+  <meta name="description" content="The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some ">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Code and Data in Display Memory on the VIC-20">
+  <meta name="twitter:description" content="The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some ">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_code_and_data_in_display_memory.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Code and Data in Display Memory on the VIC-20">
+  <meta property="og:description" content="The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some ">
+  <meta property="og:url" content="https://techtinkering.com/articles/code-and-data-in-display-memory-on-the-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_code_and_data_in_display_memory.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/code-and-data-in-display-memory-on-the-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_code_and_data_in_display_memory.png" />
+      <header>
+        <a href="/articles/code-and-data-in-display-memory-on-the-vic-20/" title="Code and Data in Display Memory on the VIC-20">
+          <h1 itemprop="headline name">Code and Data in Display Memory on the VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-12-07">
+               7 December 2020
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some of this memory and therefore one option is to make use of some of the screen and colour map for code and data.</p>
+<p>This article will only concentrate on unexpanded Vics and those with a 3K RAM expansion because this is where it is needed most.  The principles will work with systems with more memory but you will have to use alternative locations for the screen and colour map.</p>
+<h2>Storing Code or Data in the Screen Map</h2>
+<p>The <em>screen map</em> is 512 bytes long from location $1E00, although the visible portion for a 22 column x 23 row screen is only 506 bytes, which leaves an extra 6 bytes free.  We could use some of this for permanent program code/data or temporarily while calculations are being performed to gain extra working storage.  This means we could have up to 512 extra bytes at our disposal.  Quite a lot when you have so little to start with.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th>Locations (Hex)</th><th>Locations (Decimal)</th><th>Explanation</th></tr>
+  <tr><td>$1E00-$1FFF</td><td>7680-8191</td><td>Full screen map</td></tr>
+  <tr><td>$1E00-$1FF9</td><td>7680-8185</td><td>Visible screen map</td></tr>
+</table></div>
+<h2>Storing Data in the Colour Map</h2>
+<p>We can also store data in the <em>colour map</em>, but be aware that the colour map is stored in a 4-bit by 1Kb RAM chip.  Therefore, we can only store 4-bit values in each location.   If we read from the colour map we will find the upper 4 bites are unstable and therefore we have to AND the value with 15.  This makes it unsuitable for putting code in but it can be useful for storing data.</p>
+<p>There are two locations for the <em>colour map</em>, each is 512 4-bit nibbles long.  On an unexpanded Vic or one with a 3Kb RAM expansion the one at $9600 is selected.  On systems with an 8Kb RAM expansion or more the colour map at $9400 is selected.  This means that we have 512 4-bit nibbles which we are free to use in addition to any 4-bit nibbles we use from the selected colour map.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th>Locations (Hex)</th><th>Locations (Decimal)</th><th>Explanation</th></tr>
+  <tr><td>$9600-$97FF</td><td>38400-38911</td><td>Full colour map (selected)</td></tr>
+  <tr><td>$9600-$97F9</td><td>38400-38905</td><td>Visible colour map (selected)</td></tr>
+  <tr><td>$9400-$95FF</td><td>37888-38399</td><td>Full colour map (unselected)</td></tr>
+</table></div>
+<h3>Reducing the Screen Size</h3>
+<p>So that the code/data stored in the normally visible screen or colour map isn't seen we can reduce the number of lines displayed.  For more information on how to do this, please see our article: <a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/">Changing Screen Dimensions on the Commodore VIC-20</a>.</p>
+<p>To specify the number of rows that we want to display we alter location $9003 (36867).  In the following 'r' indicates the number of rows to display:</p>
+<pre><code>poke 36867,(peek(36867) and 129) or (2*r)
+</code></pre>
+<p>Therefore, if we wanted to use the bottom 3 lines of the screen map for storage we could hide them by reducing the number of rows displayed to 20.  This would create an extra 66 bytes of storage for us to use.</p>
+<pre><code>poke 36867,(peek(36867) and 129) or (2*20)
+</code></pre>
+<br />
+<h2>Example: Using Screen Memory for Data</h2>
+<p>This is based on the <a href="http://www.rosettacode.org/wiki/100_doors">100 Doors Problem on Rosetta Code</a>:</p>
+<img src="/img/articles/vic20_100_doors_visual.png" class="img-right" style="width: 400px; clear: right;" title="100 Doors Program Using the Screen Map for Data Storage">
+<blockquote cite="http://www.rosettacode.org/wiki/100_doors">
+There are 100 doors in a row that are all initially closed.
+<p>You make 100 passes by the doors.</p>
+<p>The first time through, visit every door and  toggle  the door  (if the door is closed,  open it;   if it is open,  close it).</p>
+<p>The second time, only visit every 2nd door   (door #2, #4, #6, ...),   and toggle it.</p>
+<p>The third time, visit every 3rd door   (door #3, #6, #9, ...), etc,   until you only visit the 100th door.</p>
+</blockquote>
+<p>The program lists which doors are open at the end of the last pass. These should be the first 10 perfect squares: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100.</p>
+<p>It uses the bottom 5 rows of screen memory to store the statuses of the 100 doors as either being closed (value 81 - filled circle) or open (value 87 - unfilled circle).  The values 81 and 87 are used to create a nice visual representation when we decide to show the processing in the screen map.</p>
+<pre><code>10 FOR I=38796 TO 38911:POKE I,0:NEXT I
+20 D=8185-5*22:FOR I=1 TO 100:POKE D+I,81:NEXT I
+30 FOR I=1 TO 100
+40 FOR J=I TO 100 STEP I
+50 IF PEEK(D+J)=87 THEN POKE D+J,81:GOTO 70
+60 POKE D+J,87
+70 NEXT J
+80 NEXT I
+90 FOR I=1 TO 100
+100 IF PEEK(D+I)=87 THEN PRINT I,
+110 NEXT I
+</code></pre>
+<p>In the above the following line sets the last 5 rows of the screen to black text on a white background.  It is only needed if you want to show the working out in the screen map. The loop starts from 38796 which is the start of the 19th row in the colour map.</p>
+<pre><code>10 FOR I=38796 TO 38911:POKE I,0:NEXT I
+</code></pre>
+<p>The code sets <code>D</code> to be the location of the first column on the 19th row of the screen.  This is where our reclaimed screen storage will begin.</p>
+<pre><code>20 D=8185-5*22:FOR I=1 TO 100:POKE D+I,81:NEXT I
+</code></pre>
+<p>The code then peeks and pokes to the screen map and uses it as storage.  This is instead of creating an array in Basic storage using <code>DIM</code>.</p>
+<p>If we want to reduce the number of rows displayed to 18 so that the calculations are hidden, we would run the following first:</p>
+<pre><code>POKE 36867,(PEEK(36867) AND 129) OR (2*18)
+</code></pre>
+<br />
+<h2>Example: Using the Colour Map for Data</h2>
+<p>The same 100 Doors Problem above could also be done by using the unused colour map at location $9400 (37888) to store the statuses of open/closed doors.  This wouldn't alter the display and therefore we can use 0 and 1 for closed and open doors respectively.  When we read the statuses we <code>AND 15</code> to get the lower nibble because the colour map uses 4-bit RAM.</p>
+<pre><code>10 D=37888:FOR I=1TO100:POKE D+I,0:NEXT I
+20 FOR I=1 TO 100
+30 FOR J=I TO 100 STEP I
+40 IF (PEEK(D+J) AND 15)=1 THEN POKE D+J,0:GOTO 60
+50 POKE D+J,1
+60 NEXT J
+70 NEXT I
+80 FOR I=1 TO 100
+90 IF (PEEK(D+I) AND 15)=1 THEN PRINT I,
+100 NEXT I
+</code></pre>
+<br />
+<h2>Example: Using Screen Memory for Code</h2>
+<img src="/img/articles/vic20_border_colours_code_in_screen_map.png" class="img-right" style="width: 400px; clear: right;" title="Running Code in the Screen Map">
+<p>The last example stores and executes a machine language routine in the last line of the screen map.  The routine is a short piece of code to cycle the screen and border colours and is from our article: <a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a>.</p>
+<br style="clear:right"/>
+<pre><code>10 for i=38886 to 38905:poke i,0:next i
+20 for i=8166 to 8166+19
+30 read a:poke i,a
+40 next i
+50 data 173,15,144,162,255,142,15,144,160,255
+60 data 136,208,253,202,208,245,141,15,144,96
+</code></pre>
+<p>As in the first example we can see the colour map being set to black text on a white background where the code is being stored.  This is only used here to visually highlight where the code is.</p>
+<pre><code>10 for i=38886 to 38905:poke i,0:next i
+</code></pre>
+<p>We put the machine language routine at the end of the last line on the screen.</p>
+<pre><code>20 for i=8166 to 8166+19
+</code></pre>
+<p>To execute the routine once it is in screen memory we can use <code>SYS</code>.  We have to be careful not to corrupt that last line though.</p>
+<pre><code>SYS 8166
+</code></pre>
+<br />
+<h2>Video</h2>
+<p>The examples above can be seen in the following video demonstrating code being run in the screen map and data being stored and processed in the screen and colour map.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EkfBijC8MSU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Code and Data in Display Memory on the VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/code-and-data-in-display-memory-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F&title=Code%20and%20Data%20in%20Display%20Memory%20on%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F&quote=Code%20and%20Data%20in%20Display%20Memory%20on%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F&text=Code%20and%20Data%20in%20Display%20Memory%20on%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Code%20and%20Data%20in%20Display%20Memory%20on%20the%20VIC-20&body=The%20unexpanded%20Commodore%20VIC-20%20only%20had%205K%20of%20RAM%20and%20therefore%20creative%20ways%20had%20to%20be%20found%20to%20maximize%20the%20available%20RAM.%20%20The%20display%20memory%20would%20use%20some%20of%20this%20memory%20and%20therefore%20one%20option%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Code%20and%20Data%20in%20Display%20Memory%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fcode-and-data-in-display-memory-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Double-Width C64 Style Font on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-11-09">
+         9 November 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look...
+  &nbsp;
+  <a class="readMore" href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-07-09">
+         9 July 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-02-29">
+        29 February 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
+  &nbsp;
+  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-02-04">
+         4 February 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create Position Independent Code (PIC) or make the code relocatable.  H...
+  &nbsp;
+  <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-01-16">
+        16 January 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
+  &nbsp;
+  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
