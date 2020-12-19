@@ -90,6 +90,12 @@ table.neatTableCentre td,th { text-align: center; }
   padding-left: 1em;
 }
 
+.img-centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Useful to allow scrollable tables */
 div.overflow-auto {
   overflow-x: auto;
