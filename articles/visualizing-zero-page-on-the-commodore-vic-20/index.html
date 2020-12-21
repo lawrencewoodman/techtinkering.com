@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Visualizing Zero Page on the Commodore VIC-20</title>
+  <meta name="description" content="The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use thi">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Visualizing Zero Page on the Commodore VIC-20">
+  <meta name="twitter:description" content="The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use thi">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_visualize_zero_page.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Visualizing Zero Page on the Commodore VIC-20">
+  <meta property="og:description" content="The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use thi">
+  <meta property="og:url" content="https://techtinkering.com/articles/visualizing-zero-page-on-the-commodore-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_visualize_zero_page.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/visualizing-zero-page-on-the-commodore-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_visualize_zero_page.png" />
+      <header>
+        <a href="/articles/visualizing-zero-page-on-the-commodore-vic-20/" title="Visualizing Zero Page on the Commodore VIC-20">
+          <h1 itemprop="headline name">Visualizing Zero Page on the Commodore VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2020-12-21">
+              21 December 2020
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use this to visualize a section of memory such as the zero page.  This can create quite interesting patterns on the screen and allows us to actually see some of the processing of the Vic in action.</p>
+<h2>Moving the Screen Map</h2>
+<img src="/img/articles/vic20_screen_map_address_diagram.png" class="img-right" style="width: 500px; clear: right;" title="How Screen Map is Calculated">
+<p>The VIC chip uses a 14-bit screen map address and uses bits in locations $9002 (36866) and $9005 (36869) to set it.  Because of the peculiar way the VIC chip works when we alter location $9005, bit 7 must be set even though it will be changed to 0 in the final address for the screen map.  Bit 7 of location $9002 also determines the location of the colour map.  The remaining bits of $9005 set the character map address and they default to 0 on an unexpanded Vic.  The remaining bits of $9002 set the number of columns displayed and they default to 22.</p>
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th class="centre">Screen Map</th><th class="centre">Colour Map</th><th class="centre">$9005 Bits 7-4</th><th class="centre">$9002 Bit 7</th><th class="centre">Notes</th></tr>
+  <tr><td class="centre">$0000</td><td class="centre">$9400</td><td class="centre">1000<br />(128)</td><td class="centre">0</td><td>Display pages 0 and 1</td></tr>
+  <tr><td class="centre">$1000</td><td class="centre">$9400</td><td class="centre">1100<br />(192)</td><td class="centre">0</td><td>Default screen map with 8Kb+ RAM expansion</tr>
+  <tr><td class="centre">$1E00</td><td class="centre">$9600</td><td class="centre">1111<br />(240)</td><td class="centre">1<br />(128)</td><td>Default screen map for unexpanded Vics or those with 3Kb RAM expansion</td></tr>
+</table>
+<p>Compute credits Jim Butterfield with demonstrating how you can set the screen map to start at location 0 which allows you to observe the first two pages of memory.  Well nearly, because the screen can only display 506 bytes so the end of the second page can't be seen on the screen.</p>
+<h2>Page 0 - Zero Page</h2>
+<p>The <em>zero page</em> is important because it allows machine code programs to use shorter and faster instructions.  BASIC and the Kernal make heavy use of the locations in this page for frequently used data storage and therefore it is an interesting section of memory to look at.</p>
+<p>On an unexpanded Vic we don't need to worry about what is already in locations 36869 and 36866 and therefore we can easily set the colour map to black text on a white background to make all the locations visible and then set the screen map to location 0 using:</p>
+<pre><code>FOR I=37888 TO 37888+505:POKE I,0:NEXT I
+POKE 36869,128:POKE 36866,22
+</code></pre>
+<p>While the screen is showing the zero page we could enter and run code to see what happens in zero page.  An easy demonstration would be to enter a <code>FOR</code> loop:</p>
+<pre><code>FOR I=1 TO 1000:PRINT&quot;HELLO&quot;:NEXT I
+</code></pre>
+<h2>Page 1 - The Stack</h2>
+<p>The 6502 reserves 256 bytes for the stack beginning at location $100 (256).  However, Basic uses locations $140-$1FF (320-511) as a stack and the preceding locations for a tape error log and for converting floating point numbers to ASCII.</p>
+<p>We could demonstrate the BASIC stack being filled by repeatedly calling a nested <code>GOSUB</code> routine:</p>
+<pre><code>10 GOSUB 10
+</code></pre>
+<h2>Interesting Locations</h2>
+<p>There are a number of interesting locations and patterns that we can see.  There are lots of '@' symbols which would be $00 in memory.  There are two locations that we can see counting.  There is also a location that oscillates between '@' and 'A' which would be between $00 and $01 in memory.</p>
+<img src="/img/articles/vic20_visualize_zero_page_annotated_animation.gif" class="img-centre" style="width: 600px; clear: right;" title="Screen Map Mapped to Zero Page">
+<div class="overflow-auto"><table class="neatTable neatBorder">
+  <tr><th>Location</th><th>Row</th><th>Column</th><th>Purpose</th></tr>
+  <tr><td class="centre">$A0-$A2<br />(160-162)</td><td class="centre">8</td><td class="centre">7</td><td>Jiffy Clock counting one-sixtieths of a second</td></tr>
+  <tr><td class="centre">$C5 (197)</td><td class="centre">9</td><td class="centre">22</td><td>Matrix coordinate of last key pressed,  64 if none pressed</td></tr>
+  <tr><td class="centre">$CB (203)</td><td class="centre">10</td><td class="centre">6</td><td>Matrix coordinate of current key pressed,  64 if none pressed</td></tr>
+  <tr><td class="centre">$CD (205)</td><td class="centre">10</td><td class="centre">8</td><td>Cursor countdown before blink.  Normally counts 20 jiffies before blink of cursor.</td></tr>
+  <tr><td class="centre">$CF (207)</td><td class="centre">10</td><td class="centre">10</td><td>Cursor blink status 1 = reversed character, 0 = non-reversed.  We can see alternating between '@' which is 0 and 'A' which is 1.</td><tr>
+  <tr><td class="centre">$D3 (211)</td><td class="centre">10</td><td class="centre">14</td><td>Cursor position within the logical screen line.  Keep pressing a key to see increment from '@' which is 0 and then press return to see it revert to '@'.</td></tr>
+  <tr><td class="centre">$D7 (215)</td><td class="centre">10</td><td class="centre">18</td><td>ASCII value of last key pressed.  Change to lowercase to see key pressed.</td></tr>
+  <tr><td class="centre">$100-$1FF<br />(256-511)</td><td class="centre">12</td><td class="centre">15</td><td>The 6502 stack</td></tr>
+  <tr><td class="centre">$140-$1FF<br />(320-511)</td><td class="centre">15</td><td class="centre">13</td><td>The BASIC stack</td></tr>
+</table></div>
+<h2>Video</h2>
+<p>The following video shows zero page being visualized and exercised to create interesting patterns.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Fzd40ar8x8A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Visualizing Zero Page on the Commodore VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/visualizing-zero-page-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F&title=Visualizing%20Zero%20Page%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F&quote=Visualizing%20Zero%20Page%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F&text=Visualizing%20Zero%20Page%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Visualizing%20Zero%20Page%20on%20the%20Commodore%20VIC-20&body=The%20VIC-20%20is%20a%20very%20flexible%20little%20machine%20and%20allows%20us%20to%20choose%20which%20area%20of%20memory%20represents%20the%20screen%20map.%20%20%20One%20interesting%20thing%20we%20can%20do%20is%20use%20this%20to%20visualize%20a%20section%20of%20memory%20such%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Visualizing%20Zero%20Page%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fvisualizing-zero-page-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Code and Data in Display Memory on the VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-12-07">
+         7 December 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some of this memory and therefore one option ...
+  &nbsp;
+  <a class="readMore" href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Double-Width C64 Style Font on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-11-09">
+         9 November 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look...
+  &nbsp;
+  <a class="readMore" href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-07-09">
+         9 July 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-02-29">
+        29 February 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
+  &nbsp;
+  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <time datetime="2020-02-04">
+         4 February 2020
+      </time>
+    <ul class="tags">
+      <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+      <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+      <li>#<a href="/articles/tag/programming/">Programming</a></li>
+      <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+    </ul>
+  </span>
+</header>
+<div>
+  If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create Position Independent Code (PIC) or make the code relocatable.  H...
+  &nbsp;
+  <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
