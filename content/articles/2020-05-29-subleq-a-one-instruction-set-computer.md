@@ -120,7 +120,7 @@ The [KIM Uno](https://www.instructables.com/id/The-KIM-Uno-a-5-Microprocessor-De
 
 ### SIC-1
 
-[SIC-1](https://jaredkrinke.itch.io/sic-1) is a single-instruction (subleq) programming game with "zachlike" global leaderboards.  You have been hired by SIC Systems to produce highly efficient programs for their flagship product: the Single Instruction Computer Mark 1 (SIC-1).  The interface to this game is lovely and includes a nice display of the memory and variables as the program works.  It also allows you to step through a program as you try to complete the programming task.  It's quite fun as you progress through each assignment and definitely worth playing with.
+[SIC-1](https://jaredkrinke.itch.io/sic-1) is a single-instruction (subleq) programming game with "zachlike" global leaderboards.  You have been hired by SIC Systems to produce highly efficient programs for their flagship product: the Single Instruction Computer Mark 1 (SIC-1).  The interface to this game is lovely and includes a nice display of the memory and variables as the program works.  It also allows you to step through a program as you try to complete the programming task.  It's quite fun as you progress through each assignment and definitely worth playing.
 
 ### sblasm
 
