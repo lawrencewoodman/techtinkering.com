@@ -1,21 +1,18 @@
 !* commandSubst true variableSubst true
 ! source -directory [dir plugins] www.tcl
 ! source -directory [dir plugins] posts.tcl
-! set date [getparam date]
 ! set title [getparam title]
+! set tags [getparam tags]
 <header>
   <h2><a href="[www::url [getparam url]]">$title</a></h2>
   <span class="post-meta">
-!   if {![getparam -default false hideDate]} {
-      <time datetime="[clock format $date -format {%Y-%m-%d}]">
-        [clock format $date -format {%e %B %Y}]
-      </time>
+!   if {[llength $tags] > 0} {
+      <ul class="tags">
+!       foreach tag $tags {
+          <li>#<a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a></li>
+!       }
+      </ul>
 !   }
-    <ul class="tags">
-!   foreach tag [getparam tags] {
-      <li>#<a href="[www::url "/articles/tag/[posts::tagToDirName $tag]/"]">$tag</a></li>
-!   }
-    </ul>
   </span>
 </header>
 <div>
