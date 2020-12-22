@@ -118,6 +118,10 @@ The [KIM Uno](https://www.instructables.com/id/The-KIM-Uno-a-5-Microprocessor-De
 
 [Dawn](http://gerigeri.uw.hu/DawnOS/index.html) is a multi-tasking operating system created to run on a SUBLEQ, featuring a GUI, touchscreen support, sound, joysticks, cameras, SMP, etc.  It seems to have been written using it's supplied C compiler which compiles down to SUBLEQ and it really is very impressive.  It was written by a Hungarian called Geri.
 
+### SIC-1
+
+[SIC-1](https://jaredkrinke.itch.io/sic-1) is a single-instruction (subleq) programming game with "zachlike" global leaderboards.  You have been hired by SIC Systems to produce highly efficient programs for their flagship product: the Single Instruction Computer Mark 1 (SIC-1).  The interface to this game is lovely and includes a nice display of the memory and variables as the program works.  It also allows you to step through a program as you try to complete the programming task.  It's quite fun as you progress through each assignment and definitely worth playing with.
+
 ### sblasm
 
 [sblasm](https://github.com/lawrencewoodman/sblasm) is a macro assembler that I've written for SUBLEQ.  It's a work in progress but has some quite nice features and I'm continuing to develop it.
