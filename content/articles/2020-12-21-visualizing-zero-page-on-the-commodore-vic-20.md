@@ -51,8 +51,7 @@ We could demonstrate the BASIC stack being filled by repeatedly calling a nested
 
 There are a number of interesting locations and patterns that we can see.  There are lots of '@' symbols which would be $00 in memory.  There are two locations that we can see counting.  There is also a location that oscillates between '@' and 'A' which would be between $00 and $01 in memory.
 
-
-<img src="/img/articles/vic20_visualize_zero_page_annotated_animation.gif" class="img-centre" style="width: 600px; clear: right;" title="Screen Map Mapped to Zero Page">
+<video autoplay loop muted playsinline src="/video/articles/vic20_visualize_zero_page_annotated.mp4" class="video-centre" style="width: 100%; max-width: 600px; clear: right;" title="Screen Map Mapped to Zero Page"></video>
 
 
 <div class="overflow-auto"><table class="neatTable neatBorder">

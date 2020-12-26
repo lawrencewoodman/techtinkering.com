@@ -47,6 +47,12 @@ file copy [file join $socialImagesDir *.png] \
 #          [file join $faviconsDir *.xml] \
 #          [www::makeDestination]
 
+
+set articleVideoDir [dir content static video articles]
+file copy [file join $articleVideoDir *.mp4] \
+          [www::makeDestination video articles]
+
+
 set faviconsDir [dir content static favicons]
 file copy [file join $faviconsDir *.ico] [www::makeDestination]
 
