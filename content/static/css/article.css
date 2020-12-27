@@ -3,6 +3,7 @@ code {
   color: #00FF00;
   padding: 1px 6px;
   font-size: 0.95rem;
+  font-family: Bitstream Vera Sans Mono, Liberation Mono, Lucida Console, Lucida Sans Typewriter, monospace;
 }
 
 /* Kept incase I re-enable syntax highlighting
