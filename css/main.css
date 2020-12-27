@@ -1,8 +1,7 @@
 body {
   background: #222129;
   color: #EEE;
-  /*font-family: DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Courier New, monospace; */
-  font-family: Bitstream Vera Sans Mono, Liberation Mono, monospace;
+  font-family: Bitstream Vera Sans Mono, Liberation Mono, Courier New, monospace;
   line-height: 1.5;
   height: 100%;
   font-size: 16px;
