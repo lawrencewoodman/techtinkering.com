@@ -1,9 +1,14 @@
-{ filename    terms.md
-  title       "Terms and Conditions"
-  destination {terms index.html}
+{ filename    useful_links.md
+  title       "Useful Links"
+  destination {useful-links index.html}
 }
 
 { filename    privacy.md
   title       "Privacy Policy"
   destination {privacy index.html}
+}
+
+{ filename    terms.md
+  title       "Terms and Conditions"
+  destination {terms index.html}
 }

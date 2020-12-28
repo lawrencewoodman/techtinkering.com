@@ -4,3 +4,9 @@ cpm {
 ornament {
   summary {Ornament is a Tcl template module that allows you to define, parse and compile a template to produce a script which can then be run using a safe interpreter.}
 }
+pdp-8 {
+  summary {The PDP-8 is a 12-bit minicomputer that was produced by Digital Equipment Corporation (DEC).}
+}
+vic-20 {
+  summary {The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was sold by Commodore Business Machines and released in 1980/1981. As well as the articles here there is also a [VIC-20 Playlist](https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL) on the [TechTinkering YouTube Channel](https://www.youtube.com/user/TechTinkering).}
+}
