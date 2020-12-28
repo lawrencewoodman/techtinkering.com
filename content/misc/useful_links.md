@@ -10,7 +10,7 @@ CP/M is an operating system created by Gary Kildall of Digital Research, Inc. or
 
 <dl>
   <dt><a href="/articles/tag/cpm/">CP/M Articles</a></dt>
-  <dd>Articles on the TechTinkering website about software applications and programming</dd>
+  <dd>Articles about software applications and programming</dd>
   <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NEGOhOca8_3MP1zUSYDGwc">CP/M Youtube Playlist</a></dt>
   <dd>Videos on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a> supported by articles on this site</dd>
 </dl>
@@ -58,7 +58,7 @@ The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was so
 
 <dl>
   <dt><a href="/articles/tag/vic-20/">VIC-20 Articles</a></dt>
-  <dd>Articles on the TechTinkering website about software applications and programming</dd>
+  <dd>Articles about software applications and programming</dd>
   <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL">VIC-20 Playlist</a></dt>
   <dd>Videos on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a> supported by articles on this site</dd>
 </dl>
