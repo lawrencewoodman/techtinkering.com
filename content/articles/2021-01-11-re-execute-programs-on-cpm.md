@@ -13,7 +13,7 @@ SAVE 0 RERUN.COM
 
 Under CP/M, programs that load from disk are referred to as _Transient Programs_ and these run in an area of memory called the _Transient Program Area (TPA)_ starting at location 0100h.  A transient program is normally run from the command line by the _Console Command Processor (CCP)_ located above the TPA.  When a transient program finishes it generally returns control to the CCP.  This is often done by initiating a warm start by jumping to location 0000h.
 
-After we have exited a program we can re-execute it by running the 'RERUN' command we created earlier.  This would cause the CCP to load it into the TPA and jump to its start at 0100h.  However, because the 'RERUN' command is empty it doesn't write over the existing program in the TPA and instead starts executing it from the start.  This won't always work though as often programs won't reinitialize their variables when a program starts or they may write over the CCP in which case reloading it would corrupt this part of the program.  Therefore it takes a certain amount of trial and error to find which programs this will work for.
+After we have exited a program we can re-execute it by running the 'RERUN' command we created earlier.  This would cause the CCP to load it into the TPA and jump to its start at 0100h.  However, because the 'RERUN' command is empty it doesn't write over the existing program in the TPA and instead starts executing it from the start.  This won't always work though as often programs won't reinitialize their variables when a program starts or they may write over the CCP in which case reloading it would corrupt this part of the program.  Therefore, it takes a certain amount of trial and error to find which programs this will work for.
 
 
 ## Example
