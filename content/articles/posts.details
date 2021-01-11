@@ -1,3 +1,13 @@
+{ filename    2021-01-11-re-execute-programs-on-cpm.md
+  title       "Re-execute Programs on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_re-execute_programs.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2020-12-21-visualizing-zero-page-on-the-commodore-vic-20.md
   title       "Visualizing Zero Page on the Commodore VIC-20"
   author      {
