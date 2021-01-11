@@ -58,7 +58,7 @@ This procedure won't work on CP/M Plus as during a cold or warm start it overwri
 
 ## Video
 
-The following video shows the Re-execute command being used.
+The following video shows the re-execute command being used.
 
 <div class="youtube-wrapper">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3RzAmlTXsE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
