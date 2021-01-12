@@ -39,7 +39,7 @@ Once the routine is created we can enter the addresses and enter the machine cod
   <table class="neatTable">
     <tr>
       <th>Address</th>
-      <th>Code</th>
+      <th style="width: 6em;">Code</th>
       <th>Label</th>
       <th>Mnemonic</th>
       <th>Operand</th>
