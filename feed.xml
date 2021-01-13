@@ -2,11 +2,11 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-01-12</updated>
+  <updated>2021-01-13</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
-      <title>Re-execute Programs on CP/M</title>
+      <title>Re-execute Programs in Memory on CP/M</title>
       <id>https://techtinkering.com/articles/re-execute-programs-on-cpm/</id>
       <link href="https://techtinkering.com/articles/re-execute-programs-on-cpm/"/>
         <author>
