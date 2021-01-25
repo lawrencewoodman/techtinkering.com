@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Storing Machine Code in REM Statements on the VIC-20</title>
+  <meta name="description" content="BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they ta">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Storing Machine Code in REM Statements on the VIC-20">
+  <meta name="twitter:description" content="BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they ta">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_store_machine_code_in_rem_statements.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Storing Machine Code in REM Statements on the VIC-20">
+  <meta property="og:description" content="BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they ta">
+  <meta property="og:url" content="https://techtinkering.com/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_store_machine_code_in_rem_statements.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="A collection of links to useful resources">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_store_machine_code_in_rem_statements.png" />
+      <header>
+        <a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/" title="Storing Machine Code in REM Statements on the VIC-20">
+          <h1 itemprop="headline name">Storing Machine Code in REM Statements on the VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-01-25">
+              25 January 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in <code>REM</code> statements.  This is much more compact and also means that we can call the routine directly from the location it is stored in memory rather than having to copy it to a further location.  This doesn't just apply to machine code, we could also do this for storing other data such as a custom character set.</p>
+<h2>How BASIC is Stored in Memory</h2>
+<p>A BASIC program consists of a series of BASIC lines followed by two 00 octets to signify the end of the program. The BASIC statements are condensed using tokens such as $8F for <code>REM</code>.</p>
+<img src="/img/articles/vic20_basic_lines_memory_layout.png" class="img-right" style="width: 100%; margin-bottom: 2em;" title="Layout of BASIC lines in memory">
+<h2>Storing Machine Code in DATA Statements</h2>
+<img src="/img/articles/vic20_machine_code_in_data_statements_basic_listing.png" class="img-right" style="width: 400px; clear: right;" title="BASIC listing with machine in DATA statements">
+<p>A machine code routine in BASIC is often stored in <code>DATA</code> statements and then copied to another area of memory for execution.  However, this uses up more memory than storing the routine in <code>REM</code> statements as we will see later.</p>
+<p>The following BASIC program copies a machine code routine stored in <code>DATA</code> statements into locations 673-692.  The machine language routine we're using cycles the screen border and background colours and is from the article: <a href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Hand Assembling to Machine Code on the Commodore VIC-20</a>.</p>
+<pre><code>10 FORA=673TO692:READB:POKEA,B:NEXTA
+20 DATA173,15,144,162,255,142,15,144,160,255
+30 DATA136,208,253,202,208,245,141,15,144,96
+40 SYS673
+</code></pre>
+<h2>Storing Machine Code in REM Statements</h2>
+<p>The machine code routine stored in <code>DATA</code> statements above is position independent and is represented by the following octets which we can also see in the table below.</p>
+<pre><code>AD 0F 90 A2 FF
+8E 0F 90 A0 FF
+88 D0 FD CA D0
+F5 8D 0F 90 60
+</code></pre>
+<p>On an unexpanded Vic, BASIC programs start at $1001 (4097).  We would use a different location for Vics with more memory.  To create a <code>REM</code> statement with the above machine code we would enter the following in memory.  We could easily <code>POKE</code> the values from BASIC into memory starting at location 4097 ($1001) or we could use a simple hex loader or a machine language monitor.</p>
+<table class="neatTable neatBorder">
+  <tr><th>Location</th><th>Octets</th><th>Explanation</th></tr>
+  <tr><td>$1001</td><td>1C 10</td><td>Next line link.  Here this is also the end of BASIC program - $101C</td></tr>
+  <tr><td>$1003</td><td>0A 00</td><td>Line number - 10</td></tr>
+  <tr><td>$1005</td><td>8F</td><td>REM token</td></tr>
+  <tr><td>$1006</td><td>20</td><td>Space character</td></tr>
+  <tr>
+    <td>$1007</td>
+    <td>AD 0F 90 A2 FF 8E 0F 90 A0 FF 88 D0 FD CA D0 F5 8D 0F 90 60</td>
+    <td style="vertical-align: top;">Machine language routine</td>
+  </tr>
+  <tr><td>$101B</td><td>00</td><td>End of BASIC line</td></tr>
+  <tr><td>$101C</td><td>00 00</td><td>End of BASIC program</td></tr>
+</table>
+<p>After we have entered the line into memory we must remember to update locations 45/46 to indicate the end of our BASIC program and the start of variables.</p>
+<br />
+<h3>Using VICMON to Create REM Statement Containing Machine Code</h3>
+<img src="/img/articles/vic20_vicmon_code_in_rem_basic_listing.png" class="img-right" style="width: 400px; clear: right;" title="BASIC listing with machine embedded in REM statement, entered using VICMON">
+<p>If we have a machine language monitor, such as VICMON, then the process is really easy.  We just alter the bytes in memory, exit to BASIC, update the end of BASIC program pointer and then enter our <code>SYS</code> statement on the following line.</p>
+<br style="clear:right" />
+<p>In VICMON we first have to enable a virtual zero page otherwise the monitor would overwrite bytes in memory necessary for BASIC.</p>
+<pre><code>.E 1200
+</code></pre>
+<p>Enter BASIC <code>REM</code> lines containing machine code at location $1001 (4097), the start of BASIC on an unexpanded Vic.</p>
+<pre><code>.M 1001
+.:1001 1C 10 0A 00 8F
+.:1006 20 AD 0F 90 A2
+.:100B FF 8E 0F 90 A0
+.:1010 FF 88 D0 FD CA
+.:1015 D0 F5 8D 0F 90
+.:101A 60 00 00 00
+</code></pre>
+<p>Exit to BASIC.</p>
+<pre><code>.X
+</code></pre>
+<p>Move the pointer to end of BASIC program, which is the next location after the end of the BASIC program marker.  This is stored in LSB MSB order and here is $101E (4126).</p>
+<pre><code>POKE 45, 30
+POKE 46, 16
+</code></pre>
+<p>Add line to jump to the machine code contained in the <code>REM</code> statement.</p>
+<pre><code>20 SYS4103
+</code></pre>
+<h2>Memory Use Comparison</h2>
+<p>The following BASIC statement shows how much memory is free for BASIC programs.</p>
+<pre><code>PRINT FRE(0)
+</code></pre>
+<p>On an unexpanded Vic, that has just been switched on, it shows 3581 bytes free.</p>
+<p>The following table shows how much memory is used by the two programs above.</p>
+<table class="neatTable">
+  <tr><th>Program Version</th><th>Memory free (bytes)</th><th>Usage (bytes)</th></tr>
+  <tr><td>DATA statements</td><td>3460</td><td>121</td></tr>
+  <tr><td>REM statement</td><td>3544</td><td>37</td></tr>
+</table>
+<p>We can see from this table that the version of the program that stored the machine code routine in a <code>REM</code> statement used 84 bytes less memory than the one that stored the routine in <code>DATA</code> statements.  It also saved using up memory at 673-692 which could possibly be used for something else.</p>
+<h2>Conclusion</h2>
+<p>This method is a great way to save memory in BASIC programs, however it isn't without its problems.  The machine code routine can't contain a <code>00</code> byte as this indicates the end of the BASIC line.  It isn't suitable for listings and it is a pain if we want to alter the machine code stored in the <code>REM</code> statements.  Despite this, it is an interesting method which gives us some incite into how BASIC is stored in memory and can be useful in certain situations.</p>
+<h2>Video</h2>
+<p>The following video shows a machine code routine being entered into both <code>DATA</code> statements and <code>REM</code> statements.  It also shows the code being run directly from the area in memory where it is embedded within the <code>REM</code> statement.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PHJeQlGrTpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Storing Machine Code in REM Statements on the VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/storing-machine-code-in-rem-statements-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F&title=Storing%20Machine%20Code%20in%20REM%20Statements%20on%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F&quote=Storing%20Machine%20Code%20in%20REM%20Statements%20on%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F&text=Storing%20Machine%20Code%20in%20REM%20Statements%20on%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Storing%20Machine%20Code%20in%20REM%20Statements%20on%20the%20VIC-20&body=BASIC%20programs%20often%20contain%20machine%20code%20routines%20but%20they%20take%20up%20quite%20a%20lot%20of%20space%20in%20BASIC.%20%20An%20interesting%20way%20to%20reduce%20the%20amount%20of%20space%20that%20they%20take%20is%20to%20store%20the%20machine%20code%20in%20REM%20s...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Storing%20Machine%20Code%20in%20REM%20Statements%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fstoring-machine-code-in-rem-statements-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Code and Data in Display Memory on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some of this memory and therefore one option ...
+  &nbsp;
+  <a class="readMore" href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Double-Width C64 Style Font on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look...
+  &nbsp;
+  <a class="readMore" href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
+  &nbsp;
+  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Position Independent Code (6502) on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create Position Independent Code (PIC) or make the code relocatable.  H...
+  &nbsp;
+  <a class="readMore" href="/articles/position-independent-code-6502-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
