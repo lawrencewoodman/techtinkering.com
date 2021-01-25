@@ -38,7 +38,7 @@
   }
   twitterID   "1335992945074462721"
   socialImg   "vic20_code_and_data_in_display_memory.png"
-  tags        {"Retro" "Programming" "Commodore" "VIC-20"}
+  tags        {"Retro" "Assembly" "Programming" "Commodore" "VIC-20"}
 }
 
 { filename    2020-11-23-i-love-ed-on-cpm.md
