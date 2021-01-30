@@ -54,8 +54,8 @@ To edit the work file, press `E`.  The editor uses Wordstar key combinations whi
   <tr><td>CTRL-x</td><td>Character Down</td></tr>
   <tr><td>CTRL-k s</td><td>Save Document</td></tr>
   <tr><td>CTRL-k d</td><td>Quit</td></tr>
-</table>
-<br />
+</table><br />
+
 You can also use any keys that you configured above with the _Command Installation_ option in `tinst`.
 
 Files are edited in memory so to save them to disk you press `S` from the main menu.
@@ -75,14 +75,16 @@ end.
 
 Compile and run it by pressing `R` from the main menu.  You should see it compile and then say hello to the world.
 
-### Creating a FizzBuzz Program
+## Video
+
+The following video shows the creation of a FizzBuzz program using Turbo Pascal and allows us to see just how quick and easy it is.
 
 <div class="youtube-wrapper">
   <iframe style="margin-top: 1em; margin-bottom: 1em;" width="560" height="315" src="https://www.youtube.com/embed/acYu0sL9Ol0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
-The video above allows you to watch TP in action and see just how quick it is.  The source code for `fizzbuzz.pas` is as follows:
+The source code for `fizzbuzz.pas` used in the video is as follows:
 ```` pascal
 program fizzbuzz(output);
 var
