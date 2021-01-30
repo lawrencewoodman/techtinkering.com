@@ -602,6 +602,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   tags        {"Programming" "Pascal" "CP/M" "Retro"}
+  hackerNewsID "25956128"
   postURLStyle "/@year/@month/@day/@title/"
 }
 
