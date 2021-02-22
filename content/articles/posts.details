@@ -1,3 +1,14 @@
+{ filename    2021-02-22-programming-in-assembly-with-vicmon-on-the-vic-20.md
+  title       "Programming in Assembly with VICMON on the VIC-20"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "vic20_programming_in_assembly_vicmon.png"
+  tags        {"Retro" "Commodore" "VIC-20" "Programming" "Assembly"}
+}
+
+
 { filename    2021-01-25-storing-machine-code-in-rem-statements-on-the-vic-20.md
   title       "Storing Machine Code in REM Statements on the VIC-20"
   author      {
