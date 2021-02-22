@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-01-30</updated>
+  <updated>2021-02-22</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Programming in Assembly with VICMON on the VIC-20</title>
+      <id>https://techtinkering.com/articles/programming-in-assembly-with-vicmon-on-the-vic-20/</id>
+      <link href="https://techtinkering.com/articles/programming-in-assembly-with-vicmon-on-the-vic-20/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2021-02-22
+        </published>
+
+        <updated>
+          2021-02-22
+        </updated>
+
+        <summary>VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us</summary>
+    </entry>
     <entry>
       <title>Storing Machine Code in REM Statements on the VIC-20</title>
       <id>https://techtinkering.com/articles/storing-machine-code-in-rem-statements-on-the-vic-20/</id>
