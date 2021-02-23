@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-02-22</updated>
+  <updated>2021-02-23</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -946,7 +946,7 @@ The premise of this book is that the 60s/70s counter-culture led to the personal
           2019-11-26
         </updated>
 
-        <summary>The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The </summary>
+        <summary>The Commodore VIC-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The </summary>
     </entry>
     <entry>
       <title>Using C-Kermit to Exchange Files With Telnet BBS's</title>

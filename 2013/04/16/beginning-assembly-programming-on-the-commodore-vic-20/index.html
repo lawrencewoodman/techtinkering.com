@@ -6,20 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Beginning Assembly Programming on the Commodore VIC-20</title>
-  <meta name="description" content="The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
+  <meta name="description" content="The Commodore VIC-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
   <meta name="twitter:title" content="Beginning Assembly Programming on the Commodore VIC-20">
-  <meta name="twitter:description" content="The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
+  <meta name="twitter:description" content="The Commodore VIC-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Beginning Assembly Programming on the Commodore VIC-20">
-  <meta property="og:description" content="The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
+  <meta property="og:description" content="The Commodore VIC-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which co">
   <meta property="og:url" content="https://techtinkering.com/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">
   <!-- *** Open Graph *** --->
 
@@ -107,7 +107,7 @@
           <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
         </li>
         <li>
-          <a href="/useful-links/" title="A collection of links to useful resources">Useful Links</a>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
         </li>
       </ul>
     </div>
@@ -146,8 +146,8 @@
         </div>
       </header>
         <div itemprop="articleBody">
-        <p>The Commodore Vic-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The machine is well documented, well supported through forums and much of the hardware is plentiful and quite cheap.  The <a href="http://en.wikipedia.org/wiki/6502">6502</a> has a smaller instruction set than the <a href="http://en.wikipedia.org/wiki/Z80">Z80</a> for example and the Vic-20, because of it's limited power, doesn't take long to learn most things about it.  This is ideal for busy people who can only afford to spend so much time exploring.</p>
-<p>Here I will show you how to get started programming the Vic-20 in assembly language.  I will not be teaching 6502 assembly language itself as there are better resources available and I will link to these.  I will, however, be showing you what you need to get started, where some of the best resources are and I will be giving a few examples to whet your appetite.</p>
+        <p>The Commodore VIC-20 is a great machine to learn an assembly language on.  It was released in 1981 and was the first computer to sell one million units, which contributes to its popularity today.  The machine is well documented, well supported through forums and much of the hardware is plentiful and quite cheap.  The <a href="http://en.wikipedia.org/wiki/6502">6502</a> has a smaller instruction set than the <a href="http://en.wikipedia.org/wiki/Z80">Z80</a> for example and the VIC-20, because of it's limited power, doesn't take long to learn most things about it.  This is ideal for busy people who can only afford to spend so much time exploring.</p>
+<p>Here I will show you how to get started programming the VIC-20 in assembly language.  I will not be teaching 6502 assembly language itself as there are better resources available and I will link to these.  I will, however, be showing you what you need to get started, where some of the best resources are and I will be giving a few examples to whet your appetite.</p>
 <h2>Assembly Language</h2>
 <p>Assembly language is a mnemonic representation of the computers underlying machine language.  It allows you to represent the following machine language in <a href="http://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> octets:</p>
 <pre><code class="language-text">A9 93 20 D2 FF 00
@@ -160,16 +160,16 @@ BRK        ; Break out of the program.
 </code></pre>
 <p>One you get used to 6502 assembly language you will be able to read it much easier than machine language.  That said, you will naturally become familiar with the machine language as well when you are debugging and inspecting memory.  So you will easily spot BRK ($00) or JSR ($20) instructions.  This familiarity gives you a much closer connection to the machine and ultimately allows you to fine tune your programs to get the most out it.</p>
 <p>It is useful to know that a <code>$</code> indicates a hexadecimal number, a <code>%</code> a binary number, and if neither then a decimal number.  If a number is prefixed with a <code>#</code> this says that it is a literal number as opposed to being a reference to an address in memory.</p>
-<h2>Vicmon: A Machine Language Monitor</h2>
-<p>A machine language monitor is a good way to start learning assembly language.  Vicmon was released by Commodore in 1982 and hence is quite common.  A ML monitor allows you to inspect and alter memory as well as run code from memory.  In addition many, including Vicmon, allow you to assemble (turn mnemonic representations of machine code into actual machine code) and disassemble (turn machine code into a mnemonic representation).  The interactive nature makes it an ideal learning tool as you can try things out and straightaway see what happens.  Later on a ML monitor can help you to debug your programs and understand other people's better.</p>
-<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/Vicmon-6000.prg" title="Vicmon 4k Cartridge image">Vicmon </a> can be downloaded from the <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/">zimmers.net 4k tool ROMS archive</a> and a <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/VICMON-DOCS.zip">manual</a> is available from the <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/">funet.cbm8bit.com vic-20 manuals archive</a>.</p>
-<h2>Using Vicmon</h2>
-<p>Attach your Vicmon cartridge while your Vic-20 is off and then turn it on. Or if using an emulator, attach the cartridge image at $6000.</p>
+<h2>VICMON: A Machine Language Monitor</h2>
+<p>A machine language monitor is a good way to start learning assembly language.  VICMON was released by Commodore in 1982 and hence is quite common.  A ML monitor allows you to inspect and alter memory as well as run code from memory.  In addition many, including VICMON, allow you to assemble (turn mnemonic representations of machine code into actual machine code) and disassemble (turn machine code into a mnemonic representation).  The interactive nature makes it an ideal learning tool as you can try things out and straightaway see what happens.  Later on a ML monitor can help you to debug your programs and understand other people's better.</p>
+<p><a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/Vicmon-6000.prg" title="VICMON 4k Cartridge image">VICMON</a> can be downloaded from the <a href="http://www.zimmers.net/anonftp/pub/cbm/vic20/roms/tools/4k/">zimmers.net 4k tool ROMS archive</a> and the <a href="https://archive.org/details/VICMachineCodeMonitor/mode/2up">manual</a> is available online.  For an in-depth look at how to write machine language programs with VICMON see:  <a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a>.</p>
+<h2>Using VICMON</h2>
+<p>Attach your VICMON cartridge while your VIC-20 is off and then turn it on. Or if using an emulator, attach the cartridge image at $6000.</p>
 <p>To enter the monitor from BASIC:</p>
 <pre><code class="language-basic">SYS 24576
 </code></pre>
 <p>This brings up a status showing the registers and Program Counter (PC), followed by the <code>.</code> prompt.</p>
-<h3>Vicmon Commands</h3>
+<h3>VICMON Commands</h3>
 <p>Below is a list of commands used in this article.  To see more commands and a more in-depth explanation of them look at the manual linked above.  Other monitors use similar commands, but you will have to check their manual for the specifics.</p>
 <table class="neatTable">
   <tr><th>Command</th><th style="width: 14em;">Parameters</th><th>Explanation</th></tr>
@@ -182,15 +182,15 @@ BRK        ; Break out of the program.
 </table>
 <h2>Peeking and Poking Around in Memory</h2>
 <p>The <code>M</code> command allows you to peek (look) into memory and to poke (alter) memory.
-If you look at these <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n279/mode/2up">screen &amp; border colour combinations</a>, you'll see how you can change the screen and border colour by altering location <code>36879</code>.  We'll change the display to a Pink screen and Blue border which is <code>174</code> in the chart.  So remembering that Vicmon works in hex, we convert <code>36879</code> to <code>900F</code> and <code>174</code> to <code>AE</code>.  We can now change the screen and border colour using the <code>M</code> command from the <code>.</code> prompt:</p>
+If you look at these <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n279/mode/2up">screen &amp; border colour combinations</a>, you'll see how you can change the screen and border colour by altering location <code>36879</code>.  We'll change the display to a Pink screen and Blue border which is <code>174</code> in the chart.  So remembering that VICMON works in hex, we convert <code>36879</code> to <code>900F</code> and <code>174</code> to <code>AE</code>.  We can now change the screen and border colour using the <code>M</code> command from the <code>.</code> prompt:</p>
 <pre><code class="language-text">.M 900F
 </code></pre>
 <p>Now alter the first octet to <code>AE</code> and press &lt;Return&gt;.  You'll see the screen and border change colour.</p>
 <img src="/img/articles/vic20-vicmon-blue-border-pink-screen.png" />
-<p>Within Vicmon you can use the cursor keys to navigate back over the number, change it and press &lt;Return&gt; to see the colours change again.</p>
+<p>Within VICMON you can use the cursor keys to navigate back over the number, change it and press &lt;Return&gt; to see the colours change again.</p>
 <p>If you look at the <a href="http://archive.org/stream/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti/VIC-20_Programmers_Reference_Guide_1st_Edition_6th_Printing#page/n185/mode/2up">memory map</a> you'll see plenty of other interesting places to inspect and alter.</p>
 <h2>Assembling / Disassembling</h2>
-<p>To turn assembly language into machine code you use an assembler; to turn it back again your use a disassembler.  Vicmon includes both, which makes entering code much easier and also allows you to look at other people's code or the Basic KERNAL to work out how something has been done.</p>
+<p>To turn assembly language into machine code you use an assembler; to turn it back again your use a disassembler.  VICMON includes both, which makes entering code much easier and also allows you to look at other people's code or the Basic KERNAL to work out how something has been done.</p>
 <h3>Clear Screen Program</h3>
 <p>To enter the piece of code above to clear the screen we use the <code>A</code> command from the <code>.</code> prompt (&lt;Return&gt; indicates pressing the return key):</p>
 <pre><code class="language-text">.A 1400 LDA #$93
@@ -276,29 +276,27 @@ H  E  L  L  O  ,     W  O  R  L  D  !
 <pre><code class="language-text">.S &quot;HELLO&quot;,08,1400,1422
 </code></pre>
 <p><em>For cassette replace the <code>08</code> with <code>01</code></em>.</p>
-<p>Note that, unlike the other Vicmon commands, we must use commas to separate the arguments.  Using the memory location <code>$1422</code> noted above, this saves the region of memory from <code>$1400</code> to <code>$1421</code> inclusive.  The end memory address must be given as one past the real end address.</p>
-<p>If you turn your machine off, or do a hard reset from an emulator and go back into Vicmon.  You can now load the program back off cassette or disk:</p>
+<p>Note that, unlike the other VICMON commands, we must use commas to separate the arguments.  Using the memory location <code>$1422</code> noted above, this saves the region of memory from <code>$1400</code> to <code>$1421</code> inclusive.  The end memory address must be given as one past the real end address.</p>
+<p>If you turn your machine off, or do a hard reset from an emulator and go back into VICMON.  You can now load the program back off cassette or disk:</p>
 <pre><code class="language-text">.L &quot;HELLO&quot;,08
 </code></pre>
 <p><em>Again replace the <code>08</code> with <code>01</code> for cassette</em>.</p>
-<p>If we wanted to access our saved program from basic without a Vicmon cartridge, then you would just change the <code>BRK</code> instruction to an <code>RTS</code> instruction before saving.  To load the program from BASIC:</p>
+<p>If we wanted to access our saved program from basic without a VICMON cartridge, then you would just change the <code>BRK</code> instruction to an <code>RTS</code> instruction before saving.  To load the program from BASIC:</p>
 <pre><code class="language-basic">LOAD &quot;HELLO&quot;,8,1
 </code></pre>
 <p>To run the program from BASIC we use the SYS command.  In the following <code>5120</code> is the decimal equivalent for <code>$1400</code>:</p>
 <pre><code class="language-basic">SYS 5120
 </code></pre>
 <h2>Where now?</h2>
-<p>I hope this has given you enough information to get you started.  Below are some useful resources that will help you to increase your knowledge and progress further.</p>
-<ul>
-<li>Jim Butterfield's often recommended book <a href="http://www.bombjack.org/commodore/books/pdf/ML_for_the_C64_and_Other_Commodore_Computers.zip">Machine Language</a> available from the <a href="http://www.bombjack.org/commodore/books.htm">Commodore Books Collection</a> at <a href="http://www.bombjack.org/commodore/">DHL's Commdore Archive</a>.</li>
-<li>An online version of Richard Mansfield's book <a href="http://www.6502dude.com/6502/mlb/mlb.htm">Machine Language for Beginners</a> book.</li>
-<li>The <a href="http://www.sleepingelephant.com/denial/">Vic-20 Denial</a> website has a great forum.</li>
-<li>The <a href="http://archive.org/details/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti">VIC-20 Programmers Reference Guide 1st Edition 6th Printing</a>.</li>
-<li>The <a href="http://funet.cbm8bit.com/cbm/vic20/manuals/VICMON-DOCS.zip">Vicmon Manual</a></li>
-<li>The <a href="http://vice-emu.sourceforge.net/">VICE</a> Commodore emulator, which not only emulates the Vic-20, but also all the main 8-bit Commodore machines.</li>
-<li>To see Vicmon in action watch our video: <a href="http://www.youtube.com/watch?v=kmvF85euefs">Creating a TTY Simulator in Assembly Language on the Vic-20</a> and read its associated <a href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">article</a>.</li>
-</ul>
-<p>I have lots more to say about assembly language programming on the Vic-20, so subscribe to the <a href="http://feedproxy.google.com/TechTinkering">TechTinkering RSS</a> feed or keep an eye on the site to see further articles.</p>
+<p>There is plenty of information on this site with further links to other sites about programming the Vic.  To start have a look at:</p>
+<dl>
+  <dt><a href="/useful-links/#useful-links-vic-20">Useful VIC-20 Resources</a></dt>
+  <dd>Links to resources available online about the Vic</dd>
+  <dt><a href="/articles/tag/vic-20/">VIC-20 Articles</a></dt>
+  <dd>Our articles about the Vic including many about programming</dd>
+  <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL">VIC-20 Playlist</a></dt>
+  <dd>Videos on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a> supported by articles on this site</dd>
+</dl>
       </div>
     </article>
 </div>
@@ -322,7 +320,7 @@ H  E  L  L  O  ,     W  O  R  L  D  !
     <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F&title=Beginning%20Assembly%20Programming%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
     <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F&quote=Beginning%20Assembly%20Programming%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
     <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F&text=Beginning%20Assembly%20Programming%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-    <li><a href="mailto:?subject=Beginning%20Assembly%20Programming%20on%20the%20Commodore%20VIC-20&body=The%20Commodore%20Vic-20%20is%20a%20great%20machine%20to%20learn%20an%20assembly%20language%20on.%20%20It%20was%20released%20in%201981%20and%20was%20the%20first%20computer%20to%20sell%20one%20million%20units%2C%20which%20contributes%20to%20its%20popularity%20today.%20%20The%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+    <li><a href="mailto:?subject=Beginning%20Assembly%20Programming%20on%20the%20Commodore%20VIC-20&body=The%20Commodore%20VIC-20%20is%20a%20great%20machine%20to%20learn%20an%20assembly%20language%20on.%20%20It%20was%20released%20in%201981%20and%20was%20the%20first%20computer%20to%20sell%20one%20million%20units%2C%20which%20contributes%20to%20its%20popularity%20today.%20%20The%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2013%2F04%2F16%2Fbeginning-assembly-programming-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
   </ul>
 </div>
 
