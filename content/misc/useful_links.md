@@ -54,7 +54,7 @@ CP/M is an operating system created by Gary Kildall of Digital Research, Inc. or
 
 <br />
 
-## VIC-20
+<h2 id="useful-links-vic-20">VIC-20</h2>
 
 The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was sold by Commodore Business Machines and released in 1980/1981.
 
@@ -62,7 +62,7 @@ The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was so
 
 <dl>
   <dt><a href="/articles/tag/vic-20/">VIC-20 Articles</a></dt>
-  <dd>Articles about software applications and programming</dd>
+  <dd>Articles about programming and software applications</dd>
   <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL">VIC-20 Playlist</a></dt>
   <dd>Videos on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a> supported by articles on this site</dd>
 </dl>
@@ -72,6 +72,27 @@ The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was so
 <dl>
   <dt><a href="https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/mode/2up">Mapping the VIC by Russ Davies</a></dt>
   <dd>Contains detailed explanations of all the memory locations of the VIC along with some great programming examples</dd>
+  <dt><a href="https://archive.org/details/Machine_Language_for_the_Commodore_Revised_and_Expanded_Edition/mode/2up">Machine Language<br />- For the Commodore 64,128 and other Commodore Computers by Jim Butterfield</a></dt>
+  <dd>One of the best books to learn 6502 Assembly Language</dd>
+  <dt><a href="https://www.atariarchives.org/mlb/">Machine Language for Beginners by Richard Mansfield</a></dt>
+  <dd>An online version of the book</dd>
+  <dt><a href="http://archive.org/details/VIC-20ProgrammersReferenceGuide1stEdition6thPrinti">The VIC-20 Programmers Reference Guide</a></dt>
+  <dd>An invaluable detaled resource to discover how the Vic works, its memory map and as a reference to the Kernel and BASIC routines</dd>
+</dl>
+
+### Misc
+
+<dl>
+  <dt><a href="https://www.sleepingelephant.com/denial/">The International Journal of Vic-20 Development</a></dt>
+  <dd>This has a really good and active forum full of knowledgable and helpful people</dd>
+</dl>
+
+
+### Emulators
+
+<dl>
+  <dt><a href="https://vice-emu.sourceforge.io/">The VICE Commodore Emulator</a></dt>
+  <dd>Probably the best emulator for 8-bit Commodore machines including the VIC-20</dd>
 </dl>
 
 <br />
