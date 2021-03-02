@@ -5,7 +5,7 @@ Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to 
 Sweet 16 is described as a pseudo-machine interpreter, which is probably a better description than a virtual machine because it shares native memory for storage and is designed to switch back and forth between itself and native 6502 code.  The pseudo-machine has sixteen 16-bit registers with five of them having a defined function.
 
 
-* R0 &nbsp; Accumulator
+* R0 &nbsp;Accumulator
 * R12 Subroutine return stack pointer
 * R13 Comparison instruction results
 * R14 Status register
