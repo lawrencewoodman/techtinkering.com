@@ -135,10 +135,10 @@ On an unexpanded Vic, BASIC starts at 4097 ($1001) and this table shows how the 
 
 ## Video
 
-The following video shows the program below being run to display its structure and encoding.
+The following video displays a BASIC program's structure and encoding in memory using the program below and VICMON.
 
 <div class="youtube-wrapper">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PHJeQlGrTpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bh380PVz-LY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 
