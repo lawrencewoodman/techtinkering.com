@@ -2,7 +2,7 @@ BASIC programs often contain machine code routines but they take up quite a lot 
 
 ## How BASIC is Stored in Memory
 
-A BASIC program consists of a series of BASIC lines followed by two 00 octets to signify the end of the program. The BASIC statements are condensed using tokens such as $8F for `REM`.
+A BASIC program consists of a series of lines followed by two 00 bytes to signify the end of the program. The BASIC statements are condensed using tokens such as $8F for `REM`.  To see a more detailed explaination have a look at: [Basic Line Storage on the VIC-20](/articles/basic-line-storage-on-the-vic-20/).
 
 <img src="/img/articles/vic20_basic_lines_memory_layout.png" class="img-right" style="width: 100%; margin-bottom: 2em;" title="Layout of BASIC lines in memory">
 
@@ -27,7 +27,7 @@ The following BASIC program copies a machine code routine stored in `DATA` state
 
 ## Storing Machine Code in REM Statements
 
-The machine code routine stored in `DATA` statements above is position independent and is represented by the following octets which we can also see in the table below.
+The machine code routine stored in `DATA` statements above is position independent and is represented by the following bytes which we can also see in the table below.
 
 ```
 AD 0F 90 A2 FF
