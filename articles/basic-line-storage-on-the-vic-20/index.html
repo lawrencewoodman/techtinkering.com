@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Basic Line Storage on the VIC-20</title>
+  <meta name="description" content="BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a B">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Basic Line Storage on the VIC-20">
+  <meta name="twitter:description" content="BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a B">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_basic_lines_in_memory.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Basic Line Storage on the VIC-20">
+  <meta property="og:description" content="BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a B">
+  <meta property="og:url" content="https://techtinkering.com/articles/basic-line-storage-on-the-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_basic_lines_in_memory.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/basic-line-storage-on-the-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_basic_lines_in_memory.png" />
+      <header>
+        <a href="/articles/basic-line-storage-on-the-vic-20/" title="Basic Line Storage on the VIC-20">
+          <h1 itemprop="headline name">Basic Line Storage on the VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-03-17">
+              17 March 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of its own code and display how it is stored in memory.  A good understanding of how BASIC is stored can help us to find novel ways to get the most out of BASIC and to leverage the power of the BASIC interpreter.  This can be seen in a previous article: <a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a>.</p>
+<p>A BASIC program consists of a series of lines.  Each line has a link to the next line in memory, followed by a line number, then one or more BASIC statements and the end of the line is indicated with a 00 byte.  The end of the program is indicated by two 00 bytes in the next line link.</p>
+<img src="/img/articles/vic20_basic_lines_memory_layout.png" class="img-right" style="width: 100%; margin-bottom: 2em;" title="Layout of BASIC lines in memory">
+<p>BASIC programs start at different locations depending on how much memory the Vic has and this can be seen in the following table.</p>
+<table class="neatTable">
+  <tr>
+    <th>Memory</th>
+    <th>BASIC Storage</th>
+    <th>First Location of BASIC Program</th>
+  </tr>
+  <tr>
+    <td>Unexpanded</td>
+    <td>$1000-$1DFF (4096-7679)</td>
+    <td>$1001 (4097)</td>
+  </tr>
+  <tr>
+    <td>+3K</td>
+    <td>$0400-$1DFF (1024-7679)</td>
+    <td>$0401 (1025)</td>
+  </tr>
+  <tr>
+    <td>+8K</td>
+    <td>$1200-$3FFF (4608-16383)</td>
+    <td>$1201 (4609)</td>
+  <tr>
+    <td>+16K</td>
+    <td>$1200-$5FFF (4608-24575)</td>
+    <td>$1201 (4609)</td>
+  </tr>
+  <tr>
+    <td>+24K</td>
+    <td>$1200-$7FFF (4608-32767)</td>
+    <td>$1201 (4609)</td>
+  </tr>
+  </tr>
+</table>
+<p>In order to reduce the storage requirements of a BASIC program and to speed up the interpreter, BASIC statements are condensed using tokens.  The following table contains the <a href="https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/page/n337/mode/2up" title="Mapping the Vic by Russ Davies, Appendix C">tokens used by BASIC v2 on the Vic</a>.  Where tokens aren't used, PETSCII takes it place in the case of comments, variable names, numbers, etc.</p>
+<div class="overflow-auto"><table class="neatTable">
+  <tr><th>Decimal</th><th>Hex</th><th>BASIC token</th>
+      <th>Decimal</th><th>Hex</th><th>BASIC token</th>
+  </tr>
+  <tr><td>128</td><td>80</td><td>END</td><td>166</td><td>A6</td><td>SPC(</td></tr>
+  <tr><td>129</td><td>81</td><td>FOR</td><td>167</td><td>A7</td><td>THEN</td></tr>
+  <tr><td>130</td><td>82</td><td>NEXT</td><td>168</td><td>A8</td><td>NOT</td></tr>
+  <tr><td>131</td><td>83</td><td>DATA</td><td>169</td><td>A9</td><td>STEP</td></tr>
+  <tr><td>132</td><td>84</td><td>INPUT#</td><td>170</td><td>AA</td><td>+</td></tr>
+  <tr><td>133</td><td>85</td><td>INPUT</td><td>171</td><td>AB</td><td>-</td></tr>
+  <tr><td>134</td><td>86</td><td>DIM</td><td>172</td><td>AC</td><td>*</td></tr>
+  <tr><td>135</td><td>87</td><td>READ</td><td>173</td><td>AD</td><td>/</td></tr>
+  <tr><td>136</td><td>88</td><td>LET</td><td>174</td><td>AE</td><td>^</td></tr>
+  <tr><td>137</td><td>89</td><td>GOTO</td><td>175</td><td>AF</td><td>AND</td></tr>
+  <tr><td>138</td><td>8A</td><td>RUN</td><td>176</td><td>B0</td><td>OR</td></tr>
+  <tr><td>139</td><td>8B</td><td>IF</td><td>177</td><td>B1</td><td>&GT;</td></tr>
+  <tr><td>140</td><td>8C</td><td>RESTORE</td><td>178</td><td>B2</td><td>=</td></tr>
+  <tr><td>141</td><td>8D</td><td>GOSUB</td><td>179</td><td>B3</td><td>&LT;</td></tr>
+  <tr><td>142</td><td>8E</td><td>RETURN</td><td>180</td><td>B4</td><td>SGN</td></tr>
+  <tr><td>143</td><td>8F</td><td>REM</td><td>181</td><td>B5</td><td>INT</td></tr>
+  <tr><td>144</td><td>90</td><td>STOP</td><td>182</td><td>B6</td><td>ABS</td></tr>
+  <tr><td>145</td><td>91</td><td>ON</td><td>183</td><td>B7</td><td>USR</td></tr>
+  <tr><td>146</td><td>92</td><td>WAIT</td><td>184</td><td>B8</td><td>FRE</td></tr>
+  <tr><td>147</td><td>93</td><td>LOAD</td><td>185</td><td>B9</td><td>POS</td></tr>
+  <tr><td>148</td><td>94</td><td>SAVE</td><td>186</td><td>BA</td><td>SQR</td></tr>
+  <tr><td>149</td><td>95</td><td>VERIFY</td><td>187</td><td>BB</td><td>RND</td></tr>
+  <tr><td>150</td><td>96</td><td>DEF</td><td>188</td><td>BC</td><td>LOG</td></tr>
+  <tr><td>151</td><td>97</td><td>POKE</td><td>189</td><td>BD</td><td>EXP</td></tr>
+  <tr><td>152</td><td>98</td><td>PRINT#</td><td>190</td><td>BE</td><td>COS</td></tr>
+  <tr><td>153</td><td>99</td><td>PRINT</td><td>191</td><td>BF</td><td>SIN</td></tr>
+  <tr><td>154</td><td>9A</td><td>CONT</td><td>192</td><td>C0</td><td>TAN</td></tr>
+  <tr><td>155</td><td>9B</td><td>LIST</td><td>193</td><td>C1</td><td>ATN</td></tr>
+  <tr><td>156</td><td>9C</td><td>CLR</td><td>194</td><td>C2</td><td>PEEK</td></tr>
+  <tr><td>157</td><td>9D</td><td>CMD</td><td>195</td><td>C3</td><td>LEN</td></tr>
+  <tr><td>158</td><td>9E</td><td>SYS</td><td>196</td><td>C4</td><td>STR$</td></tr>
+  <tr><td>159</td><td>9F</td><td>OPEN</td><td>197</td><td>C5</td><td>VAL</td></tr>
+  <tr><td>160</td><td>A0</td><td>CLOSE</td><td>198</td><td>C6</td><td>ASC</td></tr>
+  <tr><td>161</td><td>A1</td><td>GET</td><td>199</td><td>C7</td><td>CHR$</td></tr>
+  <tr><td>162</td><td>A2</td><td>NEW</td><td>200</td><td>C8</td><td>LEFT$</td></tr>
+  <tr><td>163</td><td>A3</td><td>TAB(</td><td>201</td><td>C9</td><td>RIGHT$</td></tr>
+  <tr><td>164</td><td>A4</td><td>TO</td><td>202</td><td>CA</td><td>MID$</td></tr>
+  <tr><td>165</td><td>A5</td><td>FN</td><td>203</td><td>CB</td><td>GO</td></tr>
+</table></div>
+<h2>An Example BASIC Program Structure</h2>
+<p>As an example we'll look at how the following short BASIC program is stored in memory.</p>
+<pre><code>10 REM A COMMENT
+20 N=4*3:PRINT N
+</code></pre>
+<p>On an unexpanded Vic, BASIC starts at 4097 ($1001) and this table shows how the program is stored in memory.  The two-byte values are stored in memory in LSB MSB order and in the table this is how they are listed in the hex column with the 16-bit value in MSB LSB order in parenthesis.</p>
+<div class="overflow-auto"><table class="neatTable">
+  <tr><th>Address</th><th>Contents<br />(decimal)</th><th>Contents<br />(hex)</th><th>Meaning</th><th>Type</th></tr>
+  <tr><td>4097</td><td>4113</td><td>1110 ($1011)</td><td><em>Next Line Link</em></td><td></td></tr>
+  <tr><td>4099</td><td>0010</td><td>0A00 ($000A)</td><td><em>Line Number</em></td><td></td></tr>
+  <tr><td>4101</td><td>143</td><td>8F</td><td>REM</td><td>Token</td></tr>
+  <tr><td>4102</td><td>32</td><td>20</td><td>&lt;space&gt;</td><td>PETSCII</td></tr>
+  <tr><td>4103</td><td>65</td><td>41</td><td>A</td><td>PETSCII</td></tr>
+  <tr><td>4104</td><td>32</td><td>20</td><td>&lt;space&gt;</td><td>PETSCII</td></tr>
+  <tr><td>4105</td><td>67</td><td>43</td><td>C</td><td>PETSCII</td></tr>
+  <tr><td>4106</td><td>79</td><td>4F</td><td>O</td><td>PETSCII</td></tr>
+  <tr><td>4107</td><td>77</td><td>4D</td><td>M</td><td>PETSCII</td></tr>
+  <tr><td>4108</td><td>77</td><td>4D</td><td>M</td><td>PETSCII</td></tr>
+  <tr><td>4109</td><td>69</td><td>45</td><td>E</td><td>PETSCII</td></tr>
+  <tr><td>4110</td><td>78</td><td>4E</td><td>N</td><td>PETSCII</td></tr>
+  <tr><td>4111</td><td>84</td><td>54</td><td>T</td><td>PETSCII</td></tr>
+  <tr><td>4112</td><td>0</td><td>00</td><td><em>End of Line</em></td><td></td></tr>
+  <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>4113</td><td>4127</td><td>1F10 ($101F)</td><td><em>Next Line Link</em></td><td></td></tr>
+  <tr><td>4115</td><td>0020</td><td>1400 ($0014)</td><td><em>Line Number</em></td><td></td></tr>
+  <tr><td>4117</td><td>78</td><td>4E</td><td>N</td><td>PETSCII</td></tr>
+  <tr><td>4118</td><td>178</td><td>B2</td><td>=</td><td>Token</td></tr>
+  <tr><td>4119</td><td>52</td><td>34</td><td>4</td><td>PETSCII</td></tr>
+  <tr><td>4120</td><td>172</td><td>AC</td><td>*</td><td>Token</td></tr>
+  <tr><td>4121</td><td>51</td><td>33</td><td>3</td><td>PETSCII</td></tr>
+  <tr><td>4122</td><td>58</td><td>3A</td><td>:</td><td>PETSCII</td></tr>
+  <tr><td>4123</td><td>153</td><td>99</td><td>PRINT</td><td>Token</td></tr>
+  <tr><td>4124</td><td>32</td><td>20</td><td>&lt;space&gt;</td><td>PETSCII</td></tr>
+  <tr><td>4125</td><td>78</td><td>4E</td><td>N</td><td>PETSCII</td></tr>
+  <tr><td>4126</td><td>0</td><td>00</td><td><em>End of Line</em></td><td></td></tr>
+  <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>4127</td><td>0000</td><td></td><td><em>End of Program</em></td><td></td></tr>
+</table></div>
+<h2>Video</h2>
+<p>The following video shows the program below being run to display its structure and encoding.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PHJeQlGrTpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2>Program to Display Structure of Basic Program</h2>
+<p>The following program will go through each of its BASIC lines and show the structure and encoding.</p>
+<pre><code>100 REM PRINT BASIC STRUCTURE
+110 P=PEEK(43)+PEEK(44)*256:REM START OF BASIC
+120 GOSUB 5000
+130 LL=PEEK(P)+256*PEEK(P+1)
+140 LN=PEEK(P+2)+256*PEEK(P+3)
+150 GOSUB 1000
+160 P=LL
+170 IF LL &lt;&gt; 0 THEN GOTO 130
+180 END
+
+1000 REM PRINT LINE STRUCTURE
+1010 IF LL=0 THEN PRINT P;LL;TAB(12);&quot;*EOP&quot;:RETURN
+1020 PRINT:GOSUB 4000:PRINT
+1030 PRINT P;LL;TAB(12);&quot;*LINK&quot;
+1040 PRINT P+2;LN;TAB(12);&quot;*LINE NUM&quot;
+1050 P=P+4
+1060 B=PEEK(P)
+1070 PRINT P;B;TAB(12);
+1080 GOSUB 3000:PRINT
+1090 P=P+1
+1100 GOSUB 2000
+1110 IF B &lt;&gt; 0 GOTO 1060
+1120 PRINT
+1130 RETURN
+
+2000 REM DELAY
+2010 FOR I=1 TO 150
+2020 NEXT I
+2030 RETURN
+
+3000 REM PRINT TOKEN OR CHAR
+3010 IF PL = 0 AND B=0 THEN PRINT &quot;*EOL&quot;
+3020 IF PL = 0 AND B=32 THEN PRINT &quot;[SPACE]&quot;;
+3030 IF B &gt;= 128 AND B &lt;= 203 THEN PRINT T$(B-128);:RETURN
+3040 PRINT CHR$(B);
+3050 RETURN
+
+4000 REM PRINT BASIC LINE
+4010 PRINT LN;
+4020 BL=P+4
+4030 B=PEEK(BL)
+4040 IF B = 0 THEN 4080
+4050 PL=1:GOSUB 3000:PL=0
+4060 BL=BL+1
+4070 GOTO 4030
+4080 PRINT
+4090 RETURN
+
+5000 REM LOAD TOKENS
+5010 DIM T$(76)
+5020 FOR I=0TO75
+5030 READ T$(I)
+5040 NEXT I
+5050 RETURN
+
+6000 REM TOKENS
+6010 DATA &quot;END&quot;,&quot;FOR&quot;,&quot;NEXT&quot;,&quot;DATA&quot;,&quot;INPUT#&quot;,&quot;INPUT&quot;
+6020 DATA &quot;DIM&quot;,&quot;READ&quot;,&quot;LET&quot;,&quot;GOTO&quot;,&quot;RUN&quot;,&quot;IF&quot;,&quot;RESTORE&quot;
+6030 DATA &quot;GOSUB&quot;,&quot;RETURN&quot;,&quot;REM&quot;,&quot;STOP&quot;,&quot;ON&quot;,&quot;WAIT&quot;,&quot;LOAD&quot;
+6040 DATA &quot;SAVE&quot;,&quot;VERIFY&quot;,&quot;DEF&quot;,&quot;POKE&quot;,&quot;PRINT#&quot;,&quot;PRINT&quot;
+6050 DATA &quot;CONT&quot;,&quot;LIST&quot;,&quot;CLR&quot;,&quot;CMD&quot;,&quot;SYS&quot;,&quot;OPEN&quot;,&quot;CLOSE&quot;
+6060 DATA &quot;GET&quot;,&quot;NEW&quot;,&quot;TAB(&quot;,&quot;TO&quot;,&quot;FN&quot;,&quot;SPC(&quot;,&quot;THEN&quot;,&quot;NOT&quot;
+6070 DATA &quot;STEP&quot;,&quot;+&quot;,&quot;-&quot;,&quot;*&quot;,&quot;/&quot;,&quot;^&quot;,&quot;AND&quot;,&quot;OR&quot;,&quot;&gt;&quot;,&quot;=&quot;
+6080 DATA &quot;&lt;&quot;,&quot;SGN&quot;,&quot;INT&quot;,&quot;ABS&quot;,&quot;USR&quot;,&quot;FRE&quot;,&quot;POS&quot;,&quot;SQR&quot;
+6090 DATA &quot;RND&quot;,&quot;LOG&quot;,&quot;EXP&quot;,&quot;COS&quot;,&quot;SIN&quot;,&quot;TAN&quot;,&quot;ATN&quot;
+6100 DATA &quot;PEEK&quot;,&quot;LEN&quot;,&quot;STR$&quot;,&quot;VAL&quot;,&quot;ASC&quot;,&quot;CHR$&quot;,&quot;LEFT$&quot;
+6110 DATA &quot;RIGHT$&quot;,&quot;MID$&quot;,&quot;GO&quot;
+</code></pre>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Basic Line Storage on the VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/basic-line-storage-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F&title=Basic%20Line%20Storage%20on%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F&quote=Basic%20Line%20Storage%20on%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F&text=Basic%20Line%20Storage%20on%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Basic%20Line%20Storage%20on%20the%20VIC-20&body=BASIC%20programs%20are%20stored%20in%20memory%20using%20a%20simple%20structure%20that%20we%20can%20investigate%20and%20manipulate.%20%20This%20article%20will%20show%20how%20they%20are%20stored%20and%20contains%20a%20BASIC%20program%20to%20go%20through%20each%20line%20of%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Basic%20Line%20Storage%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fbasic-line-storage-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in REM s...
+  &nbsp;
+  <a class="readMore" href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
+  &nbsp;
+  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  There are a number of programs that allow you to use 40 columns of text from Basic on a Commodore VIC-20.  This can be useful as by default the Vic's screen is 22 columns by 23 rows.  They are supplied...
+  &nbsp;
+  <a class="readMore" href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us...
+  &nbsp;
+  <a class="readMore" href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/visualizing-zero-page-on-the-commodore-vic-20/">Visualizing Zero Page on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use this to visualize a section of memory such ...
+  &nbsp;
+  <a class="readMore" href="/articles/visualizing-zero-page-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

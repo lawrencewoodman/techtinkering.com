@@ -144,6 +144,7 @@
 
           <ul class="tags">
               <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+              <li>#<a href="/articles/tag/basic/">BASIC</a></li>
               <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
               <li>#<a href="/articles/tag/programming/">Programming</a></li>
               <li>#<a href="/articles/tag/retro/">Retro</a></li>
@@ -154,7 +155,7 @@
         <div itemprop="articleBody">
         <p>BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in <code>REM</code> statements.  This is much more compact and also means that we can call the routine directly from the location it is stored in memory rather than having to copy it to a further location.  This doesn't just apply to machine code, we could also do this for storing other data such as a custom character set.</p>
 <h2>How BASIC is Stored in Memory</h2>
-<p>A BASIC program consists of a series of BASIC lines followed by two 00 octets to signify the end of the program. The BASIC statements are condensed using tokens such as $8F for <code>REM</code>.</p>
+<p>A BASIC program consists of a series of lines followed by two 00 bytes to signify the end of the program. The BASIC statements are condensed using tokens such as $8F for <code>REM</code>.  To see a more detailed explaination have a look at: <a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a>.</p>
 <img src="/img/articles/vic20_basic_lines_memory_layout.png" class="img-right" style="width: 100%; margin-bottom: 2em;" title="Layout of BASIC lines in memory">
 <h2>Storing Machine Code in DATA Statements</h2>
 <img src="/img/articles/vic20_machine_code_in_data_statements_basic_listing.png" class="img-right" style="width: 400px; clear: right;" title="BASIC listing with machine in DATA statements">
@@ -166,7 +167,7 @@
 40 SYS673
 </code></pre>
 <h2>Storing Machine Code in REM Statements</h2>
-<p>The machine code routine stored in <code>DATA</code> statements above is position independent and is represented by the following octets which we can also see in the table below.</p>
+<p>The machine code routine stored in <code>DATA</code> statements above is position independent and is represented by the following bytes which we can also see in the table below.</p>
 <pre><code>AD 0F 90 A2 FF
 8E 0F 90 A0 FF
 88 D0 FD CA D0
@@ -288,6 +289,43 @@ POKE 46, 16
     <h2>Related Articles</h2>
     <div class="margin-buffer">
       <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
+  &nbsp;
+  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
+  &nbsp;
+  <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
   <span class="post-meta">
       <ul class="tags">
@@ -339,44 +377,6 @@ POKE 46, 16
   The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look...
   &nbsp;
   <a class="readMore" href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
-          <li>#<a href="/articles/tag/programming/">Programming</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
-          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
-  &nbsp;
-  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Sweet 16 (The 6502 Dream Machine) Ported to the VIC-20</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/programming/">Programming</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  Sweet 16 was created by Steve Wozniak to reduce code size and make it easier to handle 16-bit pointers and arithmetic for his Apple Integer BASIC.  He wrote it around 1977 and referred to it in an arti...
-  &nbsp;
-  <a class="readMore" href="/articles/sweet-16-the-6502-dream-machine-ported-to-the-vic-20/">Read More</a>
 </div>
 <br />
 </div>
