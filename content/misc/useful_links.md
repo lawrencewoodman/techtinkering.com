@@ -63,7 +63,7 @@ The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was so
 <dl>
   <dt><a href="/articles/tag/vic-20/">VIC-20 Articles</a></dt>
   <dd>Articles about programming and software applications</dd>
-  <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL">VIC-20 Playlist</a></dt>
+  <dt><a href="https://www.youtube.com/playlist?list=PL6PrE7UVkn_NglGIjY4r_xi7XmuVPl4BL">VIC-20 YouTube Playlist</a></dt>
   <dd>Videos on the <a href="https://www.youtube.com/user/TechTinkering">TechTinkering YouTube Channel</a> supported by articles on this site</dd>
 </dl>
 
@@ -85,6 +85,9 @@ The Commodore VIC-20 is an 8-bit home computer based on the MOS 6502.  It was so
 <dl>
   <dt><a href="https://www.sleepingelephant.com/denial/">The International Journal of Vic-20 Development</a></dt>
   <dd>This has a really good and active forum full of knowledgable and helpful people</dd>
+  <dt><a href="http://www.6502.org/tutorials/6502opcodes.html">NMOS 6502 Opcodes</a></dt>
+  <dd>A detailed 6502 instruction reference by John Pickens</dd>
+
 </dl>
 
 
