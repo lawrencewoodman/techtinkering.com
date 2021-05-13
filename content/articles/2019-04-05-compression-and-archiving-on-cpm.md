@@ -18,7 +18,7 @@ The first compression formats on CP/M only compressed single files and would cha
 ## Archive Only
 <dl>
   <dt>.LBR</dt>
-  <dd>LBR was an early CP/M format that allowed you to combine multiple files into a single archive.  These files would have often been compressed with tools such as squeeze or crunch.  Because it was so common it was well supported by other tools such as QL, LRUN, LSWEEP and others which can look into a .LBR archive and use individual files without having to separately extract first.  These files can be handled using <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/arc-lbr/nulu152a.lbr" title="nulu152a.lbr">nulu</a> or if you just want to extract files, <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/beehive/compress/delbr.com" title="delbr.com">delbr</a>.</dd>
+  <dd>LBR was an early CP/M format that allowed you to combine multiple files into a single archive.  These files would often have been compressed with tools such as squeeze or crunch.  Because it was so common it was well supported by other tools such as QL, LRUN, LSWEEP and others which can look into a .LBR archive and use individual files without having to separately extract first.  These files can be handled using <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/arc-lbr/nulu152a.lbr" title="nulu152a.lbr">nulu</a> or if you just want to extract files, <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/beehive/compress/delbr.com" title="delbr.com">delbr</a>.  For more information have a look at our article: <a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR on CP/M</a>.</dd>
 </dl>
 
 ## Multiple File Archives with Compression

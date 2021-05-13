@@ -1,3 +1,13 @@
+{ filename    2021-05-13-working-with-lbr-files-on-cpm.md
+  title       "Working with .LBR files on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_working_with_lbr_files.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2021-03-17-basic-line-storage-on-the-vic-20.md
   title       "Basic Line Storage on the VIC-20"
   author      {
