@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-03-25</updated>
+  <updated>2021-05-13</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Working with .LBR files on CP/M</title>
+      <id>https://techtinkering.com/articles/working-with-lbr-files-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/working-with-lbr-files-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2021-05-13
+        </published>
+
+        <updated>
+          2021-05-13
+        </updated>
+
+        <summary>The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr</summary>
+    </entry>
     <entry>
       <title>Basic Line Storage on the VIC-20</title>
       <id>https://techtinkering.com/articles/basic-line-storage-on-the-vic-20/</id>

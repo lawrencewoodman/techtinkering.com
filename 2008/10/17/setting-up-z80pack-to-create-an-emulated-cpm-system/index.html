@@ -182,7 +182,7 @@ $ make clean
 </ul>
 <p>This leaves, on Linux, a few bash scripts in the <code>~/z80pack/cpmsim/</code> directory, <code>cpm2</code>, <code>cpm3</code>, <code>mpm</code>, which automatically start the emulator by booting into CP/M 2.2, CP/M 3.0, MP/M, etc.</p>
 <h2>Creating disk images</h2>
-<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/~michael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/~michael/cpmtools/cpmtools-2.7.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
+<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/%7Emichael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/%7Emichael/cpmtools/cpmtools-2.7.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
 <h3>Create a 4Mb Hard Disk Image</h3>
 <p>It would be useful to create a 4Mb Hard Disk Image, as this may be needed if we want to use any bigger applications such as a C compiler.  To create this we can use Cpmtools, but first we need to make sure that it has the correct disk definition by editing <code>/etc/cpmtools/diskdefs</code> and adding the following lines:</p>
 <pre><code class="language-text"># 4mb HDD for z80pack
@@ -336,6 +336,21 @@ The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which make
 </div>
 <br />
       <header>
+  <h2><a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr...
+  &nbsp;
+  <a class="readMore" href="/articles/working-with-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
   <span class="post-meta">
       <ul class="tags">
@@ -348,22 +363,6 @@ The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which make
   After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicke...
   &nbsp;
   <a class="readMore" href="/articles/re-execute-programs-on-cpm/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/i-love-ed-on-cpm/">I Love ED on CP/M</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
-          <li>#<a href="/articles/tag/editors/">Editors</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's elegant, easy to learn and only has about 25 commands but t...
-  &nbsp;
-  <a class="readMore" href="/articles/i-love-ed-on-cpm/">Read More</a>
 </div>
 <br />
 </div>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Working with .LBR files on CP/M</title>
+  <meta name="description" content="The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 f">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Working with .LBR files on CP/M">
+  <meta name="twitter:description" content="The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 f">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_working_with_lbr_files.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Working with .LBR files on CP/M">
+  <meta property="og:description" content="The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 f">
+  <meta property="og:url" content="https://techtinkering.com/articles/working-with-lbr-files-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_working_with_lbr_files.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/working-with-lbr-files-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_working_with_lbr_files.png" />
+      <header>
+        <a href="/articles/working-with-lbr-files-on-cpm/" title="Working with .LBR files on CP/M">
+          <h1 itemprop="headline name">Working with .LBR files on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-05-13">
+              13 May 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) program and the author mentions benefits such as making it easier to download and distribute related files on RCPM systems as well as making better use of disk space and directory structure.  .LBR reigned supreme until it was displaced by the .ARC/.ARK file format on MS-DOS and later CP/M which combined compressing member files with including them in an archive in a single process.  If we look on the <a href="http://cpmarchives.classiccmp.org/ftp.php?b=cpm/Software/WalnutCD/">Walnut Creek CD</a> we will see that the majority of multi-file archives are .LBR files.</p>
+<p>An archive consists of a number of directory entries and member files arranged sequentially into a single archive.  The format does not directly support compression but member files were often <a href="/articles/compression-and-archiving-on-cpm/">compressed</a> with Squeeze, Crunch, etc prior to being included in an archive.  These member files are easily accessed and therefore utilities were written to view and extract individual files.  On RCPM systems this allowed remote users to investigate what they may download prior to doing so.  LMODEM was particularly useful as it allows you to download a single member file from an archive which could be important if downloading the whole archive would exceed the system time limit for a user.</p>
+<p>This article contains a selection of useful utilities for handling .LBR archives and at the end is a <a href="#article-basic-information">table showing their versions, release dates, .COM files sizes and 8080 compatibility</a>.</p>
+<h2>.LBR File Format Definition</h2>
+<p>The earliest definition of the file format I can find is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/simtel/sigm/vols100/vol119/ludef1.doc" title="LUDEF1.DOC from Walnut Creek CD: /simtel/sigm/vols100/vol119/">LUDEF1.DOC</a>.  This is dated 4 November 1982 and refers to the original LUDEF.DOC dated 31 October 1982.  Two particularly notable things about the format are:</p>
+<ol>
+<li>The member files have to be included using whole 128-byte sectors and hence file size was measured by the number of 128-byte sectors.</li>
+<li>Thankfully Gary had the foresight to reserve 16 bytes per entry for future use.  This was particularly important because it later allowed better interoperability with UNIX, MS-DOS, etc where files weren't made up of 128-byte sector files and hence a number of 'pad' bytes could be specified.</li>
+</ol>
+<p>The last revision of the document is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/ludef5.doc" title="LUDEF5.DOC from Walnut Creek CD: /cpm/utils/arc-lbr/">LUDEF5.DOC</a> dated 19 August 1984, which allowed the addition of dates and CRC values.</p>
+<h2>LU</h2>
+<p>As mentioned above .LBR files began as the format for LU.  This utility allows you to create a .LBR archive and to add, list, delete, extract, etc its member files.  As with all of Gary's .LBR related programs it was written in BDS C which meant that they were relatively big compared to other later programs written in assembly language by other people.  However, this did allow the use of BDS C &quot;pipes&quot;.  The earliest version of LU I have found is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/lambda/soundpot/f/lu101.lbr" title="LU101.LBR from Walnut Creek CD: /lambda/soundpot/f/">LU v1.10</a>, dated 4 August 1982 and the latest version is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/jsage/zsus/lbr/lu310.lbr" title="LU310.LBR from Walnut Creek CD: /jsage/zsus/lbr/">LU v3.10</a>, dated 1 January 1985.  The later version is naturally more advanced and has built-in help but doesn't fully support the dates as defined by LUDEF5.DOC.</p>
+<p>LU could be used interactively or from the command line.   If called from the command line it would like like this:</p>
+<pre><code>A&gt; LU -O LU101.LBR -L -E LU.DZC
+</code></pre>
+<p>The arguments mean the following</p>
+<ul>
+<li><code>-O LU101.LBR</code> Open a library called LU101.LBR</li>
+<li><code>-L</code> List its members</li>
+<li><code>-E LU.DZC</code> Extract a member file called LU.DZC</li>
+</ul>
+<p>The documentation for LU is worth looking at because it contains some interesting discussion about why to use .LBR libraries and why not to use them.</p>
+<h2>LSWEEP</h2>
+<p>LSWEEP can extract and view member files of a .LBR archive by allowing you to cycle through each file in a circular list similar to that used by SWEEP.  The program can use multiple .LBR archives at once either by specifying them individually or using wildcards on the command line.  It was created by Joe Vogler and <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lsweep13.com" title="LSWEEP13.COM from Walnut Creek CD: /cpm/utils/arc-lbr/">LSWEEP v1.03</a> (<a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lsweep13.doc" title="LSWEEP13.DOC from Walnut Creek CD: /cpm/utils/arc-lbr/">DOC</a>) was released in 1984.  One particularly handy feature is that it will automatically unsqueeze members when extracting or viewing files.</p>
+<h2>NULU</h2>
+<p>NULU builds on LU by adding more options to manipulate libraries as well as to be able to view and unsqueeze the member files.  In addition it has a file sweep mode similar to LSWEEP.  NULU does all this in a program which is no bigger than either LU or LSWEEP on their own.  It was originally written by Martin Murray but the latest version, <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/nulu152a.lbr" title="NULU152A.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">NULU v1.52a</a> is an unofficial release in 1987 by Mick Waters to fix bugs in the previous release.</p>
+<h2>EXTRACT</h2>
+<p>EXTRACT is the smallest library extraction program I have come across.  It is only 4Kb and it can even unsqueeze member files.  It was written by Gil Shultz and <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/extract.lbr" title="EXTRACT.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">EXTRACT v1.1d</a> was released in 1986.  EXTRACT has a great command line interface that allows you to easily handle extracting files from libraries to different drives and users.  It is mentioned much less than <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/delbr12.ark" title="DELBR12.ARK from Walnut Creek CD: /cpm/utils/arc-lbr/">DELBR v1.2</a> with which it competes but DELBR is 13Kb compared to EXTRACT's 4Kb and can't unsqueeze members.</p>
+<h2>LT</h2>
+<p>LT (Library Typer) can extract and view files in a .LBR archive.  It is only 7Kb and not only can it handle member files that are compressed with Squeeze and Crunch but it can also handle LHA compressed files.  The program was originally written by C.B Falconer and <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/beehive/compress/lt31.lbr" title="LT31.LBR from Walnut Creek CD: /beehive/compress/">LT v31</a> was released in 1991.</p>
+<h2>LDIR</h2>
+<p>LDIR was originally written to provide RCPM Systems with an easy and secure way to allow users to list members of .LBR archives and to see their sizes.  I include <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/simtel/sigm/vols100/vol152/ldir211.lbr" title="LDIR211.LBR from Walnut Creek CD: /simtel/sigm/vols100/vol152/">LDIR v2.11</a> of Gary P. Novosielski's LDIR program here, dated 21 March 1983, mainly because it contains an interesting mention of discussions about whether whole .LBR archives should be compressed or their individual members.  He comes down on the side of individual members and this proves to be the majority opinion as can be seen from the files on the Walnut Creek CD where the vast majority of .LBR files have their individual member files compressed rather than the whole archive (.LQR or .LZR).  I have included most of the relevant file below:</p>
+<pre><code>File:   LDIR.MSG                Date: 82-11-14
+To:     All Remote System Operators
+From:   Gary P. Novosielski     CIS[70160,120]
+Subj:   Library Directory program
+
+There have been several requests from RCPM and other remote
+system operators for a utility to allow callers to see the
+directory of .LBR files available on the system.  LDIR is
+such a program.
+
+LDIR performs no other function besides displaying the
+directory of .LBR files, and can be made available to
+callers as a .COM file.  While the LU library utility can
+also perform this function, it would be sucide to leave this
+out in a useable form, since it could be used to introduce
+any arbitrary .COM file onto the system.
+
+There has been a difference of opinion on whether .LBR's should
+be squeezed before transmission, or whether the indivudual
+members should be squeezed before being added to the .LBR.
+There are good arguments for both sides, but since squeezing
+an entire library would render the directory unreadable, I
+suggest taking the latter alternative, and leaving the library
+as an unsqueezed .LBR rather than a .LQR file.
+
+Experimentation has shown that on many libraries, there will
+be a slight cost in library size by opting for thia method,
+but the visibility of the directory would seem to outweigh this
+objection.  Of course any or all members of the unsqueezed
+library can still be squeezed files, so there is still a large
+saving over normal ASCII encoded files.  The savings in time
+and disk space which are inherent in the use of .LBR files also
+helps to mitigate the slight size increase.
+</code></pre>
+<h2>LDIR-B</h2>
+<p>LDIR programs continued to be useful and <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/enterprs/cpm/utils/f/ldirb22.lbr" title="LDIRB22.LBR from Walnut Creek CD: /enterprs/cpm/utils/f/">LDIR-B v2.20</a> was originally written by Steven Greenberg and released in 1991.  It displays further information such as the created and modified dates, the compression method and original filename of squeezed or crunched files.  The programs is only 2Kb but unfortunately requires a Z80.</p>
+<h2>SD</h2>
+<p>SD (Super Directory) is a great DIR alternative which includes the ability to list the member files of .LBR archives along with .ARC files.  <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr" title="SD138B.LBR from Walnut Creek CD: /enterprs/cpm/utils/s/">SD v1.38b</a> was released in 1989 and a previous article, <a href="/articles/dir-alternatives-on-cpm/">DIR Alternatives on CP/M</a>, goes into more detail about this program.  Other than <a href="#article-ql">QL</a> this is the program I use most often for listing the members of .LBR archives as it is only 6Kb and can do so much more besides.  As an example of its power the following command displays the members of all .LBR files for all users on all drives:</p>
+<pre><code>A&gt; SD *.LBR $LEAD
+</code></pre>
+<p>This uses the wildcard <code>*.LBR</code> to list all .LBR files and the <code>$LEAD</code> options mean the following</p>
+<ul>
+<li><code>$L</code> List members of archives</li>
+<li><code>$E</code> List only member files</li>
+<li><code>$A</code> Look under all users</li>
+<li><code>$D</code> Look on all drives</li>
+</ul>
+<h2 id="article-ql">QL</h2>
+<p>QL is one of my favourite programs on CP/M.  It has a well-thought-out interface and makes it a joy to quickly list files in a directory or .LBR archive and select one by number to view it.  QL will automatically unsqueeze or uncrunch files when viewing and can even extract files to disk. <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/ql41.lbr" title="QL41.LBR from Walnut Creek CD: /cpm/utils/txtutl/">QL v4.1</a> was released in 1989 and is only 10Kb.  Compared to the other programs mentioned in this article it is the only one where you can easily move forward and backward through a viewed file as well as search within it.  QL is only 10Kb but unfortunately requires a Z80.  It features in a previous article, <a href="/articles/text-viewers-on-cpm/">Text Viewers on CP/M</a>.</p>
+<h2 id="article-basic-information">Basic Information</h2>
+<p>Below is some basic information about each utility that you may find useful and interesting.</p>
+<table class="neatTable">
+  <tr><th>Name</th><th>Version</th><th class="centre">Date</th>
+      <th>Size (Kb)</th><th>8080 Compatible</th></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/lambda/soundpot/f/lu101.lbr" title="LU101.LBR from Walnut Creek CD: /lambda/soundpot/f/">LU</a></td><td>1.10</td><td class="right">4 Aug 1982</td><td class="right">18</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/jsage/zsus/lbr/lu310.lbr" title="LU310.LBR from Walnut Creek CD: /jsage/zsus/lbr/">LU</a></td><td>3.10</td><td class="right">1 Jan 1985</td><td class="right">20</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lsweep13.com" title="LSWEEP13.COM from Walnut Creek CD: /cpm/utils/arc-lbr/">LSWEEP</a> (<a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lsweep13.doc" title="LSWEEP13.DOC from Walnut Creek CD: /cpm/utils/arc-lbr/">DOC</a>)</td><td>1.03</td><td class="right">22 Jan 1984</td><td class="right">16</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/nulu152a.lbr" title="NULU152A.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">NULU</a></td><td>1.52a</td><td class="right">7 Dec 1987</td><td class="right">16</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/extract.lbr" title="EXTRACT.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">EXTRACT</a></td><td>1.1d</td><td class="right">24 Jan 1986</td><td class="right">4</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/delbr12.ark" title="DELBR12.ARK from Walnut Creek CD: /cpm/utils/arc-lbr/">DELBR</a></td><td>1.2</td><td class="right">24 Nov 1989</td><td class="right">13</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/beehive/compress/lt31.lbr" title="LT31.LBR from Walnut Creek CD: /beehive/compress/">LT</a></td><td>31</td><td class="right">15 Dec 1991</td><td class="right">7</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/simtel/sigm/vols100/vol152/ldir211.lbr" title="LDIR211.LBR from Walnut Creek CD: /simtel/sigm/vols100/vol152/">LDIR</a></td><td>2.11</td><td class="right">21 Mar 1983</td><td class="right">7</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/enterprs/cpm/utils/f/ldirb22.lbr" title="LDIRB22.LBR from Walnut Creek CD: /enterprs/cpm/utils/f/">LDIR-B</a></td><td>2.20</td><td class="right">10 Sep 1991</td><td class="right">2</td><td class="centre">&#10008;</td></tr>
+  <tr><td><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr" title="SD138B.LBR from Walnut Creek CD: /enterprs/cpm/utils/s/">SD</a></td><td>1.38b</td><td class="right">20 Aug 1989</td><td class="right">6</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/txtutl/ql41.lbr" title="QL41.LBR from Walnut Creek CD: /cpm/utils/txtutl/">QL</a></td><td>4.10</td><td class="right">26 Jan 1989</td><td class="right">10</td><td class="centre">&#10008;</td></tr>
+</table>
+<h2>Video</h2>
+<p>The following video shows the various .LBR utilities in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OD36mwGNn2c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Working with .LBR files on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/working-with-lbr-files-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F&title=Working%20with%20.LBR%20files%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F&quote=Working%20with%20.LBR%20files%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F&text=Working%20with%20.LBR%20files%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Working%20with%20.LBR%20files%20on%20CP%2FM&body=The%20.LBR%20%28Library%29%20file%20format%20was%20the%20most%20common%20form%20of%20multi-file%20archive%20on%20personal%20computers%20at%20one%20time.%20%20It%20was%20created%20by%20Gary%20P.%20Novosielski%20in%201982%20for%20use%20by%20his%20LU%20%28Library%20Utility%29%20progr...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Working%20with%20.LBR%20files%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fworking-with-lbr-files-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicke...
+  &nbsp;
+  <a class="readMore" href="/articles/re-execute-programs-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/i-love-ed-on-cpm/">I Love ED on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/editors/">Editors</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's elegant, easy to learn and only has about 25 commands but t...
+  &nbsp;
+  <a class="readMore" href="/articles/i-love-ed-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-pilot-programming-language-on-cpm/">The Pilot Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,...
+  &nbsp;
+  <a class="readMore" href="/articles/the-pilot-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/image-viewers-on-cpm/">Image Viewers on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/images/">Images</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing started to grow so too did the distribution o...
+  &nbsp;
+  <a class="readMore" href="/articles/image-viewers-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
+  &nbsp;
+  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
