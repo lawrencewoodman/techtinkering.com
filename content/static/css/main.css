@@ -4,7 +4,7 @@ body {
   font-family: Bitstream Vera Sans Mono, Liberation Mono, Lucida Console, Lucida Sans Typewriter, monospace;
   line-height: 1.5;
   height: 100%;
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 h1 { font-size: 160%; line-height: 1.4; }
