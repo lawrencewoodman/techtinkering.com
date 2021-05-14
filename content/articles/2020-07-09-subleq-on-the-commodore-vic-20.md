@@ -11,7 +11,7 @@ Mem[b] := Mem[b] - Mem[a]
 if (Mem[b] ≤ 0) goto c
 ````
 
-To find out more about SUBLEQ have a look at my previous article: [SUBLEQ - A One Instruction Set Computer (OISC)](https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/) and its accompanying [video](https://www.youtube.com/watch?v=o0e7_U7ZmBM "SUBLEQ - A One Instruction Set Computer (OISC)").
+To find out more about SUBLEQ have a look at my previous article: [SUBLEQ - A One Instruction Set Computer (OISC)](/articles/subleq-a-one-instruction-set-computer/) and its accompanying [video](https://www.youtube.com/watch?v=o0e7_U7ZmBM "SUBLEQ - A One Instruction Set Computer (OISC)").
 
 
 ## Example: echo
