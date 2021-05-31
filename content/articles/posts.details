@@ -1,3 +1,13 @@
+{ filename    2021-05-31-advanced-use-of-lbr-files-on-cpm.md
+  title       "Advanced Use of .LBR files on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_advanced_use_of_lbr_files.png"
+  tags        {"Retro" "CP/M" "Archiving"}
+}
+
 { filename    2021-05-13-working-with-lbr-files-on-cpm.md
   title       "Working with .LBR files on CP/M"
   author      {
@@ -6,7 +16,7 @@
   }
   twitterID   "1392861261550047244"
   socialImg   "cpm_working_with_lbr_files.png"
-  tags        {"Retro" "CP/M"}
+  tags        {"Retro" "CP/M" "Archiving"}
 }
 
 { filename    2021-03-17-basic-line-storage-on-the-vic-20.md
@@ -433,7 +443,7 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "nulu_menu.png"
-  tags        {"Retro" "CP/M"}
+  tags        {"Retro" "CP/M" "Archiving"}
   updated     2019-05-19
 }
 

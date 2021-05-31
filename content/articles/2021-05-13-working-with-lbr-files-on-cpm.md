@@ -6,6 +6,8 @@ An archive consists of a number of directory entries and member files arranged s
 
 This article contains a selection of useful utilities for handling .LBR archives and at the end is a [table showing their versions, release dates, .COM files sizes and 8080 compatibility](#article-basic-information).
 
+There is a follow-on article: [Advanced Use of .LBR files on CP/M](/articles/advanced-use-of-lbr-files-on-cpm/).
+
 
 ## .LBR File Format Definition
 
