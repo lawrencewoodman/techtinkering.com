@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Advanced Use of .LBR files on CP/M</title>
+  <meta name="description" content="Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were dr">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Advanced Use of .LBR files on CP/M">
+  <meta name="twitter:description" content="Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were dr">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_advanced_use_of_lbr_files.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Advanced Use of .LBR files on CP/M">
+  <meta property="og:description" content="Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were dr">
+  <meta property="og:url" content="https://techtinkering.com/articles/advanced-use-of-lbr-files-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_advanced_use_of_lbr_files.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/advanced-use-of-lbr-files-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_advanced_use_of_lbr_files.png" />
+      <header>
+        <a href="/articles/advanced-use-of-lbr-files-on-cpm/" title="Advanced Use of .LBR files on CP/M">
+          <h1 itemprop="headline name">Advanced Use of .LBR files on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-05-31">
+              31 May 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more advanced uses of .LBR files and is a follow-up to our previous article: <a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR files on CP/M</a>.</p>
+<h2>Setting Dates</h2>
+<p>Later versions of the .LBR file format definition added support for dates.  On CP/M these can be set using <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/setd22.lbr" title="SETD22.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">SETD v2.2</a>, dated 1988 by Brent B. Powers.  These dates can be seen using <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/enterprs/cpm/utils/f/ldirb22.lbr" title="LDIRB22.LBR from Walnut Creek CD: /enterprs/cpm/utils/f/">LDIR-B v2.20</a> as mentioned in the previous article on .LBR files.  The dates can be supplied at the command line or if you have a real-time clock you can write a small piece of code to query it.</p>
+<p>Unusually for 1988 one of the files, SETD22.UPD, contains a warning about what may happen with the dates in the year 2000.  In reality this was more of a problem with the 2 digit years used by SETD and LDIR-B than the .LBR format as the latter uses Digital Research's Julian date format which records the number of days from 31 December 1977 as a 16-bit number.  This would support dates properly up to around the year 2157.</p>
+<p>The archive for SETD v2.2 contains an interesting history of its previous versions as listed below:</p>
+<pre><code>Version 2.0 was the original assembly language version, recoded
+from the TurboPascal version, in turn recoded from the
+TurboModula-2 version, which was, finally, a translation of C.B.
+Falconer's LSETDATE, with a slightly different date-parsing
+algorithm.
+</code></pre>
+<p>I find it interesting that it went through three languages and in particular at one point was written using <a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/" title="TechTinkering article: If Only Borland Had Stuck With Turbo Modula-2 For CP/M">Turbo Modula-2</a>, a language which didn't exist for very long on CP/M.  The Turbo Pascal version is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/setd01.lbr" title="SETD01.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">SETD v0.1</a>, dated 17 Oct 1987.</p>
+<h2>Finding Files Within .LBR Archives</h2>
+<p>If we have lots of .LBR archives it can be difficult sometimes to remember exactly which archive contains a particular file.  To search these archives we can use <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/jsage/znode3/z3util/lfind.lbr" title="LFIND.LBR from Walnut Creek CD: /jsage/znode3/z3util/">LFIND v1.13</a>, dated 8 Nov 1984 by Martin Murray.  LFIND allows us to search all the .LBR files on all drives and for all users to see which contain a matching filespec.  It works really well but only on CP/M 2.2 as on CP/M Plus it lists somes files multiple times.</p>
+<h2>Mounting .LBR Archives as a Drive</h2>
+<p>It is possible to mount a .LBR or a number of .LBR archives as if they were a drive using <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lbrdsk23.lbr" title="LBRDSK23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">LBRDSK v2.3</a>, dated 13 Feb 1985 by Jim Lopushinsky.  From here you can read and write to them, although writing isn't ideal because it can clobber files that follow a file if you are altering an existing one.  The LBRDSK archive contains SETRSX11.COM which is used to provide RSX facilities on CP/M 2.2 and for this reasons it will only work on CP/M 2.2.</p>
+<p>LBRDSK can be used as follows.  To access LBRDSK23.LBR as if it was drive E: in read/write mode:</p>
+<pre><code>A&gt; LBRDSK E:=LBRDSK23.LBR
+</code></pre>
+<p>To access the members of all the .LBR archives as if they were on drive E: in read mode:</p>
+<pre><code>A&gt; LBRDSK E:=*.LBR
+</code></pre>
+<h2>Running Commands</h2>
+<p>It is possible to run programs directly from a .LBR archive using <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lrun23.lbr" title="LRUN23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">LRUN v2.3</a>, dated 8 Jul 1985 originally by Gary P. Novosielski.  This is very useful if you have lots of small .COM files on a disk as by including them in a .LBR archive you can reduce the amount of space they take up because there may be be less wasted space if they are not a multiple of the block size.  If you don't supply LRUN with a .LBR file then it will default to 'COMMAND.LBR'.  This works very well, however it isn't suitable for all programs as they may need to access other files which can't be contained in the archive.  It should also be noted that the member files can't be compressed.</p>
+<h2>Basic Information</h2>
+<p>Below is some basic information about each utility that you may find useful and interesting.</p>
+<table class="neatTable">
+  <tr><th>Name</th><th>Version</th><th class="centre">Date</th>
+      <th>Size (Kb)</th><th>8080 Compatible</th></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/setd22.lbr" title="SETD22.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">SETD</a></td><td>2.2</td><td class="right">10 Feb 1988</td><td class="right">3</td><td class="centre">&#10008;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/jsage/znode3/z3util/lfind.lbr" title="LFIND.LBR from Walnut Creek CD: /jsage/znode3/z3util/">LFIND</a></td><td>1.13</td><td class="right">8 Nov 1984</td><td class="right">5</td><td class="centre">&#10008;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lbrdsk23.lbr" title="LBRDSK23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">LBRDSK</a></td><td>2.3</td><td class="right">13 Feb 1985</td><td class="right">8+1</td><td class="centre">&#10004;</td></tr>
+  <tr><td><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lrun23.lbr" title="LRUN23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">LRUN</a></td><td>2.3</td><td class="right">8 Jul 1985</td><td class="right">2</td><td class="centre">&#10004;</td></tr>
+</table>
+<h2>Video</h2>
+<p>The following video shows these .LBR utilities in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BK6R4xbOBkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Advanced Use of .LBR files on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/advanced-use-of-lbr-files-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F&title=Advanced%20Use%20of%20.LBR%20files%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F&quote=Advanced%20Use%20of%20.LBR%20files%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F&text=Advanced%20Use%20of%20.LBR%20files%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Advanced%20Use%20of%20.LBR%20files%20on%20CP%2FM&body=Lots%20of%20utilities%20make%20use%20of%20.LBR%20%28Library%29%20files%20to%20provide%20extra%20facilities%20such%20as%20the%20ability%20to%20run%20commands%20from%20archives%20or%20mount%20them%20as%20if%20they%20were%20drives.%20%20This%20article%20shows%20some%20more%20adva...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Advanced%20Use%20of%20.LBR%20files%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fadvanced-use-of-lbr-files-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr...
+  &nbsp;
+  <a class="readMore" href="/articles/working-with-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/compression-and-archiving-on-cpm/">Compression and Archiving on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  CP/M has the ability to handle lots of different compression and archive formats which was important due to the limited capacity of floppy disks and the cost of downloading/uploading files on BBS's.  T...
+  &nbsp;
+  <a class="readMore" href="/articles/compression-and-archiving-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicke...
+  &nbsp;
+  <a class="readMore" href="/articles/re-execute-programs-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/i-love-ed-on-cpm/">I Love ED on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/editors/">Editors</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  I love ED on CP/M.  It's often derided but I think it's just misunderstood and with a little practise its true value can shine through.  It's elegant, easy to learn and only has about 25 commands but t...
+  &nbsp;
+  <a class="readMore" href="/articles/i-love-ed-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-pilot-programming-language-on-cpm/">The Pilot Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,...
+  &nbsp;
+  <a class="readMore" href="/articles/the-pilot-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

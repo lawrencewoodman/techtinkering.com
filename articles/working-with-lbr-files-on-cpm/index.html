@@ -143,6 +143,7 @@
           </span>
 
           <ul class="tags">
+              <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
               <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
               <li>#<a href="/articles/tag/retro/">Retro</a></li>
           </ul>
@@ -152,6 +153,7 @@
         <p>The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) program and the author mentions benefits such as making it easier to download and distribute related files on RCPM systems as well as making better use of disk space and directory structure.  .LBR reigned supreme until it was displaced by the .ARC/.ARK file format on MS-DOS and later CP/M which combined compressing member files with including them in an archive in a single process.  If we look on the <a href="http://cpmarchives.classiccmp.org/ftp.php?b=cpm/Software/WalnutCD/">Walnut Creek CD</a> we will see that the majority of multi-file archives are .LBR files.</p>
 <p>An archive consists of a number of directory entries and member files arranged sequentially into a single archive.  The format does not directly support compression but member files were often <a href="/articles/compression-and-archiving-on-cpm/">compressed</a> with Squeeze, Crunch, etc prior to being included in an archive.  These member files are easily accessed and therefore utilities were written to view and extract individual files.  On RCPM systems this allowed remote users to investigate what they may download prior to doing so.  LMODEM was particularly useful as it allows you to download a single member file from an archive which could be important if downloading the whole archive would exceed the system time limit for a user.</p>
 <p>This article contains a selection of useful utilities for handling .LBR archives and at the end is a <a href="#article-basic-information">table showing their versions, release dates, .COM files sizes and 8080 compatibility</a>.</p>
+<p>There is a follow-on article: <a href="/articles/advanced-use-of-lbr-files-on-cpm/">Advanced Use of .LBR files on CP/M</a>.</p>
 <h2>.LBR File Format Definition</h2>
 <p>The earliest definition of the file format I can find is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/simtel/sigm/vols100/vol119/ludef1.doc" title="LUDEF1.DOC from Walnut Creek CD: /simtel/sigm/vols100/vol119/">LUDEF1.DOC</a>.  This is dated 4 November 1982 and refers to the original LUDEF.DOC dated 31 October 1982.  Two particularly notable things about the format are:</p>
 <ol>
@@ -306,6 +308,38 @@ helps to mitigate the slight size increase.
     <h2>Related Articles</h2>
     <div class="margin-buffer">
       <header>
+  <h2><a href="/articles/advanced-use-of-lbr-files-on-cpm/">Advanced Use of .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva...
+  &nbsp;
+  <a class="readMore" href="/articles/advanced-use-of-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/compression-and-archiving-on-cpm/">Compression and Archiving on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  CP/M has the ability to handle lots of different compression and archive formats which was important due to the limited capacity of floppy disks and the cost of downloading/uploading files on BBS's.  T...
+  &nbsp;
+  <a class="readMore" href="/articles/compression-and-archiving-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
   <span class="post-meta">
       <ul class="tags">
@@ -350,38 +384,6 @@ helps to mitigate the slight size increase.
   Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,...
   &nbsp;
   <a class="readMore" href="/articles/the-pilot-programming-language-on-cpm/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/image-viewers-on-cpm/">Image Viewers on CP/M</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
-          <li>#<a href="/articles/tag/images/">Images</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  CP/M is by default a text-only affair.  However, many of the machines that can run CP/M have hardware that would allow them to display graphics.  As BBSing started to grow so too did the distribution o...
-  &nbsp;
-  <a class="readMore" href="/articles/image-viewers-on-cpm/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
-          <li>#<a href="/articles/tag/programming/">Programming</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
-  &nbsp;
-  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
 </div>
 <br />
 </div>

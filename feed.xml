@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-05-14</updated>
+  <updated>2021-05-31</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Advanced Use of .LBR files on CP/M</title>
+      <id>https://techtinkering.com/articles/advanced-use-of-lbr-files-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/advanced-use-of-lbr-files-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2021-05-31
+        </published>
+
+        <updated>
+          2021-05-31
+        </updated>
+
+        <summary>Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva</summary>
+    </entry>
     <entry>
       <title>Working with .LBR files on CP/M</title>
       <id>https://techtinkering.com/articles/working-with-lbr-files-on-cpm/</id>
