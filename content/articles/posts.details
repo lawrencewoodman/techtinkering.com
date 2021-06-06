@@ -1130,6 +1130,7 @@
   }
   tags        {"C" "CP/M" "Programming" "Retro" "Z80"}
   image       "/img/articles/small_war_c.png"
+  hackerNewsID "27410820"
   updated     2012-12-11
   postURLStyle "/@year/@month/@day/@title/"
 }
