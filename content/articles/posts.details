@@ -4,6 +4,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
+  twitterID   "1407714424408903687"
   socialImg   "vic20_save_load_memory.png"
   tags        {"Retro" "BASIC" "Assembly" "Commodore" "VIC-20" "Programming"}
 }
