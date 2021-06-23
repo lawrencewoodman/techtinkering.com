@@ -103,6 +103,8 @@ The program is based on one in [Vic-20 Machine Code by Bruce Smith](https://arch
 150 n=val(z$):return
 ```
 
+To see how to save and load memory to disk or cassette have a look at our article: [Saving and Loading Memory on the VIC-20](/articles/saving-and-loading-memory-on-the-vic-20/).
+
 ## Video Demonstrating Hand Assembling to Machine Code
 
 You can see the machine code being hand assembled, entered and run in the following video:
