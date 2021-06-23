@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Saving and Loading Memory on the VIC-20</title>
+  <meta name="description" content="Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few ">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Saving and Loading Memory on the VIC-20">
+  <meta name="twitter:description" content="Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few ">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_save_load_memory.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saving and Loading Memory on the VIC-20">
+  <meta property="og:description" content="Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few ">
+  <meta property="og:url" content="https://techtinkering.com/articles/saving-and-loading-memory-on-the-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_save_load_memory.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/saving-and-loading-memory-on-the-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_save_load_memory.png" />
+      <header>
+        <a href="/articles/saving-and-loading-memory-on-the-vic-20/" title="Saving and Loading Memory on the VIC-20">
+          <h1 itemprop="headline name">Saving and Loading Memory on the VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-06-23">
+              23 June 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+              <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few simple ways of doing it from BASIC and Assembler.</p>
+<h2>Saving/Loading from BASIC a Byte at a Time</h2>
+<p>A straight forward way to save and load memory from BASIC is to use the <code>OPEN</code>, <code>PRINT#</code> and <code>GET#</code> commands to write or read a byte at a time.</p>
+<h3>Saving</h3>
+<p>In the following file we are saving memory at <em>673-692</em> to '<em>FLASH.PRG</em>' on device 8.  If we wanted to save it to a .SEQ file then we would use <code>FLASH,S,W</code>.  We use <code>CHR$</code> to convert the byte to PETSCII which the <code>PRINT#</code> command will then convert back to its byte representation when writing to the file.  One interesting thing to note is that even though this is saving to a .PRG file it doesn't save the load address.  If we want this included in the file then we need to start it with two bytes representing the LSB/MSB of the load address.</p>
+<pre><code>10 OPEN 8,8,1,&quot;FLASH,W&quot;
+20 FOR I=673 TO 692
+30 B=PEEK(I)
+40 PRINT#8, CHR$(B);
+50 NEXT I
+60 CLOSE 8
+</code></pre>
+<h3>Loading</h3>
+<p>The following program will load '<em>FLASH.PRG</em>' into locations 673-692 from device 8.</p>
+<pre><code>10 OPEN 8,8,0,&quot;FLASH&quot;
+20 FOR I=673 TO 692
+30 GET#8, B$
+40 POKE I,ASC(B$)
+50 NEXT I
+60 CLOSE 8
+</code></pre>
+<p>If the file contains the origin address as the first two bytes then we can use that if desired.  We have to be careful that the origin address isn't where our tokenized basic program is being stored.  This allows us to load a memory block without corrupting a running BASIC program.  In the following <code>ST</code> is the status after certain I/O operations and is used here to detect the end of file by checking if it is equal to 64.</p>
+<pre><code>10 OPEN 8,8,0,&quot;FLASH,R&quot;
+20 GET#8, O1$
+30 GET#8, O2$
+40 O=ASC(O1$)+256*ASC(O2$)
+50 PRINT &quot;ORIGIN: &quot;;O
+60 GET#8, B$
+70 IF ST&lt;&gt;0 AND ST&lt;&gt;64 GOTO 200
+80 POKE O,ASC(B$)
+90 O=O+1
+100 IF ST&lt;&gt;64 GOTO 60
+110 CLOSE 8
+120 END
+200 PRINT &quot;ERROR STATUS: &quot;;ST
+210 CLOSE 8
+</code></pre>
+<h2>Using the SAVE/LOAD Commands in BASIC</h2>
+<p>BASIC has built-in commands to save and load programs which we can use to save and load our block of memory.</p>
+<h2>Saving</h2>
+<p>We can use the <code>SAVE</code> command in BASIC to save a block of memory by telling the Vic that the tokenized BASIC area is located at the same block of memory that we want to save.</p>
+<p>The following example saves a block of memory at 673-692 to '<em>FLASH.PRG</em>' on cassette (device 1).   The start address is stored at 43/44 ($2B/2C) which indicates the start of tokenized BASIC in LSB/MSB order.  The end address is stored at 45/56 ($2D/$2E) which indicates the end of tokenized BASIC in LSB/MSB order.</p>
+<pre><code class="language-basic">POKE 44,673/256:POKE 43,673-256*PEEK(44)
+POKE 46,692/256:POKE 45,692-256*PEEK(46)
+SAVE &quot;FLASH&quot;,1,1
+</code></pre>
+<p>This works well but because it alters the BASIC start and end points it can't be used from within a BASIC program.  We should reset the Vic or restore these locations to their original values once finished.  It should also be noted that this method saves the load/origin address to the first two bytes of the file because the final <code>,1</code> is at the end of the <code>SAVE</code> command.  On cassette this prevents the relocate function of the <code>LOAD</code> command but doesn't apply to disk.</p>
+<h3>Loading</h3>
+<p>If we have saved a block of memory that had a start address and is a self-contained runnable program then we can simply use:</p>
+<pre><code>LOAD &quot;FLASH&quot;,8,1
+</code></pre>
+<h2>SYS to BASIC/KERNEL ROM from BASIC</h2>
+<p>We can call BASIC/KERNEL ROM routines from BASIC using <code>SYS</code> to save and load blocks of memory in a way which will work within a BASIC program.  This method uses the BASIC ROM routine <em>PARSL</em> at 57809 ($E1D1) which sets the LOAD, VERIFY and SAVE parameters and therefore is designed to process the rest of the parameters after it is called.  In this case <code>(N$),&lt;device&gt;</code>.  Locations 780, 781 and 782 are used to access the 6502 registers: A, X, Y.</p>
+<p>From: <a href="https://sleepingelephant.com/ipw-web/bulletin/bb/viewtopic.php?f=2&amp;t=676&amp;start=15&amp;fbclid=IwAR3H8vVeiqckY-QcqzTRRJzLAKKA1PeKpucrHHvW7w8xCgvGf7RympzfAME#p75231">ROM Calls and Other Tricks on the Denial Forum</a></p>
+<h3>Saving</h3>
+<p>The following method saves memory to the filename in <code>N$</code>.  <em>end</em> must be one past the address of the last byte to save.  This routine uses the KERNEL ROM routine <em>SAVE</em> at 65496 ($FFD8) to perform the save.  It uses register A (location 780) to set the starting address store to 193.</p>
+<pre><code>N$=&quot;FLASH&quot;
+SYS57809(N$),&lt;device&gt;:POKE193,&lt;start_lo&gt;:POKE194,&lt;start_hi&gt;
+POKE780,193:POKE781,&lt;end_lo&gt;:POKE782,&lt;end_hi&gt;:SYS65496
+</code></pre>
+<p>If we wanted to save the memory at 673-692 ($02A1-$02B4) to '<em>FLASH.PRG</em>' on device '8' and store the load address using <code>,1</code> it would look like the following.  The final <code>,1</code> after the device isn't actually used by disk but we may want to use it if saving to cassette (device 1).  We can also replace <code>(NS)</code> with the quoted filename:</p>
+<pre><code>SYS57809&quot;FLASH&quot;,8,1:POKE193,161:POKE194,2
+POKE780,193:POKE781,181:POKE782,2:SYS65496
+</code></pre>
+<h3>Loading</h3>
+<p>Loading is equally easy and in this case uses the KERNEL ROM routine <em>LOAD</em> at 65493 ($FFD5) to perform the load.  If <code>,1</code> after device then it is forced to load at original address and pokes for <code>start_lo</code> and <code>start_hi</code> aren't needed.  Register A (location 780) is used to specify a LOAD (0) operation rather than a VERIFY (1) operation.</p>
+<pre><code>N$=&quot;FLASH&quot;
+SYS57809(N$),&lt;device&gt;:POKE780,0:POKE781,&lt;start_lo&gt;:POKE782,&lt;start_hi&gt;:SYS65493
+</code></pre>
+<p>Therefore if we want to load our '<em>FLASH.PRG</em>' program, saved previously, we can use the following to load it from device 8 into its original memory location:</p>
+<pre><code>SYS57809&quot;FLASH&quot;,8,1:POKE780,0:SYS65493
+</code></pre>
+<h2>Assembly Routines</h2>
+<p>We can use some of the same routines used by the SYS calls above to load and save memory from assembly.  We first have to set up the device, file number and secondary address using the <em>SETLFS</em> routine at $FFBA (65466) and then use the <em>SETNAM</em> routine at $FFBD (65469) to set the filename.  Finally we call either the <em>LOAD</em> or <em>SAVE</em> routine after setting the start and end addresses appropriately of the memory block to load or save.</p>
+<h3>Saving</h3>
+<p>The following routine would save block-blockend from memory to the file '<em>FLASH.PRG</em>' on drive 8.  The secondary address has no effect when being saved to disk but has the same effect as the BASIC <code>SAVE</code> command if saving to cassette.  It uses the same <em>SAVE</em> routine at $FFD8 (65496) used above.</p>
+<pre><code>; KERNEL/BASIC ROM Routines
+SAVE        = $FFD8
+SETLFS      = $FFBA
+SETNAM      = $FFBD
+
+            LDA  #$08            ; Logical file number
+            LDX  #$08            ; Device number
+            LDY  #$01            ; Secondary address
+            JSR  SETLFS          ; Set above parameters
+
+            LDA  #$05            ; Length of file name
+            LDX  #&lt;filename      ; Low byte of file name location
+            LDY  #&gt;filename      ; High byte of file name location
+            JSR  SETNAM          ; Set the name
+
+            LDA  #&lt;block         ; Low byte of start of memory block
+            STA  $C1
+            LDA  #&gt;block         ; High byte of start of memory block
+            STA  $C2
+
+            LDA  #$C1            ; Pointer to location of start address
+            LDX  #&lt;(blockend+1)  ; Low byte of (end of memory block + 1)
+            LDY  #&gt;(blockend+1)  ; High byte of (end of memory block + 1)
+            JSR  SAVE            ; Perform save
+            BCS  error           ; Jump to error handler if error
+
+            RTS
+
+error       ; Handle error in A
+            RTS
+
+filename    .asc &quot;FLASH&quot;
+
+            ; The two byte memory block to save
+block       .byt $05
+blockend    .byt $06
+</code></pre>
+<h3>Loading</h3>
+<p>The following routine would load the file '<em>FLASH.PRG</em>' from drive 8 to memory at location 673 ($02A1).  It uses the same <em>LOAD</em> routine at $FFD5 (65493) used above.</p>
+<pre><code>block       = $02A1              ; Load address
+
+; KERNEL/BASIC ROM Routines
+LOAD        = $FFD5
+SETLFS      = $FFBA
+SETNAM      = $FFBD
+
+main        LDA  #$08            ; Logical file number
+            LDX  #$08            ; Device number
+            LDY  #$00            ; Secondary address
+                                 ; $00 Load using specifed address
+                                 ; $01 Load using original address from file
+            JSR  SETLFS          ; Set above parameters
+
+            LDA  #$05            ; Length of file name
+            LDX  #&lt;filename      ; Low byte of file name location
+            LDY  #&gt;filename      ; High byte of file name location
+            JSR  SETNAM          ; Set the name
+
+            LDA  #$00            ; Load = 0, Verify = 1
+            LDX  #&lt;block         ; Low byte of start address
+            LDY  #&gt;block         ; High byte of start address
+            JSR  LOAD            ; Perform load
+            BCS  error           ; Jump to error handler if error
+
+            RTS
+
+error       ; Handle error in A
+            RTS
+
+filename    .asc &quot;FLASH&quot;
+</code></pre>
+<h2>Machine Language Monitors</h2>
+<p>To finish this off the last method I want to mention is loading and saving via a machine language monitor such as <a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/" title="TechTinkering article: Programming in Assembly with VICMON on the VIC-20">VICMON</a>.</p>
+<h3>Saving</h3>
+<p>We can save in VICMON using the <em>S</em> command.  The following example saves the memory at 673-692 ($02A1-$02B4) to '<em>FLASH.PRG</em>' on device '8'.  Note that we are using <code>02B5</code> as the end address because the end address for this command has to be one past the last byte that we want to save.  The .PRG file will be stored with its origin  address.</p>
+<pre><code>.S &quot;FLASH&quot;,08,02A1,02B5
+</code></pre>
+<h3>Loading</h3>
+<p>To load a file we use the <em>L</em> command which takes an optional device number. If the device number isn't specified then it defaults to 01 - the cassette.  In the following example we are loading '<em>FLASH.PRG</em>' from device 8 into the same memory location that it was saved from.</p>
+<pre><code>.L &quot;FLASH&quot;,08
+</code></pre>
+<h2>Video</h2>
+<p>The following video shows these methods of saving and loading memory in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sOBrRV6p82w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Saving and Loading Memory on the VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/saving-and-loading-memory-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F&title=Saving%20and%20Loading%20Memory%20on%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F&quote=Saving%20and%20Loading%20Memory%20on%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F&text=Saving%20and%20Loading%20Memory%20on%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Saving%20and%20Loading%20Memory%20on%20the%20VIC-20&body=Saving%20and%20loading%20memory%20is%20quite%20easy%20on%20the%20VIC-20%20once%20you%20know%20how.%20%20However%2C%20it%20isn%27t%20obvious%20how%20to%20do%20this%20and%20therefore%20this%20article%20will%20present%20a%20few%20simple%20ways%20of%20doing%20it%20from%20BASIC%20and%20A...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Saving%20and%20Loading%20Memory%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in REM s...
+  &nbsp;
+  <a class="readMore" href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
+  &nbsp;
+  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
+  &nbsp;
+  <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us...
+  &nbsp;
+  <a class="readMore" href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Code and Data in Display Memory on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The unexpanded Commodore VIC-20 only had 5K of RAM and therefore creative ways had to be found to maximize the available RAM.  The display memory would use some of this memory and therefore one option ...
+  &nbsp;
+  <a class="readMore" href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
