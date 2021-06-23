@@ -225,7 +225,7 @@ SYS57809(N$),&lt;device&gt;:POKE780,0:POKE781,&lt;start_lo&gt;:POKE782,&lt;start
 <p>Therefore if we want to load our '<em>FLASH.PRG</em>' program, saved previously, we can use the following to load it from device 8 into its original memory location:</p>
 <pre><code>SYS57809&quot;FLASH&quot;,8,1:POKE780,0:SYS65493
 </code></pre>
-<h2>Assembly Routines</h2>
+<h2>Assembly Routines for Saving and Loading</h2>
 <p>We can use some of the same routines used by the SYS calls above to load and save memory from assembly.  We first have to set up the device, file number and secondary address using the <em>SETLFS</em> routine at $FFBA (65466) and then use the <em>SETNAM</em> routine at $FFBD (65469) to set the filename.  Finally we call either the <em>LOAD</em> or <em>SAVE</em> routine after setting the start and end addresses appropriately of the memory block to load or save.</p>
 <h3>Saving</h3>
 <p>The following routine would save block-blockend from memory to the file '<em>FLASH.PRG</em>' on drive 8.  The secondary address has no effect when being saved to disk but has the same effect as the BASIC <code>SAVE</code> command if saving to cassette.  It uses the same <em>SAVE</em> routine at $FFD8 (65496) used above.</p>
@@ -345,6 +345,7 @@ filename    .asc &quot;FLASH&quot;
     <h2>Feedback/Discuss</h2>
     <div class="contact">
   <ul>
+      <li><a href="https://twitter.com/TechTinkering/status/1407714424408903687" target="_blank" title="Discuss on Twitter">Twitter</a></li>
 
 
     <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Saving%20and%20Loading%20Memory%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fsaving-and-loading-memory-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
