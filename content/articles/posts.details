@@ -4,10 +4,10 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
+  twitterID   "1415374934654791680"
   socialImg   "vic20_get_basic_variable_address.png"
   tags        {"Retro" "BASIC" "Assembly" "Commodore" "VIC-20" "Programming"}
 }
-
 
 { filename    2021-06-23-saving-and-loading-memory-on-the-vic-20.md
   title       "Saving and Loading Memory on the VIC-20"
