@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Getting the Address of BASIC Variables on the VIC-20</title>
+  <meta name="description" content="Getting the address of a BASIC variable can be useful if you want to pass data to a machine code routine or want to access the bytes of a variable directly to im">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Getting the Address of BASIC Variables on the VIC-20">
+  <meta name="twitter:description" content="Getting the address of a BASIC variable can be useful if you want to pass data to a machine code routine or want to access the bytes of a variable directly to im">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_get_basic_variable_address.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Getting the Address of BASIC Variables on the VIC-20">
+  <meta property="og:description" content="Getting the address of a BASIC variable can be useful if you want to pass data to a machine code routine or want to access the bytes of a variable directly to im">
+  <meta property="og:url" content="https://techtinkering.com/articles/getting-the-address-of-basic-variables-on-the-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_get_basic_variable_address.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/getting-the-address-of-basic-variables-on-the-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_get_basic_variable_address.png" />
+      <header>
+        <a href="/articles/getting-the-address-of-basic-variables-on-the-vic-20/" title="Getting the Address of BASIC Variables on the VIC-20">
+          <h1 itemprop="headline name">Getting the Address of BASIC Variables on the VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-07-14">
+              14 July 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+              <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>Getting the address of a BASIC variable can be useful if you want to pass data to a machine code routine or want to access the bytes of a variable directly to improve speed and reduce garbage collection.</p>
+<h2>Getting Variable Address with BASIC</h2>
+<p>The easiest way to get the address of a variable from BASIC is by using <code>SYS</code> to call the <em>EVLVAR</em> routine at 53387 ($D08B) and placing the variable name directly after the <code>SYS 53387</code> command.  After calling, registers A/X will contain the address in the variable descriptor just past the two letter variable name.  The address is stored as an LSB/MSB pair and we can access registers A/X through locations 780/781 in memory.</p>
+<h2>Getting Integer Address</h2>
+<p>The following program uses the <em>EVLVAR</em> routine at 53387 to get an address in the variable descriptor for the variable <code>N%</code>.  <code>D</code> will contain the address of the 16-bit integer, stored in MSB/LSB order.  This address is then used to get the integer and put it in <code>V</code>.  The program prints the bytes of the variable descriptor and the value of the variable.</p>
+<pre><code>10 N%=312
+20 SYS 53387N%
+30 D=PEEK(780)+256*PEEK(781)
+40 V=256*PEEK(D)+PEEK(D+1)
+
+100 PRINT &quot;VARIABLE DESCRIPTOR:&quot;
+110 FOR I=-2TO4
+120 PRINT PEEK(D+I);
+130 NEXT I
+140 PRINT
+
+200 PRINT &quot;INTEGER VALUE:&quot;
+210 PRINT V
+</code></pre>
+<p>The variable descriptor for <code>N%</code> looks like the following.  Char1 and Char2 are for the two letter variable name with 128 added to each letter to indicate that it is an integer.  In the BASIC program above <code>D</code> points to the MSB of the integer value.</p>
+<table class="neatTable neatBorder">
+  <tr><th>Char1<br/>+128</th><th>Char2<br />+128</th><th>MSB</th><th>LSB</th><th>0</th><th>0</th><th>0</th></tr>
+  <tr><td>206</td><td>128</td><td>1</td><td>56</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+<h2>Get String Address</h2>
+<p>Getting the address of a string is very similar to getting that of an integer.    <code>D</code> will again contain an address in the variable descriptor, however it now points to the length of the string which is stored in <code>L</code> and is followed by an address, which is stored in <code>P</code>, which points to the actual string.  The program prints the bytes of the variable descriptor and the string.  There is a small bug that will prevent this being used with the <code>E$</code> variable.  It is possible to overcome this bug with other routines to handle parenthesis around it but I think that it's probably easier to just use another variable name.</p>
+<pre><code>10 N$=&quot;FRED&quot;
+20 SYS 53387N$
+30 D=PEEK(780)+256*PEEK(781)
+40 L=PEEK(D)
+50 P=PEEK(D+1)+256*PEEK(D+2)
+
+100 PRINT &quot;VARIABLE DESCRIPTOR:&quot;
+110 FOR I=-2TO4
+120 PRINT PEEK(D+I);
+130 NEXT I
+140 PRINT
+
+200 PRINT &quot;STRING VALUE:&quot;
+210 FOR I=0 TO L-1
+220 PRINT CHR$(PEEK(P+I));
+230 NEXT I
+</code></pre>
+<p>The variable descriptor for <code>N$</code> looks like the following.  Char1 and Char2 are for the two letter variable name with 128 added to Char2 to indicate that it is a string.  In the BASIC program above <code>D</code> points to the length of the string.  The string length is then followed by a pointer to the string.</p>
+<table class="neatTable neatBorder">
+  <tr><th>Char 1<br/>+0</th><th>Char 2<br />+128</th><th>Length</th><th>Pointer<br/>LSB MSB</th><th>0</th><th>0</th></tr>
+  <tr><td>78</td><td>128</td><td>4</td><td>4105</td><td>0</td><td>0</td></tr>
+</table>
+<h2>Getting Variable Address with Assembly Language</h2>
+<p>From assembly language we can call the <em>FNDVAR</em> routine at $D0E7 (53479).  This routine expects the name of the variable to search for to be in $45/$46 (69/70) with 128 added as needed to indicate the type of the variable.  The address in the variable descriptor just past the name will be returned at $47/$48 (71/72), in LSB/MSB order.</p>
+<p>The examples uses <a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/" title="TechTinkering article: Programming in Assembly with VICMON on the VIC-20">VICMON</a>, which we start with:</p>
+<pre><code>SYS 24576
+</code></pre>
+<p>Enter the following routine at $02A1 (673) to get the address of the value of variable <code>N%</code> and print it to screen.  The routine uses the <em>PRTFIX</em> routine at $DDCD (56781) to print the integer value of the variable.  I have added comments but ignore these if entering into VICMON.</p>
+<pre><code>.E1500                       ; Enable virtual zero page
+.A 02A1 LDA #$CE             ; Variable letter 'N' + 128
+.A 02A3 STA $45              ; Store first letter of variable
+.A 02A5 LDA #$80             ; Blank variable letter + 128
+.A 02A7 STA $46              ; Store second letter of variable
+.A 02A9 JSR $D0E7            ; Call FNDVAR to get address
+.A 02AC LDY #$01
+.A 02AE LDA ($47), Y
+.A 02B0 TAX                  ; Put LSB of integer in X
+.A 02B1 DEY
+.A 02B2 LDA ($47), Y         ; Put MSB of integer in A
+.A 02B4 JSR $DDCD            ; Call PRTFIX to printer integer in A/X
+.A 02B7 RTS
+.X                           ; Exit VICMON and return to BASIC
+</code></pre>
+<p>Initialize the variable <code>N%</code> with the value <code>312</code> and call the routine we created to print the value of <code>N%</code>.</p>
+<pre><code>10 N%=312
+20 SYS 673
+</code></pre>
+<h2>Floating Point, Function Descriptor and Array Variables</h2>
+<p>There is probably less need to get the address of floating point, function descriptor and array variables.  These are more complicated and are therefore more difficult to access.  However, if their address is needed their storage is explained in detail in <a href="https://archive.org/details/COMPUTEs_Mapping_the_VIC_1984_COMPUTE_Publications/page/n329/mode/2up">Mapping the Vic, pp. 308-312</a>.</p>
+<h2>Video</h2>
+<p>The following video shows these methods for getting the address of a variable in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/le8JVHxPsow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Getting the Address of BASIC Variables on the VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/getting-the-address-of-basic-variables-on-the-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F&title=Getting%20the%20Address%20of%20BASIC%20Variables%20on%20the%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F&quote=Getting%20the%20Address%20of%20BASIC%20Variables%20on%20the%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F&text=Getting%20the%20Address%20of%20BASIC%20Variables%20on%20the%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Getting%20the%20Address%20of%20BASIC%20Variables%20on%20the%20VIC-20&body=Getting%20the%20address%20of%20a%20BASIC%20variable%20can%20be%20useful%20if%20you%20want%20to%20pass%20data%20to%20a%20machine%20code%20routine%20or%20want%20to%20access%20the%20bytes%20of%20a%20variable%20directly%20to%20improve%20speed%20and%20reduce%20garbage%20collectio...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Getting%20the%20Address%20of%20BASIC%20Variables%20on%20the%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fgetting-the-address-of-basic-variables-on-the-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+  <div id="email-subscribe">
+  <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=TechTinkering', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+    <p>Sign up to get new articles straight to your inbox.</p>
+    <p><input type="text" style="width:180px" name="email" placeholder="Email address"/>
+    <input type="hidden" value="TechTinkering" name="uri"/>
+    <input type="hidden" name="loc" value="en_US"/>
+    <input class="subscribe-button" type="submit" value="Subscribe" /></p>
+    <p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p>
+  </form>
+</div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/saving-and-loading-memory-on-the-vic-20/">Saving and Loading Memory on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few simple ways of doing it from BASIC and A...
+  &nbsp;
+  <a class="readMore" href="/articles/saving-and-loading-memory-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in REM s...
+  &nbsp;
+  <a class="readMore" href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Adding Basic Stubs to Assembly Language on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a SYS statement to start the code.  This is easy to do on the VIC-20 and the process gives you a...
+  &nbsp;
+  <a class="readMore" href="/articles/adding-basic-stubs-to-assembly-language-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
+  &nbsp;
+  <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us...
+  &nbsp;
+  <a class="readMore" href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
