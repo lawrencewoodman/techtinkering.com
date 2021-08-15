@@ -132,8 +132,6 @@
     <h2>Feedback/Discuss</h2>
     [ornament -params [getparam] -directory [dir includes] -file feedback.html]
   </div>
-
-  [include email_subscription.html]
 ! }
 
 

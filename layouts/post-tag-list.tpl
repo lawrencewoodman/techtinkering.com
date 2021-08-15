@@ -18,5 +18,3 @@
 <div class="text-center">
   <a class="view-all" href="/articles/">View All Articles</a>
 </div>
-
-[include email_subscription.html]
