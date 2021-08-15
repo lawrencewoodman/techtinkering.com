@@ -157,21 +157,6 @@ a.view-all {
 }
 
 
-div#email-subscribe {
-  margin-top: 2em;
-  border:1px solid #ccc;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  text-align:center;
-}
-
-div#email-subscribe input {
-  color: black;
-}
-
-
 div.discuss {
   width: 100%;
   text-align: center;
