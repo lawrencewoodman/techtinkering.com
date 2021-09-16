@@ -1,5 +1,7 @@
 The VIC-20 had a number a spreadsheet programs released for it which despite the limited resources of the Vic could actually be quite usable.  The two best known are SimpliCalc and PractiCalc, but there were others such as TechniCalc and BusiCalc as well as one written in Basic to use a 40 column extension such as [FAT-40](/articles/40-columns-in-basic-on-the-commodore-vic-20/).
 
+We also have another similar article: [Word Processors on the Commodore VIC-20](/articles/word-processors-on-the-commodore-vic-20/).
+
 
 ## SimpliCalc
 
