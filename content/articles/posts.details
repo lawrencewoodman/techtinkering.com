@@ -1,3 +1,13 @@
+{ filename    2021-10-07-hamurabi-and-similar-games-on-cpm.md
+  title       "Hamurabi and Similar Games on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_hamurabi.png"
+  tags        {"Retro" "CP/M" "Games"}
+}
+
 { filename    2021-09-16-word-processors-on-the-commodore-vic-20.md
   title       "Word Processors on the Commodore VIC-20"
   author      {
