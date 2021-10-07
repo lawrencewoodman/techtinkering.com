@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-09-16</updated>
+  <updated>2021-10-07</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Hamurabi and Similar Games on CP/M</title>
+      <id>https://techtinkering.com/articles/hamurabi-and-similar-games-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/hamurabi-and-similar-games-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2021-10-07
+        </published>
+
+        <updated>
+          2021-10-07
+        </updated>
+
+        <summary>Hamurabi is probably the best known land and resource management game on CP/M.  However, there are a few other similar text-based games that sought to extend the concept such as Dukedom and Kingdom.  T</summary>
+    </entry>
     <entry>
       <title>Word Processors on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/word-processors-on-the-commodore-vic-20/</id>
