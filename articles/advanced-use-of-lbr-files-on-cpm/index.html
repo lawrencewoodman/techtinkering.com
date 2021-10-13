@@ -174,6 +174,12 @@ algorithm.
 </code></pre>
 <h2>Running Commands</h2>
 <p>It is possible to run programs directly from a .LBR archive using <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lrun23.lbr" title="LRUN23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/">LRUN v2.3</a>, dated 8 Jul 1985 originally by Gary P. Novosielski.  This is very useful if you have lots of small .COM files on a disk as by including them in a .LBR archive you can reduce the amount of space they take up because there may be be less wasted space if they are not a multiple of the block size.  If you don't supply LRUN with a .LBR file then it will default to 'COMMAND.LBR'.  This works very well, however it isn't suitable for all programs as they may need to access other files which can't be contained in the archive.  It should also be noted that the member files can't be compressed.</p>
+<p>As an example, if we wanted to run LFIND.COM contained in TOOLS.LBR we could use:</p>
+<pre><code>A&gt; LRUN -TOOLS LFIND
+</code></pre>
+<p>Alternatively if LFIND.COM was in COMMAND.LBR we could use:</p>
+<pre><code>A&gt; LRUN LFIND
+</code></pre>
 <h2>Basic Information</h2>
 <p>Below is some basic information about each utility that you may find useful and interesting.</p>
 <table class="neatTable">

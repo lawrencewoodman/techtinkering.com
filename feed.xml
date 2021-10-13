@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-10-07</updated>
+  <updated>2021-10-13</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -90,7 +90,7 @@
         </published>
 
         <updated>
-          2021-05-31
+          2020-10-13
         </updated>
 
         <summary>Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva</summary>
