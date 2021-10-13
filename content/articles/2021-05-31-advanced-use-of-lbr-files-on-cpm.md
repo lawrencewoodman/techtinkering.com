@@ -46,6 +46,17 @@ A> LBRDSK E:=*.LBR
 
 It is possible to run programs directly from a .LBR archive using [LRUN v2.3](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/arc-lbr/lrun23.lbr "LRUN23.LBR from Walnut Creek CD: /cpm/utils/arc-lbr/"), dated 8 Jul 1985 originally by Gary P. Novosielski.  This is very useful if you have lots of small .COM files on a disk as by including them in a .LBR archive you can reduce the amount of space they take up because there may be be less wasted space if they are not a multiple of the block size.  If you don't supply LRUN with a .LBR file then it will default to 'COMMAND.LBR'.  This works very well, however it isn't suitable for all programs as they may need to access other files which can't be contained in the archive.  It should also be noted that the member files can't be compressed.
 
+As an example, if we wanted to run LFIND.COM contained in TOOLS.LBR we could use:
+
+```
+A> LRUN -TOOLS LFIND
+```
+
+Alternatively if LFIND.COM was in COMMAND.LBR we could use:
+
+```
+A> LRUN LFIND
+```
 
 ## Basic Information
 
