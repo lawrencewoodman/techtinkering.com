@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last Updated: 27th November 2018 at 10:20 GMT_
+_Last Updated: 14th October 2021 at 15:55 GMT_
 
 TechTinkering understands that privacy is important to you and will not
  share your data with any third parties with the following exceptions.
@@ -13,11 +13,13 @@ TechTinkering understands that privacy is important to you and will not
 * In the event that TechTinkering is sold, it can be sold complete with the associated user data.
 * TechTinkering may use [cookies](https://cookiesandyou.com/) for advertising, analytics and any other use.
 
-You also agree to the the following for each third-party service used on or by TechTinkering:
+You also agree to the following for each third-party service used on or by TechTinkering:
 
 ## Amazon
 TechTinkering is a participant in the Amazon Europe S.à r.l. Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.co.uk.
 
 
 ## Google
-Google will use cookies to help supply relevant adverts and to provide reports to the owners of this site which describe how people use it and what they are interested in.  The adverts pay the running costs of the site and the reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/).
+Google will use cookies and/or device identifiers to help supply relevant adverts and to provide reports to the owners of this site which describe how people use it and what they are interested in.  The adverts pay the running costs of the site and the reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/) for more information.
+
+You can opt out of Google's use of cookies or device identifiers by visiting Google's [Ads Settings](http://www.google.com/settings/ads). Alternatively, you can opt out of a third-party vendor's use of cookies by visiting the [Network Advertising Initiative opt-out page](http://www.networkadvertising.org/managing/opt_out.asp) or control the use of device identifiers using a [device’s settings](https://support.google.com/ads/answer/1660762#mob).
