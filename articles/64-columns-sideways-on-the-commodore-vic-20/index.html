@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>64 Columns (Sideways) on the Commodore VIC-20</title>
+  <meta name="description" content="With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstra">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="64 Columns (Sideways) on the Commodore VIC-20">
+  <meta name="twitter:description" content="With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstra">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_64_columns_sidways.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="64 Columns (Sideways) on the Commodore VIC-20">
+  <meta property="og:description" content="With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstra">
+  <meta property="og:url" content="https://techtinkering.com/articles/64-columns-sideways-on-the-commodore-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_64_columns_sidways.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/64-columns-sideways-on-the-commodore-vic-20/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: "ca-pub-1613732348909658",
+         enable_page_level_ads: true
+    });
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_64_columns_sidways.png" />
+      <header>
+        <a href="/articles/64-columns-sideways-on-the-commodore-vic-20/" title="64 Columns (Sideways) on the Commodore VIC-20">
+          <h1 itemprop="headline name">64 Columns (Sideways) on the Commodore VIC-20</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2021-11-18">
+              18 November 2021
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstrate this and show how it is done.  Previously we've shown 40 columns in BASIC which has been around for decades, however I have never seen anyone use this trick to get 64 columns before.</p>
+<h2>Disclaimer</h2>
+<p><em>Putting a television on it's side may not be safe and we take no responsibility for any damage or accidents caused by trying this.  The television will probably be unstable on its side and the components inside are not designed to function in this way.</em></p>
+<h2>Laying out the Screen Map</h2>
+<img src="/img/articles/vic20_20x12_display_240_chars.png" class="img-right" style="width: 400px; clear: right;" title="Normal layout of characters on 20x12 screen">
+<p>Normally hi-res graphics are achieved on the Vic by putting a different character in each screen location from left to right, top to bottom.  Therefore the first screen location has character 0 (@), the next character 1 (A), etc.  We can then alter pixels by just redefining these characters in the character definitions map in memory that contain those pixels.</p>
+<p>However, because we are using the screen sideways we lay out the screen map so that character 0 is at the top right of the screen if viewed in its normal orientation, then character 1 below it and this continues down each row and to the left for each column.  If viewed sideways this would look like the same layout as is normally used.</p>
+<h2>Character Definition Map</h2>
+<p>Each characters is defined using a series of 8 or 16 bytes depending on if we use 8x8 or 8x16 characters.  Previously we've shown <a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/" title="40 Columns in Basic on the Commodore VIC-20">40 columns being used in BASIC</a> and this was achieved by using 4-bit wide characters and reducing the number of text columns to 20.  This allows two 4-bit characters to fit in the space of each 8-bit wide character definition and therefore provide 20x2=40 columns of text.</p>
+<img src="/img/articles/vic20_64_col_comm_simulated_char_def.png" class="img-right" style="width: 500px; clear: right;" title="Example Character Definition for 4 Simulated Characters: COMM">
+<p>For this sideways text mode we will put the character sideways and therefore each 8x16 character definition can fit four characters.  We laid out the screen map so that the characters run from left to right and top to bottom when viewed sideways.</p>
+<p>As an example, if viewed sideways, the first four simulated characters are stored in the first 16 bytes of the character map.  To alter any of them we just copy over the relevant bytes to replace the simulated characters with others.  To make life easy we store the simulated font definitions for each character as a series of 4 bytes each representing one pixel column of 8 bits if viewed sideways.</p>
+<h2>Screen Dimensions</h2>
+<p>The Vic allows us to <a href="/articles/changing-screen-dimensions-on-the-commodore-vic-20/" title="Changing Screen Dimensions on the Commodore VIC-20">alter the screen dimensions</a> and on a PAL screen we can get a maximum of about 27 columns by 33 rows.  If we used 4-bit wide characters this would allow 27x2=54 columns of text although this may be hard to fit on some television sets.  If instead we were to look at the 33 columns of text sideways on the screen this would allow 33x2=66 columns if viewed using 4-bit wide fonts on their side.</p>
+<h2>Displaying Sideways</h2>
+<p>We configure the Vic to use 8x16 character definitions because we have to map the whole screen using the 256 characters available.  If we were to use 8x8 character definitions and use 33 rows that would only allow 256/33 = 7 columns or displayed sideways and using a 4-bit font gives 66 columns by 7 rows.  By using 8x16 character definitions we can fit 4 sideways characters into each 8x16 character definition.  This means we reduce our number of real rows displayed to 16 and can now display more columns.</p>
+<img src="/img/articles/vic20_sideways_64x14_scroll_program.png" class="img-right" style="width: 300px; clear: right;" title="The 64x14 display viewed in normal operation">
+<p>Now we can see how we get 64 columns of text sideways on the Vic by changing to 8x16 character definitions, setting the number of rows displayed on the screen to 16, using 4-bit wide simulated character definitions and fitting four sideways simulated characters per real character definition.  This gives 16 rows * 16 bit character definition / 4 sideways characters per character definition = 64 simulated columns displayed sideways.</p>
+<img src="/img/articles/vic20_sideways_64x14_scroll_program_rotated.png" class="img-right" style="width: 400px; clear: right;" title="The 64x14 display viewed sideways">
+<p>This now leaves the question of how many simulated rows.  I'm using 14 simulated rows which is 14 real columns.  The reason for this is that each real character definition is 16 bytes and therefore for 16 real rows it would take 16x16=256 bytes to define one real column.  If we have 14 simulated rows which is 14 real columns then this uses 14x256 = 3584 ($E00) bytes in the character definition map.  The Vic can only address memory up to $2000 and if we locate the character map at the lowest realistic address at $1000 then it will occupy memory at $1000-$1DFF.  The highest location we can give for the screen map is at $1E00 so the character map just fits before the screen map.  The screen map itself only needs 16 real rows by 14 real columns and therefore would use 16x14=224 ($E0) bytes.  This would mean the screen map would occupy $1E00-$1EDF and therefore code could be placed from $1EE0 upwards.</p>
+<p>I think it may be possible to extend this to a 64x15 text mode by overlapping the screen map and character map but I haven't experimented with this yet.  If I manage it I will publish the details at a later date.</p>
+<h2>NTSC</h2>
+<p>This works well on PAL displays but because NTSC has less screen real estate 64 columns sideways isn't really possible.  However, people in NTSC land I haven't forgotton you.  Text modes, 56x14 and 52x16 should be possible without any problem and still gives a considerable boost.</p>
+<h2>Final Thoughts</h2>
+<p>I love 64 column displays such as on the TRS-80, Exidy Sorceror and SOL-20.  I particularly like 64x16 displays.  It's a bit of a shame I couldn't easily stretch the Vic to do 64x16; I do have an idea about how to do this in the future, although it may make the screen update a bit slow.</p>
+<p>This text mode is naturally a trade-off, what we gain in simulated columns we lose in rows, that's without even mentioning the fact that the text is being printed sideways.</p>
+<p>I've put some example code into a <a href="https://github.com/lawrencewoodman/64_columns_sideways_vic20">github repo</a> if you want to give this a go and I'd love you hear what you think about all this and whether you think the trade-off is worth it.</p>
+<h2>Video</h2>
+<p>The following video shows the 64 column text mode in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L3VilLfuehI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">64 Columns (Sideways) on the Commodore VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/64-columns-sideways-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F&title=64%20Columns%20%28Sideways%29%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F&quote=64%20Columns%20%28Sideways%29%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F&text=64%20Columns%20%28Sideways%29%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=64%20Columns%20%28Sideways%29%20on%20the%20Commodore%20VIC-20&body=With%20a%20little%20lateral%20thinking%20and%20by%20putting%20the%20television%20on%20its%20side%20we%20can%20create%20a%2064%20column%20sideways%20text%20mode%20on%20the%20VIC-20.%20%20This%20article%20will%20demonstrate%20this%20and%20show%20how%20it%20is%20done.%20%20Previo...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%2064%20Columns%20%28Sideways%29%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2F64-columns-sideways-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/getting-the-address-of-basic-variables-on-the-vic-20/">Getting the Address of BASIC Variables on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Getting the address of a BASIC variable can be useful if you want to pass data to a machine code routine or want to access the bytes of a variable directly to improve speed and reduce garbage collectio...
+  &nbsp;
+  <a class="readMore" href="/articles/getting-the-address-of-basic-variables-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/saving-and-loading-memory-on-the-vic-20/">Saving and Loading Memory on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few simple ways of doing it from BASIC and A...
+  &nbsp;
+  <a class="readMore" href="/articles/saving-and-loading-memory-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
+  &nbsp;
+  <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us...
+  &nbsp;
+  <a class="readMore" href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in REM s...
+  &nbsp;
+  <a class="readMore" href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
