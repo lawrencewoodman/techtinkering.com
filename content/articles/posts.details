@@ -5,8 +5,10 @@
     url         "https://lawrencewoodman.github.io"
   }
   socialImg   "vic20_64_columns_sidways.png"
+  twitterID   "1461394394670632969"
   tags        {"Retro" "Commodore" "VIC-20" "Programming"}
 }
+
 
 { filename    2021-10-07-hamurabi-and-similar-games-on-cpm.md
   title       "Hamurabi and Similar Games on CP/M"
