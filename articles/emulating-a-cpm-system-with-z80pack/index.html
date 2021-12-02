@@ -194,7 +194,7 @@ cp -p * ../backups
 </code></pre>
 <p>I also keep my own disk images of useful software in the <em>library/</em> directory and keep a backup in the <em>backups/</em> directory as well.</p>
 <h2>Creating disk images</h2>
-<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/%7Emichael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/%7Emichael/cpmtools/files/cpmtools-2.20.tar.gz" title="cpmtools-2.20.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
+<p>We now needed to create some disk images; to do this I recommend <a href="http://www.moria.de/~michael/cpmtools/">Cpmtools</a> which is a part of many Linux distros.  If you don't have this as part of your distro, the source can be downloaded from <a href="http://www.moria.de/~michael/cpmtools/files/cpmtools-2.20.tar.gz" title="cpmtools-2.20.tar.gz">here</a>.  Cpmtools is a great collection of tools used to manipulate CP/M images and file systems in a variety of formats and works well with z80pack.</p>
 <h3>Creating Floppy Diskette Images</h3>
 <p>The emulator uses 8&quot; SD disk drives as the first 4 drives: <em>A:</em>, <em>B:</em>, <em>C:</em>, <em>D:</em>.  This disk specification is the default for Cpmtools.  To create a floppy diskette image called, <em>work.floppy.cpm</em>, run:</p>
 <pre><code class="language-bash">$ mkfs.cpm work.floppy.cpm
@@ -334,6 +334,22 @@ ln disks/library/main.hd4.cpm disks/drivei.dsk
 </div>
 <br />
       <header>
+  <h2><a href="/articles/breakout-style-games-on-cpm/">Breakout Style Games on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/games/">Games</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Breakout style video games were pretty popular at one time both at Arcades and on home computers.   The games are based on a simple concept where you have to destroy a group of 'bricks' at the top of t...
+  &nbsp;
+  <a class="readMore" href="/articles/breakout-style-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/hamurabi-and-similar-games-on-cpm/">Hamurabi and Similar Games on CP/M</a></h2>
   <span class="post-meta">
       <ul class="tags">
@@ -379,21 +395,6 @@ ln disks/library/main.hd4.cpm disks/drivei.dsk
   The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr...
   &nbsp;
   <a class="readMore" href="/articles/working-with-lbr-files-on-cpm/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicke...
-  &nbsp;
-  <a class="readMore" href="/articles/re-execute-programs-on-cpm/">Read More</a>
 </div>
 <br />
 </div>

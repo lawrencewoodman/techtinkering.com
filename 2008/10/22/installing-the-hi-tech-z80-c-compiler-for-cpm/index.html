@@ -149,10 +149,10 @@
         <p>My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a number of options available in the archives, but I have found that <a href="http://www.hitech.com.au/">HI-TECH</a> are allowing their CP/M C Compiler to be downloaded for free.  This is a very good product, has good documentation, is almost ANSI C compliant and can be used for commercial and non-commercial use.  This, therefore, is the one I have chosen.</p>
 <h2>Downloading the HI-TECH Z80 CP/M C Compiler</h2>
 <p>At one time this could be downloaded from the HI-TECH site, however the best place to get it from now is <a href="http://www.z80.eu/c-compiler.html">z80.eu</a>.</p>
-<p>The files are self-extracting lharc'ed archives so I installed <a href="http://www.infor.kanazawa-it.ac.jp/%7Eishii/lhaunix/">lha</a>, which is part of my Debian distro.  To extract the contents of the main compiler archive, I created a subdirectory called <code>z80v309</code>.  I entered it and ran:</p>
+<p>The files are self-extracting lharc'ed archives so I installed <a href="http://www.infor.kanazawa-it.ac.jp/~ishii/lhaunix/">lha</a>, which is part of my Debian distro.  To extract the contents of the main compiler archive, I created a subdirectory called <code>z80v309</code>.  I entered it and ran:</p>
 <pre><code class="language-bash">$ lha e ../z80v309.exe
 </code></pre>
-<p>The extracted contents comes to 413k which is too large for the 8&quot; SD disks that my emulator supports, so I used <a href="http://www.moria.de/%7Emichael/cpmtools/">Cpmtools</a> to create a 4Mb HDD image to put the files on.  Hopefully however, this should fit on your disks.</p>
+<p>The extracted contents comes to 413k which is too large for the 8&quot; SD disks that my emulator supports, so I used <a href="http://www.moria.de/~michael/cpmtools/">Cpmtools</a> to create a 4Mb HDD image to put the files on.  Hopefully however, this should fit on your disks.</p>
 <h2>Using the C compiler</h2>
 <p>To test the C compiler I went to the B: drive, where I'm storing my development work, and created a file called <code>hello.c</code> containing the classic &quot;hello, world&quot; source code:</p>
 <pre><code class="language-c">void main(void)

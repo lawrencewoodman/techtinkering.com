@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2021-11-19</updated>
+  <updated>2021-12-02</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Breakout Style Games on CP/M</title>
+      <id>https://techtinkering.com/articles/breakout-style-games-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/breakout-style-games-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2021-12-02
+        </published>
+
+        <updated>
+          2021-12-02
+        </updated>
+
+        <summary>Breakout style video games were pretty popular at one time both at Arcades and on home computers.   The games are based on a simple concept where you have to destroy a group of 'bricks' at the top of t</summary>
+    </entry>
     <entry>
       <title>64 Column Text Mode on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/64-columns-sideways-on-the-commodore-vic-20/</id>
