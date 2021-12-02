@@ -1,3 +1,13 @@
+{ filename    2021-12-02-breakout-style-games-on-cpm.md
+  title       "Breakout Style Games on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_breakout.png"
+  tags        {"Retro" "CP/M" "Games"}
+}
+
 { filename    2021-11-18-64-columns-sideways-on-the-commodore-vic-20.md
   title       "64 Column Text Mode on the Commodore VIC-20"
   author      {
