@@ -5,25 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Dealing Sympathetically with Legacy Code</title>
-  <meta name="description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
+  <title>80 Columns in Software on the Commodore VIC-20</title>
+  <meta name="description" content="If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but c">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Dealing Sympathetically with Legacy Code">
-  <meta name="twitter:description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
+  <meta name="twitter:title" content="80 Columns in Software on the Commodore VIC-20">
+  <meta name="twitter:description" content="If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but c">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/vic20_80_columns.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dealing Sympathetically with Legacy Code">
-  <meta property="og:description" content="I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worryi">
-  <meta property="og:url" content="https://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/">
+  <meta property="og:title" content="80 Columns in Software on the Commodore VIC-20">
+  <meta property="og:description" content="If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but c">
+  <meta property="og:url" content="https://techtinkering.com/articles/80-columns-in-software-on-the-commodore-vic-20/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/vic20_80_columns.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +40,7 @@ worryi">
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/">
+  <link rel="canonical" href="https://techtinkering.com/articles/80-columns-in-software-on-the-commodore-vic-20/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="https://feedproxy.google.com/TechTinkering" />
 
@@ -119,14 +120,16 @@ worryi">
     <div id="content" class="container">
       <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/vic20_80_columns.png" />
       <header>
-        <a href="/2012/04/20/dealing-sympathetically-with-legacy-code/" title="Dealing Sympathetically with Legacy Code">
-          <h1 itemprop="headline name">Dealing Sympathetically with Legacy Code</h1>
+        <a href="/articles/80-columns-in-software-on-the-commodore-vic-20/" title="80 Columns in Software on the Commodore VIC-20">
+          <h1 itemprop="headline name">80 Columns in Software on the Commodore VIC-20</h1>
         </a>
         <div>
             <time itemprop="datePublished"
-                  datetime="2012-04-20">
-              20 April 2012
+                  datetime="2022-01-20">
+              20 January 2022
             </time>
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
@@ -140,32 +143,60 @@ worryi">
           </span>
 
           <ul class="tags">
-              <li>#<a href="/articles/tag/legacycode/">Legacy Code</a></li>
+              <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
               <li>#<a href="/articles/tag/programming/">Programming</a></li>
               <li>#<a href="/articles/tag/retro/">Retro</a></li>
+              <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
           </ul>
         </div>
       </header>
         <div itemprop="articleBody">
-        <p>I have often noticed programmers getting worked up about the legacy code they are maintaining.  I know it is annoying having to wade through poor code, or
-worrying about making changes for fear of unexpected side-effects.  However, it is important to see the code for what it is and in the context of when it was written.  Coding styles change, programmers change.  What a programmer did then, they may not do today.  Once this is accepted, I find the code base is accepted.</p>
-<h2>What is legacy code?</h2>
-<p>I define legacy code as code that is no longer maintained, or that is frightening to work on because it not fully understood.  Typically this code has no tests and is hard to test because it hasn't been written to be tested.</p>
-<h2>Preparing the environment</h2>
-<p>Before you can work effectively with the code, you need to ensure the environment is conducive.  This can be a big hurdle if the build tools or environments  themselves are outdated or poorly understood.  I have repeatedly come across poor build automation so that builds took longer and were more complicated than should have been the case.  Improving this can make a huge difference to the speed with which you can make a change and test it.</p>
-<h2>Exploring the code base</h2>
-<p>To make changes to the code you need to take the time to explore and properly understand it.  Do this by adding temporary comments, refactoring, adding tests and using your revision control software to create branches where you can take the code apart and test your understanding.</p>
-<h2>Making style changes</h2>
-<p>Coding styles do change and every programmer has their own preference.  Don't be too critical of coding styles that were typical when the code was written and don't judge the code by today's standards.  Try to fit in with the coding style of a file.  A mixture of styles in a file can be very confusing and makes it much harder to work with.  If you feel that you can't adapt to the style, then change it throughout the file or start the new style in a separate file.  When you do make style changes, try to put them in a separate commit, so functional changes and style changes are distinct.  This helps future maintainers of the code.</p>
-<p>Elements of coding styles that you may want to consider seriously before changing include:  tabs vs spaces, camel caps vs snake case, K&amp;R declarations vs prototypes, procedural vs object-orientated paradigm.</p>
-<h1>Comments lie</h1>
-<p>Comments can be useful to explain complex code or dependencies.  However, they are often out of step with the code and therefore can confuse.  Think seriously before putting comments in code.  I often use them as I am exploring code to understand it.  Once I have gained the understanding that I was looking for, I will refactor the code and remove virtually all the comments.  Less is more as far as comments go.</p>
-<h2>Refactoring</h2>
-<p>Rather than using comments to explain code, I would much rather refactor the code so that the variables and functions make it clear what is happening.  Functions can be tested and maintained more easily and if your understanding of the code changes, you are more likely to change the functions to suit, this may not be the case with comments.  For more on this take a look at: <a href="/2012/04/26/refactoring-arm-yourself-in-the-war-against-useless-comments">Refactoring: Arm Yourself in the War Against Useless Comments</a>.</p>
-<h2>Testing</h2>
-<p>Adding tests to code can be the most useful change that you make.  It will often feel difficult if the code wasn't designed to be tested, but will reap rewards in terms of understanding and confidence in the code.  Think of good tests as a gift to yourself and those that maintain the code after you.</p>
-<h2>Remember the next guy</h2>
-<p>Any changes that you make should improve the maintainability of the code not add to the technical debt.  You may not be the last person to work on this code, so please remember the next guy.</p>
+        <p>If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but considering the limitations of the Vic I think the results are quite good.  While it looks hard to decipher to start with, over time it becomes easier to use.</p>
+<h2>The 80 Column Character Set</h2>
+<img src="/img/articles/vic20_80_column_charset.png" class="img-right" style="width: 500px; clear: right;" title="The 80 column character set for ASCII 33-126">
+<p>In order to be able to display 80 columns on the Vic I have created a 2x8 bit character set.  The  characters can be seen in the image which is displaying ASCII characters 33-126.</p>
+<p>I have taken a number of steps to help optimize the character set so that each character is as distinct as possible.  The uppercase and lowercase letters are folded into a single case and use mainly lowercase letters with a few uppercase letters where they stand out more.  I have used descenders for some letters such as 'p', 'q' and 'y'.  The non-alphabetic characters make use of the full-height of the characters to help make them more distinct, this is particularly important for the numeric characters.</p>
+<p>While designing the characters I was careful to consider what they would look like next to other letters - this can be seen with the 'h', for example, which if placed next to another letter will invariable look like the final down leg is present.</p>
+<h2>80 Column Software Routines</h2>
+<p>The code for this is in the <a href="https://github.com/lawrencewoodman/display80_vic20">display80_vic20 repo on GitHub</a> and contains the routines to display the text in 80 columns along with some test programs.</p>
+<p>Since the font is 2x8 this means that four characters fit side-by-side in the space of one 8x8 Vic character and therefore if we use twenty Vic columns of text we can get eighty columns across. To help increase our ability to see the character boundaries the colour of the characters alternates between blue and black every fourth eighty column character.</p>
+<img src="/img/articles/vic20_80_column_scrollup_80_mode.png" class="img-right" style="width: 100%; clear: right; margin-bottom: 2em;" title="Displaying some text using 80 columns">
+<p>For comparison the text being displayed in the image is as follows.</p>
+<pre><code>80 columns on the Commodore VIC-20!
+
+Supports Newline (software definable), Backspace, Tabs to next eighth column and
+ ASCII 32-126 with case folded into a single case.  The fonts are 2*8 and uses h
+eight and descenders to help differentiate the characters.  The numbers are tall
+er for the same reason.
+
+The standard text mode is 80*22 with the ability to switch to 20 column mode whi
+ch views the 80 column screen through a movable window using the standard 8*8 fo
+nt.
+
+The alphabet:
+  a b c d e f g h i j k l m n o p q r s t u v w x y z
+  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+The numbers:
+  0 1 2 3 4 5 6 7 8 9
+The rest:
+  ! &quot; # $ % &amp; ' ( ) * + , - . / : ; &lt; = &gt; ? @ [ \ ] ^ _ ` { | } ~
+
+Where there's a will there's a way!
+</code></pre>
+<h3>20 Column Movable Window</h3>
+<img src="/img/articles/vic20_80_column_scrollup_20_mode.png" class="img-right" style="width: 500px; clear: right;" title="Displaying some text using a 20 column window">
+<p>The software also supports switching to a 20 column mode which uses a movable window to display a quarter of the 80 column screen width.  In the test programs I have used the function keys: F1, F3, F5 and F7 to easily move the window between quarters of the screen width.  80 column mode is accessed using F2.  The 20 column mode is particularly useful to not only clarify certain character combinations which can look similar but also to see which characters are uppercase and which are lowercase.</p>
+<h2>Video</h2>
+<p>The following video shows the 80 column text mode in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iEJGE7RatFU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2>Other Text Modes</h2>
+<p>This article is one of a number articles covering different text modes for the Vic.  The others may also be of interest.</p>
+<ul>
+<li><a href="/articles/64-columns-sideways-on-the-commodore-vic-20/">64 Column Text Mode on the Commodore VIC-20</a></li>
+<li><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></li>
+</ul>
       </div>
     </article>
 </div>
@@ -175,8 +206,8 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
       <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
     </a>
     <br />
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Dealing Sympathetically with Legacy Code</span>
-    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2012/04/20/dealing-sympathetically-with-legacy-code/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">80 Columns in Software on the Commodore VIC-20</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/80-columns-in-software-on-the-commodore-vic-20/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
    is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
    
   </div>
@@ -186,10 +217,10 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
     <h2 style="margin-top:0;">Share This Post</h2>
     <div class="contact">
   <ul>
-    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F&title=Dealing%20Sympathetically%20with%20Legacy%20Code" target="_blank" title="Submit to Reddit">Reddit</a></li>
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F&quote=Dealing%20Sympathetically%20with%20Legacy%20Code" target="_blank" title="Share on Facebook">Facebook</a></li>
-    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F&text=Dealing%20Sympathetically%20with%20Legacy%20Code:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-    <li><a href="mailto:?subject=Dealing%20Sympathetically%20with%20Legacy%20Code&body=I%20have%20often%20noticed%20programmers%20getting%20worked%20up%20about%20the%20legacy%20code%20they%20are%20maintaining.%20%20I%20know%20it%20is%20annoying%20having%20to%20wade%20through%20poor%20code%2C%20or%0Aworrying%20about%20making%20changes%20for%20fear%20of%20unex...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F" target="_blank" title="Send email">Email</a></li>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F&title=80%20Columns%20in%20Software%20on%20the%20Commodore%20VIC-20" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F&quote=80%20Columns%20in%20Software%20on%20the%20Commodore%20VIC-20" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F&text=80%20Columns%20in%20Software%20on%20the%20Commodore%20VIC-20:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=80%20Columns%20in%20Software%20on%20the%20Commodore%20VIC-20&body=If%20you%20have%20good%20eyesight%2C%20a%20well-tuned%20display%20and%20patience%20it%20is%20possible%20to%20use%2080%20columns%20in%20software%20on%20the%20VIC-20.%20%20This%20is%20really%20just%20an%20experiment%20but%20considering%20the%20limitations%20of%20the%20Vic%20I%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F" target="_blank" title="Send email">Email</a></li>
   </ul>
 </div>
 
@@ -198,7 +229,7 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
   <ul>
 
 
-    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Dealing%20Sympathetically%20with%20Legacy%20Code&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2012%2F04%2F20%2Fdealing-sympathetically-with-legacy-code%2F%0A" title="Send us an email">Email</a></li>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%2080%20Columns%20in%20Software%20on%20the%20Commodore%20VIC-20&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2F80-columns-in-software-on-the-commodore-vic-20%2F%0A" title="Send us an email">Email</a></li>
   </ul>
 </div>
   </div>
@@ -207,23 +238,6 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
     <div>
     <h2>Related Articles</h2>
     <div class="margin-buffer">
-      <header>
-  <h2><a href="/articles/80-columns-in-software-on-the-commodore-vic-20/">80 Columns in Software on the Commodore VIC-20</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/programming/">Programming</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but considering the limitations of the Vic I ...
-  &nbsp;
-  <a class="readMore" href="/articles/80-columns-in-software-on-the-commodore-vic-20/">Read More</a>
-</div>
-<br />
       <header>
   <h2><a href="/articles/64-columns-sideways-on-the-commodore-vic-20/">64 Column Text Mode on the Commodore VIC-20</a></h2>
   <span class="post-meta">
@@ -295,6 +309,24 @@ worrying about making changes for fear of unexpected side-effects.  However, it 
   BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
   &nbsp;
   <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Programming in Assembly with VICMON on the VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than us...
+  &nbsp;
+  <a class="readMore" href="/articles/programming-in-assembly-with-vicmon-on-the-vic-20/">Read More</a>
 </div>
 <br />
 </div>
