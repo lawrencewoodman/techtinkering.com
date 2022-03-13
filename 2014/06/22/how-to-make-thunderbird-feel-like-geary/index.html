@@ -33,6 +33,12 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
+  <script>
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+    }
+  </script>
+
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
@@ -46,7 +52,15 @@
 	<!-- ****** faviconit.com favicons ****** -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,10 +92,23 @@
   </script>
 
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-         google_ad_client: "ca-pub-1613732348909658",
-         enable_page_level_ads: true
-    });
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
   </script>
 </head>
   <body>
@@ -114,19 +141,108 @@
   </div>
 </nav>
     <div id="content" class="container">
-      
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <a href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/" title="How to Make Thunderbird Feel Like Geary">
+          <h1 itemprop="headline name">How to Make Thunderbird Feel Like Geary</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2014-06-22">
+              22 June 2014
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p><a href="https://wiki.gnome.org/Apps/Geary">Geary</a> is a lightweight email client inspired by gmail's interface.  Its simple minimalistic interface is quite pleasant to use and initially I was really pleased to switch to it from <a href="http://www.mozilla.org/en-GB/thunderbird/">Thunderbird</a>.  However, after a while I started to miss the extra functionality that Thunderbird provides such as a decent address book, tagging, filtering and proper error reporting.  I switched back to Thunderbird, but the classic view with its half screen height message window started to annoy me.  The first thing that I tried was to switch to Vertical view, but it didn't feel as comfortable as Geary.  Finally I looked at what add-ons were available and came up with two that, for me, made Thunderbird work better than Geary: <a href="http://morelayoutsforthunderbird.mozdev.org">More Layouts</a> and <a href="http://github.com/protz/GMail-Conversation-View/wiki">Thunderbird Conversations</a>.</p>
+<p>To start with this is how Thunderbird normally looks for me:</p>
+<img src="/img/articles/thunderbird_classic_view.png" />
+<p>And this is how Geary looks:</p>
+<img src="/img/articles/geary_email_client.png" />
+<p>By using the two add-ons, switching to stacked view, turning on conversation view and reducing the number of columns displayed, I ended up with:</p>
+<img src="/img/articles/thunderbird_geary_style.png" />
+<p>I'm really happy with these changes as I now have a full-height message window and the conversation view works wonderfully.  I also prefer having just two columns with the Subject, From and Date on the same line which allows me to get to grips with my emails much quicker than with Geary.</p>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">How to Make Thunderbird Feel Like Geary</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2014/06/22/how-to-make-thunderbird-feel-like-geary/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F&title=How%20to%20Make%20Thunderbird%20Feel%20Like%20Geary" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F&quote=How%20to%20Make%20Thunderbird%20Feel%20Like%20Geary" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F&text=How%20to%20Make%20Thunderbird%20Feel%20Like%20Geary:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=How%20to%20Make%20Thunderbird%20Feel%20Like%20Geary&body=Geary%20is%20a%20lightweight%20email%20client%20inspired%20by%20gmail%27s%20interface.%20%20Its%20simple%20minimalistic%20interface%20is%20quite%20pleasant%20to%20use%20and%20initially%20I%20was%20really%20pleased%20to%20switch%20to%20it%20from%20Thunderbird.%20%20Howe...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20How%20to%20Make%20Thunderbird%20Feel%20Like%20Geary&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2014%2F06%2F22%2Fhow-to-make-thunderbird-feel-like-geary%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
     </div>
 
     <footer>
   <nav>
     <div class="container">
       <div>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.<br />');
+          }
+        </script>
         <strong>Legal:</strong>
         <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
         &nbsp;
         <strong>Misc:</strong>
         <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
-
       </div>
     </div>
   </nav>

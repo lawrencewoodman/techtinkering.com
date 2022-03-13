@@ -33,6 +33,12 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
+  <script>
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+    }
+  </script>
+
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
@@ -46,7 +52,15 @@
 	<!-- ****** faviconit.com favicons ****** -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,10 +92,23 @@
   </script>
 
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-         google_ad_client: "ca-pub-1613732348909658",
-         enable_page_level_ads: true
-    });
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
   </script>
 </head>
   <body>
@@ -114,19 +141,154 @@
   </div>
 </nav>
     <div id="content" class="container">
-      
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/" title="Rendering Racket Package Scribblings on Github Using gh-pages">
+          <h1 itemprop="headline name">Rendering Racket Package Scribblings on Github Using gh-pages</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2013-08-29">
+              29 August 2013
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/racket/">Racket</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hence a package's documentation, by putting them into the <em>gh-pages</em> branch of your repository.  This can be a little awkward to do though, so this article will demonstrate an easy way to manage the process.</p>
+<h2>Reorganising your Directory Structure</h2>
+<p>If your package was in <code>/home/you/dev/mypackage/</code>, you would want to reorganize it so that the contents of this directory is now in <code>/home/you/dev/mypackage/master/</code>:</p>
+<pre><code class="language-bash">$ cd /home/you/dev/mypackage/
+$ mkdir master
+$ mv * master/
+
+# You may need to move additional hidden files to the
+# ones in the line below
+$ mv .g* master/
+</code></pre>
+<p>Now you can set up the <code>gh-pages</code> directory, where you will store the scribblings rendered as html:</p>
+<pre><code class="language-bash">$ mkdir gh-pages
+
+# Clone your `master` branch into the `gh-pages` directory:
+$ cd /home/you/dev/mypackage/gh-pages
+$ git clone git@github.com:username/mypackage.git
+$ mv mypackage/* .
+
+# As above, you may need to move additional hidden files to
+# the ones in the line below
+$ mv mypackage/.g* .
+
+$ rmdir mypackage
+
+# Create a clean orphan branch: gh-pages
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+</code></pre>
+<h2>Render the Package's Scribblings to gh-pages as html</h2>
+<p>To render the package's scribblings to html and store them in the <code>gh-pages</code> branch you can create a script called <code>/home/you/dev/mypackage/create-gh-pages.sh</code> which contains the following:</p>
+<pre><code class="language-bash">#!/usr/bin/env sh
+
+scribble +m --dest-name index.html --dest gh-pages/ --redirect-main  http://download.racket-lang.org/docs/5.3.6/html/ master/collection/scribblings/collection.scrbl
+</code></pre>
+<p>Where <code>5.3.6</code> is the version of Racket's documentation that you want to cross reference and <code>collection</code> is the name of the collection within the package that you want to render.</p>
+<p>You will need to make the script executable with:</p>
+<pre><code class="language-bash">$ chmod +x create-gh-pages.sh
+</code></pre>
+<p>Now you just need to run it, add the rendered files into the <code>gh-pages</code> branch in the normal way and push them to github:</p>
+<pre><code class="language-bash">$ cd /home/you/dev/mypackage/
+$ ./create-gh-pages.sh
+$ cd /home/you/dev/mypackage/gh-pages
+$ git add *.html *.css *.js
+$ git commit -am &quot;Import project into repo&quot;
+$ git push origin gh-pages
+</code></pre>
+<h2>Accessing the Documentation</h2>
+<p>You will now be able to access the rendered documentation at:
+<code>http://username.github.io/mypackage/</code></p>
+<p>You may want to point to it from your github repository's <code>README</code>, if you have one, as well as set the repository's homepage to the url.  Finally you can define <code>homepage</code> within a collection's <code>info.rkt</code> file to point to the url.</p>
+<h2>Where Now?</h2>
+<p>This should be enough to get you started and there are may variations on this that you could try.  You may also want to automate the process of generating the scribblings with a Makefile, or perhaps using a git hook.</p>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Rendering Racket Package Scribblings on Github Using gh-pages</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F&title=Rendering%20Racket%20Package%20Scribblings%20on%20Github%20Using%20gh-pages" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F&quote=Rendering%20Racket%20Package%20Scribblings%20on%20Github%20Using%20gh-pages" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F&text=Rendering%20Racket%20Package%20Scribblings%20on%20Github%20Using%20gh-pages:%0Ahttps%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Rendering%20Racket%20Package%20Scribblings%20on%20Github%20Using%20gh-pages&body=With%20the%20new%20package%20management%20system%20for%20Racket%2C%20there%20is%20a%20need%20to%20host%20documentation%20for%20the%20package%20somewhere.%20%20Github%20allows%20you%20to%20host%20web%20pages%2C%20and%20hence%20a%20package%27s%20documentation%2C%20by%20putting...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Rendering%20Racket%20Package%20Scribblings%20on%20Github%20Using%20gh-pages&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2F2013%2F08%2F29%2Frendering-racket-package-scribblings-on-github-using-gh-pages%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
     </div>
 
     <footer>
   <nav>
     <div class="container">
       <div>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.<br />');
+          }
+        </script>
         <strong>Legal:</strong>
         <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
         &nbsp;
         <strong>Misc:</strong>
         <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
-
       </div>
     </div>
   </nav>

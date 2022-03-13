@@ -33,6 +33,12 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
+  <script>
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+    }
+  </script>
+
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
@@ -46,7 +52,15 @@
 	<!-- ****** faviconit.com favicons ****** -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,10 +92,23 @@
   </script>
 
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-         google_ad_client: "ca-pub-1613732348909658",
-         enable_page_level_ads: true
-    });
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
   </script>
 </head>
   <body>
@@ -115,7 +142,7 @@
 </nav>
     <div id="content" class="container">
       <h1>Privacy Policy</h1>
-<p><em>Last Updated: 14th October 2021 at 15:55 GMT</em></p>
+<p><em>Last Updated: 13th March 2022 at 7:49 GMT</em></p>
 <p>TechTinkering understands that privacy is important to you and will not
 share your data with any third parties with the following exceptions.
   You agree that:</p>
@@ -129,7 +156,7 @@ share your data with any third parties with the following exceptions.
 </ul>
 <p>You also agree to the following for each third-party service used on or by TechTinkering:</p>
 <h2>Amazon</h2>
-<p>TechTinkering is a participant in the Amazon Europe S.à r.l. Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.co.uk.</p>
+<p>As an Amazon Associate TechTinkering earns from qualifying purchases.</p>
 <h2>Google</h2>
 <p>Google will use cookies and/or device identifiers to help supply relevant adverts and to provide reports to the owners of this site which describe how people use it and what they are interested in.  The adverts pay the running costs of the site and the reports help improve it.  Have a look at <a href="http://www.google.com/intl/en/policies/privacy/partners/">how Google uses the data</a> for more information.</p>
 <p>You can opt out of Google's use of cookies or device identifiers by visiting Google's <a href="http://www.google.com/settings/ads">Ads Settings</a>. Alternatively, you can opt out of a third-party vendor's use of cookies by visiting the <a href="http://www.networkadvertising.org/managing/opt_out.asp">Network Advertising Initiative opt-out page</a> or control the use of device identifiers using a <a href="https://support.google.com/ads/answer/1660762#mob">device’s settings</a>.</p>
@@ -139,12 +166,16 @@ share your data with any third parties with the following exceptions.
   <nav>
     <div class="container">
       <div>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.<br />');
+          }
+        </script>
         <strong>Legal:</strong>
         <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
         &nbsp;
         <strong>Misc:</strong>
         <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
-
       </div>
     </div>
   </nav>

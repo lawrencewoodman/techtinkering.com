@@ -33,6 +33,12 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
+  <script>
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+    }
+  </script>
+
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
@@ -46,7 +52,15 @@
 	<!-- ****** faviconit.com favicons ****** -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,10 +92,23 @@
   </script>
 
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-         google_ad_client: "ca-pub-1613732348909658",
-         enable_page_level_ads: true
-    });
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
   </script>
 </head>
   <body>
@@ -131,6 +158,12 @@
 
 <div id="index-header">All Articles</div>
 <hr />
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
 
 <div class="margin-buffer">
       <header>
@@ -457,6 +490,11 @@
   <a class="readMore" href="/articles/walnut-creek-cd-c64-images/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/articles/walnut-creek-cd-rle-images/">Walnut Creek CD: .RLE Images</a></h2>
   <span class="post-meta">
@@ -800,6 +838,11 @@ As soon as you pick up this coffee table style book you know that you're in for 
   <a class="readMore" href="/articles/dir-alternatives-on-cpm/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/articles/mission-impossible-on-cpm/">Mission: Impossible on CP/M</a></h2>
   <span class="post-meta">
@@ -1113,6 +1156,11 @@ The premise of this book is that the 60s/70s counter-culture led to the personal
   <a class="readMore" href="/2013/05/04/creating-a-tty-simulator-in-assembly-language-on-the-vic-20/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2013/04/23/bbs-ads-getting-the-word-out/">BBS Ads: Getting the Word Out</a></h2>
   <span class="post-meta">
@@ -1429,6 +1477,11 @@ worrying about making changes for fear of unex...
   <a class="readMore" href="/2010/06/15/the-national-museum-of-computing-at-bletchley-park/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2010/05/06/xace-is-back-in-active-development-and-looking-for-contributors/">xAce is Back in Active Development and Looking For Contributors</a></h2>
   <span class="post-meta">
@@ -1772,6 +1825,11 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
   <a class="readMore" href="/2008/11/13/beneath-a-steel-sky-my-favourite-graphical-adventure-game/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2008/11/12/how-to-file-good-bug-reports/">How to File Good Bug Reports</a></h2>
   <span class="post-meta">
@@ -1980,12 +2038,16 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
   <nav>
     <div class="container">
       <div>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.<br />');
+          }
+        </script>
         <strong>Legal:</strong>
         <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
         &nbsp;
         <strong>Misc:</strong>
         <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
-
       </div>
     </div>
   </nav>

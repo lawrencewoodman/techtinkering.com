@@ -199,3 +199,24 @@ table.bookDetails { float: left; }
 table.bookDetails th { text-align: left; padding-right: 1em; }
 
 table.amazonDetails { margin-left: 2em; }
+
+
+/* ---- Amazon Banner Ads ---- */
+div.amazonBannerDesktop {
+  text-align: center;
+}
+div.amazonBannerMobile {
+  text-align: center;
+}
+
+@media screen and (max-width: 728px) {
+  div.amazonBannerDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 729px) {
+  div.amazonBannerMobile {
+    display: none;
+  }
+}

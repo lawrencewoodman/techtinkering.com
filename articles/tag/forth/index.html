@@ -33,6 +33,12 @@
     gtag('config', 'UA-4388762-2');
   </script>
 
+  <script>
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+    }
+  </script>
+
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
@@ -46,7 +52,15 @@
 	<!-- ****** faviconit.com favicons ****** -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,10 +92,23 @@
   </script>
 
   <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-         google_ad_client: "ca-pub-1613732348909658",
-         enable_page_level_ads: true
-    });
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
   </script>
 </head>
   <body>
@@ -136,6 +163,12 @@
   <hr />
 </div>
 
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
 <div class="margin-buffer">
       <header>
   <h2><a href="/2009/02/12/xace-a-jupiter-ace-emulator-for-unix-patched-to-correct-garbled-display/">xAce - A Jupiter Ace Emulator for Unix (Patched to correct garbled display)</a></h2>
@@ -166,12 +199,16 @@
   <nav>
     <div class="container">
       <div>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.<br />');
+          }
+        </script>
         <strong>Legal:</strong>
         <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
         &nbsp;
         <strong>Misc:</strong>
         <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
-
       </div>
     </div>
   </nav>
