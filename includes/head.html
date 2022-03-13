@@ -50,8 +50,8 @@
 !* commandSubst true
 
   <script>
+    console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
     function isUserFromUK() {
-      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
       return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
