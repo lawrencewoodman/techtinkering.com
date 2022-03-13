@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -539,7 +540,6 @@ an interesting site about his <a href="http://sturgeon.css.psu.edu/~mloewen/Oldt
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

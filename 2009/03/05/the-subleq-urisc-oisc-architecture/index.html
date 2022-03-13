@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -358,7 +359,6 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

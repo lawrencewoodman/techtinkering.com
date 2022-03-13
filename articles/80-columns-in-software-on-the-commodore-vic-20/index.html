@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -371,7 +372,6 @@ Where there's a will there's a way!
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

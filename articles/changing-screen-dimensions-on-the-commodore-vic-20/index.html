@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -569,7 +570,6 @@ poke cm+px+(py*sw), cl: rem put colour in colour map
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -395,7 +396,6 @@ available free space.  On an unexpanded system it defaults to: 7680 ($1E00), by 
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

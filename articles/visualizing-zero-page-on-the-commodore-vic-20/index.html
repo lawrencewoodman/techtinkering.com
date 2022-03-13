@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -369,7 +370,6 @@ POKE 36869,128:POKE 36866,22
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

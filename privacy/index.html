@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -142,7 +143,7 @@
 </nav>
     <div id="content" class="container">
       <h1>Privacy Policy</h1>
-<p><em>Last Updated: 13th March 2022 at 7:49 GMT</em></p>
+<p><em>Last Updated: 13th March 2022 at 8:15 GMT</em></p>
 <p>TechTinkering understands that privacy is important to you and will not
 share your data with any third parties with the following exceptions.
   You agree that:</p>

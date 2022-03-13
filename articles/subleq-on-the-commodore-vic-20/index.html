@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -390,7 +391,6 @@ The <code>-n 12</code> indents the lines by 12 spaces to improve text alignment.
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

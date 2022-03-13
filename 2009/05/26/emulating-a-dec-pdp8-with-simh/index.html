@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -413,7 +414,6 @@ load &lt;filename&gt;              Loads a file from the host system in BIN form
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -397,7 +398,6 @@ The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which make
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

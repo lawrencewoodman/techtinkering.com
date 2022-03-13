@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -438,7 +439,6 @@ ln disks/library/main.hd4.cpm disks/drivei.dsk
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

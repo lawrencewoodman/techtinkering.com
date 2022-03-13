@@ -39,7 +39,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -355,7 +356,6 @@ a file to a disk that isn't ready as it will corrupt the source file and other p
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

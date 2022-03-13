@@ -48,7 +48,8 @@ As soon as you pick up this coffee table style book you know that you're in for 
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -346,7 +347,6 @@ The premise of this book is that the 60s/70s counter-culture led to the personal
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>

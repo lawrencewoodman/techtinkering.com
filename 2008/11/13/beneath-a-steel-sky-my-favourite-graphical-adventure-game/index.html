@@ -35,7 +35,8 @@
 
   <script>
     function isUserFromUK() {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone != "Europe/London"
+      console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
     }
   </script>
 
@@ -318,7 +319,6 @@ In 2003, Revolution Software made the game available for free.  It can now be ru
     document.write(amznBanner);
   }
 </script>
-
     </div>
 
     <footer>
