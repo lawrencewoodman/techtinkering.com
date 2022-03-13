@@ -2,6 +2,13 @@
 <div class="margin-buffer">
 ! set numPosts 0
 ! foreach post [getparam posts] {
+!   if {$numPosts % 20 == 19} {
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+!   }
 !   if {![dict exists $post redirectTo]} {
 !     dict set post postNum $numPosts
 !     incr numPosts

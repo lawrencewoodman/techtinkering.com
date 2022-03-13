@@ -79,6 +79,12 @@
     </article>
 </div>
 
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
 ! if {[getparam -default false hideLicence]} {
   <div>
 !   if {[getparam -default "" extraDisclaimer] ne ""} {
@@ -142,3 +148,9 @@
     [ornament -params $postListParams -directory [dir includes] -file post_list.html]
     </div>
 ! }
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>

@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last Updated: 14th October 2021 at 15:55 GMT_
+_Last Updated: 13th March 2022 at 8:15 GMT_
 
 TechTinkering understands that privacy is important to you and will not
  share your data with any third parties with the following exceptions.
@@ -16,7 +16,8 @@ TechTinkering understands that privacy is important to you and will not
 You also agree to the following for each third-party service used on or by TechTinkering:
 
 ## Amazon
-TechTinkering is a participant in the Amazon Europe S.à r.l. Associates Programme, an affiliate advertising programme designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.co.uk.
+
+As an Amazon Associate TechTinkering earns from qualifying purchases.
 
 
 ## Google
