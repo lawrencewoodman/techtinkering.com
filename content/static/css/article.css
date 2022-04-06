@@ -34,6 +34,12 @@ pre code {
   padding: 0px;
 }
 
+blockquote {
+  border-left: 5px #EEE solid;
+  padding: 1px 10px 1px 10px;
+  margin: 1.5em;
+}
+
 
 div.neatTable-responsive {
   overflow-x: auto;
