@@ -1,3 +1,13 @@
+{ filename    2022-04-27-file-comparison-utilities-on-cpm.md
+  title       "File Comparison Utilities on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_file_comparison.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2022-01-20-80-columns-in-software-on-the-commodore-vic-20.md
   title       "80 Columns in Software on the Commodore VIC-20"
   author      {
