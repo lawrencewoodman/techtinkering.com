@@ -2,9 +2,28 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-03-13</updated>
+  <updated>2022-04-27</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>File Comparison Utilities on CP/M</title>
+      <id>https://techtinkering.com/articles/file-comparison-utilities-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/file-comparison-utilities-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2022-04-27
+        </published>
+
+        <updated>
+          2022-04-27
+        </updated>
+
+        <summary>There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can be found on the Walnut Creek CD.
+Binary </summary>
+    </entry>
     <entry>
       <title>80 Columns in Software on the Commodore VIC-20</title>
       <id>https://techtinkering.com/articles/80-columns-in-software-on-the-commodore-vic-20/</id>

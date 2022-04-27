@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>File Comparison Utilities on CP/M</title>
+  <meta name="description" content="There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can ">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="File Comparison Utilities on CP/M">
+  <meta name="twitter:description" content="There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can ">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_file_comparison.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="File Comparison Utilities on CP/M">
+  <meta property="og:description" content="There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can ">
+  <meta property="og:url" content="https://techtinkering.com/articles/file-comparison-utilities-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_file_comparison.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <script>
+    console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
+    }
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/file-comparison-utilities-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_file_comparison.png" />
+      <header>
+        <a href="/articles/file-comparison-utilities-on-cpm/" title="File Comparison Utilities on CP/M">
+          <h1 itemprop="headline name">File Comparison Utilities on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2022-04-27">
+              27 April 2022
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+        <div itemprop="articleBody">
+        <p>There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can be found on the Walnut Creek CD.</p>
+<h2>Binary File Comparison</h2>
+<p>The easiest type of comparison is between two binary files such as between two .COM files.  Here we just want to know which bytes of changed and at which location.  This can be particularly useful for discovering locations to patch a .COM file if the documentation isn't forthcoming or to create a tool to automate the process.  Each tool below offers something different.</p>
+<h3>COMPARE</h3>
+<p>The earliest program I have found to detect if binary files differ is
+<a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/filutl/compare.com" title="COMPARE.COM from Walnut Creek CD: /cpm/utils/filutl/">COMPARE</a>.  It is
+one of the many utilities created by <a href="https://en.wikipedia.org/wiki/Ward_Christensen">Ward Christensen</a> and although this version is from 1978 the <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/filutl/compare.asm" title="COMPARE.ASM from Walnut Creek CD: /cpm/utils/filutl/">source code</a> shows that it was first released in 1977 and therefore supports the 8080.  It is quite a simple utility which compares two files, displays the first difference and then stops.  Due to its simplicity it weighs in at just 2Kb.</p>
+<h3>KOMPARE</h3>
+<img src="/img/articles/cpm_kompare.png" class="img-right" style="width: 600px; clear: right;" title="KOMPARE comparing two files: HELLO.TXT and HI.TXT">
+<p>My favourite binary comparison program is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/lambda/soundpot/f/kompare.lbr" title="KOMPARE.LBR from Walnut Creek CD: /lambda/soundpot/f/">KOMPARE</a> which displays 8 rows of 16 bytes for each file, one after the other with its ASCII equivalent on the side.  Where the bytes are the same they are clearly marked in the second file.  The addresses displayed start at 0100h for a .COM file or 0000h for all other files.  KOMPARE.COM is only 2Kb but unfortunately requires a Z80.  The archive also includes COMPARE.COM which seems to be based on COMPARE.COM mentioned previously.  The author of KOMPARE mentions that they use COMPARE when trying to disassemble and reassemble, to easily find differences as they go along without seeing all the differences at one go.</p>
+<h3>DIFCOM</h3>
+<img src="/img/articles/cpm_difcom16.png" class="img-right" style="width: 600px; clear: right;" title="DIFCOM comparing two files: HELLO.TXT and HI.TXT">
+<p><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/filutl/difcom16.lbr" title="DIFCOM16.LBR from Walnut Creek CD: /cpm/utils/filutl/">DIFCOM v1.6</a> was released in 1983 by Harry J Smith along with its PL/I source code.  It is similar to KOMPARE in that it displays using a 16 byte row with ASCII on the side.  However, DIFCOM displays 16 bytes of one file immediately followed by 16 bytes of the next file.  Another significant difference is that the files can't be specified on the command line as they have to be entered interactively.  On the plus side you can send the output to a printer, file or to the console.  DIFCOM16.COM is 15Kb and supports the 8080.</p>
+<h3>COMP</h3>
+<img src="/img/articles/cpm_comp13.png" class="img-right" style="width: 600px; clear: right;" title="COMP comparing two files: HELLO.TXT and HI.TXT">
+<p>The simplest utility here is <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/filutl/comp13.lbr" title="COMP13.LBR from Walnut Creek CD: /cpm/utils/filutl/">COMP v1.3</a>, released in 1987.  It compares two files and displays their differences side by side along with the address of the difference for each byte that differs.  The addresses start at 0100h and there is no accompanying ASCII display of the bytes.  COMP is only 1Kb and supports the 8080.</p>
+<h2>Text File Comparison</h2>
+<p>Unlike binary file comparison, text comparison looks at lines of text and tries to sync matching lines so that only the lines that have changed or have been inserted or removed are shown.  This is great for all sorts of situations where it is important to see how a text file changed such as a source code file if multiple people are working on it.</p>
+<h3>TEXTCOM</h3>
+<img src="/img/articles/cpm_textcom.png" class="img-right" style="width: 500px; clear: right;" title="TEXTCOM comparing two files: HELLO.TXT and HI.TXT">
+<p>When it comes to comparing text files, <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/textcom.lbr" title="TEXTCOM.LBR from Walnut Creek CD: /cpm/utils/txtutl/">TEXTCOM v1.6</a>, released by G. Nigel Gilbert in 1983, is one of the most configurable programs and provides a nice clear output showing the differences between files.  It takes options to say how many lines are needed to sync files, whether to use the high-bit (for Wordstar, etc), whether you want to send output to a file or printer, etc.  The output often looks similar to that of DIF described next.  TEXTCOM.COM is 12Kb and supports the 8080 processor.</p>
+<h3>DIF / SSED</h3>
+<p>Chuck Forsberg says, in his 1981 release document for <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/dif-ssed.lbr" title="DIF-SSED.LBR from Walnut Creek CD: /cpm/utils/txtutl/">DIF/SSED v2</a>, that he wanted to find a better way of distributing software updates.</p>
+<blockquote cite="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/dif-ssed.doc">
+Lately (if not sooner) it has become obvious that there
+must be a better and cheaper way to distribute software updates
+to changing programs than to transmit all of the new files in
+their totality, even though only a few lines in each have been
+changed.
+</blockquote>
+<p>The library contains executable files DIF2.COM and SSED2.COM.  The first, DIF2.COM, will output the file differences in a similar way to TEXTCOM but has the additional ability to unsqueeze input files.  However, the biggest difference is that it can output an editor script which contains the differences in a format which can be used by SSED2.COM to recreate the second file from the first.  This is great when you want to just distribute the changes you have made to files without having to distribute complete new files.</p>
+<img src="/img/articles/cpm_dif22.png" class="img-right" style="width: 500px; clear: right;" title="DIF comparing two files: HELLO.TXT and HI.TXT">
+<p>The utilities work pretty well partly because DIF puts CRC values into the editor scripts which SSED then checks to ensure that the correct input file is being operated on.  However, there are a couple of things to watch because of the way that CR/LF and ^Z are handled, recreated files may not be exact copies of the original.  This is expected behaviour and is explained in its <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/dif-ssed.doc" title="DIF-SSED.DOC from Walnut Creek CD: /cpm/utils/txtutl/">accompanying documentation</a>.</p>
+<p>The programs do have a couple of bugs: Sometimes the last line number is reported inaccurately when showing differences between files; Occasionally SSED2 will hang if it reaches the end of the input file unexpectedly.</p>
+<p>Both of these utilities have been updated with versions that are smaller and faster but no longer support the BDS style pipes.  They are both 10Kb and continue to support the 8080.  They are released separately as: <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/dif22.lbr" title="DIF22.LBR from Walnut Creek CD: /cpm/utils/txtutl/">DIF v2.2</a> and <a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/txtutl/ssed22.lbr" title="SSED22.LBR from Walnut Creek CD: /cpm/utils/txtutl/">SSED v2.2</a>.</p>
+<h2>Video</h2>
+<p>The following video shows the utilities being used.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TKO8k9vUb2M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">File Comparison Utilities on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/file-comparison-utilities-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F&title=File%20Comparison%20Utilities%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F&quote=File%20Comparison%20Utilities%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F&text=File%20Comparison%20Utilities%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=File%20Comparison%20Utilities%20on%20CP%2FM&body=There%20are%20many%20utilities%20available%20for%20CP%2FM%20to%20compare%20the%20differences%20between%20files%20and%20to%20distribute%20those%20differences.%20%20All%20the%20utilities%20in%20this%20article%20can%20be%20found%20on%20the%20Walnut%20Creek%20CD.%0ABinary%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20File%20Comparison%20Utilities%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffile-comparison-utilities-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/breakout-style-games-on-cpm/">Breakout Style Games on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/games/">Games</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Breakout style video games were pretty popular at one time both at Arcades and on home computers.   The games are based on a simple concept where you have to destroy a group of 'bricks' at the top of t...
+  &nbsp;
+  <a class="readMore" href="/articles/breakout-style-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/hamurabi-and-similar-games-on-cpm/">Hamurabi and Similar Games on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/games/">Games</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Hamurabi is probably the best known land and resource management game on CP/M.  However, there are a few other similar text-based games that sought to extend the concept such as Dukedom and Kingdom.  T...
+  &nbsp;
+  <a class="readMore" href="/articles/hamurabi-and-similar-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/advanced-use-of-lbr-files-on-cpm/">Advanced Use of .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva...
+  &nbsp;
+  <a class="readMore" href="/articles/advanced-use-of-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr...
+  &nbsp;
+  <a class="readMore" href="/articles/working-with-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/re-execute-programs-on-cpm/">Re-execute Programs in Memory on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicke...
+  &nbsp;
+  <a class="readMore" href="/articles/re-execute-programs-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<br /><strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.');
+          }
+        </script>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
