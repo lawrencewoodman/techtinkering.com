@@ -171,6 +171,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Now that I have converted TechTinkering over to <a href="http://jekyllrb.com/">Jekyll</a>, I have come up against a bit of a problem with <code>site.related_posts</code>: The results are always just the latest posts, and are not filtered or ordered for relevance.  I see that lots of people are struggling with a similar problem and have therefore decided to write a plugin which will improve it.  Because the posts on this site make use of <em>tags</em>, I decided to match against those to assess relevance.</p>
 <h2>The Code</h2>

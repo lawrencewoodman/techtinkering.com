@@ -180,6 +180,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>To make machine language programs more friendly it's nice to add a Basic stub which contains a line with a <code>SYS</code> statement to start the code.  This is easy to do on the VIC-20 and the process gives you an insight into how Basic programs are stored in memory.</p>
 <p>A Basic program consists of a series of Basic lines followed by two <code>00</code> octets to signify the end of the program.  Each Basic line starts with a 16-bit next line link to the next Basic line in memory. Then there is a 16-bit Basic line number.  The following bytes represents the statements on the Basic line and is terminated by a <code>00</code> octet.</p>

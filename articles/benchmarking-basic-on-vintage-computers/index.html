@@ -177,6 +177,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>There are a few machines I'm quite interested in comparing so I decided to create a simple Basic benchmark to get an idea of their relative speed.  The benchmark tests 7 aspects and is inspired by qsbb, which is included with the <a href="http://web.inter.nl.net/hcc/A.Jaw.Venema/">qlay</a> Sinclair QL emulator.  The Basic source code for all the machines tested is available in the <a href="https://github.com/lawrencewoodman/vintage_basic_benchmark">GitHub repo</a>.  I chose Basic because it was available on all the machines I wanted to test and because the versions I created for each machine would require few changes.</p>
 <p>Benchmarks are only ever a test of what you are benchmarking and there are often other tasks that the machines would do much better at.  In this case because all the benchmarks are written in Basic they are a test of both the hardware and the Basic implementation as can be seen by the Spectrum results.</p>

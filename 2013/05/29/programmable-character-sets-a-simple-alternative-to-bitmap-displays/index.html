@@ -170,6 +170,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Programmable or reconfigurable character sets were a simple alternative to fully bitmappable displays.  The main driving force behind their creation was a desire to keep the cost of computers low: RAM was expensive and bitmappable displays need more complex hardware.  Programmable character sets were a half-way house between the preceding extended character sets, which contained most of the 7-bit ASCII characters plus extra graphic characters, and bitmappable displays.</p>
 <p>By creating your own character set you could create different fonts, software sprites and even simulate a bitmap.  They gave a much greater degree of control than a fixed extended character set at the same time as reducing the cost of the computer.  With careful planning you could create very quick and compact code because a single write to memory would allow you to output a character which would typically contain a group of 8x8 pixels.  Two machines that really captured how well this could be done are the Commodore Vic-20 and the Jupiter ACE.</p>

@@ -171,6 +171,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Most modern machines don't have a serial port as standard; you could use a USB to serial lead, however, if you have another machine available that does have a serial port you can access it remotely over TCP/IP.</p>
 <h2>Using <code>ser2net</code> to Connect a Serial Port to a TCP port</h2>

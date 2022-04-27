@@ -171,6 +171,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Most BBSs that are still running now do so via telnet.  In many ways this is great as it allows people from all around the world to access a BBS as if it were local to them.  The problem comes though, when you want to upload or download a file to/from the BBS.  Most telnet clients don't make this easy.  Here I show how to use <a href="http://www.kermitproject.org/ck90.html">C-Kermit</a> as a telnet client and how to upload/download files with it.</p>
 <h2>Installing and Configuring <em>C-Kermit</em></h2>

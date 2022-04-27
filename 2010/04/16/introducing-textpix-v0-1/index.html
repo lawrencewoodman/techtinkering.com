@@ -174,6 +174,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>I have today released <a href="https://github.com/LawrenceWoodman/TextPix/">TextPix</a> v0.1  This is a program to take an image and convert it into a redefined character set and the associated text mode screen data referencing that character set.</p>
 <p>The program came about because I wanted to be able to load images on the Jupiter Ace, but the Ace has no way of allowing you to control individual pixels on the screen.  The best that you can do is redefine the character set and then use those redefined characters to display your image.  This does however present a problem as the Ace only allows you 128 characters plus their inverse in the character set.  Since the screen contains 32x24=768 characters, there would have to be massive repetition in the image to be able to use only 128 characters plus their inverse to display the image.  TextPix therefore tries to find similar sections of the images to replace other similar sections so that the number of characters needed in the character set can be brought down to 128.</p>

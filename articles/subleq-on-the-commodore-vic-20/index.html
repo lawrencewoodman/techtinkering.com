@@ -181,6 +181,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for <em>SUbtract and Branch if Less than or EQual to zero</em>.  Code for the VM can be found in the <a href="https://github.com/lawrencewoodman/subleq_vic20">subleq_vic20 repo</a> on GitHub.</p>
 <h2>SUBLEQ (SUbtract and Branch if Less than or EQual to zero)</h2>

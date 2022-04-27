@@ -173,6 +173,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>The Vicmon machine language cartridge is an excellent tool for exploring the Vic-20.  This article and its associated video will show you how to use it to create a simple program that will change the normal output of a Vic so that it feels a bit like a teletype terminal.  This will be done by taking over some of the functionality of the KERNEL's <em>CHROUT</em> subroutine at <code>$FFD2</code>.  For those without an easy way of entering an assembly language program, there is a BASIC listing at the end.</p>
 <p>Assuming you have the Vicmon cartridge attached to your machine or emulator, you can now enter the monitor.  If you are not too familiar with the Vicmon cartridge, have a look at: <a href="/2013/04/16/beginning-assembly-programming-on-the-commodore-vic-20/">Beginning Assembly Programming on the Vic-20</a>.</p>

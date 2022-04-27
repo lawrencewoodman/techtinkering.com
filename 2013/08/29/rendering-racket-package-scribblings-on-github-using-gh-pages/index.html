@@ -169,6 +169,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>With the new package management system for Racket, there is a need to host documentation for the package somewhere.  Github allows you to host web pages, and hence a package's documentation, by putting them into the <em>gh-pages</em> branch of your repository.  This can be a little awkward to do though, so this article will demonstrate an easy way to manage the process.</p>
 <h2>Reorganising your Directory Structure</h2>

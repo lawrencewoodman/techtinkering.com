@@ -172,6 +172,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>I have been using <a href="http://jekyllrb.com/">Jekyll</a> a lot recently on the <a href="http://trustafriend.com">Trust a Friend</a> website and found the need to display a rating as a series of stars.  Initially I implemented this in JavaScript, which worked fine, but I like to limit the amount of JavaScript on my sites.  I could have done this with some straight <em>Liquid</em> but it would have been quite messy, so I decided to write a plugin for Jekyll.</p>
 <h2>The Code</h2>

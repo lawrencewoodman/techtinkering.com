@@ -176,6 +176,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>After a transient program terminates on CP/M it's often possible to re-execute it  in memory without having to reload it from disk.  This is a great little trick if using slow disks as it's much quicker to just jump back into memory.  It's also useful because it could prevent you from losing work if you exited a program without saving.</p>
 <h2>Creating the Re-execute Command</h2>

@@ -179,6 +179,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of its own code and display how it is stored in memory.  A good understanding of how BASIC is stored can help us to find novel ways to get the most out of BASIC and to leverage the power of the BASIC interpreter.  This can be seen in a previous article: <a href="/articles/storing-machine-code-in-rem-statements-on-the-vic-20/">Storing Machine Code in REM Statements on the VIC-20</a>.</p>
 <p>A BASIC program consists of a series of lines.  Each line has a link to the next line in memory, followed by a line number, then one or more BASIC statements and the end of the line is indicated with a 00 byte.  The end of the program is indicated by two 00 bytes in the next line link.</p>

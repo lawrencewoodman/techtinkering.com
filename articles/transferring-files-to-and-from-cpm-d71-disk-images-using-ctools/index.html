@@ -178,6 +178,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Using <a href="http://vice-emu.sourceforge.net/">Vice</a> to emulate a Commodore 128 running CP/M works very well, but it isn't easy to get CP/M files directly onto and off a <em>.D64</em>/<em>.D71</em> disk image.  The easiest way to do this under Linux is to use <em>ctools</em>.</p>
 <h2>Building ctools</h2>

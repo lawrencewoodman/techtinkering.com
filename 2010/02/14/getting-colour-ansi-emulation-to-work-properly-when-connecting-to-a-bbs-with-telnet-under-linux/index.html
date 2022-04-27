@@ -173,6 +173,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>I have noticed that the number of people interested in using telnet to access BBSs seems to be growing, which I'm really pleased to see.  However lots of people seem to be having trouble getting colour ANSI emulation working properly with telnet under Linux.  I have therefore put this tutorial together to show just how easy it is.</p>
 <p>The process of getting colour ANSI emulation working properly in telnet is quite simple.  All you need is the correct font and be using the correct terminal emulation mode.  This is easily done as follows:</p>

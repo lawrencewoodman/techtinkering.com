@@ -179,6 +179,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>If we are writing 6502 machine code and want to to create a routine or program that can be placed in any location then we have to create <em>Position Independent Code (PIC)</em> or make the code relocatable.  Here I'm going to show how to make our code  <em>Position Independent</em>.  There are three full examples near the end of the article which show how to put this altogether.</p>
 <h2>Branches Instead of Jumps</h2>

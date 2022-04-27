@@ -180,6 +180,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>BASIC programs often contain machine code routines but they take up quite a lot of space in BASIC.  An interesting way to reduce the amount of space that they take is to store the machine code in <code>REM</code> statements.  This is much more compact and also means that we can call the routine directly from the location it is stored in memory rather than having to copy it to a further location.  This doesn't just apply to machine code, we could also do this for storing other data such as a custom character set.</p>
 <h2>How BASIC is Stored in Memory</h2>

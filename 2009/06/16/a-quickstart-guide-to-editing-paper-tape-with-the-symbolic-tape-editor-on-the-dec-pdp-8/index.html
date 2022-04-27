@@ -172,6 +172,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Before re-writable storage devices, such as tape drives, become popular for the DEC PDP-8, owners had to rely on paper tape.  This was fine for loading programs on pre-punched tape, but left the problem of how to put new data onto punched tape and how to edit existing data.  This could be done off-line, but a better way was to use DEC's Symbolic Editor.  This made life much easier as it allowed you to interactively edit a tape in a buffer, check the alterations and then output a new tape.  This editor was used for quite a few years by those wanting to edit Assembly or FORTRAN source code.  What follows is a brief introduction to using this editor.</p>
 <h2>Obtaining the Symbolic Editor and Its Manual</h2>

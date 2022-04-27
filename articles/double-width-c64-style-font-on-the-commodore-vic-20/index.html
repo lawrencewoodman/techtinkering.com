@@ -179,6 +179,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>The C64 used a fatter double-width font because the video quality of early VIC-IIs wasn't very good.  Therefore they had to make the C64's font fatter than the VIC-20's.  However, this fatter font look quite nice and there's an easy way of replicating something similar on the VIC-20.</p>
 <p>Rather than loading in a whole new font we can double the width of the existing font stored in ROM to create a new fatter font in RAM, which we can then point to.</p>

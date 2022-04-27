@@ -180,6 +180,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few simple ways of doing it from BASIC and Assembler.</p>
 <h2>Saving/Loading from BASIC a Byte at a Time</h2>

@@ -178,6 +178,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>The VIC-20 is a very flexible little machine and allows us to choose which area of memory represents the screen map.   One interesting thing we can do is use this to visualize a section of memory such as the zero page.  This can create quite interesting patterns on the screen and allows us to actually see some of the processing of the Vic in action.</p>
 <h2>Moving the Screen Map</h2>

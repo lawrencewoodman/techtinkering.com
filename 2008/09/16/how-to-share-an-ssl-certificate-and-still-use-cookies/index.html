@@ -173,6 +173,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>Website hosting companies often provide a shared SSL certificate, but this presents the web designer with the problem of how to use it for a site that uses cookies.  I have read many people say that this can't be done.  However, this article will show a simple way of using a shared SSL certificate with cookies for a login page.</p>
 <h2>Explanation of the problem</h2>

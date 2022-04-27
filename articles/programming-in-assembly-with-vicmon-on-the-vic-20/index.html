@@ -179,6 +179,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
         <div itemprop="articleBody">
         <p>VICMON is a machine language monitor released by Commodore in 1982 and is great for programming the VIC-20.  Its interactive nature means that it can often be quicker to develop via this rather than using a fully fledged assembler because it's easy to enter, alter and test code without having to wait for an assembler to load source code, assemble it, write a binary and then load the resulting binary separately.  This also makes it good for debugging our programs and understanding other people's better.  Jeff Minter wrote in <a href="https://archive.org/details/1983-08-computegazette/page/n53/mode/2up">Compute! Gazette Issue 2, 1983</a> that he programmed all his games in the past with the VICMON cartridge before switching to a Commodore 64 assembler-editor.</p>
 <p>This article will show how to write programs in assembly language with VICMON by creating a simple music player and then showing how to move code about to extend it.  There is an accompanying <a href="#article-video">video</a> which should make the process easy to understand and show off the power of VICMON for creating assembly language programs on the Vic.</p>
