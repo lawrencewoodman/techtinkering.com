@@ -69,6 +69,13 @@
           </ul>
         </div>
       </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
 !     if {[getparam -default 0 rating] > 0} {
         <div itemprop="reviewBody">
 !     } else {
