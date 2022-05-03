@@ -17,7 +17,7 @@ Both of these commands are limited to only being able to display files for the c
 
 ### CP/M 3
 
-<img src="/img/articles/cpm3_dir_alldrives_allusers.png" class="img-right" style="width: 700px; clear: right;" title="CP/M 3 DIR listing h*.* for all users on all drives">
+<img src="/img/articles/cpm3_dir_alldrives_allusers.png" class="img-right" style="width: 600px; clear: right;" title="CP/M 3 DIR listing h*.* for all users on all drives">
 
 CP/M 3 extends the built-in DIR command by adding DIRS to list files with the system attribute and by adding the DIR command on disk which provides additional features such as:
 * Display file sizes in k or records
@@ -53,7 +53,7 @@ Each of the DIR replacements below has different pros and cons, although they al
 [DA](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/da22.lbr "DA22.LBR") is the smallest at 2k and is called DA because it stands for _Directory Attributes_ as this program puts more focus on handling attributes so that you can views files with/without specific attributes such as the _System_, _Read-Only_ or _Archive_ attributes; change those attributes as well as list them clearly without having to rely on terminal codes to highlight characters in the filename.
 
 
-<img src="/img/articles/cpm_da22.png" class="img-right" style="width: 700px; clear: right;" title="DA v2.2 showing attributes and also showing files with and without system attribute">
+<img src="/img/articles/cpm_da22.png" class="img-right" style="width: 600px; clear: right;" title="DA v2.2 showing attributes and also showing files with and without system attribute">
 
 DA is also interesting because it shows the actual size of files rather than just rounded to the block size of the disk, in addition it can show the size of files in records.
 
@@ -66,7 +66,7 @@ The version linked to is v2.2 by Eric Meyer and is dated January 1987.
 ### DIRR
 [DIRR](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/dirr5.lbr "DIRR5.LBR") is a little bit quicker than DA and still relatively small at 5k.  It lists the files in a directory sorted vertically as standard and can list the attributes for each file as well as be configured to allow highlighting of a character in the filename to represent the attributes for a file.
 
-<img src="/img/articles/cpm_dirr5.png" class="img-right" style="width: 700px; clear: right;" title="DIRR v5 listing files in current user area and for all user areas">
+<img src="/img/articles/cpm_dirr5.png" class="img-right" style="width: 600px; clear: right;" title="DIRR v5 listing files in current user area and for all user areas">
 
 Although it doesn't have the same control of attributes that DA has, it can include the display of files with the _System_ attribute.  The main functionality that DIRR adds is the ability to show files for all user areas on the disk being used as well as send the output to a file or printer.
 
@@ -77,7 +77,7 @@ The history of this program is unclear, but Irv Hoff who released v5, dated 7th 
 ### SD
 [SD](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr "SD138B.LBR") is called _Super Directory_ for good reason, it's fast, full of features and yet still only 6k.  It can do pretty much everything that DIRR can do, although it can't list the attributes separately for each file.  However, it can still highlight letters in a filename or change letters to lowercase to represent attributes.  Like DIRR, SD sorts files vertically by default although it can be configured to sort horizontally and this can be switched at run-time.
 
-<img src="/img/articles/cpm_sd_adsl.png" class="img-right" style="width: 700px; clear: right;" title="SD v138b listing d*.* for all users on all drives including system files and listing the contents of any .LBR files">
+<img src="/img/articles/cpm_sd_adsl.png" class="img-right" style="width: 600px; clear: right;" title="SD v138b listing d*.* for all users on all drives including system files and listing the contents of any .LBR files">
 
 While SD doesn't have the control over attributes that DA has, it can list _System_ files and files not yet _Archived_.  When logging the directory to a file I like that it appends to an existing file rather than replace it each time, this can be used to create a searchable index.  I also like that you can sort files by type.
 
@@ -123,7 +123,7 @@ According to the source code it was originally created by Ward Christensen (23 N
 
 I mention [ZX](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/sysutl/zx31.lbr "ZX31.LBR") not because I recommend it, but because it does something quite interesting in that it tries to add simple commands such as rename, copy, erase, unerase, view, print, etc into only 3k.  It's reporting of disk space used/free seems to be off on bigger disks when used with CP/M 2.2 and they are completely wrong when used with CP/M 3.  It can also only work in the current user area.  However, if you ignore these problems, ZX can be quite a useful utility for space constrained systems.
 
-<img src="/img/articles/cpm_zx_copy_erase.png" class="img-right" style="width: 700px; clear: right;" title="ZX v3.1 listing a directory and then copying and erasing files">
+<img src="/img/articles/cpm_zx_copy_erase.png" class="img-right" style="width: 600px; clear: right;" title="ZX v3.1 listing a directory and then copying and erasing files">
 
 One particularly notable feature is that it will remember the last two files that it performed operations on.  So that if for example you copy all the '.ASM' files from A: to B: by running:
 
