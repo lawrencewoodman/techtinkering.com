@@ -196,7 +196,7 @@
 </ul>
 <p>Both of these commands are limited to only being able to display files for the current user area.</p>
 <h3>CP/M 3</h3>
-<img src="/img/articles/cpm3_dir_alldrives_allusers.png" class="img-right" style="width: 700px; clear: right;" title="CP/M 3 DIR listing h*.* for all users on all drives">
+<img src="/img/articles/cpm3_dir_alldrives_allusers.png" class="img-right" style="width: 600px; clear: right;" title="CP/M 3 DIR listing h*.* for all users on all drives">
 <p>CP/M 3 extends the built-in DIR command by adding DIRS to list files with the system attribute and by adding the DIR command on disk which provides additional features such as:</p>
 <ul>
 <li>Display file sizes in k or records</li>
@@ -231,20 +231,20 @@ Each of the DIR replacements below has different pros and cons, although they al
 </ul>
 <h3>DA</h3>
 <p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/da22.lbr" title="DA22.LBR">DA</a> is the smallest at 2k and is called DA because it stands for <em>Directory Attributes</em> as this program puts more focus on handling attributes so that you can views files with/without specific attributes such as the <em>System</em>, <em>Read-Only</em> or <em>Archive</em> attributes; change those attributes as well as list them clearly without having to rely on terminal codes to highlight characters in the filename.</p>
-<img src="/img/articles/cpm_da22.png" class="img-right" style="width: 700px; clear: right;" title="DA v2.2 showing attributes and also showing files with and without system attribute">
+<img src="/img/articles/cpm_da22.png" class="img-right" style="width: 600px; clear: right;" title="DA v2.2 showing attributes and also showing files with and without system attribute">
 <p>DA is also interesting because it shows the actual size of files rather than just rounded to the block size of the disk, in addition it can show the size of files in records.</p>
 <p>By default it lists files sorted horizontally, but can easily be configured to sort vertically by changing a byte in the file.  You can also configure it to display different numbers of columns per line, which can be useful for those using screens which have something other than 80 columns.</p>
 <p>I like DA a lot as it has a clear compact display, the command line options are very easy to use, it can directly list from other user areas using something like <code>B1:</code>, and it is only 2k.  However, it isn't 8080 compatible and it's a shame it doesn't come with source code.  It also has some limitations as it can only cope with up to 255 files, 999k file sizes, and 8190k free space, although this shouldn't cause a problem for the vast majority of systems.</p>
 <p>The version linked to is v2.2 by Eric Meyer and is dated January 1987.</p>
 <h3>DIRR</h3>
 <p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/dirr5.lbr" title="DIRR5.LBR">DIRR</a> is a little bit quicker than DA and still relatively small at 5k.  It lists the files in a directory sorted vertically as standard and can list the attributes for each file as well as be configured to allow highlighting of a character in the filename to represent the attributes for a file.</p>
-<img src="/img/articles/cpm_dirr5.png" class="img-right" style="width: 700px; clear: right;" title="DIRR v5 listing files in current user area and for all user areas">
+<img src="/img/articles/cpm_dirr5.png" class="img-right" style="width: 600px; clear: right;" title="DIRR v5 listing files in current user area and for all user areas">
 <p>Although it doesn't have the same control of attributes that DA has, it can include the display of files with the <em>System</em> attribute.  The main functionality that DIRR adds is the ability to show files for all user areas on the disk being used as well as send the output to a file or printer.</p>
 <p>Overall DIRR is another good DIR replacement with a nice clear display and some useful extra functionality.  I particularly like the fact that the source code is included and that it is compatible with the 8080.  Users of systems with something other than 80 columns may be pleased to hear that you can configure how many columns to display per line.</p>
 <p>The history of this program is unclear, but Irv Hoff who released v5, dated 7th January 1986, has tried to explain its origins in the documentation which makes for quite interesting reading.  It seems to have started as a C program that was then disassembled and enhanced by James R. King in 1983.  Irv took this source code, translated it from Z80 to 8080 assembly and then continued to enhance it.</p>
 <h3>SD</h3>
 <p><a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr" title="SD138B.LBR">SD</a> is called <em>Super Directory</em> for good reason, it's fast, full of features and yet still only 6k.  It can do pretty much everything that DIRR can do, although it can't list the attributes separately for each file.  However, it can still highlight letters in a filename or change letters to lowercase to represent attributes.  Like DIRR, SD sorts files vertically by default although it can be configured to sort horizontally and this can be switched at run-time.</p>
-<img src="/img/articles/cpm_sd_adsl.png" class="img-right" style="width: 700px; clear: right;" title="SD v138b listing d*.* for all users on all drives including system files and listing the contents of any .LBR files">
+<img src="/img/articles/cpm_sd_adsl.png" class="img-right" style="width: 600px; clear: right;" title="SD v138b listing d*.* for all users on all drives including system files and listing the contents of any .LBR files">
 <p>While SD doesn't have the control over attributes that DA has, it can list <em>System</em> files and files not yet <em>Archived</em>.  When logging the directory to a file I like that it appends to an existing file rather than replace it each time, this can be used to create a searchable index.  I also like that you can sort files by type.</p>
 <p>The biggest different between SD and the other programs is that it can list members of LBR/ARC/ARK files so that if you wanted to list all files on all drives for all users including members of LBR/ARC/ARK files and log it to a file you could run something like the following:</p>
 <pre><code>A&gt; SD $ADLF
@@ -269,7 +269,7 @@ Each of the DIR replacements below has different pros and cons, although they al
 <p>According to the source code it was originally created by Ward Christensen (23 November 1978) and if you are interested, <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/d-29.asm">D-29.ASM</a> has a more complete revision history.  The program comes as 8080 source code only, so you have to assemble it yourself.  The version linked to above is v3.1 and was released by Irv Hoff, 5th May 1984.</p>
 <h3>ZX</h3>
 <p>I mention <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/sysutl/zx31.lbr" title="ZX31.LBR">ZX</a> not because I recommend it, but because it does something quite interesting in that it tries to add simple commands such as rename, copy, erase, unerase, view, print, etc into only 3k.  It's reporting of disk space used/free seems to be off on bigger disks when used with CP/M 2.2 and they are completely wrong when used with CP/M 3.  It can also only work in the current user area.  However, if you ignore these problems, ZX can be quite a useful utility for space constrained systems.</p>
-<img src="/img/articles/cpm_zx_copy_erase.png" class="img-right" style="width: 700px; clear: right;" title="ZX v3.1 listing a directory and then copying and erasing files">
+<img src="/img/articles/cpm_zx_copy_erase.png" class="img-right" style="width: 600px; clear: right;" title="ZX v3.1 listing a directory and then copying and erasing files">
 <p>One particularly notable feature is that it will remember the last two files that it performed operations on.  So that if for example you copy all the '.ASM' files from A: to B: by running:</p>
 <pre><code>A&gt; ZX *.ASM B: C
 </code></pre>
