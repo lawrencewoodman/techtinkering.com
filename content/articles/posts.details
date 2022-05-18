@@ -1,3 +1,13 @@
+{ filename    2022-05-18-epex-an-environment-extension-for-cpm.md
+  title       "EPEX: An Environment Extension for CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_epex.png"
+  tags        {"Retro" "CP/M"}
+}
+
 { filename    2022-04-27-file-comparison-utilities-on-cpm.md
   title       "File Comparison Utilities on CP/M"
   author      {
