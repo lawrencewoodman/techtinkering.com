@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>EPEX: An Environment Extension for CP/M</title>
+  <meta name="description" content="Epex is an evironment extension for CP/M.  It stands for Environmental Processing EXecutive, and v1.1 was released by James H. Whorton in 1986.  It can make usin">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="EPEX: An Environment Extension for CP/M">
+  <meta name="twitter:description" content="Epex is an evironment extension for CP/M.  It stands for Environmental Processing EXecutive, and v1.1 was released by James H. Whorton in 1986.  It can make usin">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_epex.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EPEX: An Environment Extension for CP/M">
+  <meta property="og:description" content="Epex is an evironment extension for CP/M.  It stands for Environmental Processing EXecutive, and v1.1 was released by James H. Whorton in 1986.  It can make usin">
+  <meta property="og:url" content="https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_epex.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <script>
+    console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
+    }
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    }
+  </script>
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_epex.png" />
+      <header>
+        <a href="/articles/epex-an-environment-extension-for-cpm/" title="EPEX: An Environment Extension for CP/M">
+          <h1 itemprop="headline name">EPEX: An Environment Extension for CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2022-05-18">
+              18 May 2022
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
+        <div itemprop="articleBody">
+        <p><a href="http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/lambda/soundpot/a/epex11.lbr" title="EPEX11.LBR (v1.1) from Walnut Creek CD: /lambda/soundpot/a/">Epex</a> is an evironment extension for CP/M.  It stands for Environmental Processing EXecutive, and v1.1 was released by James H. Whorton in 1986.  It can make using CP/M much more comfortable at the cost of losing just under 5Kb of TPA.</p>
+<p>EPEX requires CP/M 2.2, supports the 8080 and is really easy to use because it generally doesn't require installing; you just run EPEX.COM and you are in the environment.  The program comes with additional programs that make use of the extra facilities and these are supplied as .COM files such as ERA.COM, REN.COM, CP.COM, etc.  It provides many extra features, including:</p>
+<h2>Search Path for Commands</h2>
+<p>Using the PATH command you can define a search path to find commands when entered at the command line.  First EPEX looks to see if a command is an internal command, if not then it looks in the current directory and if that fails then it goes through each directory in the <em>path</em> to see if it can find a matching command.</p>
+<h2>Easy Handling of User Areas</h2>
+<p>The handling of user areas has been made much easier and the prompt displays the current drive and user area.  EPEX supports 'DU:' format, where <em>D</em> is the drive and <em>U</em> is the user area, when combined they are termed a <em>directory</em>.  For example, to refer to drive 'D', user area '3', we would use 'D3:'.  This allows us to simply change to this directory by entering <code>D3:</code> at the prompt and pressing return.  We can also refer to commands and files on other drives or user areas by prefixing them with this 'DU:', directory format.  The supplied commands such as PATH, MKDIR, DIR, CP, etc fully support this and it will often work at the command line with commands that weren't written to support it.  Unfortunately you can't just use the user number followed by a colon as this will lead to a BDOS error.</p>
+<h2>Named Directories</h2>
+<img src="/img/articles/cpm_epex.png" class="img-right" style="width: 500px; clear: right;" title="EPEX, showing named directories and search path">
+<p>It is possible to give names to directories using the MKDIR command.  This takes a text file which maps directories e.g. 'A0:' to a name such as 'ROOT'.  When creating this file make sure that the names are in uppercase otherwise they'll fail to work properly.  The file could look like the following, which would create three named directories: ROOT, UTILS, ARCH.</p>
+<pre><code>A0:ROOT
+I0:UTILS
+C0:ARCH
+</code></pre>
+<p>The supplied commands such as CP and DIR fully support these named directories and they will often work with other commands at the command line.  The directory mappings can be changed at any time, which can be handy as you can have a script which refers to a named directory and change where that named directory points to at any time.  Sometimes I find that the last directory mapping doesn't register after MKDIR is run, however running PWD afterwards to display the mappings seems to correct this so I do that as a matter of course.</p>
+<h2>Extended Batch Processing</h2>
+<p>The extended batch processing facilities includes the addition of local flow commands such as GOTO,IF,ELSE.  It also provides the ability to set and handle environment variables including command line arguments as well as the ability to handle errors returned by programs written to support EPEX.</p>
+<h2>Aliases</h2>
+<p>EPEX allows you to wrap a command line or script in a .COM file either from a single line entered with the ALIAS command or from a text file using MKALIAS.  This script can be quite complicated because it can make use of the extended batch processing facilities.  As a simple example if we wanted to create an <em>alias</em> called MD which runs the MKDIR command with the first command line argument and then runs PWD, we could supply the following to ALIAS or MKALIAS:</p>
+<pre><code>MKDIR $1;PWD
+</code></pre>
+<p>The <code>$1</code> refers to the first command line argument and the <code>;</code> is used by EPEX to combine multiple commands on a line.  One downside of creating an ALIAS is that the resulting command is quite big, in the case of MD.COM, it will be 2Kb.</p>
+<h2>A Startup Script</h2>
+<p>When you run EPEX it tries to run ESTART.COM as a startup script.  This is created using the <em>alias</em> facility described above.  In here you would typically define a search path and create named directories.</p>
+<h2>'Secure' Operating Mode</h2>
+<p>A <em>secure</em> mode can be entered by running the SECURE command.  This will restrict which EPEX commands can be run and this makes it ideal for providing remote access to a system.  If we want to write software to support EPEX then it provides a system call which can be used to query whether we are in <em>secure</em> mode.</p>
+<h2>Environment Service Calls</h2>
+<p>EPEX provides additional service calls that can be called from assembly language so that we can write programs that make use of its extra facilities such as named directories, returning error codes, environmental variables, secure mode, etc</p>
+<h2>Menu Building</h2>
+<p>EPEX comes with a tool, MKMENU, for creating menus.  You supply the tool with a text file which describes the menu and MKMENU will then create a .COM file which you can run to use the menu.  The text file can have upto four sections with each section delimited by a line containing a single <code>&amp;</code>.  The four sections are: initial comments, the screen display, command definitions, trailing comments.</p>
+<p>The example below is from the manual.  It shows a menu system that could be used when developing a program using an editor, assembler, etc.  In the screen display section we can see two environment variables: $s3 and $s4, these are set from user input using <code>inp str1</code> and <code>inp str2</code> in the command definitions section.  These environment variables persist between programs so that if you exit and enter the menu you will find that the variables haven't changed unless another program has changed them.  This is really handy and indeed you can create an alias which will first initialize variables and then run the menu.</p>
+<pre><code>This  example  menu  could  be  used  for assembler
+development using LASM, MLOAD and VDO, all
+public domain utilities.
+&amp;
+
+...................................................
+     8080 Assembler Development System Menu
+      Work disk -&gt;&gt; $s4:  Work file -&gt;&gt; $s3
+...................................................
+
+       E - Edit work file.
+       A - Assemble and Load work file.
+       F - Change work file.
+       C - Change work disk.
+       R - Run work file.
+       D - Directory of work disk
+       L - Enter system command-line
+       Q - Quit (exit assembler system)
+
+&amp;
+E-vdo $s4:$s3.asm
+A-lasm $s3.$s4$s4z;mload $s4:$s3;pause
+F-echo enter new work filename --&gt;&gt; ;inp str1
+C-echo enter new work disk --&gt;&gt; ;inp str2
+R-echo running $s4:$s3...;$s4:$s3;pause
+D-dir $s4:'Filespec: ';pause
+L-'EPEX&gt; ';pause
+Q-echo exiting system...;set shell=
+&amp;
+</code></pre>
+<h2>Conclusion</h2>
+<p>EPEX is a great addition to CP/M 2.2 systems.  It provides lots of improvements at the cost of a small reduction in the TPA.  This reduction in memory often doesn't matter too much but for those times when it does, EPEX is easy to exit and then re-enter when we are ready.  However, there are two things which I wish it supported: i. Improved command line editing as seen in CP/M Plus ii. Command line history.  There are also a few bugs such as 'DIR' not reporting the correct size used/free on big drives as well as other bugs already mentioned in this article.</p>
+<p>The version used in this article is v1.1, but there is a note included in the .LBR file that hints at another version coming out.  Does anyone know of a later version?  If so, I'd love it if you got in touch.</p>
+<h2>Video</h2>
+<p>The following video shows EPEX in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mr0PuO9PwZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">EPEX: An Environment Extension for CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F&title=EPEX%3A%20An%20Environment%20Extension%20for%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F&quote=EPEX%3A%20An%20Environment%20Extension%20for%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F&text=EPEX%3A%20An%20Environment%20Extension%20for%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=EPEX%3A%20An%20Environment%20Extension%20for%20CP%2FM&body=Epex%20is%20an%20evironment%20extension%20for%20CP%2FM.%20%20It%20stands%20for%20Environmental%20Processing%20EXecutive%2C%20and%20v1.1%20was%20released%20by%20James%20H.%20Whorton%20in%201986.%20%20It%20can%20make%20using%20CP%2FM%20much%20more%20comfortable%20at%20the%20cost...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20EPEX%3A%20An%20Environment%20Extension%20for%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fepex-an-environment-extension-for-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/file-comparison-utilities-on-cpm/">File Comparison Utilities on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  There are many utilities available for CP/M to compare the differences between files and to distribute those differences.  All the utilities in this article can be found on the Walnut Creek CD.
+Binary ...
+  &nbsp;
+  <a class="readMore" href="/articles/file-comparison-utilities-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/breakout-style-games-on-cpm/">Breakout Style Games on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/games/">Games</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Breakout style video games were pretty popular at one time both at Arcades and on home computers.   The games are based on a simple concept where you have to destroy a group of 'bricks' at the top of t...
+  &nbsp;
+  <a class="readMore" href="/articles/breakout-style-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/hamurabi-and-similar-games-on-cpm/">Hamurabi and Similar Games on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/games/">Games</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Hamurabi is probably the best known land and resource management game on CP/M.  However, there are a few other similar text-based games that sought to extend the concept such as Dukedom and Kingdom.  T...
+  &nbsp;
+  <a class="readMore" href="/articles/hamurabi-and-similar-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/advanced-use-of-lbr-files-on-cpm/">Advanced Use of .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva...
+  &nbsp;
+  <a class="readMore" href="/articles/advanced-use-of-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/working-with-lbr-files-on-cpm/">Working with .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  The .LBR (Library) file format was the most common form of multi-file archive on personal computers at one time.  It was created by Gary P. Novosielski in 1982 for use by his LU (Library Utility) progr...
+  &nbsp;
+  <a class="readMore" href="/articles/working-with-lbr-files-on-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<br /><strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.');
+          }
+        </script>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

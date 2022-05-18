@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-05-03</updated>
+  <updated>2022-05-18</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>EPEX: An Environment Extension for CP/M</title>
+      <id>https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/</id>
+      <link href="https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2022-05-18
+        </published>
+
+        <updated>
+          2022-05-18
+        </updated>
+
+        <summary>Epex is an evironment extension for CP/M.  It stands for Environmental Processing EXecutive, and v1.1 was released by James H. Whorton in 1986.  It can make using CP/M much more comfortable at the cost</summary>
+    </entry>
     <entry>
       <title>File Comparison Utilities on CP/M</title>
       <id>https://techtinkering.com/articles/file-comparison-utilities-on-cpm/</id>
