@@ -5,26 +5,26 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Felix Animation System on CP/M</title>
-  <meta name="description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
+  <title>XCCP: A Shell Extension for CP/M</title>
+  <meta name="description" content="XCCP describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like EPEX, XCCP d">
   <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
 
   <!-- *** Twitter Card *** -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:site" content="@techtinkering">
-  <meta name="twitter:title" content="Felix Animation System on CP/M">
-  <meta name="twitter:description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
+  <meta name="twitter:title" content="XCCP: A Shell Extension for CP/M">
+  <meta name="twitter:description" content="XCCP describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like EPEX, XCCP d">
     <meta name="twitter:image"
-         content="https://techtinkering.com/img/social_images/felix_bee.png">
+         content="https://techtinkering.com/img/social_images/cpm_xccp.png">
   <!-- *** Twitter Card *** -->
 
   <!-- *** Open Graph *** --->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Felix Animation System on CP/M">
-  <meta property="og:description" content="In 1979 the University of Tennessee/Knoxville's Computer Science Department released Felix v2.1 for CP/M, which is available on the Walnut Creek CD.  It aimed to">
-  <meta property="og:url" content="https://techtinkering.com/articles/felix-animation-system-on-cpm/">
+  <meta property="og:title" content="XCCP: A Shell Extension for CP/M">
+  <meta property="og:description" content="XCCP describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like EPEX, XCCP d">
+  <meta property="og:url" content="https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/">
     <meta property="og:image"
-         content="https://techtinkering.com/img/social_images/felix_bee.png">
+         content="https://techtinkering.com/img/social_images/cpm_xccp.png">
   <!-- *** Open Graph *** --->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -47,7 +47,7 @@
   <link href="/css/main.css" rel="stylesheet">
   <link href="/css/article.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
-  <link rel="canonical" href="https://techtinkering.com/articles/felix-animation-system-on-cpm/">
+  <link rel="canonical" href="https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/">
   <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
         href="https://feedproxy.google.com/TechTinkering" />
 
@@ -149,15 +149,15 @@
       <div class="margin-buffer">
     <article itemscope itemtype="http://schema.org/BlogPosting">
     <meta itemprop="image"
-         content="https://techtinkering.com/img/social_images/felix_bee.png" />
+         content="https://techtinkering.com/img/social_images/cpm_xccp.png" />
       <header>
-        <a href="/articles/felix-animation-system-on-cpm/" title="Felix Animation System on CP/M">
-          <h1 itemprop="headline name">Felix Animation System on CP/M</h1>
+        <a href="/articles/xccp-a-shell-extension-for-cpm/" title="XCCP: A Shell Extension for CP/M">
+          <h1 itemprop="headline name">XCCP: A Shell Extension for CP/M</h1>
         </a>
         <div>
             <time itemprop="datePublished"
-                  datetime="2019-04-23">
-              23 April 2019
+                  datetime="2022-06-01">
+               1 June 2022
             </time>
           <span itemscope itemprop="publisher"
                 itemtype="http://schema.org/Organization">
@@ -184,96 +184,34 @@
       </script>
 
         <div itemprop="articleBody">
-        <p>In 1979 the University of Tennessee/Knoxville's Computer Science Department released <a href="http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/cpmug/cpmug035.ark" title="cmpug035.ark">Felix v2.1</a> for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation experiments and projects for education and hobbyist use.</p>
-<img src="/img/articles/felix_bee.png" class="img-left" style="width: 256px; clear: right;" title="BEE#.FEX In Action Using Felix">
-<p>The system used an early graphics card for S-100 bus computers called the <a href="https://en.wikipedia.org/wiki/Cromemco_Dazzler">Cromemco Dazzler</a> to display the animations on a television screen.  The Dazzler was released in 1976 and could display a maximum resolution of 128x128 in monochrome or 64x64 using 8 colours with or without intensity.</p>
-<p>Felix uses a VM to display and control the animations with the hope of creating a portable animation system across computing platforms.  The animations are created in a form of assembly language targeted at the Felix VM which is assembled using the <code>FASM</code> command to produce a <code>.FEX</code> file which is then run using the <code>EXEC</code> command.</p>
-<p>An example file called <code>BEE.FAS</code> is included in the archive and listed below:</p>
-<br />
-<pre><code class="language-nasm">; 8 SEPT 79 - MOSHELL
-;
-; BLOOMING FLOWER; BEE LANDS,FLIES AGAIN.BIRD
-; COMES ALONG AND EATS BEE.
-;
-SPEED	EQU	0
-GROUND	EQU	0
-STEM	EQU	1
-LEFTPETAL EQU	2
-RIGHTPETAL EQU	3
-BEE	EQU	4
-BEEPATH	EQU	5
-B2PATH	EQU	6
-BIRD	EQU	7
-BIRDPATH EQU	8
-;
-	DELAY	SPEED
-	ONLIST	2,STEM,GROUND
-	MOVE	15,.COUNT
-;
-;FIRST THE PLANT GROWS AND BLOSSOMS.
-;
-STEMLOOP:	FLY	STEM,0,1
-	SHOW
-	SUB	.COUNT,1,.COUNT
-	JNZ	STEMLOOP
-;
-	BACKGRND	STEM
-	ONLIST	4,LEFTPETAL,RIGHTPETAL,STEM,GROUND
-	MOVE	5,.COUNT
-	DELAY	150
-;
-PETALOOP:BACKGRND	LEFTPETAL
-	BACKGRND	RIGHTPETAL
-	SPIN	LEFTPETAL,-1
-	SPIN	RIGHTPETAL,1
-	SHOW
-	SUB	.COUNT,1,.COUNT
-	JNZ	PETALOOP
-;
-	CALL	PAUSE
-	ONLIST	1,BEE
-;
-;NOW A BEE WANDERS ACROSS THE SCENE,SETTLES ON FLOWER.
-;
-BEELOOP:PATH	BEE,BEEPATH
-	SHOW
-	JNZ	BEELOOP
-;
-	CALL	PAUSE
-	ONLIST	2,BEE,BIRD
-;
-;NOW THE BEE LEAVES THE FLOWER,MEETS BIRD.
-;
-B2LOOP: PATH	BIRD,BIRDPATH
-	PATH	BEE,B2PATH
-	SHOW
-	JNZ	B2LOOP
-;
-	ONLIST	1,BIRD	;BEE DONE BEEN ET.
-;
-; BIRD NOW FLIES AROUND THE SCREEN FOREVER.
-;
-BIRDLOOP:PATH	BIRD,BIRDPATH
-	SHOW
-	JUMP	BIRDLOOP
-;
-;- - - - - - - - - - - - - - - - - - - - -
-;
-PAUSE:	DELAY	250
-	MOVE	5,.COUNT
-PLOOP:	SUB	.COUNT,1,.COUNT
-	JNZ	PLOOP
-	DELAY	SPEED
-	RETURN
-;
-COUNT:	DB	0
-;
-	END
+        <p><a href="http://cpmarchives.classiccmp.org/ftp.php?b=cpm%2FSoftware%2FWalnutCD%2Fcpm%2Fxccp" title="XCCP (v1.0) files from Walnut Creek CD: /cpm/xccp/">XCCP</a> describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like <a href="/articles/epex-an-environment-extension-for-cpm/" title="TechTinkering Article: EPEX: An Environment Extension for CP/M">EPEX</a>, XCCP doesn't require installing so we can begin using it by just running XCCP.COM at the cost of reducing TPA by about 3Kb.</p>
+<p>XCCP requires a CP/M 2.2 environment, however it is missing a number of the built-in commands: REN, ERA, DIR, TYPE, USER and SAVE.    The USER command isn't needed because it's superseded by the improved user area handling provided by the shell.  REN.COM and ERA.COM are provided by XCCP, however unfortunately they don't support using DU: format to refer to files.  There are plenty of <a href="/articles/dir-alternatives-on-cpm/" title="TechTinkering Article: DIR Alternatives on CP/M">DIR</a> and <a href="/articles/text-viewers-on-cpm/" title="TechTinkering Article: Text Viewers on CP/M">TYPE</a> alternatives available to replace these missing commands.  If we want to use SAVE or SUBMIT then we can exit and return to the standard CCP using CTRL-Y.  The extra facilities of XCCP include:</p>
+<h2>Command History</h2>
+<p>XCCP stores previous commands in a circular buffer which we can scroll through using CTRL-E to go back and CTRL-X to go forward.  This can store about 240 characters of command history.</p>
+<h2>Command Line Editing</h2>
+<p>With the addition of command line editing, entering and editing recalled commands becomes much quicker and more comfortable.  The command line editing is done with WORDSTAR style commands:  CTRL-S to move the cursor left, CTRL-D to move the cursor right and CTRL-V to toggle insert/overstrike mode.  CTRL-H/Backspace/Delete erases characters to the right of the cursor unless the cursor is at the end of the text in which case it erases characters to the left.</p>
+<h2>Command and Wildcard Completion</h2>
+<img src="/img/articles/cpm_xccp.png" class="img-right" style="width: 500px; clear: right;" title="XCCP, showing search path, wildcard completion and improved user handling">
+<p>XCCP provides autocompletion using the ESC (ASCII 27) key.  If a drive isn't specified then this will look in the current drive and A0:.  If a drive is specified then it will look there.  This feature has two components.  First of all if we start typing a command and press ESC then it will either complete the command name or list possible names that begin with the characters that we have already typed.  The other, and possibly most interesting, part is that if we have anything after a command and press ESC then it will treat it as a wildcard and show us files that match it or if there is only one then it will replace the wildcard with the filename.  This is great if we've started typing a command and can't remember the exact name of the file we want to use.</p>
+<h2>Improved User Area Handling</h2>
+<p>Like EPEX, the handling of user areas has been made much easier and the prompt displays the current drive and user area.  XCCP supports 'DU:' and 'U: format, where <em>D</em> is the drive and <em>U</em> is the user area.  This means that we can run a command from a different drive and user area by prefixing it with the appropriate DU:/U: combination.  For example, to refer to drive 'D', user area '3', we would use 'D3:'.  We can also change user area by simply typing the desired DU:/U: combination at the prompt and pressing return.  Unfortunately the supplied programs, ERA and REN, don't support this format.</p>
+<h2>Automatic Searching of A0:</h2>
+<p>If we try to run a command and it isn't found in the current drive then A0: is automatically searched and if the command is found there then that command is executed.</p>
+<h2>Multiple Commands per Line</h2>
+<p>Multiple commands can be combined on a single command line by using a ';' to separate them providing there is no white space either side of the ';' character.  The command line supports up to 127 characters on a single line and can also be used when we first start XCCP by appending the command with further commands that we want to run.  As an example from within XCCP, to change to drive I:, run <code>SD *.COM</code>, change to drive D: and finally run <code>I:SD *.COM</code>:</p>
+<pre><code>A0-&gt; XCCP I:;SD *.COM;D:;I:SD *.COM
 </code></pre>
-<br />
-<p>You can see a couple of animations using Felix in the following video.  It demonstrates Felix using <a href="/articles/emulating-a-cpm-system-with-z80pack/">z80pack</a> to emulate an IMSAI 8080 with a Dazzler, running CP/M 2.2.  Unfortunately, I'm not able to fully test Felix because the emulator doesn't emulate the required analog-to-digital converter to use the joysticks.  However, it was fun to play with and I think it's nice to see the system in action.</p>
+<p>And from the normal CCP, running XCCP and telling it to process those commands:</p>
+<pre><code>A&gt; XCCP I:;SD *.COM;D:;I:SD *.COM
+</code></pre>
+<h2>No Involuntary Warm Restarts</h2>
+<p>Warm starts are only performed if a user requests one by pressing CTRL-C.  This makes returning to the shell from an application much quicker and can even done in the middle of typing a command at the prompt without disrupting the command being typed.</p>
+<h2>Conclusion</h2>
+<p>Like, EPEX, this is a great extension to a CP/M 2.2 system.  Its list of features is much smaller but then the program is much smaller.  For me, XCCP provides some of the most important features to make using CP/M easier but it would have been nice to be able to specify a search path as we can with EPEX.</p>
+<h2>Video</h2>
+<p>The following video shows XCCP in action.</p>
 <div class="youtube-wrapper">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/QdmXZ0U9XHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NRwhmfYGX58" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
       </div>
     </article>
@@ -290,8 +228,8 @@ COUNT:	DB	0
       <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
     </a>
     <br />
-    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Felix Animation System on CP/M</span>
-    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/felix-animation-system-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">XCCP: A Shell Extension for CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
    is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
    
   </div>
@@ -301,10 +239,10 @@ COUNT:	DB	0
     <h2 style="margin-top:0;">Share This Post</h2>
     <div class="contact">
   <ul>
-    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F&title=Felix%20Animation%20System%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F&quote=Felix%20Animation%20System%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
-    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F&text=Felix%20Animation%20System%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
-    <li><a href="mailto:?subject=Felix%20Animation%20System%20on%20CP%2FM&body=In%201979%20the%20University%20of%20Tennessee%2FKnoxville%27s%20Computer%20Science%20Department%20released%20Felix%20v2.1%20for%20CP%2FM%2C%20which%20is%20available%20on%20the%20Walnut%20Creek%20CD.%20%20It%20aimed%20to%20provide%20a%20basis%20for%20computer%20animation%20...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F&title=XCCP%3A%20A%20Shell%20Extension%20for%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F&quote=XCCP%3A%20A%20Shell%20Extension%20for%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F&text=XCCP%3A%20A%20Shell%20Extension%20for%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=XCCP%3A%20A%20Shell%20Extension%20for%20CP%2FM&body=XCCP%20describes%20itself%20as%20an%20Extended%20Console%20Command%20Processor%20for%20CP%2FM.%20It%20supports%20the%208080%20and%20v1.0%20was%20released%20by%20Anton%20R.%20Fleig%20in%201984.%20%20Like%20EPEX%2C%20XCCP%20doesn%27t%20require%20installing%20so%20we%20can%20begi...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F" target="_blank" title="Send email">Email</a></li>
   </ul>
 </div>
 
@@ -313,7 +251,7 @@ COUNT:	DB	0
   <ul>
 
 
-    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Felix%20Animation%20System%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Ffelix-animation-system-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20XCCP%3A%20A%20Shell%20Extension%20for%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fxccp-a-shell-extension-for-cpm%2F%0A" title="Send us an email">Email</a></li>
   </ul>
 </div>
   </div>
@@ -322,21 +260,6 @@ COUNT:	DB	0
     <div>
     <h2>Related Articles</h2>
     <div class="margin-buffer">
-      <header>
-  <h2><a href="/articles/xccp-a-shell-extension-for-cpm/">XCCP: A Shell Extension for CP/M</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  XCCP describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like EPEX, XCCP doesn't require installing so we can begi...
-  &nbsp;
-  <a class="readMore" href="/articles/xccp-a-shell-extension-for-cpm/">Read More</a>
-</div>
-<br />
       <header>
   <h2><a href="/articles/epex-an-environment-extension-for-cpm/">EPEX: An Environment Extension for CP/M</a></h2>
   <span class="post-meta">
@@ -398,6 +321,22 @@ Binary ...
   Hamurabi is probably the best known land and resource management game on CP/M.  However, there are a few other similar text-based games that sought to extend the concept such as Dukedom and Kingdom.  T...
   &nbsp;
   <a class="readMore" href="/articles/hamurabi-and-similar-games-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/advanced-use-of-lbr-files-on-cpm/">Advanced Use of .LBR files on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/archiving/">Archiving</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Lots of utilities make use of .LBR (Library) files to provide extra facilities such as the ability to run commands from archives or mount them as if they were drives.  This article shows some more adva...
+  &nbsp;
+  <a class="readMore" href="/articles/advanced-use-of-lbr-files-on-cpm/">Read More</a>
 </div>
 <br />
 </div>

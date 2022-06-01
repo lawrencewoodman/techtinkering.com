@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-05-18</updated>
+  <updated>2022-06-01</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>XCCP: A Shell Extension for CP/M</title>
+      <id>https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/</id>
+      <link href="https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2022-06-01
+        </published>
+
+        <updated>
+          2022-06-01
+        </updated>
+
+        <summary>XCCP describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like EPEX, XCCP doesn't require installing so we can begi</summary>
+    </entry>
     <entry>
       <title>EPEX: An Environment Extension for CP/M</title>
       <id>https://techtinkering.com/articles/epex-an-environment-extension-for-cpm/</id>
