@@ -98,6 +98,9 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
   <script>
     if (isUserFromUK()) {
       console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
     } else {
       console.log("Google Ads - non-uk user");
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -107,13 +110,6 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
     }
   </script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("Amazon Banner - from uk");
-      // Amazon Prime Video Banner 728x90 and 300x250
-      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
-    }
-  </script>
 </head>
   <body>
     <nav>
@@ -168,7 +164,7 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
           </span>
 
           <ul class="tags">
-              <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
               <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
           </ul>
         </div>
@@ -597,12 +593,26 @@ EndMacro
     <h2>Related Articles</h2>
     <div class="margin-buffer">
       <header>
+  <h2><a href="/articles/is-subleq-the-right-choice-for-a-vm/">Is SUBLEQ the Right Choice for a VM?</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  However, this comes at a cost which we will...
+  &nbsp;
+  <a class="readMore" href="/articles/is-subleq-the-right-choice-for-a-vm/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <ul class="tags">
           <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
           <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/retro/">Retro</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
@@ -620,8 +630,6 @@ EndMacro
   <h2><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h2>
   <span class="post-meta">
       <ul class="tags">
-          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
       </ul>
@@ -631,6 +639,40 @@ EndMacro
   SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is...
   &nbsp;
   <a class="readMore" href="/articles/subleq-a-one-instruction-set-computer/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/80-columns-in-software-on-the-commodore-vic-20/">80 Columns in Software on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but considering the limitations of the Vic I ...
+  &nbsp;
+  <a class="readMore" href="/articles/80-columns-in-software-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/64-columns-sideways-on-the-commodore-vic-20/">64 Column Text Mode on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstrate this and show how it is done.  Previo...
+  &nbsp;
+  <a class="readMore" href="/articles/64-columns-sideways-on-the-commodore-vic-20/">Read More</a>
 </div>
 <br />
 </div>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Is SUBLEQ the Right Choice for a VM?</title>
+  <meta name="description" content="SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  How">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Is SUBLEQ the Right Choice for a VM?">
+  <meta name="twitter:description" content="SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  How">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/subleq_is_it_the_right_choice_for_a_vm.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Is SUBLEQ the Right Choice for a VM?">
+  <meta property="og:description" content="SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  How">
+  <meta property="og:url" content="https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/subleq_is_it_the_right_choice_for_a_vm.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <script>
+    console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
+    }
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/subleq_is_it_the_right_choice_for_a_vm.png" />
+      <header>
+        <a href="/articles/is-subleq-the-right-choice-for-a-vm/" title="Is SUBLEQ the Right Choice for a VM?">
+          <h1 itemprop="headline name">Is SUBLEQ the Right Choice for a VM?</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2022-06-24">
+              24 June 2022
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
+        <div itemprop="articleBody">
+        <p><a href="/articles/subleq-a-one-instruction-set-computer/" title="TechTinkering Article: SUBLEQ - A One Instruction Set Computer (OISC)">SUBLEQ</a> is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple <em>virtual machine</em>.  However, this comes at a cost which we will show may mean other options would be a better choice.</p>
+<h2>SUBLEQ</h2>
+<p>This is the classic definition of SUBLEQ (SUbtract and Branch if Less than or EQual to zero) using three operands.</p>
+<pre><code>SUBLEQ a, b, c
+Mem[b] := Mem[b] - Mem[a]
+if (Mem[b] ≤ 0) goto c
+</code></pre>
+<p>As we can see it is very easy to describe and therefore it makes it very easy to create a virtual machine for it.  Below is a simple version to demonstrate:</p>
+<pre><code>#define OUT 65535           // Output to STDOUT
+#define HALT -1             // Stop processing and exit
+
+void
+subleq(int *mem)
+{
+  int ip = 0;
+  int a, b, c;
+
+  while (ip &gt;= 0) {
+    a = mem[ip];
+    b = mem[ip+1];
+    c = mem[ip+2];
+    ip += 3;
+    if (b == OUT) {
+      printf(&quot;%c&quot;, (char)mem[a]);
+    } else {
+      mem[b] -= mem[a];
+      if (mem[b] &lt;= 0) ip = c;
+    }
+  }
+}
+</code></pre>
+<h2>Four Instruction Alternative</h2>
+<p>To demonstrate why SUBLEQ may not be the best choice for a virtual machine, the following describes a four instruction alternative.  This isn't mean to be an ideal VM it is simply being used because like SUBLEQ each instruction is described by three words, in this case as <code>instruction operandA, operandB</code>.  The first two instructions are simply to replace the functionality of SUBLEQ and then there are two more that will significantly enhance the instruction set.</p>
+<pre><code>SUB  a, b
+Mem[b] := Mem[b] - Mem[a]
+
+JLE  a, b
+if (Mem[a] ≤ 0) goto b
+
+MOV  a, b
+Mem[b] := Mem[a]
+
+JE   a, b
+if (Mem[a] = 0) goto b
+</code></pre>
+<p>As easy as a SUBLEQ VM is to implement, a simple virtual machine using just four instructions is almost as easy and yet provides considerable advantages in terms of code size and speed.</p>
+<pre><code>#define OUT 65535           // Output to STDOUT
+#define HALT -1             // Stop processing and exit
+
+// Instructions
+#define SUB 0
+#define JLE 1
+#define MOV 2
+#define JE  3
+
+void
+fourInst(int *mem)
+{
+  int ip = 0;
+  int op, a, b;
+
+  while (ip &gt;= 0) {
+    op = mem[ip];
+    a = mem[ip+1];
+    b = mem[ip+2];
+    ip += 3;
+
+    switch (op) {
+      case SUB:
+        mem[b] -= mem[a];
+        break;
+      case JLE:
+        if (mem[a] &lt;= 0) ip = b;
+        break;
+      case MOV:
+        if (b == OUT) {
+          printf(&quot;%c&quot;, (char)mem[a]);
+        } else {
+          mem[b] = mem[a];
+        }
+        break;
+      case JE:
+        if (mem[a] == 0) ip = b;
+        break;
+    }
+  }
+}
+</code></pre>
+<h2>Code Size</h2>
+<p>Below are some common macros that we'll use to compare the code size of the two instruction sets.  On the left are the macros written using SUBLEQ and on the right are the same macros written using the four instruction alternative.  Against each label is the number of words used to define the macro.  For the SUBLEQ macros, <code>sble</code> is used to differentiate between a three operand SUBLEQ instruction and a macro.</p>
+<pre><code>; Add mem[a] to mem[b]
+; SUBLEQ: 9 words             Four Instruction: 9 words
+.macro Add a b                .macro Add a, b
+  sble  a Z                     SUB  a, Z
+  sble  Z b                     SUB  Z, b
+  sble  Z Z                     SUB  Z, Z
+.endm                         .endm
+
+
+; Copy mem[a] to mem[b]
+; SUBLEQ: 12 words            Four Instruction: 3 words
+.macro Mov a b                .macro Mov a, b
+  sble  b b                     MOV  a, b
+  Add   a b                   .endm
+.endm
+
+
+; Jump directly to c
+; SUBLEQ: 3 words             Four Instruction: 3 words
+.macro Jmp c                  .macro Jmp c
+  sble  Z Z c                   JLE  Z, c
+.endm                         .endm
+
+
+; Jump to c if mem[b] ≥ 0
+; SUBLEQ: 12 words            Four Instruction: 9 words
+.macro Jge b c                .macro Jge b, c
+  sble  b Z gte                 JE   b, c
+  Jmp   done                    JLE  b, lt
+gte:                            Jmp  c
+  sble  Z Z c                 lt:
+done:                         .endm
+  sble  Z Z
+.endm
+
+
+; Jump to c if mem[b] = 0
+; SUBLEQ: 15 words            Four Instruction: 3 words
+.macro Je b c                 .macro Je b, c
+  sble  Z b lte                 JE   b, c
+  Jmp   done                  .endm
+lte:
+  sble  b Z gte
+  sble  Z Z done
+gte:
+  sble  Z Z c
+done:
+.endm
+
+
+; Jump to c if mem[b] != 0
+; SUBLEQ: 15 words            Four Instructions: 6 words
+.macro Jne b c                .macro Jne b, c
+  sble  Z b lte                 JE   b, eq
+  sble  Z Z c                   Jmp  c
+lte:                          eq:
+  sble  b Z gte               .endm
+  sble  Z Z c
+gte:
+  sble  Z Z
+.endm
+
+
+; Copy mem[mem[a]] to mem[mem[b]]
+; SUBLEQ: 60 words            Four Instruction: 9 words
+.macro copy_pp a b            .macro copy_pp a, b
+  Mov   b cpyWord               MOV  a, cpyWord+1
+  Mov   b cpyWord+1             MOV  b, cpyWord+2
+  Mov   a cpyWord+3           cpyWord:
+  Mov   b cpyWord+7             MOV  0, 0
+                              .endm
+cpyWord:
+  sble  0 0
+  sble  0 Z
+  sble  Z 0
+  sble  Z Z
+.endm
+</code></pre>
+<p>The following table compares the number of words used by each macro for each instruction set.</p>
+<table class="neatTable">
+  <tr>
+    <th>Macro</th>
+    <th>SUBLEQ</th>
+    <th>Four Instructions</th>
+  </tr>
+  <tr><td>Add</td><td class="centre">&nbsp;9</td><td class="centre">9</td></th>
+  <tr><td>Mov</td><td class="centre">12</td><td class="centre">3</td></th>
+  <tr><td>Jge</td><td class="centre">12</td><td class="centre">9</td></th>
+  <tr><td>Je</td><td class="centre">15</td><td class="centre">3</td></th>
+  <tr><td>Jne</td><td class="centre">15</td><td class="centre">6</td></th>
+  <tr><td>copy_pp</td><td class="centre">60</td><td class="centre">9</td></th>
+</table>
+<p>It's quite clear that using just four instructions can significantly reduce code size.  The table also shows where further instructions would lead to even smaller code.</p>
+<h2>Execution Time</h2>
+<p>To give an idea of the difference in speed of the VMs we will use two programs.  Each has the program written in SUBLEQ on the left with the same program on the right written using the four instruction alternative.  The SUBLEQ programs don't indicate <code>sble</code> as they are not using macros.</p>
+<p>The first program, <code>longLoop</code>, is just one long loop.  This is useful because the four instruction version only uses <code>JLE</code> and <code>SUB</code> instructions which are nearly functionally equivalent to the SUBLEQ instruction.  It is also useful because it shows a deficiency in splitting SUBLEQ into two instructions because it can't decrement <code>count</code> and exit the loop if it equals <code>0</code> using a single instruction.</p>
+<pre><code>// longLoop
+        ; SUBLEQ: 16 words    ; Four Instructions: 15 words
+        MONE count            loop:   JLE  count, done
+loop:   ONE count done                SUB  ONE, count
+        Z Z loop                      JLE  Z, loop
+done:   Z Z HALT              done:   JLE  Z, HALT
+count:  900000000             count:  .word  900000000
+Z:      00                    Z:      .word  00
+ONE:    01                    ONE:    .word  01
+MONE:   -1
+</code></pre>
+<p>The send program, <code>longCopyLoop</code>, repeatedly copies one location to another in a long loop.  This makes use of the <code>MOV</code> instruction to reduce code size and increase speed.  In this routine, <code>JE</code> is functionally equivalent to <code>JLE</code> and therefore is only here to make the routine clearer.</p>
+<pre><code>// longCopyLoop
+        ; SUBLEQ: 27 words    ; Four Instructions: 20 words
+        MONE count            loop:   JE   count, done
+loop:   ONE count done        copy:   MOV  tmpA, tmpB
+copy:   tmpB tmpB                     SUB  ONE, count
+        tmpA Z                        JE   Z, loop
+        Z tmpB                done:   JE   Z, HALT
+        Z Z loop              count:  .word  900000000
+done:   Z Z HALT              Z:      .word  00
+count:  900000000             ONE:    .word  01
+Z:      00                    tmpA:   .word  02
+ONE:    01                    tmpB:   .word  02
+MONE:   -1
+tmpA:   02
+tmpB:   02
+</code></pre>
+<p>The table below compares the execution time and size of our two programs when run on the VMs described above.</p>
+<table class="neatTable">
+  <tr>
+    <th>Program</th>
+    <th colspan=2>SUBLEQ</th>
+    <th colspan=2>Four Instructions</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Time (secs)</th>
+    <th>Size (words)</th>
+    <th>Time (secs)</th>
+    <th>Size (words)</th>
+  </tr>
+  <tr><td>longLoop</td><td class="centre">23.01</td><td class="centre">16</td><td class="centre">21.86</td><td class="centre">15</td></th>
+  <tr><td>longCopyLoop</td><td class="centre">56.99</td><td class="centre">27</td><td class="centre">27.16</td><td class="centre">20</td></th>
+</table>
+<p>We can see from these two programs that simple programs are comparable with a slight advantage to the four instruction set.  However, as the complexity of the programs increase it becomes clear that the four instruction set VM gives a significant advantage in terms of code size and execution time.  That said any attempt at benchmarking will be flawed and routines could be developed that would show the opposite.  However, these routines do demonstrate a useful advantage of the four instruction alternative.</p>
+<h2>Conclusion</h2>
+<p>By replacing the SUBLEQ VM with a VM using just four instructions we have shown that it provides a considerable improvement at the cost of only a small increase in complexity of the VM.  This is despite our four instructions only needing 2-bits of the word used to hold the instruction and therefore 'wasting' the remaining bits.</p>
+<p>It would be easy to expand the number of instructions and add extra addressing modes which would provide further advantages.  However, this does lead to one downside of this approach because we could spend an almost infinite amount of time tinkering with the right combinations of instructions, addressing modes and other changes.  Whereas the conceptual simplicity and constrained nature of SUBLEQ means there isn't as much to tinker with and therefore once the choice has been made to use it people can get on with other things which may interest them more; witness what has been possible with DawnOS.</p>
+<p>The initial simplicity of SUBLEQ pushes the complexity outwards as it has to go somewhere.  It's a balancing act and we therefore need to make a decision as to where we want to place that complexity so that we can get the right combination of easy of use, code size, speed, efficiency, etc.</p>
+<p>I like SUBLEQ and while it may not be the perfect choice for a VM it is still an interesting option that can be fun to play with.</p>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Is SUBLEQ the Right Choice for a VM?</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F&title=Is%20SUBLEQ%20the%20Right%20Choice%20for%20a%20VM%3F" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F&quote=Is%20SUBLEQ%20the%20Right%20Choice%20for%20a%20VM%3F" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F&text=Is%20SUBLEQ%20the%20Right%20Choice%20for%20a%20VM%3F:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Is%20SUBLEQ%20the%20Right%20Choice%20for%20a%20VM%3F&body=SUBLEQ%20is%20an%20interesting%20architecture%20because%20of%20its%20simplicity%2C%20adaptability%20and%20power.%20%20It%20is%20therefore%20an%20attractive%20choice%20for%20a%20simple%20virtual%20machine.%20%20However%2C%20this%20comes%20at%20a%20cost%20which%20we%20will...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Is%20SUBLEQ%20the%20Right%20Choice%20for%20a%20VM%3F&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fis-subleq-the-right-choice-for-a-vm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/subleq-on-the-commodore-vic-20/">SUBLEQ on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  I have created a SUBLEQ Virtual Machine for the Commodore VIC-20.  SUBLEQ is a computer architecture that has only one instruction: SUBLEQ.  The instruction stands for SUbtract and Branch if Less than ...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ has to be one of the easiest architectures to implement in either software or hardware and this is the main reason for its design as a teaching aid.  It has only one instruction, hence why it is...
+  &nbsp;
+  <a class="readMore" href="/articles/subleq-a-one-instruction-set-computer/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  When I first came across SUBLEQ,
+I really liked the beauty and simplicity of the design.  However, I have now been experimenting with it for quite a while and have noticed one aspect of the standard im...
+  &nbsp;
+  <a class="readMore" href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/80-columns-in-software-on-the-commodore-vic-20/">80 Columns in Software on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  If you have good eyesight, a well-tuned display and patience it is possible to use 80 columns in software on the VIC-20.  This is really just an experiment but considering the limitations of the Vic I ...
+  &nbsp;
+  <a class="readMore" href="/articles/80-columns-in-software-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/64-columns-sideways-on-the-commodore-vic-20/">64 Column Text Mode on the Commodore VIC-20</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  With a little lateral thinking and by putting the television on its side we can create a 64 column sideways text mode on the VIC-20.  This article will demonstrate this and show how it is done.  Previo...
+  &nbsp;
+  <a class="readMore" href="/articles/64-columns-sideways-on-the-commodore-vic-20/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<br /><strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.');
+          }
+        </script>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>

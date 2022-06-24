@@ -95,6 +95,9 @@
   <script>
     if (isUserFromUK()) {
       console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
     } else {
       console.log("Google Ads - non-uk user");
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -104,13 +107,6 @@
     }
   </script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("Amazon Banner - from uk");
-      // Amazon Prime Video Banner 728x90 and 300x250
-      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
-    }
-  </script>
 </head>
   <body>
     <nav>
@@ -167,6 +163,21 @@
 </script>
 
 <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/is-subleq-the-right-choice-for-a-vm/">Is SUBLEQ the Right Choice for a VM?</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  However, this comes at a cost which we will...
+  &nbsp;
+  <a class="readMore" href="/articles/is-subleq-the-right-choice-for-a-vm/">Read More</a>
+</div>
+<br />
       <header>
   <h2><a href="/articles/xccp-a-shell-extension-for-cpm/">XCCP: A Shell Extension for CP/M</a></h2>
   <span class="post-meta">
@@ -471,6 +482,11 @@ Binary ...
   <a class="readMore" href="/articles/code-and-data-in-display-memory-on-the-vic-20/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/articles/i-love-ed-on-cpm/">I Love ED on CP/M</a></h2>
   <span class="post-meta">
@@ -487,11 +503,6 @@ Binary ...
   <a class="readMore" href="/articles/i-love-ed-on-cpm/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/articles/double-width-c64-style-font-on-the-commodore-vic-20/">Double-Width C64 Style Font on the Commodore VIC-20</a></h2>
   <span class="post-meta">
@@ -597,7 +608,6 @@ Binary ...
       <ul class="tags">
           <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
           <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/retro/">Retro</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
@@ -615,8 +625,6 @@ Binary ...
   <h2><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h2>
   <span class="post-meta">
       <ul class="tags">
-          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
       </ul>
@@ -819,6 +827,11 @@ As soon as you pick up this coffee table style book you know that you're in for 
   <a class="readMore" href="/articles/dabar-a-hebrew-vocabulary-drill-system-on-cpm/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/articles/spreadsheets-on-the-commodore-vic-20/">Spreadsheets on the Commodore VIC-20</a></h2>
   <span class="post-meta">
@@ -836,11 +849,6 @@ As soon as you pick up this coffee table style book you know that you're in for 
   <a class="readMore" href="/articles/spreadsheets-on-the-commodore-vic-20/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/articles/40-columns-in-basic-on-the-commodore-vic-20/">40 Columns in Basic on the Commodore VIC-20</a></h2>
   <span class="post-meta">
@@ -1140,6 +1148,11 @@ The premise of this book is that the 60s/70s counter-culture led to the personal
   <a class="readMore" href="/2014/06/22/how-to-make-thunderbird-feel-like-geary/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Beware of Immutable Lists for F# Parallel Processing</a></h2>
   <span class="post-meta">
@@ -1156,11 +1169,6 @@ The premise of this book is that the 60s/70s counter-culture led to the personal
   <a class="readMore" href="/2014/04/19/beware-of-immutable-lists-for-fsharp-parallel-processing/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/2013/08/29/rendering-racket-package-scribblings-on-github-using-gh-pages/">Rendering Racket Package Scribblings on Github Using gh-pages</a></h2>
   <span class="post-meta">
@@ -1460,6 +1468,11 @@ worrying about making changes for fear of unex...
   <a class="readMore" href="/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2011/08/17/improving-related-posts-on-jekyll/">Improving the related_posts feature of jekyll</a></h2>
   <span class="post-meta">
@@ -1476,11 +1489,6 @@ worrying about making changes for fear of unex...
   <a class="readMore" href="/2011/08/17/improving-related-posts-on-jekyll/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/2011/04/16/mida-a-microdata-parser-extractor-library-for-ruby/">Mida - A Microdata parser/extractor library for Ruby</a></h2>
   <span class="post-meta">
@@ -1694,7 +1702,7 @@ The program...
   <h2><a href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</a></h2>
   <span class="post-meta">
       <ul class="tags">
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
       </ul>
   </span>
@@ -1809,6 +1817,11 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
   <a class="readMore" href="/2009/01/26/book-review-the-mythical-man-month-essays-on-software-engineering-by-frederick-p-brooks-jr/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/2008/12/16/bouncing-babies/">Bouncing Babies</a></h2>
   <span class="post-meta">
@@ -1825,11 +1838,6 @@ I really liked the beauty and simplicity of the design.  However, I have now bee
   <a class="readMore" href="/2008/12/16/bouncing-babies/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/2008/12/08/chinese-man-spotted-on-tissue/">Chinese Man Spotted On Tissue</a></h2>
   <span class="post-meta">

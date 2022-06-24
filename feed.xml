@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-06-01</updated>
+  <updated>2022-06-24</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Is SUBLEQ the Right Choice for a VM?</title>
+      <id>https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/</id>
+      <link href="https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2022-06-24
+        </published>
+
+        <updated>
+          2022-06-24
+        </updated>
+
+        <summary>SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  However, this comes at a cost which we will</summary>
+    </entry>
     <entry>
       <title>XCCP: A Shell Extension for CP/M</title>
       <id>https://techtinkering.com/articles/xccp-a-shell-extension-for-cpm/</id>

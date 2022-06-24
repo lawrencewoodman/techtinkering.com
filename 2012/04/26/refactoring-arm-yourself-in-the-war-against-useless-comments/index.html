@@ -95,6 +95,9 @@
   <script>
     if (isUserFromUK()) {
       console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
     } else {
       console.log("Google Ads - non-uk user");
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -104,13 +107,6 @@
     }
   </script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("Amazon Banner - from uk");
-      // Amazon Prime Video Banner 728x90 and 300x250
-      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
-    }
-  </script>
 </head>
   <body>
     <nav>
@@ -371,6 +367,21 @@ save_program(char *program, int program_size)
     <h2>Related Articles</h2>
     <div class="margin-buffer">
       <header>
+  <h2><a href="/articles/is-subleq-the-right-choice-for-a-vm/">Is SUBLEQ the Right Choice for a VM?</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  However, this comes at a cost which we will...
+  &nbsp;
+  <a class="readMore" href="/articles/is-subleq-the-right-choice-for-a-vm/">Read More</a>
+</div>
+<br />
+      <header>
   <h2><a href="/articles/80-columns-in-software-on-the-commodore-vic-20/">80 Columns in Software on the Commodore VIC-20</a></h2>
   <span class="post-meta">
       <ul class="tags">
@@ -440,24 +451,6 @@ save_program(char *program, int program_size)
   Saving and loading memory is quite easy on the VIC-20 once you know how.  However, it isn't obvious how to do this and therefore this article will present a few simple ways of doing it from BASIC and A...
   &nbsp;
   <a class="readMore" href="/articles/saving-and-loading-memory-on-the-vic-20/">Read More</a>
-</div>
-<br />
-      <header>
-  <h2><a href="/articles/basic-line-storage-on-the-vic-20/">Basic Line Storage on the VIC-20</a></h2>
-  <span class="post-meta">
-      <ul class="tags">
-          <li>#<a href="/articles/tag/basic/">BASIC</a></li>
-          <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/programming/">Programming</a></li>
-          <li>#<a href="/articles/tag/retro/">Retro</a></li>
-          <li>#<a href="/articles/tag/vic-20/">VIC-20</a></li>
-      </ul>
-  </span>
-</header>
-<div>
-  BASIC programs are stored in memory using a simple structure that we can investigate and manipulate.  This article will show how they are stored and contains a BASIC program to go through each line of ...
-  &nbsp;
-  <a class="readMore" href="/articles/basic-line-storage-on-the-vic-20/">Read More</a>
 </div>
 <br />
 </div>

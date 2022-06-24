@@ -95,6 +95,9 @@
   <script>
     if (isUserFromUK()) {
       console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
     } else {
       console.log("Google Ads - non-uk user");
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -104,13 +107,6 @@
     }
   </script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("Amazon Banner - from uk");
-      // Amazon Prime Video Banner 728x90 and 300x250
-      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
-    }
-  </script>
 </head>
   <body>
     <nav>
@@ -171,6 +167,21 @@
 </script>
 
 <div class="margin-buffer">
+      <header>
+  <h2><a href="/articles/is-subleq-the-right-choice-for-a-vm/">Is SUBLEQ the Right Choice for a VM?</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  SUBLEQ is an interesting architecture because of its simplicity, adaptability and power.  It is therefore an attractive choice for a simple virtual machine.  However, this comes at a cost which we will...
+  &nbsp;
+  <a class="readMore" href="/articles/is-subleq-the-right-choice-for-a-vm/">Read More</a>
+</div>
+<br />
       <header>
   <h2><a href="/articles/80-columns-in-software-on-the-commodore-vic-20/">80 Columns in Software on the Commodore VIC-20</a></h2>
   <span class="post-meta">
@@ -373,7 +384,6 @@
       <ul class="tags">
           <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
           <li>#<a href="/articles/tag/commodore/">Commodore</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/retro/">Retro</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
@@ -391,8 +401,6 @@
   <h2><a href="/articles/subleq-a-one-instruction-set-computer/">SUBLEQ - A One Instruction Set Computer (OISC)</a></h2>
   <span class="post-meta">
       <ul class="tags">
-          <li>#<a href="/articles/tag/assembly/">Assembly</a></li>
-          <li>#<a href="/articles/tag/oisc/">OISC</a></li>
           <li>#<a href="/articles/tag/programming/">Programming</a></li>
           <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
       </ul>
@@ -493,6 +501,11 @@
   <a class="readMore" href="/articles/hand-assembling-to-machine-code-on-the-commodore-vic-20/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
       <header>
   <h2><a href="/articles/6502-machine-language-tables-and-aids/">6502 Machine Language Tables and Aids</a></h2>
   <span class="post-meta">
@@ -509,11 +522,6 @@
   <a class="readMore" href="/articles/6502-machine-language-tables-and-aids/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/articles/tokenize-detokenize-commodore-basic-programs-using-petcat/">Tokenize/De-tokenize Commodore Basic Programs Using petcat</a></h2>
   <span class="post-meta">
@@ -826,6 +834,27 @@ worrying about making changes for fear of unex...
   <a class="readMore" href="/2009/07/14/running-4k-fortran-on-a-dec-pdp8/">Read More</a>
 </div>
 <br />
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+      <header>
+  <h2><a href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Improving the Standard SUBLEQ OISC (One Instruction Set Computer) Architecture</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/subleq/">SUBLEQ</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  When I first came across SUBLEQ,
+I really liked the beauty and simplicity of the design.  However, I have now been experimenting with it for quite a while and have noticed one aspect of the standard im...
+  &nbsp;
+  <a class="readMore" href="/2009/05/15/improving-the-standard-subleq-oisc-architecture/">Read More</a>
+</div>
+<br />
       <header>
   <h2><a href="/2009/04/30/an-introduction-to-corewar/">An Introduction to Corewar</a></h2>
   <span class="post-meta">
@@ -843,11 +872,6 @@ worrying about making changes for fear of unex...
   <a class="readMore" href="/2009/04/30/an-introduction-to-corewar/">Read More</a>
 </div>
 <br />
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
       <header>
   <h2><a href="/2009/04/23/the-smallest-communication-program-in-the-world/">The Smallest Communication Program in the World?</a></h2>
   <span class="post-meta">
