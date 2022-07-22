@@ -1,4 +1,5 @@
-In 1979 the University of Tennessee/Knoxville's Computer Science Department released [Felix v2.1](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/simtel/cpmug/cpmug035.ark "cmpug035.ark") for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation experiments and projects for education and hobbyist use.
+In 1979 the University of Tennessee/Knoxville's Computer Science Department released [Felix v2.1](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/simtel/cpmug/cpmug035.ark "cpmug035.ark (Felix v2.1) from the Walnut Creek CD: /simtel/cpmug/") for CP/M, which is available on the Walnut Creek CD.  It aimed to provide a basis for computer animation experiments and projects for education and hobbyist use.
+
 
 <img src="/img/articles/felix_bee.png" class="img-left" style="width: 256px; clear: right;" title="BEE#.FEX In Action Using Felix">
 
