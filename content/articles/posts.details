@@ -1,3 +1,13 @@
+{ filename    2022-09-10-modula-2-compilers-on-cpm.md
+  title       "Modula-2 Compilers on CP/M"
+  author      {
+    name        "Lawrence Woodman"
+    url         "https://lawrencewoodman.github.io"
+  }
+  socialImg   "cpm_modula_2.png"
+  tags        {"Programming" "CP/M" "Retro" "Modula-2"}
+}
+
 { filename    2022-06-24-is-subleq-the-right-choice-for-a-vm.md
   title       "Is SUBLEQ the Right Choice for a VM?"
   author      {
@@ -760,7 +770,7 @@
     name        "Lawrence Woodman"
     url         "https://lawrencewoodman.github.io"
   }
-  tags        {"Programming" "CP/M" "Retro"}
+  tags        {"Programming" "CP/M" "Retro" "Modula-2"}
   postURLStyle "/@year/@month/@day/@title/"
 }
 
