@@ -2,9 +2,27 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-07-22</updated>
+  <updated>2022-09-10</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
+    <entry>
+      <title>Modula-2 Compilers on CP/M</title>
+      <id>https://techtinkering.com/articles/modula-2-compilers-on-cpm/</id>
+      <link href="https://techtinkering.com/articles/modula-2-compilers-on-cpm/"/>
+        <author>
+          <name>Lawrence Woodman</name>
+          <uri>https://lawrencewoodman.github.io</uri>
+        </author>
+        <published>
+          2022-09-10
+        </published>
+
+        <updated>
+          2022-09-10
+        </updated>
+
+        <summary>Modula-2 is a great language in general and is a good choice for programming on CP/M.  There are three good compilers available for CP/M which all require a Z80 processor and we'll compare each in turn</summary>
+    </entry>
     <entry>
       <title>Is SUBLEQ the Right Choice for a VM?</title>
       <id>https://techtinkering.com/articles/is-subleq-the-right-choice-for-a-vm/</id>

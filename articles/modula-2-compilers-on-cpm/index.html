@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Modula-2 Compilers on CP/M</title>
+  <meta name="description" content="Modula-2 is a great language in general and is a good choice for programming on CP/M.  There are three good compilers available for CP/M which all require a Z80 ">
+  <meta name="keywords" content="Retro Vintage Programming Tinkering"/>
+
+  <!-- *** Twitter Card *** -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@techtinkering">
+  <meta name="twitter:title" content="Modula-2 Compilers on CP/M">
+  <meta name="twitter:description" content="Modula-2 is a great language in general and is a good choice for programming on CP/M.  There are three good compilers available for CP/M which all require a Z80 ">
+    <meta name="twitter:image"
+         content="https://techtinkering.com/img/social_images/cpm_modula_2.png">
+  <!-- *** Twitter Card *** -->
+
+  <!-- *** Open Graph *** --->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Modula-2 Compilers on CP/M">
+  <meta property="og:description" content="Modula-2 is a great language in general and is a good choice for programming on CP/M.  There are three good compilers available for CP/M which all require a Z80 ">
+  <meta property="og:url" content="https://techtinkering.com/articles/modula-2-compilers-on-cpm/">
+    <meta property="og:image"
+         content="https://techtinkering.com/img/social_images/cpm_modula_2.png">
+  <!-- *** Open Graph *** --->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4388762-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-4388762-2');
+  </script>
+
+  <script>
+    console.log('timeZone: '+Intl.DateTimeFormat().resolvedOptions().timeZone);
+    function isUserFromUK() {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone == "Europe/London";
+    }
+  </script>
+
+  <link href="/css/main.css" rel="stylesheet">
+  <link href="/css/article.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" rel="stylesheet" type="text/css" />
+  <link rel="canonical" href="https://techtinkering.com/articles/modula-2-compilers-on-cpm/">
+  <link rel="alternate" type="application/rss+xml" title="TechTinkering - Retro Computers, Programming, General Technical Tinkering"
+        href="https://feedproxy.google.com/TechTinkering" />
+
+	<!-- ****** faviconit.com favicons ****** -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<!-- ****** faviconit.com favicons ****** -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google ADs - UK user");
+    } else {
+      console.log("Google ADs - not from uk");
+      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
+    }
+  </script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    // Cookie Consent - https://cookieconsent.insites.com
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#252e39"
+        },
+        "button": {
+          "background": "#14a7d0"
+        }
+      },
+      "theme": "classic",
+      "position": "top",
+      "static": true,
+      "content": {
+        "message": "TechTinkering uses cookies for advertising, analytics, etc.",
+        "href": "https://techtinkering.com/privacy/"
+      }
+    })});
+  </script>
+
+  <script>
+    if (isUserFromUK()) {
+      console.log("No Google Ads - uk user");
+      console.log("Amazon Banner - from uk");
+      // Amazon Prime Video Banner 728x90 and 300x250
+      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+    } else {
+      console.log("Google Ads - non-uk user");
+      (adsbygoogle = window.adsbygoogle || []).push({
+           google_ad_client: "ca-pub-1613732348909658",
+           enable_page_level_ads: true
+      });
+    }
+  </script>
+
+</head>
+  <body>
+    <nav>
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/">TechTinkering</a><br />
+      =============
+    </div>
+
+    <div class="contact">
+      <ul>
+        <li>
+          <a href="https://twitter.com/TechTinkering" title="@TechTinkering on Twitter">Twitter</a>
+        </li>
+        <li>
+          <a href="https://youtube.com/techtinkering" title="TechTinkering's YouTube Channel">YouTube</a>
+        </li>
+        <li>
+          <a href="https://feeds.feedburner.com/TechTinkering" title="Subscribe to our RSS Feed">RSS</a>
+        </li>
+        <li>
+          <a href="mailto:techtinkering@vlifesystems.com" title="Email us, we'd love to hear from you">Email</a>
+        </li>
+        <li>
+          <a href="/useful-links/" title="Useful vintage computer links">Useful Links</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <div id="content" class="container">
+      <div class="margin-buffer">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="image"
+         content="https://techtinkering.com/img/social_images/cpm_modula_2.png" />
+      <header>
+        <a href="/articles/modula-2-compilers-on-cpm/" title="Modula-2 Compilers on CP/M">
+          <h1 itemprop="headline name">Modula-2 Compilers on CP/M</h1>
+        </a>
+        <div>
+            <time itemprop="datePublished"
+                  datetime="2022-09-10">
+              10 September 2022
+            </time>
+          <span itemscope itemprop="publisher"
+                itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="TechTinkering" />
+            <meta itemprop="url" content="https://techtinkering.com" />
+          </span>
+          <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+            <a rel="author" itemprop="url" href="https://lawrencewoodman.github.io">
+              <span itemprop="name">Lawrence Woodman</span>
+            </a>
+          </span>
+
+          <ul class="tags">
+              <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+              <li>#<a href="/articles/tag/modula-2/">Modula-2</a></li>
+              <li>#<a href="/articles/tag/programming/">Programming</a></li>
+              <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        if (isUserFromUK()) {
+          document.write(amznBanner);
+        }
+      </script>
+
+        <div itemprop="articleBody">
+        <p>Modula-2 is a great language in general and is a good choice for programming on CP/M.  There are three good compilers available for CP/M which all require a Z80 processor and we'll compare each in turn.</p>
+<h2>Modula-2</h2>
+<p>Modula-2 was developed by Niklaus Wirth and is based on his earlier language, Pascal.  It introduces <em>modules</em> to allow separate compilation of related code and data structures which are encapsulated to provide tight control of scope.  Modula-2 supports coroutines which make single processor concurrency relatively simple and provides easy access to low-level hardware.</p>
+<h2>Turbo Modula-2</h2>
+<p>Turbo Modula-2 was released in 1986 by Echelon under license from Borland and then quickly withdrawn.  It was based on <a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm" title="TechTinkering Article: Turbo Pascal is a Great Choice For Programming Under CP/M">Turbo Pascal</a>, with a similar IDE and procedures such as <code>WriteLn</code> and <code>ReadLn</code> which replicate their use in Turbo Pascal rather than how they are used in other Modula-2 compilers.  We get the same ability to configure the key commands and terminal and generally the environment is very much like Turbo Pascal.</p>
+<p>This is the smallest of the packages at about 200k and the IDE is a single executable which makes it easy to switch between compiling, linking, editing and various file handling operations.  The compiler can output either an intermediate code called M-code or native code.  The former compiles quicker and is said to take up less than a third of the space of native code but as it is interpreted it runs slower.  It is possible to combine modules compiled to M-code with those compiled into native code so that you can get the best of both worlds.  There is also a profiler available although it is restricted to M-code.</p>
+<p>It provides two main ways to call machine language from Modula-2 code.  The first is fairly easy as it allows us to replace a procedure's body with the contents of a .COM file.   We do this using the <code>CODE</code> statement which will load the named .COM file at compile time and use its contents as the body of the procedure.  The code must be fully relocatable and will be called with a consistent environment so that parameters can be read and a value returned.  As an example the following, taken from the manual, would load a file called 'MOVE.COM' and use it to create the body of the procedure.</p>
+<pre><code>PROCEDURE MOVE(source,dest: ADDRESS; n: CARDINAL);
+  CODE(&quot;MOVE&quot;)
+END MOVE;
+</code></pre>
+<p>The second way is by linking Microsoft Relocatable Files which is a little more complicated as we need to create a definition file and then combine this with the relocatable code using the supplied 'REL' command to create a .MCD file.  However, this has the added bonus that we can not only call procedures created with Microsoft's assembler but we can also call procedures created by Microsoft Fortran, Pascal MT/+, etc.</p>
+<p>Turbo Modula-2 comes with a good selection of modules to handle the normal things you would expect including modules to aid working with the terminal and to provide access to CP/M BDOS and BIOS calls.  This implementation provides the fewest number of compiling and linking options out of the three compared.</p>
+<p>The compiler is available as an <a href="http://www.retroarchive.org/cpm/lang/TMOD210.ZIP" title="TMOD210.ZIP from the Retrocomputing Archive">archive</a> at the <a href="http://www.retroarchive.org/cpm/lang/lang.htm">The Retrocomputing Archive</a>.  There is also a good manual but unfortunately the quality of the <a href="http://oldcomputers.dyndns.org/public/pub/manuals/turbomodula2_bw.pdf" title="Turbo Modula-2 Manual">scan</a> is fairly poor.</p>
+<h2>FTL Modula-2</h2>
+<p>FTL Modula-2 aims to closely implement the Modula-2 language and modules as described by Niklaus Wirth in his book 'Programming in Modula-2'.  In this it does a good job and is the version I have the greatest confidence in considering that it has gone through multiple versions over quite a long period of time.  The latest version I have found is v1.30, dated 26 July 1988 and is available at <a href="http://www.retroarchive.org/cpm/lang/lang.htm">The Retrocomputing Archive</a> as <a href="http://www.retroarchive.org/cpm/lang/ftl-m2.zip">FTL-M2.ZIP</a>.</p>
+<p>The package comes with an editor, compiler, linker, assembler, debugger and library manager.  It also has utilities to configure the terminal and search paths.  The search paths allow us to spread our Modula-2 files over several drives without having to constantly specify the location of source and output files.  This is particularly useful if running from floppy drives or RAM drives as this is much bigger than Turbo Modula-2 at about 600k and therefore we can split it over multiple drives.  The terminal configuration is used by the built-in editor as well as the ScreenIO module which provides functions to move the cursor, set attributes, etc.</p>
+<p>The editor is integrated with the compiler which allows us to compile from the editor and then return to it.  It can edit up to three files in split screen mode and I find it to be a very quick and comfortable editor.  The editor generally uses Wordstar keys with the addition of macros inspired by Emacs.</p>
+<p>There are two manuals:</p>
+<ul>
+<li>The <a href="https://www.cpcwiki.eu/imgs/9/92/Hisoft_FTL_Modula-2_Z80_User_Guide_%28Hisoft%29_Manual.pdf">user manual</a> which provides a concise but complete description of configuring the environment and the commands and modules included.</li>
+<li>The <a href="https://www.cpcwiki.eu/imgs/b/be/Hisoft_FTL_Modula-2_Language_Reference_%28Hisoft%29_Manual.pdf">language reference</a> which teaches the language and highlights certain areas where this implementation may differ from other implementations.</li>
+</ul>
+<p>A full range of modules are provided, including modules supporting screen handling, direct access to CP/M BDOS and BIOS data structures and calls.</p>
+<p>The compiler and linker take a range of options, one of the most useful is /D for the linker (ML.COM).  This allows us to control the placement and initialization of data.  It is important because it can produce dramatically smaller files but if we are to distribute these files we need to specify the placement so that it doesn't write over systems that are configured differently.  To do this we run ML without the /D option and then run it again using the 'Top Address' reported in the first run as the address for the /D switch.</p>
+<h2>Peter Hochstrasser's Modula-2</h2>
+<p>Peter Hochstrasser made his Modula-2 System for CP/M more freely available in 2002.  His release statement, the manual and 3 disk archives of v2.01 dated 4 June 1985, are available at the <a href="http://www.cpm.z80.de/develop.htm">developer's tools</a> section of The Unofficial CP/M Web site.  This is about the same size as FTL Modula-2 at around 600k and like it we can spread the files over multiple disks and configure search paths with MP.COM.  Despite the large size, this implementation is the only one which doesn't come with an editor</p>
+<p>As with the other compilers this Modula-2 comes with a good selection of modules including support for making CP/M BDOS and BIOS calls.  However, unlike the others it doesn't have support for terminals beyond what CP/M provides.  Therefore, if we want to have features such as moving the cursor then we have to write this ourselves.  The compiler and linker have a number of options but unfortunately don't have options to speed up execution by turning off range checking for example.</p>
+<p>In order to call machine language routines, Hochstresser's Modula-2 allows us to link Microsoft Relocatable files using a similar, although slightly more complicated, process as described for Turbo Modula-2.</p>
+<h2>Benchmarks</h2>
+<p>To compare the compilers we can use a simple <a href="#article-benchmark-code">Prime Sieve Benchmark</a>.  Any benchmark will be flawed as compilers will often have types of code that it can compile into an executable that runs faster or is smaller than another.  However, this seems like a reasonable test as it contains many common operations such as iteration, branching and array access.</p>
+<p>The following table shows the average <em>build</em> (compiling + linking) and <em>execution</em> times for the various compilers and options.  These tests were performed under <a href="/articles/emulating-a-cpm-system-with-z80pack/">z80pack</a> running at 4Mhz and therefore doesn't allow for the increased disk access time of a real system.</p>
+<table class="neatTable" style="width: 100%">
+  <tr><th>Compiler</th><th title="Total time to compile and link" class="right">Build</th><th title="Execution Time" class="right">Execution</th><th title="Executable Size" class="right">Size</th></tr>
+  <tr><td>Turbo Modula-2 (M-Code)</td><td class="right">5s</td><td class="right">2m 8s</td><td class="right">16Kb</td></tr>
+  <tr><td>Turbo Modula-2 (Native code)</td><td class="right">9s</td><td class="right">9s</td><td class="right">16Kb</td></tr>
+  <tr><td>FTL Modula-2</td><td class="right">10s</td><td class="right">15s</td><td class="right">12Kb</td></tr>
+  <tr><td>FTL Modula-2 (Using /D:xxxx)</td><td class="right">9s</td><td class="right">15s</td><td class="right">4Kb</td></tr>
+  <tr><td>Peter Hochstrasser's Modula-2</td><td class="right">20s</td><td class="right">19s</td><td class="right">2Kb</td></tr>
+</table>
+<p>There is no clear winner but depending on our priorities in terms of build time, execution time or executable size we may favour one compiler over another.  This is also very specific to the code tested.  If we had used a bigger program and execution time wasn't an issue then perhaps the more compact M-code would have shone.</p>
+<h2>Video</h2>
+<p>The following video shows the Modula-2 compilers in action.</p>
+<div class="youtube-wrapper">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/he-Yt_fCRYg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2>Summary</h2>
+<p>Modula-2 is a language worth considering for your next project on CP/M and hopefully this quick comparison will help you to determine which one to use.  Whichever you choose the language is pretty similar between the three so it should be easy to port from one to another.</p>
+<hr />
+<h2 id="article-benchmark-code">Benchmark Code</h2>
+<p>For the comparison above a prime sieve benchmark was used which came from Turbo Modula-2.  The following version has been adapted for FTL Modula-2.</p>
+<pre><code>MODULE primes;
+
+FROM Terminal IMPORT WriteString,WriteLn,Read;
+FROM SmallIO IMPORT WriteCard;
+
+CONST
+  size = 8190;
+
+VAR
+  flags : ARRAY [ 0 .. size ] OF BOOLEAN;
+  i, prime, k, count, iter : CARDINAL;
+  ch : CHAR;
+
+BEGIN
+  WriteString(&quot;Type Return&quot;); Read(ch);
+  WriteString(&quot;10 iterations&quot;); WriteLn;
+  FOR iter := 1 TO 10 DO
+    count := 0;
+    FOR i := 0 TO size DO flags[i] := TRUE END;
+    FOR i := 0 TO size DO
+      IF flags[i] THEN
+        prime := i + i + 3;
+        k := i + prime;
+        WHILE k &lt;= size DO
+          flags[k] := FALSE;
+          k := k + prime;
+        END;
+        count := count + 1;
+      END;
+    END;
+  END;
+  WriteCard(count, 1); WriteString(&quot; primes&quot;); WriteLn;
+  WriteString(&quot;done&quot;); WriteLn;
+END primes.
+</code></pre>
+      </div>
+    </article>
+</div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+
+  <div id="cclicence">
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+    </a>
+    <br />
+    <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Modula-2 Compilers on CP/M</span>
+    by <a xmlns:cc="http://creativecommons.org/ns#" href="https://techtinkering.com/articles/modula-2-compilers-on-cpm/" property="cc:attributionName" rel="cc:attributionURL">Lawrence Woodman</a>
+   is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+   
+  </div>
+
+
+  <div class="discuss">
+    <h2 style="margin-top:0;">Share This Post</h2>
+    <div class="contact">
+  <ul>
+    <li><a href="http://www.reddit.com/submit?url=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F&title=Modula-2%20Compilers%20on%20CP%2FM" target="_blank" title="Submit to Reddit">Reddit</a></li>
+    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F&quote=Modula-2%20Compilers%20on%20CP%2FM" target="_blank" title="Share on Facebook">Facebook</a></li>
+    <li><a href="https://twitter.com/intent/tweet?source=https%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F&text=Modula-2%20Compilers%20on%20CP%2FM:%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F&via=TechTinkering" target="_blank" title="Tweet">Twitter</a></li>
+    <li><a href="mailto:?subject=Modula-2%20Compilers%20on%20CP%2FM&body=Modula-2%20is%20a%20great%20language%20in%20general%20and%20is%20a%20good%20choice%20for%20programming%20on%20CP%2FM.%20%20There%20are%20three%20good%20compilers%20available%20for%20CP%2FM%20which%20all%20require%20a%20Z80%20processor%20and%20we%27ll%20compare%20each%20in%20turn...:%0A%0Ahttps%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F" target="_blank" title="Send email">Email</a></li>
+  </ul>
+</div>
+
+    <h2>Feedback/Discuss</h2>
+    <div class="contact">
+  <ul>
+
+
+    <li><a href="mailto:techtinkering@vlifesystems.com?subject=Comment:%20Modula-2%20Compilers%20on%20CP%2FM&body=Article%20URL:%20https%3A%2F%2Ftechtinkering.com%2Farticles%2Fmodula-2-compilers-on-cpm%2F%0A" title="Send us an email">Email</a></li>
+  </ul>
+</div>
+  </div>
+
+
+    <div>
+    <h2>Related Articles</h2>
+    <div class="margin-buffer">
+      <header>
+  <h2><a href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">If Only Borland Had Stuck With Turbo Modula-2 For CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/modula-2/">Modula-2</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  I have written previously about why Turbo Pascal is a Great Choice For Programming Under CP/M and now it is time to talk about what could have been.  You probably haven't heard of Turbo Modula-2 for CP...
+  &nbsp;
+  <a class="readMore" href="/2013/03/12/if-only-borland-had-stuck-with-turbo-modula-2-for-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-pilot-programming-language-on-cpm/">The Pilot Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Pilot was created by John A. Starkweather in the early 1960s as a programming language for Computer Assisted Instruction.  It has often been compared to Logo because of its use with children.  However,...
+  &nbsp;
+  <a class="readMore" href="/articles/the-pilot-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/articles/the-mouse-programming-language-on-cpm/">The Mouse Programming Language on CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  Mouse is an interpreted stack orientated language designed by Peter Grogono around 1975.  It was designed to be a small but powerful language for microcomputers, similar to Forth, but much simpler.  On...
+  &nbsp;
+  <a class="readMore" href="/articles/the-mouse-programming-language-on-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Turbo Pascal: A Great Choice For Programming Under CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/pascal/">Pascal</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  CP/M was blessed with many programming languages, each with their own strengths and weaknesses.  I think that Turbo Pascal stands out from these and I'm not alone.  When Turbo Pascal was released in 19...
+  &nbsp;
+  <a class="readMore" href="/2013/03/05/turbo-pascal-a-great-choice-for-programming-under-cpm/">Read More</a>
+</div>
+<br />
+      <header>
+  <h2><a href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Installing the HI-TECH Z80 C Compiler for CP/M</a></h2>
+  <span class="post-meta">
+      <ul class="tags">
+          <li>#<a href="/articles/tag/c/">C</a></li>
+          <li>#<a href="/articles/tag/cpm/">CP/M</a></li>
+          <li>#<a href="/articles/tag/programming/">Programming</a></li>
+          <li>#<a href="/articles/tag/retro/">Retro</a></li>
+          <li>#<a href="/articles/tag/z80/">Z80</a></li>
+      </ul>
+  </span>
+</header>
+<div>
+  My language of choice is C and I am currently getting more involved with the CP/M operating system.  I have therefore decided that it would be nice to have a C compiler working under CP/M.  There are a...
+  &nbsp;
+  <a class="readMore" href="/2008/10/22/installing-the-hi-tech-z80-c-compiler-for-cpm/">Read More</a>
+</div>
+<br />
+</div>
+    </div>
+
+<script>
+  if (isUserFromUK()) {
+    document.write(amznBanner);
+  }
+</script>
+    </div>
+
+    <footer>
+  <nav>
+    <div class="container">
+      <div>
+        <strong>Legal:</strong>
+        <a href="/terms/">T & C</a>, <a href="/privacy/">Privacy Policy</a>
+        &nbsp;
+        <strong>Misc:</strong>
+        <a href="https://github.com/lawrencewoodman/techtinkering.com" title="Fork TechTinkering On GitHub ">GitHub</a>
+        <script>
+          if (isUserFromUK()) {
+            document.write('<br /><strong>Disclosure:<' +'/strong> As an Amazon Associate TechTinkering earns from qualifying purchases.');
+          }
+        </script>
+      </div>
+    </div>
+  </nav>
+</footer>
+  </body>
+</html>
