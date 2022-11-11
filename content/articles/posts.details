@@ -540,7 +540,7 @@
   }
   socialImg   "z80pack_boot_cpm3.png"
   tags        {"CP/M" "Emulation" "Retro"}
-  updated     2019-05-22
+  updated     2022-11-11
 }
 
 { filename    2019-05-15-instrument-flight-simulator-on-cpm.md

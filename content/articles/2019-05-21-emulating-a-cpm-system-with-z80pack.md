@@ -1,14 +1,14 @@
 [z80pack](http://www.autometer.de/unix4fun/z80pack/) is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI or ALTAIR including a graphical front-panel.  It is well documented and is being actively developed.
 
 ## Installing z80pack
-* First download the source (z80pack-x.y.tgz, currently z80pack-1.36.tgz) for z80pack from [here](http://www.autometer.de/unix4fun/z80pack/ftp/).  The following [installation instructions](http://www.autometer.de/unix4fun/z80pack/#dri_quick "Installation instructions for z80pack") are adapted from those on the z80pack site.  More information can be found there, in particular, information on installing z80pack on non Linux/Unix systems.
+* First download the source (z80pack-x.y.tgz, currently z80pack-1.37.tgz) for z80pack from [here](http://www.autometer.de/unix4fun/z80pack/ftp/).  The following [installation instructions](http://www.autometer.de/unix4fun/z80pack/#dri_quick "Installation instructions for z80pack") are adapted from those on the z80pack site.  More information can be found there, in particular, information on installing z80pack on non Linux/Unix systems.
 * Unpack the source archive in your home directory:
 	```` bash
-  $ tar xzvf z80pack-1.36.tgz
+  $ tar xzvf z80pack-1.37.tgz
   ````
 * Change the directory it is extracted to, to make this article easier to explain.  There is no need for you to do this.
 	```` bash
-  $ mv z80pack-1.36 z80pack
+  $ mv z80pack-1.37 z80pack
   ````
 * Compile the emulator for your operating system, e.g. for linux use `-f Makefile.linux`:
    ```` bash
