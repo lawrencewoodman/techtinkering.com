@@ -25,8 +25,17 @@ CP/M is an operating system created by Gary Kildall of Digital Research, Inc. or
   <dd>One of the best books to learn how to program under CP/M</dd>
   <dt><a href="http://www.gaby.de/cpm/manuals/archive/cpm22htm/">CP/M 2.2 Operating System Manual</a></dt>
   <dd>An online version of Digital Research's reference guide</dd>
-  <dt><a href="https://rvbelzen.tripod.com/cpm3-prg/index.html">CP/M Plus (CP/M® Version 3) Operating System Programmer's Guide</a></dt>
+  <dt><a href="http://www.s100computers.com/Software%20Folder/CPM3%20BIOS%20Installation/CPM3%20Command%20Guide.pdf">CP/M Plus (CP/M® Version 3) Command Summary [PDF]</a></dt>
+  <dd>A recreated hyperlinked PDF of Digital Research's reference guide</dd>
+  <dt><a href="https://rvbelzen.tripod.com/cpm3-prg/index.html">CP/M Plus (CP/M® Version 3) Programmer's Guide</a></dt>
   <dd>An online version of Digital Research's reference guide</dd>
+  <dt><a href="http://www.s100computers.com/Software%20Folder/CPM3%20BIOS%20Installation/CPM3%20Programmer's%20Guide.pdf">CP/M Plus (CP/M® Version 3) Programmer's Guide [PDF]</a></dt>
+  <dd>A recreated hyperlinked PDF of Digital Research's reference guide</dd>
+  <dt><a href="http://www.s100computers.com/Software%20Folder/CPM3%20BIOS%20Installation/CPM3%20System%20Guide.pdf">CP/M Plus (CP/M® Version 3) System Guide [PDF]</a></dt>
+  <dd>A recreated hyperlinked PDF of Digital Research's reference guide</dd>
+  <dt><a href="http://www.s100computers.com/Software%20Folder/CPM3%20BIOS%20Installation/CPM3%20User's%20Guide.pdf">CP/M Plus (CP/M® Version 3) User's Guide [PDF]</a></dt>
+  <dd>A recreated hyperlinked PDF of Digital Research's reference guide</dd>
+
 </dl>
 
 ### Archives
