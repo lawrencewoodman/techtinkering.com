@@ -194,6 +194,11 @@ div.articleRedirected h1 {
 }
 
 
+dl.usefulLinks dt {
+  font-style: normal;
+}
+
+
 /* ---- Book Reviews ---- */
 table.bookDetails { float: left; }
 table.bookDetails th { text-align: left; padding-right: 1em; }
@@ -201,7 +206,7 @@ table.bookDetails th { text-align: left; padding-right: 1em; }
 table.amazonDetails { margin-left: 2em; }
 
 
-/* ---- Amazon Banner Ads ---- */
+/* ---- Amazon Ads ---- */
 div.amazonBannerDesktop {
   text-align: center;
 }
@@ -219,4 +224,42 @@ div.amazonBannerMobile {
   div.amazonBannerMobile {
     display: none;
   }
+}
+
+div.amazonImageGroupContainer {
+  text-align: center;
+  color: #A0A0A0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+div.amazonImageGroupDesktop {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.amazonImageGroupMobile {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 728px) {
+  div.amazonImageGroupDesktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 729px) {
+  div.amazonImageGroupMobile {
+    display: none;
+  }
+}
+
+div.amazonImageSmall {
+  width: 110px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
 }

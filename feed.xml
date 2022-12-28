@@ -2,7 +2,7 @@
   <title>TechTinkering - Retro Computers, Programming, General Technical Tinkering</title>
   <link href="https://techtinkering.com/feed.xml" rel="self"/>
   <link href="https://techtinkering.com"/>
-  <updated>2022-11-11</updated>
+  <updated>2022-12-28</updated>
   <id>https://techtinkering.com/feed.xml</id>
   <generator uri="https://github.com/lawrencewoodman/tekyll">teykll</generator>
     <entry>
@@ -887,7 +887,7 @@ As soon as you pick up this coffee table style book you know that you're in for 
         </published>
 
         <updated>
-          2019-05-22
+          2022-11-11
         </updated>
 
         <summary>z80pack is great for creating an emulated CP/M system.  It can either be used to create a general CP/M system or can emulate a specific system such as an IMSAI or ALTAIR including a graphical front-pan</summary>

@@ -105,12 +105,10 @@ As soon as you pick up this coffee table style book you know that you're in for 
     })});
   </script>
 
+  <script src="/js/amazon.js"></script>
   <script>
     if (isUserFromUK()) {
-      console.log("No Google Ads - uk user");
-      console.log("Amazon Banner - from uk");
-      // Amazon Prime Video Banner 728x90 and 300x250
-      amznBanner='<div class="amazonBannerDesktop"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=48&l=ur1&category=piv&banner=0E183RXMV88X6J8GJ002&f=ifr&linkID=a2c37aae0561f075af3356504493bdf0&t=techtinkering-21&tracking_id=techtinkering-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' +'/div><div class="amazonBannerMobile"><iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=12&l=ur1&category=piv&banner=070GKT77WVHAHSRTHK02&f=ifr&linkID=0dc57b53bcc8f7ab67a385d51155e57a&t=techtinkering-21&tracking_id=techtinkering-21" width="300" height="250" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0" sandbox="allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"><' + '/iframe><' + '/div>';
+      amznBannerInit();
     } else {
       console.log("Google Ads - non-uk user");
       (adsbygoogle = window.adsbygoogle || []).push({
