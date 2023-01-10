@@ -37,7 +37,8 @@ function amznBannerInit() {
     amznBanner+= amznAd3;
     amznBanner+= '<'+'/div>';
     amznBanner+= '<'+'/div>';
-    amznBanner+= 'Recommended on Amazon';
+
+    amznBanner+= 'Recommended Books on Amazon';
     amznBanner+= '<'+'/div>';
   } else {
     // Amazon Prime Video Banner 728x90 and 300x250
