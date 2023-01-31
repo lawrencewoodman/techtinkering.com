@@ -47,10 +47,10 @@ Each of the DIR replacements below has different pros and cons, although they al
 * Show the amount of free disk space
 * Filenames are sorted in alphabetical order
 * Support CP/M 2.2 and CP/M 3
-* Available on the [Walnut Creek CD](http://www.classiccmp.org/cpmarchives/ftp.php?b=cpm/Software/WalnutCD)
+* Available on the [Walnut Creek CD](http://cpmarchives.classiccmp.org/ftp.php?b=cpm/Software/WalnutCD/)
 
 ### DA
-[DA](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/da22.lbr "DA22.LBR") is the smallest at 2k and is called DA because it stands for _Directory Attributes_ as this program puts more focus on handling attributes so that you can views files with/without specific attributes such as the _System_, _Read-Only_ or _Archive_ attributes; change those attributes as well as list them clearly without having to rely on terminal codes to highlight characters in the filename.
+[DA](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/dirutl/da22.lbr "DA22.LBR") is the smallest at 2k and is called DA because it stands for _Directory Attributes_ as this program puts more focus on handling attributes so that you can views files with/without specific attributes such as the _System_, _Read-Only_ or _Archive_ attributes; change those attributes as well as list them clearly without having to rely on terminal codes to highlight characters in the filename.
 
 
 <img src="/img/articles/cpm_da22.png" class="img-right" style="width: 600px; clear: right;" title="DA v2.2 showing attributes and also showing files with and without system attribute">
@@ -64,7 +64,7 @@ I like DA a lot as it has a clear compact display, the command line options are 
 The version linked to is v2.2 by Eric Meyer and is dated January 1987.
 
 ### DIRR
-[DIRR](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/dirr5.lbr "DIRR5.LBR") is a little bit quicker than DA and still relatively small at 5k.  It lists the files in a directory sorted vertically as standard and can list the attributes for each file as well as be configured to allow highlighting of a character in the filename to represent the attributes for a file.
+[DIRR](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/dirutl/dirr5.lbr "DIRR5.LBR") is a little bit quicker than DA and still relatively small at 5k.  It lists the files in a directory sorted vertically as standard and can list the attributes for each file as well as be configured to allow highlighting of a character in the filename to represent the attributes for a file.
 
 <img src="/img/articles/cpm_dirr5.png" class="img-right" style="width: 600px; clear: right;" title="DIRR v5 listing files in current user area and for all user areas">
 
@@ -75,7 +75,7 @@ Overall DIRR is another good DIR replacement with a nice clear display and some 
 The history of this program is unclear, but Irv Hoff who released v5, dated 7th January 1986, has tried to explain its origins in the documentation which makes for quite interesting reading.  It seems to have started as a C program that was then disassembled and enhanced by James R. King in 1983.  Irv took this source code, translated it from Z80 to 8080 assembly and then continued to enhance it.
 
 ### SD
-[SD](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr "SD138B.LBR") is called _Super Directory_ for good reason, it's fast, full of features and yet still only 6k.  It can do pretty much everything that DIRR can do, although it can't list the attributes separately for each file.  However, it can still highlight letters in a filename or change letters to lowercase to represent attributes.  Like DIRR, SD sorts files vertically by default although it can be configured to sort horizontally and this can be switched at run-time.
+[SD](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/enterprs/cpm/utils/s/sd138b.lbr "SD138B.LBR") is called _Super Directory_ for good reason, it's fast, full of features and yet still only 6k.  It can do pretty much everything that DIRR can do, although it can't list the attributes separately for each file.  However, it can still highlight letters in a filename or change letters to lowercase to represent attributes.  Like DIRR, SD sorts files vertically by default although it can be configured to sort horizontally and this can be switched at run-time.
 
 <img src="/img/articles/cpm_sd_adsl.png" class="img-right" style="width: 600px; clear: right;" title="SD v138b listing d*.* for all users on all drives including system files and listing the contents of any .LBR files">
 
@@ -93,7 +93,7 @@ Because of the `$A` (all users) and `$D` (all drives) options, SD can work as a 
 
 SD provides, for me, the nicest display with a configurable highlighted title showing the number files and k free/used.  The program is compatible with the 8080 and is highly configurable through the included source code which allows you to configure the display output, which drives (defaults to A: and B:) and how many user areas can be viewed (defaults to 16), etc.  As you may expect, it can also list directories for other users directly using something like `B1:` in the same way that DA can.  Some people may also be interested that it provides lots of extra support for Z80DOS and ZCPR3 as well as having configurable options useful to RCP/M systems.
 
-From comparing [SD-22.ASM](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/sd-22.asm "SD-22.ASM") with SD138B.ASM using [meld](https://meldmerge.org/) on Linux, it seems to have originally have been written by Bruce R. Ratoff.  The earliest revision mentioned in the SD-22.ASM source code is 22 November 1980 and below that it says that the program is based on 'DIRS' by Keith Petersen, W8SDZ.  The program linked to above is v138B, released by Ken Reid, 20 August 1989.
+From comparing [SD-22.ASM](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/dirutl/sd-22.asm "SD-22.ASM") with SD138B.ASM using [meld](https://meldmerge.org/) on Linux, it seems to have originally have been written by Bruce R. Ratoff.  The earliest revision mentioned in the SD-22.ASM source code is 22 November 1980 and below that it says that the program is based on 'DIRS' by Keith Petersen, W8SDZ.  The program linked to above is v138B, released by Ken Reid, 20 August 1989.
 
 ### Video: How to Configure Super Directory
 
@@ -110,18 +110,18 @@ The programs above are all good replacements/companions for the built-in DIR and
 ### D / WHATSNEW
 
 
-If you wanted to provide a way of checking what has changed in a directory you can use [D / WHATSNEW](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/d-31.asm "D-31.ASM").  It works by running the program on a directory using its `SET` option which creates a new file called 'D.COM', which when run will tell you what is new and what has been removed.  The newly created file 'D.COM' is often renamed to something like 'WHATSNEW.COM' to make its function clearer.
+If you wanted to provide a way of checking what has changed in a directory you can use [D / WHATSNEW](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/dirutl/d-31.asm "D-31.ASM").  It works by running the program on a directory using its `SET` option which creates a new file called 'D.COM', which when run will tell you what is new and what has been removed.  The newly created file 'D.COM' is often renamed to something like 'WHATSNEW.COM' to make its function clearer.
 
 <img src="/img/articles/cpm_d_whatsnew.png" class="img-right" style="width: 500px; clear: right;" title="D v3.1 showing changes to directory">
 
 D is only 3k, although the file it creates becomes bigger the more files it records.  It can be a useful utility, especially when using hard disks to keep track of lots of files which also makes it useful for RCP/M systems to show users what's new.  One particularly interesting feature is that it has an option to create a '.SUB' file which could then be used to backup any new files.
 
-According to the source code it was originally created by Ward Christensen (23 November 1978) and if you are interested, [D-29.ASM](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/dirutl/d-29.asm) has a more complete revision history.  The program comes as 8080 source code only, so you have to assemble it yourself.  The version linked to above is v3.1 and was released by Irv Hoff, 5th May 1984.
+According to the source code it was originally created by Ward Christensen (23 November 1978) and if you are interested, [D-29.ASM](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/dirutl/d-29.asm) has a more complete revision history.  The program comes as 8080 source code only, so you have to assemble it yourself.  The version linked to above is v3.1 and was released by Irv Hoff, 5th May 1984.
 
 
 ### ZX
 
-I mention [ZX](http://www.classiccmp.org/cpmarchives/cpm/Software/WalnutCD/cpm/utils/sysutl/zx31.lbr "ZX31.LBR") not because I recommend it, but because it does something quite interesting in that it tries to add simple commands such as rename, copy, erase, unerase, view, print, etc into only 3k.  It's reporting of disk space used/free seems to be off on bigger disks when used with CP/M 2.2 and they are completely wrong when used with CP/M 3.  It can also only work in the current user area.  However, if you ignore these problems, ZX can be quite a useful utility for space constrained systems.
+I mention [ZX](http://cpmarchives.classiccmp.org/cpm/Software/WalnutCD/cpm/utils/sysutl/zx31.lbr "ZX31.LBR") not because I recommend it, but because it does something quite interesting in that it tries to add simple commands such as rename, copy, erase, unerase, view, print, etc into only 3k.  It's reporting of disk space used/free seems to be off on bigger disks when used with CP/M 2.2 and they are completely wrong when used with CP/M 3.  It can also only work in the current user area.  However, if you ignore these problems, ZX can be quite a useful utility for space constrained systems.
 
 <img src="/img/articles/cpm_zx_copy_erase.png" class="img-right" style="width: 600px; clear: right;" title="ZX v3.1 listing a directory and then copying and erasing files">
 
