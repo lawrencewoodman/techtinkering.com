@@ -1,6 +1,3 @@
-<div class="amazon-product-link-text-and-image">
-  <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=GB&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=techtinkering-21&marketplace=amazon&region=GB&placement=0262044013&asins=0262044013&linkId=810b7724d695e0952510ac74b267eac3&show_border=false&link_opens_in_new_window=true"></iframe>
-</div>
 
 As soon as you pick up this coffee table style book you know that you're in for a treat.  A quick flick through reveals page after page of beautiful photos accompanied by well layed out text describing each machine.  Turning to the introduction and you get what feels like an art documentary script that proceeds with great pace as it explains the rise of home computers.  The intro captures much of the excitement, wonder and frenetic energy of this time.
 

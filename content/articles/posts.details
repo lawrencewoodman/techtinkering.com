@@ -339,7 +339,6 @@
   }
   itemReviewed "Home Computers: 100 Icons that Defined a Digital Generation"
   rating      5
-  extraDisclaimer "I received this book as a review copy from the publisher, Thames & Hudson.  I was asked if I would like to receive a copy and haven't been paid for this review.  As an Amazon Associate I earn from qualifying purchases."
   socialImg   "book_home_computers_100_icons_that_defined_a_digital_generation.png"
   hideLicence true
   twitterID   "1253277979108691968"
@@ -646,7 +645,6 @@
   tags        {"Book" "Review" "History" "Retro"}
   itemReviewed "What the Dormouse Said by John Markoff"
   rating      4
-  extraDisclaimer "As an Amazon Associate I earn from qualifying purchases."
   image       "/img/articles/book_what_the_dormouse_said.jpg"
   postURLStyle "/@year/@month/@day/@title/"
 }

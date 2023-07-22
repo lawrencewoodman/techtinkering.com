@@ -15,10 +15,6 @@ TechTinkering understands that privacy is important to you and will not
 
 You also agree to the following for each third-party service used on or by TechTinkering:
 
-## Amazon
-
-As an Amazon Associate TechTinkering earns from qualifying purchases.
-
 
 ## Google
 Google will use cookies and/or device identifiers to help supply relevant adverts and to provide reports to the owners of this site which describe how people use it and what they are interested in.  The adverts pay the running costs of the site and the reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/) for more information.
