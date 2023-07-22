@@ -58,15 +58,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("No Google ADs - UK user");
-    } else {
-      console.log("Google ADs - not from uk");
-      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
-    }
-  </script>
-
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -94,17 +85,6 @@
         "href": "https://techtinkering.com/privacy/"
       }
     })});
-  </script>
-
-  <script>
-    if (isUserFromUK()) {
-    } else {
-      console.log("Google Ads - non-uk user");
-      (adsbygoogle = window.adsbygoogle || []).push({
-           google_ad_client: "ca-pub-1613732348909658",
-           enable_page_level_ads: true
-      });
-    }
   </script>
 
 </head>
@@ -169,12 +149,6 @@
         </div>
       </header>
 
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
-
         <div itemprop="articleBody">
         <p><a href="http://cpmarchives.classiccmp.org/ftp.php?b=cpm%2FSoftware%2FWalnutCD%2Fcpm%2Fxccp" title="XCCP (v1.0) files from Walnut Creek CD: /cpm/xccp/">XCCP</a> describes itself as an Extended Console Command Processor for CP/M. It supports the 8080 and v1.0 was released by Anton R. Fleig in 1984.  Like <a href="/articles/epex-an-environment-extension-for-cpm/" title="TechTinkering Article: EPEX: An Environment Extension for CP/M">EPEX</a>, XCCP doesn't require installing so we can begin using it by just running XCCP.COM at the cost of reducing TPA by about 3Kb.</p>
 <p>XCCP requires a CP/M 2.2 environment, however it is missing a number of the built-in commands: REN, ERA, DIR, TYPE, USER and SAVE.    The USER command isn't needed because it's superseded by the improved user area handling provided by the shell.  REN.COM and ERA.COM are provided by XCCP, however unfortunately they don't support using DU: format to refer to files.  There are plenty of <a href="/articles/dir-alternatives-on-cpm/" title="TechTinkering Article: DIR Alternatives on CP/M">DIR</a> and <a href="/articles/text-viewers-on-cpm/" title="TechTinkering Article: Text Viewers on CP/M">TYPE</a> alternatives available to replace these missing commands.  If we want to use SAVE or SUBMIT then we can exit and return to the standard CCP using CTRL-Y.  The extra facilities of XCCP include:</p>
@@ -208,12 +182,6 @@
       </div>
     </article>
 </div>
-
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
 
   <div id="cclicence">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
@@ -336,11 +304,6 @@ Binary ...
 </div>
     </div>
 
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
     </div>
 
     <footer>

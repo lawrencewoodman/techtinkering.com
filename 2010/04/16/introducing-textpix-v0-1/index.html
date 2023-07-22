@@ -54,15 +54,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("No Google ADs - UK user");
-    } else {
-      console.log("Google ADs - not from uk");
-      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
-    }
-  </script>
-
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -90,17 +81,6 @@
         "href": "https://techtinkering.com/privacy/"
       }
     })});
-  </script>
-
-  <script>
-    if (isUserFromUK()) {
-    } else {
-      console.log("Google Ads - non-uk user");
-      (adsbygoogle = window.adsbygoogle || []).push({
-           google_ad_client: "ca-pub-1613732348909658",
-           enable_page_level_ads: true
-      });
-    }
   </script>
 
 </head>
@@ -167,12 +147,6 @@
         </div>
       </header>
 
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
-
         <div itemprop="articleBody">
         <p>I have today released <a href="https://github.com/LawrenceWoodman/TextPix/">TextPix</a> v0.1  This is a program to take an image and convert it into a redefined character set and the associated text mode screen data referencing that character set.</p>
 <p>The program came about because I wanted to be able to load images on the Jupiter Ace, but the Ace has no way of allowing you to control individual pixels on the screen.  The best that you can do is redefine the character set and then use those redefined characters to display your image.  This does however present a problem as the Ace only allows you 128 characters plus their inverse in the character set.  Since the screen contains 32x24=768 characters, there would have to be massive repetition in the image to be able to use only 128 characters plus their inverse to display the image.  TextPix therefore tries to find similar sections of the images to replace other similar sections so that the number of characters needed in the character set can be brought down to 128.</p>
@@ -187,12 +161,6 @@ As mentioned above, the program is not ready for general use, however more detai
       </div>
     </article>
 </div>
-
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
 
   <div id="cclicence">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
@@ -315,11 +283,6 @@ As mentioned above, the program is not ready for general use, however more detai
 </div>
     </div>
 
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
     </div>
 
     <footer>

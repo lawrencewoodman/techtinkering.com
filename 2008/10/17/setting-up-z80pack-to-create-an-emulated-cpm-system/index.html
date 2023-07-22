@@ -54,15 +54,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
 
-  <script>
-    if (isUserFromUK()) {
-      console.log("No Google ADs - UK user");
-    } else {
-      console.log("Google ADs - not from uk");
-      document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"><' + '/script>');
-    }
-  </script>
-
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -90,17 +81,6 @@
         "href": "https://techtinkering.com/privacy/"
       }
     })});
-  </script>
-
-  <script>
-    if (isUserFromUK()) {
-    } else {
-      console.log("Google Ads - non-uk user");
-      (adsbygoogle = window.adsbygoogle || []).push({
-           google_ad_client: "ca-pub-1613732348909658",
-           enable_page_level_ads: true
-      });
-    }
   </script>
 
 </head>
@@ -174,12 +154,6 @@
           </ul>
         </div>
       </header>
-
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
 
         <div itemprop="articleBody">
         <p>I have decided to try out some old CP/M software, but need something to run it on.  I could either do this on my Commodore 128 or through emulation.  Unfortunately the 1571 disk drive for my Commodore is currently out of action, so that leaves me with emulation.  I was going to use <a href="http://vice-emu.sourceforge.net/">vice</a> to emulate a C128, but have always found it a pain to get CP/M files onto .D64/71 disk images.  After looking around for the best emulator to run CP/M on, I came up with either <a href="http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/">YAZE-AG</a> or <a href="http://www.autometer.de/unix4fun/z80pack/">z80pack</a>.  z80pack seems to be better supported, has more documentation and is being actively developed, so that's the one I have chosen for this article.</p>
@@ -262,12 +236,6 @@ The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which make
       </div>
     </article>
 </div>
-
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
 
   <div id="cclicence">
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
@@ -392,11 +360,6 @@ The line <code>./cpmsim -f4</code> tells the emulator to run at 4Mhz, which make
 </div>
     </div>
 
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
     </div>
 
     <footer>
