@@ -12,12 +12,6 @@
   <hr />
 </div>
 
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
-
 ! set postListParams [dict create posts [getparam posts] maxPosts 0]
 [ornament -params $postListParams -directory [dir includes] -file post_list.html]
 

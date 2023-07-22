@@ -70,12 +70,6 @@
         </div>
       </header>
 
-      <script>
-        if (isUserFromUK()) {
-          document.write(amznBanner);
-        }
-      </script>
-
 !     if {[getparam -default 0 rating] > 0} {
         <div itemprop="reviewBody">
 !     } else {
@@ -85,12 +79,6 @@
       </div>
     </article>
 </div>
-
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
 
 ! if {[getparam -default false hideLicence]} {
   <div>
@@ -155,9 +143,3 @@
     [ornament -params $postListParams -directory [dir includes] -file post_list.html]
     </div>
 ! }
-
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>

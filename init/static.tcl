@@ -67,6 +67,5 @@ file copy [file join $downloadsDir *.gz] \
 
 set staticDir [dir content static]
 file copy [file join $staticDir CNAME] \
-          [file join $staticDir ads.txt] \
           [file join $staticDir .nojekyll] \
           [www::makeDestination]

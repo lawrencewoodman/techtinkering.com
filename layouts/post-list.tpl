@@ -9,12 +9,6 @@
 <div id="index-header">All Articles</div>
 <hr />
 
-<script>
-  if (isUserFromUK()) {
-    document.write(amznBanner);
-  }
-</script>
-
 ! set posts [posts::sort [collection get articles-posts]]
 ! set postListParams [dict create posts $posts maxPosts 0]
 [ornament -params $postListParams -directory [dir includes] -file post_list.html]

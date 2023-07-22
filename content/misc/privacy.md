@@ -17,6 +17,6 @@ You also agree to the following for each third-party service used on or by TechT
 
 
 ## Google
-Google will use cookies and/or device identifiers to help supply relevant adverts and to provide reports to the owners of this site which describe how people use it and what they are interested in.  The adverts pay the running costs of the site and the reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/) for more information.
+Google will use cookies and/or device identifiers to provide reports to the owners of this site which describe how people use it and what they are interested in.  The reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/) for more information.
 
 You can opt out of Google's use of cookies or device identifiers by visiting Google's [Ads Settings](http://www.google.com/settings/ads). Alternatively, you can opt out of a third-party vendor's use of cookies by visiting the [Network Advertising Initiative opt-out page](http://www.networkadvertising.org/managing/opt_out.asp) or control the use of device identifiers using a [device’s settings](https://support.google.com/ads/answer/1660762#mob).
