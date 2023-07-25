@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last Updated: 13th March 2022 at 8:15 GMT_
+_Last Updated: 25th July 2023 at 7:30 BST_
 
 TechTinkering understands that privacy is important to you and will not
  share your data with any third parties with the following exceptions.
@@ -11,12 +11,5 @@ TechTinkering understands that privacy is important to you and will not
 * Your data may be stored and processed on servers anywhere in the world that TechTinkering or its associated company use for hosting and administering this website.
 * TechTinkering can contact you, using the email address that you have provided, for any reasonable administrative purposes.
 * In the event that TechTinkering is sold, it can be sold complete with the associated user data.
-* TechTinkering may use [cookies](https://cookiesandyou.com/) for advertising, analytics and any other use.
 
 You also agree to the following for each third-party service used on or by TechTinkering:
-
-
-## Google
-Google will use cookies and/or device identifiers to provide reports to the owners of this site which describe how people use it and what they are interested in.  The reports help improve it.  Have a look at [how Google uses the data](http://www.google.com/intl/en/policies/privacy/partners/) for more information.
-
-You can opt out of Google's use of cookies or device identifiers by visiting Google's [Ads Settings](http://www.google.com/settings/ads). Alternatively, you can opt out of a third-party vendor's use of cookies by visiting the [Network Advertising Initiative opt-out page](http://www.networkadvertising.org/managing/opt_out.asp) or control the use of device identifiers using a [device’s settings](https://support.google.com/ads/answer/1660762#mob).

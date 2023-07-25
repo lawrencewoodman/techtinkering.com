@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-_Last Updated: 19th November 2019 at 11:40 GMT_
+_Last Updated: 25h July 2023 at 7:30 BST_
 
 ## Description of TechTinkering
 
@@ -61,10 +61,6 @@ TechTinkering reserves the right to change or modify the terms and conditions at
  - The content and material is accurate.
  - Use of the content and material you supply does not breach any applicable TechTinkering terms and  conditions and will not cause injury to any person or entity (including that the content or material is not defamatory and does not present a person or organisation in a false light).
 * TechTinkering reserves the right and has absolute discretion, to remove, screen or edit any content and materials which you post on the website.
-
-## Advertising
-
-You agree and understand that TechTinkering may display ads and other information adjacent to and related to any information that you provide to or search for on the website.  In addition you agree and understand that some of the services that are used to provide the adverts may use cookies which are beyond the control of TechTinkering.
 
 ## Disclaimer
 
