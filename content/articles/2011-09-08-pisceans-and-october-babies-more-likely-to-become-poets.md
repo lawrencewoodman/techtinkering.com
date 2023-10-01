@@ -64,9 +64,6 @@ Nobel laureates.
 ## Conclusion
 Unlike Nobel laureates the distribution of birth periods among poets seems to be about the same for star signs and months of birth.  It seems that if your are a Piscean or born in October then you are more likely to be a poet and if you are a Gemini or born in June then you are less likely.
 
-## Commissions
-This series highlights the power of scraping the web to extract these sort of statistics and given the time, this could be extended to increase confidence in the data and draw more accurate conclusions.  If you would like to commission, [vLife Systems](http://vlifesystems.com), to create a scraper which will extract data from websites or other data sources of interest to you, please get in touch via email: <info@vlifesystems.com>.
-
 ## Other Articles in the Series
 * [Does When You Were Born Affect Your Chance of Becoming a Nobel Laureate? Scraping Wikipedia to Find Out](/2011/08/24/does-when-you-were-born-affect-your-chance-of-becoming-a-nobel-laureate)
 
