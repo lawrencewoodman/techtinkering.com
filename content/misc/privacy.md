@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last Updated: 25th July 2023 at 7:30 BST_
+_Last Updated: 15h November 2023 at 14:10 GMT_
 
 TechTinkering understands that privacy is important to you and will not
  share your data with any third parties with the following exceptions.
@@ -11,5 +11,3 @@ TechTinkering understands that privacy is important to you and will not
 * Your data may be stored and processed on servers anywhere in the world that TechTinkering or its associated company use for hosting and administering this website.
 * TechTinkering can contact you, using the email address that you have provided, for any reasonable administrative purposes.
 * In the event that TechTinkering is sold, it can be sold complete with the associated user data.
-
-You also agree to the following for each third-party service used on or by TechTinkering:

@@ -1,6 +1,6 @@
 # Terms and Conditions
 
-_Last Updated: 25h July 2023 at 7:30 BST_
+_Last Updated: 15h November 2023 at 14:10 GMT_
 
 ## Description of TechTinkering
 
@@ -13,10 +13,10 @@ _TechTinkering_ is a website devoted to Retro Computers, Programming and Linux.
   <dd>This document in its entirety, to which you must agree in order to use this website.</dd>
 
   <dt>TechTinkering</dt>
-  <dd>This website centred around the techtinkering.com domain, and administered by <a href="http://vlifesystems.com" target="new_page">vLife Systems Ltd</a>.</dd>
+  <dd>This website centred around the techtinkering.com domain.</dd>
 
   <dt>Website</dt>
-  <dd>A collection of pages which you reach and access through a web browser or similar technology and is generally centred around one domain, such as techtinkering.com.</dd>
+  <dd>A collection of pages which you reach and access through a web browser or similar technology and is generally centred around one domain, such as <a href="https://techtinkering.com">techtinkering.com</a>.</dd>
 </dl>
 
 ## Terms of use
@@ -80,9 +80,7 @@ You agree to indemnify TechTinkering, and hold it and its associated company and
 
 ## Administration
 
-TechTinkering is owned and administered by <a href="http://vlifesystems.com" target="new_page">vLife Systems Ltd</a>, who can be contacted from their website.
-
-Any notice required to be given under these Terms and Conditions will be in writing and in English and must be sent by you to TechTinkering via Email: <a href="mailto:techtinkering@vlifesystems.com">techtinkering@vlifesystems.com</a>.<br />
+Any notice required to be given under these Terms and Conditions will be in writing and in English and must be sent by you to TechTinkering via Email: <a href="mailto:techtinkeringuk@gmail.com">techtinkeringuk@gmail.com</a>.<br />
 
 ## Legal Jurisdiction
 
